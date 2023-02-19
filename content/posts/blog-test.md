@@ -3,13 +3,13 @@ title: "Blog Test"
 subtitle: ""
 date: 2023-02-19T13:52:25+08:00
 draft: false
-author: ""
-authorLink: ""
-authorEmail: ""
+author: "Meng小羽"
+authorLink: "https://www.debuginn.cn"
+authorEmail: "debuginn@icloud.com"
 description: ""
 keywords: ""
 license: ""
-comment: false
+comment: true
 weight: 0
 
 tags:
