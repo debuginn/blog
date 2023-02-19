@@ -382,15 +382,15 @@ theme = "FixIt"
       # Giscus 评论系统设置
       [params.page.comment.giscus]
         enable = true
-        repo = "debuginn/debuginn.github.io"
-        repoId = "R_kgDOI_rAKQ"
+        repo = "debuginn/blog"
+        repoId = "R_kgDOI_rNgg"
         category = "General"
-        categoryId = "DIC_kwDOI_rAKc4CUTvO"
+        categoryId = "DIC_kwDOI_rNgs4CUT4j"
         mapping = "pathname"
         term = ""
         reactionsEnabled = "1"
         emitMetadata = "0"
-        inputPosition = "bottom" # ["top", "bottom"]
+        inputPosition = "top" # ["top", "bottom"]
         lightTheme = "light"
         darkTheme = "dark"
         lazyLoad = true
