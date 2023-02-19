@@ -45,3 +45,5 @@ repost:
 <!--more-->
 
 ## Hello world
+
+this is my hugo blog
