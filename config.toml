@@ -8,7 +8,7 @@ languageCode = "zh-CN"
 # 是否包括中日韩文字
 hasCJKLanguage = true
 
-# 更改默认主题
+# 默认主题
 theme = "FixIt"
 
 [params]
@@ -28,6 +28,23 @@ theme = "FixIt"
   images = ["https://image.debuginn.cn/202302182238057.JPG"]
   # 是否自动显示外链图标
   externalIcon = false
+
+  # 应用图标配置
+  [params.app]
+    # 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题
+    title = "FixIt"
+    # 是否隐藏网站图标资源链接
+    noFavicon = false
+    # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
+    svgFavicon = ""
+    # Safari 图标颜色
+    iconColor = "#5bbad5"
+    # Windows v8-10 磁贴颜色
+    tileColor = "#da532c"
+    # FixIt 0.2.12 | 更改 Android 浏览器主题色
+    [params.app.themeColor]
+      light = "#f8f8f8"
+      dark = "#252627"
 
   # 搜索配置
   [params.search]
@@ -341,9 +358,8 @@ theme = "FixIt"
     [params.page.share]
       enable = true
       Twitter = true
-      Facebook = true
       Weibo = true
-      Blogger = true
+      Facebook = true
 
     # 评论系统设置
     [params.page.comment]
