@@ -21,7 +21,7 @@ theme = "FixIt"
   # 网站默认主题样式 ["light", "dark", "auto"]
   defaultTheme = "auto"
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
-  gitRepo = ""
+  gitRepo = "https://github.com/debuginn/blog/"
   # 日期格式
   dateFormat = "2006-01-02"
   # 网站图片，用于 Open Graph 和 Twitter Cards
@@ -36,7 +36,7 @@ theme = "FixIt"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
-    svgFavicon = ""
+    svgFavicon = "/images/safari-pinned-tab.svg"
     # Safari 图标颜色
     iconColor = "#5bbad5"
     # Windows v8-10 磁贴颜色
@@ -45,6 +45,17 @@ theme = "FixIt"
     [params.app.themeColor]
       light = "#f8f8f8"
       dark = "#252627"
+
+  # Busuanzi count since v0.2.12
+  # 不蒜子统计 since v0.2.12
+  [params.ibruce]
+    enable = true
+    # Enable in post meta
+    # 在文章中开启
+    enablePost = true
+    # Site creation time
+    # 网站创立时间
+    siteTime = '2017-11-11T16:16:16+16:00'
 
   # 搜索配置
   [params.search]
@@ -150,6 +161,7 @@ theme = "FixIt"
       rss = true
       days = 30
       maxCount = 10
+
   # List（目录或标签）页面配置
   [params.list]
     # list 页面每页显示文章数量
@@ -158,6 +170,7 @@ theme = "FixIt"
     dateFormat = "01-02"
     # RSS 文章数目
     rss = 10
+
   # 标签云配置
   [params.tagcloud]
     enable = true
@@ -190,6 +203,7 @@ theme = "FixIt"
       social = true
       # 免责声明（支持 HTML 格式）
       disclaimer = ""
+
     # 主页文章列表
     [params.home.posts]
       enable = true
@@ -300,15 +314,15 @@ theme = "FixIt"
       # 是否显示代码块的编辑按钮
       edit = false
       # 默认展开显示的代码行数
-      maxShownLines = 10
+      maxShownLines = 100
 
     # 文章编辑
     [params.page.edit]
-      enable = false
+      enable = true
       # 编辑的基础链接
       # url = "/edit/branch-name/subdirectory-name" # 相对于 `params.gitRepo`
       # url = "https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name" # 完整链接
-      url = ""
+      url = "/edit/main/content/"
 
     # KaTeX 数学公式 (https://katex.org)
     [params.page.math]
