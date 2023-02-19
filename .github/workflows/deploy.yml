@@ -1,11 +1,9 @@
-name: deploy
+name: github pages
 
 on:
   push:
-  workflow_dispatch:
-  schedule:
-    # Runs everyday at 8:00 AM
-    - cron: "0 0 * * *"
+    branches:
+      - github-actions
 
 jobs:
   build:
