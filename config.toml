@@ -430,7 +430,7 @@ theme = "FixIt"
     enable = true
     # Google Analytics
     [params.analytics.google]
-      id = ""
+      id = "G-HT8080W7M6"
       # 是否匿名化用户 IP
       anonymizeIP = true
 
