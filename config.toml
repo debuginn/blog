@@ -13,9 +13,9 @@ theme = "FixIt"
 
 [params]
   # FixIt 主题版本
-  version = "0.2.X"
+  version = "0.2.18"
   # 网站描述
-  description = "专注于Golang技术、算法分享、互联网、IT前沿、优质网站推荐、Linux技术，做一个爱分享的程序猿。"
+  description = "专注于 Golang 技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。"
   # 网站关键词
   keywords = ["Hugo", "FixIt"]
   # 网站默认主题样式 ["light", "dark", "auto"]
@@ -74,10 +74,7 @@ theme = "FixIt"
     highlightTag = "em"
     # 是否在搜索索引中使用基于 baseURL 的绝对路径
     absoluteURL = false
-    [params.search.algolia]
-      index = ""
-      appID = ""
-      searchKey = ""
+
     [params.search.fuse]
       # https://fusejs.io/api/options.html
       isCaseSensitive = false
@@ -115,7 +112,7 @@ theme = "FixIt"
     enable = true
     # 自定义内容（支持 HTML 格式）
     # 进阶使用，见参数 `params.customFilePath.footer`
-    custom = ""
+    custom = ''
     # 是否显示 Hugo 和主题信息
     hugo = true
     # 是否显示版权信息
@@ -136,16 +133,16 @@ theme = "FixIt"
       enable = true
       animate = true
       icon = "fa-solid fa-heartbeat"
-      pre = ""
+      pre = "运行"
       value = "2017-11-11T16:16:16+16:00" # e.g. "2021-12-18T16:15:22+08:00"
 
     # 页面底部行排序，可选值：["first", 0, 1, 2, 3, 4, 5, "last"]
     [params.footer.order]
       powered = 4
-      copyright = 3
-      statistics = 0
-      visitor = 1
-      beian = 2
+      copyright = 0
+      statistics = 1
+      visitor = 2
+      beian = 3
 
   # Section（所有文章）页面配置
   [params.section]
@@ -196,19 +193,19 @@ theme = "FixIt"
       # 主页显示的网站标题（支持 HTML 格式）
       title = ""
       # 主页显示的网站副标题
-      subtitle = "永远相信美好的事情即将发生"
+      subtitle = "做一个爱分享的程序猿"
       # 是否为副标题显示打字机动画
       typeit = false
       # 是否显示社交账号
       social = true
       # 免责声明（支持 HTML 格式）
-      disclaimer = ""
+      disclaimer = '<img src="https://image.debuginn.cn/202302202248422.png" alt="qrcode" width="100%">'
 
     # 主页文章列表
     [params.home.posts]
       enable = true
       # 主页每页显示文章数量
-      paginate = 6
+      paginate = 4
 
   # 作者的社交信息设置
   [params.social]
@@ -252,7 +249,7 @@ theme = "FixIt"
     twemoji = true
     # 是否使用 lightgallery
     # 如果设为 "force"，文章中的图片将强制按照画廊形式呈现
-    lightgallery = false
+    lightgallery = true
     # 是否使用 ruby 扩展语法
     ruby = true
     # 是否使用 fraction 扩展语法
@@ -266,12 +263,12 @@ theme = "FixIt"
     # 是否在 RSS 中显示全文内容
     rssFullText = false
     # 页面样式 ["narrow", "normal", "wide", ...]
-    pageStyle = "normal"
+    pageStyle = "narrow"
     # 强制使用 Gravatar 作为作者头像
-    gravatarForce = false
+    gravatarForce = true
     # 开启自动书签支持
     # 如果为 true，则在关闭页面时保存阅读进度
-    autoBookmark = true
+    autoBookmark = false
     # 是否使用 字数统计
     wordCount = true
     # 是否使用 预计阅读
@@ -279,7 +276,7 @@ theme = "FixIt"
     # 文章结束标志
     endFlag = ""
     # 是否开启即时页面
-    instantPage = false
+    instantPage = true
 
     # 转载配置
     [params.page.repost]
@@ -466,7 +463,7 @@ theme = "FixIt"
   # Gravatar 设置
   [params.gravatar]
     # Gravatar 主机，默认："www.gravatar.com"
-    host = "www.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
+    host = "cn.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
     style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
 
   # 返回顶部
@@ -580,7 +577,7 @@ theme = "FixIt"
   # 目录设置
   [markup.tableOfContents]
     startLevel = 2
-    endLevel = 6
+    endLevel = 4
 
 # 作者配置
 [author]
