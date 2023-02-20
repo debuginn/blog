@@ -466,8 +466,8 @@ theme = "FixIt"
 
   # Gravatar 设置
   [params.gravatar]
-    # Gravatar 主机，默认：“www.gravatar.com”
-    host = "cn.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
+    # Gravatar 主机，默认："www.gravatar.com"
+    host = "www.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
     style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
 
   # 返回顶部
