@@ -27,12 +27,12 @@ theme = "FixIt"
   # 网站图片，用于 Open Graph 和 Twitter Cards
   images = ["https://image.debuginn.cn/202302182238057.JPG"]
   # 是否自动显示外链图标
-  externalIcon = false
+  externalIcon = true
 
   # 应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题
-    title = "FixIt"
+    title = "Debug客栈"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
@@ -141,11 +141,11 @@ theme = "FixIt"
 
     # 页面底部行排序，可选值：["first", 0, 1, 2, 3, 4, 5, "last"]
     [params.footer.order]
-      powered = 0
-      copyright = 0
+      powered = 4
+      copyright = 3
       statistics = 0
-      visitor = 0
-      beian = 0
+      visitor = 1
+      beian = 2
 
   # Section（所有文章）页面配置
   [params.section]
@@ -268,10 +268,10 @@ theme = "FixIt"
     # 页面样式 ["narrow", "normal", "wide", ...]
     pageStyle = "normal"
     # 强制使用 Gravatar 作为作者头像
-    gravatarForce = true
+    gravatarForce = false
     # 开启自动书签支持
     # 如果为 true，则在关闭页面时保存阅读进度
-    autoBookmark = false
+    autoBookmark = true
     # 是否使用 字数统计
     wordCount = true
     # 是否使用 预计阅读
@@ -283,8 +283,8 @@ theme = "FixIt"
 
     # 转载配置
     [params.page.repost]
-      enable = false
-      url = ""
+      enable = true
+      url = "https://www.debuginn.cn"
 
     # 目录配置
     [params.page.toc]
@@ -296,8 +296,8 @@ theme = "FixIt"
       auto = true
       # 目录位置 ["left", "right"]
       position = "right"
-    # 在文章开头显示提示信息，提醒读者文章内容可能过时
 
+    # 在文章开头显示提示信息，提醒读者文章内容可能过时
     [params.page.expirationReminder]
       enable = true
       # 如果文章最后更新于这天数之前，显示提醒
@@ -378,7 +378,6 @@ theme = "FixIt"
     # 评论系统设置
     [params.page.comment]
       enable = true
-
       # Giscus 评论系统设置
       [params.page.comment.giscus]
         enable = true
@@ -494,7 +493,7 @@ theme = "FixIt"
     enable = true
     # 所有可用颜色：
     # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
-    color = "blue"
+    color = "purple"
     # 所有可用主题：
     # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
     # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
@@ -510,7 +509,7 @@ theme = "FixIt"
     name = "文章"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时，将显示的标题
-    title = "点击了解更多吧"
+    title = ""
     weight = 1
     # 向菜单项添加用户定义的内容
     [menu.main.params]
@@ -528,7 +527,7 @@ theme = "FixIt"
     post = ""
     name = "分类"
     url = "/categories/"
-    title = "点击了解更多吧"
+    title = ""
     weight = 2
     [menu.main.params]
       icon = "fa-solid fa-th"
@@ -538,10 +537,20 @@ theme = "FixIt"
     post = ""
     name = "标签"
     url = "/tags/"
-    title = "点击了解更多吧"
+    title = ""
     weight = 3
     [menu.main.params]
       icon = "fa-solid fa-tags"
+  [[menu.main]]
+    identifier = "debuginn"
+    pre = ""
+    post = ""
+    name = "主站"
+    url = "https://www.debuginn.cn"
+    title = ""
+    weight = 4
+    [menu.main.params]
+      icon = "fa-solid fa-link"
 
 # Hugo 解析文档的配置
 [markup]
