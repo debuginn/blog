@@ -1,7 +1,7 @@
 ---
 title: "Sublime Text 崇高的文本编辑器"
 subtitle: ""
-date: 2022-05-04T20:41:15+08:00
+date: 2017-11-12T20:41:15+08:00
 draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
