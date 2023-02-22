@@ -1,43 +1,28 @@
 ---
 title: "Sublime Text 崇高的文本编辑器"
-subtitle: ""
 date: 2017-11-12T20:41:15+08:00
 draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
-keywords: "sublime"
-license: ""
+description: "计算机系统包括硬件子系统及软件子系统。各种程序和数据组成了计算机的软件系统。操作系统：在计算机系统中，集中了资源管理功能和控制程序执行功能的一种软件。"
+keywords: "sublime,tools"
 comment: true
 weight: 0
 
-tags:
-- sublime
-categories:
-- tools
+tags: ["sublime", "tools"]
+categories: ["tools"]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
 
-summary: ""
-resources:
-- name: featured-image
-  src: https://image.debuginn.cn/202302202044967.jpg
-- name: featured-image-preview
-  src: https://image.debuginn.cn/202302202044967.jpg
+featuredImage: "https://image.debuginn.cn/202302202044967.jpg"
+featuredImagePreview: "https://image.debuginn.cn/202302202044967.jpg"
 
 toc:
-  enable: true
+  enable: true 
 math:
   enable: false
-lightgallery: false
-seo:
-  images: []
-
-repost:
-  enable: true
-  url: "https://blog.debuginn.cn"
 ---
 
 <!--more-->
