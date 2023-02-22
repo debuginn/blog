@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>数据结构 - 分类 - Debug客栈 - 做一个爱分享的程序猿</title>
+    <link>https://blog.debuginn.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>数据结构 - 分类 - Debug客栈 - 做一个爱分享的程序猿</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Nov 2017 14:26:16 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="self" type="application/rss+xml" /><item>
+  <title>数据结构 折半查找法</title>
+  <link>https://blog.debuginn.cn/half-search/</link>
+  <pubDate>Sat, 18 Nov 2017 14:26:16 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/half-search/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302221903175.jpg" referrerpolicy="no-referrer">
+      </div>]]></description>
+</item>
+</channel>
+</rss>
