@@ -1,5 +1,5 @@
 # 网站基本信息
-title = "Debug客栈 - 做一个爱分享的程序猿"
+title = "Debug客栈"
 baseURL = "https://blog.debuginn.cn/"
 # 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
@@ -17,7 +17,7 @@ theme = "FixIt"
   # 网站描述
   description = "专注于 Golang 技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。"
   # 网站关键词
-  keywords = ["Hugo", "FixIt"]
+  keywords = ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "Hugo", "FixIt"]
   # 网站默认主题样式 ["light", "dark", "auto"]
   defaultTheme = "auto"
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
@@ -259,7 +259,7 @@ theme = "FixIt"
     # 许可协议信息（支持 HTML 格式）
     license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
     # 是否在文章页面显示原始 Markdown 文档链接
-    linkToMarkdown = true
+    linkToMarkdown = false
     # 是否在 RSS 中显示全文内容
     rssFullText = false
     # 页面样式 ["narrow", "normal", "wide", ...]
