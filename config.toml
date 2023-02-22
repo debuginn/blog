@@ -583,7 +583,6 @@ theme = "FixIt"
 # 作者配置
 [author]
   name = "Meng小羽"
-  email = "debuginn@icloud.com"
   link = "https://www.debuginn.cn"
   avatar = "https://image.debuginn.cn/202302182238057.JPG"
 
