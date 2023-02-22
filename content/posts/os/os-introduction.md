@@ -1,43 +1,28 @@
 ---
 title: "操作系统 概论"
-subtitle: ""
 date: 2017-11-18T14:26:15+08:00
 draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
+description: "计算机系统包括硬件子系统及软件子系统。各种程序和数据组成了计算机的软件系统。操作系统：在计算机系统中，集中了资源管理功能和控制程序执行功能的一种软件。"
 keywords: "os,introduction"
-license: ""
 comment: true
 weight: 0
 
-tags:
-- os
-categories:
-- os
+tags: ["os", "system"]
+categories: ["os"]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
 
-summary: "计算机系统包括硬件子系统及软件子系统。各种程序和数据组成了计算机的软件系统。操作系统：在计算机系统中，集中了资源管理功能和控制程序执行功能的一种软件。"
-resources:
-- name: featured-image
-  src: "https://image.debuginn.cn/202302202044967.jpg"
-- name: featured-image-preview
-  src: "https://image.debuginn.cn/202302202044967.jpg"
+featuredImage: "https://image.debuginn.cn/202302202044967.jpg"
+featuredImagePreview: "https://image.debuginn.cn/202302202044967.jpg"
 
 toc:
   enable: true
 math:
   enable: false
-lightgallery: false
-seo:
-  images: []
-
-repost:
-  enable: true
-  url: "https://blog.debuginn.cn"
 ---
 
 <!--more-->
