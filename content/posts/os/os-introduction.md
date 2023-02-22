@@ -16,8 +16,8 @@ categories: ["os"]
 hiddenFromHomePage: false
 hiddenFromSearch: false
 
-featuredImage: "https://image.debuginn.cn/202302202044967.jpg"
-featuredImagePreview: "https://image.debuginn.cn/202302202044967.jpg"
+featuredImage: "https://image.debuginn.cn/202302221853276.jpg"
+featuredImagePreview: "https://image.debuginn.cn/202302221853276.jpg"
 
 toc:
   enable: true

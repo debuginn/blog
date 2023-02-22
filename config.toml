@@ -475,7 +475,7 @@ theme = "FixIt"
 
   # 阅读进度条
   [params.readingProgress]
-    enable = true
+    enable = false
     # 可用值：["left", "right"]
     start = "left"
     # 可用值：["top", "bottom"]
