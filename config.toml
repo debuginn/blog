@@ -280,8 +280,8 @@ theme = "FixIt"
 
     # 转载配置
     [params.page.repost]
-      enable = true
-      url = "https://www.debuginn.cn"
+      enable = false
+      url = ""
 
     # 目录配置
     [params.page.toc]
