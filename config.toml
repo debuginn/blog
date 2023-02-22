@@ -185,7 +185,7 @@ theme = "FixIt"
     [params.home.profile]
       enable = true
       # Gravatar 邮箱，用于优先在主页显示的头像
-      gravatarEmail = "debuginn@icloud.com"
+      gravatarEmail = ""
       # 主页显示头像的 URL
       avatarURL = "https://image.debuginn.cn/202302182238057.JPG"
       # 头像菜单链接的 identifier
@@ -249,7 +249,7 @@ theme = "FixIt"
     twemoji = true
     # 是否使用 lightgallery
     # 如果设为 "force"，文章中的图片将强制按照画廊形式呈现
-    lightgallery = true
+    lightgallery = false
     # 是否使用 ruby 扩展语法
     ruby = true
     # 是否使用 fraction 扩展语法
@@ -265,7 +265,7 @@ theme = "FixIt"
     # 页面样式 ["narrow", "normal", "wide", ...]
     pageStyle = "narrow"
     # 强制使用 Gravatar 作为作者头像
-    gravatarForce = true
+    gravatarForce = false
     # 开启自动书签支持
     # 如果为 true，则在关闭页面时保存阅读进度
     autoBookmark = false
@@ -280,8 +280,8 @@ theme = "FixIt"
 
     # 转载配置
     [params.page.repost]
-      enable = true
-      url = "https://www.debuginn.cn"
+      enable = false
+      url = ""
 
     # 目录配置
     [params.page.toc]
@@ -457,13 +457,14 @@ theme = "FixIt"
   [params.githubCorner]
     enable = true
     permalink = "https://github.com/debuginn"
-    title = "在 GitHub 上查看源代码"
+    title = "Follow me"
     position = "right" # ["left", "right"]
 
   # Gravatar 设置
   [params.gravatar]
+    enable = false
     # Gravatar 主机，默认："www.gravatar.com"
-    host = "cn.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
+    host = "www.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
     style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
 
   # 返回顶部
@@ -582,8 +583,8 @@ theme = "FixIt"
 # 作者配置
 [author]
   name = "Meng小羽"
-  email = "debuginn@icloud.com"
   link = "https://www.debuginn.cn"
+  avatar = "https://image.debuginn.cn/202302182238057.JPG"
 
 # 网站地图配置
 [sitemap]
