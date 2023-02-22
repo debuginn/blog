@@ -185,7 +185,7 @@ theme = "FixIt"
     [params.home.profile]
       enable = true
       # Gravatar 邮箱，用于优先在主页显示的头像
-      gravatarEmail = "debuginn@icloud.com"
+      gravatarEmail = ""
       # 主页显示头像的 URL
       avatarURL = "https://image.debuginn.cn/202302182238057.JPG"
       # 头像菜单链接的 identifier
@@ -462,6 +462,7 @@ theme = "FixIt"
 
   # Gravatar 设置
   [params.gravatar]
+    enable = false
     # Gravatar 主机，默认："www.gravatar.com"
     host = "cn.gravatar.com" # ["cn.gravatar.com", "gravatar.loli.net", ...]
     style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
