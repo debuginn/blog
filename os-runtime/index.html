@@ -10,7 +10,7 @@
 <meta name="description" content="专注于 Golang 技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。" /><meta name="keywords" content='os,runtime,运行机制' /><meta itemprop="name" content="操作系统 运行机制">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2017-11-20T14:34:00+08:00" />
 <meta itemprop="dateModified" content="2017-11-20T14:34:00+08:00" />
-<meta itemprop="wordCount" content="5081"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="wordCount" content="5073"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
 <meta itemprop="keywords" content="os,runtime,操作系统,学习笔记," /><meta property="og:title" content="操作系统 运行机制" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
@@ -32,7 +32,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blog.debuginn.cn\/os-runtime\/"
-    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "os, runtime, 操作系统, 学习笔记","wordcount":  5081 ,
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "os, runtime, 操作系统, 学习笔记","wordcount":  5073 ,
     "url": "https:\/\/blog.debuginn.cn\/os-runtime\/","datePublished": "2017-11-20T14:34:00+08:00","dateModified": "2017-11-20T14:34:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -163,7 +163,7 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
           <span class="post-category">收录于 <a href="/categories/os/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> os</a></span></div>
-      <div class="post-meta-line"><span title=2017-11-20&#32;14:34:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2017-11-20">2017-11-20</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 5081 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 11 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="操作系统 运行机制">
+      <div class="post-meta-line"><span title=2017-11-20&#32;14:34:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2017-11-20">2017-11-20</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 5073 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 11 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="操作系统 运行机制">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202302221949419.jpg" srcset="https://image.debuginn.cn/202302221949419.jpg, https://image.debuginn.cn/202302221949419.jpg 1.5x, https://image.debuginn.cn/202302221949419.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202302221949419.jpg" data-alt="https://image.debuginn.cn/202302221949419.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -267,8 +267,8 @@
         <div class="admonition-content">本文最后更新于 2017-11-20，文中内容可能已过时。</div>
       </div>
     </div><h2 id="中央处理器cpu">中央处理器CPU</h2>
-<p>**单机系统：**一个计算机系统只有一个处理器。
-**多处理器系统：**一个计算机系统有多个处理器。</p>
+<p><strong>单机系统：</strong> 一个计算机系统只有一个处理器。</p>
+<p><strong>多处理器系统：</strong> 一个计算机系统有多个处理器。</p>
 <h2 id="cpu的构成与基本工作方式">CPU的构成与基本工作方式</h2>
 <p>处理器一般由运算器、控制器、寄存器以及高速缓存构成。</p>
 <ul>
