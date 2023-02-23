@@ -280,7 +280,7 @@ theme = "FixIt"
 
     # 转载配置
     [params.page.repost]
-      enable = false
+      enable = true
       url = ""
 
     # 目录配置
