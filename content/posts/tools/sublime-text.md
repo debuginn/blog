@@ -5,7 +5,7 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "计算机系统包括硬件子系统及软件子系统。各种程序和数据组成了计算机的软件系统。操作系统：在计算机系统中，集中了资源管理功能和控制程序执行功能的一种软件。"
+description: ""
 keywords: "sublime,tools"
 comment: true
 weight: 0
