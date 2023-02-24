@@ -1,3 +1,5 @@
+https://blog.debuginn.cn/faas-notes/
+https://blog.debuginn.cn/financing-long-bridge/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/
