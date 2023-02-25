@@ -18,11 +18,6 @@ hiddenFromSearch: false
 
 featuredImage: "https://image.debuginn.cn/202302242145505.jpeg"
 featuredImagePreview: "https://image.debuginn.cn/202302242145505.jpeg"
-
-toc:
-enable: true
-math:
-enable: false
 ---
 
 <!--more-->
