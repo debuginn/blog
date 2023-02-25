@@ -11,18 +11,13 @@ comment: true
 weight: 0
 
 tags: ["笔记", "数据结构"]
-categories: ["数据结构", "algorithm"]
+categories: ["algorithm"]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
 
 featuredImage: "https://image.debuginn.cn/202302221903175.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302221903175.jpg"
-
-toc:
-enable: true
-math:
-enable: false
 ---
 
 <!--more-->
