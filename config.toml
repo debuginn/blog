@@ -540,13 +540,23 @@ theme = "FixIt"
     [menu.main.params]
       icon = "fa-solid fa-tags"
   [[menu.main]]
+    identifier = "friends"
+    pre = ""
+    post = ""
+    name = "友联"
+    url = "/friends/"
+    title = ""
+    weight = 4
+    [menu.main.params]
+      icon = "fa-solid fa-users"
+  [[menu.main]]
     identifier = "debuginn"
     pre = ""
     post = ""
     name = "主站"
     url = "https://www.debuginn.cn"
     title = ""
-    weight = 4
+    weight = 5
     [menu.main.params]
       icon = "fa-solid fa-link"
 
