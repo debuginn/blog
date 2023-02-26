@@ -14,7 +14,7 @@ comment: false
 <!-- You can define additional content below for this page. -->
 ## 申请友联
 
-申请友情链接的话请提交 [issue](https://github.com/debuginn/blog/issues) 来申请。
+申请友情链接的话请提交 [issue](https://github.com/debuginn/blog/issues/new?assignees=&labels=friend&template=apply-for-friend-link.md&title=Apply+for+friend+link) 来申请。
 
 ```yaml
 - nickname: Debug客栈
