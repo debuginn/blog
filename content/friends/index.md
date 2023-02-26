@@ -3,7 +3,7 @@ title: "友情链接"
 subtitle: ""
 type: "friends"
 date: 2023-02-25T10:58:13+08:00
-description: "Meng小羽's friends"
+description: "debuginn's friends"
 keywords: 
   - 友情链接
 comment: false

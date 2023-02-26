@@ -212,7 +212,7 @@ theme = "FixIt"
     [params.social.Github]
       weight = 0
       id = "debuginn"
-      prefix = "https://www.debuginn.cn"
+      prefix = "https://www.github.com"
       title = "Github"
     [params.social.Weibo]
       weight = 1
