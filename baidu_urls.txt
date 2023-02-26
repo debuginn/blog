@@ -2,6 +2,11 @@ https://blog.debuginn.cn/friends/
 https://blog.debuginn.cn/faas-notes/
 https://blog.debuginn.cn/financing-long-bridge/
 https://blog.debuginn.cn/debuginn-2022/
+https://blog.debuginn.cn/go-tools-pprof/
+https://blog.debuginn.cn/debuginn-2021/
+https://blog.debuginn.cn/prometheus-gateway/
+https://blog.debuginn.cn/mi-work/
+https://blog.debuginn.cn/git-reset-revert/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/
