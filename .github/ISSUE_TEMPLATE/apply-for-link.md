@@ -1,0 +1,15 @@
+---
+name: Apply for link
+about: Apply for link
+title: ''
+labels: friend
+assignees: ''
+
+---
+
+```yaml
+- nickname: Debug客栈
+  avatar: https://image.debuginn.cn/202302182238057.JPG
+  url: https://debuginn.cn
+  description: 做一个爱分享的程序猿
+```
