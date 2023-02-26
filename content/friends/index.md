@@ -6,7 +6,7 @@ date: 2023-02-25T10:58:13+08:00
 description: "debuginn's friends"
 keywords: 
   - 友情链接
-comment: false
+comment: true
 ---
 
 <!-- When you set data `friends.yml` in `yourProject/data/` directory, it will be automatically loaded here. -->
