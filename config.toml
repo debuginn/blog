@@ -408,9 +408,9 @@ theme = "FixIt"
   [params.verification]
     google = ""
     bing = "CF48A4EAC49C9686BB39A3B419DB526E"
-    yandex = ""
+    yandex = "178e4f66ce9b6b99"
     pinterest = ""
-    baidu = ""
+    baidu = "codeva-6M0zLLPWdS"
     so = ""
     sogou = ""
 
