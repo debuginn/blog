@@ -407,7 +407,7 @@ theme = "FixIt"
   # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
   [params.verification]
     google = ""
-    bing = ""
+    bing = "CF48A4EAC49C9686BB39A3B419DB526E"
     yandex = ""
     pinterest = ""
     baidu = ""
@@ -432,7 +432,7 @@ theme = "FixIt"
 
   # Cookie 许可配置
   [params.cookieconsent]
-    enable = true
+    enable = false
     # 用于 Cookie 许可横幅的文本字符串
     [params.cookieconsent.content]
       message = "请您允许使用 Cookie 来进行个性化设置，以便获得更好的网站体验。"
