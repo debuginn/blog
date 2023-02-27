@@ -8,6 +8,11 @@ https://blog.debuginn.cn/prometheus-gateway/
 https://blog.debuginn.cn/mi-work/
 https://blog.debuginn.cn/git-reset-revert/
 https://blog.debuginn.cn/coin-use-epay/
+https://blog.debuginn.cn/go-metheds-on-t/
+https://blog.debuginn.cn/debuginn-2021-emmm/
+https://blog.debuginn.cn/go-dev-design/
+https://blog.debuginn.cn/debuginn-write-blog/
+https://blog.debuginn.cn/debuginn-2020/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/

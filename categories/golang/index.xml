@@ -13,5 +13,23 @@
         <img src="https://image.debuginn.cn/202302262119034.jpg" referrerpolicy="no-referrer">
       </div>在生产环境中，偶尔会发生 Go 程序 CPU 暴增的现象，排除某时段并发大的场景外，通过监控面板看不到程序是因为什么原因导致的，Go 语言原生就提供了工具 pprof]]></description>
 </item>
+<item>
+  <title>[译] 方法是否应该在 T 或 *T 上声明</title>
+  <link>https://blog.debuginn.cn/go-metheds-on-t/</link>
+  <pubDate>Sun, 27 Jun 2021 23:18:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-metheds-on-t/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Go 语言开发设计指北</title>
+  <link>https://blog.debuginn.cn/go-dev-design/</link>
+  <pubDate>Sun, 07 Mar 2021 14:01:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-dev-design/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302272119360.png" referrerpolicy="no-referrer">
+      </div>Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为重要的，遵守开发规范便于维护、便于阅读理解和增加系统的健壮性。]]></description>
+</item>
 </channel>
 </rss>

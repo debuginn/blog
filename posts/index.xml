@@ -94,14 +94,12 @@
       </div>]]></description>
 </item>
 <item>
-  <title>操作系统 运行机制</title>
-  <link>https://blog.debuginn.cn/os-runtime/</link>
-  <pubDate>Mon, 20 Nov 2017 14:34:00 &#43;0800</pubDate>
+  <title>[译] 方法是否应该在 T 或 *T 上声明</title>
+  <link>https://blog.debuginn.cn/go-metheds-on-t/</link>
+  <pubDate>Sun, 27 Jun 2021 23:18:00 &#43;0800</pubDate>
   <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/os-runtime/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302221949419.jpg" referrerpolicy="no-referrer">
-      </div>]]></description>
+  <guid>https://blog.debuginn.cn/go-metheds-on-t/</guid>
+  <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>
