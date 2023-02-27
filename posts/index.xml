@@ -84,6 +84,16 @@
       </div>在团队开发中，使用 Git 作为版本开发工具，可以便捷地协同多人管理并行开发，但是由于自己或者其他人代码提交污染了远程分支，就需要对远程代码进行恢复操作]]></description>
 </item>
 <item>
+  <title>使用数字人民币兑换建党100周年纪念币</title>
+  <link>https://blog.debuginn.cn/coin-use-epay/</link>
+  <pubDate>Sun, 19 Sep 2021 13:48:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/coin-use-epay/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302272023525.jpeg" referrerpolicy="no-referrer">
+      </div>]]></description>
+</item>
+<item>
   <title>操作系统 运行机制</title>
   <link>https://blog.debuginn.cn/os-runtime/</link>
   <pubDate>Mon, 20 Nov 2017 14:34:00 &#43;0800</pubDate>
@@ -91,16 +101,6 @@
   <guid>https://blog.debuginn.cn/os-runtime/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302221949419.jpg" referrerpolicy="no-referrer">
-      </div>]]></description>
-</item>
-<item>
-  <title>数据结构 折半查找法</title>
-  <link>https://blog.debuginn.cn/half-search/</link>
-  <pubDate>Sat, 18 Nov 2017 14:26:16 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/half-search/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302221903175.jpg" referrerpolicy="no-referrer">
       </div>]]></description>
 </item>
 </channel>

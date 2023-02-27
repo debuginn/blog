@@ -7,6 +7,7 @@ https://blog.debuginn.cn/debuginn-2021/
 https://blog.debuginn.cn/prometheus-gateway/
 https://blog.debuginn.cn/mi-work/
 https://blog.debuginn.cn/git-reset-revert/
+https://blog.debuginn.cn/coin-use-epay/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/
