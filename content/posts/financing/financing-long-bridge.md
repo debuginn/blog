@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "办理港卡之后，在证券市场找到了一款注重用户交互的证券 APP（长桥证券 APP），使用体验是大家常用港美股证券 APP 中最好的"
 keywords: "证券,长桥,港美股,longbridge"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302242223160.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302242223160.jpg"
 ---
-
-<!--more-->
 
 办理港卡之后，在证券市场找到了一款注重用户交互的证券 APP（长桥证券 APP），使用体验是大家常用港美股证券 APP 中最好的，**活动期间通过专属链接注册开户，可以申请港美股终身免佣**，推荐大家使用，投资港美股主要就是港卡比较难办，现在长桥与两个银行搞团办活动，大家感兴趣的可以办理注册下，另外现在入金还有奖励，办理好港卡和银行账户，就可以投资港美股了，就可以做世界 Top 公司的股东了。当然要牢记**股市有风险，投资需谨慎**，理性投资。
 

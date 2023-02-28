@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "今年，时间依旧飞快流逝，转眼间，自己已经毕业了小2年了，渐渐的自己开始习惯了北漂的生活，一个人的北京，自由与孤独同在。"
 keywords: "Debug客栈,2021,2022,年度总结"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302262128413.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302262128413.jpg"
 ---
-
-<!--more-->
 
 今年，时间依旧飞快流逝，转眼间，自己已经毕业了小2年了，渐渐的自己开始习惯了北漂的生活，一个人的北京，自由与孤独同在。也体会到了离家远的遗憾，远的连奶奶最后一面也没有见到，第一次感受到了亲人阴阳两隔的无奈与悲哀。疫情 😷 在全球范围内还在持续，国内偶尔也零星的出现，但愿 22 年疫情结束，全世界人们都可以回归到疫情之前，和爱人、亲人、朋友去想去的地方，去探索多彩的世界。
 

@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "近期，我们对 APP 网关 Gateway 做了升级，由于项目创建时间过早（6年前的项目），那时候还没有好的包管理工具，使用的是最原始的 Go Path 来进行项目的依赖管理"
 keywords: "prometheus,grafana,open falcon,counter,histogram"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302262145770.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302262145770.jpg"
 ---
-
-<!--more-->
 
 近期，我们对 APP 网关 Gateway 做了升级，由于项目创建时间过早（6年前的项目），那时候还没有好的包管理工具，使用的是最原始的 Go Path 来进行项目的依赖管理，历史包袱比较重，项目中很多的第三方引用都是直接将代码拷贝到项目目录下，升级与维护起来特别麻烦，升级之后就是现在官方主推的是 Go module 包管理方式。
 

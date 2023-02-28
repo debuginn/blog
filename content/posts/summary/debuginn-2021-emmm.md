@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
 keywords: "碎碎念"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302272116330.jpeg"
 featuredImagePreview: "https://image.debuginn.cn/202302272116330.jpeg"
 ---
-
-<!--more-->
 
 距离最后一篇博文 《Go 语言开发设计指北》发布已经过去一个多月的时间了，在这一段的时间里，在看了大量的书籍?，在工作上安排的工作都比较得心应手，时间还算比较充裕，但是懒惰心里没有丝毫退去 ?，这样是不行的，很容易让自己的思维和学习能力下降。
 

@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而无需构建和维护通常与开发和启动应用程序相关的基础设施的复杂性。构建遵循此模型的应用程序是实现“无服务器”体系结构的一种方式，通常在构建微服务应用程序时使用。"
 keywords: "faas,notes"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302242145505.jpeg"
 featuredImagePreview: "https://image.debuginn.cn/202302242145505.jpeg"
 ---
-
-<!--more-->
 
 ## 1 FAAS 是什么
 

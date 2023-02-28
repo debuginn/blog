@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
 keywords: "os,runtime,运行机制"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302221949419.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302221949419.jpg"
 ---
-
-<!--more-->
 
 ## 中央处理器CPU
 

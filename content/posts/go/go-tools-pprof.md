@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "在生产环境中，偶尔会发生 Go 程序 CPU 暴增的现象，排除某时段并发大的场景外，通过监控面板看不到程序是因为什么原因导致的，Go 语言原生就提供了工具 pprof"
 keywords: "faas,notes"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302262119034.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302262119034.jpg"
 ---
-
-<!--more-->
 
 ## 前言
 
