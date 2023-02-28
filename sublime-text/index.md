@@ -1,8 +1,6 @@
 # Sublime Text 崇高的文本编辑器
 
 
-<!--more-->
-
 ## 安装 Sublime text3 软件
 
 官方网址：[https://www.sublimetext.com/3](https://www.sublimetext.com/3)

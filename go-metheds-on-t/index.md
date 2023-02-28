@@ -1,8 +1,6 @@
 # [译] 方法是否应该在 T 或 *T 上声明
 
 
-<!--more-->
-
 译文原地址：[Should methods be declared on T or *T - David](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)
 
 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：

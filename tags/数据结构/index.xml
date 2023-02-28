@@ -11,7 +11,7 @@
   <guid>https://blog.debuginn.cn/half-search/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302221903175.jpg" referrerpolicy="no-referrer">
-      </div>]]></description>
+      </div>算法原理 先确定待查记录所在的范围（区间），然后逐步缩小范围指导找到或找不到该记录为止。 算法性能 时间复杂度： log 2 n + 1 平均查找长度： log 2 n + 1]]></description>
 </item>
 </channel>
 </rss>

@@ -11,7 +11,7 @@
   <guid>https://blog.debuginn.cn/prometheus-gateway/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302262145770.jpg" referrerpolicy="no-referrer">
-      </div>近期，我们对 APP 网关 Gateway 做了升级，由于项目创建时间过早（6年前的项目），那时候还没有好的包管理工具，使用的是最原始的 Go Path 来进行项目的依赖管理]]></description>
+      </div>近期，我们对 APP 网关 Gateway 做了升级，由于项目创建时间过早（6年前的项目），那时候还没有好的包管理工具，使用的是最原始的 Go Path 来进行项目的依赖管理，历]]></description>
 </item>
 </channel>
 </rss>
