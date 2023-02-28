@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "今年，时光依旧不饶人，步入社会以来，时间就似乎不会慢下来，都在光速飞逝，很遗憾，今年疫情依旧没有结束，3 月份的时候还作为密切接触者被隔离了 21 天，总的来说，今年有悲伤同时又十分幸运，感觉冥冥之中都是安排好的。"
 keywords: "Debug客栈,2022,2023,年度总结"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302251041682.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302251041682.jpg"
 ---
-
-<!--more-->
 
 今年，时光依旧不饶人，步入社会以来，时间就似乎不会慢下来，都在光速飞逝，很遗憾，今年疫情依旧没有结束，3 月份的时候还作为密切接触者被隔离了 21 天，总的来说，今年有悲伤同时又十分幸运，感觉冥冥之中都是安排好的。
 

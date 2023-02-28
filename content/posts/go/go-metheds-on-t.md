@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
 keywords: "go,translate"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: ""
 featuredImagePreview: ""
 ---
-
-<!--more-->
 
 译文原地址：[Should methods be declared on T or *T - David](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)
 

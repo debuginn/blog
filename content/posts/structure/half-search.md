@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
 keywords: "笔记,数据结构"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302221903175.jpg"
 featuredImagePreview: "https://image.debuginn.cn/202302221903175.jpg"
 ---
-
-<!--more-->
 
 ## 算法原理
 

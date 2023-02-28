@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
 keywords: "sublime,tools"
 comment: true
 weight: 0
@@ -24,8 +23,6 @@ toc:
 math:
   enable: false
 ---
-
-<!--more-->
 
 ## 安装 Sublime text3 软件
 

@@ -139,10 +139,10 @@ theme = "FixIt"
     # 页面底部行排序，可选值：["first", 0, 1, 2, 3, 4, 5, "last"]
     [params.footer.order]
       powered = 4
-      copyright = 0
-      statistics = 1
-      visitor = 2
-      beian = 3
+      copyright = 3
+      statistics = 0
+      visitor = 1
+      beian = 2
 
   # Section（所有文章）页面配置
   [params.section]
@@ -290,7 +290,7 @@ theme = "FixIt"
       # 是否保持使用文章前面的静态目录
       keepStatic = false
       # 是否使侧边目录自动折叠展开
-      auto = true
+      auto = false
       # 目录位置 ["left", "right"]
       position = "right"
 

@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: ""
 keywords: "faas,notes"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302272023525.jpeg"
 featuredImagePreview: "https://image.debuginn.cn/202302272023525.jpeg"
 ---
-
-<!--more-->
 
 今天使用数字人民币兑换了建党100周年纪念币，过程比较坎坷，不过最终还是兑换成功了。
 

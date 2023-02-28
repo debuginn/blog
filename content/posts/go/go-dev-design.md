@@ -5,7 +5,6 @@ draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-description: "Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为重要的，遵守开发规范便于维护、便于阅读理解和增加系统的健壮性。"
 keywords: "go,mysql,redis,code review,log,stat,go fmt"
 comment: true
 weight: 0
@@ -19,8 +18,6 @@ hiddenFromSearch: false
 featuredImage: "https://image.debuginn.cn/202302272119360.png"
 featuredImagePreview: "https://image.debuginn.cn/202302272119360.png"
 ---
-
-<!--more-->
 
 Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为重要的，遵守开发规范便于维护、便于阅读理解和增加系统的健壮性。
 
