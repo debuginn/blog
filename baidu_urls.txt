@@ -13,6 +13,9 @@ https://blog.debuginn.cn/debuginn-2021-emmm/
 https://blog.debuginn.cn/go-dev-design/
 https://blog.debuginn.cn/debuginn-write-blog/
 https://blog.debuginn.cn/debuginn-2020/
+https://blog.debuginn.cn/go-concurrence-rw-mutex/
+https://blog.debuginn.cn/go-concurrence-mutex/
+https://blog.debuginn.cn/go-use-brew-switch-version/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/

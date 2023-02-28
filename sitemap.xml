@@ -71,6 +71,13 @@
       <loc>https://blog.debuginn.cn/debuginn-write-blog/</loc><lastmod>2021-01-30T16:53:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/2020/</loc><lastmod>2020-12-31T23:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/debuginn-2020/</loc><lastmod>2020-12-31T23:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/concurrence/</loc><lastmod>2020-12-05T22:17:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-concurrence-rw-mutex/</loc><lastmod>2020-12-05T22:17:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/rwmutex/</loc><lastmod>2020-12-05T22:17:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-concurrence-mutex/</loc><lastmod>2020-11-15T20:34:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/mutex/</loc><lastmod>2020-11-15T20:34:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/brew/</loc><lastmod>2020-11-01T20:15:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-use-brew-switch-version/</loc><lastmod>2020-11-01T20:15:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/os/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/os/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/runtime/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
