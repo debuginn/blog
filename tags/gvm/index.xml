@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>gvm - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/gvm/</link>
+    <description>gvm - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Jul 2020 16:32:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/gvm/" rel="self" type="application/rss+xml" /><item>
+  <title>使用 GVM 工具管理 Go 版本</title>
+  <link>https://blog.debuginn.cn/go-use-gvm-switch-version/</link>
+  <pubDate>Sun, 12 Jul 2020 16:32:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-use-gvm-switch-version/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303011938210.jpg" referrerpolicy="no-referrer">
+      </div>在 Go 项目开发中，团队要保持开发版本一致，怎么能够快速的安装及部署并且切换 Go 环境，在这里推荐一款工具 GVM （ Go Version Manager ），它可以便捷切换与自定义 Go Path 、]]></description>
+</item>
+</channel>
+</rss>

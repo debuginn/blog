@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>ip - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/ip/</link>
+    <description>ip - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Sep 2020 18:02:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/ip/" rel="self" type="application/rss+xml" /><item>
+  <title>Go IP 段范围校验</title>
+  <link>https://blog.debuginn.cn/go-ip-segment-range-check/</link>
+  <pubDate>Tue, 08 Sep 2020 18:02:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-ip-segment-range-check/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303011905845.jpg" referrerpolicy="no-referrer">
+      </div>近期做了一个需求，是检测某个 IP 是否在若干 IP 段内，做固定地点 IP 筛查，满足特定业务需求。 解决方案 PLAN A 点分十进制范围区分 简单来讲，就是将 IPv4 原有的四]]></description>
+</item>
+</channel>
+</rss>
