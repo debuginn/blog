@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>revert - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/revert/</link>
+    <description>revert - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Sep 2021 17:33:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/revert/" rel="self" type="application/rss+xml" /><item>
+  <title>Git 命令 reset 和 revert 的区别</title>
+  <link>https://blog.debuginn.cn/git-reset-revert/</link>
+  <pubDate>Tue, 21 Sep 2021 17:33:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/git-reset-revert/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302262207101.jpg" referrerpolicy="no-referrer">
+      </div>前言 在团队开发中，使用 Git 作为版本开发工具，可以便捷地协同多人管理并行开发，但是由于自己或者其他人代码提交污染了远程分支，就需要对远程代码进行]]></description>
+</item>
+</channel>
+</rss>

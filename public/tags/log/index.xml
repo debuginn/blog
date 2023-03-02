@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>log - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/log/</link>
+    <description>log - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Mar 2021 14:01:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/log/" rel="self" type="application/rss+xml" /><item>
+  <title>Go 语言开发设计指北</title>
+  <link>https://blog.debuginn.cn/go-dev-design/</link>
+  <pubDate>Sun, 07 Mar 2021 14:01:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-dev-design/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302272119360.png" referrerpolicy="no-referrer">
+      </div>Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为]]></description>
+</item>
+</channel>
+</rss>

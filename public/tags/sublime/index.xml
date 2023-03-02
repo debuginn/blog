@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>sublime - 标签 - Debug客栈 - 做一个爱分享的程序猿</title>
+    <title>sublime - 标签 - Debug客栈</title>
     <link>https://blog.debuginn.cn/tags/sublime/</link>
-    <description>sublime - 标签 - Debug客栈 - 做一个爱分享的程序猿</description>
+    <description>sublime - 标签 - Debug客栈</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Nov 2017 20:41:15 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/sublime/" rel="self" type="application/rss+xml" /><item>
   <title>Sublime Text 崇高的文本编辑器</title>
   <link>https://blog.debuginn.cn/sublime-text/</link>
@@ -11,7 +11,7 @@
   <guid>https://blog.debuginn.cn/sublime-text/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302202044967.jpg" referrerpolicy="no-referrer">
-      </div>计算机系统包括硬件子系统及软件子系统。各种程序和数据组成了计算机的软件系统。操作系统：在计算机系统中，集中了资源管理功能和控制程序执行功能的一种软件。]]></description>
+      </div>安装 Sublime text3 软件 官方网址：https://www.sublimetext.com/3 选择Windows - also available as a portable version一项，点击下载安]]></description>
 </item>
 </channel>
 </rss>

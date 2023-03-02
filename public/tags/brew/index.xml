@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>brew - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/brew/</link>
+    <description>brew - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Nov 2020 20:15:32 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/brew/" rel="self" type="application/rss+xml" /><item>
+  <title>优雅的使用 Brew 切换 Go 版本</title>
+  <link>https://blog.debuginn.cn/go-use-brew-switch-version/</link>
+  <pubDate>Sun, 01 Nov 2020 20:15:32 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-use-brew-switch-version/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302282016622.jpg" referrerpolicy="no-referrer">
+      </div>Brew 是 Mac 上包管理工具，和 Linux 上的 apt 、yum、rpm 一样，可以提供非图形化软件的安装，昨天在打造宇宙最强 IDE 的时候，使用brew工具更新了一下软件包]]></description>
+</item>
+</channel>
+</rss>

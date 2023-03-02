@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>notes - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/notes/</link>
+    <description>notes - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Feb 2023 09:57:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/notes/" rel="self" type="application/rss+xml" /><item>
+  <title>FAAS 调研笔记</title>
+  <link>https://blog.debuginn.cn/faas-notes/</link>
+  <pubDate>Wed, 15 Feb 2023 09:57:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/faas-notes/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302242145505.jpeg" referrerpolicy="no-referrer">
+      </div>1 FAAS 是什么 功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而 无需构建和维护通常与开发和启动应用程序相关]]></description>
+</item>
+</channel>
+</rss>

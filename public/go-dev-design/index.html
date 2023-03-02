@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Go 语言开发设计指北 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为" /><meta name="keywords" content='go,mysql,redis,code, review,log,stat,go, fmt' /><meta itemprop="name" content="Go 语言开发设计指北">
+<meta itemprop="description" content="Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为"><meta itemprop="datePublished" content="2021-03-07T14:01:00+08:00" />
+<meta itemprop="dateModified" content="2021-03-07T14:01:00+08:00" />
+<meta itemprop="wordCount" content="4406"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="go,mysql,redis,code review,log,stat,go fmt," /><meta property="og:title" content="Go 语言开发设计指北" />
+<meta property="og:description" content="Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/go-dev-design/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-07T14:01:00+08:00" />
+<meta property="article:modified_time" content="2021-03-07T14:01:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="Go 语言开发设计指北"/>
+<meta name="twitter:description" content="Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/go-dev-design/" /><link rel="prev" href="https://blog.debuginn.cn/debuginn-write-blog/" /><link rel="next" href="https://blog.debuginn.cn/debuginn-2021-emmm/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Go 语言开发设计指北",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/go-dev-design\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "go, mysql, redis, code review, log, stat, go fmt","wordcount":  4406 ,
+    "url": "https:\/\/blog.debuginn.cn\/go-dev-design\/","datePublished": "2021-03-07T14:01:00+08:00","dateModified": "2021-03-07T14:01:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://www.debuginn.cn"
+                
+                rel="noopener noreferrer" target="_blank"
+              ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 主站</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://www.debuginn.cn"
+                  
+                  rel="noopener noreferrer" target="_blank"
+                ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 主站</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>Go 语言开发设计指北</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/golang/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> golang</a></span></div>
+      <div class="post-meta-line"><span title=2021-03-07&#32;14:01:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-03-07">2021-03-07</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 4406 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 9 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Go 语言开发设计指北">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202302272119360.png" srcset="https://image.debuginn.cn/202302272119360.png, https://image.debuginn.cn/202302272119360.png 1.5x, https://image.debuginn.cn/202302272119360.png 2x" sizes="auto" data-title="https://image.debuginn.cn/202302272119360.png" data-alt="https://image.debuginn.cn/202302272119360.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#go-编码相关">Go 编码相关</a></li>
+    <li><a href="#打点规范">打点规范</a></li>
+    <li><a href="#日志相关">日志相关</a></li>
+    <li><a href="#redis-相关">Redis 相关</a></li>
+    <li><a href="#数据库相关">数据库相关</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2021-03-07，文中内容可能已过时。</div>
+      </div>
+    </div><p>Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为重要的，遵守开发规范便于维护、便于阅读理解和增加系统的健壮性。</p>
+<p>以下是我们项目组开发规范加上自己开发遇到的问题及补充，希望对你有所帮助：
+注：我们将以下约束分为三个等级，分别是：【强制】、【推荐】、【参考】。</p>
+<h2 id="go-编码相关">Go 编码相关</h2>
+<p>【强制】代码风格规范遵循 go 官方标准：<a href="https://github.com/golang/go/wiki/CodeReviewComments"target="_blank" rel="external nofollow noopener noreferrer">CodeReviewComments<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，请使用官方 golint <a href="https://github.com/golang/lint"target="_blank" rel="external nofollow noopener noreferrer">lint<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 进行风格静态分析；</p>
+<p>【强制】代码格式规范依照 gofmt，请安装相关 IDE 插件，在保存代码或者编译时，自动将源码通过 gofmt 做格式化处理，保证团队代码格式一致（比如空格，递进等）</p>
+<p>【强制】业务处理代码中不能开 goroutine，此举会导致 goroutine 数量不可控，容易引起系统雪崩，如果需要启用 goroutine 做异步处理，请在初始化时启用固定数量 goroutine，通过 channel 和业务处理代码交互，初始化 goroutine 的函数，原则上应该从 main 函数入口处明确的调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">crond</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nb">recover</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// dump stack &amp; log
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// do something
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// init system
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">go</span> <span class="nf">crond</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">go</span> <span class="nf">crond2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// handlers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】异步开启 goroutine 的地方（如各种 cronder )，需要在最顶层增加 recover()，捕捉 panic，避免个别 cronder 出错导致整体退出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">globalCrond</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">for</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ticker</span><span class="p">.</span><span class="nx">C</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">projectCrond</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">itemCrond</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">userCrond</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">projectCrond</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nb">recover</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="c1">// 打日志，并预警
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// do 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】当有并发读写 map 的操作，必须加上读写锁 RWMutex，否则 go runtime 会因为并发读写报 panic，或者使用 sync.Map 替代；</p>
+<p>【强制】对于提供给外部使用的 package，返回函数里必须带上 err 返回，并且保证在 err == nil 情况下，返回结果不为 nil，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">package1</span><span class="p">.</span><span class="nf">GetUserInfo</span><span class="p">(</span><span class="nx">xxxxx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 在err == nil 情况下，resp不能为nil或者空值
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】当操作有多个层级的结构体时，基于<strong>防御性编程</strong>的原则，需要对每个层级做空指针或者空数据判别，特别是在处理复杂的页面结构时，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Section</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Item</span>   <span class="o">*</span><span class="nx">SectionItem</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Height</span> <span class="kt">int64</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Width</span>  <span class="kt">int64</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">type</span> <span class="nx">SectionItem</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Tag</span>    <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Icon</span>   <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">ImageURL</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">ImageList</span> <span class="p">[]</span><span class="kt">string</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Action</span> <span class="o">*</span><span class="nx">SectionAction</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">type</span> <span class="nx">SectionAction</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Type</span>  <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Path</span>  <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">Extra</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">getSectionActionPath</span><span class="p">(</span><span class="nx">section</span> <span class="o">*</span><span class="nx">Section</span><span class="p">)</span> <span class="p">(</span><span class="nx">path</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">img</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="nx">section</span><span class="p">.</span><span class="nx">Item</span> <span class="o">==</span> <span class="kc">nil</span> <span class="o">||</span> <span class="nx">section</span><span class="p">.</span><span class="nx">Item</span><span class="p">.</span><span class="nx">Action</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span> <span class="c1">// 要做好足够防御，避免因为空指针导致的panic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">err</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;section item is invalid&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">path</span> <span class="p">=</span> <span class="nx">section</span><span class="p">.</span><span class="nx">Item</span><span class="p">.</span><span class="nx">Action</span><span class="p">.</span><span class="nx">Path</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">img</span> <span class="p">=</span> <span class="nx">section</span><span class="p">.</span><span class="nx">Item</span><span class="p">.</span><span class="nx">ImageURL</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// 对取数组的内容，也一定加上防御性判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">section</span><span class="p">.</span><span class="nx">Item</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">      <span class="nx">img</span> <span class="p">=</span> <span class="nx">section</span><span class="p">.</span><span class="nx">Item</span><span class="p">.</span><span class="nx">ImageList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【推荐】生命期在函数内的资源对象，如果函数逻辑较为复杂，建议使用 defer 进行回收：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">MakeProject</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">conn</span> <span class="o">:=</span> <span class="nx">pool</span><span class="p">.</span><span class="nf">Get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="k">defer</span> <span class="nx">pool</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// 业务逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">...</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于生命期在函数内的对象，定义在函数内，将使用栈空间，减少 gc 压力：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">MakeProject</span><span class="p">()</span> <span class="p">(</span><span class="nx">project</span> <span class="o">*</span><span class="nx">Project</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">project</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">Project</span><span class="p">{}</span> <span class="c1">// 使用堆空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kd">var</span> <span class="nx">tempProject</span> <span class="nx">Project</span>  <span class="c1">// 使用栈空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】不能在循环里加 defer，特别是 defer 执行回收资源操作时。因为 defer 是函数结束时才能执行，并非循环结束时执行，某些情况下会导致资源（如连接资源）被大量占用而程序异常：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 反例：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">row</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">&#34;SELECT ...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="o">...</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="k">defer</span> <span class="nx">row</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span> <span class="c1">// 这个操作会导致循环里积攒许多临时资源无法释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 正确的处理，可以在循环结束时直接close资源，如果处理逻辑较复杂，可以打包成函数：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">func</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">row</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">&#34;SELECT ...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="o">...</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">defer</span> <span class="nx">row</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="o">...</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【推荐】对于可预见容量的 slice 或者 map，在 make 初始化时，指定cap大小，可以大大降低内存损耗，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">headList</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">home</span><span class="p">.</span><span class="nx">Sections</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">srcHomeSection</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="nx">tailList</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">home</span><span class="p">.</span><span class="nx">Sections</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">srcHomeSection</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dstHomeSection</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="o">*</span><span class="nx">home</span><span class="p">.</span><span class="nx">Sections</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">srcHomeSection</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="err">…</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">appendToHead</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">headList</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">headList</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">tailList</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tailList</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">…</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dstHomeSection</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">dstHomeSection</span><span class="p">,</span> <span class="nx">headList</span><span class="err">…</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dstHomeSection</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">dstHomeSection</span><span class="p">,</span> <span class="nx">tailList</span><span class="err">…</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【推荐】逻辑操作中涉及到频繁拼接字符串的代码，请使用 bytes.Buffer 替代。使用 string 进行拼接会导致每次拼接都新增 string 对象，增加 GC 负担：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 正例：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">buf</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">name</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">userList</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">buf</span><span class="p">.</span><span class="nf">WriteString</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">buf</span><span class="p">.</span><span class="nf">WriteString</span><span class="p">(</span><span class="s">&#34;,&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">buf</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 反例：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">result</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">name</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">userList</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">result</span> <span class="o">+=</span> <span class="nx">name</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">result</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】对于固定的正则表达式，可以在<strong>全局变量初始化时完成预编译</strong>，可以有效加快匹配速度，不需要在每次函数请求中预编译：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">wordReg</span> <span class="p">=</span> <span class="nx">regexp</span><span class="p">.</span><span class="nf">MustCompile</span><span class="p">(</span><span class="s">&#34;[\\w]+&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">matchWord</span><span class="p">(</span><span class="nx">word</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="nx">wordReg</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="nx">word</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【推荐】JSON 解析时，遇到不确定是什么结构的字段，建议使用 json.RawMessage 而不要用 interface，这样可以根据业务场景，做二次 unmarshal 而且性能比 interface 快很多；</p>
+<p>【强制】锁使用的粒度需要根据实际情况进行把控，如果变量只读，则无需加锁；读写，则使用读写锁 sync.RWMutex；</p>
+<p>【强制】使用随机数时(<code>math/rand</code>)，必须要做随机初始化(<code>rand.Seed</code>)，否则产生出的随机数是可预期的，在某些场合下会带来安全问题。一般情况下，使用<code>math/rand</code>可以满足业务需求，如果开发的是安全模块，建议使用<code>crypto/rand</code>，安全性更好；</p>
+<p>【推荐】对性能要求很高的服务，或者对程序响应时间要求高的服务，应该避免开启大量 gouroutine；
+说明：官方虽然号称 goroutine 是廉价的，可以大量开启 goroutine，但是由于 goroutine 的调度并没有实现优先级控制，使得一些关键性的 goroutine（如网络/磁盘IO，控制全局资源的goroutine）没有及时得到调度而拖慢了整体服务的响应时间，因而在系统设计时，如果对性能要求很高，应避免开启大量goroutine。</p>
+<h2 id="打点规范">打点规范</h2>
+<p>【强制】打点使用.来做分隔符，打点名称需要包含业务名，模块，函数，函数处理分支等，参考如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 业务名.服务名.模块.功能.方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">service</span><span class="p">.</span><span class="nx">gateway</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">action</span><span class="p">.</span><span class="kd">func</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】打点使用场景是监控系统的实时状态，不适合存储任何业务数据；</p>
+<p>【强制】在打点个数太多时，展示时速度会变慢。建议单个服务打点的key不超过10000个，key中单个维度不同值不超过 1000个（<strong>千万不要用 user_id 来打点</strong>)；</p>
+<p>【推荐】如果展示的时候需要拿成百上千个key的数据通过 Graphite 的聚合函数做聚合，最后得到一个或几个 key。这种情况下可以在打点的时候就把这个要聚合的点聚合好，这样展示的时候只要拿这几个 key，对展示速度是巨大的提升。</p>
+<h2 id="日志相关">日志相关</h2>
+<p>【强制】日志信息需带上下文，其中 logid 必须带上，同一个请求打的日志都需带上 logid，这样可以根据 logid 查找该次请求相关的信息；</p>
+<p>【强制】对<code>debug/notice/info</code> 级别的日志输出，必须使用条件输出或者使用占位符方式，避免使用字符拼接方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nf">Debug</span><span class="p">(</span><span class="s">&#34;get home page failed %s, id %d&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】如果是解析 json 出错的日志，需要将报错 err 及原内容一并输出，以方便核查原因；</p>
+<p>【推荐】对<code>debug/notice/info</code>级别的日志，在打印日志时，默认不显示调用位置（如<code>/path/to/code.go:335</code>）
+说明：go 获取调用栈信息是比较耗时的操作(<code>runtime.Caller</code>)，对于性能要求很高的服务，特别是大量调用的地方，应尽量避免开发人员在使用该功能时，需知悉这个调用带来的代价。</p>
+<h2 id="redis-相关">Redis 相关</h2>
+<p>【推荐】统一使用:作为前缀后缀分隔符，这里可以根据 Redis 中间件 key proxy 怎么解析分析 Key 进行自定义，便于基础服务的数据可视化及问题排查；</p>
+<p>【强制】避免使用 <code>HMGET/HGETALL/HVALS/HKEYS/SMEMBERS</code> 阻塞命令这类命令在 value 较大时，对 Redis 的 CPU/带宽消耗较高，容易导致响应过慢引发系统雪崩；</p>
+<p>【强制】不可把 Redis 当成存储，如有统计相关的需求，可以考虑异步同步到数据库进行统计，Redis 应该回归缓存的本质；</p>
+<p>【推荐】避免使用大 key，按经验超过 10k 的 value，可以压缩(<code>gzip/snappy</code>等算法)后存入内存，可以减少内存使用，其次降低网络消耗，提高响应速度：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">value</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">RedisCache</span><span class="p">.</span><span class="nf">GetGzip</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">…</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">c</span><span class="p">.</span><span class="nx">RedisCache</span><span class="p">.</span><span class="nf">SetExGzip</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【推荐】Redis 的分布式锁，可以使用:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">lock</span><span class="p">:</span> <span class="nx">redis</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="s">&#34;SET&#34;</span><span class="p">,</span> <span class="nx">lockKey</span><span class="p">,</span> <span class="nx">randint</span><span class="p">,</span> <span class="s">&#34;EX&#34;</span><span class="p">,</span> <span class="nx">expire</span><span class="p">,</span> <span class="s">&#34;NX&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">unlock</span><span class="p">:</span> <span class="nx">redis</span><span class="p">.</span><span class="nf">GetAndDel</span><span class="p">(</span><span class="nx">lockKey</span><span class="p">,</span> <span class="nx">randint</span><span class="p">)</span> <span class="c1">// redis暂不支持，可以用lua脚本
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>【推荐】尽量避免在逻辑循环代码中调用 Redis，会产生流量放大效应，请求量较大时需采用其他方法优化（比如静态配置文件）；</p>
+<p>【推荐】key 尽量离散读写，通过<code>uid/imei/xid</code>等跟用户/请求相关的后缀分摊到不同分片，避免分片负载不均衡；</p>
+<p>【参考】当缓存量大，请求量较高，可能超出 Redis 承受范围时，可充分利用本地缓存(localcache)+redis缓存的组合方案来缓解压力，削减峰值：</p>
+<p>使用这个方法需要具备这几个条件：</p>
+<ul>
+<li>cache 内容与用户无关，key 状态不多，属于公共信息；</li>
+<li>该cache内容时效性较高，但是访问量较大，有峰值流量。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">key</span> <span class="o">:=</span> <span class="s">&#34;demoid:3344&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">value</span> <span class="o">:=</span> <span class="nx">localcacche</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">value</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">value</span> <span class="p">=</span> <span class="nx">rediscache</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="nx">value</span> <span class="o">!=</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 随机缓存 1~5s，各个机器间错开峰值，只要比 redis缓存短即可
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">localcache</span><span class="p">.</span><span class="nf">SetEx</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">rand</span><span class="p">.</span><span class="nf">Int63n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">value</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="o">...</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// 从其他系统或者数据库获取数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">appoint</span><span class="p">.</span><span class="nf">GetValue</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// 同时设置到redis及localcache中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">rediscache</span><span class="p">.</span><span class="nf">SetEx</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">localcache</span><span class="p">.</span><span class="nf">SetEx</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">rand</span><span class="p">.</span><span class="nf">Int63n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【参考】对于请求量高，实时性也高的内容，如果纯粹使用缓存，当缓存失效瞬间，会导致大量请求穿透到后端服务，导致后端服务有雪崩危险：</p>
+<p>如何兼顾扛峰值，保护后端系统，同时也能保持实时性呢？在这种场景下，可以采用随机更新法更新数据，方法如下：</p>
+<ol>
+<li>正常请求从缓存中读取，缓存失效则从后端服务获取；</li>
+<li>在请求中根据随机概率 1%（或者根据实际业务场景设置比率）会跳过读取缓存操作，直接从后端服务获取数据，并更新缓存。</li>
+</ol>
+<p>这种做法能保证最低时效性，并且当访问量越大，更新概率越高，使得内容实时性也越高。</p>
+<p>如果结合上一条 <code>localcache+rediscache</code> 做一二级缓存，则可以达到扛峰值同时保持实时性。</p>
+<h2 id="数据库相关">数据库相关</h2>
+<p>【强制】操作数据库 sql 必须使用 stmt 格式，使用占位符替代参数，禁止拼接 sql；</p>
+<p>【强制】SQL语句查询时，不得使用 <code>SELECT *</code> （即形如 <code>SELECT * FROM tbl WHERE</code>），必须明确的给出要查询的列名，避免表新增字段后报错；</p>
+<p>【强制】对于线上业务 SQL，需保证命中索引，索引设计基于业务需求及字段区分度，一般可区分状态不高的字段（如 status 等只有几个状态），不建议加到索引中；</p>
+<p>【强制】在成熟的语言中，有实体类，数据访问层(<code>repository / dao</code>)和业务逻辑层( service )；在我们的规范中存储实体 struct 放置于 entities 包下；</p>
+<p>【强制】对于联合索引，需将区分度较大的字段放前面，区分度小放后面，查找时可以减少被检索数据量；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">--</span> <span class="err">字段区分度</span> <span class="nx">item_id</span> <span class="p">&gt;</span> <span class="nx">project_id</span>
+</span></span><span class="line"><span class="cl"><span class="nx">alter</span> <span class="nx">table</span> <span class="nx">xxx</span> <span class="nx">add</span> <span class="nx">index</span> 
+</span></span><span class="line"><span class="cl"><span class="nf">idx_item_project</span>
+</span></span><span class="line"><span class="cl"> <span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="nx">item_id</span>
+</span></span><span class="line"><span class="cl"><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"><span class="nx">project_id</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】所有数据库表必须有主键 id；</p>
+<p>【强制】主键索引名为 pk字段名; 唯一索引名为 uk字段名; 普通索引名则为 idx_字段名；</p>
+<p>【强制】防止因字段类型不同造成的隐式转换，导致索引失效，造成全表扫描问题；</p>
+<p>【强制】业务上有唯一特性的字段，即使是多字段的组合，也必须建成唯一索引；</p>
+<p>【强制】一般事务标准操作流程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestTXExample</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// 打开事务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">tx</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Beginx</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// defer异常
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">needRollback</span> <span class="o">:=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">   <span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">r</span> <span class="o">:=</span> <span class="nb">recover</span><span class="p">();</span> <span class="nx">r</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>  <span class="c1">// 处理recover，避免因为panic，资源无法释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>         <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="nx">needRollback</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">needRollback</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="nx">xlog</span><span class="p">.</span><span class="nf">Cause</span><span class="p">(</span><span class="s">&#34;test.example.transaction.rollback&#34;</span><span class="p">).</span><span class="nf">Fatal</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">         <span class="nx">tx</span><span class="p">.</span><span class="nf">Rollback</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// 事务的逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">err</span> <span class="p">=</span> <span class="nf">InsertLog</span><span class="p">(</span><span class="nx">tx</span><span class="p">,</span> <span class="nf">GenTestData</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// 提交事务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">err</span> <span class="p">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">needRollback</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>【强制】执行事务操作时，请确保<code>SELECT ...  FOR UPDATE</code>条件命中索引，使用行锁，避免一个事务锁全表的情况;</p>
+<p>【强制】禁止超过三个表的 join，需要 join 的字段，数据类型必须一致，多表关联查询时，保证被关联的字段有索引;</p>
+<p>【强制】数据库 max_open 连接数不可设置过高，会导致代理连接数打满导致不可用状况;</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2021-03-07&#32;14:01:00>更新于 2021-03-07&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/go/go-dev-design.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/go-dev-design/" data-title="Go 语言开发设计指北" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="go,mysql,redis,code review,log,stat,go fmt"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/go-dev-design/" data-hashtag="go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/go-dev-design/" data-title="Go 语言开发设计指北" data-image="https://image.debuginn.cn/202302272119360.png" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/go/' class="post-tag">go</a><a href='/tags/mysql/' class="post-tag">mysql</a><a href='/tags/redis/' class="post-tag">redis</a><a href='/tags/code-review/' class="post-tag">code review</a><a href='/tags/log/' class="post-tag">log</a><a href='/tags/stat/' class="post-tag">stat</a><a href='/tags/go-fmt/' class="post-tag">go fmt</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/debuginn-write-blog/" class="post-nav-item" rel="prev" title="如何提升自己的技术博文水平"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>如何提升自己的技术博文水平</a>
+      <a href="/debuginn-2021-emmm/" class="post-nav-item" rel="next" title="emmm 这是一篇碎碎念">emmm 这是一篇碎碎念<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="Follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

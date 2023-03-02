@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>FAAS 调研笔记 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="1 FAAS 是什么 功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而 无需构建和维护通常与开发和启动应用程序相关" /><meta name="keywords" content='faas,notes' /><meta itemprop="name" content="FAAS 调研笔记">
+<meta itemprop="description" content="1 FAAS 是什么 功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而 无需构建和维护通常与开发和启动应用程序相关"><meta itemprop="datePublished" content="2023-02-15T09:57:00+08:00" />
+<meta itemprop="dateModified" content="2023-02-15T09:57:00+08:00" />
+<meta itemprop="wordCount" content="2892"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="faas,notes,serverless," /><meta property="og:title" content="FAAS 调研笔记" />
+<meta property="og:description" content="1 FAAS 是什么 功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而 无需构建和维护通常与开发和启动应用程序相关" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/faas-notes/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-15T09:57:00+08:00" />
+<meta property="article:modified_time" content="2023-02-15T09:57:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="FAAS 调研笔记"/>
+<meta name="twitter:description" content="1 FAAS 是什么 功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而 无需构建和维护通常与开发和启动应用程序相关"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/faas-notes/" /><link rel="prev" href="https://blog.debuginn.cn/financing-long-bridge/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "FAAS 调研笔记",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/faas-notes\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "faas, notes, serverless","wordcount":  2892 ,
+    "url": "https:\/\/blog.debuginn.cn\/faas-notes\/","datePublished": "2023-02-15T09:57:00+08:00","dateModified": "2023-02-15T09:57:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://www.debuginn.cn"
+                
+                rel="noopener noreferrer" target="_blank"
+              ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 主站</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://www.debuginn.cn"
+                  
+                  rel="noopener noreferrer" target="_blank"
+                ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 主站</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>FAAS 调研笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/faas/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> faas</a></span></div>
+      <div class="post-meta-line"><span title=2023-02-15&#32;09:57:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-15">2023-02-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2892 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 6 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="FAAS 调研笔记">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202302242145505.jpeg" srcset="https://image.debuginn.cn/202302242145505.jpeg, https://image.debuginn.cn/202302242145505.jpeg 1.5x, https://image.debuginn.cn/202302242145505.jpeg 2x" sizes="auto" data-title="https://image.debuginn.cn/202302242145505.jpeg" data-alt="https://image.debuginn.cn/202302242145505.jpeg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-faas-是什么">1 FAAS 是什么</a>
+      <ul>
+        <li><a href="#11-faas-优点">1.1 FAAS 优点</a></li>
+        <li><a href="#12-faas-缺点">1.2 FAAS 缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-业内-faas-的分支及发展">2 业内 FAAS 的分支及发展</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#31-faas-方向">3.1 FAAS 方向</a>
+      <ul>
+        <li><a href="#311-运行架构">3.1.1 运行架构</a></li>
+        <li><a href="#312-架构分层">3.1.2 架构分层</a></li>
+      </ul>
+    </li>
+    <li><a href="#32-mesh-方向">3.2 Mesh 方向</a>
+      <ul>
+        <li><a href="#321-运行架构">3.2.1 运行架构</a></li>
+        <li><a href="#322-架构分层">3.2.2 架构分层</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-reference">4 Reference</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="1-faas-是什么">1 FAAS 是什么</h2>
+<p>功能即服务 (FAAS) 是一类云计算服务，它提供了一个平台，允许客户开发、运行和管理应用程序功能，而 <strong>无需构建和维护通常与开发和启动应用程序相关的基础设施的复杂性。</strong> 构建遵循此模型的应用程序是实现“无服务器”体系结构的一种方式，通常在构建微服务应用程序时使用。</p>
+<p>FAAS 最初是由 PiCloud 等各种初创企业在2010年左右提供的。</p>
+<p>AWS Lambda 是大型公共云供应商提供的第一个 FAAS，随后是 Google Cloud Functions、Microsoft Azure Functions、IBM/Apache 2016年的 OpenWhisk (开源)和 2017 年的 Oracle Cloud FN(开源)。</p>
+<p>国内的云厂商近几年也陆续提供 FAAS 产品，有阿里云 Serverless 服务、腾讯云云函数(Serverless Cloud Function，SCF)、华为云函数工作流（FunctionGraph）。</p>
+<h3 id="11-faas-优点">1.1 FAAS 优点</h3>
+<ul>
+<li><strong>降低运营成本</strong>，开发人员不需要对服务器根据流量做规划，将部署平台的能力外包；</li>
+<li><strong>降低开发成本</strong>，Serverless 是整个应用程序组件商品化的结果，将功能相似的函数解耦，统一提供服务，减少重复建轮子；</li>
+<li><strong>扩展成本</strong>，Serverless 的架构就是将部署环境外包，水平扩张是完全自动、有弹性，并且有提供方来支持管理的；
+<ul>
+<li>偶尔的请求，一些提供给运营人员的操作很低频；</li>
+<li>不一致的流量，函数扩容速度远远大于容器扩容速度，高效响应突发流量带来的扩容问题；</li>
+</ul>
+</li>
+<li><strong>运营管理更轻松</strong>
+<ul>
+<li>容器的租户管理使得研发人员无需关心部署系统；</li>
+<li>降低打包和部署的复杂性；</li>
+<li>专注于业务代码，更快的迭代与部署；</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-faas-缺点">1.2 FAAS 缺点</h3>
+<ul>
+<li>控制权的转移，任何的外包策略，都会将部分的系统控制权移交到维护团队或组织，带来的就是不可控的系统停机、意外限制、成本变化、功能丧失、强制 API 升级等问题；</li>
+<li>多租户问题，多个客户（租户）的多个软件在同一个机器上运行；</li>
+<li>供应商锁定，一旦选择某个供应商或者维护团队，几乎是无法进行迁移的，代码的迁移大概率只能重构；</li>
+<li>安全问题，会增加恶意攻击的剖面，增加攻击成功的可能性；</li>
+<li>没有服务器内状态，持久化的数据无法在容器存储，只能借助第三方存储组件实现 cache；</li>
+<li>测试问题，没有本地环境可以完全模拟云环境；</li>
+<li>调试问题，云环境的调试目前还没有提供优秀的 tools；</li>
+</ul>
+<h2 id="2-业内-faas-的分支及发展">2 业内 FAAS 的分支及发展</h2>
+<table>
+<thead>
+<tr>
+<th>云服务商</th>
+<th>产品</th>
+<th>产品介绍</th>
+<th>使用场景</th>
+<th>客户案例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS</td>
+<td>AWS Lambda</td>
+<td>AWS Lambda 是一项无服务器事件驱动型计算服务，该服务使您可以运行几乎任何类型的应用程序或后端服务的代码，而无需预置或管理服务器。</td>
+<td>文件处理； 流处理；Web 应用程序；IoT 后端；移动后端；</td>
+<td>可口可乐 西门子 Netflix Coinbase</td>
+<td></td>
+</tr>
+<tr>
+<td>阿里云</td>
+<td>Serverless 工作流</td>
+<td>Serverless 工作流（Serverless Workflow）是用来协调多个分布式任务执行的全托管 Serverless 云服务，简化开发、运行业务流程需要的任务协调、状态管理和错误处理等繁琐工作。用顺序、分支、并行等方式编排分布式任务，服务按照预设顺序协调任务执行，跟踪任务的状态转换，必要时执行用户定义的重试逻辑，确保工作流顺利完成。</td>
+<td>多媒体文件处理场景；数据处理流水线场景；自动运维场景；解决运维无法可视化的问题；</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Serverless 应用引擎 SAE</td>
+<td>是一个全托管、免运维、高弹性的通用 PaaS 平台。SAE 支持 Spring Boot、Spring Cloud、Dubbo、HSF、Web 应用和 XXL-JOB、ElasticJob 任务的全托管，零改造迁移、无门槛容器化、并提供了开源侧诸多增强能力和企业级高级特性。</td>
+<td>微服务应用托管；弹性阔缩容场景；持续集成与交付；</td>
+<td>贵州酒店集团 视野数科 爱奇艺体育</td>
+<td>类似 side car ，用来管理应用，承接流量</td>
+</tr>
+<tr>
+<td></td>
+<td>Serverless 容器服务 ASK</td>
+<td>是一款基于阿里云弹性计算基础架构，同时完全兼容 Kubernetes 生态，安全、可靠的容器产品。通过该产品，您无需管理和维护集群即可快速创建 Kubernetes 容器应用，并且根据应用实际使用的 CPU 和内存资源量进行按需付费，从而使您更专注于应用本身，而非运行应用的基础设施。</td>
+<td>应用托管；在线业务弹性阔缩容数据计算 低成本支撑CI/CD任务执行</td>
+<td>图森未来 越光医疗</td>
+<td></td>
+</tr>
+<tr>
+<td>腾讯云</td>
+<td>云函数（Serverless Cloud Function，SCF）</td>
+<td>腾讯云为企业和开发者们提供的无服务器执行环境，帮助您在无需购买和管理服务器的情况下运行代码。您只需使用平台支持的语言编写核心代码并设置代码运行的条件，即可在腾讯云基础设施上弹性、安全地运行代码。云函数是实时文件处理和数据处理等场景下理想的计算平台。</td>
+<td>静态网站托管；构建 RESTful API；部署 Serverless 全栈 Web 应用；Serverless 全景录制方案；</td>
+<td>腾讯视频 新东方 微信阅 腾讯教育 腾讯相册 百视通 猎豹移动</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>API网关</td>
+<td>腾讯云 API 网关（API Gateway）是腾讯云推出的一种 API 托管服务，能提供 API 的完整生命周期管理，包括创建、维护、发布、运行、下线等。</td>
+<td>Serverless HTTP；微服务整合；外部多端统一；业务整合；能力提供及售卖；</td>
+<td>人人视频 江娱互动 腾讯视频 英孚教育</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-内部原理">3 内部原理</h1>
+<h2 id="31-faas-方向">3.1 FAAS 方向</h2>
+<h3 id="311-运行架构">3.1.1 运行架构</h3>
+<table>
+<thead>
+<tr>
+<th>常规的一个服务在容器中启动的流程</th>
+<th>FAAS 调用启动流程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img loading="lazy" src="https://image.debuginn.cn/202302242209329.png" srcset="https://image.debuginn.cn/202302242209329.png, https://image.debuginn.cn/202302242209329.png 1.5x, https://image.debuginn.cn/202302242209329.png 2x" sizes="auto" data-title="https://image.debuginn.cn/202302242209329.png" data-alt="https://image.debuginn.cn/202302242209329.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></td>
+<td><img loading="lazy" src="https://image.debuginn.cn/202302242210349.png" srcset="https://image.debuginn.cn/202302242210349.png, https://image.debuginn.cn/202302242210349.png 1.5x, https://image.debuginn.cn/202302242210349.png 2x" sizes="auto" data-title="https://image.debuginn.cn/202302242210349.png" data-alt="https://image.debuginn.cn/202302242210349.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在传统的服务启动或者是容器化的服务进行启动的是否，都是服务跟随者对应的平台（巨石架构的物理机器或者微服务化的 k8s 容器）的启动而启动，整个生命周期在 pod 的启动开始，在 pod 的关机下线操作结束，整个周期是比较长的，同时必须有实例存活（至少一台）来承接响应，研发人员除了需要关注自己的开发 code，还需要关注容器的大小、容量、数量等运维指标；</li>
+<li>Serverless 中的 FAAS 将研发人员最重要的业务逻辑抽离了出来，除了这部分需要去管理升级，剩下的都交由 FAAS 提供平台来提供服务，托管后的 FAAS 生命周期从 pod 的启动关机简化到了 执行函数 handler 的 init 以及执行函数时间，并且在一些低频的业务中，一些函数实例可以交由 FAAS 提供服务商进行回收，甚至在某些时间不起函数实例，当有事件进来之后在执行函数初始化及执行逻辑（因为函数初始化到可以服务的启动时间在 100ms 左右，当然不同语言以及不同的服务提供方的实现会影响这里的启动时间）；</li>
+</ul>
+<h3 id="312-架构分层">3.1.2 架构分层</h3>
+<p><img loading="lazy" src="https://image.debuginn.cn/202302242211864.png" srcset="https://image.debuginn.cn/202302242211864.png, https://image.debuginn.cn/202302242211864.png 1.5x, https://image.debuginn.cn/202302242211864.png 2x" sizes="auto" data-title="架构分层" data-alt="架构分层" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></p>
+<p>其实理解起来比较简单，可以理解成我们的代码已经是与 PAAS 平台进行强解耦的结果了，我们的代码就是一部电视剧，一个操作系统安装了指定的视频播放器就可以播放我们的电视剧了，同理，我们现在只需要关心我们的函数内业务代码逻辑的定义，只要接口定义的按照封装平台的要求来开发即可，我们不需要关心运行的环境及系统，由于 runtime 已经到了 func 级别，热更新代码以及启动服务都是快速可以响应的。</p>
+<h2 id="32-mesh-方向">3.2 Mesh 方向</h2>
+<p>综上，若 FAAS 代表着是“无服务器”架构的话，其实 Service Mesh 严格意义上不能称为是“无服务器”架构，它并不能将容器部署与代码部署隔离开，只是在服务响应中增加了一层代理，用来控制应用程序中服务请求的传递，可以使得服务到服务的通讯快速、可靠和安全。</p>
+<h3 id="321-运行架构">3.2.1 运行架构</h3>
+<p><img loading="lazy" src="https://image.debuginn.cn/202302242212468.png" srcset="https://image.debuginn.cn/202302242212468.png, https://image.debuginn.cn/202302242212468.png 1.5x, https://image.debuginn.cn/202302242212468.png 2x" sizes="auto" data-title="运行架构" data-alt="运行架构" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>简化微服务和容器中服务之间的通信；</li>
+<li>更容易的诊断通讯错误，发生在自己的基础设施层上；</li>
+<li>支持加密、认证和授权等安全特性；</li>
+<li>允许更快地开发、测试和部署应用程序；</li>
+<li>放置在容器集群的边车代理可以有效的管理网络服务；</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>运行时实例通过使用服务网格而增加；</li>
+<li>每次服务的调用都要经过 sidecar proxy；</li>
+<li>没有解决与其他服务或者系统的集成，以及路由类型或转换的映射；</li>
+<li>网格管理的复杂新被抽象化和集中化；</li>
+</ol>
+<h3 id="322-架构分层">3.2.2 架构分层</h3>
+<p><img loading="lazy" src="https://image.debuginn.cn/202302242213329.png" srcset="https://image.debuginn.cn/202302242213329.png, https://image.debuginn.cn/202302242213329.png 1.5x, https://image.debuginn.cn/202302242213329.png 2x" sizes="auto" data-title="架构分层" data-alt="架构分层" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></p>
+<p>将调用限流、熔断、安全、服务注册与发现、服务管理等非业务逻辑的功能全部都放到 Sidecar 中去，<strong>本质上是一个管理性质进程在管理着业务逻辑性质的进程</strong>，进程之间的通讯使用的是 UDC(Unix domain socket)。</p>
+<h2 id="4-reference">4 Reference</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Function_as_a_service"target="_blank" rel="external nofollow noopener noreferrer">https://en.wikipedia.org/wiki/Function_as_a_service<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://serverless.aliyun.com/"target="_blank" rel="external nofollow noopener noreferrer">https://serverless.aliyun.com/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://cloud.tencent.com/product/scf"target="_blank" rel="external nofollow noopener noreferrer">https://cloud.tencent.com/product/scf<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://www.huaweicloud.com/product/functiongraph.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.huaweicloud.com/product/functiongraph.html<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://martinfowler.com/articles/serverless.html"target="_blank" rel="external nofollow noopener noreferrer">https://martinfowler.com/articles/serverless.html<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://aws.amazon.com/cn/lambda/"target="_blank" rel="external nofollow noopener noreferrer">https://aws.amazon.com/cn/lambda/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://time.geekbang.org/column/article/226574"target="_blank" rel="external nofollow noopener noreferrer">https://time.geekbang.org/column/article/226574<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://www.techtarget.com/searchitoperations/definition/service-mesh"target="_blank" rel="external nofollow noopener noreferrer">https://www.techtarget.com/searchitoperations/definition/service-mesh<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://www.zhaohuabing.com/2018/03/29/what-is-service-mesh-and-istio/"target="_blank" rel="external nofollow noopener noreferrer">https://www.zhaohuabing.com/2018/03/29/what-is-service-mesh-and-istio/<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-02-15&#32;09:57:00>更新于 2023-02-15&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/faas/faas-notes.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/faas-notes/" data-title="FAAS 调研笔记" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="faas,notes,serverless"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/faas-notes/" data-hashtag="faas"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/faas-notes/" data-title="FAAS 调研笔记" data-image="https://image.debuginn.cn/202302242145505.jpeg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/faas/' class="post-tag">faas</a><a href='/tags/notes/' class="post-tag">notes</a><a href='/tags/serverless/' class="post-tag">serverless</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/financing-long-bridge/" class="post-nav-item" rel="prev" title="长桥港美股团办活动"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>长桥港美股团办活动</a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="Follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>
