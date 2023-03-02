@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>translate - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/translate/</link>
+    <description>translate - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 27 Jun 2021 23:18:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/translate/" rel="self" type="application/rss+xml" /><item>
+  <title>[译] 方法是否应该在 T 或 *T 上声明</title>
+  <link>https://blog.debuginn.cn/go-metheds-on-t/</link>
+  <pubDate>Sun, 27 Jun 2021 23:18:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-metheds-on-t/</guid>
+  <description><![CDATA[译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：]]></description>
+</item>
+</channel>
+</rss>

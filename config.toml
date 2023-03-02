@@ -199,7 +199,7 @@ theme = "FixIt"
       # 是否显示社交账号
       social = true
       # 免责声明（支持 HTML 格式）
-      disclaimer = '<img src="https://image.debuginn.cn/202302202248422.png" alt="qrcode" width="100%">'
+      disclaimer = '<a href="./pages/subscription"><img src="https://image.debuginn.cn/202302202248422.png" alt="qrcode" width="100%"></a>'
 
     # 主页文章列表
     [params.home.posts]
@@ -298,9 +298,9 @@ theme = "FixIt"
     [params.page.expirationReminder]
       enable = true
       # 如果文章最后更新于这天数之前，显示提醒
-      reminder = 360
+      reminder = 720
       # 如果文章最后更新于这天数之前，显示警告
-      warning = 720
+      warning = 1000
       # 如果文章到期是否关闭评论
       closeComment = false
 
@@ -311,7 +311,7 @@ theme = "FixIt"
       # 是否显示代码块的编辑按钮
       edit = false
       # 默认展开显示的代码行数
-      maxShownLines = 100
+      maxShownLines = 200
 
     # 文章编辑
     [params.page.edit]
@@ -499,6 +499,16 @@ theme = "FixIt"
 
 [menu]
   [[menu.main]]
+    identifier = "subscription"
+    pre = ""
+    post = ""
+    name = "订阅"
+    url = "/pages/subscription/"
+    title = ""
+    weight = 1
+    [menu.main.params]
+      icon = "fa-solid fa-fire text-danger"
+  [[menu.main]]
     identifier = "posts"
     # 你可以在名称（允许 HTML 格式）之前添加其他信息，例如图标
     pre = ""
@@ -508,7 +518,7 @@ theme = "FixIt"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时，将显示的标题
     title = ""
-    weight = 1
+    weight = 2
     # 向菜单项添加用户定义的内容
     [menu.main.params]
       # 添加 CSS 类到菜单项
@@ -526,7 +536,7 @@ theme = "FixIt"
     name = "分类"
     url = "/categories/"
     title = ""
-    weight = 2
+    weight = 3
     [menu.main.params]
       icon = "fa-solid fa-th"
   [[menu.main]]
@@ -536,7 +546,7 @@ theme = "FixIt"
     name = "标签"
     url = "/tags/"
     title = ""
-    weight = 3
+    weight = 4
     [menu.main.params]
       icon = "fa-solid fa-tags"
   [[menu.main]]
@@ -544,9 +554,9 @@ theme = "FixIt"
     pre = ""
     post = ""
     name = "友联"
-    url = "/friends/"
+    url = "/pages/friends/"
     title = ""
-    weight = 4
+    weight = 5
     [menu.main.params]
       icon = "fa-solid fa-users"
   [[menu.main]]
@@ -556,7 +566,7 @@ theme = "FixIt"
     name = "主站"
     url = "https://www.debuginn.cn"
     title = ""
-    weight = 5
+    weight = 6
     [menu.main.params]
       icon = "fa-solid fa-link"
 

@@ -1,13 +1,5 @@
----
-title: "友情链接"
-subtitle: ""
-type: "friends"
-date: 2023-02-25T10:58:13+08:00
-description: "debuginn's friends"
-keywords: 
-  - 友情链接
-comment: true
----
+# 友情链接
+
 
 <!-- When you set data `friends.yml` in `yourProject/data/` directory, it will be automatically loaded here. -->
 ---
@@ -30,3 +22,10 @@ comment: true
 2. :(fa-solid fa-exclamation-triangle): 网站出现故障、停止维护和不当内容可能会被取消链接！
 3. 那些不尊重他人劳动成果、无源转载、恶意行为的网站，请不要前来交流。
 {{< /admonition >}}
+
+
+---
+
+> 作者: [Meng小羽](https://www.debuginn.cn)  
+> URL: https://blog.debuginn.cn/friends/  
+

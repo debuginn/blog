@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>[译] 方法是否应该在 T 或 *T 上声明 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：" /><meta name="keywords" content='go,translate' /><meta itemprop="name" content="[译] 方法是否应该在 T 或 *T 上声明">
+<meta itemprop="description" content="译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如："><meta itemprop="datePublished" content="2021-06-27T23:18:00+08:00" />
+<meta itemprop="dateModified" content="2021-06-27T23:18:00+08:00" />
+<meta itemprop="wordCount" content="906"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="go,translate," /><meta property="og:title" content="[译] 方法是否应该在 T 或 *T 上声明" />
+<meta property="og:description" content="译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/go-metheds-on-t/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-27T23:18:00+08:00" />
+<meta property="article:modified_time" content="2021-06-27T23:18:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="[译] 方法是否应该在 T 或 *T 上声明"/>
+<meta name="twitter:description" content="译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如："/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/go-metheds-on-t/" /><link rel="prev" href="https://blog.debuginn.cn/debuginn-2021-emmm/" /><link rel="next" href="https://blog.debuginn.cn/coin-use-epay/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[译] 方法是否应该在 T 或 *T 上声明",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/go-metheds-on-t\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "go, translate","wordcount":  906 ,
+    "url": "https:\/\/blog.debuginn.cn\/go-metheds-on-t\/","datePublished": "2021-06-27T23:18:00+08:00","dateModified": "2021-06-27T23:18:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="https://www.debuginn.cn"
+                
+                rel="noopener noreferrer" target="_blank"
+              ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 主站</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="https://www.debuginn.cn"
+                  
+                  rel="noopener noreferrer" target="_blank"
+                ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 主站</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>[译] 方法是否应该在 T 或 *T 上声明</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/golang/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> golang</a></span></div>
+      <div class="post-meta-line"><span title=2021-06-27&#32;23:18:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-06-27">2021-06-27</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 906 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="[译] 方法是否应该在 T 或 *T 上声明">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2021-06-27，文中内容可能已过时。</div>
+      </div>
+    </div><p>译文原地址：<a href="https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t"target="_blank" rel="external nofollow noopener noreferrer">Should methods be declared on T or *T - David<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">T</span> <span class="kd">struct</span> <span class="p">{</span> <span class="nx">a</span> <span class="kt">int</span><span class="p">;</span> <span class="nx">b</span> <span class="kt">bool</span> <span class="p">}</span> 
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">t</span> <span class="nx">T</span>    <span class="c1">// t&#39;s type is T 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">p</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">t</span> <span class="c1">// p&#39;s type is *T
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这两种类型，T 和 *T 是不同的，但 *T 不能代替 T。</p>
+<p>你可以在你拥有的任意类型上声明一个方法；也就是说，在您的包中的函数声明的类型。因此，您可以在声明的类型 T 和对应的派生指针类型 *T 上声明方法。另一种说法是，类型上的方法被声明为接收器接收者值的副本，或一个指向其接收者值的指针。所以问题就存在了，究竟是哪种形式最合适？</p>
+<p>显然，如果你的方法改变了他的接收者，他应该在 *T 上声明。但是，如果方法不改变他的接收者，在 T 上声明它是安全的么？</p>
+<p>事实证明，这样做的话安全的情况非常有限（简单理解就是不安全的）。例如，众所周知，你不应该复制一个 sync.Mutex 的值，因为它打破了互斥量的不变量。由于互斥锁控制对变量（共享资源）的访问，他们经常被包装在一个结构体中，包含他们的控制的值（共享资源）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">counter</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Val</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mu</span>  <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">val</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">v</span> <span class="o">*</span><span class="nx">Val</span><span class="p">)</span> <span class="nf">Get</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">v</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">defer</span> <span class="nx">v</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">v</span><span class="p">.</span><span class="nx">val</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">v</span> <span class="o">*</span><span class="nx">Val</span><span class="p">)</span> <span class="nf">Add</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">v</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">defer</span> <span class="nx">v</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">v</span><span class="p">.</span><span class="nx">val</span> <span class="o">+=</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>大部分 Gopher 都知道，忘记在指针接收器 *Val 上是声明 Get 或 Add 方法是错误的。然而，任何嵌入 Val 来利用其 0 值的类型，也必须仅在其指针接收器上声明方法，否者可能会无意复制其嵌入类型值的内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Stats</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span> <span class="nx">counter</span><span class="p">.</span><span class="nx">Val</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">Stats</span><span class="p">)</span> <span class="nf">Sum</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nf">Get</span><span class="p">()</span> <span class="o">+</span> <span class="nx">s</span><span class="p">.</span><span class="nx">b</span><span class="p">.</span><span class="nf">Get</span><span class="p">()</span> <span class="o">+</span> <span class="nx">s</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nf">Get</span><span class="p">()</span> <span class="c1">// whoops（哎呀）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>维护值切片的类型可能会出现类似的陷阱，当然也有可能发生意外的数据竞争。</p>
+<p>简而言之，我认为您更应该喜欢在 *T 上声明方法，除非您有非常充分的理由不该这样做。</p>
+<ol>
+<li>我们说 T 但这只是您声明的类型的占位符；</li>
+<li>此规则是递归的，取 *T 类型的变量的地址返回的是 **T 类型的结果；</li>
+<li>这就是为什么没有人可以在像 int 这样的基础类型上声明方法；</li>
+<li>Go 中的方法只是将接受者作为第一个形式参数传递的函数的语法糖；</li>
+</ol>
+<p>如果方法不改变它的接收者，它是否需要是一个方法吗？</p>
+<p>相关文章：</p>
+<ul>
+<li><a href="https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful"target="_blank" rel="external nofollow noopener noreferrer">What is the zero value, and why is it useful?<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://dave.cheney.net/2014/06/27/ice-cream-makers-and-data-races"target="_blank" rel="external nofollow noopener noreferrer">Ice cream makers and data races<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://dave.cheney.net/2018/07/12/slices-from-the-ground-up"target="_blank" rel="external nofollow noopener noreferrer">Slices from the ground up<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://dave.cheney.net/2014/03/25/the-empty-struct"target="_blank" rel="external nofollow noopener noreferrer">The empty struct<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+</ul>
+<p>最后，此篇文章我是第一次尝试翻译英文文章，尽管英文水平不太好，一些单词不认识，但是相信自己翻译一篇文章可以学习英语与理解 Go 设计获取 double 的乐趣。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2021-06-27&#32;23:18:00>更新于 2021-06-27&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/go/go-metheds-on-t.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/go-metheds-on-t/" data-title="[译] 方法是否应该在 T 或 *T 上声明" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="go,translate"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/go-metheds-on-t/" data-hashtag="go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/go-metheds-on-t/" data-title="[译] 方法是否应该在 T 或 *T 上声明" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/go/' class="post-tag">go</a><a href='/tags/translate/' class="post-tag">translate</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/debuginn-2021-emmm/" class="post-nav-item" rel="prev" title="emmm 这是一篇碎碎念"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>emmm 这是一篇碎碎念</a>
+      <a href="/coin-use-epay/" class="post-nav-item" rel="next" title="使用数字人民币兑换建党100周年纪念币">使用数字人民币兑换建党100周年纪念币<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="Follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

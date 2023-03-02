@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>prometheus - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/prometheus/</link>
+    <description>prometheus - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Dec 2021 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/prometheus/" rel="self" type="application/rss+xml" /><item>
+  <title>我们是如何用 Prometheus 对网关进行监控的</title>
+  <link>https://blog.debuginn.cn/prometheus-gateway/</link>
+  <pubDate>Sat, 11 Dec 2021 20:00:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/prometheus-gateway/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202302262145770.jpg" referrerpolicy="no-referrer">
+      </div>近期，我们对 APP 网关 Gateway 做了升级，由于项目创建时间过早（6年前的项目），那时候还没有好的包管理工具，使用的是最原始的 Go Path 来进行项目的依赖管理，历]]></description>
+</item>
+</channel>
+</rss>
