@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Debug客栈</title>
+    <link>https://blog.debuginn.cn/pages/</link>
+    <description>Recent content in Pages on Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 02 Mar 2023 20:54:51 +0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>订阅本站</title>
+      <link>https://blog.debuginn.cn/pages/subscription/</link>
+      <pubDate>Thu, 02 Mar 2023 20:54:51 +0800</pubDate>
+      
+      <guid>https://blog.debuginn.cn/pages/subscription/</guid>
+      <description>常规订阅 Debug客栈给您提供了四种常规订阅方式，分别是 微信公众号订阅、邮箱订阅、 RSS订阅，当然还有 Github ，请根据您的需求选择性订阅： 邮箱订阅</description>
+    </item>
+    
+    <item>
+      <title>友情链接</title>
+      <link>https://blog.debuginn.cn/pages/friends/</link>
+      <pubDate>Sat, 25 Feb 2023 10:58:13 +0800</pubDate>
+      
+      <guid>https://blog.debuginn.cn/pages/friends/</guid>
+      <description>申请友联 申请友情链接的话请提交 issue 来申请。 1 2 3 4 - nickname: Debug客栈 avatar: https://image.debuginn.cn/202302182238057.JPG url: https://debuginn.cn description: 做一个爱分享的程序猿 友情提示 Notice 如果您想交换链接，请按上述格式留言</description>
+    </item>
+    
+  </channel>
+</rss>
