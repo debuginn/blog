@@ -1,3 +1,4 @@
+https://blog.debuginn.cn/douban-movies-to-blog/
 https://blog.debuginn.cn/pages/subscription/
 https://blog.debuginn.cn/pages/friends/
 https://blog.debuginn.cn/faas-notes/
@@ -23,6 +24,10 @@ https://blog.debuginn.cn/mbp-resurrection/
 https://blog.debuginn.cn/go-rpc-invoke-demo/
 https://blog.debuginn.cn/go-use-gvm-switch-version/
 https://blog.debuginn.cn/go-mysql-sqlx-pkg/
+https://blog.debuginn.cn/go-mysql-prepare/
+https://blog.debuginn.cn/go-mysql-transaction-operation/
+https://blog.debuginn.cn/go-mysql-curd-operation/
+https://blog.debuginn.cn/go-array-slice-map/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/

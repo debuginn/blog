@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>prepare - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/prepare/</link>
+    <description>prepare - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Jul 2020 16:46:10 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/prepare/" rel="self" type="application/rss+xml" /><item>
+  <title>Go 语言操作 MySQL 之 预处理</title>
+  <link>https://blog.debuginn.cn/go-mysql-prepare/</link>
+  <pubDate>Thu, 02 Jul 2020 16:46:10 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-mysql-prepare/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031903089.jpg" referrerpolicy="no-referrer">
+      </div>预处理 预处理是 MySQL 为了防止客户端频繁请求的一种技术，是对相同处理语句进行预先加载在 MySQL 中，将操作变量数据用占位符来代替，减少对 MySQL 的频繁请求，使得]]></description>
+</item>
+</channel>
+</rss>

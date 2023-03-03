@@ -3,7 +3,17 @@
     <title>所有文章 - Debug客栈</title>
     <link>https://blog.debuginn.cn/posts/</link>
     <description>所有文章 | Debug客栈</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Feb 2023 09:57:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>如何将豆瓣观影记录实时同步至博客中</title>
+  <link>https://blog.debuginn.cn/douban-movies-to-blog/</link>
+  <pubDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/douban-movies-to-blog/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031942110.jpg" referrerpolicy="no-referrer">
+      </div>事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查]]></description>
+</item>
+<item>
   <title>FAAS 调研笔记</title>
   <link>https://blog.debuginn.cn/faas-notes/</link>
   <pubDate>Wed, 15 Feb 2023 09:57:00 &#43;0800</pubDate>
@@ -92,14 +102,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302272023525.jpeg" referrerpolicy="no-referrer">
       </div>今天使用数字人民币兑换了建党100周年纪念币，过程比较坎坷，不过最终还是兑换成功了。 预约 ? 纪念币成功后，今天中秋假期，正好去兑换纪念币，小雨]]></description>
-</item>
-<item>
-  <title>[译] 方法是否应该在 T 或 *T 上声明</title>
-  <link>https://blog.debuginn.cn/go-metheds-on-t/</link>
-  <pubDate>Sun, 27 Jun 2021 23:18:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/go-metheds-on-t/</guid>
-  <description><![CDATA[译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：]]></description>
 </item>
 </channel>
 </rss>

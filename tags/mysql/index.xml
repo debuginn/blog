@@ -23,5 +23,35 @@
         <img src="https://image.debuginn.cn/202303011912531.jpg" referrerpolicy="no-referrer">
       </div>SQLX 库 sqlx是 Go 的软件包，它在出色的内置database/sql软件包的基础上提供了一组扩展。 该库兼容 sql 原生包，同时又提供了更为强大的、优雅]]></description>
 </item>
+<item>
+  <title>Go 语言操作 MySQL 之 预处理</title>
+  <link>https://blog.debuginn.cn/go-mysql-prepare/</link>
+  <pubDate>Thu, 02 Jul 2020 16:46:10 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-mysql-prepare/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031903089.jpg" referrerpolicy="no-referrer">
+      </div>预处理 预处理是 MySQL 为了防止客户端频繁请求的一种技术，是对相同处理语句进行预先加载在 MySQL 中，将操作变量数据用占位符来代替，减少对 MySQL 的频繁请求，使得]]></description>
+</item>
+<item>
+  <title>Go 语言操作 MySQL 之 事务操作</title>
+  <link>https://blog.debuginn.cn/go-mysql-transaction-operation/</link>
+  <pubDate>Thu, 02 Jul 2020 15:04:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-mysql-transaction-operation/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031854061.jpg" referrerpolicy="no-referrer">
+      </div>事务 数据库事务( transaction )是访问并可能操作各种数据项的一个数据库操作序列，这些操作要么全部执行,要么全部不执行，是一个不可分割的工作单位。事务由事]]></description>
+</item>
+<item>
+  <title>Go 语言操作 MySQL 之 CURD 操作</title>
+  <link>https://blog.debuginn.cn/go-mysql-curd-operation/</link>
+  <pubDate>Wed, 01 Jul 2020 17:08:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-mysql-curd-operation/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031910934.jpg" referrerpolicy="no-referrer">
+      </div>MySQL 是目前开发中最常见的关系型数据库，使用 Go 语言进行操控数据库需要使用 Go 自带database/sql和驱动go-sql-driver/mysq]]></description>
+</item>
 </channel>
 </rss>
