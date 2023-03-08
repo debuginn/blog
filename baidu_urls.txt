@@ -28,6 +28,7 @@ https://blog.debuginn.cn/go-mysql-prepare/
 https://blog.debuginn.cn/go-mysql-transaction-operation/
 https://blog.debuginn.cn/go-mysql-curd-operation/
 https://blog.debuginn.cn/go-array-slice-map/
+https://blog.debuginn.cn/go-net-socket/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/
