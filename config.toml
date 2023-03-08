@@ -112,7 +112,7 @@ theme = "FixIt"
     enable = true
     # 自定义内容（支持 HTML 格式）
     # 进阶使用，见参数 `params.customFilePath.footer`
-    custom = ''
+    custom = '<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>'
     # 是否显示 Hugo 和主题信息
     hugo = true
     # 是否显示版权信息
@@ -428,7 +428,7 @@ theme = "FixIt"
     [params.analytics.google]
       id = "G-FVTHCHHP2J"
       # 是否匿名化用户 IP
-      anonymizeIP = true
+      anonymizeIP = false
 
   # Cookie 许可配置
   [params.cookieconsent]
