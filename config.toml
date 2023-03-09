@@ -249,7 +249,7 @@ theme = "FixIt"
     twemoji = true
     # 是否使用 lightgallery
     # 如果设为 "force"，文章中的图片将强制按照画廊形式呈现
-    lightgallery = false
+    lightgallery = "force"
     # 是否使用 ruby 扩展语法
     ruby = true
     # 是否使用 fraction 扩展语法
@@ -357,8 +357,8 @@ theme = "FixIt"
       enable = true
       animation = false
       # 相对于页脚的位置，可选值：["before", "after"]
-      position = "after"
-      # comment = "Buy me a coffee"
+      position = "before"
+      comment = "Buy me a coffee"
       [params.page.reward.ways]
         wechatpay = "https://image.debuginn.cn/202302191928172.jpg"
         # alipay = "/images/alipay.png"
