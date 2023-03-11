@@ -268,7 +268,7 @@ theme = "FixIt"
     gravatarForce = false
     # 开启自动书签支持
     # 如果为 true，则在关闭页面时保存阅读进度
-    autoBookmark = true
+    autoBookmark = false
     # 是否使用 字数统计
     wordCount = true
     # 是否使用 预计阅读
