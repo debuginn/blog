@@ -3,7 +3,17 @@
     <title>tools - 分类 - Debug客栈</title>
     <link>https://blog.debuginn.cn/categories/tools/</link>
     <description>tools - 分类 - Debug客栈</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Nov 2017 20:41:15 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/tools/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Apr 2020 23:19:45 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/tools/" rel="self" type="application/rss+xml" /><item>
+  <title>搭建流媒体服务器 PingOS 平台搭建</title>
+  <link>https://blog.debuginn.cn/pingos-build-sever/</link>
+  <pubDate>Fri, 03 Apr 2020 23:19:45 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pingos-build-sever/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303121930279.jpg" referrerpolicy="no-referrer">
+      </div>近期由于工作原因需要更换公司原有 RTMP 协议推流，由于 Flash 插件今年年底就淘汰使用，并且一直在寻找一种并发好、延时低、同时便于回放功能的应用，在网上找]]></description>
+</item>
+<item>
   <title>Sublime Text 崇高的文本编辑器</title>
   <link>https://blog.debuginn.cn/sublime-text/</link>
   <pubDate>Sun, 12 Nov 2017 20:41:15 &#43;0800</pubDate>

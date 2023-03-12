@@ -31,6 +31,8 @@ https://blog.debuginn.cn/go-array-slice-map/
 https://blog.debuginn.cn/go-net-socket/
 https://blog.debuginn.cn/linux-vim-command/
 https://blog.debuginn.cn/mysql-chooes-storage-engine/
+https://blog.debuginn.cn/pingos-build-sever/
+https://blog.debuginn.cn/computer-install/
 https://blog.debuginn.cn/os-runtime/
 https://blog.debuginn.cn/half-search/
 https://blog.debuginn.cn/os-introduction/

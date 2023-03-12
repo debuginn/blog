@@ -26,12 +26,12 @@
       <loc>https://blog.debuginn.cn/faas-notes/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/notes/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/serverless/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/financing/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/longbridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/%E6%B8%AF%E7%BE%8E%E8%82%A1/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/%E9%95%BF%E6%A1%A5/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-      <loc>https://blog.debuginn.cn/financing-long-bridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/%E8%AF%81%E5%88%B8/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/financing/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/longbridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E6%B8%AF%E7%BE%8E%E8%82%A1/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E9%95%BF%E6%A1%A5/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://blog.debuginn.cn/financing-long-bridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E8%AF%81%E5%88%B8/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/2022/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/debuginn-2022/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/2023/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -125,6 +125,14 @@
       <loc>https://blog.debuginn.cn/tags/engin/</loc><lastmod>2020-05-01T17:41:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/mysql/</loc><lastmod>2020-05-01T17:41:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/mysql-chooes-storage-engine/</loc><lastmod>2020-05-01T17:41:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/ffmpeg/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/hls/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/pingos/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/tools/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/pingos-build-sever/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/computer/</loc><lastmod>2020-03-21T15:46:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/computer/</loc><lastmod>2020-03-21T15:46:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/computer-install/</loc><lastmod>2020-03-21T15:46:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/os/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/os/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/runtime/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -139,5 +147,4 @@
       <loc>https://blog.debuginn.cn/os-introduction/</loc><lastmod>2017-11-18T14:26:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/sublime/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/sublime-text/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/tools/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/tools/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+      <loc>https://blog.debuginn.cn/tags/tools/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
