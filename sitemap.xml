@@ -2,16 +2,20 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://blog.debuginn.cn/categories/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-      <loc>https://blog.debuginn.cn/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/api/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/design/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/posts/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/restful-api/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/design-restful-api/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/douban/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/gin/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/go/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/mdui/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-      <loc>https://blog.debuginn.cn/posts/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/project/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/rss/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/douban-movies-to-blog/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/debuginn/</loc><lastmod>2023-03-02T20:54:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/debug%E5%AE%A2%E6%A0%88/</loc><lastmod>2023-03-02T20:54:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>

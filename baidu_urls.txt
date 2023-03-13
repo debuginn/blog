@@ -1,3 +1,4 @@
+https://blog.debuginn.cn/design-restful-api/
 https://blog.debuginn.cn/douban-movies-to-blog/
 https://blog.debuginn.cn/pages/subscription/
 https://blog.debuginn.cn/pages/friends/

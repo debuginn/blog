@@ -3,9 +3,19 @@
     <title>Debug客栈</title>
     <link>https://blog.debuginn.cn/</link>
     <description>专注于前沿技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Mar 2023 21:35:12 &#43;0800</lastBuildDate>
       <atom:link href="https://blog.debuginn.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Restful API 设计指北</title>
+  <link>https://blog.debuginn.cn/design-restful-api/</link>
+  <pubDate>Mon, 13 Mar 2023 21:35:12 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/design-restful-api/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303132137265.jpg" referrerpolicy="no-referrer">
+      </div>近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API]]></description>
+</item>
+<item>
   <title>如何将豆瓣观影记录实时同步至博客中</title>
   <link>https://blog.debuginn.cn/douban-movies-to-blog/</link>
   <pubDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</pubDate>
@@ -94,16 +104,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302262207101.jpg" referrerpolicy="no-referrer">
       </div>前言 在团队开发中，使用 Git 作为版本开发工具，可以便捷地协同多人管理并行开发，但是由于自己或者其他人代码提交污染了远程分支，就需要对远程代码进行]]></description>
-</item>
-<item>
-  <title>使用数字人民币兑换建党100周年纪念币</title>
-  <link>https://blog.debuginn.cn/coin-use-epay/</link>
-  <pubDate>Sun, 19 Sep 2021 13:48:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/coin-use-epay/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302272023525.jpeg" referrerpolicy="no-referrer">
-      </div>今天使用数字人民币兑换了建党100周年纪念币，过程比较坎坷，不过最终还是兑换成功了。 预约 ? 纪念币成功后，今天中秋假期，正好去兑换纪念币，小雨]]></description>
 </item>
 </channel>
 </rss>
