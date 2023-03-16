@@ -93,4 +93,3 @@ MySQL 存储引擎分类有 MyISAM、InnoDB、Memory、Merge等，可以看上�
 3. [MySQL存储引擎之 Merge 引擎](http://www.hhailuo.com/archives/18380)
 4. [MySQL存储引擎 - MyISAM与InnoDB区别 - Rocky - 知乎](https://zhuanlan.zhihu.com/p/61437720)
 5. [MySQL引擎介绍 - 慕课网 - 知乎](https://zhuanlan.zhihu.com/p/53619907)
-6. MyISAM和InnoDB区别和应用场景 - Ryo8
