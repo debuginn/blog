@@ -9,8 +9,8 @@ keywords: "订阅本站"
 comment: false
 weight: 0
 
-tags: ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "Hugo"]
-categories: ["faas"]
+tags: ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "subscribe"]
+categories: ["subscribe"]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
