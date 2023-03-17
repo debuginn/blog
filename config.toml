@@ -199,7 +199,7 @@ theme = "FixIt"
       # 是否显示社交账号
       social = true
       # 免责声明（支持 HTML 格式）
-      disclaimer = '<a href="./pages/subscription"><img src="https://image.debuginn.cn/202302202248422.png" alt="qrcode" width="100%"></a>'
+      disclaimer = '<a href="./pages/subscribe"><img src="https://image.debuginn.cn/202302202248422.png" alt="qrcode" width="100%"></a>'
 
     # 主页文章列表
     [params.home.posts]
@@ -499,11 +499,11 @@ theme = "FixIt"
 
 [menu]
   [[menu.main]]
-    identifier = "subscription"
+    identifier = "subscribe"
     pre = ""
     post = ""
     name = "订阅"
-    url = "/pages/subscription/"
+    url = "/pages/subscribe/"
     title = ""
     weight = 1
     [menu.main.params]
@@ -560,15 +560,70 @@ theme = "FixIt"
     [menu.main.params]
       icon = "fa-solid fa-users"
   [[menu.main]]
-    identifier = "debuginn"
+    identifier = "link"
     pre = ""
     post = ""
-    name = "主站"
-    url = "https://www.debuginn.cn"
+    name = "更多"
+    url = ""
     title = ""
     weight = 6
     [menu.main.params]
-      icon = "fa-solid fa-link"
+      icon = "fa-solid fa-eye text-primary"
+  [[menu.main]]
+    identifier = "debuginn"
+    parent = "link"
+    pre = ""
+    post = ""
+    name = "客栈主页"
+    url = "https://debuginn.cn"
+    title = ""
+    weight = 7
+    [menu.main.params]
+      icon = "fa-solid fa-house text-danger"
+  [[menu.main]]
+    identifier = "notes"
+    parent = "link"
+    pre = ""
+    post = ""
+    name = "我的笔记"
+    url = "https://notes.debuginn.cn"
+    title = ""
+    weight = 8
+    [menu.main.params]
+      icon = "fa-solid fa-book text-info"
+  [[menu.main]]
+    identifier = "photo"
+    parent = "link"
+    pre = ""
+    post = ""
+    name = "摄影展览"
+    url = "https://photo.debuginn.cn"
+    title = ""
+    weight = 9
+    [menu.main.params]
+      icon = "fa-solid fa-camera text-warning"
+  [[menu.main]]
+    identifier = "project"
+    parent = "link"
+    pre = ""
+    post = ""
+    name = "我的项目"
+    url = "/pages/project/"
+    title = ""
+    weight = 10
+    [menu.main.params]
+      icon = "fa-brands fa-github-alt text-info"
+  [[menu.main]]
+    identifier = "aboutme"
+    parent = "link"
+    pre = ""
+    post = ""
+    name = "关于站长"
+    url = "/pages/aboutme/"
+    title = ""
+    weight = 11
+    [menu.main.params]
+      icon = "fa-solid fa-address-card text-secondary"
 
 # Hugo 解析文档的配置
 [markup]
