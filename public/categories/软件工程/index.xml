@@ -1,0 +1,95 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>软件工程 - 分类 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+    <description>软件工程 - 分类 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 04 Jul 2019 23:11:33 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+  <title>软件工程 用例习题</title>
+  <link>https://blog.debuginn.cn/test-software-use-case/</link>
+  <pubDate>Thu, 04 Jul 2019 23:11:33 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-use-case/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303182313879.jpg" referrerpolicy="no-referrer">
+      </div>一、选择题 1、 下列关于使用用例的目的，正确的是（ B ）。 A．确定系统应具备哪些功能 B．为系统的功能提供清晰一致的描述，方便开发人员传递系统的需]]></description>
+</item>
+<item>
+  <title>软件工程 活动图、状态图、顺序图实验题</title>
+  <link>https://blog.debuginn.cn/test-software-figure/</link>
+  <pubDate>Thu, 04 Jul 2019 16:48:56 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-figure/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303191159338.jpg" referrerpolicy="no-referrer">
+      </div>活动图绘图有开始结尾的标志，简称黑点开始、牛眼结束。 1、请应用活动图描述同学们每次参加考试的过程是怎么样的？ 开始。 学生进入考场。 监考教师核对]]></description>
+</item>
+<item>
+  <title>软件工程 交互预览、组件、部署习题</title>
+  <link>https://blog.debuginn.cn/test-software-interaction/</link>
+  <pubDate>Thu, 04 Jul 2019 16:47:08 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-interaction/</guid>
+  <description><![CDATA[1、软件部署是（ B ） A：部署软件构件 B：部署软件程序 C：部署软件模型 D：部署软件制品 2、下面说法正确的是（ C ） A：制品就是制成品 B：制品是软]]></description>
+</item>
+<item>
+  <title>软件工程 类图实验题</title>
+  <link>https://blog.debuginn.cn/test-software-class-diagram/</link>
+  <pubDate>Thu, 04 Jul 2019 16:23:31 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-class-diagram/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303191228166.jpg" referrerpolicy="no-referrer">
+      </div>1．请按下述要求绘制类图。 一个年级里有 3 到 5 个班级。 一个班级有 1 到 40 名学生。 1 个班级有 1 名担任班主任。 2．请按下述要求绘制出书橱的类图。 可以]]></description>
+</item>
+<item>
+  <title>软件工程 类图习题</title>
+  <link>https://blog.debuginn.cn/test-software-class-diagram-exercises/</link>
+  <pubDate>Wed, 03 Jul 2019 21:45:49 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-class-diagram-exercises/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303202156985.jpg" referrerpolicy="no-referrer">
+      </div>依赖（Dependency）: 虚线箭头表示 关联（Association）：实线箭头表示 聚合（Aggregation）：带空心菱形头表示（整体]]></description>
+</item>
+<item>
+  <title>软件工程 包图习题</title>
+  <link>https://blog.debuginn.cn/test-software-package-diagram/</link>
+  <pubDate>Tue, 02 Jul 2019 19:54:56 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-package-diagram/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303191228166.jpg" referrerpolicy="no-referrer">
+      </div>1、（ A )是用于把元素组织成组的通用机制 A）包 B、类 C）接口 D）组件 2、下面哪个符号代表包图（ A ） 3、包内的元素可以被包内的元素、继承的子包]]></description>
+</item>
+<item>
+  <title>软件工程 状态图、顺序图习题</title>
+  <link>https://blog.debuginn.cn/test-software-stat-sequence-diagram/</link>
+  <pubDate>Mon, 01 Jul 2019 14:13:26 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-stat-sequence-diagram/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303191228166.jpg" referrerpolicy="no-referrer">
+      </div>1、UML图不包括 ( D ) A）用例图 B）类图 C）状态机图 D）流程图 2、下面中（ C ）图表示结束状态。 3、UML中，对象行为是通过交互来实现的，是]]></description>
+</item>
+<item>
+  <title>软件工程 活动图习题</title>
+  <link>https://blog.debuginn.cn/test-software-activity-diagram/</link>
+  <pubDate>Thu, 21 Mar 2019 19:31:41 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-activity-diagram/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303191228166.jpg" referrerpolicy="no-referrer">
+      </div>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 UML定义了5类，10种模型图： 1.用例图：从用户角度描述系统功能，并指各功能的操作者。 2.静态图：包括类图，]]></description>
+</item>
+<item>
+  <title>软件工程 怎样建立甘特图</title>
+  <link>https://blog.debuginn.cn/test-software-build-gantt-chart/</link>
+  <pubDate>Wed, 13 Mar 2019 22:02:53 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/test-software-build-gantt-chart/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303191228166.jpg" referrerpolicy="no-referrer">
+      </div>甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续]]></description>
+</item>
+</channel>
+</rss>

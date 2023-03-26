@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>unix - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/unix/</link>
+    <description>unix - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Mar 2023 20:08:56 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/unix/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux Tree 树状目录显示工具 使用手册</title>
+  <link>https://blog.debuginn.cn/linux-tree-command/</link>
+  <pubDate>Wed, 15 Mar 2023 20:08:56 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/linux-tree-command/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303152010224.jpg" referrerpolicy="no-referrer">
+      </div>Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app]]></description>
+</item>
+</channel>
+</rss>

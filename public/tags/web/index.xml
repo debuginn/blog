@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>web - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/web/</link>
+    <description>web - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Mar 2023 14:56:17 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/web/" rel="self" type="application/rss+xml" /><item>
+  <title>PWA 渐进式Web应用程序</title>
+  <link>https://blog.debuginn.cn/web-pwa-program/</link>
+  <pubDate>Sat, 18 Mar 2023 14:56:17 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/web-pwa-program/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303181458725.png" referrerpolicy="no-referrer">
+      </div>简介 PWA是Progressive Web App的简称，是谷歌提出的新型Web技术，并由W3C及谷歌来推广这项技术，其主要目的是为了提升用户对网站]]></description>
+</item>
+</channel>
+</rss>

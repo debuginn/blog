@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>如何将豆瓣观影记录实时同步至博客中 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查" /><meta name="keywords" content='go,gin,rss,mdui,douban' /><meta itemprop="name" content="如何将豆瓣观影记录实时同步至博客中">
+<meta itemprop="description" content="事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查"><meta itemprop="datePublished" content="2023-03-03T19:28:59+08:00" />
+<meta itemprop="dateModified" content="2023-03-03T19:28:59+08:00" />
+<meta itemprop="wordCount" content="3139"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="go,gin,rss,mdui,douban," /><meta property="og:title" content="如何将豆瓣观影记录实时同步至博客中" />
+<meta property="og:description" content="事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/douban-movies-to-blog/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-03T19:28:59+08:00" />
+<meta property="article:modified_time" content="2023-03-03T19:28:59+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="如何将豆瓣观影记录实时同步至博客中"/>
+<meta name="twitter:description" content="事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/douban-movies-to-blog/" /><link rel="prev" href="https://blog.debuginn.cn/faas-notes/" /><link rel="next" href="https://blog.debuginn.cn/design-restful-api/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "如何将豆瓣观影记录实时同步至博客中",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/douban-movies-to-blog\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "go, gin, rss, mdui, douban","wordcount":  3139 ,
+    "url": "https:\/\/blog.debuginn.cn\/douban-movies-to-blog\/","datePublished": "2023-03-03T19:28:59+08:00","dateModified": "2023-03-03T19:28:59+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>如何将豆瓣观影记录实时同步至博客中</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/project/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> project</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-03-03 19:28:59"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-03">2023-03-03</time></span>&nbsp;<span title="更新于 2023-03-03 19:28:59"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-03">2023-03-03</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3139 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="如何将豆瓣观影记录实时同步至博客中">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202303031942110.jpg" srcset="https://image.debuginn.cn/202303031942110.jpg, https://image.debuginn.cn/202303031942110.jpg 1.5x, https://image.debuginn.cn/202303031942110.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202303031942110.jpg" data-alt="https://image.debuginn.cn/202303031942110.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#设计">设计</a></li>
+    <li><a href="#map-转换">Map 转换</a></li>
+    <li><a href="#服务">服务</a></li>
+    <li><a href="#前台">前台</a></li>
+    <li><a href="#cors">CORS</a></li>
+    <li><a href="#代理">代理</a></li>
+    <li><a href="#效果">效果</a></li>
+    <li><a href="#开源">开源</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>事情的起因是这样的，前几日在看 <a href="https://idealclover.top"target="_blank" rel="external nofollow noopener noreferrer">idealclover<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 大佬的博客，不经意间看到了他的<a href="https://idealclover.top/movies.html"target="_blank" rel="external nofollow noopener noreferrer">豆瓣观影记录<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查看，他是爬取的豆瓣观影界面来实现的，其实关于豆瓣观影记录，网上也有很多的教程，恰巧自己所学的 Go 语言也可以做简单的爬虫实现其效果，于是开始上手造轮子了，PS：了解到非法爬取网站信息是违法的，之前豆瓣 API 接口，关闭访问，在豆瓣上找了好久，终于在我的主页中找到了对于观影记录的官方提供 RSS 订阅，打开订阅，看到有自己所需要的字段，比较好获取，于是就开始了此项目。</p>
+<h2 id="分析">分析</h2>
+<p>首先，需要获取豆瓣提供的 XML 文件，在我的主页右下角就可以看到 RSS 订阅链接：</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303031930118.png" data-thumbnail="https://image.debuginn.cn/202303031930118.png" data-sub-html="<h2>豆瓣订阅地址</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303031930118.png" srcset="https://image.debuginn.cn/202303031930118.png, https://image.debuginn.cn/202303031930118.png 1.5x, https://image.debuginn.cn/202303031930118.png 2x" sizes="auto" data-title="豆瓣订阅地址" data-alt="豆瓣订阅地址" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>找到了订阅地址，点击查看 XML 结构，可以看到豆瓣提供的结构还是挺理想的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;rss</span> <span class="na">xmlns:content=</span><span class="s">&#34;http://purl.org/rss/1.0/modules/content/&#34;</span> <span class="na">xmlns:dc=</span><span class="s">&#34;http://purl.org/dc/elements/1.1/&#34;</span> <span class="na">version=</span><span class="s">&#34;2.0&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;channel&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;title&gt;</span>Meng小羽 的收藏<span class="nt">&lt;/title&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>https://www.douban.com/people/debuginn/<span class="nt">&lt;/link&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">&lt;![CDATA[ Meng小羽 的收藏：想看、在看和看过的书和电影，想听、在听和听过的音乐 ]]&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;language&gt;</span>zh-cn<span class="nt">&lt;/language&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;copyright&gt;</span>© 2013, douban.com.<span class="nt">&lt;/copyright&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;pubDate&gt;</span>Sat, 30 May 2020 09:14:08 GMT<span class="nt">&lt;/pubDate&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;item&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;title&gt;</span>看过黑衣人：全球追缉<span class="nt">&lt;/title&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;link&gt;</span>http://movie.douban.com/subject/19971676/<span class="nt">&lt;/link&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;description&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">&lt;![CDATA[ &lt;table&gt;&lt;tr&gt; &lt;td width=&#34;80px&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/19971676/&#34; title=&#34;Men in Black International&#34;&gt; &lt;img src=&#34;https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2558701068.webp&#34; alt=&#34;Men in Black International&#34;&gt;&lt;/a&gt;&lt;/td&gt; &lt;td&gt; &lt;p&gt;推荐: 力荐&lt;/p&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; ]]&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dc:creator&gt;</span>Meng小羽<span class="nt">&lt;/dc:creator&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;pubDate&gt;</span>Sat, 30 May 2020 09:14:08 GMT<span class="nt">&lt;/pubDate&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;guid</span> <span class="na">isPermaLink=</span><span class="s">&#34;false&#34;</span><span class="nt">&gt;</span>https://www.douban.com/people/debuginn/interests/2402808825<span class="nt">&lt;/guid&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl">    ......
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;channel&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其实，我们提取的主要就是 item 标签下对应的电影信息内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;title&gt;</span>看过黑衣人：全球追缉<span class="nt">&lt;/title&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>http://movie.douban.com/subject/19971676/<span class="nt">&lt;/link&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">&lt;![CDATA[ &lt;table&gt;&lt;tr&gt; &lt;td width=&#34;80px&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/19971676/&#34; title=&#34;Men in Black International&#34;&gt; &lt;img src=&#34;https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2558701068.webp&#34; alt=&#34;Men in Black International&#34;&gt;&lt;/a&gt;&lt;/td&gt; &lt;td&gt; &lt;p&gt;推荐: 力荐&lt;/p&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; ]]&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dc:creator&gt;</span>Meng小羽<span class="nt">&lt;/dc:creator&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;pubDate&gt;</span>Sat, 30 May 2020 09:14:08 GMT<span class="nt">&lt;/pubDate&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;guid</span> <span class="na">isPermaLink=</span><span class="s">&#34;false&#34;</span><span class="nt">&gt;</span>https://www.douban.com/people/debuginn/interests/2402808825<span class="nt">&lt;/guid&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/item&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="设计">设计</h2>
+<p>根据豆瓣官方提供的 XML 标签数据，可以利用 Go 语言中 <code>encoding/xml</code> 包来进行对数据的映射，可以设计成如下结构体：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 豆瓣 xml 描述结构体
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Attributes</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">XMLName</span> <span class="nx">xml</span><span class="p">.</span><span class="nx">Name</span> <span class="s">`xml:&#34;rss&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Version</span> <span class="kt">string</span>   <span class="s">`xml:&#34;version,attr&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Channel</span> <span class="nx">Channel</span>  <span class="s">`xml:&#34;channel&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// XML 主题结构拆分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Channel</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Title</span>       <span class="kt">string</span>      <span class="s">`xml:&#34;title&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Link</span>        <span class="kt">string</span>      <span class="s">`xml:&#34;link&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Description</span> <span class="kt">string</span>      <span class="s">`xml:&#34;description&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Language</span>    <span class="kt">string</span>      <span class="s">`xml:&#34;language&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Copyright</span>   <span class="kt">string</span>      <span class="s">`xml:&#34;copyright&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Pubdate</span>     <span class="kt">string</span>      <span class="s">`xml:&#34;pubDate&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">MovieItem</span>   <span class="p">[]</span><span class="nx">MovieItem</span> <span class="s">`xml:&#34;item&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 豆瓣 电影列表结构体
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">MovieItem</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Title</span>       <span class="kt">string</span> <span class="s">`xml:&#34;title&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Link</span>        <span class="kt">string</span> <span class="s">`xml:&#34;link&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Description</span> <span class="kt">string</span> <span class="s">`xml:&#34;description&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Pubdate</span>     <span class="kt">string</span> <span class="s">`xml:&#34;pubDate&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以和 XML 文件对应字段进行匹配，可以从上面的结构体中我们可以看到，最终我们想获取到的数据就是结构体 <code>MovieItem</code> 的数据。</p>
+<p>由于是从网上链接获取数据的，在这里首先我们需要将网上豆瓣提供的 XML 文件转换成 <code>[]byte</code> 类型的数据：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 获取 xml 文件数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">getXMLData</span><span class="p">(</span><span class="nx">url</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">data</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 读取 xml 文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 自定义Header
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span> <span class="c1">// 关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 读取所有文件内容保存至 []byte
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">data</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面这个函数实现的就是将 XML 文件保存至 Go 语言的数据结构的操作，现在可以将 XML 文件成功读取出来，接下来就是要进行 XML 字段与上面作出的结构体之间的映射，其实映射至结构体的过程是比较简单的，首先声明 <code>Attributes{}</code> 类型的结构体，之后通过<code> xml.Unmarshal</code> 来实现映射拷贝，就可以得到对应的结构体类型的数据，由于我们想要的数据是结构体数据中的一部分，即 <code>MovieItem</code>，在得到结构体数据后就可以将想要的这一部分的数据选择抽取出来：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">v</span> <span class="o">:=</span> <span class="nx">Attributes</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">unMarshalErr</span> <span class="o">:=</span> <span class="nx">xml</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">unMarshalErr</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;xml unmarshal failed, err:%v\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">movieItem</span> <span class="o">:=</span> <span class="nx">v</span><span class="p">.</span><span class="nx">Channel</span><span class="p">.</span><span class="nx">MovieItem</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="map-转换">Map 转换</h2>
+<p>在这里我们可以得到结构体中嵌套的结构体，在结构体中有一些字段我们是不想要的，需要进行处理，对于 <code>description</code> 这个字段中，官方提供的是一段 HTML 描述串，其中电影的描述文件是我们所需要的，对于 HTML 字符串的拆分，我们可以借助strings.Split 函数来实现截取，使用 <code>\&quot;</code> 符号截取，虽然可以获取到我们想要的数据了，但是由于这个是嵌套的结构体，我们需要做一个匹配的 <code>map</code> 来进行存储处理好的数据，可以看代码中我的设计：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">MoviesMap</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">movieItem</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">movie</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">description</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="nx">movieItem</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Description</span><span class="p">,</span> <span class="s">&#34;\&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">movie</span><span class="p">[</span><span class="s">&#34;Title&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nb">string</span><span class="p">([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">movieItem</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Title</span><span class="p">)[</span><span class="mi">2</span><span class="p">:])</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">movie</span><span class="p">[</span><span class="s">&#34;Link&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">movieItem</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Link</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">movie</span><span class="p">[</span><span class="s">&#34;Img&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">description</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">movie</span><span class="p">[</span><span class="s">&#34;Pubdate&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">movieItem</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">Pubdate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">MoviesMap</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">movie</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>外层 map 是采用 <code>map[int]interface{}</code> 类型，在 <code>interface{}</code> 中存储这内层 <code>map map[string]string</code> 类型。</p>
+<p>针对于 Img 地址的获取，是现根据特定符号拆分，之后获取制定位置的数据获取的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0 map[Img:https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2558701068.jpg Link:http://movie.douban.com/subject/19971676/ Pubdate:Sat, 30 May 2020 09:14:08 GMT Title:黑衣人：全球追缉]
+</span></span><span class="line"><span class="cl">1 map[Img:https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2263408369.jpg Link:http://movie.douban.com/subject/1294371/ Pubdate:Thu, 28 May 2020 10:06:23 GMT Title:摩登时代]
+</span></span><span class="line"><span class="cl">......
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后就是将这个 map 做一下序列化处理，这样就可以返回给前台数据了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">data</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">MoviesMap</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="服务">服务</h2>
+<p>处理好数据，做了对应的处理，怎么将数据作为服务端提供给前台，在这里需要使用 Web 服务，Go 中可以使用原生 Web，不过我在这里使用的是之前学过的 Gin 框架，来提供服务的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">r</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">r</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/doubanmovies&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">context</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">context</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="nx">MoviesMap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nx">_</span> <span class="p">=</span> <span class="nx">r</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://image.debuginn.cn/202303031934481.png" data-thumbnail="https://image.debuginn.cn/202303031934481.png" data-sub-html="<h2>api json数据</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303031934481.png" srcset="https://image.debuginn.cn/202303031934481.png, https://image.debuginn.cn/202303031934481.png 1.5x, https://image.debuginn.cn/202303031934481.png 2x" sizes="auto" data-title="api json数据" data-alt="api json数据" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>启动服务，可以得到对应的 json 数据，你若以为现在就可以实现了，那么你错了，远远没有那么简单&hellip;&hellip;</p>
+<h2 id="前台">前台</h2>
+<p>由于我知晓我的博客采用的前台 UI 技术是 MDUI， 我利用自身的卡片 UI 迅速设计了一个模块，因为后期需要放在我的博客页面上，前端读取数据采用的是 VUE 和 axios 技术：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-container-fluid&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-row&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;item in info&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-col-xs-6 mdui-col-sm-4 mdui-col-md-3 mdui-col-lg-3 mdui-m-b-1 mdui-m-t-1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">:href</span><span class="o">=</span><span class="s">&#34;item.Link&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-card mdui-hoverable&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-card-media&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">:src</span><span class="o">=</span><span class="s">&#34;item.Img&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;height: 260px;&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-card-media-covered&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-card-primary&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mdui-card-primary-subtitle&#34;</span><span class="p">&gt;</span>{{ item.Title }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;./static/js/mdui.min.js&#34;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js&#34;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&#34;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">info</span><span class="o">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:8080/doubanmovies&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">info</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 请求失败处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设计好了以后，访问页面，却加载不出来，emmmmmm</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303031935689.png" data-thumbnail="https://image.debuginn.cn/202303031935689.png" data-sub-html="<h2>CORS</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303031935689.png" srcset="https://image.debuginn.cn/202303031935689.png, https://image.debuginn.cn/202303031935689.png 1.5x, https://image.debuginn.cn/202303031935689.png 2x" sizes="auto" data-title="CORS" data-alt="CORS" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<h2 id="cors">CORS</h2>
+<p>看到了是 CORS 同源策略的原因，接下来就是要解决同源问题了，方法比较简单，就是将 Go 服务端加上 CORS 同源策略就可以了，方法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">r</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">r</span><span class="p">.</span><span class="nf">Use</span><span class="p">(</span><span class="nf">Cors</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nx">r</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/doubanmovies&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">context</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">context</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="nx">MoviesMap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">_</span> <span class="p">=</span> <span class="nx">r</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在路由访问中添加 <code>Cors()</code> 函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 跨域
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Cors</span><span class="p">()</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">HandlerFunc</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">method</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Method</span>               <span class="c1">//请求方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">origin</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">)</span> <span class="c1">//请求头部
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kd">var</span> <span class="nx">headerKeys</span> <span class="p">[]</span><span class="kt">string</span>                  <span class="c1">// 声明请求头keys
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Header</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">headerKeys</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">headerKeys</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">headerStr</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="nx">headerKeys</span><span class="p">,</span> <span class="s">&#34;, &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">headerStr</span> <span class="o">!=</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">headerStr</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;access-control-allow-origin, access-control-allow-headers, %s&#34;</span><span class="p">,</span> <span class="nx">headerStr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">headerStr</span> <span class="p">=</span> <span class="s">&#34;access-control-allow-origin, access-control-allow-headers&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">origin</span> <span class="o">!=</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">c</span><span class="p">.</span><span class="nx">Writer</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Origin&#34;</span><span class="p">,</span> <span class="s">&#34;*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">c</span><span class="p">.</span><span class="nf">Header</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Origin&#34;</span><span class="p">,</span> <span class="s">&#34;*&#34;</span><span class="p">)</span>                                       <span class="c1">// 这是允许访问所有域
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">c</span><span class="p">.</span><span class="nf">Header</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Methods&#34;</span><span class="p">,</span> <span class="s">&#34;POST, GET, OPTIONS, PUT, DELETE,UPDATE&#34;</span><span class="p">)</span> <span class="c1">//服务器支持的所有跨域请求的方法,为了避免浏览次请求的多次&#39;预检&#39;请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">//  header的类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">c</span><span class="p">.</span><span class="nf">Header</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Headers&#34;</span><span class="p">,</span> <span class="s">&#34;Authorization, Content-Length, X-CSRF-Token, Token,session,X_Requested_With,Accept, Origin, Host, Connection, Accept-Encoding, Accept-Language,DNT, X-CustomHeader, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type, Pragma&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//              允许跨域设置                                                                                                      可以返回其他子段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">c</span><span class="p">.</span><span class="nf">Header</span><span class="p">(</span><span class="s">&#34;Access-Control-Expose-Headers&#34;</span><span class="p">,</span> <span class="s">&#34;Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma,FooBar&#34;</span><span class="p">)</span> <span class="c1">// 跨域关键设置 让浏览器可以解析
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">c</span><span class="p">.</span><span class="nf">Header</span><span class="p">(</span><span class="s">&#34;Access-Control-Max-Age&#34;</span><span class="p">,</span> <span class="s">&#34;172800&#34;</span><span class="p">)</span>                                                                                                                                                           <span class="c1">// 缓存请求信息 单位为秒
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">c</span><span class="p">.</span><span class="nf">Header</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Credentials&#34;</span><span class="p">,</span> <span class="s">&#34;false&#34;</span><span class="p">)</span>                                                                                                                                                  <span class="c1">//  跨域请求是否需要带cookie信息 默认设置为true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">c</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;content-type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json&#34;</span><span class="p">)</span>                                                                                                                                                              <span class="c1">// 设置返回格式是json
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">//放行所有OPTIONS方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="nx">method</span> <span class="o">==</span> <span class="s">&#34;OPTIONS&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">c</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="s">&#34;Options Request!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// 处理请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">c</span><span class="p">.</span><span class="nf">Next</span><span class="p">()</span> <span class="c1">//  处理请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就可以看到结果了，如下图：</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303031937830.png" data-thumbnail="https://image.debuginn.cn/202303031937830.png" data-sub-html="<h2>演示</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303031937830.png" srcset="https://image.debuginn.cn/202303031937830.png, https://image.debuginn.cn/202303031937830.png 1.5x, https://image.debuginn.cn/202303031937830.png 2x" sizes="auto" data-title="演示" data-alt="演示" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>看到结果后，心中窃喜，感觉成功了，接下来就需要将 Go 服务部署到我的服务器中去了，部署步骤比较简单，就不过多解释了，最后访问服务器 IP 及对应单口可以呈现结果，最后将前台代码粘贴到新建的页面中，生成预览，emmmm，啥都没有，浏览器居然报 HTTPS 请求 HTTP 资源是不安全的，吐了一口血，解决吧，唉，经过查询资料，得出如下两个解决方案：</p>
+<ul>
+<li>Gin 框架服务本身使用 SSL 证书，实现 HTTPS 访问，不过需要配置域名；</li>
+<li>使用 Nginx 服务做一下代理，将一个特定链接代理到本身服务中去。</li>
+</ul>
+<p>作为学生党的我，没有太多的资金去申请过多的 SSL 证书（省着点用），于是我就在我的 debuginn.cn 子域名下做了一个代理。</p>
+<h2 id="代理">代理</h2>
+<p>Nginx 代理实现也是比较简单的，就是将前端访问某个接口代理至服务器中某个端口的服务中，表面上看是 Nginx 在做数据处理，实际上是 Nginx 只做了一个代理转发，由于我www.debuginn.cn 子域名本身就是 https 的，所以设置好了代理之后，就可以使用固定的代理链接访问了，配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server{</span>
+</span></span><span class="line"><span class="cl">    <span class="s">.....</span>
+</span></span><span class="line"><span class="cl">    <span class="s">location</span> <span class="s">/douban_movies</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8080</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host:80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就可以实现 https 资源访问了：https://debuginn.cn/doubanmovies</p>
+<h2 id="效果">效果</h2>
+<p>解决了 HTTPS 访问 HTTP 资源的问题，就解决了所有问题，实现了效果。</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303031939914.png" data-thumbnail="https://image.debuginn.cn/202303031939914.png" data-sub-html="<h2>我的观影</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303031939914.png" srcset="https://image.debuginn.cn/202303031939914.png, https://image.debuginn.cn/202303031939914.png 1.5x, https://image.debuginn.cn/202303031939914.png 2x" sizes="auto" data-title="我的观影" data-alt="我的观影" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>具体效果如下：</p>
+<p><a href="https://www.debuginn.cn/doubanmovies"target="_blank" rel="external nofollow noopener noreferrer">https://www.debuginn.cn/doubanmovies<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="开源">开源</h2>
+<p>针对于此小项目，我已经开源至 Github 中，若是你感兴趣或者有什么建议，可以联系我，我们一起改进，同时希望你可以给我一个 Star，万分感谢！</p>
+<p><a href="https://github.com/debuginn/douban-movies"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/debuginn/douban-movies<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-03-03 19:28:59">更新于 2023-03-03&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/projects/douban-movies-to-blog.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/douban-movies-to-blog/" data-title="如何将豆瓣观影记录实时同步至博客中" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="go,gin,rss,mdui,douban"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/douban-movies-to-blog/" data-hashtag="go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/douban-movies-to-blog/" data-title="如何将豆瓣观影记录实时同步至博客中" data-image="https://image.debuginn.cn/202303031942110.jpg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/go/' class="post-tag">GO</a><a href='/tags/gin/' class="post-tag">gin</a><a href='/tags/rss/' class="post-tag">rss</a><a href='/tags/mdui/' class="post-tag">mdui</a><a href='/tags/douban/' class="post-tag">douban</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/faas-notes/" class="post-nav-item" rel="prev" title="FAAS 调研笔记"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>FAAS 调研笔记</a>
+      <a href="/design-restful-api/" class="post-nav-item" rel="next" title="Restful API 设计指北">Restful API 设计指北<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

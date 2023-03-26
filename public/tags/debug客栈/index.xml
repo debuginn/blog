@@ -1,9 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Debug客栈 - 标签 - Debug客栈</title>
+    <title>debug客栈 - 标签 - Debug客栈</title>
     <link>https://blog.debuginn.cn/tags/debug%E5%AE%A2%E6%A0%88/</link>
-    <description>Debug客栈 - 标签 - Debug客栈</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 31 Dec 2022 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/debug%E5%AE%A2%E6%A0%88/" rel="self" type="application/rss+xml" /><item>
+    <description>debug客栈 - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/debug%E5%AE%A2%E6%A0%88/" rel="self" type="application/rss+xml" /><item>
+  <title>我的项目</title>
+  <link>https://blog.debuginn.cn/pages/project/</link>
+  <pubDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/project/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 Github Github Status Top languages 项目]]></description>
+</item>
+<item>
+  <title>订阅本站</title>
+  <link>https://blog.debuginn.cn/pages/subscribe/</link>
+  <pubDate>Thu, 02 Mar 2023 20:54:51 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/subscribe/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 常规订阅 Debug客栈给您提供了四种常规订阅方式，分别是 微信公众号订阅、邮箱订阅、 RSS订阅，当然还有 Github ，请根据您的]]></description>
+</item>
+<item>
   <title>2022 年度总结</title>
   <link>https://blog.debuginn.cn/debuginn-2022/</link>
   <pubDate>Sat, 31 Dec 2022 10:00:00 &#43;0800</pubDate>
@@ -32,6 +48,16 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302272141603.jpeg" referrerpolicy="no-referrer">
       </div>今年，最大的感受就是时间过的太快了，一切都是那么的来不及 &hellip;&hellip; 2020 年，疫情、毕业、工作，学生时代的 END，社会人时代的 START &hellip;&hellip; 2021 年，希望一切都在慢慢变]]></description>
+</item>
+<item>
+  <title>2019 年度总结</title>
+  <link>https://blog.debuginn.cn/debuginn-2019/</link>
+  <pubDate>Tue, 31 Dec 2019 08:00:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/debuginn-2019/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303161955766.jpg" referrerpolicy="no-referrer">
+      </div>2019年，这一年来是我经历最多的一年，上半年的我还在学校上着学校学年安排的课程，谈着美好的校园恋爱，下半年就脱离了校园生活，开始独自一人的]]></description>
 </item>
 </channel>
 </rss>

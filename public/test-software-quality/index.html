@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>软件质量测试知识点 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="1、什么是软件、软件的特征有哪些？ 软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。即计算机程序、规程、文档和软件系统运行" /><meta name="keywords" content='软件质量测试' /><meta itemprop="name" content="软件质量测试知识点">
+<meta itemprop="description" content="1、什么是软件、软件的特征有哪些？ 软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。即计算机程序、规程、文档和软件系统运行"><meta itemprop="datePublished" content="2019-07-03T18:33:02+08:00" />
+<meta itemprop="dateModified" content="2019-07-03T18:33:02+08:00" />
+<meta itemprop="wordCount" content="3861"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="软件质量测试," /><meta property="og:title" content="软件质量测试知识点" />
+<meta property="og:description" content="1、什么是软件、软件的特征有哪些？ 软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。即计算机程序、规程、文档和软件系统运行" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/test-software-quality/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-07-03T18:33:02+08:00" />
+<meta property="article:modified_time" content="2019-07-03T18:33:02+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="软件质量测试知识点"/>
+<meta name="twitter:description" content="1、什么是软件、软件的特征有哪些？ 软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。即计算机程序、规程、文档和软件系统运行"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/test-software-quality/" /><link rel="prev" href="https://blog.debuginn.cn/test-software-vending-mechine/" /><link rel="next" href="https://blog.debuginn.cn/test-software-class-diagram-exercises/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "软件质量测试知识点",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/test-software-quality\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "软件质量测试","wordcount":  3861 ,
+    "url": "https:\/\/blog.debuginn.cn\/test-software-quality\/","datePublished": "2019-07-03T18:33:02+08:00","dateModified": "2019-07-03T18:33:02+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>软件质量测试知识点</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%B5%8B%E8%AF%95/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 软件质量测试</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2019-07-03 18:33:02"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2019-07-03">2019-07-03</time></span>&nbsp;<span title="更新于 2019-07-03 18:33:02"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2019-07-03">2019-07-03</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3861 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="软件质量测试知识点">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202303191356876.jpg" srcset="https://image.debuginn.cn/202303191356876.jpg, https://image.debuginn.cn/202303191356876.jpg 1.5x, https://image.debuginn.cn/202303191356876.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202303191356876.jpg" data-alt="https://image.debuginn.cn/202303191356876.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2019-07-03，文中内容可能已过时。</div>
+      </div>
+    </div><p><strong>1、什么是软件、软件的特征有哪些？</strong></p>
+<p>软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。即计算机程序、规程、文档和软件系统运行所必需的数据。</p>
+<p><strong>软件的特征：</strong></p>
+<ul>
+<li>软件是由开发产生，不是用传统方法制造的；</li>
+<li>软件不会像硬件那样有磨损；</li>
+<li>软件不能通过已有构件组装，只能自己定义。</li>
+</ul>
+<p><strong>2、软件分为哪几类？</strong></p>
+<p>系统软件、应用软件、WEB软件、工程和科学软件、嵌入式软件、产品线软件、人工智能软件等。</p>
+<p><strong>3、什么是软件质量、软件质量从哪几个方面看？</strong></p>
+<p>软件质量 是指软件系统或系统中的软件部分的质量，既满足用户需求，也包括功能需求和性能需求的程度。</p>
+<p><strong>从哪几个方面来看软件质量？</strong></p>
+<ol>
+<li>软件结构方面：软件应具有良好的结构；</li>
+<li>功能和性能方面：其软件应能够按照既定的工作要求工作，并且与明确规定的功能、性能需求一直；</li>
+<li>开发标准与文档方面：软件开发应用必须和明确沉稳的开发标准一致，遵循软件开发准则，做到软件文档资料齐全。</li>
+</ol>
+<p><strong>4、软件测试与软件调试的区别是什么？</strong></p>
+<ul>
+<li>软件测试：在规定的条件下对程序进行操作，以发现程序错误，衡量软件质量，并对其是否能满足设计要求进行评估的过程；</li>
+<li>软件调试：将编制的程序投入实际运行前，用手工或编译程序等方法进行测试，修正语法错误和逻辑错误的过程；</li>
+<li>测试是为了发现软件中存在的错误，调试是为了证明软件开发的正确性；</li>
+<li>测试以已知条件开始，使用预先定义的程序，且有预知的结果，不可预见的仅是程序是否通过测试. 调试一般是以不可预知的内部条件开始，除统计性调试外，结果是不可预见的；</li>
+<li>测试是有计划性的，需要进行测试设计，调试是不受时间约束的；</li>
+<li>测试经历发现错误、改正错误、重新测试的过程，调试是一个推理的过程。</li>
+</ul>
+<p><strong>5、软件测试的方法有哪些？</strong></p>
+<ol>
+<li>静态方法和动态方法：静态方法分为代码检查、静态结构分析、代码质量度量，动态方法分为功能确认与接口测试、覆盖率分析及性能分析；</li>
+<li>黑盒测试方法：主要有等价类划分、边值分析、因果图、错误推测、穷举输入测试方法；</li>
+<li>白盒测试方法：逻辑覆盖、域测试、路径测试、程序插桩、程序编译；</li>
+<li>灰盒测试，介于黑盒白盒测试之间；</li>
+<li>软件开发阶段的测试方法：需求测试、单元测试、集成测试、性能测试、容量测试、配置测试、安装测试、安全性测试。</li>
+</ol>
+<p><strong>6、什么是黑盒测试、白盒测试和灰盒测试？</strong></p>
+<ul>
+<li>黑盒测试也称功能测试或数据驱动测试，是已知软件所需功能，通过测试来检测每个功能是否都能正常使用。</li>
+<li>白盒测试也称结构测试或逻辑驱动测试，知道软件内部的工作过程，可通过测试来检测软件内部的动作是否按照规格说明书所规定正常运行，并且按照软件内部的结构测试程序来检测程序中的每条道路是否都能按照预定要求进行正常工作，而不考虑功能是否正确。</li>
+<li>灰盒测试介于黑盒与白盒之间，关注对于输入的正确性，同时也关注内部表现。</li>
+</ul>
+<p><strong>7、什么是软件质量控制模型TSQC？</strong></p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303191358662.png" data-thumbnail="https://image.debuginn.cn/202303191358662.png" data-sub-html="<h2>TSQC模型</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303191358662.png" srcset="https://image.debuginn.cn/202303191358662.png, https://image.debuginn.cn/202303191358662.png 1.5x, https://image.debuginn.cn/202303191358662.png 2x" sizes="auto" data-title="TSQC模型" data-alt="TSQC模型" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>TSQC过程是一个调节和控制那些影响软件质量的参数的过程。隐形软件质量的参数如下：</p>
+<ul>
+<li>产品：所有可交付物；</li>
+<li>过程：所有活动的集合；</li>
+<li>资源：活动的物质基础（人力、技术、设备、时间、资金等）。</li>
+</ul>
+<p>TSQC过程是PDCA的几个活动的循环。</p>
+<ul>
+<li>计划Plan：确定参数要求；</li>
+<li>实施Do：根据要求开展活动；</li>
+<li>检查Check：通过评审、度量、测试确认满足要求；</li>
+<li>改进Action：纠正参数要求再开发。</li>
+</ul>
+<p><strong>8、软件质量控制的实施过程有哪些？</strong></p>
+<ol>
+<li>预开发阶段：主要活动包括买主与客户研究建立需求、发布招标请求、选择资源、与开发者签订合同；</li>
+<li>开发阶段：涵盖从产品开发到移交产品别获得客户的满意度结束的全过程；</li>
+<li>维护阶段：主要是对产品的及时更新。</li>
+</ol>
+<p><strong>9、软件质量保证模型有哪些？分别是啥？</strong></p>
+<ul>
+<li>McCall模型：分别面向软件产品的运行、修正、转移；</li>
+<li>Boehm模型：着手于软件总体功效，对于软件系统而言，除了有用性以外，开发过程必定是一个时间、金钱、能量的小号过程；</li>
+<li>FURPS模型：功能性、可用性、可靠性、性能及支持度评估；</li>
+<li>ISO 9126：功能性、可靠性、可用性、效率、可维护性及可移植性。</li>
+</ul>
+<p><strong>10、什么是冗余技术？又分为哪几种技术？</strong></p>
+<p>冗余技术又称储备技术，有时也称容灾备份技术，它是利用系统的并联模型来提高系统可靠性的一种手段；</p>
+<p>冗余技术分为工作冗余和后备冗余。</p>
+<p><strong>11、软件影响因素有哪些？</strong></p>
+<ol>
+<li>需求分析定义错误；</li>
+<li>设计错误；</li>
+<li>编码错误；</li>
+<li>测试错误；</li>
+<li>文档错误。</li>
+</ol>
+<p><strong>12、软件的差错、故障和失效是什么？</strong></p>
+<ol>
+<li>异常：偏离期望的状态（或预期值）的任何情形都称为异常；</li>
+<li>缺陷：不符合使用要求，或与技术规格说明不一致的任何状态都称为缺陷；</li>
+<li>差错：
+<ul>
+<li>计算的，观测的或测量的值与真实的规定的或理论上正确的值或者条件之间的差别；</li>
+<li>一个不正确的步骤、过程、数据定义；</li>
+<li>一个不正确的结果；</li>
+<li>一次产生不正确的结果的人的活动；</li>
+</ul>
+</li>
+<li>故障：一个计算机程序中出现的不正确的步骤、过程、数据定义常称为故障；</li>
+<li>失效：一个程序运行的外部结果与软件产品的要求出现不一致时称为失效。</li>
+</ol>
+<p><strong>13、什么是软件可靠性模型？都有哪些模型？</strong></p>
+<p>为预计或估算软件的可靠性所建立的可靠性框图和数学模型 。</p>
+<ul>
+<li>Musa模型，包括基本模型和对数模型；</li>
+<li>Shooman模型；</li>
+<li>aoel-oknmoto模型；</li>
+<li>测试成功模型；</li>
+<li>威布尔模型。</li>
+</ul>
+<p><strong>14、为什么需要软件评审？</strong></p>
+<ul>
+<li>提高项目的生产率；</li>
+<li>改善软件的质量；</li>
+<li>在评审过程中使开发团队的其他成员更熟悉产品和开发过程；</li>
+<li>通过评审标志软件开发的一个阶段的完成；</li>
+<li>生产出更容易维护的软件。</li>
+</ul>
+<p><strong>15、软件评审有哪些内容？</strong></p>
+<ol>
+<li>管理评审；</li>
+<li>技术评审；</li>
+<li>文档评审；</li>
+<li>过程评审。</li>
+</ol>
+<p><strong>16、评审的方法及技术有哪些？</strong></p>
+<p>评审的方法：特别检查、轮查、走查、团队评审、监视；</p>
+<p>评审的技术：缺陷检查表、规则表、评审工具的使用、从不同角度理解产品、场景分析技术。</p>
+<p><strong>17、如何准备评审会议？</strong></p>
+<ol>
+<li>何时召开评审会议；</li>
+<li>选择那些评审材料；</li>
+<li>打包分发评审材料；</li>
+<li>合理安排评审活动进程。</li>
+</ol>
+<p><strong>18、召开评审会议有几个步骤？</strong></p>
+<ol>
+<li>评审预备；</li>
+<li>评审开始；</li>
+<li>评审决议；</li>
+<li>评审结果；</li>
+<li>几个原则。</li>
+</ol>
+<p><strong>19、提高程序质量的技术有哪些？</strong></p>
+<ol>
+<li>
+<p>内存分配方式：从静态存储区域分配；在栈上创建；从堆上分配</p>
+</li>
+<li>
+<p>面向对象的设计规则</p>
+<p>1）开-闭原则     2）里氏代换原则    3）依赖倒转原则    4）合成/聚合复用原则    5）迪米特原则    6）接口隔离原则    7）基本的设计模式</p>
+</li>
+</ol>
+<p><strong>20、软件测试的原则有哪些？</strong></p>
+<ol>
+<li>在整个开发过程中要尽早地和不断的进行软件测试；</li>
+<li>在开始测试时不应默认程序中不存在错误；</li>
+<li>在设计测试用例时要给出测试的预期结果；</li>
+<li>测试工作应避免由系统开发人员或开发机构本身来承担；</li>
+<li>对合理和不合理的输入数据都要进行测试；</li>
+<li>重点测试错误群集的程序区段；</li>
+<li>除检查程序功能是否有多余；</li>
+<li>用穷举例测试是不可能的；</li>
+<li>长期完整的保留所有的测试用例和测试文件，直到该软件产品被废弃为止。</li>
+</ol>
+<p><strong>21、软件测试过程有哪些？</strong></p>
+<p>单元测试、集成测试、系统测试、验收测试、在所有测试过程中始终贯穿着回归测试。</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303191405290.png" data-thumbnail="https://image.debuginn.cn/202303191405290.png" data-sub-html="<h2>软件测试过程V字模型</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303191405290.png" srcset="https://image.debuginn.cn/202303191405290.png, https://image.debuginn.cn/202303191405290.png 1.5x, https://image.debuginn.cn/202303191405290.png 2x" sizes="auto" data-title="软件测试过程V字模型" data-alt="软件测试过程V字模型" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p><strong>22、软件测试的种类有哪些？</strong></p>
+<p>单元测试、集成测试、功能测试、压力/负载测试、验收测试。</p>
+<p><strong>23、白盒测试方法工具有哪些？</strong></p>
+<p>1）静态测试方法    工具：logiscope软件，P.RQA软件，c++Test；</p>
+<p>2）动态测试方法：代码检查法，静态结构分析法，静态质量度量法，逻辑覆盖法，基本路径测试法，域测试，符号测试，路径覆盖，程序变异；</p>
+<p>工具：DevPartner软件、Purity系列、xUnit系列框架（单元测试工具）。</p>
+<p><strong>24、黑盒测试工具有哪些？</strong></p>
+<p>1）功能测试工具：WinRunner，AutoIT，Twist</p>
+<p>2）性能测试工具：LoadRunner</p>
+<p><strong>25、黑盒测试方法有哪些？</strong></p>
+<ul>
+<li>等价类划分</li>
+<li>边界值分析法</li>
+<li>因果图法</li>
+<li>功能图法</li>
+</ul>
+<p><strong>26、划分等价类的原则是什么？</strong></p>
+<ol>
+<li>在输入条件规定了取值范围或值的个数和情况下可以确立一个有效等价类和两个无效等价类；</li>
+<li>在输入条件规定了输入值的集合或者规定了“必须如何”的条件的情况下可以确立一个有效等价类和一个无效等价类；</li>
+<li>在输入条件是一个布尔量的情况下可以确定一个有效等价类和一个无效等价类；</li>
+<li>在规定了输入数据的一组值（假设n个）并且程序要对每一个输入值分别处理的情况下可以确立n个有效等价类和一个无效等价类；</li>
+<li>在规定了输入数据必须遵守的规则的情况下可以确立一个有效等价类（符合规则）和若干个无效等价类（从不同角度违反规则）；</li>
+<li>在确知已划分的等价类中各元素在程序处理中的方式不同的情况下应将该等价类进一步划分为更小的等价类。</li>
+</ol>
+<p><strong>27、软件测试  经典测试用例三角形问题</strong></p>
+<p><a href="https://www.debuginn.cn/3245.html"target="_blank" rel="external nofollow noopener noreferrer">软件质量测试 等价类划分 三角形问题<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><strong>28、因果图测试用例问题</strong></p>
+<p><a href="https://www.debuginn.cn/3256.html"target="_blank" rel="external nofollow noopener noreferrer">软件质量测试 因果图测试用例 自动售货机<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><strong>29、白盒测试程序的结构有哪些？</strong></p>
+<p>顺序结构、分支结构、循环结构 。</p>
+<p><strong>30、白盒测试方法的覆盖标准有哪些？</strong></p>
+<p>逻辑覆盖，循环覆盖，基本路径测试。</p>
+<p><strong>31、逻辑覆盖包括那些？</strong></p>
+<p>分支结构的测试和循环结构的测试、 分支结构的测试又包括语句覆盖 、分支覆盖 、条件覆盖、分支-条件覆盖、条件组合覆盖、路径覆盖。</p>
+<p><strong>32、集成测试策略有：非渐增式集成和渐增式集成。</strong></p>
+<p><strong>33、什么是渐进增式集成？什么是非渐增式继承？</strong></p>
+<p>光分别测试每个模块，再把所有模块按设计要求放在一起，结合所要的程序，这种方法称为非渐增式集成；</p>
+<p>把一个要测试的模块与已经测试好的那些模块结合起来进行测试，测试完以后再把下一个应该测试的模块结合起来进行测试，这种每次增加一个模块的方法称为渐增式集成。</p>
+<p><strong>34.渐增式集成分为：自顶向下增式集成测试，自底向上增式集成测试</strong></p>
+<p><strong>35.面向对象的集成测试的步骤</strong></p>
+<ol>
+<li>先选定检测的类，仔细给出类的状态和相应的行为，类或成员函数间传递的消息，输入或输出的界定等</li>
+<li>确定覆盖标准</li>
+<li>利用结构关系图，确定待测类的所有关联</li>
+<li>根据程序中类的对象构造测试用例，确认使用什么输入法激发类的状态，使用类的服务和期望产生什么行为等</li>
+</ol>
+<p><strong>36.常用的技术测试有哪些？</strong></p>
+<p>1）抽样测试    2）正交阵列测试</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2019-07-03 18:33:02">更新于 2019-07-03&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/test/software-engineering/test-software-quality.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/test-software-quality/" data-title="软件质量测试知识点" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="软件质量测试"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/test-software-quality/" data-hashtag="软件质量测试"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/test-software-quality/" data-title="软件质量测试知识点" data-image="https://image.debuginn.cn/202303191356876.jpg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%B5%8B%E8%AF%95/' class="post-tag">软件质量测试</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/test-software-vending-mechine/" class="post-nav-item" rel="prev" title="软件质量测试 因果图测试用例 自动售货机"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>软件质量测试 因果图测试用例 自动售货机</a>
+      <a href="/test-software-class-diagram-exercises/" class="post-nav-item" rel="next" title="软件工程 类图习题">软件工程 类图习题<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

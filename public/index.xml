@@ -3,9 +3,79 @@
     <title>Debug客栈</title>
     <link>https://blog.debuginn.cn/</link>
     <description>专注于前沿技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Feb 2023 09:57:00 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 25 Mar 2023 22:30:21 &#43;0800</lastBuildDate>
       <atom:link href="https://blog.debuginn.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Git常用命令汇总</title>
+  <link>https://blog.debuginn.cn/git-command/</link>
+  <pubDate>Sat, 25 Mar 2023 22:30:21 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/git-command/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303252231697.jpg" referrerpolicy="no-referrer">
+      </div>常规操作 git push origin test 推送本地分支到远程仓库 git rm -r --cached 文件/文件夹名字 取消文件被版本控制 git reflog 获取执行过的命令 git log --graph 查看分支合并图 git merge --no-ff -m '合并描述']]></description>
+</item>
+<item>
+  <title>PWA 渐进式Web应用程序</title>
+  <link>https://blog.debuginn.cn/web-pwa-program/</link>
+  <pubDate>Sat, 18 Mar 2023 14:56:17 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/web-pwa-program/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303181458725.png" referrerpolicy="no-referrer">
+      </div>简介 PWA是Progressive Web App的简称，是谷歌提出的新型Web技术，并由W3C及谷歌来推广这项技术，其主要目的是为了提升用户对网站]]></description>
+</item>
+<item>
+  <title>浅析悲观锁与乐观锁</title>
+  <link>https://blog.debuginn.cn/mysql-lock-occ-pcc/</link>
+  <pubDate>Thu, 16 Mar 2023 19:45:55 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/mysql-lock-occ-pcc/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303161947714.jpg" referrerpolicy="no-referrer">
+      </div>在关系型数据库中，悲观锁与乐观锁是解决资源并发场景的解决方案，接下来将详细讲解?一下这两个并发解决方案的实际使用及优缺点。 首先定义一下数据库]]></description>
+</item>
+<item>
+  <title>Gource 版本可视化工具 使用手册</title>
+  <link>https://blog.debuginn.cn/linux-tools-gource/</link>
+  <pubDate>Thu, 16 Mar 2023 19:31:40 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/linux-tools-gource/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303161933689.jpg" referrerpolicy="no-referrer">
+      </div>Gource 是一款版本控制可视化的工具，使用这个工具可以将自己的 Git 提交的代码包括对 Mercurial，Bazaar 和 SVN 的内置日志生成可视化支持。Gou]]></description>
+</item>
+<item>
+  <title>Linux Tree 树状目录显示工具 使用手册</title>
+  <link>https://blog.debuginn.cn/linux-tree-command/</link>
+  <pubDate>Wed, 15 Mar 2023 20:08:56 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/linux-tree-command/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303152010224.jpg" referrerpolicy="no-referrer">
+      </div>Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app]]></description>
+</item>
+<item>
+  <title>Restful API 设计指北</title>
+  <link>https://blog.debuginn.cn/design-restful-api/</link>
+  <pubDate>Mon, 13 Mar 2023 21:35:12 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/design-restful-api/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303132137265.jpg" referrerpolicy="no-referrer">
+      </div>近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API]]></description>
+</item>
+<item>
+  <title>如何将豆瓣观影记录实时同步至博客中</title>
+  <link>https://blog.debuginn.cn/douban-movies-to-blog/</link>
+  <pubDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/douban-movies-to-blog/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031942110.jpg" referrerpolicy="no-referrer">
+      </div>事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查]]></description>
+</item>
+<item>
   <title>FAAS 调研笔记</title>
   <link>https://blog.debuginn.cn/faas-notes/</link>
   <pubDate>Wed, 15 Feb 2023 09:57:00 &#43;0800</pubDate>
@@ -34,74 +104,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302251041682.jpg" referrerpolicy="no-referrer">
       </div>今年，时光依旧不饶人，步入社会以来，时间就似乎不会慢下来，都在光速飞逝，很遗憾，今年疫情依旧没有结束，3 月份的时候还作为密切接触者被隔离了 21]]></description>
-</item>
-<item>
-  <title>使用 pprof 对 Go 程序进行分析优化</title>
-  <link>https://blog.debuginn.cn/go-tools-pprof/</link>
-  <pubDate>Sun, 01 May 2022 18:12:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/go-tools-pprof/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302262119034.jpg" referrerpolicy="no-referrer">
-      </div>前言 在生产环境中，偶尔会发生 Go 程序 CPU 暴增的现象，排除某时段并发大的场景外，通过监控面板看不到程序是因为什么原因导致的，Go 语言原生就提供了工]]></description>
-</item>
-<item>
-  <title>2021 年度总结</title>
-  <link>https://blog.debuginn.cn/debuginn-2021/</link>
-  <pubDate>Thu, 30 Dec 2021 08:00:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/debuginn-2021/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302262128413.jpg" referrerpolicy="no-referrer">
-      </div>今年，时间依旧飞快流逝，转眼间，自己已经毕业了小2年了，渐渐的自己开始习惯了北漂的生活，一个人的北京，自由与孤独同在。也体会到了离家远的遗憾]]></description>
-</item>
-<item>
-  <title>我们是如何用 Prometheus 对网关进行监控的</title>
-  <link>https://blog.debuginn.cn/prometheus-gateway/</link>
-  <pubDate>Sat, 11 Dec 2021 20:00:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/prometheus-gateway/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302262145770.jpg" referrerpolicy="no-referrer">
-      </div>近期，我们对 APP 网关 Gateway 做了升级，由于项目创建时间过早（6年前的项目），那时候还没有好的包管理工具，使用的是最原始的 Go Path 来进行项目的依赖管理，历]]></description>
-</item>
-<item>
-  <title>来小米，一起玩 ！！！</title>
-  <link>https://blog.debuginn.cn/mi-work/</link>
-  <pubDate>Thu, 23 Sep 2021 23:00:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/mi-work/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302262202290.jpg" referrerpolicy="no-referrer">
-      </div>]]></description>
-</item>
-<item>
-  <title>Git 命令 reset 和 revert 的区别</title>
-  <link>https://blog.debuginn.cn/git-reset-revert/</link>
-  <pubDate>Tue, 21 Sep 2021 17:33:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/git-reset-revert/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302262207101.jpg" referrerpolicy="no-referrer">
-      </div>前言 在团队开发中，使用 Git 作为版本开发工具，可以便捷地协同多人管理并行开发，但是由于自己或者其他人代码提交污染了远程分支，就需要对远程代码进行]]></description>
-</item>
-<item>
-  <title>使用数字人民币兑换建党100周年纪念币</title>
-  <link>https://blog.debuginn.cn/coin-use-epay/</link>
-  <pubDate>Sun, 19 Sep 2021 13:48:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/coin-use-epay/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202302272023525.jpeg" referrerpolicy="no-referrer">
-      </div>今天使用数字人民币兑换了建党100周年纪念币，过程比较坎坷，不过最终还是兑换成功了。 预约 ? 纪念币成功后，今天中秋假期，正好去兑换纪念币，小雨]]></description>
-</item>
-<item>
-  <title>[译] 方法是否应该在 T 或 *T 上声明</title>
-  <link>https://blog.debuginn.cn/go-metheds-on-t/</link>
-  <pubDate>Sun, 27 Jun 2021 23:18:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/go-metheds-on-t/</guid>
-  <description><![CDATA[译文原地址：Should methods be declared on T or *T - David 在 Go 中，对于任何的类型 T，都存在一个类型 *T，他是一个表达式的结果，该表达式接收的是类型 T ，例如：]]></description>
 </item>
 </channel>
 </rss>

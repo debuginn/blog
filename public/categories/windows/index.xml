@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>windows - 分类 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/categories/windows/</link>
+    <description>windows - 分类 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Jun 2019 16:09:53 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/windows/" rel="self" type="application/rss+xml" /><item>
+  <title>再见Windows7，中学时期的一代神器</title>
+  <link>https://blog.debuginn.cn/windows7-bye/</link>
+  <pubDate>Wed, 05 Jun 2019 16:09:53 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/windows7-bye/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303241241419.jpg" referrerpolicy="no-referrer">
+      </div>今天不经意间开启了windows7的虚拟机，用了半天，给出了下面的弹窗，一看，原来是微软最后做windows7的更新停止工作，想想用Wind]]></description>
+</item>
+</channel>
+</rss>

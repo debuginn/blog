@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>project - 分类 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/categories/project/</link>
+    <description>project - 分类 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/project/" rel="self" type="application/rss+xml" /><item>
+  <title>我的项目</title>
+  <link>https://blog.debuginn.cn/pages/project/</link>
+  <pubDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/project/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 Github Github Status Top languages 项目]]></description>
+</item>
+<item>
+  <title>如何将豆瓣观影记录实时同步至博客中</title>
+  <link>https://blog.debuginn.cn/douban-movies-to-blog/</link>
+  <pubDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/douban-movies-to-blog/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031942110.jpg" referrerpolicy="no-referrer">
+      </div>事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查]]></description>
+</item>
+</channel>
+</rss>

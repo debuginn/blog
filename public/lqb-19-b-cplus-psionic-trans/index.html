@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="题目背景 在游戏《星际争霸II》中，高阶圣堂武士作为星灵的重要AOE 单位，在 游戏的中后期发挥着重要的作用，其技能”灵能风暴“可以消耗大量的灵能" /><meta name="keywords" content='蓝桥杯' /><meta itemprop="name" content="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输">
+<meta itemprop="description" content="题目背景 在游戏《星际争霸II》中，高阶圣堂武士作为星灵的重要AOE 单位，在 游戏的中后期发挥着重要的作用，其技能”灵能风暴“可以消耗大量的灵能"><meta itemprop="datePublished" content="2019-04-01T23:05:31+08:00" />
+<meta itemprop="dateModified" content="2019-04-01T23:05:31+08:00" />
+<meta itemprop="wordCount" content="987"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="蓝桥杯,algorithm," /><meta property="og:title" content="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输" />
+<meta property="og:description" content="题目背景 在游戏《星际争霸II》中，高阶圣堂武士作为星灵的重要AOE 单位，在 游戏的中后期发挥着重要的作用，其技能”灵能风暴“可以消耗大量的灵能" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/lqb-19-b-cplus-psionic-trans/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-01T23:05:31+08:00" />
+<meta property="article:modified_time" content="2019-04-01T23:05:31+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输"/>
+<meta name="twitter:description" content="题目背景 在游戏《星际争霸II》中，高阶圣堂武士作为星灵的重要AOE 单位，在 游戏的中后期发挥着重要的作用，其技能”灵能风暴“可以消耗大量的灵能"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/lqb-19-b-cplus-psionic-trans/" /><link rel="prev" href="https://blog.debuginn.cn/lqb-19-b-cplus-suffix-expression/" /><link rel="next" href="https://blog.debuginn.cn/mini-program-notes/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "蓝桥杯 2019第十届蓝桥杯B组C++ 灵能传输",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/lqb-19-b-cplus-psionic-trans\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "蓝桥杯, algorithm","wordcount":  987 ,
+    "url": "https:\/\/blog.debuginn.cn\/lqb-19-b-cplus-psionic-trans\/","datePublished": "2019-04-01T23:05:31+08:00","dateModified": "2019-04-01T23:05:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 蓝桥杯</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2019-04-01 23:05:31"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2019-04-01">2019-04-01</time></span>&nbsp;<span title="更新于 2019-04-01 23:05:31"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2019-04-01">2019-04-01</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 987 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202303241303887.jpg" srcset="https://image.debuginn.cn/202303241303887.jpg, https://image.debuginn.cn/202303241303887.jpg 1.5x, https://image.debuginn.cn/202303241303887.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202303241303887.jpg" data-alt="https://image.debuginn.cn/202303241303887.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#题目背景">题目背景</a></li>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#输入格式">输入格式</a></li>
+    <li><a href="#输出格式">输出格式</a>
+      <ul>
+        <li><a href="#样例输入">样例输入</a></li>
+        <li><a href="#样例输出">样例输出</a></li>
+      </ul>
+    </li>
+    <li><a href="#样例说明">样例说明</a>
+      <ul>
+        <li><a href="#样例输入-1">样例输入</a></li>
+        <li><a href="#样例输出-1">样例输出</a></li>
+        <li><a href="#样例输入-2">样例输入</a></li>
+        <li><a href="#样例输出-2">样例输出</a></li>
+        <li><a href="#数据规模与约定">数据规模与约定</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2019-04-01，文中内容可能已过时。</div>
+      </div>
+    </div><h2 id="题目背景">题目背景</h2>
+<p>在游戏《星际争霸II》中，高阶圣堂武士作为星灵的重要AOE 单位，在 游戏的中后期发挥着重要的作用，其技能”灵能风暴“可以消耗大量的灵能对 一片区域内的敌军造成毁灭性的伤害。经常用于对抗人类的生化部队和虫族的 刺蛇飞龙等低血量单位。</p>
+<h2 id="问题描述">问题描述</h2>
+<p>你控制着n 名高阶圣堂武士，方便起见标为<code>1; 2; ...... ; n</code>。每名高阶圣堂武士 需要一定的灵能来战斗，每个人有一个灵能值ai 表示其拥有的灵能的多少（ai 非负表示这名高阶圣堂武士比在最佳状态下多余了ai 点灵能，ai 为负则表示这 名高阶圣堂武士还需要-ai 点灵能才能到达最佳战斗状态）。现在系统赋予了 你的高阶圣堂武士一个能力，传递灵能，每次你可以选择一个i 属于<code>2 [2; n - 1]</code>，若 ai &gt;=0 则其两旁的高阶圣堂武士，也就是 i - 1、i + 1 这两名高阶圣堂武士会从 i 这名高圣堂武士这里各抽取ai 点灵能；若ai &lt; 0 则其两旁的高阶圣堂武士， 也就是i - 1;i + 1 这两名高阶圣堂武士会给i 这名高阶圣堂武士?ai 点灵能。形式化来讲就</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303241304141.png" data-thumbnail="https://image.debuginn.cn/202303241304141.png" data-sub-html="<h2>形式化</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303241304141.png" srcset="https://image.debuginn.cn/202303241304141.png, https://image.debuginn.cn/202303241304141.png 1.5x, https://image.debuginn.cn/202303241304141.png 2x" sizes="auto" data-title="形式化" data-alt="形式化" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>灵能是非常高效的作战工具，同时也非常危险且不稳定，一位高阶圣堂 武士拥有的灵能过多或者过少都不好，定义一组高阶圣堂武士的不稳定度为</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303241305171.png" data-thumbnail="https://image.debuginn.cn/202303241305171.png" data-sub-html="<h2>公式</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303241305171.png" srcset="https://image.debuginn.cn/202303241305171.png, https://image.debuginn.cn/202303241305171.png 1.5x, https://image.debuginn.cn/202303241305171.png 2x" sizes="auto" data-title="公式" data-alt="公式" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>请你通过不限次数的传递灵能操作使得你控制的这一组高阶圣堂武 士的不稳定度最小。</p>
+<h2 id="输入格式">输入格式</h2>
+<p>本题包含多组询问。输入的第一行包含一个正整数T 表示询问组数。
+接下来依次输入每一组询问。
+每组询问的第一行包含一个正整数n，表示高阶圣堂武士的数量。
+接下来一行包含n 个数a1; a2; &hellip;&hellip;..; an。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>输出T 行。每行一个整数依次表示每组询问的答案。</p>
+<h3 id="样例输入">样例输入</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span> -2 <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">4</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="样例输出">样例输出</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="m">3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="样例说明">样例说明</h2>
+<p>对于第一组询问：
+对2 号高阶圣堂武士进行传输操作后a1 = 3</p>
+<p>对于第二组询问：
+这一组高阶圣堂武士拥有的灵能都正好可以让他们达到最佳战斗状态。</p>
+<h3 id="样例输入-1">样例输入</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">4</span>
+</span></span><span class="line"><span class="cl">-1 -2 -3 <span class="m">7</span>
+</span></span><span class="line"><span class="cl"><span class="m">4</span>
+</span></span><span class="line"><span class="cl"><span class="m">2</span> <span class="m">3</span> <span class="m">4</span> -8
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl">-1 -1 <span class="m">6</span> -1 -1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="样例输出-1">样例输出</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="m">7</span>
+</span></span><span class="line"><span class="cl"><span class="m">4</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="样例输入-2">样例输入</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="m">6</span> -4 <span class="m">2</span> -7 <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">10</span>
+</span></span><span class="line"><span class="cl">-99 -53 <span class="m">43</span> <span class="m">80</span> -83 <span class="m">72</span> <span class="m">99</span> <span class="m">78</span> -63 -9
+</span></span><span class="line"><span class="cl"><span class="m">100</span>
+</span></span><span class="line"><span class="cl"><span class="m">373837389</span> <span class="m">225627048</span> -847064399 <span class="m">487662607</span> <span class="m">579717002</span> <span class="m">903937892</span> -89313283 <span class="m">134706789</span> <span class="m">259978604</span> <span class="m">399131737</span> <span class="m">298183518</span> <span class="m">62083619</span> -444218530 <span class="m">403702220</span> <span class="m">358088455</span> -973959249 -637339048 -736509394 -552801709 -98262597 -532577703 -393599463 <span class="m">762744971</span> -683270041 <span class="m">716127816</span> -991756495 <span class="m">734780346</span> <span class="m">27919355</span> -421469435 <span class="m">258728334</span> <span class="m">844409214</span> -270792553 -490888330 <span class="m">133696186</span> <span class="m">843888283</span> -35439761 -73481392 -118968548 <span class="m">269164182</span> <span class="m">978558860</span> <span class="m">522378250</span> -979427259 -330256906 <span class="m">235192566</span> -652699569 -708569352 -778693386 <span class="m">241745676</span> <span class="m">583226906</span> <span class="m">121065292</span> -503683097 <span class="m">599394257</span> <span class="m">405122877</span> <span class="m">437067802</span> <span class="m">238539735</span> -957745973 -843677563 -690555937 <span class="m">908484805</span> <span class="m">940157941</span> <span class="m">524765035</span> <span class="m">730436972</span> -17856720 -530595388 -727773574 <span class="m">617781285</span> <span class="m">491720304</span> -779040285 -298295760 -699402143 <span class="m">230749576</span> <span class="m">404009775</span> <span class="m">126806094</span> -140842651 <span class="m">198136484</span> <span class="m">681875881</span> <span class="m">997449600</span> <span class="m">898972467</span> -239590302 -62193410 <span class="m">866009412</span> -401154712 -276085482 <span class="m">593177187</span> -236793216 <span class="m">487533624</span> <span class="m">75511548</span> -446699920 -869912037 -330666015 <span class="m">268937148</span> -430325605 -635949275 <span class="m">361887555</span> -855294881 <span class="m">87004526</span> <span class="m">782523543</span> -69083645 -965396597 -880697065 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="样例输出-2">样例输出</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="m">88</span>
+</span></span><span class="line"><span class="cl"><span class="m">381470940</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="数据规模与约定">数据规模与约定</h3>
+<p>对于所有评测用例:</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303241307949.png" data-thumbnail="https://image.debuginn.cn/202303241307949.png" data-sub-html="<h2>评测用例</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303241307949.png" srcset="https://image.debuginn.cn/202303241307949.png, https://image.debuginn.cn/202303241307949.png 1.5x, https://image.debuginn.cn/202303241307949.png 2x" sizes="auto" data-title="评测用例" data-alt="评测用例" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>评测时将使用25 个评测用例测试你的程序，每个评测用例的限制如下：</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303241308856.png" data-thumbnail="https://image.debuginn.cn/202303241308856.png" data-sub-html="<h2>评测</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303241308856.png" srcset="https://image.debuginn.cn/202303241308856.png, https://image.debuginn.cn/202303241308856.png 1.5x, https://image.debuginn.cn/202303241308856.png 2x" sizes="auto" data-title="评测" data-alt="评测" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>注意：本题输入量较大请使用快速的读入方式。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2019-04-01 23:05:31">更新于 2019-04-01&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/algorithm/lqb/lqb-19-b-cplus-psionic-trans.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/lqb-19-b-cplus-psionic-trans/" data-title="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="蓝桥杯,algorithm"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/lqb-19-b-cplus-psionic-trans/" data-hashtag="蓝桥杯"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/lqb-19-b-cplus-psionic-trans/" data-title="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 灵能传输" data-image="https://image.debuginn.cn/202303241303887.jpg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/' class="post-tag">蓝桥杯</a><a href='/tags/algorithm/' class="post-tag">algorithm</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/lqb-19-b-cplus-suffix-expression/" class="post-nav-item" rel="prev" title="蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 后缀表达式"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>蓝桥杯 2019第十届蓝桥杯B组C&#43;&#43; 后缀表达式</a>
+      <a href="/mini-program-notes/" class="post-nav-item" rel="next" title="微信小程序入门笔记">微信小程序入门笔记<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

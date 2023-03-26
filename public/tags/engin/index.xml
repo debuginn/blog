@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>engin - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/engin/</link>
+    <description>engin - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 01 May 2020 17:41:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/engin/" rel="self" type="application/rss+xml" /><item>
+  <title>怎么优雅的选择 MySQL 存储引擎</title>
+  <link>https://blog.debuginn.cn/mysql-chooes-storage-engine/</link>
+  <pubDate>Fri, 01 May 2020 17:41:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/mysql-chooes-storage-engine/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303121916799.jpg" referrerpolicy="no-referrer">
+      </div>对于数据库这一块询问比较多的就是在 MySQL 中怎么去选择一种合适当前业务需求的存储引擎，而 MySQL 中支持的存储引擎又有很多种，那么 MySQL 中分别又有那些，怎么优]]></description>
+</item>
+</channel>
+</rss>

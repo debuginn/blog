@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>网络笔记之端口及常见端口号 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="端口定义 通信端口，又称为连接端口、端口、协议端口在计算机网络中是一种经由软件创建的服务，在一个计算机操作系统中扮演通信的端点。每个通信端口都" /><meta name="keywords" content='计算机网络' /><meta itemprop="name" content="网络笔记之端口及常见端口号">
+<meta itemprop="description" content="端口定义 通信端口，又称为连接端口、端口、协议端口在计算机网络中是一种经由软件创建的服务，在一个计算机操作系统中扮演通信的端点。每个通信端口都"><meta itemprop="datePublished" content="2019-06-15T10:59:47+08:00" />
+<meta itemprop="dateModified" content="2019-06-15T10:59:47+08:00" />
+<meta itemprop="wordCount" content="2065"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="计算机网络," /><meta property="og:title" content="网络笔记之端口及常见端口号" />
+<meta property="og:description" content="端口定义 通信端口，又称为连接端口、端口、协议端口在计算机网络中是一种经由软件创建的服务，在一个计算机操作系统中扮演通信的端点。每个通信端口都" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/network-notes-port/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-06-15T10:59:47+08:00" />
+<meta property="article:modified_time" content="2019-06-15T10:59:47+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="网络笔记之端口及常见端口号"/>
+<meta name="twitter:description" content="端口定义 通信端口，又称为连接端口、端口、协议端口在计算机网络中是一种经由软件创建的服务，在一个计算机操作系统中扮演通信的端点。每个通信端口都"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/network-notes-port/" /><link rel="prev" href="https://blog.debuginn.cn/windows7-bye/" /><link rel="next" href="https://blog.debuginn.cn/python-decision-tree/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "网络笔记之端口及常见端口号",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/network-notes-port\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "计算机网络","wordcount":  2065 ,
+    "url": "https:\/\/blog.debuginn.cn\/network-notes-port\/","datePublished": "2019-06-15T10:59:47+08:00","dateModified": "2019-06-15T10:59:47+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>网络笔记之端口及常见端口号</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 计算机网络</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2019-06-15 10:59:47"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2019-06-15">2019-06-15</time></span>&nbsp;<span title="更新于 2019-06-15 10:59:47"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2019-06-15">2019-06-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2065 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="网络笔记之端口及常见端口号">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#端口定义">端口定义</a></li>
+    <li><a href="#常见端口对照表">常见端口对照表</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2019-06-15，文中内容可能已过时。</div>
+      </div>
+    </div><h2 id="端口定义">端口定义</h2>
+<blockquote>
+<p>通信端口，又称为连接端口、端口、协议端口在计算机网络中是一种经由软件创建的服务，在一个计算机操作系统中扮演通信的端点。每个通信端口都会与主机的IP地址及通信协议关联。通信端口以16比特数字来表示，这被称为通信端口编号。 位于传输层的通信协议通常需要指定端口号，例如在TCP/IP协议族之下的TCP与UDP协议。
+引用来源：维基百科</p>
+</blockquote>
+<p>传输层协议，如传输控制协议（TCP）与用户数据包协议（UDP），在分组表头中，定义了来源端口号与目的端口号。</p>
+<p>一个通信端口号使用16位无符号整数（unsigned integer）来表示，其范围介于0与65535之间。</p>
+<p>在TCP协议中，端口号0是被保留的，不可使用。</p>
+<ul>
+<li>1&ndash;1023 系统保留，只能由root用户使用。</li>
+<li>1024&mdash;4999 由客户端程序自由分配。</li>
+<li>5000&mdash;65535 由服务器端程序自由分配在UDP协议中，来源端口号是可以选择要不要填上，如果设为0，则代表没有来源端口号。</li>
+</ul>
+<h2 id="常见端口对照表">常见端口对照表</h2>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>tcpmux</td>
+<td>TCP 端口服务多路复用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>rje</td>
+<td>远程作业入口</td>
+</tr>
+<tr>
+<td>7</td>
+<td>echo</td>
+<td>Echo 服务</td>
+</tr>
+<tr>
+<td>9</td>
+<td>discard</td>
+<td>用于连接测试的空服务</td>
+</tr>
+<tr>
+<td>11</td>
+<td>systat</td>
+<td>用于列举连接了的端口的系统状态</td>
+</tr>
+<tr>
+<td>13</td>
+<td>daytime</td>
+<td>给请求主机发送日期和时间</td>
+</tr>
+<tr>
+<td>17</td>
+<td>qotd</td>
+<td>给连接了的主机发送每日格言</td>
+</tr>
+<tr>
+<td>18</td>
+<td>msp</td>
+<td>消息发送协议</td>
+</tr>
+<tr>
+<td>19</td>
+<td>chargen</td>
+<td>字符生成服务；发送无止境的字符流</td>
+</tr>
+<tr>
+<td>20</td>
+<td>ftp-data</td>
+<td>FTP 数据端口</td>
+</tr>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>文件传输协议（FTP）端口；有时被文件服务协议（FSP）使用</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>安全 Shell（SSH）服务</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>Telnet 服务</td>
+</tr>
+<tr>
+<td>25</td>
+<td>smtp</td>
+<td>简单邮件传输协议（SMTP）</td>
+</tr>
+<tr>
+<td>37</td>
+<td>time</td>
+<td>时间协议</td>
+</tr>
+<tr>
+<td>39</td>
+<td>rlp</td>
+<td>资源定位协议</td>
+</tr>
+<tr>
+<td>42</td>
+<td>nameserver</td>
+<td>互联网名称服务</td>
+</tr>
+<tr>
+<td>43</td>
+<td>nicname</td>
+<td>WHOIS 目录服务</td>
+</tr>
+<tr>
+<td>49</td>
+<td>tacacs</td>
+<td>用于基于 TCP/IP 验证和访问的终端访问控制器访问控制系统</td>
+</tr>
+<tr>
+<td>50</td>
+<td>re-mail-ck</td>
+<td>远程邮件检查协议</td>
+</tr>
+<tr>
+<td>53</td>
+<td>domain</td>
+<td>域名服务（如 BIND）</td>
+</tr>
+<tr>
+<td>63</td>
+<td>whois++</td>
+<td>WHOIS++，被扩展了的 WHOIS 服务</td>
+</tr>
+<tr>
+<td>67</td>
+<td>bootps</td>
+<td>引导协议（BOOTP）服务；还被动态主机配置协议（DHCP）服务使用</td>
+</tr>
+<tr>
+<td>68</td>
+<td>bootpc</td>
+<td>Bootstrap（BOOTP）客户；还被动态主机配置协议（DHCP）客户使用</td>
+</tr>
+<tr>
+<td>69</td>
+<td>tftp</td>
+<td>小文件传输协议（TFTP）</td>
+</tr>
+<tr>
+<td>70</td>
+<td>gopher</td>
+<td>Gopher 互联网文档搜寻和检索</td>
+</tr>
+<tr>
+<td>71</td>
+<td>netrjs-1</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>72</td>
+<td>netrjs-2</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>73</td>
+<td>netrjs-3</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>73</td>
+<td>netrjs-4</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>79</td>
+<td>finger</td>
+<td>用于用户联系信息的 Finger 服务</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>用于万维网（WWW）服务的超文本传输协议（HTTP）</td>
+</tr>
+<tr>
+<td>88</td>
+<td>kerberos</td>
+<td>Kerberos 网络验证系统</td>
+</tr>
+<tr>
+<td>95</td>
+<td>supdup</td>
+<td>Telnet 协议扩展</td>
+</tr>
+<tr>
+<td>101</td>
+<td>hostname</td>
+<td>SRI-NIC 机器上的主机名服务</td>
+</tr>
+<tr>
+<td>102</td>
+<td>iso-tsap</td>
+<td>ISO 开发环境（ISODE）网络应用</td>
+</tr>
+<tr>
+<td>105</td>
+<td>csnet-ns</td>
+<td>邮箱名称服务器；也被 CSO 名称服务器使用</td>
+</tr>
+<tr>
+<td>107</td>
+<td>rtelnet</td>
+<td>远程 Telnet</td>
+</tr>
+<tr>
+<td>109</td>
+<td>pop2</td>
+<td>邮局协议版本2</td>
+</tr>
+<tr>
+<td>110</td>
+<td>pop3</td>
+<td>邮局协议版本3</td>
+</tr>
+<tr>
+<td>111</td>
+<td>sunrpc</td>
+<td>用于远程命令执行的远程过程调用（RPC）协议，被网络文件系统（NFS）使用</td>
+</tr>
+<tr>
+<td>113</td>
+<td>auth</td>
+<td>验证和身份识别协议</td>
+</tr>
+<tr>
+<td>115</td>
+<td>sftp</td>
+<td>安全文件传输协议（SFTP）服务</td>
+</tr>
+<tr>
+<td>117</td>
+<td>uucp-path</td>
+<td>Unix 到 Unix 复制协议（UUCP）路径服务</td>
+</tr>
+<tr>
+<td>119</td>
+<td>nntp</td>
+<td>用于 USENET 讨论系统的网络新闻传输协议（NNTP）</td>
+</tr>
+<tr>
+<td>123</td>
+<td>ntp</td>
+<td>网络时间协议（NTP）</td>
+</tr>
+<tr>
+<td>137</td>
+<td>netbios-ns</td>
+<td>在红帽企业 Linux 中被 Samba 使用的 NETBIOS 名称服务</td>
+</tr>
+<tr>
+<td>138</td>
+<td>netbios-dgm</td>
+<td>在红帽企业 Linux 中被 Samba 使用的 NETBIOS 数据报服务</td>
+</tr>
+<tr>
+<td>139</td>
+<td>netbios-ssn</td>
+<td>在红帽企业 Linux 中被 Samba 使用的NET BIOS 会话服务</td>
+</tr>
+<tr>
+<td>143</td>
+<td>imap</td>
+<td>互联网消息存取协议（IMAP）</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>简单网络管理协议（SNMP）</td>
+</tr>
+<tr>
+<td>162</td>
+<td>snmptrap</td>
+<td>SNMP 的陷阱</td>
+</tr>
+<tr>
+<td>163</td>
+<td>cmip-man</td>
+<td>通用管理信息协议（CMIP）</td>
+</tr>
+<tr>
+<td>164</td>
+<td>cmip-agent</td>
+<td>通用管理信息协议（CMIP）</td>
+</tr>
+<tr>
+<td>174</td>
+<td>mailq</td>
+<td>MAILQ</td>
+</tr>
+<tr>
+<td>177</td>
+<td>xdmcp</td>
+<td>X 显示管理器控制协议</td>
+</tr>
+<tr>
+<td>178</td>
+<td>nextstep</td>
+<td>NeXTStep 窗口服务器</td>
+</tr>
+<tr>
+<td>179</td>
+<td>bgp</td>
+<td>边界网络协议</td>
+</tr>
+<tr>
+<td>191</td>
+<td>prospero</td>
+<td>Cliffod Neuman 的 Prospero 服务</td>
+</tr>
+<tr>
+<td>194</td>
+<td>irc</td>
+<td>互联网中继聊天（IRC）</td>
+</tr>
+<tr>
+<td>199</td>
+<td>smux</td>
+<td>SNMP UNIX 多路复用</td>
+</tr>
+<tr>
+<td>201</td>
+<td>at-rtmp</td>
+<td>AppleTalk 选路</td>
+</tr>
+<tr>
+<td>202</td>
+<td>at-nbp</td>
+<td>AppleTalk 名称绑定</td>
+</tr>
+<tr>
+<td>204</td>
+<td>at-echo</td>
+<td>AppleTalk echo 服务</td>
+</tr>
+<tr>
+<td>206</td>
+<td>at-zis</td>
+<td>AppleTalk 区块信息</td>
+</tr>
+<tr>
+<td>209</td>
+<td>qmtp</td>
+<td>快速邮件传输协议（QMTP）</td>
+</tr>
+<tr>
+<td>210</td>
+<td>z39.50</td>
+<td>NISO Z39.50 数据库</td>
+</tr>
+<tr>
+<td>213</td>
+<td>ipx</td>
+<td>互联网络分组交换协议（IPX），被 Novell Netware 环境常用的数据报协议</td>
+</tr>
+<tr>
+<td>220</td>
+<td>imap3</td>
+<td>互联网消息存取协议版本3</td>
+</tr>
+<tr>
+<td>245</td>
+<td>link</td>
+<td>LINK</td>
+</tr>
+<tr>
+<td>347</td>
+<td>fatserv</td>
+<td>Fatmen 服务器</td>
+</tr>
+<tr>
+<td>363</td>
+<td>rsvp_tunnel</td>
+<td>RSVP 隧道</td>
+</tr>
+<tr>
+<td>369</td>
+<td>rpc2portmap</td>
+<td>Coda 文件系统端口映射器</td>
+</tr>
+<tr>
+<td>370</td>
+<td>codaauth2</td>
+<td>Coda 文件系统验证服务</td>
+</tr>
+<tr>
+<td>372</td>
+<td>ulistproc</td>
+<td>UNIX Listserv</td>
+</tr>
+<tr>
+<td>389</td>
+<td>ldap</td>
+<td>轻型目录存取协议（LDAP）</td>
+</tr>
+<tr>
+<td>427</td>
+<td>svrloc</td>
+<td>服务位置协议（SLP）</td>
+</tr>
+<tr>
+<td>434</td>
+<td>mobileip-agent</td>
+<td>可移互联网协议（IP）代理</td>
+</tr>
+<tr>
+<td>435</td>
+<td>mobilip-mn</td>
+<td>可移互联网协议（IP）管理器</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https</td>
+<td>安全超文本传输协议（HTTP）</td>
+</tr>
+<tr>
+<td>444</td>
+<td>snpp</td>
+<td>小型网络分页协议</td>
+</tr>
+<tr>
+<td>445</td>
+<td>microsoft-ds</td>
+<td>通过 TCP/IP 的服务器消息块（SMB）</td>
+</tr>
+<tr>
+<td>464</td>
+<td>kpasswd</td>
+<td>Kerberos 口令和钥匙改换服务</td>
+</tr>
+<tr>
+<td>468</td>
+<td>photuris</td>
+<td>Photuris 会话钥匙管理协议</td>
+</tr>
+<tr>
+<td>487</td>
+<td>saft</td>
+<td>简单不对称文件传输（SAFT）协议</td>
+</tr>
+<tr>
+<td>488</td>
+<td>gss-http</td>
+<td>用于 HTTP 的通用安全服务（GSS）</td>
+</tr>
+<tr>
+<td>496</td>
+<td>pim-rp-disc</td>
+<td>用于协议独立的多址传播（PIM）服务的会合点发现（RP-DISC）</td>
+</tr>
+<tr>
+<td>500</td>
+<td>isakmp</td>
+<td>互联网安全关联和钥匙管理协议（ISAKMP）</td>
+</tr>
+<tr>
+<td>535</td>
+<td>iiop</td>
+<td>互联网内部对象请求代理协议（IIOP）</td>
+</tr>
+<tr>
+<td>538</td>
+<td>gdomap</td>
+<td>GNUstep 分布式对象映射器（GDOMAP）</td>
+</tr>
+<tr>
+<td>546</td>
+<td>dhcpv6-client</td>
+<td>动态主机配置协议（DHCP）版本6客户</td>
+</tr>
+<tr>
+<td>547</td>
+<td>dhcpv6-server</td>
+<td>动态主机配置协议（DHCP）版本6服务</td>
+</tr>
+<tr>
+<td>554</td>
+<td>rtsp</td>
+<td>实时流播协议（RTSP）</td>
+</tr>
+<tr>
+<td>563</td>
+<td>nntps</td>
+<td>通过安全套接字层的网络新闻传输协议（NNTPS）</td>
+</tr>
+<tr>
+<td>565</td>
+<td>whoami</td>
+<td>whoami</td>
+</tr>
+<tr>
+<td>587</td>
+<td>submission</td>
+<td>邮件消息提交代理（MSA）</td>
+</tr>
+<tr>
+<td>610</td>
+<td>npmp-local</td>
+<td>网络外设管理协议（NPMP）本地 / 分布式排队系统（DQS）</td>
+</tr>
+<tr>
+<td>611</td>
+<td>npmp-gui</td>
+<td>网络外设管理协议（NPMP）GUI / 分布式排队系统（DQS）</td>
+</tr>
+<tr>
+<td>612</td>
+<td>hmmp-ind</td>
+<td>HMMP 指示 / DQS</td>
+</tr>
+<tr>
+<td>631</td>
+<td>ipp</td>
+<td>互联网打印协议（IPP）</td>
+</tr>
+<tr>
+<td>636</td>
+<td>ldaps</td>
+<td>通过安全套接字层的轻型目录访问协议（LDAPS）</td>
+</tr>
+<tr>
+<td>674</td>
+<td>acap</td>
+<td>应用程序配置存取协议（ACAP）</td>
+</tr>
+<tr>
+<td>694</td>
+<td>ha-cluster</td>
+<td>用于带有高可用性的群集的心跳服务</td>
+</tr>
+<tr>
+<td>749</td>
+<td>kerberos-adm</td>
+<td>Kerberos 版本5（v5）的“kadmin”数据库管理</td>
+</tr>
+<tr>
+<td>750</td>
+<td>kerberos-iv</td>
+<td>Kerberos 版本4（v4）服务</td>
+</tr>
+<tr>
+<td>765</td>
+<td>webster</td>
+<td>网络词典</td>
+</tr>
+<tr>
+<td>767</td>
+<td>phonebook</td>
+<td>网络电话簿</td>
+</tr>
+<tr>
+<td>873</td>
+<td>rsync</td>
+<td>rsync 文件传输服务</td>
+</tr>
+<tr>
+<td>992</td>
+<td>telnets</td>
+<td>通过安全套接字层的 Telnet（TelnetS）</td>
+</tr>
+<tr>
+<td>993</td>
+<td>imaps</td>
+<td>通过安全套接字层的互联网消息存取协议（IMAPS）</td>
+</tr>
+<tr>
+<td>994</td>
+<td>ircs</td>
+<td>通过安全套接字层的互联网中继聊天（IRCS）</td>
+</tr>
+<tr>
+<td>995</td>
+<td>pop3s</td>
+<td>通过安全套接字层的邮局协议版本3（POPS3）</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2019-06-15 10:59:47">更新于 2019-06-15&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/other/network-notes-port.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/network-notes-port/" data-title="网络笔记之端口及常见端口号" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="计算机网络"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/network-notes-port/" data-hashtag="计算机网络"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/network-notes-port/" data-title="网络笔记之端口及常见端口号" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' class="post-tag">计算机网络</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/windows7-bye/" class="post-nav-item" rel="prev" title="再见Windows7，中学时期的一代神器"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>再见Windows7，中学时期的一代神器</a>
+      <a href="/python-decision-tree/" class="post-nav-item" rel="next" title="Python 数据挖掘实例 决策树分析">Python 数据挖掘实例 决策树分析<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

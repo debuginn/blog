@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>shell - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/shell/</link>
+    <description>shell - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Jan 2020 19:34:52 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/shell/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux &gt;/dev/null 2&gt;&amp;1 命令使用说明</title>
+  <link>https://blog.debuginn.cn/linux-dev-null-file/</link>
+  <pubDate>Mon, 13 Jan 2020 19:34:52 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/linux-dev-null-file/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303161935472.jpg" referrerpolicy="no-referrer">
+      </div>近期在开发项目中遇到了PHP使用shell_exec执行 Shell 命令的问题，具体说是 Shell 使用 FFmpeg 软件进行录制直播流，但是 PHP 等待命令执行时间是有限的，并]]></description>
+</item>
+</channel>
+</rss>

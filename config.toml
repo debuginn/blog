@@ -274,7 +274,7 @@ theme = "FixIt"
     # 是否使用 预计阅读
     readingTime = true
     # 文章结束标志
-    endFlag = "文章到此结束，若是感觉有帮助到你的话请评论或者点击 ☺ 反馈给博主吧 ~"
+    endFlag = ""
     # 是否开启即时页面
     instantPage = true
 
@@ -355,10 +355,10 @@ theme = "FixIt"
     # 赞赏设置
     [params.page.reward]
       enable = true
-      animation = false
+      animation = true
       # 相对于页脚的位置，可选值：["before", "after"]
-      position = "before"
-      comment = "Buy me a coffee"
+      position = "after"
+      comment = "请我喝杯咖啡"
       [params.page.reward.ways]
         wechatpay = "https://image.debuginn.cn/202302191928172.jpg"
         # alipay = "/images/alipay.png"
