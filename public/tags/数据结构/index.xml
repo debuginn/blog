@@ -5,10 +5,10 @@
     <description>数据结构 - 标签 - Debug客栈</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Nov 2017 14:26:16 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="self" type="application/rss+xml" /><item>
   <title>数据结构 折半查找法</title>
-  <link>https://blog.debuginn.cn/half-search/</link>
+  <link>https://blog.debuginn.cn/structure-half-search/</link>
   <pubDate>Sat, 18 Nov 2017 14:26:16 &#43;0800</pubDate>
   <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/half-search/</guid>
+  <guid>https://blog.debuginn.cn/structure-half-search/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202302221903175.jpg" referrerpolicy="no-referrer">
       </div>算法原理 先确定待查记录所在的范围（区间），然后逐步缩小范围指导找到或找不到该记录为止。 算法性能 时间复杂度： log 2 n + 1 平均查找长度： log 2 n + 1]]></description>

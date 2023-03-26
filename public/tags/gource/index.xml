@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>gource - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/gource/</link>
+    <description>gource - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 16 Mar 2023 19:31:40 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/gource/" rel="self" type="application/rss+xml" /><item>
+  <title>Gource 版本可视化工具 使用手册</title>
+  <link>https://blog.debuginn.cn/linux-tools-gource/</link>
+  <pubDate>Thu, 16 Mar 2023 19:31:40 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/linux-tools-gource/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303161933689.jpg" referrerpolicy="no-referrer">
+      </div>Gource 是一款版本控制可视化的工具，使用这个工具可以将自己的 Git 提交的代码包括对 Mercurial，Bazaar 和 SVN 的内置日志生成可视化支持。Gou]]></description>
+</item>
+</channel>
+</rss>

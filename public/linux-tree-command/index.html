@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Linux Tree 树状目录显示工具 使用手册 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app" /><meta name="keywords" content='linux,unix,tree' /><meta itemprop="name" content="Linux Tree 树状目录显示工具 使用手册">
+<meta itemprop="description" content="Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app"><meta itemprop="datePublished" content="2023-03-15T20:08:56+08:00" />
+<meta itemprop="dateModified" content="2023-03-15T20:08:56+08:00" />
+<meta itemprop="wordCount" content="1552"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="linux,unix,tree," /><meta property="og:title" content="Linux Tree 树状目录显示工具 使用手册" />
+<meta property="og:description" content="Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/linux-tree-command/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-15T20:08:56+08:00" />
+<meta property="article:modified_time" content="2023-03-15T20:08:56+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="Linux Tree 树状目录显示工具 使用手册"/>
+<meta name="twitter:description" content="Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/linux-tree-command/" /><link rel="prev" href="https://blog.debuginn.cn/design-restful-api/" /><link rel="next" href="https://blog.debuginn.cn/linux-tools-gource/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Linux Tree 树状目录显示工具 使用手册",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/linux-tree-command\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "linux, unix, tree","wordcount":  1552 ,
+    "url": "https:\/\/blog.debuginn.cn\/linux-tree-command\/","datePublished": "2023-03-15T20:08:56+08:00","dateModified": "2023-03-15T20:08:56+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>Linux Tree 树状目录显示工具 使用手册</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> linux</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-03-15 20:08:56"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-15">2023-03-15</time></span>&nbsp;<span title="更新于 2023-03-15 20:08:56"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-15">2023-03-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1552 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Linux Tree 树状目录显示工具 使用手册">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202303152010224.jpg" srcset="https://image.debuginn.cn/202303152010224.jpg, https://image.debuginn.cn/202303152010224.jpg 1.5x, https://image.debuginn.cn/202303152010224.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202303152010224.jpg" data-alt="https://image.debuginn.cn/202303152010224.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本语法">基本语法</a></li>
+    <li><a href="#常用命令">常用命令</a></li>
+    <li><a href="#基本命令">基本命令</a></li>
+    <li><a href="#展示效果">展示效果</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>Tree 命令以树状形状列出目录的内容的一个工具，你时常在 Github 中常看到一些开源项目会将自己的项目目录展现出来，这篇文章的背景图就是展现的开源项目 Laravel 中 app 目录的树状图，接下来介绍一下基本使用语法。</p>
+<h2 id="基本语法">基本语法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tree <span class="o">[</span>-aACdDfFgilnNpqstux<span class="o">][</span>-I &lt;范本样式&gt;<span class="o">][</span>-P &lt;范本样式&gt;<span class="o">][</span>目录...<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="常用命令">常用命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tree --help     显示帮助信息
+</span></span><span class="line"><span class="cl">tree -d         只显示目录
+</span></span><span class="line"><span class="cl">tree -L n       只显示第n层目录
+</span></span><span class="line"><span class="cl">tree -l         遵循像目录这样的符号链接
+</span></span><span class="line"><span class="cl">tree -f         打印每个文件的完整路径前缀
+</span></span><span class="line"><span class="cl">tree -x         只保留在当前文件系统上
+</span></span><span class="line"><span class="cl">tree -L         级下降深层级目录
+</span></span><span class="line"><span class="cl">tree -R         达到最大等级时重新运行树
+</span></span><span class="line"><span class="cl">tree -P         模式只列出符合给定模式的文件
+</span></span><span class="line"><span class="cl">tree -I         模式不要列出与给定模式匹配的文件
+</span></span><span class="line"><span class="cl">tree -o         文件名输出到文件而不是标准输出
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="基本命令">基本命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>➜  ~ tree --help
+</span></span><span class="line"><span class="cl">usage: tree <span class="o">[</span>-acdfghilnpqrstuvxACDFJQNSUX<span class="o">]</span> <span class="o">[</span>-H baseHREF<span class="o">]</span> <span class="o">[</span>-T title <span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="o">[</span>-L level <span class="o">[</span>-R<span class="o">]]</span> <span class="o">[</span>-P pattern<span class="o">]</span> <span class="o">[</span>-I pattern<span class="o">]</span> <span class="o">[</span>-o filename<span class="o">]</span> <span class="o">[</span>--version<span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="o">[</span>--help<span class="o">]</span> <span class="o">[</span>--inodes<span class="o">]</span> <span class="o">[</span>--device<span class="o">]</span> <span class="o">[</span>--noreport<span class="o">]</span> <span class="o">[</span>--nolinks<span class="o">]</span> <span class="o">[</span>--dirsfirst<span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="o">[</span>--charset charset<span class="o">]</span> <span class="o">[</span>--filelimit<span class="o">[=]</span><span class="c1">#] [--si] [--timefmt[=]&lt;f&gt;]</span>
+</span></span><span class="line"><span class="cl">	<span class="o">[</span>--sort<span class="o">[=]</span>&lt;name&gt;<span class="o">]</span> <span class="o">[</span>--matchdirs<span class="o">]</span> <span class="o">[</span>--ignore-case<span class="o">]</span> <span class="o">[</span>--fromfile<span class="o">]</span> <span class="o">[</span>--<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>&lt;目录列表&gt;<span class="o">]</span>
+</span></span><span class="line"><span class="cl">------- 上市选项 -------
+</span></span><span class="line"><span class="cl">-a            列出所有文件。
+</span></span><span class="line"><span class="cl">-d            仅列出目录。
+</span></span><span class="line"><span class="cl">-l            跟随目录等符号链接。
+</span></span><span class="line"><span class="cl">-f            打印每个文件的完整路径前缀。
+</span></span><span class="line"><span class="cl">-x            仅保留在当前文件系统上。
+</span></span><span class="line"><span class="cl">-L            级别仅下降级别级别的目录。
+</span></span><span class="line"><span class="cl">-R            当达到最大目录级别时，重新运行树。
+</span></span><span class="line"><span class="cl">-P            模式仅列出与给定模式匹配的那些文件。
+</span></span><span class="line"><span class="cl">-I            模式不列出与给定模式匹配的文件。
+</span></span><span class="line"><span class="cl">--ignore-case 模式匹配时忽略大小写。
+</span></span><span class="line"><span class="cl">--matchdirs   在-P模式匹配中包括目录名称。
+</span></span><span class="line"><span class="cl">--noreport    在树列表的末尾关闭文件/目录计数。
+</span></span><span class="line"><span class="cl">--charset X   将charset X用于终端/ HTML和缩进线输出。
+</span></span><span class="line"><span class="cl">--filelimit＃ 不要使包含超过＃个文件的dirs下降。
+</span></span><span class="line"><span class="cl">--timefmt     &lt;f&gt;根据&lt;f&gt;格式打印和格式化时间。
+</span></span><span class="line"><span class="cl">-o filename   输出到文件而不是stdout。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">------- 文件选项 -------
+</span></span><span class="line"><span class="cl">-q       将不可打印的字符打印为<span class="s1">&#39;？&#39;</span>。
+</span></span><span class="line"><span class="cl">-N       按原样打印不可打印的字符。
+</span></span><span class="line"><span class="cl">-Q       引用双引号的文件名。
+</span></span><span class="line"><span class="cl">-p       打印每个文件的保护。
+</span></span><span class="line"><span class="cl">-u       显示文件所有者或UID号。
+</span></span><span class="line"><span class="cl">-g       显示文件组所有者或GID号。
+</span></span><span class="line"><span class="cl">-s       打印每个文件的大小（以字节为单位）。
+</span></span><span class="line"><span class="cl">-h       以更易于理解的方式打印尺寸。
+</span></span><span class="line"><span class="cl">--si     与-h类似，但以SI单位使用（1000的幂）。
+</span></span><span class="line"><span class="cl">-D       打印上次修改或（-c）状态更改的日期。
+</span></span><span class="line"><span class="cl">-F       附加<span class="s1">&#39;/&#39;</span>，<span class="s1">&#39;=&#39;</span>，<span class="s1">&#39;*&#39;</span>，<span class="s1">&#39;@&#39;</span>，<span class="s1">&#39;|&#39;</span>或按ls -F的<span class="s1">&#39;&gt;&#39;</span>。
+</span></span><span class="line"><span class="cl">--inodes 打印每个文件的索引节点号。
+</span></span><span class="line"><span class="cl">--device 打印每个文件所属的设备ID号。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">------- 排序选项 -------
+</span></span><span class="line"><span class="cl">-v          按版本字母顺序对文件进行排序。
+</span></span><span class="line"><span class="cl">-t          按上次修改时间对文件排序。
+</span></span><span class="line"><span class="cl">-c          按上次状态更改时间对文件排序。
+</span></span><span class="line"><span class="cl">-U          不排序文件。
+</span></span><span class="line"><span class="cl">-r          颠倒排序顺序。
+</span></span><span class="line"><span class="cl">--dirsfirst 在文件之前列出目录（-U禁用）。
+</span></span><span class="line"><span class="cl">--sort X    选择排序：名称，版本，大小，mtime，ctime。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">------- 图形选项 -------
+</span></span><span class="line"><span class="cl">-i    不打印缩进线。
+</span></span><span class="line"><span class="cl">-A    打印ANSI线图形缩进线。
+</span></span><span class="line"><span class="cl">-S    使用CP437（控制台）图形缩进线打印。
+</span></span><span class="line"><span class="cl">-n    始终关闭着色（-C替代）。
+</span></span><span class="line"><span class="cl">-C    始终打开着色。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">------- XML / HTML / JSON选项 -------
+</span></span><span class="line"><span class="cl">-X        打印树的XML表示形式。
+</span></span><span class="line"><span class="cl">-J        打印树的JSON表示形式。
+</span></span><span class="line"><span class="cl">-H        baseHREF打印出以baseHREF作为顶层目录的HTML格式。
+</span></span><span class="line"><span class="cl">-T        字符串用字符串替换默认的HTML标题和H1标头。
+</span></span><span class="line"><span class="cl">--nolinks 关闭HTML输出中的超链接。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">------- 输入选项 -------
+</span></span><span class="line"><span class="cl">--fromfile 从文件中读取路径（。<span class="o">=</span> stdin）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">------- 其他选项 -------
+</span></span><span class="line"><span class="cl">--version 打印版本并退出。
+</span></span><span class="line"><span class="cl">--help    打印用法和此帮助消息并退出。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-选项处理终止符。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="展示效果">展示效果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">➜  app tree   
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── Console
+</span></span><span class="line"><span class="cl">│  └── Kernel.php
+</span></span><span class="line"><span class="cl">├── Exceptions
+</span></span><span class="line"><span class="cl">│  └── Handler.php
+</span></span><span class="line"><span class="cl">├── Http
+</span></span><span class="line"><span class="cl">│  ├── Controllers
+</span></span><span class="line"><span class="cl">│  │  ├── Auth
+</span></span><span class="line"><span class="cl">│  │  │  ├── ForgotPasswordController.php
+</span></span><span class="line"><span class="cl">│  │  │  ├── LoginController.php
+</span></span><span class="line"><span class="cl">│  │  │  ├── RegisterController.php
+</span></span><span class="line"><span class="cl">│  │  │  ├── ResetPasswordController.php
+</span></span><span class="line"><span class="cl">│  │  │  └── VerificationController.php
+</span></span><span class="line"><span class="cl">│  │  ├── Controller.php
+</span></span><span class="line"><span class="cl">│  │  └── IndexController.php
+</span></span><span class="line"><span class="cl">│  ├── Kernel.php
+</span></span><span class="line"><span class="cl">│  └── Middleware
+</span></span><span class="line"><span class="cl">│      ├── Authenticate.php
+</span></span><span class="line"><span class="cl">│      ├── CheckForMaintenanceMode.php
+</span></span><span class="line"><span class="cl">│      ├── EncryptCookies.php
+</span></span><span class="line"><span class="cl">│      ├── RedirectIfAuthenticated.php
+</span></span><span class="line"><span class="cl">│      ├── TrimStrings.php
+</span></span><span class="line"><span class="cl">│      ├── TrustProxies.php
+</span></span><span class="line"><span class="cl">│      └── VerifyCsrfToken.php
+</span></span><span class="line"><span class="cl">├── Providers
+</span></span><span class="line"><span class="cl">│  ├── AppServiceProvider.php
+</span></span><span class="line"><span class="cl">│  ├── AuthServiceProvider.php
+</span></span><span class="line"><span class="cl">│  ├── BroadcastServiceProvider.php
+</span></span><span class="line"><span class="cl">│  ├── EventServiceProvider.php
+</span></span><span class="line"><span class="cl">│  └── RouteServiceProvider.php
+</span></span><span class="line"><span class="cl">└── User.php
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">7</span> directories, <span class="m">23</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-03-15 20:08:56">更新于 2023-03-15&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/linux/linux-tree-command.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/linux-tree-command/" data-title="Linux Tree 树状目录显示工具 使用手册" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="linux,unix,tree"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/linux-tree-command/" data-hashtag="linux"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/linux-tree-command/" data-title="Linux Tree 树状目录显示工具 使用手册" data-image="https://image.debuginn.cn/202303152010224.jpg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">linux</a><a href='/tags/unix/' class="post-tag">unix</a><a href='/tags/tree/' class="post-tag">tree</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/design-restful-api/" class="post-nav-item" rel="prev" title="Restful API 设计指北"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Restful API 设计指北</a>
+      <a href="/linux-tools-gource/" class="post-nav-item" rel="next" title="Gource 版本可视化工具 使用手册">Gource 版本可视化工具 使用手册<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

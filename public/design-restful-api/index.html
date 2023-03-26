@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Restful API 设计指北 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API" /><meta name="keywords" content='api,restful, api' /><meta itemprop="name" content="Restful API 设计指北">
+<meta itemprop="description" content="近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API"><meta itemprop="datePublished" content="2023-03-13T21:35:12+08:00" />
+<meta itemprop="dateModified" content="2023-03-13T21:35:12+08:00" />
+<meta itemprop="wordCount" content="3093"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="api,restful api," /><meta property="og:title" content="Restful API 设计指北" />
+<meta property="og:description" content="近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/design-restful-api/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-13T21:35:12+08:00" />
+<meta property="article:modified_time" content="2023-03-13T21:35:12+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="Restful API 设计指北"/>
+<meta name="twitter:description" content="近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/design-restful-api/" /><link rel="prev" href="https://blog.debuginn.cn/douban-movies-to-blog/" /><link rel="next" href="https://blog.debuginn.cn/linux-tree-command/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Restful API 设计指北",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/design-restful-api\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "api, restful api","wordcount":  3093 ,
+    "url": "https:\/\/blog.debuginn.cn\/design-restful-api\/","datePublished": "2023-03-13T21:35:12+08:00","dateModified": "2023-03-13T21:35:12+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>Restful API 设计指北</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/design/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> design</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-03-13 21:35:12"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-13">2023-03-13</time></span>&nbsp;<span title="更新于 2023-03-13 21:35:12"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-13">2023-03-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3093 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Restful API 设计指北">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202303132137265.jpg" srcset="https://image.debuginn.cn/202303132137265.jpg, https://image.debuginn.cn/202303132137265.jpg 1.5x, https://image.debuginn.cn/202303132137265.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202303132137265.jpg" data-alt="https://image.debuginn.cn/202303132137265.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-使用-https-协议">1 使用 HTTPS 协议</a></li>
+    <li><a href="#2-api-地址和版本问题">2 API 地址和版本问题</a></li>
+    <li><a href="#3-schema-响应数据模式">3 Schema 响应数据模式</a></li>
+    <li><a href="#4-使用正确的-method">4 使用正确的 Method</a></li>
+    <li><a href="#5-过滤信息">5 过滤信息</a>
+      <ul>
+        <li><a href="#筛选操作">筛选操作</a></li>
+        <li><a href="#分页操作">分页操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-状态码-status-code">6 状态码 Status Code</a></li>
+    <li><a href="#7-错误处理">7 错误处理</a></li>
+    <li><a href="#8-验证及授权">8 验证及授权</a></li>
+    <li><a href="#9-hypermedia-api">9 Hypermedia API</a></li>
+    <li><a href="#10-易读的-api-接口文档">10 易读的 API 接口文档</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API 的书写及规范化是非常重要的，针对于 API 中 Restful API 中设计比较规范的是 Github API，可以直接访问他们的 <a href="https://api.github.com"target="_blank" rel="external nofollow noopener noreferrer">https://api.github.com<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> 直接查看 Github 针对与公共接口的链接及使用方法。</p>
+<p>此篇文章也是针对于这几天学习 Restful API 做了一个笔记或小结，若有不足之处还望批评指正，谢谢。</p>
+<h2 id="1-使用-https-协议">1 使用 HTTPS 协议</h2>
+<p>这个协议使用本身与这个 API 设计标准没有什么直接联系，使用 HTTPS 协议主要目的是将用户客户端与 API 服务器链接过程中保证其数据的安全性 ?。</p>
+<p>注意：由于 API 接口使用 HTTPS 协议，<strong>不要让非 SSL 的链接访问重定向到 SSL 的链接</strong>。</p>
+<h2 id="2-api-地址和版本问题">2 API 地址和版本问题</h2>
+<p>为 API 使用专门子域名比较友好，例如使用如下链接使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://api.debuginn.cn
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以将 API 放在主域名下，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://debuginn.cn/api/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当然，针对于 API 版本问题针对以上两种方法可以分别使用如下例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 针对于 API 子域名方式 api.domain/v1/</span>
+</span></span><span class="line"><span class="cl">https://api.debuginn.cn/v1/
+</span></span><span class="line"><span class="cl"><span class="c1"># 针对于 主域名目录方式 domain/api/v1/</span>
+</span></span><span class="line"><span class="cl">https://debuginn.cn/api/v1/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-schema-响应数据模式">3 Schema 响应数据模式</h2>
+<p>现在前后端分离项目使用的数据响应模式大部分采用的是 JSON 格式数据，也有一些项目采用 XML 格式的数据。</p>
+<p>针对于用户客户端请求，服务器响应尽量有 状态码 Status Code 及详细解释。</p>
+<h2 id="4-使用正确的-method">4 使用正确的 Method</h2>
+<p>使用正确的 Method 也就是使用正确的 HTTP 请求动词，即 HTTP 协议规定的常常使用的六种请求动词，并针对请求 SQL 语句辅助理解：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GET   请求 =&gt; SELECT 从服务端获取数据
+</span></span><span class="line"><span class="cl">POST  请求 =&gt; CREATE 从服务端创建数据
+</span></span><span class="line"><span class="cl">PUT   请求 =&gt; UPDATE 从服务端更新数据（将所有数据元素全部替换掉）
+</span></span><span class="line"><span class="cl">PATCH 请求 =&gt; UPDATE 从服务端更新数据（将部分数据元素替换掉）
+</span></span><span class="line"><span class="cl">DELETE请求 =&gt; DELETE 从服务端删除数据
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还有两个不常使用的请求：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HEAD    获取资源的元数据。
+</span></span><span class="line"><span class="cl">OPTIONS 获取信息，关于资源的哪些属性是客户端可以改变的。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意：更新和创建操作应该返回最新的资源，来通知用户资源的情况；删除资源一般不会返回内容。</strong></p>
+<h2 id="5-过滤信息">5 过滤信息</h2>
+<p>针对用户端查询数据，需要服务端查询对应数据，包括了筛选、分页等操作。</p>
+<h3 id="筛选操作">筛选操作</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">api.domain/user/limit/10   指定返回记录的数量;
+</span></span><span class="line"><span class="cl">api.domain/user/offset/10  指定返回记录的开始位置;
+</span></span><span class="line"><span class="cl">api.domain/user/animal_type_id/1      指定筛选条件
+</span></span><span class="line"><span class="cl">api.domain/user/page/2/per_page/100   指定第几页，以及每页的记录数;
+</span></span><span class="line"><span class="cl">api.domain/user/sortby/name/order/asc 指定返回结果按照哪个属性排序，以及排序顺序
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="分页操作">分页操作</h3>
+<p>当返回某个资源的列表时，如果要返回的数目特别多，比如 github 的 <code>/users</code>，就需要使用分页分批次按照需要来返回特定数量的结果。</p>
+<p>分页的实现会用到上面提到的 url query，通过两个参数来控制要返回的资源结果：</p>
+<ul>
+<li>per_page：每页返回多少资源，如果没提供会使用预设的默认值；这个数量也是有一个最大值，不然用户把它设置成一个非常大的值（比如99999999）也失去了设计的初衷。</li>
+<li>page：要获取哪一页的资源，默认是第一页。</li>
+</ul>
+<h2 id="6-状态码-status-code">6 状态码 Status Code</h2>
+<p>HTTP 应答中，需要带一个很重要的字段：status code。它说明了请求的大致情况，是否正常完成、需要进一步处理、出现了什么错误，对于客户端非常重要。状态码都是三位的整数，大概分成了几个区间：</p>
+<ul>
+<li>2XX：请求正常处理并返回</li>
+<li>3XX：重定向，请求的资源位置发生变化</li>
+<li>4XX：客户端发送的请求有错误</li>
+<li>5XX：服务器端错误</li>
+</ul>
+<p>在 HTTP API 设计中，经常用到的状态码以及它们的意义如下表：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>LABEL</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td>请求成功接收并处理，一般响应中都会有 body</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td>请求已完成，并导致了一个或者多个资源被创建，最常用在 POST 创建资源的时候</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Accepted</td>
+<td>请求已经接收并开始处理，但是处理还没有完成。一般用在异步处理的情况，响应 body 中应该告诉客户端去哪里查看任务的状态</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No Content</td>
+<td>请求已经处理完成，但是没有信息要返回，经常用在 PUT 更新资源的时候（客户端提供资源的所有属性，因此不需要服务端返回）。如果有重要的 metadata，可以放到头部返回</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Moved Permanently</td>
+<td>请求的资源已经永久性地移动到另外一个地方，后续所有的请求都应该直接访问新地址。服务端会把新地址写在 <code>Location</code> 头部字段，方便客户端使用。允许客户端把 POST 请求修改为 GET。</td>
+</tr>
+<tr>
+<td>304</td>
+<td>Not Modified</td>
+<td>请求的资源和之前的版本一样，没有发生改变。用来缓存资源，和条件性请求（conditional request）一起出现</td>
+</tr>
+<tr>
+<td>307</td>
+<td>Temporary Redirect</td>
+<td>目标资源暂时性地移动到新的地址，客户端需要去新地址进行操作，但是不能修改请求的方法。</td>
+</tr>
+<tr>
+<td>308</td>
+<td>Permanent Redirect</td>
+<td>和 301 类似，除了客户端不能修改原请求的方法</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>客户端发送的请求有错误（请求语法错误，body 数据格式有误，body 缺少必须的字段等），导致服务端无法处理</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>服务器端接收到并理解客户端的请求，但是客户端的权限不足。比如，普通用户想操作只有管理员才有权限的资源。</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>客户端要访问的资源不存在，链接失效或者客户端伪造 URL 的时候回遇到这个情况</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed</td>
+<td>服务端接收到了请求，而且要访问的资源也存在，但是不支持对应的方法。服务端必须返回<code>Allow</code>头部，告诉客户端哪些方法是允许的</td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td>服务端不支持客户端请求的资源格式，一般是因为客户端在<code>Content-Type</code>或者<code>Content-Encoding</code>中申明了希望的返回格式，但是服务端没有实现。比如，客户端希望收到xml返回，但是服务端支持Json</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>客户端在规定的时间里发送了太多请求，在进行限流的时候会用到</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>服务器内部错误，导致无法完成请求的内容</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td>服务器因为负载过高或者维护，暂时无法提供服务。服务器端应该返回 Retry-After 头部，告诉客户端过一段时间再来重试</td>
+</tr>
+</tbody>
+</table>
+<p>针对于状态码，请看此文章：<a href="https://www.debuginn.cn/4027.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.debuginn.cn/4027.html<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="7-错误处理">7 错误处理</h2>
+<p>如果出错的话，在 response body 中通过 <code>message</code> 给出明确的信息。</p>
+<p>比如客户端发送的请求有错误，一般会返回4XX Bad Request结果。这个结果很模糊，给出错误 message 的话，能更好地让客户端知道具体哪里有问题，进行快速修改。</p>
+<p>如果请求的 JSON 数据无法解析，会返回Problems parsing JSON；</p>
+<p>如果缺少必要的 filed，会返回422 Unprocessable Entity，除了 message 之外，还通过errors给出了哪些 field 缺少了，能够方便调用方快速排错。</p>
+<p>基本的思路就是尽可能提供更准确的错误信息：比如数据不是正确的 json，缺少必要的字段，字段的值不符合规定…… 而不是直接说“请求错误”之类的信息。</p>
+<h2 id="8-验证及授权">8 验证及授权</h2>
+<p>一般来说，让任何人随意访问公开的 API 是不好的做法。验证和授权是两件事情：</p>
+<ul>
+<li>验证（Authentication）是为了确定用户是其申明的身份，比如提供账户的密码。不然的话，任何人伪造成其他身份（比如其他用户或者管理员）是非常危险的</li>
+<li>授权（Authorization）是为了保证用户有对请求资源特定操作的权限。比如用户的私人信息只能自己能访问，其他人无法看到；有些特殊的操作只能管理员可以操作，其他用户有只读的权限等等</li>
+</ul>
+<p>如果没有通过验证（提供的用户名和密码不匹配，token 不正确等），需要返回<code>401 Unauthorized</code>状态码，并在 body 中说明具体的错误信息；而没有被授权访问的资源操作，需要返回<code>403 Forbidden</code>状态码，还有详细的错误信息。</p>
+<p><strong>注意：对某些用户未被授权访问的资源操作返回<code>404 Not Found</code>，目的是为了防止私有资源的泄露（比如黑客可以自动化试探用户的私有资源，返回 403 的话，就等于告诉黑客用户有这些私有的资源，无异于是给黑客提供了方向）。</strong></p>
+<h2 id="9-hypermedia-api">9 Hypermedia API</h2>
+<p>RESTful API 最好做到 Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么。</p>
+<p>比如访问 api.github.com，就可以看到 Github API 支持的资源操作。</p>
+<h2 id="10-易读的-api-接口文档">10 易读的 API 接口文档</h2>
+<p>API 最终是给人使用的，不管是公司内部，还是公开的 API 都是一样。即使我们遵循了上面提到的所有规范，设计的 API 非常优雅，用户还是不知道怎么使用我们的 API。最后一步，但非常重要的一步是：为你的 API 编写优秀的文档。</p>
+<p><strong>注意：对每个请求以及返回的参数给出说明，最好给出一个详细而完整地示例。</strong></p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html"target="_blank" rel="external nofollow noopener noreferrer">RESTful API 设计指南 - 阮一峰<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://cizixs.com/2016/12/12/restful-api-design-guide/"target="_blank" rel="external nofollow noopener noreferrer">跟着 Github 学习 Restful HTTP API 设计<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://restfulapi.net/"target="_blank" rel="external nofollow noopener noreferrer">REST API Tutorial<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+<li><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"target="_blank" rel="external nofollow noopener noreferrer">Representational State Transfer (REST) - Roy Fielding<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-03-13 21:35:12">更新于 2023-03-13&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/other/design-restful-api.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/design-restful-api/" data-title="Restful API 设计指北" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="api,restful api"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/design-restful-api/" data-hashtag="api"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/design-restful-api/" data-title="Restful API 设计指北" data-image="https://image.debuginn.cn/202303132137265.jpg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/api/' class="post-tag">api</a><a href='/tags/restful-api/' class="post-tag">restful api</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/douban-movies-to-blog/" class="post-nav-item" rel="prev" title="如何将豆瓣观影记录实时同步至博客中"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>如何将豆瓣观影记录实时同步至博客中</a>
+      <a href="/linux-tree-command/" class="post-nav-item" rel="next" title="Linux Tree 树状目录显示工具 使用手册">Linux Tree 树状目录显示工具 使用手册<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

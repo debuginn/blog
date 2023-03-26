@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>occ - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/occ/</link>
+    <description>occ - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 16 Mar 2023 19:45:55 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/occ/" rel="self" type="application/rss+xml" /><item>
+  <title>浅析悲观锁与乐观锁</title>
+  <link>https://blog.debuginn.cn/mysql-lock-occ-pcc/</link>
+  <pubDate>Thu, 16 Mar 2023 19:45:55 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/mysql-lock-occ-pcc/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303161947714.jpg" referrerpolicy="no-referrer">
+      </div>在关系型数据库中，悲观锁与乐观锁是解决资源并发场景的解决方案，接下来将详细讲解?一下这两个并发解决方案的实际使用及优缺点。 首先定义一下数据库]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>软件工程 怎样建立甘特图 - Debug客栈</title><meta name="author" content="Meng小羽">
+<meta name="author-link" content="https://www.debuginn.cn">
+<meta name="description" content="甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续" /><meta name="keywords" content='软件工程' /><meta itemprop="name" content="软件工程 怎样建立甘特图">
+<meta itemprop="description" content="甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续"><meta itemprop="datePublished" content="2019-03-13T22:02:53+08:00" />
+<meta itemprop="dateModified" content="2019-03-13T22:02:53+08:00" />
+<meta itemprop="wordCount" content="4361"><meta itemprop="image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+<meta itemprop="keywords" content="软件工程," /><meta property="og:title" content="软件工程 怎样建立甘特图" />
+<meta property="og:description" content="甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.debuginn.cn/test-software-build-gantt-chart/" /><meta property="og:image" content="https://image.debuginn.cn/202302182238057.JPG"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-03-13T22:02:53+08:00" />
+<meta property="article:modified_time" content="2019-03-13T22:02:53+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://image.debuginn.cn/202302182238057.JPG"/>
+
+<meta name="twitter:title" content="软件工程 怎样建立甘特图"/>
+<meta name="twitter:description" content="甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续"/>
+<meta name="application-name" content="Debug客栈">
+<meta name="apple-mobile-web-app-title" content="Debug客栈"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/safari-pinned-tab.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blog.debuginn.cn/test-software-build-gantt-chart/" /><link rel="prev" href="https://blog.debuginn.cn/lqb-19-b-cplus-max-min-multiple/" /><link rel="next" href="https://blog.debuginn.cn/lqb-19-b-cplus-shopping-list/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="msvalidate.01" content="CF48A4EAC49C9686BB39A3B419DB526E" /><meta name="yandex-verification" content="178e4f66ce9b6b99" /><meta name="baidu-site-verification" content="codeva-6M0zLLPWdS" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "软件工程 怎样建立甘特图",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.debuginn.cn\/test-software-build-gantt-chart\/"
+    },"image": ["https:\/\/image.debuginn.cn\/202302191903259.svg"],"genre": "posts","keywords": "软件工程","wordcount":  4361 ,
+    "url": "https:\/\/blog.debuginn.cn\/test-software-build-gantt-chart\/","datePublished": "2019-03-13T22:02:53+08:00","dateModified": "2019-03-13T22:02:53+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Meng小羽"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/subscribe/"
+                
+                
+              ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/pages/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Debug客栈"><span class="header-title-text">Debug客栈</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/subscribe/"
+                  
+                  
+                ><i class="fa-solid fa-fire text-danger fa-fw fa-sm" aria-hidden="true"></i> 订阅</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/pages/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友联</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/"
+                    
+                    
+                  ><i class="fa-solid fa-eye text-primary fa-fw fa-sm" aria-hidden="true"></i> 更多</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-house text-danger fa-fw fa-sm" aria-hidden="true"></i> 客栈主页</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://notes.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-book text-info fa-fw fa-sm" aria-hidden="true"></i> 我的笔记</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="https://photo.debuginn.cn"
+                          
+                          rel="noopener noreferrer" target="_blank"
+                        ><i class="fa-solid fa-camera text-warning fa-fw fa-sm" aria-hidden="true"></i> 摄影展览</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/project/"
+                          
+                          
+                        ><i class="fa-brands fa-github-alt text-info fa-fw fa-sm" aria-hidden="true"></i> 我的项目</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/pages/aboutme/"
+                          
+                          
+                        ><i class="fa-solid fa-address-card text-secondary fa-fw fa-sm" aria-hidden="true"></i> 关于站长</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>软件工程 怎样建立甘特图</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.debuginn.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://image.debuginn.cn/202302182238057.JPG" srcset="https://image.debuginn.cn/202302182238057.JPG, https://image.debuginn.cn/202302182238057.JPG 1.5x, https://image.debuginn.cn/202302182238057.JPG 2x" sizes="auto" data-title="Meng小羽" data-alt="Meng小羽" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/>&nbsp;Meng小羽</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 软件工程</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2019-03-13 22:02:53"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2019-03-13">2019-03-13</time></span>&nbsp;<span title="更新于 2019-03-13 22:02:53"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2019-03-13">2019-03-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 4361 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 9 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="软件工程 怎样建立甘特图">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://image.debuginn.cn/202303191228166.jpg" srcset="https://image.debuginn.cn/202303191228166.jpg, https://image.debuginn.cn/202303191228166.jpg 1.5x, https://image.debuginn.cn/202303191228166.jpg 2x" sizes="auto" data-title="https://image.debuginn.cn/202303191228166.jpg" data-alt="https://image.debuginn.cn/202303191228166.jpg" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#完成图表框架">完成图表框架</a></li>
+    <li><a href="#给甘特图添加数据">给甘特图添加数据</a>
+      <ul>
+        <li><a href="#任务">任务</a></li>
+      </ul>
+    </li>
+    <li><a href="#里程碑">里程碑</a></li>
+    <li><a href="#依赖关系链接任务">依赖关系（链接任务）</a></li>
+    <li><a href="#数据列">数据列</a></li>
+    <li><a href="#时间刻度">时间刻度</a></li>
+    <li><a href="#打印大型甘特图">打印大型甘特图</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2019-03-13，文中内容可能已过时。</div>
+      </div>
+    </div><p>甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续时间。它是在第一次世界大战时期发明的，以亨利·L·甘特先生的名字命名，他制定了一个完整地用条形图表进度的标志系统。由于甘特图形象简单，在简单、短期的项目中，甘特图都得到了最广泛的运用。</p>
+<p>首先，建立基本的图表框架和时间刻度日期。您还可以选择如何设置任务栏、里程碑和其他图表元素的格式。</p>
+<p>稍后，您可以更改日期，添加或删除任务和里程碑，以及创建任务间的依赖关系。您还可以应用配色方案，以及添加标题和图例。</p>
+<p>在 Visio 的“文件”菜单上，依次指向“新建”和“日程”，然后单击“甘特图”。</p>
+<p>单击“日期”选项卡，然后选择所需的选项。</p>
+<p>注释：“主要单位”是您要在图表中使用的最长时间单位（如年或月），“次要单位”是最短时间单位（如日或小时）。</p>
+<p>在“格式”选项卡中单击要在任务栏、里程碑和摘要栏上使用的形状和标签，然后单击“确定”。</p>
+<p>注释：如果您不确定要选择何种格式，接受默认选项即可。您可以在以后更改该格式。</p>
+<h2 id="完成图表框架">完成图表框架</h2>
+<p>建立甘特图后，将显示一个通用的图表框架。</p>
+<p>该框架就像一幅空白画布，您可以在其上添加日程的详细信息：</p>
+<p>在“任务名称”列中，单击某个单元格，键入特定的任务名称来代替通用文字。随着项目进展，您可以添加更多任务。</p>
+<p>最初，“开始时间”和“完成时间”列中的日期反映了您为项目指定的开始日期。要更改该日期，请单击单元格，然后键入新日期。</p>
+<p>“工期”列将随您键入的新开始日期和完成日期自动更新。您还可以键入开始日期和完成日期之一以及工期来指示任务的时间长度。</p>
+<p>在“时间刻度”（标有“2000”的其下显示有月份的区域）中，“主要单位”显示在顶部，“次要单位”显示在底部。</p>
+<p>时间刻度始于您指定的开始日期，止于您指定的完成日期。当您添加任务的开始日期和结束日期或工期时，任务栏将出现在时间刻度下面的区域中，且该区域将展开。</p>
+<p><strong>提示</strong>  要记录与每一任务有关的其他数据，您可以添加更多的列。例如，您可以添加“资源”列，以便您的甘特图反映出每个任务的负责人。</p>
+<h2 id="给甘特图添加数据">给甘特图添加数据</h2>
+<p>您可以将反映项目日程详细信息的数据填入框架。还可以添加并优化以下日程元素：</p>
+<h3 id="任务">任务</h3>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303252205077.png" data-thumbnail="https://image.debuginn.cn/202303252205077.png" data-sub-html="<h2>任务</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303252205077.png" srcset="https://image.debuginn.cn/202303252205077.png, https://image.debuginn.cn/202303252205077.png 1.5x, https://image.debuginn.cn/202303252205077.png 2x" sizes="auto" data-title="任务" data-alt="任务" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>甘特图中的每个任务在图表框架中占用一行。当您在“任务名称”列的单元格中键入任务名称时，任务工期将表示为时间刻度下方区域中的任务栏。</p>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>采取的操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>更改任务名称</td>
+<td>单击包含该任务的“任务名称”列中的单元格，然后键入新名称。</td>
+</tr>
+<tr>
+<td>设置或更改任务工期</td>
+<td>在包含要更改日期或工期的甘特图框架中，单击单元格，然后键入新信息。</td>
+</tr>
+<tr>
+<td>注释</td>
+<td>根据以下规则键入工期：1h 表示 1 小时 1d 表示 1 天 1w 表示 1 周 1m 表示 1 个月</td>
+</tr>
+<tr>
+<td>在甘特图底部添加新任务</td>
+<td>通过单击围绕图表的实线，选择甘特图框架。要创建新的任务行，请拖动位于框架底部中央的绿色选择手柄。</td>
+</tr>
+<tr>
+<td>在两个现有任务之间添加新任务</td>
+<td>右键单击要在其上方显示新任务行的行中的任意单元格，然后单击快捷菜单中的“新建任务”。</td>
+</tr>
+<tr>
+<td>给任务添加完成百分比指示器</td>
+<td>右键单击要显示完成百分比列的位置左侧的列顶部的阴影部分，然后单击快捷菜单中的“插入列”。 在“列类型”下，单击“完成百分比”，然后单击“确定”。 随着任务的进展，在新列中键入任务的完成百分比。完成百分比指示器便会出现在任务栏中。</td>
+</tr>
+<tr>
+<td>删除任务</td>
+<td>右键单击表示要删除的任务的行中的任意单元格，然后单击快捷菜单中的“删除任务”。</td>
+</tr>
+<tr>
+<td>更改任务栏的显示方式</td>
+<td>右键单击任务栏，然后单击快捷菜单中的“任务选项”。在列表中单击所需选项，然后单击“确定”。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="里程碑">里程碑</h2>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303252207579.jpg" data-thumbnail="https://image.debuginn.cn/202303252207579.jpg" data-sub-html="<h2>里程碑</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303252207579.jpg" srcset="https://image.debuginn.cn/202303252207579.jpg, https://image.debuginn.cn/202303252207579.jpg 1.5x, https://image.debuginn.cn/202303252207579.jpg 2x" sizes="auto" data-title="里程碑" data-alt="里程碑" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>当您要在一个总括任务下合并若干附属任务时，可以使用摘要任务。</p>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>采取的操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建带有附属任务的摘要任务</td>
+<td>给甘特图添加摘要任务和附属任务或里程碑。 要选择附属任务，请单击包含该任务名称的单元格。要选择多个任务，请在单击时按住 Shift。 右键单击其中一个选定的任务，然后单击快捷菜单中的“降级”。</td>
+</tr>
+<tr>
+<td>设置摘要任务的工期</td>
+<td>在表示第一个附属任务的行中，单击“开始时间”列中的单元格，然后键入该任务的开始日期。 对于同一个附属任务，单击“完成时间”列中的单元格，然后键入该任务的结束日期。 对每个附属任务重复第 1 步和第 2 步。  注释    在为所有附属任务添加任务工期信息后，摘要任务的工期会自动填入。</td>
+</tr>
+<tr>
+<td>降低任务级别（降级）</td>
+<td>右键单击要降级的任务的名称，然后单击快捷菜单中的“降级”。</td>
+</tr>
+<tr>
+<td>提升任务级别（升级）</td>
+<td>右键单击要提升的任务的名称，然后单击快捷菜单中的“升级”。</td>
+</tr>
+<tr>
+<td>更改摘要任务栏的显示方式</td>
+<td>右键单击要更改的摘要任务的任务栏，然后单击快捷菜单中的“任务选项”。 在“摘要栏”下，选择摘要栏开头和结尾要使用的符号，然后单击“确定”。</td>
+</tr>
+</tbody>
+</table>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303252210303.png" data-thumbnail="https://image.debuginn.cn/202303252210303.png" data-sub-html="<h2>里程碑</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303252210303.png" srcset="https://image.debuginn.cn/202303252210303.png, https://image.debuginn.cn/202303252210303.png 1.5x, https://image.debuginn.cn/202303252210303.png 2x" sizes="auto" data-title="里程碑" data-alt="里程碑" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<h2 id="依赖关系链接任务">依赖关系（链接任务）</h2>
+<p>当您在甘特图中创建依赖另一个任务的任务时，一个箭头将把两个任务栏连接起来。如果更改另一个任务所依赖的任务的日期或工期，则依赖任务的日期也会随之更改。</p>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>采取的操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设置任务之间的依赖关系</td>
+<td>通过单击包含任务名称的单元格，选择要在其间建立依赖关系的任务和里程碑。要选择多个任务，请在选择时按住 Shift。 右键单击所选任务之一，然后单击快捷菜单中的“链接任务”。</td>
+</tr>
+<tr>
+<td>中断任务之间的依赖关系</td>
+<td>通过单击包含任务名称的单元格，选择带有要断开依赖关系的任务。要选择多个任务，请在选择时按住 Shift。 右键单击其中一个选定的任务，然后单击快捷菜单中的“取消链接任务”。</td>
+</tr>
+<tr>
+<td>更改依赖关系箭头的样式</td>
+<td>打开甘特图，右键单击绘图页，然后单击快捷菜单中的“S 型连接线”。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="数据列">数据列</h2>
+<p>项目日程是根据特定于任务的数据创建的。任务开始日期和工期这两个因素综合在一起决定项目的完成日期。在 Visio 甘特图中，任务数据存储在数据列中。如果要在甘特图中记录并显示其他任务数据，可以添加新列。例如，您可能要添加任务注释列，您可以在其中说明复杂的任务或独特的任务；添加资源列以列出负责完成每个任务的人员；或添加完成百分比列以跟踪每个任务已完成的百分比。</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303252212523.png" data-thumbnail="https://image.debuginn.cn/202303252212523.png" data-sub-html="<h2>数据列</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303252212523.png" srcset="https://image.debuginn.cn/202303252212523.png, https://image.debuginn.cn/202303252212523.png 1.5x, https://image.debuginn.cn/202303252212523.png 2x" sizes="auto" data-title="数据列" data-alt="数据列" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>默认情况下，新的甘特图在创建时将包含“任务名称”列、“开始时间”列、“完成时间”列和“工期”列。您可以重新安排现有列、添加新列或删除不再需要的列。</p>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>采取的操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重命名现有列</td>
+<td>单击要重命名列的标题，然后键入新名称。</td>
+</tr>
+<tr>
+<td>添加预先设计的新数据列</td>
+<td>右键单击要显示新列的位置左侧的列标题，然后单击快捷菜单中的“插入列”。 在“列类型”列表中，单击与要添加的数据类型相对应的列名称，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>添加您自己设计的新数据列</td>
+<td>右键单击要显示新列的位置左侧的列标题，然后单击快捷菜单中的“插入列”。 在“列类型”列表中，单击与要使用的数据格式（例如，“用户定义的小数”、“用户定义的文本”或“用户定义的时间”）相对应的一个用户定义的列，然后单击“确定”。为列键入新的名称。  注释    如果添加多个文本列，请每次选择不同的用户定义文本选项。例如，为第一列单击“用户定义的文本 1”，为第二列选择“用户定义的文本 2”，依此类推。</td>
+</tr>
+<tr>
+<td>删除（隐藏）数据列</td>
+<td>右键单击要删除（隐藏）的列的标题，然后单击快捷菜单中的“隐藏列”。  注释    删除或隐藏图表中的列时，该列中的数据将保存到文件中。如果以后要再次显示该列，请右键单击列标题，然后单击快捷菜单中的“插入列”。在列表中选择要再次显示的列，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>移动数据列</td>
+<td>单击移动的列的标题。 将列拖到新的位置。 请执行下列操作之一： 要将一列移到另一列的左侧，请将要移动列的中点放置在另一列中点的左侧。 要将一列移到另一列右侧，请将要移动列的中点放置在另一列中点的右侧。 要将一列移到时间刻度区域的右侧，请将要移动列的中点放置在时间刻度区域中点的右侧。</td>
+</tr>
+<tr>
+<td>注释</td>
+<td>如果时间线刻度区域很长，您可能必须缩小视图，以便可以将该列移过该区域的中点。要缩小视图，请在“视图”菜单上指向“缩放比例”，然后单击所需的缩放级别。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="时间刻度">时间刻度</h2>
+<p>时间刻度是主要时间单位和次要时间单位的刻度，它将从项目的开始日期延伸到结束日期。您可以定义时间刻度的时间单位、开始日期和结束日期以及非工作日。</p>
+<p><a class="lightgallery" href="https://image.debuginn.cn/202303252216665.png" data-thumbnail="https://image.debuginn.cn/202303252216665.png" data-sub-html="<h2>时间刻度</h2>"><img loading="lazy" src="https://image.debuginn.cn/202303252216665.png" srcset="https://image.debuginn.cn/202303252216665.png, https://image.debuginn.cn/202303252216665.png 1.5x, https://image.debuginn.cn/202303252216665.png 2x" sizes="auto" data-title="时间刻度" data-alt="时间刻度" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/></a></p>
+<p>您可以滚动至时间刻度上特定的日期或任务，还可以更改时间刻度区域的宽度并显示更多的日期。</p>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>采取的操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>更改开始日期和/或结束日期</td>
+<td>在甘特图中，右键单击时间刻度中的任何部分，然后单击快捷菜单中的“日期选项”。 在“时间刻度范围”下，选择新的开始日期/时间或结束日期/时间，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>更改时间单位</td>
+<td>在甘特图中，右键单击时间刻度中的任何部分，然后单击快捷菜单中的“日期选项”。 在“时间单位”下，选择所需的“主要单位”和“次要单位”，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>设置非工作日</td>
+<td>在甘特图中，右键单击时间刻度中的任何部分，然后单击快捷菜单中的“配置工作时间”。 为“工作日”和“工作时间”选择所需选项，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>滚动至特定的任务或里程碑</td>
+<td>通过单击包含任务名称的单元格，选择要滚动至的任务或里程碑。 在“甘特图”工具栏上，单击“滚动至任务”按钮。  注释    如果看不到“甘特图”工具栏，请在“视图”菜单上指向“工具栏”，然后单击“甘特图”。</td>
+</tr>
+<tr>
+<td>滚动至特定日期</td>
+<td>在甘特图中，右键单击时间刻度中的任何位置，然后单击快捷菜单中的以下选项之一：“滚动至完成日期”- 滚动至时间刻度的结束位置。 “向左滚动一个单位”- 向左滚动一个次要单位。 “向右滚动一个单位”- 向右滚动一个次要单位。 “滚动至开始日期”- 滚动至时间刻度的开始位置。</td>
+</tr>
+<tr>
+<td>更改时间刻度区域的宽度</td>
+<td>在时间刻度区域顶部的灰色区域中单击一次，然后再次单击，选择时间刻度列。 向任一个方向拖动列右侧的绿色选择手柄，直到区域的宽度满足您的要求。</td>
+</tr>
+<tr>
+<td>显示更多时间单位</td>
+<td>单击甘特图框架周围的实线以选择该框架。 向右拖动位于框架中心偏右侧的绿色选择手柄。</td>
+</tr>
+<tr>
+<td>注释</td>
+<td>当您展开时间刻度以显示更多时间单位时，还可以更改与项目相关的结束日期。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="打印大型甘特图">打印大型甘特图</h2>
+<p>除非是为小项目创建日程，否则，您的甘特图很可能超出一页标准打印纸的边界。下表说明了您可能遇到的一些打印问题，以及为了获得所预期的效果在打印前可以采取的相应措施。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+<th>采取的操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只打印了部分甘特图。</td>
+<td>请确保整个图表适合绘图页的大小。</td>
+<td>在“文件”菜单上，单击“页面设置”。 单击“页面大小”选项卡，单击“调整大小以适应绘图内容”，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>打印纸和绘图页的方向不同。</td>
+<td>更改打印纸方向。</td>
+<td>在“文件”菜单上，单击“页面设置”。  单击“打印设置”选项卡，单击所需的方向，然后单击“确定”。</td>
+</tr>
+<tr>
+<td>您不知道甘特图打印时会占几页。</td>
+<td>在打印绘图前预览其打印效果。</td>
+<td>在“文件”菜单上，单击“打印预览”。</td>
+</tr>
+<tr>
+<td>不知道分页符将出现在什么位置。</td>
+<td>启用分页符，查看图表将平铺跨越多少张打印纸。</td>
+<td>在“视图”菜单上，单击“分页符”。图表上的灰线表示进行分页的位置。</td>
+</tr>
+<tr>
+<td>打印纸断开的位置不理想。</td>
+<td>更改边距设置，以控制各页间的重叠。边距越大，页间的重叠越大。</td>
+<td>在“文件”菜单上，单击“页面设置”。 在“打印设置”选项卡上，单击“设置”。 键入所需的边距设置，然后单击两次“确定”。</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2019-03-13 22:02:53">更新于 2019-03-13&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/debuginn/blog/edit/main/content/posts/test/software-engineering/test-software-build-gantt-chart.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.debuginn.cn/test-software-build-gantt-chart/" data-title="软件工程 怎样建立甘特图" data-via="map[id:idebuginn prefix:https://twitter.com title:Twitter weight:4]" data-hashtags="软件工程"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.debuginn.cn/test-software-build-gantt-chart/" data-hashtag="软件工程"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.debuginn.cn/test-software-build-gantt-chart/" data-title="软件工程 怎样建立甘特图" data-image="https://image.debuginn.cn/202303191228166.jpg" data-ralateuid="map[id:7096209693 prefix:https://weibo.com title:Weibo weight:1]"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/' class="post-tag">软件工程</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/lqb-19-b-cplus-max-min-multiple/" class="post-nav-item" rel="prev" title="蓝桥杯 算法训练 最大最小公倍数"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>蓝桥杯 算法训练 最大最小公倍数</a>
+      <a href="/lqb-19-b-cplus-shopping-list/" class="post-nav-item" rel="next" title="蓝桥杯 2017年省赛C&#43;&#43;B组题1 购物单">蓝桥杯 2017年省赛C&#43;&#43;B组题1 购物单<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">请我喝杯咖啡</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div><img loading="lazy" src="https://image.debuginn.cn/202302191928172.jpg" srcset="https://image.debuginn.cn/202302191928172.jpg, https://image.debuginn.cn/202302191928172.jpg 1.5x, https://image.debuginn.cn/202302191928172.jpg 2x" sizes="auto" data-title="Meng小羽 微信" data-alt="Meng小羽 微信" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="debuginn/blog"
+            data-repo-id="R_kgDOI_rNgg"
+            data-category="General"
+            data-category-id="DIC_kwDOI_rNgs4CUT4j"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line custom"><p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script></div><div class="footer-line powered order-4">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright order-3" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.debuginn.cn"target="_blank" rel="external nofollow noopener noreferrer">Meng小羽</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor order-1">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian order-2"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/debuginn" title="follow me"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/purple/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2017-11-11T16:16:16+16:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-FVTHCHHP2J');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-FVTHCHHP2J" async></script></body>
+</html>

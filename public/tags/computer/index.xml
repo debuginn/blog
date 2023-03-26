@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>computer - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/computer/</link>
+    <description>computer - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Mar 2020 15:46:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/computer/" rel="self" type="application/rss+xml" /><item>
+  <title>记一次不太正规的装机实践</title>
+  <link>https://blog.debuginn.cn/computer-install/</link>
+  <pubDate>Sat, 21 Mar 2020 15:46:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/computer-install/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303122249241.jpg" referrerpolicy="no-referrer">
+      </div>早就想着装一台组装机，来实操一下高中学的计算机组装与维修 ?，哈哈，开玩笑，想着组装一台电脑是我早有打算的事情，凭借着在学校实验室的时候帮助老]]></description>
+</item>
+</channel>
+</rss>

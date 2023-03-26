@@ -2,29 +2,70 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://blog.debuginn.cn/friends/</loc><lastmod>2023-02-25T10:58:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/faas/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/faas/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/faas-notes/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/notes/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/posts/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/serverless/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/financing/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/longbridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/%E6%B8%AF%E7%BE%8E%E8%82%A1/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/%E9%95%BF%E6%A1%A5/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/financing-long-bridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/%E8%AF%81%E5%88%B8/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/git/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/git/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/git-command/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/posts/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/</loc><lastmod>2023-03-25T22:30:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/pwa/</loc><lastmod>2023-03-18T14:56:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/pwa/</loc><lastmod>2023-03-18T14:56:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/web-pwa-program/</loc><lastmod>2023-03-18T14:56:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/web/</loc><lastmod>2023-03-18T14:56:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/aboutme/</loc><lastmod>2023-03-17T15:39:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/aboutme/</loc><lastmod>2023-03-17T15:39:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/pages/</loc><lastmod>2023-03-17T15:39:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/pages/aboutme/</loc><lastmod>2023-03-17T15:39:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/debuginn/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/debug%E5%AE%A2%E6%A0%88/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/go/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/go%E5%8D%9A%E5%AE%A2/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/project/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/project/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/pages/project/</loc><lastmod>2023-03-17T15:39:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/mysql/</loc><lastmod>2023-03-16T19:45:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/mysql/</loc><lastmod>2023-03-16T19:45:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/occ/</loc><lastmod>2023-03-16T19:45:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/pcc/</loc><lastmod>2023-03-16T19:45:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/mysql-lock-occ-pcc/</loc><lastmod>2023-03-16T19:45:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/gource/</loc><lastmod>2023-03-16T19:31:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/linux-tools-gource/</loc><lastmod>2023-03-16T19:31:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/linux/</loc><lastmod>2023-03-15T20:08:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/linux/</loc><lastmod>2023-03-15T20:08:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/linux-tree-command/</loc><lastmod>2023-03-15T20:08:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/tree/</loc><lastmod>2023-03-15T20:08:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/unix/</loc><lastmod>2023-03-15T20:08:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/api/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/design/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/restful-api/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/design-restful-api/</loc><lastmod>2023-03-13T21:35:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/douban/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/gin/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/mdui/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/rss/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/douban-movies-to-blog/</loc><lastmod>2023-03-03T19:28:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/subscribe/</loc><lastmod>2023-03-02T20:54:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/subscribe/</loc><lastmod>2023-03-02T20:54:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/pages/subscribe/</loc><lastmod>2023-03-02T20:54:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+      <loc>https://blog.debuginn.cn/pages/friends/</loc><lastmod>2023-02-25T10:58:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/faas/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/faas/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/faas-notes/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/notes/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/serverless/</loc><lastmod>2023-02-15T09:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/financing/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/longbridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E6%B8%AF%E7%BE%8E%E8%82%A1/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E9%95%BF%E6%A1%A5/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/financing-long-bridge/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E8%AF%81%E5%88%B8/</loc><lastmod>2023-02-12T22:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/2022/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/debuginn-2022/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/2023/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/debug%E5%AE%A2%E6%A0%88/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/summary/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc><lastmod>2022-12-31T10:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/go/</loc><lastmod>2022-05-01T18:12:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/go-pprof/</loc><lastmod>2022-05-01T18:12:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/go-tools/</loc><lastmod>2022-05-01T18:12:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/golang/</loc><lastmod>2022-05-01T18:12:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -43,8 +84,6 @@
       <loc>https://blog.debuginn.cn/categories/job/</loc><lastmod>2021-09-23T23:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/mi-work/</loc><lastmod>2021-09-23T23:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/%E5%86%85%E6%8E%A8/</loc><lastmod>2021-09-23T23:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/git/</loc><lastmod>2021-09-21T17:33:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/git/</loc><lastmod>2021-09-21T17:33:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/git-reset-revert/</loc><lastmod>2021-09-21T17:33:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/github/</loc><lastmod>2021-09-21T17:33:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/reset/</loc><lastmod>2021-09-21T17:33:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -63,7 +102,6 @@
       <loc>https://blog.debuginn.cn/tags/go-fmt/</loc><lastmod>2021-03-07T14:01:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/go-dev-design/</loc><lastmod>2021-03-07T14:01:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/log/</loc><lastmod>2021-03-07T14:01:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/mysql/</loc><lastmod>2021-03-07T14:01:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/redis/</loc><lastmod>2021-03-07T14:01:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/stat/</loc><lastmod>2021-03-07T14:01:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/%E5%8D%9A%E6%96%87/</loc><lastmod>2021-01-30T16:53:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -92,6 +130,130 @@
       <loc>https://blog.debuginn.cn/tags/gvm/</loc><lastmod>2020-07-12T16:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/go-use-gvm-switch-version/</loc><lastmod>2020-07-12T16:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/go-mysql-sqlx-pkg/</loc><lastmod>2020-07-07T11:35:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-mysql-prepare/</loc><lastmod>2020-07-02T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/prepare/</loc><lastmod>2020-07-02T16:46:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-mysql-transaction-operation/</loc><lastmod>2020-07-02T15:04:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/transaction/</loc><lastmod>2020-07-02T15:04:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/curd/</loc><lastmod>2020-07-01T17:08:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-mysql-curd-operation/</loc><lastmod>2020-07-01T17:08:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/array/</loc><lastmod>2020-06-17T21:08:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-array-slice-map/</loc><lastmod>2020-06-17T21:08:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/map/</loc><lastmod>2020-06-17T21:08:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/slice/</loc><lastmod>2020-06-17T21:08:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/go-net-socket/</loc><lastmod>2020-05-25T08:42:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/net/</loc><lastmod>2020-05-25T08:42:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/socket/</loc><lastmod>2020-05-25T08:42:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/linux-vim-command/</loc><lastmod>2020-05-16T15:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/vim/</loc><lastmod>2020-05-16T15:57:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/database/</loc><lastmod>2020-05-01T17:41:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/engin/</loc><lastmod>2020-05-01T17:41:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/mysql-chooes-storage-engine/</loc><lastmod>2020-05-01T17:41:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/ffmpeg/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/hls/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/pingos/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/tools/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/pingos-build-sever/</loc><lastmod>2020-04-03T23:19:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/computer/</loc><lastmod>2020-03-21T15:46:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/computer/</loc><lastmod>2020-03-21T15:46:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/computer-install/</loc><lastmod>2020-03-21T15:46:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/coin-financing/</loc><lastmod>2020-02-28T18:29:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/redis/</loc><lastmod>2020-01-28T20:14:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/redis-summary/</loc><lastmod>2020-01-28T20:14:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/linux-dev-null-file/</loc><lastmod>2020-01-13T19:34:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/shell/</loc><lastmod>2020-01-13T19:34:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/js-snowflake/</loc><lastmod>2020-01-12T19:40:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/jquery/</loc><lastmod>2020-01-12T19:40:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/js/</loc><lastmod>2020-01-12T19:40:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/js/</loc><lastmod>2020-01-12T19:40:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/2019/</loc><lastmod>2019-12-31T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/debuginn-2019/</loc><lastmod>2019-12-31T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/coin-taishan/</loc><lastmod>2019-11-30T20:00:57&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/default/</loc><lastmod>2019-11-20T20:09:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/qrcode/</loc><lastmod>2019-11-20T20:09:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/will-the-qr-code-run-out/</loc><lastmod>2019-11-20T20:09:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/mbp-2019/</loc><lastmod>2019-11-03T15:14:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/default/</loc><lastmod>2019-10-18T17:42:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/code-picture/</loc><lastmod>2019-10-18T17:42:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/http/</loc><lastmod>2019-09-26T17:22:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/http-status-code/</loc><lastmod>2019-09-26T17:22:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/http-status-code/</loc><lastmod>2019-09-26T17:22:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/5g/</loc><lastmod>2019-08-17T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/5g/</loc><lastmod>2019-08-17T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/nsa/</loc><lastmod>2019-08-17T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/sa/</loc><lastmod>2019-08-17T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/about-5g-sa-nsa/</loc><lastmod>2019-08-17T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/poster/</loc><lastmod>2019-07-24T23:02:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/poster/</loc><lastmod>2019-07-24T23:02:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/movie-ying/</loc><lastmod>2019-07-24T23:02:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</loc><lastmod>2019-07-04T23:11:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</loc><lastmod>2019-07-04T23:11:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-use-case/</loc><lastmod>2019-07-04T23:11:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-figure/</loc><lastmod>2019-07-04T16:48:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-interaction/</loc><lastmod>2019-07-04T16:47:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-class-diagram/</loc><lastmod>2019-07-04T16:23:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-class-diagram-exercises/</loc><lastmod>2019-07-03T21:45:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%B5%8B%E8%AF%95/</loc><lastmod>2019-07-03T18:33:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%B5%8B%E8%AF%95/</loc><lastmod>2019-07-03T18:33:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-quality/</loc><lastmod>2019-07-03T18:33:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-vending-mechine/</loc><lastmod>2019-07-03T18:31:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-triangle-problem/</loc><lastmod>2019-07-03T18:18:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-package-diagram/</loc><lastmod>2019-07-02T19:54:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-stat-sequence-diagram/</loc><lastmod>2019-07-01T14:13:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/python-decision-tree/</loc><lastmod>2019-06-17T16:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/</loc><lastmod>2019-06-17T16:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/</loc><lastmod>2019-06-17T16:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc><lastmod>2019-06-15T10:59:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc><lastmod>2019-06-15T10:59:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/network-notes-port/</loc><lastmod>2019-06-15T10:59:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/windows/</loc><lastmod>2019-06-05T16:09:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/windows/</loc><lastmod>2019-06-05T16:09:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/windows7-bye/</loc><lastmod>2019-06-05T16:09:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc><lastmod>2019-06-04T20:36:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc><lastmod>2019-06-04T20:36:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/mini-program-notes/</loc><lastmod>2019-06-04T20:36:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/algorithm/</loc><lastmod>2019-04-01T23:05:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/</loc><lastmod>2019-04-01T23:05:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/</loc><lastmod>2019-04-01T23:05:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-psionic-trans/</loc><lastmod>2019-04-01T23:05:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-suffix-expression/</loc><lastmod>2019-04-01T22:02:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-arithmetic-series/</loc><lastmod>2019-04-01T21:59:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-binary-tree/</loc><lastmod>2019-04-01T21:52:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-special-numbers-sum/</loc><lastmod>2019-04-01T21:49:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-maze/</loc><lastmod>2019-04-01T21:45:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-decom-of-num/</loc><lastmod>2019-04-01T21:42:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-sequence-sum/</loc><lastmod>2019-04-01T19:35:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-year-string/</loc><lastmod>2019-03-27T21:47:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/</loc><lastmod>2019-03-27T21:40:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/</loc><lastmod>2019-03-27T21:40:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/data-mining-adventureworksdw/</loc><lastmod>2019-03-27T21:40:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-activity-diagram/</loc><lastmod>2019-03-21T19:31:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-max-common-substring/</loc><lastmod>2019-03-20T21:49:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-take-digits/</loc><lastmod>2019-03-19T21:57:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lpb-19-b-cplus-bear-pre-calc/</loc><lastmod>2019-03-19T21:55:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-con-prime-sequence/</loc><lastmod>2019-03-19T21:52:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-shopping-list/</loc><lastmod>2019-03-18T22:00:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-software-build-gantt-chart/</loc><lastmod>2019-03-13T22:02:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-max-min-multiple/</loc><lastmod>2019-03-05T22:23:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-19-b-cplus-k-num-query/</loc><lastmod>2019-03-04T22:27:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/debuginn-increase-visit/</loc><lastmod>2019-02-28T11:37:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-ncre-os-single-topic/</loc><lastmod>2019-02-26T21:41:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/tags/ncre/</loc><lastmod>2019-02-26T21:41:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/categories/ncre/</loc><lastmod>2019-02-26T21:41:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-ncre-os-multiple-choice/</loc><lastmod>2019-02-26T16:13:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-ncre-network-single-topic/</loc><lastmod>2019-02-26T11:58:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/test-ncre-network-multiple-choice/</loc><lastmod>2019-02-26T11:45:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/data-mining-seo-in-website/</loc><lastmod>2019-02-25T21:51:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-practice-factorial-calc/</loc><lastmod>2019-02-07T21:59:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-high-pre-sub/</loc><lastmod>2019-02-05T22:03:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-huffman-tree/</loc><lastmod>2019-02-04T22:08:44&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-2n-queen/</loc><lastmod>2019-02-03T22:13:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-time-telling/</loc><lastmod>2019-02-02T22:16:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-fetch-number/</loc><lastmod>2019-02-01T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-tortoise-and-rabbit/</loc><lastmod>2019-01-31T22:35:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-sine-dance/</loc><lastmod>2019-01-30T22:42:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-fj-string/</loc><lastmod>2019-01-30T22:40:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-chip-test/</loc><lastmod>2019-01-30T22:38:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/lqb-base-reading-numbers/</loc><lastmod>2019-01-29T22:45:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/os/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/categories/os/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/runtime/</loc><lastmod>2017-11-20T14:34:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -101,10 +263,9 @@
       <loc>https://blog.debuginn.cn/categories/algorithm/</loc><lastmod>2017-11-18T14:26:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/%E7%AC%94%E8%AE%B0/</loc><lastmod>2017-11-18T14:26:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc><lastmod>2017-11-18T14:26:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/half-search/</loc><lastmod>2017-11-18T14:26:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blog.debuginn.cn/structure-half-search/</loc><lastmod>2017-11-18T14:26:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/system/</loc><lastmod>2017-11-18T14:26:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/os-introduction/</loc><lastmod>2017-11-18T14:26:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/tags/sublime/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://blog.debuginn.cn/sublime-text/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/tags/tools/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://blog.debuginn.cn/categories/tools/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+      <loc>https://blog.debuginn.cn/tags/tools/</loc><lastmod>2017-11-12T20:41:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

@@ -1,9 +1,35 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>go - 标签 - Debug客栈</title>
+    <title>GO - 标签 - Debug客栈</title>
     <link>https://blog.debuginn.cn/tags/go/</link>
-    <description>go - 标签 - Debug客栈</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 01 May 2022 18:12:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/go/" rel="self" type="application/rss+xml" /><item>
+    <description>GO - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/go/" rel="self" type="application/rss+xml" /><item>
+  <title>我的项目</title>
+  <link>https://blog.debuginn.cn/pages/project/</link>
+  <pubDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/project/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 Github Github Status Top languages 项目]]></description>
+</item>
+<item>
+  <title>如何将豆瓣观影记录实时同步至博客中</title>
+  <link>https://blog.debuginn.cn/douban-movies-to-blog/</link>
+  <pubDate>Fri, 03 Mar 2023 19:28:59 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/douban-movies-to-blog/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031942110.jpg" referrerpolicy="no-referrer">
+      </div>事情的起因是这样的，前几日在看 idealclover 大佬的博客，不经意间看到了他的豆瓣观影记录，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查]]></description>
+</item>
+<item>
+  <title>订阅本站</title>
+  <link>https://blog.debuginn.cn/pages/subscribe/</link>
+  <pubDate>Thu, 02 Mar 2023 20:54:51 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/subscribe/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 常规订阅 Debug客栈给您提供了四种常规订阅方式，分别是 微信公众号订阅、邮箱订阅、 RSS订阅，当然还有 Github ，请根据您的]]></description>
+</item>
+<item>
   <title>使用 pprof 对 Go 程序进行分析优化</title>
   <link>https://blog.debuginn.cn/go-tools-pprof/</link>
   <pubDate>Sun, 01 May 2022 18:12:00 &#43;0800</pubDate>
@@ -70,36 +96,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://image.debuginn.cn/202303011905845.jpg" referrerpolicy="no-referrer">
       </div>近期做了一个需求，是检测某个 IP 是否在若干 IP 段内，做固定地点 IP 筛查，满足特定业务需求。 解决方案 PLAN A 点分十进制范围区分 简单来讲，就是将 IPv4 原有的四]]></description>
-</item>
-<item>
-  <title>Go 标准库 限流器 time/rate 设计与实现</title>
-  <link>https://blog.debuginn.cn/go-standard-lib-time-rate-pkg/</link>
-  <pubDate>Mon, 24 Aug 2020 19:35:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/go-standard-lib-time-rate-pkg/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202303011912531.jpg" referrerpolicy="no-referrer">
-      </div>限流器是后台服务中十分重要的组件，在实际的业务场景中使用居多，其设计在微服务、网关、和一些后台服务中会经常遇到。限流器的作用是用来限制其请求]]></description>
-</item>
-<item>
-  <title>Go 语言实现 RPC 调用</title>
-  <link>https://blog.debuginn.cn/go-rpc-invoke-demo/</link>
-  <pubDate>Sat, 01 Aug 2020 20:22:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/go-rpc-invoke-demo/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202303011930703.jpg" referrerpolicy="no-referrer">
-      </div>RPC 在分布式计算，远程过程调用（英语：Remote Procedure Call，缩写为 RPC）是一个计算机通信协议。该协议允许运行于一台计算机的程序调用另一个地]]></description>
-</item>
-<item>
-  <title>使用 GVM 工具管理 Go 版本</title>
-  <link>https://blog.debuginn.cn/go-use-gvm-switch-version/</link>
-  <pubDate>Sun, 12 Jul 2020 16:32:00 &#43;0800</pubDate>
-  <author>Meng小羽</author>
-  <guid>https://blog.debuginn.cn/go-use-gvm-switch-version/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://image.debuginn.cn/202303011938210.jpg" referrerpolicy="no-referrer">
-      </div>在 Go 项目开发中，团队要保持开发版本一致，怎么能够快速的安装及部署并且切换 Go 环境，在这里推荐一款工具 GVM （ Go Version Manager ），它可以便捷切换与自定义 Go Path 、]]></description>
 </item>
 </channel>
 </rss>

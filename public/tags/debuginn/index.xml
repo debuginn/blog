@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>debuginn - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/debuginn/</link>
+    <description>debuginn - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/debuginn/" rel="self" type="application/rss+xml" /><item>
+  <title>我的项目</title>
+  <link>https://blog.debuginn.cn/pages/project/</link>
+  <pubDate>Fri, 17 Mar 2023 15:39:10 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/project/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 Github Github Status Top languages 项目]]></description>
+</item>
+<item>
+  <title>订阅本站</title>
+  <link>https://blog.debuginn.cn/pages/subscribe/</link>
+  <pubDate>Thu, 02 Mar 2023 20:54:51 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/pages/subscribe/</guid>
+  <description><![CDATA[🤠 Hi，我是 Meng小羽 常规订阅 Debug客栈给您提供了四种常规订阅方式，分别是 微信公众号订阅、邮箱订阅、 RSS订阅，当然还有 Github ，请根据您的]]></description>
+</item>
+</channel>
+</rss>

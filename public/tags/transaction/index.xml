@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>transaction - 标签 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/tags/transaction/</link>
+    <description>transaction - 标签 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Jul 2020 15:04:00 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/tags/transaction/" rel="self" type="application/rss+xml" /><item>
+  <title>Go 语言操作 MySQL 之 事务操作</title>
+  <link>https://blog.debuginn.cn/go-mysql-transaction-operation/</link>
+  <pubDate>Thu, 02 Jul 2020 15:04:00 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/go-mysql-transaction-operation/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303031854061.jpg" referrerpolicy="no-referrer">
+      </div>事务 数据库事务( transaction )是访问并可能操作各种数据项的一个数据库操作序列，这些操作要么全部执行,要么全部不执行，是一个不可分割的工作单位。事务由事]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>微信小程序 - 分类 - Debug客栈</title>
+    <link>https://blog.debuginn.cn/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <description>微信小程序 - 分类 - Debug客栈</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Jun 2019 20:36:37 &#43;0800</lastBuildDate><atom:link href="https://blog.debuginn.cn/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="self" type="application/rss+xml" /><item>
+  <title>微信小程序入门笔记</title>
+  <link>https://blog.debuginn.cn/mini-program-notes/</link>
+  <pubDate>Tue, 04 Jun 2019 20:36:37 &#43;0800</pubDate>
+  <author>Meng小羽</author>
+  <guid>https://blog.debuginn.cn/mini-program-notes/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://image.debuginn.cn/202303241244369.jpg" referrerpolicy="no-referrer">
+      </div>最近两个星期在学习小程序，主要是应对“全国大学生计算机应用能力与信息素养比赛”，虽然最后没有取得一个比较好的成绩（PS：国家安慰奖），但是收]]></description>
+</item>
+</channel>
+</rss>
