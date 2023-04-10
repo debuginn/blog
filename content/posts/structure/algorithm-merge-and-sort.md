@@ -1,6 +1,6 @@
 ---
 title: "数据结构 浅谈归并排序"
-date: 2023-03-30T08:00:00+08:00
+date: 2020-03-30T08:00:00+08:00
 draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
