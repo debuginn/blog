@@ -87,9 +87,9 @@ ps：不过多介绍，还有下文哦～
 
 本年度很懒，没有出啥文章，就写了两篇，那就算作年度文章吧～
 
-{{< link "https://www.debuginn.cn/7402.html" "Go 语言学习进阶之路" "" true >}}
+{{< link "#" "Go 语言学习进阶之路" "" true >}}
 
-{{< link "https://www.debuginn.cn/7444.html" "使用 pprof 对 Go 程序进行分析优化" "" true >}}
+{{< link "https://blog.debuginn.cn/go-tools-pprof/" "使用 pprof 对 Go 程序进行分析优化" "" true >}}
 
 ## Github 个人页面
 

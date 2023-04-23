@@ -27,7 +27,7 @@ MySQL 存储引擎分类有 MyISAM、InnoDB、Memory、Merge等，但是其中�
 
 这里可以看一下针对 MySQL 选择引擎的文章：
 
-[https://www.debuginn.cn/5753.html](https://www.debuginn.cn/5753.html)
+[怎么优雅的选择 MySQL 存储引擎](https://blog.debuginn.cn/mysql-chooes-storage-engine/)
 
 ## 事务 ACID
 
