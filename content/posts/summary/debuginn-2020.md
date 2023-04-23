@@ -35,15 +35,15 @@ featuredImagePreview: "https://image.debuginn.cn/202302272141603.jpeg"
 
 ## 最受欢迎的文章
 
-{{< link "https://www.debuginn.cn/5178.html" "Restful API 设计指北" "Restful API 设计指北" true >}}
+{{< link "https://blog.debuginn.cn/design-restful-api/" "Restful API 设计指北" "Restful API 设计指北" true >}}
 
-2. [吊打百度，多吉搜索引擎](https://www.debuginn.cn/3783.html) 
-3. [程序猿的 Chrome 浏览器插件推荐](https://www.debuginn.cn/5314.html)
-4. [搭建流媒体服务器 PingOS 平台搭建](https://www.debuginn.cn/5614.html)
-5. [怎么优雅的选择 MySQL 存储引擎](https://www.debuginn.cn/5753.html)
+2. [吊打百度，多吉搜索引擎]() 
+3. [程序猿的 Chrome 浏览器插件推荐]()
+4. [搭建流媒体服务器 PingOS 平台搭建]()
+5. [怎么优雅的选择 MySQL 存储引擎](https://blog.debuginn.cn/mysql-chooes-storage-engine/)
 
 ## More 页面
 
 2020 看见的我不止一面，这里记录了我的 MORE
 
-[https://www.debuginn.cn/more](https://www.debuginn.cn/more)
+[https://www.debuginn.cn/more]()

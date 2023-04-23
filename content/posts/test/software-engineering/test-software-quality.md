@@ -229,11 +229,11 @@ TSQC过程是PDCA的几个活动的循环。
 
 **27、软件测试  经典测试用例三角形问题**
 
-[软件质量测试 等价类划分 三角形问题](https://www.debuginn.cn/3245.html)
+[软件质量测试 等价类划分 三角形问题](https://blog.debuginn.cn/test-software-triangle-problem/)
 
 **28、因果图测试用例问题**
 
-[软件质量测试 因果图测试用例 自动售货机](https://www.debuginn.cn/3256.html)
+[软件质量测试 因果图测试用例 自动售货机](https://blog.debuginn.cn/test-software-vending-mechine/)
 
 **29、白盒测试程序的结构有哪些？**
 

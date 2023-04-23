@@ -35,10 +35,10 @@ featuredImagePreview: "https://image.debuginn.cn/202302262128413.jpg"
 
 让我意外的是大家对 Go 语言入门学习有着很大的兴趣，下面这个文章是今年访问最多的文章，访问量：2785
 
-{{< link "https://www.debuginn.cn/6832.html" "Go 语言开发设计指北" "Go 语言开发设计指北" true >}}
+{{< link "https://blog.debuginn.cn/go-dev-design/" "Go 语言开发设计指北" "Go 语言开发设计指北" true >}}
 
 ## 技术导航
 
 经常游荡于各个大厂的技术博客之中，于是做了一个集合导航，后续计划将大佬们也收集到此，大家有好的技术分享网站也可以评论区留言分享一下。
 
-{{< link "https://www.debuginn.cn/tech" "大厂技术栈" "大厂技术栈" true >}}
+{{< link "#" "大厂技术栈" "大厂技术栈" true >}}
