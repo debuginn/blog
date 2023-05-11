@@ -140,9 +140,9 @@ theme = "FixIt"
     [params.footer.order]
       powered = 4
       copyright = 3
-      statistics = 0
-      visitor = 1
       beian = 2
+      visitor = 1
+      statistics = 0
 
   # Section（所有文章）页面配置
   [params.section]
@@ -499,13 +499,24 @@ theme = "FixIt"
 
 [menu]
   [[menu.main]]
+    identifier = "debuginn"
+    parent = ""
+    pre = ""
+    post = ""
+    name = "主页"
+    url = "https://debuginn.cn"
+    title = ""
+    weight = 1
+    [menu.main.params]
+      icon = "fa-solid fa-house text-danger"
+  [[menu.main]]
     identifier = "subscribe"
     pre = ""
     post = ""
     name = "订阅"
     url = "/pages/subscribe/"
     title = ""
-    weight = 1
+    weight = 2
     [menu.main.params]
       icon = "fa-solid fa-fire text-danger"
   [[menu.main]]
@@ -518,7 +529,7 @@ theme = "FixIt"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时，将显示的标题
     title = ""
-    weight = 2
+    weight = 3
     # 向菜单项添加用户定义的内容
     [menu.main.params]
       # 添加 CSS 类到菜单项
@@ -536,7 +547,7 @@ theme = "FixIt"
     name = "分类"
     url = "/categories/"
     title = ""
-    weight = 3
+    weight = 4
     [menu.main.params]
       icon = "fa-solid fa-th"
   [[menu.main]]
@@ -546,7 +557,7 @@ theme = "FixIt"
     name = "标签"
     url = "/tags/"
     title = ""
-    weight = 4
+    weight = 5
     [menu.main.params]
       icon = "fa-solid fa-tags"
   [[menu.main]]
@@ -556,7 +567,7 @@ theme = "FixIt"
     name = "友联"
     url = "/pages/friends/"
     title = ""
-    weight = 5
+    weight = 6
     [menu.main.params]
       icon = "fa-solid fa-users"
   [[menu.main]]
@@ -566,20 +577,9 @@ theme = "FixIt"
     name = "更多"
     url = ""
     title = ""
-    weight = 6
-    [menu.main.params]
-      icon = "fa-solid fa-eye text-primary"
-  [[menu.main]]
-    identifier = "debuginn"
-    parent = "link"
-    pre = ""
-    post = ""
-    name = "客栈主页"
-    url = "https://debuginn.cn"
-    title = ""
     weight = 7
     [menu.main.params]
-      icon = "fa-solid fa-house text-danger"
+      icon = "fa-solid fa-eye text-primary"
   [[menu.main]]
     identifier = "notes"
     parent = "link"
