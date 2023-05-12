@@ -501,24 +501,13 @@ theme = "FixIt"
 
 [menu]
   [[menu.main]]
-    identifier = "debuginn"
-    parent = ""
-    pre = ""
-    post = ""
-    name = "主页"
-    url = "https://debuginn.cn"
-    title = ""
-    weight = 1
-    [menu.main.params]
-      icon = "fa-solid fa-house text-danger"
-  [[menu.main]]
     identifier = "subscribe"
     pre = ""
     post = ""
     name = "订阅"
     url = "/pages/subscribe/"
     title = ""
-    weight = 2
+    weight = 1
     [menu.main.params]
       icon = "fa-solid fa-fire text-danger"
   [[menu.main]]
@@ -531,7 +520,7 @@ theme = "FixIt"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时，将显示的标题
     title = ""
-    weight = 3
+    weight = 2
     # 向菜单项添加用户定义的内容
     [menu.main.params]
       # 添加 CSS 类到菜单项
@@ -549,7 +538,7 @@ theme = "FixIt"
     name = "分类"
     url = "/categories/"
     title = ""
-    weight = 4
+    weight = 3
     [menu.main.params]
       icon = "fa-solid fa-th"
   [[menu.main]]
@@ -559,7 +548,7 @@ theme = "FixIt"
     name = "标签"
     url = "/tags/"
     title = ""
-    weight = 5
+    weight = 4
     [menu.main.params]
       icon = "fa-solid fa-tags"
   [[menu.main]]
@@ -569,9 +558,20 @@ theme = "FixIt"
     name = "友联"
     url = "/pages/friends/"
     title = ""
-    weight = 6
+    weight = 5
     [menu.main.params]
       icon = "fa-solid fa-users"
+  [[menu.main]]
+    identifier = "debuginn"
+    parent = ""
+    pre = ""
+    post = ""
+    name = "主页"
+    url = "https://debuginn.cn"
+    title = ""
+    weight = 6
+    [menu.main.params]
+      icon = "fa-solid fa-house"
   [[menu.main]]
     identifier = "link"
     pre = ""
