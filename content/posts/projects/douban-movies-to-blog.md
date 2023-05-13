@@ -1,6 +1,6 @@
 ---
 title: "如何将豆瓣观影记录实时同步至博客中"
-date: 2023-03-03T19:28:59+08:00
+date: 2022-03-03T19:28:59+08:00
 draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"

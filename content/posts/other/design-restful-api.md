@@ -1,6 +1,6 @@
 ---
 title: "Restful API 设计指北"
-date: 2023-03-13T21:35:12+08:00
+date: 2022-03-13T21:35:12+08:00
 draft: false
 author: "Meng小羽"
 authorLink: "https://www.debuginn.cn"
