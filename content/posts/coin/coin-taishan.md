@@ -3,7 +3,7 @@ title: "预约到了泰山异形纪念币"
 date: 2019-11-30T20:00:57+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "coin"
 comment: true

@@ -3,7 +3,7 @@ title: "操作系统 内存管理 基本概念"
 date: 2017-12-16T22:23:20+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comment: true

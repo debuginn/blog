@@ -3,7 +3,7 @@ title: "软件工程 状态图、顺序图习题"
 date: 2019-07-01T14:13:26+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comment: true

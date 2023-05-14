@@ -3,7 +3,7 @@ title: "优雅的使用 Brew 切换 Go 版本"
 date: 2020-11-01T20:15:32+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,brew"
 comment: true

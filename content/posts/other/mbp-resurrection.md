@@ -3,7 +3,7 @@ title: "我的MacBook Pro又满血复活啦"
 date: 2020-08-13T20:18:06+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "mbp"
 comment: true

@@ -3,7 +3,7 @@ title: "软件工程 类图实验题"
 date: 2019-07-04T16:23:31+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comment: true

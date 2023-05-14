@@ -3,7 +3,7 @@ title: "如何将豆瓣观影记录实时同步至博客中"
 date: 2022-03-03T19:28:59+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,gin,rss,mdui,douban"
 comment: true
@@ -336,7 +336,7 @@ server{
 
 具体效果如下：
 
-[https://www.debuginn.cn/doubanmovies](https://www.debuginn.cn/doubanmovies)
+[https://debuginn.cn/doubanmovies](https://debuginn.cn/doubanmovies)
 
 ## 开源
 

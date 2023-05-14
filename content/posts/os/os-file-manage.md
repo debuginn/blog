@@ -3,7 +3,7 @@ title: "操作系统 文件管理 概述"
 date: 2018-01-06T19:22:56+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comment: true

@@ -3,7 +3,7 @@ title: "数据结构 哈夫曼树"
 date: 2017-11-28T19:33:23+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "笔记,数据结构"
 comment: true

@@ -3,7 +3,7 @@ title: "蓝桥杯 基础练习 芯片测试"
 date: 2019-01-30T22:38:26+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

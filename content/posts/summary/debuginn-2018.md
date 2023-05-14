@@ -3,7 +3,7 @@ title: "Debug客栈 2018-2019年度干货分享"
 date: 2018-12-28T19:29:58+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "Debug客栈,2019,2018,年度总结"
 comment: true

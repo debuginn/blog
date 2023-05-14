@@ -3,7 +3,7 @@ title: "JavaScript 对象表示法JSON"
 date: 2018-07-16T19:12:22+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "json"
 comment: true

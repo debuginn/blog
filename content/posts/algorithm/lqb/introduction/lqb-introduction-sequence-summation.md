@@ -3,7 +3,7 @@ title: "蓝桥杯 入门训练 序列求和"
 date: 2019-01-02T19:26:42+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

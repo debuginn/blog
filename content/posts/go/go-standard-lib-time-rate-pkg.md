@@ -3,7 +3,7 @@ title: "Go 标准库 限流器 time/rate 设计与实现"
 date: 2020-08-24T19:35:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,standard lib,time rate"
 comment: true

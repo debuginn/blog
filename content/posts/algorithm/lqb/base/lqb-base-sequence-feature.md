@@ -3,7 +3,7 @@ title: "蓝桥杯 基础练习 数列特征"
 date: 2019-01-08T19:10:50+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

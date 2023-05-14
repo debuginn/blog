@@ -3,7 +3,7 @@ title: "如何提升自己的技术博文水平"
 date: 2021-01-30T16:53:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "技术,博文"
 comment: true

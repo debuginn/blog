@@ -3,7 +3,7 @@ title: "Linux Tree 树状目录显示工具 使用手册"
 date: 2022-03-15T20:08:56+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "linux,unix,tree"
 comment: true

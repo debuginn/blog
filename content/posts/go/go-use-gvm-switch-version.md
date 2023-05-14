@@ -3,7 +3,7 @@ title: "使用 GVM 工具管理 Go 版本"
 date: 2020-07-12T16:32:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,gvm"
 comment: true

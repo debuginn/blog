@@ -3,7 +3,7 @@ title: "蓝桥杯 基础练习 字母图形"
 date: 2019-01-07T19:13:28+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

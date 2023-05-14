@@ -3,7 +3,7 @@ title: "计算机网络 网络技术基础"
 date: 2017-12-02T23:09:19+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "计算机网络"
 comment: true

@@ -3,7 +3,7 @@ title: "长桥港美股团办活动"
 date: 2023-02-12T22:58:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "证券,长桥,港美股,longbridge"
 comment: true

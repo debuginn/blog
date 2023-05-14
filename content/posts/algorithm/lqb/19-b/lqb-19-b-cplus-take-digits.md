@@ -3,7 +3,7 @@ title: "蓝桥杯 2017年省赛C++B组题5 取数位"
 date: 2019-03-19T21:57:56+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

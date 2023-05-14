@@ -3,7 +3,7 @@ title: "软件质量测试知识点"
 date: 2019-07-03T18:33:02+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件质量测试"
 comment: true

@@ -3,7 +3,7 @@ title: "看完了《影》，黄海海报展走一波"
 date: 2019-07-24T23:02:03+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "poster"
 comment: true
