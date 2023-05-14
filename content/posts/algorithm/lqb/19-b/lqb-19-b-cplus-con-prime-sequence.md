@@ -3,7 +3,7 @@ title: "蓝桥杯 2017年省赛C++B组题2 等差素数列"
 date: 2019-03-19T21:52:37+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

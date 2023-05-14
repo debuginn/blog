@@ -3,7 +3,7 @@ title: "数据结构 B-树"
 date: 2017-11-22T22:13:14+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "笔记,数据结构"
 comment: true

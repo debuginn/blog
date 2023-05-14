@@ -3,7 +3,7 @@ title: "蓝桥杯 2019第十届蓝桥杯B组C++ 年号字串"
 date: 2019-03-27T21:47:41+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

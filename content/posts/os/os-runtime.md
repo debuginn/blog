@@ -3,7 +3,7 @@ title: "操作系统 运行机制"
 date: 2017-11-20T14:34:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,runtime,运行机制"
 comment: true

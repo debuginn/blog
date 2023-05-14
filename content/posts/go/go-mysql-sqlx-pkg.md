@@ -3,7 +3,7 @@ title: "Go 语言操作 MySQL 之 SQLX 包"
 date: 2020-07-07T11:35:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,sqlx"
 comment: true

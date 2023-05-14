@@ -3,7 +3,7 @@ title: "订阅本站"
 date: 2023-03-02T20:54:51+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "订阅本站"
 comment: false

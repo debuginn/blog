@@ -3,7 +3,7 @@ title: "微信小程序入门笔记"
 date: 2019-06-04T20:36:37+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "微信小程序"
 comment: true

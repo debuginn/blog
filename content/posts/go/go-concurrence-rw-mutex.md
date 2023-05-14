@@ -3,7 +3,7 @@ title: "Go 并发编程之 RWMutex"
 date: 2020-12-05T22:17:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,concurrence,RWMutex"
 comment: true

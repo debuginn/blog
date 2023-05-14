@@ -3,7 +3,7 @@ title: "来小米，一起玩 ！！！"
 date: 2021-09-23T23:00:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "内推"
 comment: true

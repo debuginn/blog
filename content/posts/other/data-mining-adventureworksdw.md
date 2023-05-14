@@ -3,7 +3,7 @@ title: "数据仓库与数据挖掘 使用SQL语句实现AdventureWorksDW数据�
 date: 2019-03-27T21:40:26+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "数据仓库与数据挖掘"
 comment: true

@@ -3,7 +3,7 @@ title: "使用数字人民币兑换建党100周年纪念币"
 date: 2021-09-19T13:48:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
 comment: true

@@ -3,7 +3,7 @@ title: "关于5G的SA与NSA架构"
 date: 2019-08-17T22:43:36+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "5g,sa,nsa"
 comment: true

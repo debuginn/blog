@@ -3,7 +3,7 @@ title: "数据结构 平衡二叉树AVL树"
 date: 2017-12-28T19:17:35+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "笔记,数据结构"
 comment: true

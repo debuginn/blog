@@ -3,7 +3,7 @@ title: "2020 年度总结"
 date: 2020-12-31T23:59:59+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "Debug客栈,2020,2021,年度总结"
 comment: true
@@ -46,4 +46,4 @@ featuredImagePreview: "https://image.debuginn.cn/202302272141603.jpeg"
 
 2020 看见的我不止一面，这里记录了我的 MORE
 
-[https://www.debuginn.cn/more]()
+[https://debuginn.cn/more]()

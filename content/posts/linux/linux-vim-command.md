@@ -3,7 +3,7 @@ title: "Linux Vim 命令手记"
 date: 2020-05-16T15:57:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "linux,vim"
 comment: true

@@ -3,7 +3,7 @@ title: "近期理财学习总结"
 date: 2020-02-28T18:29:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "coin,financing"
 comment: true

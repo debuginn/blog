@@ -3,7 +3,7 @@ title: "【NCRE四级网络工程师】计算机网络多选题"
 date: 2019-02-26T11:45:27+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "NCRE"
 comment: true

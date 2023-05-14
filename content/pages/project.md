@@ -3,7 +3,7 @@ title: "我的项目"
 date: 2023-03-17T15:39:10+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "我的项目"
 comment: true

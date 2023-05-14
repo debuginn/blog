@@ -3,7 +3,7 @@ title: "二维码会使用完么"
 date: 2019-11-20T20:09:25+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "qrcode"
 comment: true

@@ -3,7 +3,7 @@ title: "蓝桥杯 2019第十届蓝桥杯B组C++ 等差数列"
 date: 2019-04-01T21:59:12+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

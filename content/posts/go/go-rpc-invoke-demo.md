@@ -3,7 +3,7 @@ title: "Go 语言实现 RPC 调用"
 date: 2020-08-01T20:22:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,rpc,invoke"
 comment: true

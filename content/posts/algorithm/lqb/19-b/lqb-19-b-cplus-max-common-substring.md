@@ -3,7 +3,7 @@ title: "蓝桥杯 2017年省赛C++B组题6 最大公共子串"
 date: 2019-03-20T21:49:49+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

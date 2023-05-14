@@ -3,7 +3,7 @@ title: "蓝桥杯 基础练习 Huffuman树"
 date: 2019-02-04T22:08:44+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true

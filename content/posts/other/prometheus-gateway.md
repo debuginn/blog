@@ -3,7 +3,7 @@ title: "我们是如何用 Prometheus 对网关进行监控的"
 date: 2021-12-11T20:00:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://www.debuginn.cn"
+authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "prometheus,grafana,open falcon,counter,histogram"
 comment: true
