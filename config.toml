@@ -13,7 +13,7 @@ theme = "FixIt"
 
 [params]
   # FixIt 主题版本
-  version = "0.2.17"
+  version = "0.2.18"
   # 网站描述
   description = "专注于前沿技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。"
   # 网站关键词
