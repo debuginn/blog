@@ -1,6 +1,6 @@
 # 网站基本信息
 title = "Debug客栈"
-baseURL = "https://blog.debuginn.cn/"
+baseURL = "https://debuginn.cn/"
 # 设置默认的语言 ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
@@ -321,7 +321,7 @@ theme = "FixIt"
       # 编辑的基础链接
       # url = "/edit/branch-name/subdirectory-name" # 相对于 `params.gitRepo`
       # url = "https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name" # 完整链接
-      url = "/edit/main/content/"
+      url = "/edit/dev/content/"
 
     # KaTeX 数学公式 (https://katex.org)
     [params.page.math]
