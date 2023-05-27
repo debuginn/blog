@@ -14,12 +14,12 @@ theme = "FixIt"
 [params]
   # FixIt 主题版本
   version = "0.2.18"
+    # 网站默认主题样式 ["light", "dark", "auto"]
+  defaultTheme = "auto"
   # 网站描述
   description = "专注于前沿技术、算法分享、互联网、IT 前沿、优质网站推荐、Linux 技术，做一个爱分享的程序猿。"
   # 网站关键词
   keywords = ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "Hugo", "FixIt"]
-  # 网站默认主题样式 ["light", "dark", "auto"]
-  defaultTheme = "auto"
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
   gitRepo = "https://github.com/debuginn/blog/"
   # 日期格式
@@ -53,9 +53,6 @@ theme = "FixIt"
     # Enable in post meta
     # 在文章中开启
     enablePost = true
-    # Site creation time
-    # 网站创立时间
-    siteTime = '2017-11-11T16:16:16+16:00'
 
   # 搜索配置
   [params.search]
@@ -112,9 +109,9 @@ theme = "FixIt"
     enable = true
     # 自定义内容（支持 HTML 格式）
     # 进阶使用，见参数 `params.customFilePath.footer`
-    custom = '<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>'
+    custom = ''
     # 是否显示 Hugo 和主题信息
-    hugo = true
+    hugo = false
     # 是否显示版权信息
     copyright = true
     # 是否显示作者
@@ -133,7 +130,7 @@ theme = "FixIt"
       enable = true
       animate = true
       icon = "fa-solid fa-heartbeat"
-      pre = "运行"
+      pre = "回头看，已经运行了"
       value = "2017-11-11T16:16:16+16:00" # e.g. "2021-12-18T16:15:22+08:00"
 
     # 页面底部行排序，可选值：["first", 0, 1, 2, 3, 4, 5, "last"]
@@ -205,7 +202,7 @@ theme = "FixIt"
     [params.home.posts]
       enable = true
       # 主页每页显示文章数量
-      paginate = 4
+      paginate = 8
 
   # 作者的社交信息设置
   [params.social]
@@ -261,14 +258,12 @@ theme = "FixIt"
     # 是否在文章页面显示原始 Markdown 文档链接
     linkToMarkdown = false
     # 是否在 RSS 中显示全文内容
-    rssFullText = false
+    rssFullText = true
     # 页面样式 ["narrow", "normal", "wide", ...]
     pageStyle = "narrow"
-    # 强制使用 Gravatar 作为作者头像
-    gravatarForce = false
     # 开启自动书签支持
     # 如果为 true，则在关闭页面时保存阅读进度
-    autoBookmark = false
+    autoBookmark = true
     # 是否使用 字数统计
     wordCount = true
     # 是否使用 预计阅读
@@ -361,9 +356,6 @@ theme = "FixIt"
       comment = "请我喝杯咖啡"
       [params.page.reward.ways]
         wechatpay = "https://image.debuginn.cn/202302191928172.jpg"
-        # alipay = "/images/alipay.png"
-        # paypal = "/images/paypal.png"
-        # bitcoin = "/images/bitcoin.png"
 
     # 文章页面的分享信息设置
     [params.page.share]
@@ -389,7 +381,7 @@ theme = "FixIt"
         inputPosition = "top" # ["top", "bottom"]
         lightTheme = "light"
         darkTheme = "dark"
-        lazyLoad = true
+        lazyLoad = false
 
     # 第三方库配置
     [params.page.library]
@@ -449,9 +441,9 @@ theme = "FixIt"
   # 兼容性设置
   [params.compatibility]
     # 是否使用 Polyfill.io 来兼容旧式浏览器
-    polyfill = false
+    polyfill = true
     # 是否使用 object-fit-images 来兼容旧式浏览器
-    objectFit = false
+    objectFit = true
 
   # 在左上角或者右上角显示 GitHub 开源链接
   [params.githubCorner]
