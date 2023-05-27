@@ -381,7 +381,7 @@ theme = "FixIt"
         inputPosition = "top" # ["top", "bottom"]
         lightTheme = "light"
         darkTheme = "dark"
-        lazyLoad = false
+        lazyLoad = true
 
     # 第三方库配置
     [params.page.library]
