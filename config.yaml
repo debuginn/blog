@@ -1,19 +1,13 @@
-baseurl: /
+title: Debug客栈
 languageCode: zh-CN
 theme: hugo-theme-stack
 paginate: 6
-title: Debug客栈
-
-# Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
-
+baseUrl: "https://blog.debuginn.cn"
 # GA Tracking ID
 googleAnalytics: G-FVTHCHHP2J
-
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
 DefaultContentLanguage: zh-cn
-
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: false
@@ -24,22 +18,19 @@ params:
     featuredImageField: image
     rssFullContent: true
     favicon: 
-
     footer:
         since: 2017
-        customText:
-
+        customText: <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">鲁ICP备18012789号</a>
     dateFormat:
         published: Jan 02, 2006
         lastUpdated: Jan 02, 2006 15:04 MST
-
     sidebar:
         emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: 做一个爱分享的程序猿
         avatar:
-            enabled: false
-            src: 
-
+            enabled: true
+            local: false
+            src: https://image.debuginn.cn/202302182238057.JPG
     article:
         math: false
         toc: true
@@ -61,43 +52,40 @@ params:
             darkTheme: dark
             reactionsEnabled: 1
             emitMetadata: 0
-
     widgets:
         homepage:
             - type: search
             - type: archives
               params:
-                  limit: 5
+                  limit: 3
             - type: categories
               params:
-                  limit: 10
+                  limit: 16
             - type: tag-cloud
               params:
-                  limit: 10
+                  limit: 16
         page:
+            - type: search  
             - type: toc
-
+            - type: tag-cloud
+              params:
+                  limit: 16
     opengraph:
         twitter:
             # Your Twitter username
             site: idebuginn
-
             # Available values: summary, summary_large_image
             card: summary_large_image
-
     defaultImage:
         opengraph:
             enabled: false
             local: false
             src:
-
     colorScheme:
         # Display toggle
         toggle: true
-
         # Available values: auto, light, dark
         default: auto
-
     imageProcessing:
         cover:
             enabled: true
@@ -108,18 +96,60 @@ params:
 ### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main: []
+    main:
+        - identifier: home
+          name: 主页
+          url: /
+          weight: 1
+          params:
+              icon: home
+              newTab: false
+        - identifier: subscribe
+          name: 订阅
+          url: /page/subscribe/
+          weight: 2
+          params:
+              icon: rss
+              newTab: false
+        - identifier: post
+          name: 文章
+          url: /page/archives/
+          weight: 3
+          params:
+              icon: archives
+              newTab: false
+        - identifier: categories
+          name: 分类
+          url: /categories/
+          weight: 4
+          params:
+              icon: categories
+              newTab: false
+        - identifier: tags
+          name: 标签
+          url: /tags/
+          weight: 5
+          params:
+              icon: tag
+              newTab: false        
+        - identifier: links
+          name: 友联
+          url: /page/links/
+          weight: 6
+          params:
+              icon: user
+              newTab: false         
 
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/debuginn
           params:
               icon: brand-github
 
         - identifier: twitter
           name: Twitter
-          url: https://twitter.com
+          url: https://twitter.com/idebuginn
           params:
               icon: brand-twitter
 
