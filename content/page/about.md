@@ -25,13 +25,11 @@ slug: "about"
 
 同时我也喜欢摄影，你可以从我的导航页面看到我有在维护的摄影展，每年我都会挑选 Top 摄影照片上传到此站点：
 
-https://photo.debuginn.cn
+[https://photo.debuginn.cn](https://photo.debuginn.cn)
 
 ## 项目
 
-目前我开源了一些小工具和思路，感兴趣的可以去给一个 Star， 感谢。
-
-/pages/project/
+目前我开源了一些[小工具和思路](/project)，感兴趣的可以去给一个 Star， 感谢。
 
 
 ![Gopher](https://image.debuginn.cn/202303022149399.png)
