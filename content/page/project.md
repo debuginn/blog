@@ -1,22 +1,11 @@
 ---
 title: "我的项目"
 date: 2023-03-17T15:39:10+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.cn"
-authorEmail: "debuginn@icloud.com"
 keywords: "我的项目"
 comment: true
 weight: 0
-
 tags: ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "project"]
 categories: ["project"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-featuredImage: ""
-featuredImagePreview: ""
 ---
 
 ## 🤠 Hi，我是 Meng小羽
@@ -28,16 +17,15 @@ featuredImagePreview: ""
 ![Profile views](https://komarev.com/ghpvc/?username=debuginn&color=blueviolet)
 
 
-<img width="100%" src="https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md&theme=light" alt="技能树">
+![skillicons](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md&theme=light)
 
 ### Github
 
-<img width="100%" src="https://ghchart.rshah.org/debuginn" alt="github 提交记录">
+![github](https://ghchart.rshah.org/debuginn)
 
-| Github status                                                                                                                           | top languages                                                                                                                                         |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img height="159px" src="https://github-readme-stats.vercel.app/api?username=debuginn&show_icons=true&&theme=default&layout=compact" /> | <img height="159px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=debuginn&layout=compact&hide=javascript,html,css,php,scss" /> |
-
+| Github status                                                                                                         | top languages                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| ![github](https://github-readme-stats.vercel.app/api?username=debuginn&show_icons=true&&theme=default&layout=compact) | ![github](https://github-readme-stats.vercel.app/api/top-langs/?username=debuginn&layout=compact&hide=javascript,html,css,php,scss) |
 
 
 ### Projects
