@@ -213,3 +213,6 @@ lineNoStart = 1
 lineNos = true
 lineNumbersInTable = true
 tabWidth = 4
+
+[services.rss]
+limit = 10
