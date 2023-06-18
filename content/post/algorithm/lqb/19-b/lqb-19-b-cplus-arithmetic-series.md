@@ -7,14 +7,8 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comment: true
-weight: 0
-
 tags: ["蓝桥杯","algorithm"]
 categories: ["蓝桥杯"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
 image: "https://image.debuginn.cn/202303241303887.jpg"
 ---
 

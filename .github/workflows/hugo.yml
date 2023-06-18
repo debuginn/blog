@@ -27,3 +27,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           PUBLISH_DIR: ./public
+
+      - name: Submit Baidu
+        run: cp public/sitemap.xml scripts && cd scripts && pip3 install lxml && python3 baidu.py sitemap.xml "${{ secrets.BAIDU_API_URL }}"
