@@ -7,9 +7,8 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "coin,financing"
 comment: true
-weight: 0
 tags: ["coin"]
-categories: ["coin","financing"]
+categories: ["coin"]
 image: "https://image.debuginn.cn/202303142342799.jpg"
 ---
 

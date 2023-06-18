@@ -6,6 +6,7 @@ comment: true
 weight: 0
 tags: ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "project"]
 categories: ["project"]
+image: "https://image.debuginn.cn/202303191412328.jpg"
 ---
 
 ## 🤠 Hi，我是 Meng小羽
