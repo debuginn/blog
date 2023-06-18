@@ -7,16 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
 comment: true
-weight: 0
-
 tags: ["faas","notes","serverless"]
 categories: ["faas"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
 image: "https://image.debuginn.cn/202302242145505.jpeg"
-imagePreview: "https://image.debuginn.cn/202302242145505.jpeg"
 ---
 
 ## 1 FAAS 是什么

@@ -7,16 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "git"
 comment: true
-weight: 0
-
 tags: ["git"]
 categories: ["git"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
 image: "https://image.debuginn.cn/202303252231697.jpg"
-imagePreview: "https://image.debuginn.cn/202303252231697.jpg"
 ---
 
 ## 常规操作

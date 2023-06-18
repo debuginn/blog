@@ -4,7 +4,6 @@ date: 2023-03-02T20:54:51+08:00
 keywords: "订阅本站"
 comment: true
 tags: ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "subscribe"]
-categories: ["subscribe"]
 ---
 
 ## 🤠 Hi，我是 Meng小羽
