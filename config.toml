@@ -8,7 +8,7 @@ DefaultContentLanguage = "zh-cn"
 hasCJKLanguage = false
 
 [permalinks]
-post = "/post/:filename/"
+post = "/p/:filename/"
 page = "/:filename/"
 
 [params]
