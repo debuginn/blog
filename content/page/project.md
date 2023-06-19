@@ -3,10 +3,6 @@ title: "我的项目"
 date: 2023-03-17T15:39:10+08:00
 keywords: "我的项目"
 comment: true
-weight: 0
-tags: ["GO", "Go博客", "技术博客", "Debug客栈", "debug客栈", "Debuginn", "debuginn", "project"]
-categories: ["project"]
-image: "https://image.debuginn.cn/202303191412328.jpg"
 ---
 
 ## 🤠 Hi，我是 Meng小羽
