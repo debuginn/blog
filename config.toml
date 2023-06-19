@@ -6,6 +6,7 @@ baseUrl = "https://blog.debuginn.cn"
 googleAnalytics = "G-FVTHCHHP2J"
 DefaultContentLanguage = "zh-cn"
 hasCJKLanguage = false
+disqusShortname = "hugo-theme-stack"
 
 [permalinks]
 post = "/p/:filename/"
