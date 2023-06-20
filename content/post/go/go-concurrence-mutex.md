@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","concurrence","Mutex"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202302282003561.jpg"
 imagePreview: "https://image.debuginn.cn/202302282003561.jpg"

@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","brew"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202302282016622.jpg"
 imagePreview: "https://image.debuginn.cn/202302282016622.jpg"

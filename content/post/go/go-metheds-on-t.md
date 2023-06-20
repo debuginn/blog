@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","translate"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: ""
 imagePreview: ""

@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","concurrence","RWMutex"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202302281957667.jpg"
 imagePreview: "https://image.debuginn.cn/202302281957667.jpg"

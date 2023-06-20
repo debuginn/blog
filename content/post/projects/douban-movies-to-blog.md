@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","gin","rss","mdui","douban"]
 categories: ["project"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202303031942110.jpg"
 imagePreview: "https://image.debuginn.cn/202303031942110.jpg"

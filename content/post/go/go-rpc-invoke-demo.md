@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","rpc","invoke"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202303011930703.jpg"
 imagePreview: "https://image.debuginn.cn/202303011930703.jpg"

@@ -12,8 +12,6 @@ weight: 0
 tags: ["go", "mysql", "curd"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202303031910934.jpg"
 imagePreview: "https://image.debuginn.cn/202303031910934.jpg"
