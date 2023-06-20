@@ -8,15 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comment: true
 weight: 0
-
 tags: ["软件工程"]
-categories: ["软件工程"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
+categories: ["software"]
 image: "https://image.debuginn.cn/202303191228166.jpg"
-imagePreview: "https://image.debuginn.cn/202303191228166.jpg"
 ---
 
 **1．请按下述要求绘制类图。**

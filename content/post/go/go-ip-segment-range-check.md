@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","ip"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202303011905845.jpg"
 imagePreview: "https://image.debuginn.cn/202303011905845.jpg"

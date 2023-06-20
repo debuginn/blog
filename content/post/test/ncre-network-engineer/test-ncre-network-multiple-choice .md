@@ -8,15 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "NCRE"
 comment: true
 weight: 0
-
 tags: ["NCRE"]
-categories: ["NCRE"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
+categories: ["debuginn"]
 image: "https://image.debuginn.cn/202303261146594.jpg"
-imagePreview: "https://image.debuginn.cn/202303261146594.jpg"
 ---
 
 **在以下几种帧中，属于IEEE 802.11管理帧的是（BC）。**

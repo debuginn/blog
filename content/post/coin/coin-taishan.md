@@ -12,8 +12,6 @@ weight: 0
 tags: ["coin"]
 categories: ["coin"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202303162005793.jpg"
 imagePreview: "https://image.debuginn.cn/202303162005793.jpg"

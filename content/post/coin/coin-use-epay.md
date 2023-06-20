@@ -12,8 +12,6 @@ weight: 0
 tags: ["coin","e-pay","数字人民币","纪念币"]
 categories: ["coin"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202302272023525.jpeg"
 imagePreview: "https://image.debuginn.cn/202302272023525.jpeg"

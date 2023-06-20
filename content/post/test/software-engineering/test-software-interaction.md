@@ -8,15 +8,8 @@ authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comment: true
 weight: 0
-
 tags: ["软件工程"]
-categories: ["软件工程"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-image: ""
-imagePreview: ""
+categories: ["software"]
 ---
 
 **1、软件部署是（  B  ）**

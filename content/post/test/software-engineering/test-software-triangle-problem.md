@@ -7,16 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件质量测试"
 comment: true
-weight: 0
-
 tags: ["软件质量测试"]
-categories: ["软件质量测试"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
+categories: ["software"]
 image: "https://image.debuginn.cn/202303191412328.jpg"
-imagePreview: "https://image.debuginn.cn/202303191412328.jpg"
 ---
 
 ## 问题描述

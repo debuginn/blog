@@ -8,15 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comment: true
 weight: 0
-
 tags: ["软件工程"]
-categories: ["软件工程"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
+categories: ["software"]
 image: "https://image.debuginn.cn/202303202156985.jpg"
-imagePreview: "https://image.debuginn.cn/202303202156985.jpg"
 ---
 
 - 依赖（Dependency）: 虚线箭头表示 

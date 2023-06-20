@@ -8,15 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comment: true
 weight: 0
-
 tags: ["软件工程"]
-categories: ["软件工程"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
+categories: ["software"]
 image: "https://image.debuginn.cn/202303191228166.jpg"
-imagePreview: "https://image.debuginn.cn/202303191228166.jpg"
 ---
 
 甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续时间。它是在第一次世界大战时期发明的，以亨利·L·甘特先生的名字命名，他制定了一个完整地用条形图表进度的标志系统。由于甘特图形象简单，在简单、短期的项目中，甘特图都得到了最广泛的运用。

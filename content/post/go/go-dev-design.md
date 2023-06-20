@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","mysql","redis","code review","log","stat","go fmt"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202302272119360.png"
 imagePreview: "https://image.debuginn.cn/202302272119360.png"

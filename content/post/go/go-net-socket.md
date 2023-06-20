@@ -12,8 +12,6 @@ weight: 0
 tags: ["go","net","socket"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202303031854061.jpg"
 imagePreview: "https://image.debuginn.cn/202303031854061.jpg"

@@ -12,8 +12,6 @@ weight: 0
 tags: ["Go","pprof","分析","go pprof","go tools"]
 categories: ["golang"]
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
 
 image: "https://image.debuginn.cn/202302262119034.jpg"
 imagePreview: "https://image.debuginn.cn/202302262119034.jpg"

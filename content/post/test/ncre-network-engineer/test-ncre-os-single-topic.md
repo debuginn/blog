@@ -8,15 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "NCRE"
 comment: true
 weight: 0
-
 tags: ["NCRE"]
-categories: ["NCRE"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
+categories: ["debuginn"]
 image: "https://image.debuginn.cn/202303261146594.jpg"
-imagePreview: "https://image.debuginn.cn/202303261146594.jpg"
 ---
 
 **在不同类型的操作系统中，批处理操作系统的缺点是：**
