@@ -26,7 +26,7 @@ links:
     website: https://v3u.cn
     description: 学习python能做什么并且怎么做的更好，乐于助人的敏捷开发者 
   - title: 在码圈
-    image: https://www.bedebug.com/image
+    image: https://www.bedebug.com/avatar
     website: https://www.bedebug.com
     description: 代码改变未来，努力codeing
   - title: 彩虹Smiling
@@ -34,7 +34,7 @@ links:
     website: http://www.smilingblog.cn
     description: 彩虹SmilingのBlog
   - title: 沈唁志
-    image: https://grimage.loli.net/image/53093cc242ff08b27984e84c9db92c33?s=200
+    image: https://gravatar.loli.net/avatar/53093cc242ff08b27984e84c9db92c33
     website: https://qq52o.me/
     description: 一个 PHPer 的成长之路  
   - title: 浮云翩迁之间
@@ -46,7 +46,7 @@ links:
     website: https://scriptrunz.com/zh-cn/
     description: 老板，来一份热爱分享的烤冷面～
   - title: 追梦者个人博客
-    image: https://codelin.site/uploads/1586758957190image.jpeg
+    image: https://www.codelin.site/favicon.png
     website: https://codelin.site/
     description: 不畏将来，不念过往。
   - title: Nemo
@@ -59,12 +59,13 @@ comments: true
 
 ## 申请友联
 
-申请友情链接的话请提交 [issue](https://github.com/debuginn/blog/issues/new?assignees=&labels=friend&template=apply-for-friend-link.md&title=Apply+for+friend+link) 来申请。
+1. 申请友情链接的话请提交 [issue](https://github.com/debuginn/blog/issues/new?assignees=&labels=friend&template=apply-for-friend-link.md&title=Apply+for+friend+link) 来申请;
+2. 评论区留言申请～
 
 ```yaml
-- nickname: Debug客栈
-  avatar: https://image.debuginn.cn/202302182238057.JPG
-  url: https://debuginn.cn
+- title: Debug客栈
+  image: https://image.debuginn.cn/202302182238057.JPG
+  website: https://debuginn.cn
   description: 做一个爱分享的程序猿
 ```
 

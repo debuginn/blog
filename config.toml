@@ -96,8 +96,9 @@ site = "idebuginn"
 card = "summary_large_image"
 
 [params.defaultImage.opengraph]
-enabled = false
+enabled = true
 local = false
+src = "https://image.debuginn.cn/202304121931935.jpg"
 
 [params.colorScheme]
 toggle = true
@@ -214,6 +215,3 @@ lineNoStart = 1
 lineNos = true
 lineNumbersInTable = true
 tabWidth = 4
-
-[services.rss]
-limit = 10
