@@ -53,6 +53,10 @@ links:
     image: https://nemo.cool/wp-content/uploads/2021/06/SW-764C75A8B289785545EF745F3DA7D822_1-scaled.jpg
     website: https://nemo.cool/
     description: null
+  - title: Halo 的主页
+    image: https://halo.wecomz.com/favicon-1024x1024.png
+    website: https://halo.wecomz.com/?from=blog.debuginn.cn
+    description: halo.wecomz.com
 
 comments: true
 ---
