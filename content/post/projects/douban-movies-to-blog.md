@@ -324,7 +324,7 @@ server{
 }
 ```
 
-这样就可以实现 https 资源访问了：https://debuginn.cn/doubanmovies
+这样就可以实现 https 资源访问了：~~https://debuginn.cn/doubanmovies~~
 
 ## 效果
 
@@ -332,9 +332,7 @@ server{
 
 ![我的观影](https://image.debuginn.cn/202303031939914.png)
 
-具体效果如下：
-
-[https://debuginn.cn/doubanmovies](https://debuginn.cn/doubanmovies)
+具体效果如下：~~https://debuginn.cn/doubanmovies~~
 
 ## 开源
 

@@ -23,7 +23,7 @@ AJAX即“Asynchronous JavaScript and XML”（异步的JavaScript与XML技术�
 
 ## JSON技术
 
-[JavaScript 对象表示法JSON](https://blog.debuginn.cn/js-json/)
+[JavaScript 对象表示法JSON](/p/js-json/)
 
 ## 用jQuery实现Ajax
 

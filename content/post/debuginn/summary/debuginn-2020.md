@@ -29,15 +29,14 @@ image: "https://image.debuginn.cn/202302272141603.jpeg"
 
 ## 最受欢迎的文章
 
-https://blog.debuginn.cn/design-restful-api/
-
-2. [吊打百度，多吉搜索引擎]() 
-3. [程序猿的 Chrome 浏览器插件推荐]()
-4. [搭建流媒体服务器 PingOS 平台搭建]()
-5. [怎么优雅的选择 MySQL 存储引擎](https://blog.debuginn.cn/mysql-chooes-storage-engine/)
+1. [🔥🔥🔥 Restful API 设计指北](/p/design-restful-api/)
+2. 🔥🔥 吊打百度，多吉搜索引擎
+3. 🔥 程序猿的 Chrome 浏览器插件推荐
+4. [搭建流媒体服务器 PingOS 平台搭建](/p/pingos-build-sever/)
+5. [怎么优雅的选择 MySQL 存储引擎](/p/mysql-chooes-storage-engine/)
 
 ## More 页面
 
 2020 看见的我不止一面，这里记录了我的 MORE
 
-[https://debuginn.cn/more]()
+[https://debuginn.cn/about](/about)
