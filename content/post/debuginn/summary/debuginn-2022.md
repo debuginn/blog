@@ -81,7 +81,7 @@ ps：不过多介绍，还有下文哦～
 
 本年度很懒，没有出啥文章，就写了两篇，那就算作年度文章吧～
 
-https://blog.debuginn.cn/go-tools-pprof/
+[https://blog.debuginn.cn/p/go-tools-pprof/](/p/go-tools-pprof/)
 
 ## Github 个人页面
 
