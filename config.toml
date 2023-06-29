@@ -162,7 +162,7 @@ newTab = false
 
 [[menu.main]]
 identifier = "links"
-name = "友联"
+name = "友链"
 url = "/links/"
 weight = 6
 
