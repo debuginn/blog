@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "关于站长"
 date: 2019-05-28
 layout: "about"
 slug: "about"
@@ -17,9 +17,9 @@ slug: "about"
 
 我目前是一名软件开发工程师，在小米工作，主要从事小米商城服务端的相关业务及技术研发工作，20年以应届生身份通过小米应届生专项计划 “YOU计划” 入职，目前已经工作近 3年时间，“永远相信美好的事情即将发生” 这句话成为了工作中第一句职场 slogan，也不断激励着我成长。
 
-下面是我目前所使用到的技术栈：
+下面是我目前所使用到的技术栈及工具：
 
-<img width="100%" src="https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md&theme=light" alt="技能树">
+![技能树](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman&theme=light)
 
 ## 摄影
 
