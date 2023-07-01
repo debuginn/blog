@@ -8,13 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,prepare"
 comment: true
 weight: 0
-
 tags: ["go","mysql","prepare"]
 categories: ["golang"]
-
-
 image: "https://image.debuginn.cn/202303031903089.jpg"
-imagePreview: "https://image.debuginn.cn/202303031903089.jpg"
 ---
 
 ## 预处理 

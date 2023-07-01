@@ -7,14 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,translate"
 comment: true
-weight: 0
-
 tags: ["go","translate"]
 categories: ["golang"]
-
-
-image: ""
-imagePreview: ""
+image: "https://image.debuginn.cn/202302272119360.png"
 ---
 
 译文原地址：[Should methods be declared on T or *T - David](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)
