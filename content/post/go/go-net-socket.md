@@ -7,14 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,net,socket"
 comment: true
-weight: 0
-
 tags: ["go","net","socket"]
 categories: ["golang"]
-
-
 image: "https://image.debuginn.cn/202303031854061.jpg"
-imagePreview: "https://image.debuginn.cn/202303031854061.jpg"
 ---
 
 ## TCP/IP
