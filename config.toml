@@ -62,34 +62,28 @@ emitMetadata = 0
 type = "search"
 
 [[params.widgets.homepage]]
-type = "archives"
-
-[params.widgets.homepage.params]
-limit = 3
-
-[[params.widgets.homepage]]
 type = "categories"
 
 [params.widgets.homepage.params]
-limit = 16
+limit = 8
 
 [[params.widgets.homepage]]
 type = "tag-cloud"
 
 [params.widgets.homepage.params]
-limit = 16
+limit = 8
+
+[[params.widgets.homepage]]
+type = "archives"
+
+[params.widgets.homepage.params]
+limit = 4
 
 [[params.widgets.page]]
 type = "search"
 
 [[params.widgets.page]]
 type = "toc"
-
-[[params.widgets.page]]
-type = "tag-cloud"
-
-[params.widgets.page.params]
-limit = 16
 
 [params.opengraph.twitter]
 site = "idebuginn"
