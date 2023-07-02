@@ -19,7 +19,7 @@ rssFullContent = true
 
 [params.footer]
 since = 2017
-customText = '<a href="https://debuginn.cn/">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.cn/">博客</a>&nbsp;·&nbsp<a href="https://notes.debuginn.cn/">笔记</a>&nbsp;·&nbsp<a href="https://photo.debuginn.cn/">摄影</a>&nbsp;·&nbsp<a href="/about/">关于</a>&nbsp;·&nbsp<a href="/project/">项目</a><br /><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">鲁ICP备18012789号</a>'
+customText = '<a href="https://debuginn.cn/">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.cn/">博客</a>&nbsp;·&nbsp<a href="https://notes.debuginn.cn/">笔记</a>&nbsp;·&nbsp<a href="https://photo.debuginn.cn/">摄影</a>&nbsp;·&nbsp<a href="/project/">项目</a>&nbsp;·&nbsp<a href="/about/">关于</a><br /><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">鲁ICP备18012789号</a>'
 
 [params.dateFormat]
 published = "Jan 02, 2006"
@@ -162,7 +162,7 @@ newTab = false
 
 [[menu.main]]
 identifier = "links"
-name = "友联"
+name = "友链"
 url = "/links/"
 weight = 6
 

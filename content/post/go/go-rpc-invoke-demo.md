@@ -7,14 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,rpc,invoke"
 comment: true
-weight: 0
-
 tags: ["go","rpc","invoke"]
 categories: ["golang"]
-
-
 image: "https://image.debuginn.cn/202303011930703.jpg"
-imagePreview: "https://image.debuginn.cn/202303011930703.jpg"
 ---
 
 ## RPC

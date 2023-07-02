@@ -8,13 +8,9 @@ authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
 comment: true
 weight: 0
-
 tags: ["go","concurrence","Mutex"]
 categories: ["golang"]
-
-
 image: "https://image.debuginn.cn/202302282003561.jpg"
-imagePreview: "https://image.debuginn.cn/202302282003561.jpg"
 ---
 
 我们比较常见的大型项目的设计中都会出现并发访问问题，并发就是为了解决数据的准确性，保证同一个临界区的数据只能被一个线程进行操作，日常中使用到的并发场景也是很多的：

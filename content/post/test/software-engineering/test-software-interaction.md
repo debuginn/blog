@@ -10,6 +10,7 @@ comment: true
 weight: 0
 tags: ["软件工程"]
 categories: ["software"]
+image: "https://image.debuginn.cn/202303191159338.jpg"
 ---
 
 **1、软件部署是（  B  ）**

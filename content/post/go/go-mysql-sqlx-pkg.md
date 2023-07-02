@@ -7,14 +7,9 @@ authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,sqlx"
 comment: true
-weight: 0
-
 tags: ["go","mysql"]
 categories: ["golang"]
-
-
 image: "https://image.debuginn.cn/202303011912531.jpg"
-imagePreview: "https://image.debuginn.cn/202303011912531.jpg"
 ---
 
 ## SQLX 库

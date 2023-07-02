@@ -126,10 +126,7 @@ HTTP 应答中，需要带一个很重要的字段：status code。它说明了�
 | 500 | Internal Server Error  | 服务器内部错误，导致无法完成请求的内容                                                                                           | 
 | 503 | Service Unavailable    | 服务器因为负载过高或者维护，暂时无法提供服务。服务器端应该返回 Retry-After 头部，告诉客户端过一段时间再来重试                                                 | 
 
-针对于状态码，请看此文章：
-[
-HTTP常见状态码
-](https://blog.debuginn.cn/http-status-code/)
+针对于状态码，请看此文章：[HTTP常见状态码](https://blog.debuginn.cn/p/http-status-code/)
 
 ## 7 错误处理
 
