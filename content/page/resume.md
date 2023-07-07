@@ -1,6 +1,6 @@
 ---
-title: "个人简历"
-draft: false
+title: "个人介绍"
+draft: true
 comment: false
 ---
 
