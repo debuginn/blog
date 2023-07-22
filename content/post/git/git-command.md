@@ -47,7 +47,7 @@ image: "https://image.debuginn.cn/202303252231697.jpg"
 - `git branch` 创建分支 
 - `git branch -b` 创建并切换到新建的分支上 
 - `git checkout` 切换分支 
-- `git branc`h 查看分支列表 
+- `git branch` 查看分支列表 
 - `git branch -v` 查看所有分支的最后一次操作 
 - `git branch -vv` 查看当前分支 
 - `git brabch -b 分支名 origin/分支名` 创建远程分支到本地 
@@ -55,7 +55,7 @@ image: "https://image.debuginn.cn/202303252231697.jpg"
 - `git branch --no-merged` 查看未与当前分支合并的分支 
 - `git branch -d 分支名` 删除本地分支 
 - `git branch -D 分支名` 强行删除分支 
-- `git branch origin :分支名` 删除远处仓库分支 
+- `git push origin --delete 分支名` 删除远程仓库分支 
 - `git merge 分支名` 合并分支到当前分支上
 
 ## 暂存操作
