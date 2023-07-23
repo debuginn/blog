@@ -65,25 +65,31 @@ type = "search"
 type = "categories"
 
 [params.widgets.homepage.params]
-limit = 8
+limit = 16
 
 [[params.widgets.homepage]]
 type = "tag-cloud"
 
 [params.widgets.homepage.params]
-limit = 8
+limit = 16
 
 [[params.widgets.homepage]]
 type = "archives"
 
 [params.widgets.homepage.params]
-limit = 4
+limit = 3
 
 [[params.widgets.page]]
 type = "search"
 
 [[params.widgets.page]]
 type = "toc"
+
+[[params.widgets.page]]
+type = "tag-cloud"
+
+[params.widgets.page.params]
+limit = 16
 
 [params.opengraph.twitter]
 site = "idebuginn"
