@@ -5,12 +5,12 @@ draft: true
 author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
-keywords: "PhoenixCore"
+keywords: "PhoenixCore,java"
 comment: true
 weight: 0
-tags: ["PhoenixCore"]
+tags: ["PhoenixCore","java"]
 categories: ["debuginn"]
-image: "https://image.debuginn.cn/202303261146594.jpg"
+image: ""
 ---
 
 ```bash
