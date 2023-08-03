@@ -14,7 +14,7 @@ comment: true
 ![Profile views](https://komarev.com/ghpvc/?username=debuginn&color=blueviolet)
 
 
-![skillicons](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md&theme=light)
+![skillicons](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman&theme=light)
 
 ### Github
 
