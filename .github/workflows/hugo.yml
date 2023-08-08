@@ -3,30 +3,40 @@ on:
   push:
     branches:
       - main
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Setup coscmd and sdk
+        run: sudo pip install coscmd
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
+          extended: true
 
-      - name: Build Web
-        run: hugo
+      - name: Build
+        run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          PUBLISH_DIR: ./public
+      - name: Configure coscmd
+        env:
+          SECRET_ID: ${{ secrets.SecretId }}
+          SECRET_KEY: ${{ secrets.SecretKey }}
+          BUCKET: ${{ secrets.Bucket }}
+          REGION: ${{ secrets.Region }}
+        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
 
-      - name: Submit Baidu
-        run: cp public/sitemap.xml scripts && cd scripts && pip3 install lxml && python3 baidu.py sitemap.xml "${{ secrets.BAIDU_API_URL }}"
+      - name: Upload to COS
+        run: coscmd upload -rfs --delete public/ /
