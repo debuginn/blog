@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "Debug客栈,2020,2021,年度总结"
-comment: true
+comments: true
 weight: 0
 tags: ["Debug客栈","2020","2021","年度总结"]
 categories: ["summary"]

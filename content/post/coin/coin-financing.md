@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "coin,financing"
-comment: true
+comments: true
 tags: ["coin"]
 categories: ["coin"]
 image: "https://image.debuginn.cn/202303142342799.jpg"

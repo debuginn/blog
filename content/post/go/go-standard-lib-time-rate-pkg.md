@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,standard lib,time rate"
-comment: true
+comments: true
 tags: ["go","standard lib","time rate"]
 categories: ["golang"]
 image: "https://image.debuginn.cn/202303011912531.jpg"

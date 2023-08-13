@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "git,github,reset,revert"
-comment: true
+comments: true
 weight: 0
 tags: ["git","github","reset","revert"]
 categories: ["git"]

@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
-comment: true
+comments: true
 weight: 0
 tags: ["Go","pprof","分析","go pprof","go tools"]
 categories: ["golang"]

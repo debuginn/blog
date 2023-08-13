@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,runtime,运行机制"
-comment: true
+comments: true
 weight: 0
 tags: ["os", "runtime", "操作系统", "学习笔记"]
 categories: ["OS"]

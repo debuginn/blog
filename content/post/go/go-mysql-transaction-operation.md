@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,transaction"
-comment: true
+comments: true
 tags: ["go","mysql","transaction"]
 categories: ["golang"]
 image: "https://image.debuginn.cn/202303031854061.jpg"

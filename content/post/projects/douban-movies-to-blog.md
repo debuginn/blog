@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,gin,rss,mdui,douban"
-comment: true
+comments: true
 tags: ["go","gin","rss","mdui","douban"]
 categories: ["project"]
 image: "https://image.debuginn.cn/202303031942110.jpg"

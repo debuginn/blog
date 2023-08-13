@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,redis,code review,log,stat,go fmt"
-comment: true
+comments: true
 weight: 0
 tags: ["go","mysql","redis","code review","log","stat","go fmt"]
 categories: ["golang"]

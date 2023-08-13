@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "json"
-comment: true
+comments: true
 weight: 0
 tags: [ "js","json" ]
 categories: [ "js" ]

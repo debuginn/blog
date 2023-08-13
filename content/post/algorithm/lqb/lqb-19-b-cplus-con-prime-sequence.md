@@ -5,7 +5,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: ["蓝桥杯"]
-comment: true
+comments: true
 weight: 0
 tags: ["蓝桥杯","algorithm"]
 categories: ["algorithm"]

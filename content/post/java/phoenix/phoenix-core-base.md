@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "PhoenixCore,java"
-comment: true
+comments: true
 weight: 0
 tags: ["PhoenixCore","java"]
 categories: ["debuginn"]

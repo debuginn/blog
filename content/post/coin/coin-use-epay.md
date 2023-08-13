@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
-comment: true
+comments: true
 weight: 0
 
 tags: ["coin","e-pay","数字人民币","纪念币"]
