@@ -30,13 +30,10 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Configure coscmd
-        env:
-          SECRET_ID: ${{ secrets.SecretId }}
-          SECRET_KEY: ${{ secrets.SecretKey }}
-          BUCKET: ${{ secrets.Bucket }}
-          REGION: ${{ secrets.Region }}
-        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-
-      - name: Upload to COS
-        run: coscmd upload -rfs --delete public/ /
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          external_repository: debuginn/blog.debuginn.cn
+          personal_token: ${{ secrets.ACTION_ACCESS_TOKEN }}
+          publish_dir: ./public
+          publish_branch: main
