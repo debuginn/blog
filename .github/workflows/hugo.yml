@@ -18,9 +18,6 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Setup coscmd and sdk
-        run: sudo pip install coscmd
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

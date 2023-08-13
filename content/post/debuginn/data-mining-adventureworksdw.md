@@ -5,7 +5,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "数据仓库与数据挖掘"
-comment: true
+comments: true
 weight: 0
 tags: ["数据仓库与数据挖掘"]
 categories: ["debuginn"]

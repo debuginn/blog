@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "linux,shell"
-comment: true
+comments: true
 weight: 0
 tags: ["linux","shell"]
 categories: ["OS"]

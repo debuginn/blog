@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "api,restful api"
-comment: true
+comments: true
 weight: 0
 tags: ["api","restful api"]
 categories: ["debuginn"]

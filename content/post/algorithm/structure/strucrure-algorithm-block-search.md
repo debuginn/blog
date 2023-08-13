@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "笔记,数据结构,算法"
-comment: true
+comments: true
 weight: 0
 tags: ["笔记", "数据结构"]
 categories: ["algorithm"]

@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,prepare"
-comment: true
+comments: true
 weight: 0
 tags: ["go","mysql","prepare"]
 categories: ["golang"]

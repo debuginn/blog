@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "技术,博文"
-comment: true
+comments: true
 weight: 0
 tags: ["技术","博文"]
 categories: ["summary"]

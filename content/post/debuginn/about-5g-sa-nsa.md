@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "5g,sa,nsa"
-comment: true
+comments: true
 tags: ["5g","sa","nsa"]
 categories: ["debuginn"]
 image: "https://image.debuginn.cn/202303182246662.jpg"

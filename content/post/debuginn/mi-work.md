@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "内推"
-comment: true
+comments: true
 weight: 0
 tags: ["内推"]
 categories: ["job"]

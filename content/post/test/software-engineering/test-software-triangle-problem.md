@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件质量测试"
-comment: true
+comments: true
 tags: ["软件质量测试"]
 categories: ["software"]
 image: "https://image.debuginn.cn/202303191412328.jpg"

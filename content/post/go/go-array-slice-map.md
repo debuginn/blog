@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,array,slice,map"
-comment: true
+comments: true
 tags: ["go","array","slice","map"]
 categories: ["golang"]
 image: "https://image.debuginn.cn/202303031922787.jpg"

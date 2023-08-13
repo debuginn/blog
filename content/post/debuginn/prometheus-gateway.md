@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "prometheus,grafana,open falcon,counter,histogram"
-comment: true
+comments: true
 weight: 0
 tags: ["prometheus","grafana","open falcon","counter","histogram"]
 categories: ["debuginn"]

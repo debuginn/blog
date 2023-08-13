@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,brew"
-comment: true
+comments: true
 tags: ["go","brew"]
 categories: ["golang"]
 image: "https://image.debuginn.cn/202302282016622.jpg"

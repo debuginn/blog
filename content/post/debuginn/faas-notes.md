@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
-comment: true
+comments: true
 tags: ["faas","notes","serverless"]
 categories: ["debuginn"]
 image: "https://image.debuginn.cn/202302242145505.jpeg"

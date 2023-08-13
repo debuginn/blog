@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "web,pwa"
-comment: true
+comments: true
 weight: 0
 tags: ["web","pwa"]
 categories: ["debuginn"]

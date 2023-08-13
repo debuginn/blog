@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "微信小程序"
-comment: true
+comments: true
 weight: 0
 tags: ["微信小程序"]
 categories: ["debuginn"]

@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "computer"
-comment: true
+comments: true
 tags: ["computer"]
 categories: ["debuginn"]
 image: "https://image.debuginn.cn/202303122249241.jpg"

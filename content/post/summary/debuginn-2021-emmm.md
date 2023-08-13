@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "碎碎念"
-comment: true
+comments: true
 weight: 0
 tags: ["碎碎念"]
 categories: ["summary"]

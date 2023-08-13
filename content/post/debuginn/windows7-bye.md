@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "windows"
-comment: true
+comments: true
 weight: 0
 tags: ["windows"]
 categories: ["debuginn"]

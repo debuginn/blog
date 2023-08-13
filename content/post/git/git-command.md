@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "git"
-comment: true
+comments: true
 tags: ["git"]
 categories: ["git"]
 image: "https://image.debuginn.cn/202303252231697.jpg"

@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,translate"
-comment: true
+comments: true
 tags: ["go","translate"]
 categories: ["golang"]
 image: "https://image.debuginn.cn/202302272119360.png"

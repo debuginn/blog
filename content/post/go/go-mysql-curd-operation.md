@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "go, mysql, curd"
-comment: true
+comments: true
 tags: ["go", "mysql", "curd"]
 categories: ["golang"]
 image: "https://image.debuginn.cn/202303031910934.jpg"

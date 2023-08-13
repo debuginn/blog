@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "证券,长桥,港美股,longbridge"
-comment: true
+comments: true
 tags: ["证券","长桥","港美股","longbridge"]
 categories: ["coin"]
 image: "https://image.debuginn.cn/202302242223160.jpg"

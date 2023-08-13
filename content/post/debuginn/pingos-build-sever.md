@@ -6,7 +6,7 @@ author: "Meng小羽"
 authorLink: "https://debuginn.cn"
 authorEmail: "debuginn@icloud.com"
 keywords: "pingos,ffmpeg,hls"
-comment: true
+comments: true
 weight: 0
 tags: ["pingos","ffmpeg","hls"]
 categories: ["debuginn"]
