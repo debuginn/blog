@@ -1,7 +1,7 @@
 ---
 title: "个人简历"
 draft: true
-comment: false
+comments: false
 ---
 
 > 目前在职，奋斗搬砖ing，简历目前用来记录个人成长。
