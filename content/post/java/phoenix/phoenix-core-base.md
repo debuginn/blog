@@ -115,9 +115,3 @@ PhoenixCore Trans 注解定义同样非常简单：
 
 > 大家在这里可能会比较疑惑，为啥 Task 中没有定义 apiName 而是 Transfer 中定义的，是因为在设计中，为了便于后续 Task 可以被 n 个并发 API 公用，这样在 Transfer 定义了 apiName，之后通过 tasks 定义依赖的 Task 就可以推断出这个 Task 目前是被哪一个并发 API 使用的。
 
-
-
-
-
-
-
