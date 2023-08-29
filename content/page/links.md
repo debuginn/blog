@@ -57,6 +57,10 @@ links:
     image: https://halo.wecomz.com/favicon-1024x1024.png
     website: https://halo.wecomz.com/?from=blog.debuginn.cn
     description: halo.wecomz.com
+  - title: RE1IFE's Blog
+    image: https://re1ife.oss-cn-chengdu.aliyuncs.com/media/re1ife-site.ico
+    website: http://www.re1ife.top
+    description: 一个淹死在时代浪潮里的coder
 
 comments: true
 ---

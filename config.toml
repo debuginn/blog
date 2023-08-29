@@ -15,7 +15,7 @@ page = "/:filename/"
 [params]
 mainSections = ["post"]
 featuredImageField = "image"
-rssFullContent = true
+rssFullContent = false
 
 [params.footer]
 since = 2017
