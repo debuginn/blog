@@ -22,7 +22,7 @@ image: "https://image.debuginn.cn/202303252231697.jpg"
 - `git check-ignore -v 文件名` 查看忽略规则 
 - `git add -f 文件名` 强制将文件提交
 
-### git 创建项目仓库
+### Git 创建项目仓库
 
 - `git init` 初始化 
 - `git remote add origin url` 关联远程仓库 
@@ -85,3 +85,8 @@ image: "https://image.debuginn.cn/202303252231697.jpg"
 - `git push origin 标签名` 推送标签到远程仓库 
 - `git push origin --tags` 推送所有标签到远程仓库 
 - `git push origin :refs/tags/标签名` 从远程仓库中删除标签
+
+## 远程仓库
+
+- `git remote -v`查看远程仓库地址
+- `git remote show origin`查看远程仓库详情信息
