@@ -90,3 +90,9 @@ image: "https://image.debuginn.cn/202303252231697.jpg"
 
 - `git remote -v`查看远程仓库地址
 - `git remote show origin`查看远程仓库详情信息
+
+## 查看某个 commit 提交属于那个分支
+
+- `git branch -l --contains <commit_id>` 本地分支
+- `git branch -r --contains <commit_id>` 远程分支
+- `git branch --all --contains <commit_id>` 所有分支
