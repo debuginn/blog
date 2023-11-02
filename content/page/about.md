@@ -4,6 +4,7 @@ date: 2019-05-28
 layout: "about"
 slug: "about"
 comments: false
+image: "https://image.debuginn.cn/202302262119034.jpg"
 ---
 
 你好，我是 Meng小羽，非标准程序猿，喜欢编码、摄影、音乐、吉他，对新鲜事物和新的技术总是保持着好奇心并愿意去探索。
