@@ -32,7 +32,7 @@ subtitle = "做一个爱分享的程序猿"
 [params.sidebar.avatar]
 enabled = true
 local = false
-src = "https://image.debuginn.cn/202302182238057.JPG"
+src = "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG"
 
 [params.article]
 math = false
@@ -98,7 +98,7 @@ card = "summary_large_image"
 [params.defaultImage.opengraph]
 enabled = true
 local = false
-src = "https://image.debuginn.cn/202304121931935.jpg"
+src = "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304121931935.jpg"
 
 [params.colorScheme]
 toggle = true

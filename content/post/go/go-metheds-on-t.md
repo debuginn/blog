@@ -9,7 +9,7 @@ keywords: "go,translate"
 comments: true
 tags: ["go","translate"]
 categories: ["golang"]
-image: "https://image.debuginn.cn/202302272119360.png"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302272119360.png"
 ---
 
 译文原地址：[Should methods be declared on T or *T - David](https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t)

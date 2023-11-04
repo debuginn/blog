@@ -4,7 +4,7 @@ date: 2019-05-28
 layout: "about"
 slug: "about"
 comments: false
-image: "https://image.debuginn.cn/202302262119034.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262119034.jpg"
 ---
 
 你好，我是 Meng小羽，非标准程序猿，喜欢编码、摄影、音乐、吉他，对新鲜事物和新的技术总是保持着好奇心并愿意去探索。
@@ -34,4 +34,4 @@ image: "https://image.debuginn.cn/202302262119034.jpg"
 目前我开源了一些[小工具和思路](/project)，感兴趣的可以去给一个 Star， 感谢。
 
 
-![Gopher](https://image.debuginn.cn/202303022149399.png)
+![Gopher](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)

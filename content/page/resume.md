@@ -132,4 +132,4 @@ Go、Redis、Iris、Beego（MiGo）、Thrift、Prometheus、Grafana
 
 | 结束语                                        | 在线简历                                                                                      |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **感谢您的阅读，期待能与优秀的团队一起成长.** | [![resume](https://image.debuginn.cn/202307221311385.png) ](https://blog.debuginn.cn/resume/) |
+| **感谢您的阅读，期待能与优秀的团队一起成长.** | [![resume](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307221311385.png) ](https://blog.debuginn.cn/resume/) |

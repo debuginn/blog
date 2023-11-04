@@ -9,7 +9,7 @@ comments: true
 weight: 0
 tags: ["蓝桥杯","algorithm"]
 categories: ["algorithm"]
-image: "https://image.debuginn.cn/202303241303887.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303241303887.jpg"
 ---
 
 2,3,5,7,11,13,….是素数序列。

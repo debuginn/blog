@@ -44,20 +44,20 @@ to DTO 采用统一的 Transfer 层进行设计，开发人员只需要关系定
 
 在程序中定义了若干个 Task 任务（这里每一个 Task 都可以是一个 HTTP、DUBBO、或者是各种中间件的读取操作）：
 
-![拆分 Task](https://image.debuginn.cn/202306292003014.png)
+![拆分 Task](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202306292003014.png)
 
 这里我们将每一块业务的调用都进行了解耦拆封，将一些耗时且一次调用的逻辑封装成各个 Task，每个 Task 之间都做了数据资源的隔离，同时各个 Task 的采用统一的并发上下文 PhoenixContext；
 
 ### 单向依赖 划分成组
 
-![单向依赖](https://image.debuginn.cn/202306292007655.png)
+![单向依赖](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202306292007655.png)
 
 > 在框架设计中，**严格约束相互依赖与循环依赖**，这样的目的是划分调用并发组，最后将并发组依次调用。
 
 - 若是采用串行调用的话，假设每个 Task 耗时在 50ms 左右，那么整个调用耗时会变的特别长，特别是在产品站业务中，若一个产品站需要调用 20 个服务来拼接数据返回给用户，那么相信用户会跳起来的；
 - 若是将上图的依赖关系写死在代码中，随着业务的逐步复杂，代码的可维护性也会变得越来越差，最后不得不到不能维护的阶段，但是我们看到，依赖关系是存在的，我们怎么让依赖存在并且还将逻辑代码进行解除代码的耦合呢？ 答案就是上面所说的并发调用组设计。
 
-![并发调用组](https://image.debuginn.cn/202306292017666.png)
+![并发调用组](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202306292017666.png)
 
 
 ## Task 与 Trans 注解

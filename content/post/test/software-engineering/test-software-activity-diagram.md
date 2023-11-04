@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["软件工程"]
 categories: ["software"]
-image: "https://image.debuginn.cn/202303191228166.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303191228166.jpg"
 ---
 
 ```shell
@@ -40,7 +40,7 @@ A）状态、分支       B）转移、汇合     C）泳道、转移     D）�
 
 **2、 在下面的图例中，哪个用来描述活动（activity）（A）**
 
-![活动图](https://image.debuginn.cn/202303211951206.png)
+![活动图](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303211951206.png)
 
 **3、下面哪个不是UML中的静态视图_____B______。**
 

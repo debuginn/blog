@@ -9,7 +9,7 @@ keywords: "蓝桥杯"
 comments: true
 tags: ["蓝桥杯","algorithm"]
 categories: ["algorithm"]
-image: "https://image.debuginn.cn/202303241303887.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303241303887.jpg"
 ---
 
 ## 问题描述
