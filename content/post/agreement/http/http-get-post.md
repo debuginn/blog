@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["http","post","get"]
 categories: ["agreement"]
-image: "https://image.debuginn.cn/202304131900179.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131900179.jpg"
 ---
 
 ## 给服务器传递数据量

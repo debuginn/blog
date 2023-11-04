@@ -1,4 +1,4 @@
 ---
 title: SQL
-image: "https://image.debuginn.cn/202303121916799.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303121916799.jpg"
 ---

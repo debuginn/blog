@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["http status code"]
 categories: ["agreement"]
-image: "https://image.debuginn.cn/202303181451617.jpeg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303181451617.jpeg"
 ---
 
 当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。

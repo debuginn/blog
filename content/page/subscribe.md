@@ -3,7 +3,7 @@ title: "订阅本站"
 date: 2023-03-02T20:54:51+08:00
 keywords: "订阅本站"
 comments: false
-image: "https://image.debuginn.cn/202302262119034.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262119034.jpg"
 ---
 
 ## 🤠 Hi，我是 Meng小羽
@@ -18,11 +18,11 @@ image: "https://image.debuginn.cn/202302262119034.jpg"
 
 Debug客栈给您提供了四种常规订阅方式，分别是 **微信公众号订阅**、**邮箱订阅**、 **RSS订阅**，当然还有 **Github** ，请根据您的需求选择性订阅：
 
-![wechat](https://image.debuginn.cn/202302202248422.png)
+![wechat](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302202248422.png)
 
 | 邮箱订阅「推荐」                                                                                     | feed「经典」                                                                                 | github                                                                                   |
 | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [![email](https://image.debuginn.cn/202303022113594.jpeg)](https://mailchi.mp/510cad3f229f/debuginn) | [![rss](https://image.debuginn.cn/202303022120906.jpeg)](https://blog.debuginn.cn/index.xml) | [![github](https://image.debuginn.cn/202303022120571.jpeg)](https://github.com/debuginn) |
+| [![email](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022113594.jpeg)](https://mailchi.mp/510cad3f229f/debuginn) | [![rss](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022120906.jpeg)](https://blog.debuginn.cn/index.xml) | [![github](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022120571.jpeg)](https://github.com/debuginn) |
 
 PS：您可以点击上方按钮，会弹出一个新的标签页供您操作，谢谢。
 
@@ -33,6 +33,6 @@ PS：您可以点击上方按钮，会弹出一个新的标签页供您操作，
 
 | 知乎                                                                                                    | 云+社区                                                                                                                 | 思否专栏                                                                                     |
 | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [![zhihu](https://image.debuginn.cn/202303022147756.jpeg)](https://www.zhihu.com/people/debuginn/posts) | [![tencent](https://image.debuginn.cn/202303022147501.jpeg)](https://cloud.tencent.com/developer/user/1246978/articles) | [![sf](https://image.debuginn.cn/202303022148254.jpeg)](https://segmentfault.com/u/debuginn) |
+| [![zhihu](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022147756.jpeg)](https://www.zhihu.com/people/debuginn/posts) | [![tencent](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022147501.jpeg)](https://cloud.tencent.com/developer/user/1246978/articles) | [![sf](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022148254.jpeg)](https://segmentfault.com/u/debuginn) |
 
-![gohper](https://image.debuginn.cn/202303022149399.png)
+![gohper](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)

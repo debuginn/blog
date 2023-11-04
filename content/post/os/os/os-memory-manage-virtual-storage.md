@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["os", "system"]
 categories: ["OS"]
-image: "https://image.debuginn.cn/202302221853276.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302221853276.jpg"
 ---
 
 ## 虚拟存储技术

@@ -1,4 +1,4 @@
 ---
 title: Project
-image: "https://image.debuginn.cn/202303191412328.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303191412328.jpg"
 ---

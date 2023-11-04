@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["go","mysql","prepare"]
 categories: ["golang"]
-image: "https://image.debuginn.cn/202303031903089.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303031903089.jpg"
 ---
 
 ## 预处理 

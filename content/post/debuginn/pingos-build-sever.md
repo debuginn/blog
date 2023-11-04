@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["pingos","ffmpeg","hls"]
 categories: ["debuginn"]
-image: "https://image.debuginn.cn/202303121930279.jpg"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303121930279.jpg"
 ---
 
 
@@ -231,7 +231,7 @@ cd /usr/local/pingos/
 - `http://ip地址:端口/h5player/flv`  无插件播放http-flv直播流
 - `http://ip地址:端口/rtmp_stat`  查看当前服务器推流统计数据
 
-![OBS配置](https://image.debuginn.cn/202303122236851.png)
+![OBS配置](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303122236851.png)
 
 播放地址：`http://ip地址:端口/hls2/流名.m3u8`
 
