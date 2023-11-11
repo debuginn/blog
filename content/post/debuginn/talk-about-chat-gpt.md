@@ -6,7 +6,7 @@ keywords: "ai,gpt,chatGPT"
 comments: true
 tags: ["ai","gpt","chatGPT"]
 categories: ["debuginn"]
-image: ""
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311111831345.jpg"
 ---
 
 ## 前言
