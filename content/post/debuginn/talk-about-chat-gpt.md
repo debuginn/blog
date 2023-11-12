@@ -1,6 +1,6 @@
 ---
 title: "谈谈 ChatGPT"
-date: 2023-11-11T22:11:11+08:00
+date: 2023-11-12T08:00:00+08:00
 draft: false
 keywords: "ai,gpt,chatGPT"
 comments: true
