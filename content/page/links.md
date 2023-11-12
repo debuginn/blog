@@ -17,10 +17,6 @@ links:
     image: https://s2.ax1x.com/2019/08/24/m6hdyR.th.jpg
     website: https://www.zz1984.com/
     description:  
-  - title: 佩恩的博客
-    image: https://wuyabala.com/static/img/logo.jpg
-    website: https://www.wuyabala.com
-    description: 记录全栈开发的学习过程
   - title: 刘悦的技术博客
     image: https://v3u.cn/v3u/Public/images/logo_dark.png
     website: https://v3u.cn
@@ -41,10 +37,6 @@ links:
     image: https://blognas.hwb0307.com/logo.jpg
     website: https://blognas.hwb0307.com
     description: 百代繁华一朝都，谁非过客；千秋明月吹角寒，花是主人。
-  - title: 烤冷面的技术BLOG
-    image: https://www.kaolengmian7.com/app/imgs/logo/logo.jpeg
-    website: https://scriptrunz.com/zh-cn/
-    description: 老板，来一份热爱分享的烤冷面～
   - title: 追梦者个人博客
     image: https://www.codelin.site/favicon.png
     website: https://codelin.site/
@@ -53,10 +45,6 @@ links:
     image: https://nemo.cool/wp-content/uploads/2021/06/SW-764C75A8B289785545EF745F3DA7D822_1-scaled.jpg
     website: https://nemo.cool/
     description: null
-  - title: Halo 的主页
-    image: https://halo.wecomz.com/favicon-1024x1024.png
-    website: https://halo.wecomz.com/?from=blog.debuginn.cn
-    description: halo.wecomz.com
   - title: RE1IFE's Blog
     image: https://re1ife.oss-cn-chengdu.aliyuncs.com/media/re1ife-site.ico
     website: http://www.re1ife.top
