@@ -2,9 +2,9 @@
 title: "谈谈 ChatGPT"
 date: 2023-11-12T08:00:00+08:00
 draft: false
-keywords: "ai,gpt,chatGPT"
+keywords: "AI,GPT,chatGPT"
 comments: true
-tags: ["ai","gpt","chatGPT"]
+tags: ["AI","GPT","chatGPT"]
 categories: ["debuginn"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311111831345.jpg"
 ---
