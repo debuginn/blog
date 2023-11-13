@@ -55,8 +55,7 @@ comments: true
 
 ## 申请友链
 
-1. 申请友情链接的话请提交 [issue](https://github.com/debuginn/blog/issues/new?assignees=&labels=friend&template=apply-for-friend-link.md&title=Apply+for+friend+link) 来申请;
-2. 评论区留言申请～
+> 评论区留言申请～
 
 ```yaml
 - title: Debug客栈
