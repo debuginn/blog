@@ -47,8 +47,12 @@ links:
     description: null
   - title: RE1IFE's Blog
     image: https://re1ife.oss-cn-chengdu.aliyuncs.com/media/re1ife-site.ico
-    website: http://www.re1ife.top
+    website: https://www.re1ife.top
     description: 一个淹死在时代浪潮里的coder
+  - title: 浮云的博客
+    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311181848462.ico
+    website: https://last2win.com/
+    description: 浮云的博客
 
 comments: true
 ---
