@@ -3,7 +3,7 @@ title: "网站已经运行180天了"
 date: 2018-04-04T19:15:06+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "debuginn"
 comments: true

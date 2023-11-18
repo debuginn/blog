@@ -3,7 +3,7 @@ title: "新域名 debuginn.cn 上线了"
 date: 2018-10-29T19:33:39+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "Debug客栈"
 comments: true

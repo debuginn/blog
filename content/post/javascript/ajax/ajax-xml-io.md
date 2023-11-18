@@ -3,7 +3,7 @@ title: "Ajax 对 XML 信息的接收和处理"
 date: 2018-10-22T18:54:57+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "js,ajax,xml"
 comments: true

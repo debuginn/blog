@@ -3,7 +3,7 @@ title: "JavaScript  飞雪特效"
 date: 2020-01-12T19:40:09+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "js,jquery"
 comments: true

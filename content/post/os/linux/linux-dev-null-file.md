@@ -3,7 +3,7 @@ title: "Linux >/dev/null 2>&1 命令使用说明"
 date: 2020-01-13T19:34:52+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "linux,shell"
 comments: true

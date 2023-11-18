@@ -3,7 +3,7 @@ title: "蓝桥杯 算法训练 区间k大数查询"
 date: 2019-03-04T22:27:19+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comments: true

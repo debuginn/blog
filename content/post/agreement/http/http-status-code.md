@@ -3,7 +3,7 @@ title: "HTTP常见状态码"
 date: 2019-09-26T17:22:37+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "http status code"
 comments: true

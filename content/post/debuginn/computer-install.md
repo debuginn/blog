@@ -3,7 +3,7 @@ title: "记一次不太正规的装机实践"
 date: 2020-03-21T15:46:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "computer"
 comments: true

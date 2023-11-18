@@ -3,7 +3,7 @@ title: "如何将豆瓣观影记录实时同步至博客中"
 date: 2022-03-03T19:28:59+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,gin,rss,mdui,douban"
 comments: true
@@ -319,7 +319,7 @@ server{
 }
 ```
 
-这样就可以实现 https 资源访问了：~~https://debuginn.cn/doubanmovies~~
+这样就可以实现 https 资源访问了：~~https://debuginn.com/doubanmovies~~
 
 ## 效果
 
@@ -327,7 +327,7 @@ server{
 
 ![我的观影](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303031939914.png)
 
-具体效果如下：~~https://debuginn.cn/doubanmovies~~
+具体效果如下：~~https://debuginn.com/doubanmovies~~
 
 ## 开源
 

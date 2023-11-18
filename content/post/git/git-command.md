@@ -3,7 +3,7 @@ title: "Git常用命令汇总"
 date: 2022-03-25T22:30:21+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "git"
 comments: true

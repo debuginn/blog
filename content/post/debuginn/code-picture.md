@@ -3,7 +3,7 @@ title: "一些好玩的代码构图"
 date: 2019-10-18T17:42:41+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "default"
 comments: true

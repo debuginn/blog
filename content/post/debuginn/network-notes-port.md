@@ -3,7 +3,7 @@ title: "网络笔记之端口及常见端口号"
 date: 2019-06-15T10:59:47+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "计算机网络"
 comments: true

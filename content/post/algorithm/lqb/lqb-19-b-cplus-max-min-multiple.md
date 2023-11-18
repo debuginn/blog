@@ -3,7 +3,7 @@ title: "蓝桥杯 算法训练 最大最小公倍数"
 date: 2019-03-05T22:23:41+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comments: true

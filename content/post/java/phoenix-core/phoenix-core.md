@@ -3,7 +3,7 @@ title: "PhoenixCore 业务并发框架"
 date: 2023-06-29T20:45:48+08:00
 draft: true
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "PhoenixCore,java"
 comments: true

@@ -3,7 +3,7 @@ title: "操作系统 并发与同步"
 date: 2017-12-16T22:37:30+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comments: true

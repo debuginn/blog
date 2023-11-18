@@ -3,7 +3,7 @@ title: "Ajax 对缓存的处理"
 date: 2017-12-03T23:06:11+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "js,ajax,cache"
 comments: true

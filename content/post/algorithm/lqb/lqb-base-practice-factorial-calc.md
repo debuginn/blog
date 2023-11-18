@@ -3,7 +3,7 @@ title: "蓝桥杯 基础练习 阶乘计算"
 date: 2019-02-07T21:59:28+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comments: true

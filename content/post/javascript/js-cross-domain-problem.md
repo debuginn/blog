@@ -3,7 +3,7 @@ title: "JavaScript 跨域问题"
 date: 2018-07-18T19:05:38+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "js,cross"
 comments: true
@@ -23,7 +23,7 @@ JavaScript处于安全方面的考虑，不允许跨域调用其他页面的对�
 - http://debuginn.cn/a.html调用http://baidu.link/b.php     （跨域）
 - http://debuginn.cn/a.html调用http://a.debuginn.cn/b.php  （跨域）
 - http://debuginn.cn/a.html调用http://debuginn.cn:81/b.php （跨域）
-- http://debuginn.cn/a.html调用https://debuginn.cn/b.php   （跨域）
+- http://debuginn.cn/a.html调用https://debuginn.com/b.php   （跨域）
 
 ### 跨域解决方法一 — 代理
 

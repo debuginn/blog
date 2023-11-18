@@ -3,7 +3,7 @@ title: "操作系统 内存管理 虚拟存储技术与虚拟页式存储管理�
 date: 2018-01-02T19:27:22+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comments: true

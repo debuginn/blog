@@ -3,7 +3,7 @@ title: "Go 语言操作 MySQL 之 预处理"
 date: 2020-07-02T16:46:10+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,prepare"
 comments: true

@@ -2,7 +2,7 @@
 title: "数据仓库与数据挖掘 使用SQL语句实现AdventureWorksDW数据仓库的多维数据分析"
 date: 2019-03-27T21:40:26+08:00
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "数据仓库与数据挖掘"
 comments: true

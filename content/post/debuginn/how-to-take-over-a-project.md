@@ -3,7 +3,7 @@ title: "如何接手并维护一个项目"
 draft: false
 date: 2023-07-10T23:11:00+08:00
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "project"
 comments: true

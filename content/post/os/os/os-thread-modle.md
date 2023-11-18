@@ -3,7 +3,7 @@ title: "操作系统 进程线程模型 线程模型"
 date: 2017-12-10T22:57:38+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comments: true

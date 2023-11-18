@@ -3,7 +3,7 @@ title: "怎么优雅的选择 MySQL 存储引擎"
 date: 2020-05-01T17:41:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "mysql,engin,database"
 comments: true
