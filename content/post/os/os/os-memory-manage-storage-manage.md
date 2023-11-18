@@ -3,7 +3,7 @@ title: "操作系统 内存管理 内存存储管理方案"
 date: 2017-12-26T22:03:37+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comments: true

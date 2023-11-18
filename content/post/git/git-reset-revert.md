@@ -3,7 +3,7 @@ title: "Git 命令 reset 和 revert 的区别"
 date: 2021-09-21T17:33:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "git,github,reset,revert"
 comments: true

@@ -3,7 +3,7 @@ title: "Go 语言使用 net 包实现 Socket 网络编程"
 date: 2020-05-25T08:42:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,net,socket"
 comments: true

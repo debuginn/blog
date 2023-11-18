@@ -3,7 +3,7 @@ title: "软件工程 包图习题"
 date: 2019-07-02T19:54:56+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comments: true

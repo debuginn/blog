@@ -3,7 +3,7 @@ title: "2019 年度总结"
 date: 2019-12-31T08:00:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "Debug客栈,2019,2020,年度总结"
 comments: true

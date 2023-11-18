@@ -3,7 +3,7 @@ title: "Gource 版本可视化工具 使用手册"
 date: 2022-03-16T19:31:40+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "git,gource"
 comments: true

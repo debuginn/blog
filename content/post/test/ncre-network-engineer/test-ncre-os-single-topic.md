@@ -3,7 +3,7 @@ title: "【NCRE四级网络工程师】操作系统单选题"
 date: 2019-02-26T21:41:48+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "NCRE"
 comments: true

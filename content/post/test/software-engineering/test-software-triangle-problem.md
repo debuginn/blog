@@ -3,7 +3,7 @@ title: "软件质量测试 等价类划分 三角形问题"
 date: 2019-07-03T18:18:38+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "软件质量测试"
 comments: true

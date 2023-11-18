@@ -3,7 +3,7 @@ title: "Go 并发编程之 Mutex"
 date: 2020-11-15T20:34:12+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
 comments: true

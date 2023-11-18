@@ -3,7 +3,7 @@ title: "[译] 方法是否应该在 T 或 *T 上声明"
 date: 2021-06-27T23:18:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "go,translate"
 comments: true

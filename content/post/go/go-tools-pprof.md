@@ -3,7 +3,7 @@ title: "使用 pprof 对 Go 程序进行分析优化"
 date: 2022-05-01T18:12:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
 comments: true

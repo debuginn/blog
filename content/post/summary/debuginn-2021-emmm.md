@@ -3,7 +3,7 @@ title: "emmm 这是一篇碎碎念"
 date: 2021-04-24T14:24:56+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "碎碎念"
 comments: true

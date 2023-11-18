@@ -3,7 +3,7 @@ title: "Ajax Get 和 POST 请求注意事项"
 date: 2028-07-22T19:02:15+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "js,ajax,xml,post,get"
 comments: true

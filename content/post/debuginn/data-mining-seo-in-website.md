@@ -2,7 +2,7 @@
 title: "数据仓库与数据挖掘 - 大数据在SEO网站优化领域的具体应用案例"
 date: 2019-02-25T21:51:49+08:00
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "数据仓库与数据挖掘"
 comments: true

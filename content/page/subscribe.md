@@ -32,6 +32,6 @@ PS：您可以点击上方按钮，会弹出一个新的标签页供您操作，
 
 | 知乎                                                                                                    | 云+社区                                                                                                                 | 思否专栏                                                                                     |
 | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [![zhihu](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022147756.jpeg)](https://www.zhihu.com/people/debuginn/posts) | [![tencent](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022147501.jpeg)](https://cloud.tencent.com/developer/user/1246978/articles) | [![sf](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022148254.jpeg)](https://segmentfault.com/u/debuginn) |
+| [![zhihu](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022147756.jpeg)](https://www.zhihu.com/people/debuginn/posts) | [![tencent](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022147501.jpeg)](https://cloud.tencent.com/developer/column/83947) | [![sf](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022148254.jpeg)](https://segmentfault.com/u/debuginn) |
 
 ![gohper](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)

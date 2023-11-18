@@ -3,7 +3,7 @@ title: "Restful API 设计指北"
 date: 2022-03-13T21:35:12+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "api,restful api"
 comments: true
@@ -34,7 +34,7 @@ https://api.debuginn.cn
 也可以将 API 放在主域名下，例如：
 
 ```shell
-https://debuginn.cn/api/
+https://debuginn.com/api/
 ```
 
 当然，针对于 API 版本问题针对以上两种方法可以分别使用如下例子：
@@ -43,7 +43,7 @@ https://debuginn.cn/api/
 # 针对于 API 子域名方式 api.domain/v1/
 https://api.debuginn.cn/v1/
 # 针对于 主域名目录方式 domain/api/v1/
-https://debuginn.cn/api/v1/
+https://debuginn.com/api/v1/
 ```
 
 ## Schema 响应数据模式

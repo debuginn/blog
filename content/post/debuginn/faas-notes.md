@@ -3,7 +3,7 @@ title: "FAAS 调研笔记"
 date: 2023-02-15T09:57:00+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "faas,notes"
 comments: true

@@ -3,7 +3,7 @@ title: "蓝桥杯 基础练习 特殊回文数"
 date: 2019-01-13T18:56:54+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comments: true

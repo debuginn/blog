@@ -3,7 +3,7 @@ title: 友情链接
 links:
   - title: Debug客栈
     image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG
-    website: https://debuginn.cn
+    website: https://debuginn.com
     description: 做一个爱分享的程序猿
   - title: Moea
     image: https://moea.cc/content/templates/NULL/images/tx.jpg
@@ -60,7 +60,7 @@ comments: true
 ```yaml
 - title: Debug客栈
   image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG
-  website: https://debuginn.cn
+  website: https://debuginn.com
   description: 做一个爱分享的程序猿
 ```
 

@@ -3,7 +3,7 @@ title: "Sublime Text 崇高的文本编辑器"
 date: 2017-11-12T20:41:15+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "sublime,tools"
 comments: true

@@ -3,7 +3,7 @@ title: "蓝桥杯 入门训练 Fibonacci数列"
 date: 2019-01-04T19:20:48+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comments: true

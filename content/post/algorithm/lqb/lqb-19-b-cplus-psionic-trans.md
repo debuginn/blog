@@ -3,7 +3,7 @@ title: "蓝桥杯 2019第十届蓝桥杯B组C++ 灵能传输"
 date: 2019-04-01T23:05:31+08:00
 draft: false
 author: "Meng小羽"
-authorLink: "https://debuginn.cn"
+authorLink: "https://debuginn.com"
 authorEmail: "debuginn@icloud.com"
 keywords: "蓝桥杯"
 comments: true
