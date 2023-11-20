@@ -1,5 +1,5 @@
 ---
-title: "新域名 debuginn.cn 上线了"
+title: "新域名 debuginn.com 上线了"
 date: 2018-10-29T19:33:39+08:00
 draft: false
 author: "Meng小羽"
@@ -12,7 +12,7 @@ tags: ["Debug客栈"]
 categories: ["summary"]
 ---
 
-，太贵了，后来听说.cn域名是咱国家的域名，而且根服务器在咱国家，而且第二年续费及第一年的购买只需要28元钱，还是比较实惠的，原本本网站的域名是roguefeathers.link现在改为debuginn.cn.
+，太贵了，后来听说.cn域名是咱国家的域名，而且根服务器在咱国家，而且第二年续费及第一年的购买只需要28元钱，还是比较实惠的，原本本网站的域名是roguefeathers.link现在改为debuginn.com.
 
 取此域名有几个含义：
 
@@ -20,4 +20,4 @@ categories: ["summary"]
 2. debuginn 正好是 Debug客栈 的英文解释； 
 3. 接受了同僚之间的建议，域名还是取一个简单易记的。
 
-另外，本人在此声明一下，以后此网站唯一域名：debuginn.cn，谢谢大家的支持，嘿嘿。
+另外，本人在此声明一下，以后此网站唯一域名：debuginn.com，谢谢大家的支持，嘿嘿。

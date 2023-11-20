@@ -26,7 +26,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262128413.jpg"
 
 让我意外的是大家对 Go 语言入门学习有着很大的兴趣，下面这个文章是今年访问最多的文章，访问量：2785
 
-[https://blog.debuginn.cn/p/go-dev-design/](/p/go-dev-design/)
+[https://blog.debuginn.com/p/go-dev-design/](/p/go-dev-design/)
 
 ## 技术导航
 

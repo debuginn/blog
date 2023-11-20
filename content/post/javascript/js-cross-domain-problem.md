@@ -19,11 +19,11 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
 
 JavaScript处于安全方面的考虑，不允许跨域调用其他页面的对象。
 
-- http://debuginn.cn/a.html调用http://debuginn.cn/b.php    （非跨域）
-- http://debuginn.cn/a.html调用http://baidu.link/b.php     （跨域）
-- http://debuginn.cn/a.html调用http://a.debuginn.cn/b.php  （跨域）
-- http://debuginn.cn/a.html调用http://debuginn.cn:81/b.php （跨域）
-- http://debuginn.cn/a.html调用https://debuginn.com/b.php   （跨域）
+- http://debuginn.com/a.html调用http://debuginn.com/b.php    （非跨域）
+- http://debuginn.com/a.html调用http://baidu.link/b.php     （跨域）
+- http://debuginn.com/a.html调用http://a.debuginn.com/b.php  （跨域）
+- http://debuginn.com/a.html调用http://debuginn.com:81/b.php （跨域）
+- http://debuginn.com/a.html调用https://debuginn.com/b.php   （跨域）
 
 ### 跨域解决方法一 — 代理
 

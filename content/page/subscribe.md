@@ -21,7 +21,7 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **微信公众号
 
 | 邮箱订阅「推荐」                                                                                     | feed「经典」                                                                                 | github                                                                                   |
 | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [![email](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022113594.jpeg)](https://mailchi.mp/510cad3f229f/debuginn) | [![rss](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022120906.jpeg)](https://blog.debuginn.cn/index.xml) | [![github](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022120571.jpeg)](https://github.com/debuginn) |
+| [![email](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022113594.jpeg)](https://mailchi.mp/510cad3f229f/debuginn) | [![rss](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022120906.jpeg)](https://blog.debuginn.com/index.xml) | [![github](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022120571.jpeg)](https://github.com/debuginn) |
 
 PS：您可以点击上方按钮，会弹出一个新的标签页供您操作，谢谢。
 
