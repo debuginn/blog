@@ -9,7 +9,7 @@ comments: false
 | **姓名：** | 孟宪晖         | **性别：** | 男                                                   |
 | ---------- | -------------- | ---------- | ---------------------------------------------------- |
 | **公司：** | 小米           | **职位：** | 软件开发工程师                                       |
-| **工龄：** | 3年            | **博客：** | [https://blog.debuginn.cn](https://blog.debuginn.cn) |
+| **工龄：** | 3年            | **博客：** | [https://blog.debuginn.com](https://blog.debuginn.com) |
 | **学校：** | 德州学院（本） | **专业：** | 计算机科学与技术                                     |
 | **微信：** | `idebuginn`    | **邮箱：** | debuginn@icloud.com                                  |
 | **年龄：** | 24岁           | **籍贯：** | 山东济宁                                             |
@@ -132,4 +132,4 @@ Go、Redis、Iris、Beego（MiGo）、Thrift、Prometheus、Grafana
 
 | 结束语                                        | 在线简历                                                                                      |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **感谢您的阅读，期待能与优秀的团队一起成长.** | [![resume](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307221311385.png) ](https://blog.debuginn.cn/resume/) |
+| **感谢您的阅读，期待能与优秀的团队一起成长.** | [![resume](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307221311385.png) ](https://blog.debuginn.com/resume/) |

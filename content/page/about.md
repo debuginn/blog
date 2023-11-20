@@ -23,7 +23,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262119034.jpg"
 
 同时我也喜欢摄影，你可以从我的导航页面看到我有在维护的摄影展，每年我都会挑选 Top 摄影照片上传到此站点：
 
-[https://photo.debuginn.cn](https://photo.debuginn.cn)
+[https://photo.debuginn.com](https://photo.debuginn.com)
 
 ## 项目
 

@@ -25,7 +25,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302251041682.jpg"
 
 ## 摄影专区
 
-今年为了兴趣爱好买了一台微单 索尼 α6400+18135 镜头，同时，也想着把自己的摄影作品呈现给大家，每年我都会更新一批图片到这里，选 10 张自己认为比较好的图片拿来展出，水平不高，但是每一张照片背后都有属于它的专属意义。[直达链接](https://photo.debuginn.cn)
+今年为了兴趣爱好买了一台微单 索尼 α6400+18135 镜头，同时，也想着把自己的摄影作品呈现给大家，每年我都会更新一批图片到这里，选 10 张自己认为比较好的图片拿来展出，水平不高，但是每一张照片背后都有属于它的专属意义。[直达链接](https://photo.debuginn.com)
 
 ![摄影站点](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302251045907.jpg)
 
@@ -81,7 +81,7 @@ ps：不过多介绍，还有下文哦～
 
 本年度很懒，没有出啥文章，就写了两篇，那就算作年度文章吧～
 
-[https://blog.debuginn.cn/p/go-tools-pprof/](/p/go-tools-pprof/)
+[https://blog.debuginn.com/p/go-tools-pprof/](/p/go-tools-pprof/)
 
 ## Github 个人页面
 

@@ -28,7 +28,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg"
 为 API 使用专门子域名比较友好，例如使用如下链接使用：
 
 ```shell
-https://api.debuginn.cn
+https://api.debuginn.com
 ```
 
 也可以将 API 放在主域名下，例如：
@@ -41,7 +41,7 @@ https://debuginn.com/api/
 
 ```shell
 # 针对于 API 子域名方式 api.domain/v1/
-https://api.debuginn.cn/v1/
+https://api.debuginn.com/v1/
 # 针对于 主域名目录方式 domain/api/v1/
 https://debuginn.com/api/v1/
 ```
@@ -126,7 +126,7 @@ HTTP 应答中，需要带一个很重要的字段：status code。它说明了�
 | 500 | Internal Server Error  | 服务器内部错误，导致无法完成请求的内容                                                                                           | 
 | 503 | Service Unavailable    | 服务器因为负载过高或者维护，暂时无法提供服务。服务器端应该返回 Retry-After 头部，告诉客户端过一段时间再来重试                                                 | 
 
-针对于状态码，请看此文章：[HTTP常见状态码](https://blog.debuginn.cn/p/http-status-code/)
+针对于状态码，请看此文章：[HTTP常见状态码](https://blog.debuginn.com/p/http-status-code/)
 
 ## 错误处理
 
