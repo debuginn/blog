@@ -2,9 +2,6 @@
 title: "Go 语言基础 数组、切片、映射"
 date: 2020-06-17T21:08:48+08:00
 draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "go,array,slice,map"
 comments: true
 tags: ["go","array","slice","map"]
