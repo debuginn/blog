@@ -3,7 +3,7 @@ title: "关于站长"
 date: 2019-05-28T22:11:11+08:00
 layout: "about"
 slug: "about"
-comments: false
+comments: true
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262119034.jpg"
 ---
 
