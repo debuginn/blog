@@ -53,6 +53,9 @@ links:
     image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311181848462.ico
     website: https://last2win.com/
     description: 浮云的博客
+  - title: Halo
+    website: https://bluemiaomiao.github.io
+    description: 大道至简，顺势而为。
 
 comments: true
 ---
