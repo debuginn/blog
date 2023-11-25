@@ -16,19 +16,12 @@ comments: true
 
 ![skillicons](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman&theme=light)
 
-### Github
-
-![github](https://ghchart.rshah.org/debuginn)
-
-| Github status                                                                                                         | top languages                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| ![github](https://github-readme-stats.vercel.app/api?username=debuginn&show_icons=true&&theme=default&layout=compact) | ![github](https://github-readme-stats.vercel.app/api/top-langs/?username=debuginn&layout=compact&hide=javascript,html,css,php,scss) |
-
 
 ### Projects
 
-| 项目名称                    | 语言                                                                                                | 项目介绍                                                                                          | star                                                                                                                                                      |
-| --------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 项目名称                    | 语言                                                                                                | 项目介绍                                                                    | star                                                                                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | douban-movies               | ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/debuginn/douban-movies) | [如何将豆瓣观影记录实时同步至博客中 - Debug客栈](/p/douban-movies-to-blog/) | [![GitHub Repo stars](https://img.shields.io/github/stars/debuginn/douban-movies)](https://github.com/debuginn/douban-movies)                             |
-| leetcode                    | ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/debuginn/leetcode)      | 📝 一些算法记录                                                                                    | [![GitHub Repo stars](https://img.shields.io/github/stars/debuginn/leetcode)](https://github.com/debuginn/leetcode)                                       |
-| golang-developer-roadmap-cn |                                                                                                     | 🤔️ 我该怎么才能成为 Go 的开发者？                                                                  | [![GitHub Repo stars](https://img.shields.io/github/stars/debuginn/golang-developer-roadmap-cn)](https://github.com/debuginn/golang-developer-roadmap-cn) |
+| leetcode                    | ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/debuginn/leetcode)      | 📝 一些算法记录                                                              | [![GitHub Repo stars](https://img.shields.io/github/stars/debuginn/leetcode)](https://github.com/debuginn/leetcode)                                       |
+| golang-developer-roadmap-cn |                                                                                                     | 🤔️ 我该怎么才能成为 Go 的开发者？                                            | [![GitHub Repo stars](https://img.shields.io/github/stars/debuginn/golang-developer-roadmap-cn)](https://github.com/debuginn/golang-developer-roadmap-cn) |
+| tools                       |                                                                                                     | 🔧 一些简单的小工具集合                                                      | [![GitHub Repo stars](https://img.shields.io/github/stars/debuginn/tools)](https://github.com/debuginn/tools)                                             |
