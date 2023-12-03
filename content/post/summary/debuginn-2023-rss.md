@@ -90,7 +90,7 @@ Netnewswire 是一款开源的 IOS/MacOS 的阅读器，他支持 iCloud 云备�
 |     面向信仰编程     | https://draveness.me               | https://draveness.me/feed.xml                         | 计算机    |            |
 |         鸟窝         | https://colobu.com                 | https://colobu.com/atom.xml                           | GO        |            |
 |     苹果fans博客     | http://www.mac52ipod.cn            | https://www.mac52ipod.cn/feed.php/feed                | Apple     |            |
-|   阮一峰的网络日志   | http://www.ruanyifeng.com/blog     | http://www.ruanyifeng.com/blog/atom.xml               | 周刊      | 科技爱好者 |
+|   阮一峰的网络日志   | http://www.ruanyifeng.com/blog     | http://www.ruanyifeng.com/blog/atom.xml               | 周刊      | 科技爱好者周刊 |
 |      四火的唠叨      | https://www.raychase.net           | https://www.raychase.net/feed                         | 博客      |            |
 |      唐巧的博客      | http://blog.devtang.com            | http://blog.devtang.com/atom.xml                      | 阅读      |            |
 |       湾区日报       | https://www.wanqu.co               | https://rsshub.app/wanqu/news                         | 科技      |            |
@@ -128,6 +128,6 @@ Netnewswire 是一款开源的 IOS/MacOS 的阅读器，他支持 iCloud 云备�
 |       Tony Bai       | https://tonybai.com                | https://tonybai.com/feed                              | GO      |            |
 
 
-OPML 订阅文件：[Debug客栈 - Feed订阅](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312032154291.opml)
+OPML 订阅文件：[Feed订阅源文件](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312032154291.opml)
 
 最后，你要有认为值得推荐的或者有价值的博客，都可以在评论趣分享出来，让我们站在巨人的肩膀上变得更强～
