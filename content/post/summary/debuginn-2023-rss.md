@@ -1,12 +1,12 @@
 ---
 title: "2023年为何我还使用RSS"
-date: 2023-12-03T22:00:00+08:00
+date: 2023-12-04T23:00:00+08:00
 draft: false
 keywords: "Debug客栈,Feed,RSS,订阅"
 comments: true
 tags: ["Debug客栈","Feed","RSS","订阅"]
 categories: ["summary"]
-image: ""
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312042307782.jpeg"
 ---
 
 ## 什么是 RSS
