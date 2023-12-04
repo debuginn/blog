@@ -130,4 +130,4 @@ Netnewswire 是一款开源的 IOS/MacOS 的阅读器，他支持 iCloud 云备�
 
 OPML 订阅文件：[Feed订阅源文件](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312032154291.opml)
 
-最后，你要有认为值得推荐的或者有价值的博客，都可以在评论趣分享出来，让我们站在巨人的肩膀上变得更强～
+最后，你要有认为值得推荐的或者有价值的博客，都可以在评论区分享出来，让我们站在巨人的肩膀上变得更强～
