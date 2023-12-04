@@ -33,7 +33,7 @@ RSS 作为 1999 年诞生的技术，并在 2009 年更新完最后一版本后�
 
 ![RSS订阅](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312031744451.png)
 
-当然，你要是感觉我的内容对你有帮助，欢迎通过 RSS 订阅，[订阅地址](./subscribe)。
+当然，你要是感觉我的内容对你有帮助，欢迎通过 RSS 订阅，[订阅地址](/subscribe)。
 
 ### RSSHub
 
