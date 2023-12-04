@@ -1,13 +1,8 @@
 ---
 title: "2022 年度总结"
 date: 2022-12-31T10:00:00+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "Debug客栈,2022,2023,年度总结"
 comments: true
-weight: 0
 tags: ["Debug客栈","2022","2023","年度总结"]
 categories: ["summary"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302251041682.jpg"
