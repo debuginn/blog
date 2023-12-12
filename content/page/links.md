@@ -56,6 +56,10 @@ links:
   - title: Halo
     website: https://bluemiaomiao.github.io
     description: 大道至简，顺势而为。
+  - title: 王明明的小站
+    image: https://mingming.wang/logo.svg
+    website: https://mingming.wang
+    description: 记录&分享
 
 comments: true
 ---
