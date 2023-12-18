@@ -9,7 +9,7 @@ comments: false
 | **姓名：** | 孟宪晖         | **性别：** | 男                                                   |
 | ---------- | -------------- | ---------- | ---------------------------------------------------- |
 | **公司：** | 小米           | **职位：** | 软件开发工程师                                       |
-| **工龄：** | 3年            | **博客：** | [https://blog.debuginn.com](https://blog.debuginn.com) |
+| **工龄：** | 3.5 年            | **博客：** | [https://blog.debuginn.com](https://blog.debuginn.com) |
 | **学校：** | 德州学院（本） | **专业：** | 计算机科学与技术                                     |
 | **微信：** | `idebuginn`    | **邮箱：** | debuginn@icloud.com                                  |
 | **年龄：** | 24岁           | **籍贯：** | 山东济宁                                             |
@@ -33,7 +33,7 @@ comments: false
 7. **熟悉** k8s、Docker、Grafana、Prometheus、FAAS、ServerLess 等微服务基础部署设施监控组件；
 8. 拥有**高并发**场景开发经验，负责电商部门S级业务，**熟悉多线程、多协程并发编程**；
 
-![skillicons](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman&theme=light)
+![技能树](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,postgres,redis,mongodb,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman,stackoverflow&theme=light)
 
 ## 工作经历
 
@@ -41,7 +41,7 @@ comments: false
 | ------------------------ | ------------------------------- |
 | 北京小米通讯技术有限公司 | 2020年7月 - 至今 （应届生入职） |
 | **职位**                 | **行业**                        |
-| 软件开发工程师（15级）   | 电商产品站、触达系统            |
+| 软件开发工程师（15级）   | 小米商城产品站、触达系统            |
 
 ### 工作描述
 
