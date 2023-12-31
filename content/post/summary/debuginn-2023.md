@@ -63,7 +63,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312221929863.jpg"
 
 Debug客栈摄影展：[https://photo.debuginn.com](https://photo.debuginn.com)
 
-![摄影展](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312241511619.png)
+![摄影展](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312311401449.jpg)
 
 ## 阅读
 
