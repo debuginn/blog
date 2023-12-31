@@ -48,7 +48,7 @@ enabled = true
 provider = "giscus"
 
 [params.comments.giscus]
-repo = "debuginn/ghblog"
+repo = "debuginn/blog"
 repoID = "R_kgDOKGn7uw"
 category = "General"
 categoryID = "DIC_kwDOKGn7u84CYrjC"
