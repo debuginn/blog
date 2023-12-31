@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on Debug客栈</title><link>https://blog.debuginn.com/tags/git/</link><description>Recent content in git on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 25 Mar 2022 22:30:21 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git常用命令汇总</title><link>https://blog.debuginn.com/p/git-command/</link><pubDate>Fri, 25 Mar 2022 22:30:21 +0800</pubDate><guid>https://blog.debuginn.com/p/git-command/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303252231697.jpg" alt="Featured image of post Git常用命令汇总" />&lt;h2 id="常规操作">常规操作&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git push origin test&lt;/code> 推送本地分支到远程仓库&lt;/li>
+&lt;li>&lt;code>git rm -r --cached&lt;/code> 文件/文件夹名字 取消文件被版本控制&lt;/li>
+&lt;li>&lt;code>git reflog&lt;/code> 获取执行过的命令&lt;/li>
+&lt;li>&lt;code>git log --graph&lt;/code> 查看分支合并图&lt;/li>
+&lt;li>&lt;code>git merge --no-ff -m '合并描述'&lt;/code> 分支名 不使用Fast forward方式合并，采用这种方式合并可以看到合并记录&lt;/li>
+&lt;li>&lt;code>git check-ignore -v 文件名&lt;/code> 查看忽略规则&lt;/li>
+&lt;li>&lt;code>git add -f 文件名&lt;/code> 强制将文件提交&lt;/li>
+&lt;/ul>
+&lt;h3 id="git-创建项目仓库">Git 创建项目仓库&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>git init&lt;/code> 初始化&lt;/li>
+&lt;li>&lt;code>git remote add origin url&lt;/code> 关联远程仓库&lt;/li>
+&lt;li>&lt;code>git pull&lt;/code>&lt;/li>
+&lt;li>&lt;code>git fetch&lt;/code> 获取远程仓库中所有的分支到本地&lt;/li>
+&lt;/ul>
+&lt;h3 id="忽略已加入到版本库中的文件">忽略已加入到版本库中的文件&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>git update-index --assume-unchanged file&lt;/code> 忽略单个文件&lt;/li>
+&lt;li>&lt;code>git rm -r --cached 文件/文件夹名字&lt;/code> (. 忽略全部文件)&lt;/li>
+&lt;/ul>
+&lt;h3 id="取消忽略文件">取消忽略文件&lt;/h3>
+&lt;p>&lt;code>git update-index --no-assume-unchanged file&lt;/code>&lt;/p>
+&lt;h3 id="拉取上传免密码">拉取、上传免密码&lt;/h3>
+&lt;p>&lt;code>git config --global credential.helper store&lt;/code>&lt;/p>
+&lt;h2 id="分支操作">分支操作&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git branch&lt;/code> 创建分支&lt;/li>
+&lt;li>&lt;code>git branch -b&lt;/code> 创建并切换到新建的分支上&lt;/li>
+&lt;li>&lt;code>git checkout&lt;/code> 切换分支&lt;/li>
+&lt;li>&lt;code>git branch&lt;/code> 查看分支列表&lt;/li>
+&lt;li>&lt;code>git branch -v&lt;/code> 查看所有分支的最后一次操作&lt;/li>
+&lt;li>&lt;code>git branch -vv&lt;/code> 查看当前分支&lt;/li>
+&lt;li>&lt;code>git branch -b 分支名 origin/分支名&lt;/code> 创建远程分支到本地&lt;/li>
+&lt;li>&lt;code>git branch --merged&lt;/code> 查看别的分支和当前分支合并过的分支&lt;/li>
+&lt;li>&lt;code>git branch --no-merged&lt;/code> 查看未与当前分支合并的分支&lt;/li>
+&lt;li>&lt;code>git branch -d 分支名&lt;/code> 删除本地分支&lt;/li>
+&lt;li>&lt;code>git branch -D 分支名&lt;/code> 强行删除分支&lt;/li>
+&lt;li>&lt;code>git push origin --delete 分支名&lt;/code> 删除远程仓库分支&lt;/li>
+&lt;li>&lt;code>git merge 分支名&lt;/code> 合并分支到当前分支上&lt;/li>
+&lt;/ul>
+&lt;h2 id="暂存操作">暂存操作&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git stash&lt;/code> 暂存当前修改&lt;/li>
+&lt;li>&lt;code>git stash apply&lt;/code> 恢复最近的一次暂存&lt;/li>
+&lt;li>&lt;code>git stash pop&lt;/code> 恢复暂存并删除暂存记录&lt;/li>
+&lt;li>&lt;code>git stash list&lt;/code> 查看暂存列表&lt;/li>
+&lt;li>&lt;code>git stash drop 暂存名&lt;/code>(例：stash@{0}) 移除某次暂存&lt;/li>
+&lt;li>&lt;code>git stash clear&lt;/code> 清除暂存&lt;/li>
+&lt;/ul>
+&lt;h2 id="回退操作">回退操作&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git reset --hard HEAD^&lt;/code> 回退到上一个版本&lt;/li>
+&lt;li>&lt;code>git reset --hard commitId&lt;/code> 回退到某个版本&lt;/li>
+&lt;li>&lt;code>git checkout -- file&lt;/code>撤销修改的文件(如果文件加入到了暂存区，则回退到暂存区的，如果文件加入到了版本库，则还原至加入版本库之后的状态)&lt;/li>
+&lt;li>&lt;code>git reset HEAD file&lt;/code> 撤回暂存区的文件修改到工作区&lt;/li>
+&lt;/ul>
+&lt;h2 id="标签操作">标签操作&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git tag 标签名&lt;/code> 添加标签(默认对当前版本)&lt;/li>
+&lt;li>&lt;code>git tag 标签名 commitId&lt;/code> 对某一提交记录打标签&lt;/li>
+&lt;li>&lt;code>git tag -a 标签名 -m '描述'&lt;/code> 创建新标签并增加备注&lt;/li>
+&lt;li>&lt;code>git tag&lt;/code> 列出所有标签列表&lt;/li>
+&lt;li>&lt;code>git show 标签名&lt;/code> 查看标签信息&lt;/li>
+&lt;li>&lt;code>git tag -d 标签名&lt;/code> 删除本地标签&lt;/li>
+&lt;li>&lt;code>git push origin 标签名&lt;/code> 推送标签到远程仓库&lt;/li>
+&lt;li>&lt;code>git push origin --tags&lt;/code> 推送所有标签到远程仓库&lt;/li>
+&lt;li>&lt;code>git push origin :refs/tags/标签名&lt;/code> 从远程仓库中删除标签&lt;/li>
+&lt;/ul>
+&lt;h2 id="远程仓库">远程仓库&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git remote -v&lt;/code>查看远程仓库地址&lt;/li>
+&lt;li>&lt;code>git remote show origin&lt;/code>查看远程仓库详情信息&lt;/li>
+&lt;/ul>
+&lt;h2 id="查看某个-commit-提交属于那个分支">查看某个 commit 提交属于那个分支&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>git branch -l --contains &amp;lt;commit_id&amp;gt;&lt;/code> 本地分支&lt;/li>
+&lt;li>&lt;code>git branch -r --contains &amp;lt;commit_id&amp;gt;&lt;/code> 远程分支&lt;/li>
+&lt;li>&lt;code>git branch --all --contains &amp;lt;commit_id&amp;gt;&lt;/code> 所有分支&lt;/li>
+&lt;/ul></description></item><item><title>Gource 版本可视化工具 使用手册</title><link>https://blog.debuginn.com/p/linux-tools-gource/</link><pubDate>Wed, 16 Mar 2022 19:31:40 +0800</pubDate><guid>https://blog.debuginn.com/p/linux-tools-gource/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303161933689.jpg" alt="Featured image of post Gource 版本可视化工具 使用手册" />&lt;p>&lt;strong>Gource&lt;/strong> 是一款版本控制可视化的工具，使用这个工具可以将自己的 Git 提交的代码包括对 &lt;strong>Mercurial&lt;/strong>，&lt;strong>Bazaar&lt;/strong> 和 &lt;strong>SVN&lt;/strong> 的内置日志生成可视化支持。Gource 还可以解析由多个第三方工具为 CVS 存储库生成的日志。
+提交的代码按照时间轴的顺序动态显示出来，可以使你的工作过程以动画的形式显现，并且 Gource 这个工具可以显示出来不同用户对一个代码库进行同一时间内的修改操作。&lt;/p>
+&lt;p>官方网站：&lt;a class="link" href="https://gource.io/" target="_blank" rel="noopener"
+>https://gource.io/&lt;/a>&lt;/p>
+&lt;h2 id="常用命令">常用命令&lt;/h2>
+&lt;p>在这里我列举几个经常使用到的命令，PS：你需要先进入到对应项目目录中去，这个很重要，要不然会提示该目录下没有 log 记录。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">gource &lt;span class="c1"># 使用Gource查看版本历史&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -f -1280×720 &lt;span class="c1"># 设置分辨率大小&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -s 0.5 &lt;span class="c1"># 每天以0.5秒的速度播放&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -o 1.mp4 &lt;span class="c1"># 将版本动画导出到 1.mp4 文件中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -s 0.1 -o 2.mp4 &lt;span class="c1"># 每天以0.1秒的速度导出到 2.mp4 文件中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -f -b red &lt;span class="c1"># 将背景设置为红色&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource --title “Gource” &lt;span class="c1"># 为gource设置title&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="基本命令">基本命令&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ ~ gource -help
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Gource v0.51
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Usage: gource &lt;span class="o">[&lt;/span>options&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>path&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">用法: gource &lt;span class="o">[&lt;/span>选项&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>路径&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Options:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -h, --help 帮助
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -WIDTHxHEIGHT, --viewport 设定窗口大小
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -f, --fullscreen 全屏显示
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --screen SCREEN 画面编号
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --multi-sampling 启用多重采样
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --no-vsync 禁用垂直同步
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --start-date &lt;span class="s1">&amp;#39;YYYY-MM-DD hh:mm:ss +tz&amp;#39;&lt;/span> 从日期和可选时间开始
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --stop-date &lt;span class="s1">&amp;#39;YYYY-MM-DD hh:mm:ss +tz&amp;#39;&lt;/span> 停在某个日期和可选时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -p, --start-position POSITION 从某个位置开始&lt;span class="o">(&lt;/span>0.0-1.0 or &lt;span class="s1">&amp;#39;random&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --stop-position POSITION 停在某个位置
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -t, --stop-at-time SECONDS 在指定的秒数后停止
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --stop-at-end 在日志结尾处停止
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --dont-stop 在日志结束后继续运行
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --loop 在日志末尾循环
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -a, --auto-skip-seconds SECONDS 如果没有任何反应，则自动跳至下一个条目
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 持续几秒钟&lt;span class="o">(&lt;/span>default: 3&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --disable-auto-skip 禁用自动跳过
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -s, --seconds-per-day SECONDS 每天以秒为单位的速度&lt;span class="o">(&lt;/span>default: 10&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --realtime 实时播放速度
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --no-time-travel 如果提交时间是过去的时间请使用上一次提交的时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -c, --time-scale SCALE 更改模拟时间范围&lt;span class="o">(&lt;/span>default: 1.0&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -e, --elasticity FLOAT 节点弹性&lt;span class="o">(&lt;/span>default: 0.0&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --key 显示文件扩展名
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --user-image-dir DIRECTORY 包含要用作头像的图像的目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --default-user-image IMAGE 默认用户图像文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --colour-images 使用单色图像
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -i, --file-idle-time SECONDS 时间文件保持空闲&lt;span class="o">(&lt;/span>default: 0&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --max-files NUMBER 最大文件数或0（无限制）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --max-file-lag SECONDS 提交的最大时间文件可能会出现
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --log-command VCS 显示VCS日志命令&lt;span class="o">(&lt;/span>git,svn,hg,bzr,cvs2cl&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --log-format VCS 指定日志格式&lt;span class="o">(&lt;/span>git,svn,hg,bzr,cvs2cl,custom&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --load-config CONF_FILE 加载配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --save-config CONF_FILE 使用当前选项保存配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -o, --output-ppm-stream FILE 将PPM流输出到文件 &lt;span class="o">(&lt;/span>&lt;span class="s1">&amp;#39;-&amp;#39;&lt;/span> &lt;span class="k">for&lt;/span> STDOUT&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -r, --output-framerate FPS 输出帧率&lt;span class="o">(&lt;/span>25,30,60&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PATH可以是受支持的版本控制目录，日志文件，Gource配置文件或用于读取STDIN的&lt;span class="s1">&amp;#39;-&amp;#39;&lt;/span>。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">如果省略，则gource将尝试从当前目录生成日志。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">要查看完整的命令行选项，请使用 “-H”
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Git 命令 reset 和 revert 的区别</title><link>https://blog.debuginn.com/p/git-reset-revert/</link><pubDate>Tue, 21 Sep 2021 17:33:00 +0800</pubDate><guid>https://blog.debuginn.com/p/git-reset-revert/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262207101.jpg" alt="Featured image of post Git 命令 reset 和 revert 的区别" />&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在团队开发中，使用 Git 作为版本开发工具，可以便捷地协同多人管理并行开发，但是由于自己或者其他人代码提交污染了远程分支，就需要对远程代码进行恢复操作，Git 提供了 reset 和 revert 两种命令来进行恢复操作，这两种操作效果是截然不同的，不太清楚这个原理的同学需要了解一下，以免在实际的开发过程中翻车，导致线上远程仓库不可逆转的操作。&lt;/p>
+&lt;p>首先从英文释义来讲，reset 是重置的意思，revert 是恢复、还原的意思，作为 Coder ，第一感觉 reset 的效果比 revert 更猛一些，实际情况也的确如此，让我们一起探讨一下吧。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262208546.png"
+loading="lazy"
+alt="git"
+>&lt;/p>
+&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>Git 的每一次提交都是一次 commit，上图可以看到在时间线上有三次提交，此时 HEAD 指向 main 分支，main 分支又指向最新的 Commit3。&lt;/p>
+&lt;ul>
+&lt;li>HEAD 是指向当前分支的最新提交的指针，可以在任意分支进行切换；&lt;/li>
+&lt;li>main （master）分支，是一个 git 代码仓库的主分支也是默认分支；&lt;/li>
+&lt;li>commit 每一次提交代码都会产生一个 commit id 来标识工作区的变更与改动。&lt;/li>
+&lt;/ul>
+&lt;h2 id="实践出真理">实践出真理&lt;/h2>
+&lt;p>为了直接明白的了解其原理，我这里在 github 上创建一个空白的仓库，按照上图创建三次提交：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit b0ef8f9125226af8f06ff1aba7c1f1fc83adea9b &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master, origin/master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 338bf3e30983d34074f37a18b3ff80ea9bca75f0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:09 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 2.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 6b166ed34962da08d944e2b1d3f36d9015dd8f35
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:35:16 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="git-reset">Git Reset&lt;/h3>
+&lt;p>&lt;code>git reset&lt;/code> 的作用是将 HEAD 指向指定的版本上去：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262210014.png"
+loading="lazy"
+alt="git reset"
+>&lt;/p>
+&lt;p>&lt;strong>1 使用 git log 查看提交记录：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit b0ef8f9125226af8f06ff1aba7c1f1fc83adea9b &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master, origin/master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 338bf3e30983d34074f37a18b3ff80ea9bca75f0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:09 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 2.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 6b166ed34962da08d944e2b1d3f36d9015dd8f35
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:35:16 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这里可以看到我们提交了三次记录，我们现在想恢复到第一次 commit 提交的时候。&lt;/p>
+&lt;p>&lt;strong>2 使用 git reset &amp;ndash;hard 命令操作：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ demo git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git reset --hard 6b166ed34962da08d944e2b1d3f36d9015dd8f35
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HEAD 现在位于 6b166ed feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再次查看 git log :&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit 6b166ed34962da08d944e2b1d3f36d9015dd8f35 &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:35:16 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此时我们可以看到已经恢复到了第一次提交代码的时候，目前我们是使用 &lt;code>git reset --hard&lt;/code> 的方式，其实这里存在着三种方式，TODO 下一篇 git 操作讲一下。&lt;/p>
+&lt;p>这时候我们只是讲本地的 HEAD 指向了 main 分支的 commit 1，但是远程并没有变更，此时需要强行推一下就可以了。&lt;/p>
+&lt;p>&lt;strong>3 使用git push -f 强行推送到远程：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ demo git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git push -f
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">总共 0（差异 0），复用 0（差异 0），包复用 &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">To github.com:debuginn/demo.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> + b98f95e...6b166ed master -&amp;gt; master &lt;span class="o">(&lt;/span>forced update&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262212430.png"
+loading="lazy"
+alt="github"
+>&lt;/p>
+&lt;p>此时我们可以看到远程也没有了我们之前提交的三次记录而是只有第一次的提交记录。&lt;/p>
+&lt;p>在团队合作的共同操作一个仓库的时候， git reset 命令一定要慎重使用，在使用的时候一定要再三确认其他同学的代码是否会被重置操作而导致代码丢失，导致一些提交记录的丢失，这些都是不可逆的，一定要慎重。&lt;/p>
+&lt;h3 id="git-revert">Git revert&lt;/h3>
+&lt;p>&lt;code>git revert&lt;/code> 是用来重做某一个 commit 提交的内容，在我们原始的提交之中，我们会发现分支上面有创建了一个新的 commit 提交，而此时我们对于想重做的某个 commit 提交的内容都不存在了：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262214658.png"
+loading="lazy"
+alt="git revert"
+>&lt;/p>
+&lt;p>&lt;strong>1 使用git log查看提交记录：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>2 使用git revert命令重做操作：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ demo git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git revert 338bf3e30983d34074f37a18b3ff80ea9bca75f0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">删除 2.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>master ef822b7&lt;span class="o">]&lt;/span> Revert &lt;span class="s2">&amp;#34;feat add 2.go&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">1&lt;/span> file changed, &lt;span class="m">9&lt;/span> deletions&lt;span class="o">(&lt;/span>-&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> delete mode &lt;span class="m">100644&lt;/span> 2.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再次查看 git log :&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit ef822b71c33a2dbbdaa350fddcfa14e8fc55e543 &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master, origin/master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 17:12:00 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Revert &lt;span class="s2">&amp;#34;feat add 2.go&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> This reverts commit 338bf3e30983d34074f37a18b3ff80ea9bca75f0.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit b0ef8f9125226af8f06ff1aba7c1f1fc83adea9b
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 17:05:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可以看到当前已经重做了一下 commit 2 的提交，已经讲 2.go 删除掉了。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262217507.png"
+loading="lazy"
+alt="github"
+>&lt;/p>
+&lt;p>可以看到 github 上面有了四次提交记录。&lt;/p>
+&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>git reset和git revert都是属于重新恢复工作区以及远程提交的方式，但这两种操作有着截然不同的结果：&lt;/p>
+&lt;ul>
+&lt;li>git reset是将之前的提交记录全部抹去，将 HEAD 指向自己重置的提交记录，对应的提交记录都不复存在；&lt;/li>
+&lt;li>git revert 操作是将选择的某一次提交记录 重做，若之后又有提交，提交记录还存在，只是将指定提交的代码给清除掉。&lt;/li>
+&lt;/ul>
+&lt;p>选择合适的方式回滚自己的代码在团队合作中很重要，但是要慎重操作，不要丢失代码哦。&lt;/p></description></item></channel></rss>

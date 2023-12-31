@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Debug客栈</title><link>https://blog.debuginn.com/page/</link><description>Recent content in Pages on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Mar 2023 15:39:10 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/page/index.xml" rel="self" type="application/rss+xml"/><item><title>我的项目</title><link>https://blog.debuginn.com/project/</link><pubDate>Fri, 17 Mar 2023 15:39:10 +0800</pubDate><guid>https://blog.debuginn.com/project/</guid><description>&lt;h2 id="-hi我是-meng小羽">🤠 Hi，我是 Meng小羽&lt;/h2>
+&lt;p>&lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Fgithub%2Fdebuginn&amp;amp;query=count&amp;amp;color=181717&amp;amp;label=GitHub&amp;amp;labelColor=282c34&amp;amp;logo=github&amp;amp;suffix=&amp;#43;follows&amp;amp;cacheSeconds=3600"
+loading="lazy"
+alt="GitHub"
+>&lt;/a>
+&lt;a class="link" href="https://www.zhihu.com/people/debuginn" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Fzhihu%2Fdebuginn&amp;amp;query=count&amp;amp;color=282c34&amp;amp;label=%E7%9F%A5%E4%B9%8E&amp;amp;labelColor=0084ff&amp;amp;logo=zhihu&amp;amp;logoColor=ffffff&amp;amp;suffix=&amp;#43;%E5%85%B3%E6%B3%A8&amp;amp;cacheSeconds=3600"
+loading="lazy"
+alt="知乎"
+>&lt;/a>
+&lt;a class="link" href="https://weibo.com/7096209693" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Fweibo%2F7096209693&amp;amp;query=count&amp;amp;color=040000&amp;amp;label=%E5%BE%AE%E5%8D%9A&amp;amp;labelColor=e71f19&amp;amp;logo=sina-weibo&amp;amp;suffix=&amp;#43;%E5%85%B3%E6%B3%A8&amp;amp;cacheSeconds=3600"
+loading="lazy"
+alt="微博"
+>&lt;/a>
+&lt;a class="link" href="https://space.bilibili.com/238989334" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Fbilibili%2F238989334&amp;amp;query=count&amp;amp;color=282c34&amp;amp;label=%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9&amp;amp;labelColor=FE7398&amp;amp;logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAD7ElEQVR4nO2dW9WrMBCFK6ESkFAJSKiESqgEHCABCZWAhEpAAhL2ecik5dDc%2FpXLBDLfWnlqy0xmJ5BMQnq5CIIgCIIgCIIgCIIgCEIBAHQAemYfrgCunD6wAKAHsEKxALgx&amp;#43;bCQD8%2FS9tmgVqeDr1lLigDgZvDhXso&amp;#43;K9TyTBQRwRJ8AHjntl0Flh5QRAQK%2FmKxPeayWx2OXpBNBKiHvi34b7T2MC4pAvW6twR%2FRwkRKPizBN8CgEcuESj4Lwm&amp;#43;BwBjahEk&amp;#43;H8EwJRKhOaCDzW8e1JLfkUUH1NgmR3XmHffHR1l&amp;#43;72BSs8d7w8U&amp;#43;JDAnZERQMcV&amp;#43;CtUi7dNqFqibB4J7vtrq7xKCuAasbTMXCL4T&amp;#43;5aVk6&amp;#43;2xHUrWdhruAR6HIJcOeu2UHI8zyAe2ytWfEdWz9PVvQ8YAmIQ5dDAB9LFsMVAv8oMO2zAGrC5WNIarRiAuKR9jYEd9pY08aa6uUzIHGRdkgKd8pY0yc1WjEBAqypDYoAG0QAZkQAZkQAZkQAZk4vANQenjsSzS3I%2FwcSbXU5jQBUkRtdf4Rar90v8kSv3&amp;#43;I3ffCCSpk8I%2Fw&amp;#43;lgDkdI%2Fv2rEp2CaiWm1AsDQLlDAD&amp;#43;dlFXLMeAaCSeLZdaSFE5VUQNot38cKuEeBgAsSuG0flVZBmEanbXfNQAsS0fgBYIn2fIu3%2FBBMHEyBmDXlFfA8IzeHb&amp;#43;Ems4WAChKykrVA9ZfsQTL57jXzRg4A5wC%2FA8N4ADiZAZwm2XjW75Qh2KOTfA0p4kygPw28OJcCVgn3nDnYo2EwEYRgGH0qAMyICMCMCMCMCMCMCMCMCMCMCfP3qwHDOQ4AAUekTk8FaBRihJnZdYbvtCGC7LvmkM63GjVDINPFrQgCq5ETXfmMzI90FXzPvfqt7x4rEu%2FZaEcCUxFvgz2zO&amp;#43;BUn6UkoaEEAsptiMSX5e8FoRYCN7cVgb4Vq7U%2FH50Pq4JNP7Qiw8UFnJwcK&amp;#43;tXy&amp;#43;Wj6PLEvPgHSHv5UgwA1IQIwwyFAyLJin9RoxYgAzAQIkPwNmf26busC&amp;#43;OIx5TDqo5nDT&amp;#43;F%2FSS%2F9CYzwb&amp;#43;No49zNy2evkYv0LywGGAXUvp6eSneycqOic0w20k7CNgKE7jJunSGLACTCxF27ylmQc98T5MQUH49swd&amp;#43;I0HPXslLKnT0N&amp;#43;wnkrTKi9JZL%2FL9i1SorMmdeQ4TQQ7OFMxIMzGD45w8nUL1im7efENZLJpgPSw0pfz0cdt4U3230Td%2FTvx2R6d2FrHhEWLkq5PELOMsRPHCPnAZGv1xJteL7jbJiaW3sB2nDvPC%2FosSYvjRQz4cJ6n7KO3rYQL7M&amp;#43;L6nVtfDVRAEQRAEQRAEQRAEIZ5%2FSAXmdfXaoQsAAAAASUVORK5CYII%3D&amp;amp;suffix=&amp;#43;%E5%85%B3%E6%B3%A8&amp;amp;cacheSeconds=3600"
+loading="lazy"
+alt="哔哩哔哩"
+>&lt;/a>
+&lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+>&lt;img src="https://komarev.com/ghpvc/?username=debuginn&amp;amp;color=blueviolet"
+loading="lazy"
+alt="Profile views"
+>&lt;/a>&lt;/p>
+&lt;p>下面是我目前所使用到的技术栈及工具：&lt;/p>
+&lt;p>&lt;img src="https://skillicons.dev/icons?i=go,java,spring,maven,mysql,redis,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman&amp;amp;theme=light"
+loading="lazy"
+alt="skillicons"
+>&lt;/p>
+&lt;h3 id="projects">Projects&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>项目名称&lt;/th>
+&lt;th>语言&lt;/th>
+&lt;th>项目介绍&lt;/th>
+&lt;th>star&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>douban-movies&lt;/td>
+&lt;td>&lt;img src="https://img.shields.io/github/go-mod/go-version/debuginn/douban-movies"
+loading="lazy"
+alt="GitHub go.mod Go version"
+>&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.debuginn.com/p/douban-movies-to-blog/" >如何将豆瓣观影记录实时同步至博客中 - Debug客栈&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/debuginn/douban-movies" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/github/stars/debuginn/douban-movies"
+loading="lazy"
+alt="GitHub Repo stars"
+>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>leetcode&lt;/td>
+&lt;td>&lt;img src="https://img.shields.io/github/go-mod/go-version/debuginn/leetcode"
+loading="lazy"
+alt="GitHub go.mod Go version"
+>&lt;/td>
+&lt;td>📝 一些算法记录&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/debuginn/leetcode" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/github/stars/debuginn/leetcode"
+loading="lazy"
+alt="GitHub Repo stars"
+>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>golang-developer-roadmap-cn&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🤔️ 我该怎么才能成为 Go 的开发者？&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/debuginn/golang-developer-roadmap-cn" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/github/stars/debuginn/golang-developer-roadmap-cn"
+loading="lazy"
+alt="GitHub Repo stars"
+>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tools&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🔧 一些简单的小工具集合&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/debuginn/tools" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/github/stars/debuginn/tools"
+loading="lazy"
+alt="GitHub Repo stars"
+>&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>订阅本站</title><link>https://blog.debuginn.com/subscribe/</link><pubDate>Thu, 02 Mar 2023 20:54:51 +0800</pubDate><guid>https://blog.debuginn.com/subscribe/</guid><description>&lt;h2 id="常规订阅">常规订阅&lt;/h2>
+&lt;p>Debug客栈给您提供了四种常规订阅方式，分别是 &lt;strong>邮箱订阅&lt;/strong>、 &lt;strong>RSS订阅&lt;/strong>，&lt;strong>Github&lt;/strong> ，当然还有 &lt;strong>微信公众号订阅&lt;/strong>，请根据您的需求选择性订阅：&lt;/p>
+&lt;p>&lt;a class="link" href="https://mailchi.mp/510cad3f229f/debuginn" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/Email%e8%ae%a2%e9%98%85%28%e6%8e%a8%e8%8d%90%29-9933ff?logo=mailchimp&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="Email"
+>&lt;/a>
+&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/RSS%e8%ae%a2%e9%98%85%28%e7%bb%8f%e5%85%b8%29-ff6600?logo=rss&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="RSS"
+>&lt;/a>
+&lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/Github%28Follow%29-000000?logo=github&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="Github"
+>&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302202248422.png"
+loading="lazy"
+alt="WeChat"
+>&lt;/p>
+&lt;h2 id="专栏订阅">专栏订阅&lt;/h2>
+&lt;p>当然，您不习惯上方方式订阅，您可以选择你感兴趣的自媒体订阅方式，目前仅支持 &lt;strong>知乎专栏&lt;/strong>、&lt;strong>腾讯云+社区&lt;/strong>、&lt;strong>思否专栏&lt;/strong>，请根据您的需求订阅：&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.zhihu.com/people/debuginn/posts" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/%e7%9f%a5%e4%b9%8e%e4%b8%93%e6%a0%8f%28152%e5%85%b3%e6%b3%a8%29-0040ff?logo=zhihu&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="ZhiHu"
+>&lt;/a>
+&lt;a class="link" href="https://segmentfault.com/u/debuginn/articles" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/%e6%80%9d%e5%90%a6%e7%a4%be%e5%8c%ba%28622%e5%85%b3%e6%b3%a8%29-145214?logo=jaeger&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="SF"
+>&lt;/a>
+&lt;a class="link" href="https://cloud.tencent.com/developer/column/83947" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/%e8%85%be%e8%ae%af%e4%ba%91&amp;#43;%e7%a4%be%e5%8c%ba%2882%e5%85%b3%e6%b3%a8%29-7f00ff?logo=icloud&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="Tencent"
+>&lt;/a>&lt;/p>
+&lt;h2 id="视频专区">视频专区&lt;/h2>
+&lt;p>我还不时制作视频上传至哔哩哔哩和 Youtube 网站：&lt;/p>
+&lt;p>&lt;a class="link" href="https://space.bilibili.com/238989334" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/Bilibili-ff0066?logo=bilibili&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="BiliBili"
+>&lt;/a>
+&lt;a class="link" href="https://www.youtube.com/@debuginn" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/Youtube-ff0000?logo=youtube&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="Youtube"
+>&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png"
+loading="lazy"
+alt="Gopher"
+>&lt;/p></description></item><item><title>关于站长</title><link>https://blog.debuginn.com/about/</link><pubDate>Tue, 28 May 2019 22:11:11 +0800</pubDate><guid>https://blog.debuginn.com/about/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262119034.jpg" alt="Featured image of post 关于站长" />&lt;p>你好，我是 Meng小羽，非标准程序猿，喜欢编码、摄影、音乐、吉他，对新鲜事物和新的技术总是保持着好奇心并愿意去探索。&lt;/p>
+&lt;p>这是我独立维护的站点，目前已经维护了 7个年头，前一段时间已经实现了全站点静态化设计，可以把重点投入到内容的创作当中去。&lt;/p>
+&lt;h2 id="工作">工作&lt;/h2>
+&lt;p>我目前是一名软件开发工程师，在小米工作，主要从事小米商城服务端的相关业务及技术研发工作，20年以应届生身份通过小米应届生专项计划 “YOU计划” 入职，目前已经工作近 3年时间，“永远相信美好的事情即将发生” 这句话成为了工作中第一句职场 slogan，也不断激励着我成长。&lt;/p>
+&lt;p>下面是我目前所使用到的技术栈及工具：&lt;/p>
+&lt;p>&lt;img src="https://skillicons.dev/icons?i=go,java,spring,maven,mysql,postgres,redis,mongodb,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman,stackoverflow&amp;amp;theme=light"
+loading="lazy"
+alt="技能树"
+>&lt;/p>
+&lt;h2 id="摄影">摄影&lt;/h2>
+&lt;p>同时我也喜欢摄影，你可以从我的导航页面看到我有在维护的摄影展，每年我都会挑选 Top 摄影照片上传到此站点：&lt;/p>
+&lt;p>&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+>https://photo.debuginn.com&lt;/a>&lt;/p>
+&lt;h2 id="项目">项目&lt;/h2>
+&lt;p>目前我开源了一些&lt;a class="link" href="https://blog.debuginn.com/project" >小工具和思路&lt;/a>，感兴趣的可以去给一个 Star， 感谢。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png"
+loading="lazy"
+alt="Gopher"
+>&lt;/p></description></item><item><title>文章归档</title><link>https://blog.debuginn.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://blog.debuginn.com/archives/</guid><description/></item><item><title>Search</title><link>https://blog.debuginn.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.debuginn.com/search/</guid><description/></item><item><title>我的阅读</title><link>https://blog.debuginn.com/read/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.debuginn.com/read/</guid><description>&lt;h2 id="我的阅读清单">我的阅读清单&lt;/h2>
+&lt;h3 id="2023">2023&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>状态&lt;/th>
+&lt;th>书籍&lt;/th>
+&lt;th>类别&lt;/th>
+&lt;th>笔记&lt;/th>
+&lt;th>推荐指数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>⏳&lt;/td>
+&lt;td>《富爸爸穷爸爸》&lt;/td>
+&lt;td>理财&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="2022">2022&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>状态&lt;/th>
+&lt;th>书籍&lt;/th>
+&lt;th>类别&lt;/th>
+&lt;th>笔记&lt;/th>
+&lt;th>推荐指数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《Effective Go 中英双语版》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《一往无前》&lt;/td>
+&lt;td>公司&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《黄金时代》&lt;/td>
+&lt;td>小说&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《乖，摸摸头》&lt;/td>
+&lt;td>散文&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《图解 HTTP》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《分布式缓存：原理、架构及Go语言实现》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《深入理解Java虚拟机JVM高级特性与最佳实践》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《深入设计模式》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>⏳&lt;/td>
+&lt;td>《保重》&lt;/td>
+&lt;td>散文&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="2021">2021&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>状态&lt;/th>
+&lt;th>书籍&lt;/th>
+&lt;th>类别&lt;/th>
+&lt;th>笔记&lt;/th>
+&lt;th>推荐指数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《MySQL 实战 45 讲》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>✅&lt;/td>
+&lt;td>《Redis 设计与实现》&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>🌟🌟🌟🌟🌟&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>友情链接</title><link>https://blog.debuginn.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.debuginn.com/links/</guid><description>&lt;h2 id="申请友链">申请友链&lt;/h2>
+&lt;blockquote>
+&lt;p>评论区留言申请～&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Debug客栈&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://debuginn.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">做一个爱分享的程序猿&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="友情提示">友情提示&lt;/h2>
+&lt;ol>
+&lt;li>如果您想交换链接，请按上述格式留言。(仅限个人非商业性博客网站)；&lt;/li>
+&lt;li>网站出现故障、停止维护和不当内容可能会被取消链接！&lt;/li>
+&lt;li>那些不尊重他人劳动成果、无源转载、恶意行为的网站，请不要前来交流。&lt;/li>
+&lt;/ol></description></item></channel></rss>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gvm on Debug客栈</title><link>https://blog.debuginn.com/tags/gvm/</link><description>Recent content in gvm on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Jul 2020 16:32:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/gvm/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 GVM 工具管理 Go 版本</title><link>https://blog.debuginn.com/p/go-use-gvm-switch-version/</link><pubDate>Sun, 12 Jul 2020 16:32:00 +0800</pubDate><guid>https://blog.debuginn.com/p/go-use-gvm-switch-version/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303011938210.jpg" alt="Featured image of post 使用 GVM 工具管理 Go 版本" />&lt;p>在 Go 项目开发中，团队要保持开发版本一致，怎么能够快速的安装及部署并且切换 Go 环境，在这里推荐一款工具 GVM （ Go Version Manager ），它可以便捷切换与自定义 Go Path 、Go Root 等参数，是一款实打实的多版本安装及管理利器。&lt;/p>
+&lt;p>GVM，类似于ruby 中的 &lt;a class="link" href="https://rvm.io/" target="_blank" rel="noopener"
+>RVM&lt;/a>，java 中的 &lt;a class="link" href="https://github.com/linux-china/jenv" target="_blank" rel="noopener"
+>jenv&lt;/a>（国产），可用于方便管理 Go 的版本，它有如下几个主要特性：&lt;/p>
+&lt;p>管理 Go 的多个版本，包括安装、卸载和指定使用 Go 的某个版本；&lt;/p>
+&lt;ul>
+&lt;li>查看官方所有可用的 Go 版本，同时可以查看本地已安装和默认使用的 Go 版本；&lt;/li>
+&lt;li>管理多个 GOPATH，并可编辑 Go 的环境变量；&lt;/li>
+&lt;li>可将当前目录关联到 GOPATH；&lt;/li>
+&lt;li>可以查看 GOROOT 下的文件差异。&lt;/li>
+&lt;/ul>
+&lt;h2 id="安装-installing">安装 Installing&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bash &amp;lt; &amp;lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>或者，如果您使用的是 zsh，只需使用 zsh 更改 bash。&lt;/p>
+&lt;h2 id="使用-gvm">使用 GVM&lt;/h2>
+&lt;p>使用 gvm 可以查看支持的操作：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ ~ gvm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Usage: gvm &lt;span class="o">[&lt;/span>command&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Description:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> GVM is the Go Version Manager
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Commands:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> version - print the gvm version number
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> get - gets the latest code &lt;span class="o">(&lt;/span>&lt;span class="k">for&lt;/span> debugging&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> use - &lt;span class="k">select&lt;/span> a go version to use &lt;span class="o">(&lt;/span>--default to &lt;span class="nb">set&lt;/span> permanently&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> diff - view changes to Go root
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">help&lt;/span> - display this usage text
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> implode - completely remove gvm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> install - install go versions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> uninstall - uninstall go versions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> cross - install go cross compilers
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> linkthis - link this directory into GOPATH
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> list - list installed go versions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> listall - list available versions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">alias&lt;/span> - manage go version aliases
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pkgset - manage go packages sets
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> pkgenv - edit the environment &lt;span class="k">for&lt;/span> a package &lt;span class="nb">set&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="安装-go-版本">安装 Go 版本&lt;/h2>
+&lt;p>例如安装 go1.13 版本：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">gvm install go1.13
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="查看-go-版本">查看 Go 版本&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ ~ gvm list
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gvm gos &lt;span class="o">(&lt;/span>installed&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> go1.12
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">=&lt;/span>&amp;gt; system
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="切换-go-版本">切换 Go 版本&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">gvm use go1.**
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="管理-gopath-环境">管理 Gopath 环境&lt;/h2>
+&lt;p>GVM 提供了一个比较简单的工具 gvm pkgset 可以创建使用 GOPATH 环境：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ ~ gvm &lt;span class="nv">pkgset&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">=&lt;/span> gvm pkgset
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">* http://github.com/moovweb/gvm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span> DESCRIPTION:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GVM pkgset is used to manage various Go &lt;span class="nv">packages&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span> Usage
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> gvm pkgset &lt;span class="nv">Command&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span> Command
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> create - create a new package &lt;span class="nb">set&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> delete - delete a package &lt;span class="nb">set&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> use - &lt;span class="k">select&lt;/span> where gb and goinstall target and link
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> empty - remove all code and compiled binaries from package &lt;span class="nb">set&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> list - list installed go packages
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="卸载-uninstall">卸载 Uninstall&lt;/h2>
+&lt;p>卸载某个安装好的 Go 版本：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">gvm uninstall go1.13
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="开源代码">开源代码&lt;/h2>
+&lt;p>GVM 是一款使用 Shell 脚本实现的便捷工具，作为开源项目，推荐大家给一个 Star 支持。&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/moovweb/gvm" target="_blank" rel="noopener"
+>https://github.com/moovweb/gvm&lt;/a>&lt;/p></description></item></channel></rss>

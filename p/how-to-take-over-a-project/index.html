@@ -1,0 +1,210 @@
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="在工作中，接手负责管理别人开发或者前人开发的项目是每个开发人员的工作任务之一，那么，如何快速并且高效的消化接手过来的项目呢，本文主要讲解一些方法与实践技巧，希望可以帮助你快速了解你接手的项目。
+系统文档 若是有最开始的包括后续优化的相关技术文档或者系统文档，对于接手过来的项目无疑是最有助于开发人员的方式。但是大家会发现往往接手过来的项目是没有这一类的文档的，交接过来的系统若是对开发有极高追求的，一般都会有文档，并且 README.md 中会有项目介绍包括相关文档，但是&amp;hellip;&amp;hellip; 往往我们拿到手的系统是纯代码，README.md 可能都没有这个文件，这种往往是最痛苦的，不过也是最锻炼梳理系统这项技能的。
+那么我们就需要从下面这几个点来慢慢消化系统。
+系统权限 交接过来的系统，一定要开好对应的权限，这对你全面了解系统以及后续维护系统有着至关重要的的作用，若没有权限，当系统出现问题时，领导找到你问问题原因，而你却在向领导申请权限，世纪名场面。
+以下是常见的系统权限：
+Gitlab 仓库权限； Deploy 部署系统权限； Log 日志系统权限； Data 数据库管理系统权限； Alert 系统报警配置权限； Crond 任务调度器权限； Middleware 根据不同系统的中间件权限，包括不限于 Notify、RocketMQ、Redis 等； Auth 依赖系统授权信息权限； Test 测试平台的权限； API API 调试平台的权限； Sys 系统相关注册管理权限； 接手项目，开启权限是第一步也是必须要做的事情。
+配置文件 通过配置文件可以看到一个系统的基本信息，比如说：
+系统环境配置信息、注册信息、协议相关信息； 系统使用数据库配置信息； 系统使用 Redis 等中间件配置信息； 业务上使用的一些值定义； 库表设计 一般数据库表设计会存放在 dao 模块或者目录下，基本上是一表一文件定义，可以看到表定义的字段，并且可以看到对该表的一些“增删查改”动作。
+若是底层系统设计，本身系统就是只提供给外部服务使用的，那么从数据库库表设计基本上就可以反推业务逻辑的设计，删除、更新、新增都是基本的业务逻辑动作，查询或者组合成事务的业务相对来说比较复杂，不过根据业务代码看着理解的话也比较简单一些。
+缓存设计 缓存一般有两种，分别是：
+被动缓存：一般是用于高并发场景，用于缓解下游中间件或者接口的瞬时压力； 主动缓存：这种是相对高级的缓存策略，用于分布式数据一致数据的返回； 分析刚接手的系统，从 cacheKey 就可以了解业务系统中为什么这样设计的：
+1 product.info.pid.XXXX 上面这个例子可以看到记录的是一个产品 pid 为 XXXX 的缓存信息。
+协议文件 若是接手过来的系统按照语义命名及划分路由的话，则通过 API 接口文档来看是一个很好的方式，因为通过 API 基本可以确定接手过来的服务有哪些业务，针对不同的业务又有哪些操作。"><meta name=keywords content="project"><title>如何接手并维护一个项目</title>
+<link rel=canonical href=https://blog.debuginn.com/p/how-to-take-over-a-project/><link rel=stylesheet href=/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css><meta property="og:title" content="如何接手并维护一个项目"><meta property="og:description" content="在工作中，接手负责管理别人开发或者前人开发的项目是每个开发人员的工作任务之一，那么，如何快速并且高效的消化接手过来的项目呢，本文主要讲解一些方法与实践技巧，希望可以帮助你快速了解你接手的项目。
+系统文档 若是有最开始的包括后续优化的相关技术文档或者系统文档，对于接手过来的项目无疑是最有助于开发人员的方式。但是大家会发现往往接手过来的项目是没有这一类的文档的，交接过来的系统若是对开发有极高追求的，一般都会有文档，并且 README.md 中会有项目介绍包括相关文档，但是&amp;hellip;&amp;hellip; 往往我们拿到手的系统是纯代码，README.md 可能都没有这个文件，这种往往是最痛苦的，不过也是最锻炼梳理系统这项技能的。
+那么我们就需要从下面这几个点来慢慢消化系统。
+系统权限 交接过来的系统，一定要开好对应的权限，这对你全面了解系统以及后续维护系统有着至关重要的的作用，若没有权限，当系统出现问题时，领导找到你问问题原因，而你却在向领导申请权限，世纪名场面。
+以下是常见的系统权限：
+Gitlab 仓库权限； Deploy 部署系统权限； Log 日志系统权限； Data 数据库管理系统权限； Alert 系统报警配置权限； Crond 任务调度器权限； Middleware 根据不同系统的中间件权限，包括不限于 Notify、RocketMQ、Redis 等； Auth 依赖系统授权信息权限； Test 测试平台的权限； API API 调试平台的权限； Sys 系统相关注册管理权限； 接手项目，开启权限是第一步也是必须要做的事情。
+配置文件 通过配置文件可以看到一个系统的基本信息，比如说：
+系统环境配置信息、注册信息、协议相关信息； 系统使用数据库配置信息； 系统使用 Redis 等中间件配置信息； 业务上使用的一些值定义； 库表设计 一般数据库表设计会存放在 dao 模块或者目录下，基本上是一表一文件定义，可以看到表定义的字段，并且可以看到对该表的一些“增删查改”动作。
+若是底层系统设计，本身系统就是只提供给外部服务使用的，那么从数据库库表设计基本上就可以反推业务逻辑的设计，删除、更新、新增都是基本的业务逻辑动作，查询或者组合成事务的业务相对来说比较复杂，不过根据业务代码看着理解的话也比较简单一些。
+缓存设计 缓存一般有两种，分别是：
+被动缓存：一般是用于高并发场景，用于缓解下游中间件或者接口的瞬时压力； 主动缓存：这种是相对高级的缓存策略，用于分布式数据一致数据的返回； 分析刚接手的系统，从 cacheKey 就可以了解业务系统中为什么这样设计的：
+1 product.info.pid.XXXX 上面这个例子可以看到记录的是一个产品 pid 为 XXXX 的缓存信息。
+协议文件 若是接手过来的系统按照语义命名及划分路由的话，则通过 API 接口文档来看是一个很好的方式，因为通过 API 基本可以确定接手过来的服务有哪些业务，针对不同的业务又有哪些操作。"><meta property="og:url" content="https://blog.debuginn.com/p/how-to-take-over-a-project/"><meta property="og:site_name" content="Debug客栈"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="project"><meta property="article:published_time" content="2023-07-10T23:11:00+08:00"><meta property="article:modified_time" content="2023-07-10T23:11:00+08:00"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307102310436.jpg"><meta name=twitter:site content="@idebuginn"><meta name=twitter:creator content="@idebuginn"><meta name=twitter:title content="如何接手并维护一个项目"><meta name=twitter:description content="在工作中，接手负责管理别人开发或者前人开发的项目是每个开发人员的工作任务之一，那么，如何快速并且高效的消化接手过来的项目呢，本文主要讲解一些方法与实践技巧，希望可以帮助你快速了解你接手的项目。
+系统文档 若是有最开始的包括后续优化的相关技术文档或者系统文档，对于接手过来的项目无疑是最有助于开发人员的方式。但是大家会发现往往接手过来的项目是没有这一类的文档的，交接过来的系统若是对开发有极高追求的，一般都会有文档，并且 README.md 中会有项目介绍包括相关文档，但是&amp;hellip;&amp;hellip; 往往我们拿到手的系统是纯代码，README.md 可能都没有这个文件，这种往往是最痛苦的，不过也是最锻炼梳理系统这项技能的。
+那么我们就需要从下面这几个点来慢慢消化系统。
+系统权限 交接过来的系统，一定要开好对应的权限，这对你全面了解系统以及后续维护系统有着至关重要的的作用，若没有权限，当系统出现问题时，领导找到你问问题原因，而你却在向领导申请权限，世纪名场面。
+以下是常见的系统权限：
+Gitlab 仓库权限； Deploy 部署系统权限； Log 日志系统权限； Data 数据库管理系统权限； Alert 系统报警配置权限； Crond 任务调度器权限； Middleware 根据不同系统的中间件权限，包括不限于 Notify、RocketMQ、Redis 等； Auth 依赖系统授权信息权限； Test 测试平台的权限； API API 调试平台的权限； Sys 系统相关注册管理权限； 接手项目，开启权限是第一步也是必须要做的事情。
+配置文件 通过配置文件可以看到一个系统的基本信息，比如说：
+系统环境配置信息、注册信息、协议相关信息； 系统使用数据库配置信息； 系统使用 Redis 等中间件配置信息； 业务上使用的一些值定义； 库表设计 一般数据库表设计会存放在 dao 模块或者目录下，基本上是一表一文件定义，可以看到表定义的字段，并且可以看到对该表的一些“增删查改”动作。
+若是底层系统设计，本身系统就是只提供给外部服务使用的，那么从数据库库表设计基本上就可以反推业务逻辑的设计，删除、更新、新增都是基本的业务逻辑动作，查询或者组合成事务的业务相对来说比较复杂，不过根据业务代码看着理解的话也比较简单一些。
+缓存设计 缓存一般有两种，分别是：
+被动缓存：一般是用于高并发场景，用于缓解下游中间件或者接口的瞬时压力； 主动缓存：这种是相对高级的缓存策略，用于分布式数据一致数据的返回； 分析刚接手的系统，从 cacheKey 就可以了解业务系统中为什么这样设计的：
+1 product.info.pid.XXXX 上面这个例子可以看到记录的是一个产品 pid 为 XXXX 的缓存信息。
+协议文件 若是接手过来的系统按照语义命名及划分路由的话，则通过 API 接口文档来看是一个很好的方式，因为通过 API 基本可以确定接手过来的服务有哪些业务，针对不同的业务又有哪些操作。"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307102310436.jpg"><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1XEJXPQPW"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1XEJXPQPW",{anonymize_ip:!1})}</script><script>(function(e,t,n,s,o,i,a){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},i=t.createElement(s),i.async=1,i.src="https://www.clarity.ms/tag/"+o+"?ref=bwt",a=t.getElementsByTagName(s)[0],a.parentNode.insertBefore(i,a)})(window,document,"clarity","script","jsxxcoctis")</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167312285165454" crossorigin=anonymous></script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🌏</span></figure><div class=site-meta><h1 class=site-name><a href=/>Debug客栈</a></h1><h2 class=site-description>做一个爱分享的程序猿</h2></div></header><ol class=social-menu><li><a href=https://github.com/debuginn target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com/idebuginn target=_blank title=Twitter rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>主页</span></a></li><li><a href=/subscribe/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg><span>订阅</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>文章</span></a></li><li><a href=/categories/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg><span>分类</span></a></li><li><a href=/tags/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg><span>标签</span></a></li><li><a href=/links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>友链</span></a></li><div class=menu-bottom-section><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>暗色模式</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><form action=/search/ class="search-form widget"><p><label>搜索</label>
+<input name=keyword required placeholder=输入关键词...>
+<button title=搜索><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg></button></p></form><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#系统文档>系统文档</a></li><li><a href=#系统权限>系统权限</a></li><li><a href=#配置文件>配置文件</a></li><li><a href=#库表设计>库表设计</a></li><li><a href=#缓存设计>缓存设计</a></li><li><a href=#协议文件>协议文件</a><ol><li><a href=#java-dubbo-协议>Java Dubbo 协议</a></li><li><a href=#go-thrift-协议>Go Thrift 协议</a></li><li><a href=#go-http-协议>Go HTTP 协议</a></li></ol></li><li><a href=#编程语言>编程语言</a><ol><li><a href=#java-maven>Java Maven</a></li><li><a href=#go-module>Go Module</a></li></ol></li><li><a href=#流程图泳道图>流程图、泳道图</a></li><li><a href=#写在最后>写在最后</a></li></ol></nav></div></section><section class="widget tagCloud"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg></div><h2 class="widget-title section-title">标签云</h2><div class=tagCloud-tags><a href=/tags/algorithm/ class=font_size_50>algorithm
+</a><a href=/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/ class=font_size_49>蓝桥杯
+</a><a href=/tags/go/ class=font_size_17>go
+</a><a href=/tags/os/ class=font_size_13>os
+</a><a href=/tags/system/ class=font_size_12>system
+</a><a href=/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/ class=font_size_11>数据结构
+</a><a href=/tags/%E7%AC%94%E8%AE%B0/ class=font_size_11>笔记
+</a><a href=/tags/debug%E5%AE%A2%E6%A0%88/ class=font_size_9>Debug客栈
+</a><a href=/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/ class=font_size_9>软件工程
+</a><a href=/tags/mysql/ class=font_size_7>mysql
+</a><a href=/tags/js/ class=font_size_6>js
+</a><a href=/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/ class=font_size_6>年度总结
+</a><a href=/tags/ncre/ class=font_size_4>NCRE
+</a><a href=/tags/ajax/ class=font_size_3>ajax
+</a><a href=/tags/coin/ class=font_size_3>coin
+</a><a href=/tags/git/ class=font_size_3>git</a></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/how-to-take-over-a-project/><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307102310436.jpg loading=lazy alt="Featured image of post 如何接手并维护一个项目"></a></div><div class=article-details><header class=article-category><a href=/categories/debuginn/>Debuginn</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/how-to-take-over-a-project/>如何接手并维护一个项目</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Jul 10, 2023</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>阅读时长: 2 分钟</time></div></footer></div></header><section class=article-content><blockquote><p>在工作中，接手负责管理别人开发或者前人开发的项目是每个开发人员的工作任务之一，那么，如何快速并且高效的消化接手过来的项目呢，本文主要讲解一些方法与实践技巧，希望可以帮助你快速了解你接手的项目。</p></blockquote><h2 id=系统文档>系统文档</h2><p>若是有最开始的包括后续优化的相关技术文档或者系统文档，对于接手过来的项目无疑是最有助于开发人员的方式。但是大家会发现往往接手过来的项目是没有这一类的文档的，交接过来的系统若是对开发有极高追求的，一般都会有文档，并且 README.md 中会有项目介绍包括相关文档，但是&mldr;&mldr; 往往我们拿到手的系统是纯代码，README.md 可能都没有这个文件，这种往往是最痛苦的，不过也是最锻炼梳理系统这项技能的。</p><p>那么我们就需要从下面这几个点来慢慢消化系统。</p><h2 id=系统权限>系统权限</h2><p>交接过来的系统，一定要开好对应的权限，这对你全面了解系统以及后续维护系统有着至关重要的的作用，若没有权限，当系统出现问题时，领导找到你问问题原因，而你却在向领导申请权限，世纪名场面。</p><p>以下是常见的系统权限：</p><ul><li>Gitlab 仓库权限；</li><li>Deploy 部署系统权限；</li><li>Log 日志系统权限；</li><li>Data 数据库管理系统权限；</li><li>Alert 系统报警配置权限；</li><li>Crond 任务调度器权限；</li><li>Middleware 根据不同系统的中间件权限，包括不限于 Notify、RocketMQ、Redis 等；</li><li>Auth 依赖系统授权信息权限；</li><li>Test 测试平台的权限；</li><li>API API 调试平台的权限；</li><li>Sys 系统相关注册管理权限；</li></ul><p><strong>接手项目，开启权限是第一步也是必须要做的事情。</strong></p><h2 id=配置文件>配置文件</h2><p>通过配置文件可以看到一个系统的基本信息，比如说：</p><ul><li>系统环境配置信息、注册信息、协议相关信息；</li><li>系统使用数据库配置信息；</li><li>系统使用 Redis 等中间件配置信息；</li><li>业务上使用的一些值定义；</li></ul><h2 id=库表设计>库表设计</h2><p>一般数据库表设计会存放在 dao 模块或者目录下，基本上是一表一文件定义，可以看到表定义的字段，并且可以看到对该表的一些“增删查改”动作。</p><p>若是底层系统设计，本身系统就是只提供给外部服务使用的，那么从数据库库表设计基本上就可以反推业务逻辑的设计，删除、更新、新增都是基本的业务逻辑动作，查询或者组合成事务的业务相对来说比较复杂，不过根据业务代码看着理解的话也比较简单一些。</p><h2 id=缓存设计>缓存设计</h2><p>缓存一般有两种，分别是：</p><ul><li><strong>被动缓存</strong>：一般是用于高并发场景，用于缓解下游中间件或者接口的瞬时压力；</li><li><strong>主动缓存</strong>：这种是相对高级的缓存策略，用于分布式数据一致数据的返回；</li></ul><p>分析刚接手的系统，从 cacheKey 就可以了解业务系统中为什么这样设计的：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>product.info.pid.XXXX
+</span></span></code></pre></td></tr></table></div></div><p>上面这个例子可以看到记录的是一个产品 pid 为 XXXX 的缓存信息。</p><h2 id=协议文件>协议文件</h2><p>若是接手过来的系统按照语义命名及划分路由的话，则通过 API 接口文档来看是一个很好的方式，因为通过 API 基本可以确定接手过来的服务有哪些业务，针对不同的业务又有哪些操作。</p><p>针对不同的语言、不同的协议，也有一些细微的差别：</p><h3 id=java-dubbo-协议>Java Dubbo 协议</h3><p>一般 Java Dubbo 协议都是对外提供 API 模块的 pom 依赖的，声明都是使用接口来实现的：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// XXXX 业务模块</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>XXXX</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 获取列表</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Result</span><span class=o>&lt;</span><span class=n>DataA</span><span class=o>&gt;</span><span class=w> </span><span class=nf>getXXXList</span><span class=p>(</span><span class=n>Context</span><span class=w> </span><span class=n>ctx</span><span class=p>,</span><span class=w> </span><span class=n>XXRequest</span><span class=w> </span><span class=n>req</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 获取列表 基于 uid </span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Result</span><span class=o>&lt;</span><span class=n>DataA</span><span class=o>&gt;</span><span class=w> </span><span class=nf>getXXXListByUid</span><span class=p>(</span><span class=n>Context</span><span class=w> </span><span class=n>ctx</span><span class=p>,</span><span class=w> </span><span class=n>XXRequest</span><span class=w> </span><span class=n>req</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 基于 uid 删除 XX 信息</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Result</span><span class=o>&lt;</span><span class=n>Boolean</span><span class=o>&gt;</span><span class=w> </span><span class=nf>delXXInfoByUid</span><span class=p>(</span><span class=n>Context</span><span class=w> </span><span class=n>ctx</span><span class=p>,</span><span class=w> </span><span class=n>XXRequest</span><span class=w> </span><span class=n>req</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=go-thrift-协议>Go Thrift 协议</h3><p>Go Thrift 是使用 <a class=link href=https://thrift.apache.org/docs/idl target=_blank rel=noopener>IDL</a> 语言定义的协议，我们会基于 IDL 声明的接口，定义好接口出入参生成的 SDK 文件，通过看 IDL 定义的接口，就可以了解到接手的项目提供了哪些功能了：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-thrift data-lang=thrift><span class=line><span class=cl><span class=kd>struct</span><span class=w> </span><span class=nc>XXOrderResponse</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=mi>1</span><span class=p>:</span><span class=kt>i64</span><span class=w> </span><span class=n>orderId</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=mi>2</span><span class=p>:</span><span class=kt>string</span><span class=w> </span><span class=n>orderInfo</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>struct</span><span class=w> </span><span class=nc>XXOrderRequest</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=mi>1</span><span class=p>:</span><span class=kt>i64</span><span class=w> </span><span class=nf>orderId</span> <span class=o>(</span><span class=n>go.tag</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s2>&#34;json:</span><span class=se>\&#34;</span><span class=s2>order_id</span><span class=se>\&#34;</span><span class=s2>&#34;</span><span class=p>),</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>// 接口定义
+</span></span></span><span class=line><span class=cl><span class=c></span><span class=kd>service</span><span class=w> </span><span class=nc>OrderService</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>// XX 订单
+</span></span></span><span class=line><span class=cl><span class=c></span><span class=w>	</span><span class=n>XXOrderResponse</span><span class=w> </span><span class=nf>XXOrderInfo</span><span class=o>(</span><span class=mi>1</span><span class=p>:</span><span class=n>XXOrderRequest</span><span class=w> </span><span class=n>params</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=go-http-协议>Go HTTP 协议</h3><p>目前公司使用居多的 HTTP 框架是 iris 还有一个自研的 migo 框架（基于 beego 框架开发），都有一个相似的特点，就是会把 router 单独定一个文件，即 router.go :</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// Init _
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=nf>Init</span><span class=p>(</span><span class=nx>app</span> <span class=o>*</span><span class=nx>iris</span><span class=p>.</span><span class=nx>Application</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>app</span><span class=p>.</span><span class=nf>Use</span><span class=p>(</span><span class=nx>middlewares</span><span class=p>.</span><span class=nx>RecoveryMiddle</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>app</span><span class=p>.</span><span class=nf>Use</span><span class=p>(</span><span class=nx>middlewares</span><span class=p>.</span><span class=nx>PromeMiddle</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>app</span><span class=p>.</span><span class=nf>Use</span><span class=p>(</span><span class=nx>middlewares</span><span class=p>.</span><span class=nf>LoggerMiddle</span><span class=p>())</span>      <span class=c1>// 小心打日志的配置
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=nx>app</span><span class=p>.</span><span class=nf>Use</span><span class=p>(</span><span class=nx>innermiddle</span><span class=p>.</span><span class=nx>CrossOrigin</span><span class=p>)</span>         <span class=c1>// 是否使用跨域
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=nx>app</span><span class=p>.</span><span class=nf>Use</span><span class=p>(</span><span class=nx>middlewares</span><span class=p>.</span><span class=nx>RateLimitMiddleWare</span><span class=p>)</span> <span class=c1>// 配置限流
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>	<span class=nx>app</span><span class=p>.</span><span class=nf>PartyFunc</span><span class=p>(</span><span class=s>&#34;/product&#34;</span><span class=p>,</span> <span class=nx>cproduct</span><span class=p>.</span><span class=nx>Register</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=k>return</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=编程语言>编程语言</h2><p>从依赖方去挖掘系统，看系统依赖了哪些业务方，也可以看出系统依赖了哪些基础包，还可以看到依赖的包对应版本（有经验的人可以看出是否有 bug ）。</p><h3 id=java-maven>Java Maven</h3><p>目前 Java 主流的依赖方式就是使用 Maven POM 定义依赖并管理依赖：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+</span></span><span class=line><span class=cl>         <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class=line><span class=cl>         <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;parent&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;artifactId&gt;</span>product<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;groupId&gt;</span>cn.debuginn.blog<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;version&gt;</span>1.0-SNAPSHOT<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/parent&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;modelVersion&gt;</span>4.0.0<span class=nt>&lt;/modelVersion&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>product-server<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>cn.debuginn.blog<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>product-api<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>${product-api-version}<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--单元测试--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-test<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/dependencies&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=go-module>Go Module</h3><p>目前 Go 语言也是大一统到 go mod 管理版本依赖了，由于 Go 是源码依赖，使用 <code>go mod tidy</code> 之后就可以通过点击依赖仓库来看源码了：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=nx>module</span> <span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=nx>debuginn</span><span class=o>/</span><span class=k>go</span><span class=o>-</span><span class=nx>demo</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>go</span> <span class=mf>1.20</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>require</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>	<span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=nx>dubbogo</span><span class=o>/</span><span class=nx>gost</span> <span class=nx>v1</span><span class=mf>.11.25</span> <span class=c1>// indirect
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=k>go</span><span class=o>-</span><span class=nx>playground</span><span class=o>/</span><span class=nx>validator</span><span class=o>/</span><span class=nx>v10</span> <span class=nx>v10</span><span class=mf>.10.1</span>
+</span></span><span class=line><span class=cl>	<span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=k>go</span><span class=o>-</span><span class=nx>redis</span><span class=o>/</span><span class=nx>redis</span><span class=o>/</span><span class=nx>v8</span> <span class=nx>v8</span><span class=mf>.11.0</span>
+</span></span><span class=line><span class=cl>	<span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=nx>gobwas</span><span class=o>/</span><span class=nx>ws</span> <span class=nx>v1</span><span class=mf>.0.3</span> <span class=c1>// indirect
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=流程图泳道图>流程图、泳道图</h2><p>通过上述方式与方法，最后就可以根据业务代码，画出业务流程图及对应的泳道了，同时，也可以基于依赖关系，画出系统的架构图，梳理一个系统的最好方式就是有所沉淀，通过读代码把代码转化为文档的方式即可以对消化的系统有所输出，又可以提升自己的技术能力。</p><h2 id=写在最后>写在最后</h2><p>最后，<strong>一个好的系统，是由系统设计文档、代码、注释和覆盖率尽可能全面的测试用例组成的</strong>，很多情况下大家由于不可抗拒的原因，最后只留下了运行的代码，这也是撰写本文的主要原因，希望对大家有所帮助，最后大家有什么好的方式和方法也可以在评论区分享出来，让我们一起变得更强。</p></section><footer class=article-footer><section class=article-tags><a href=/tags/project/>project</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/talk-about-chat-gpt/><div class=article-image><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311111831345.jpg loading=lazy data-key data-hash=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311111831345.jpg></div><div class=article-details><h2 class=article-title>谈谈 ChatGPT</h2></div></a></article><article class=has-image><a href=/p/faas-notes/><div class=article-image><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302242145505.jpeg loading=lazy data-key data-hash=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302242145505.jpeg></div><div class=article-details><h2 class=article-title>FAAS 调研笔记</h2></div></a></article><article class=has-image><a href=/p/web-pwa-program/><div class=article-image><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303181458725.png loading=lazy data-key data-hash=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303181458725.png></div><div class=article-details><h2 class=article-title>PWA 渐进式Web应用程序</h2></div></a></article><article class=has-image><a href=/p/design-restful-api/><div class=article-image><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg loading=lazy data-key data-hash=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg></div><div class=article-details><h2 class=article-title>Restful API 设计指北</h2></div></a></article><article class=has-image><a href=/p/prometheus-gateway/><div class=article-image><img src=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262145770.jpg loading=lazy data-key data-hash=https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262145770.jpg></div><div class=article-details><h2 class=article-title>我们是如何用 Prometheus 对网关进行监控的</h2></div></a></article></div></div></aside><script src=https://giscus.app/client.js data-repo=debuginn/ghblog data-repo-id=R_kgDOKGn7uw data-category=General data-category-id=DIC_kwDOKGn7u84CYrjC data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light data-lang=en crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light":"dark")}})()</script><footer class=site-footer><section class=copyright>&copy;
+2017 -
+2023 Debug客栈</section><section class=powerby><a href=https://debuginn.com>主页</a>&nbsp;·&nbsp<a href=https://blog.debuginn.com/>博客</a>&nbsp;·&nbsp<a href=https://notes.debuginn.com>笔记</a>&nbsp;·&nbsp<a href=https://photo.debuginn.com>摄影</a>&nbsp;·&nbsp<a href=/project/>项目</a>&nbsp;·&nbsp<a href=/about/>关于</a><br>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.21.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>project on Debug客栈</title><link>https://blog.debuginn.com/tags/project/</link><description>Recent content in project on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 10 Jul 2023 23:11:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/project/index.xml" rel="self" type="application/rss+xml"/><item><title>如何接手并维护一个项目</title><link>https://blog.debuginn.com/p/how-to-take-over-a-project/</link><pubDate>Mon, 10 Jul 2023 23:11:00 +0800</pubDate><guid>https://blog.debuginn.com/p/how-to-take-over-a-project/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202307102310436.jpg" alt="Featured image of post 如何接手并维护一个项目" />&lt;blockquote>
+&lt;p>在工作中，接手负责管理别人开发或者前人开发的项目是每个开发人员的工作任务之一，那么，如何快速并且高效的消化接手过来的项目呢，本文主要讲解一些方法与实践技巧，希望可以帮助你快速了解你接手的项目。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="系统文档">系统文档&lt;/h2>
+&lt;p>若是有最开始的包括后续优化的相关技术文档或者系统文档，对于接手过来的项目无疑是最有助于开发人员的方式。但是大家会发现往往接手过来的项目是没有这一类的文档的，交接过来的系统若是对开发有极高追求的，一般都会有文档，并且 README.md 中会有项目介绍包括相关文档，但是&amp;hellip;&amp;hellip; 往往我们拿到手的系统是纯代码，README.md 可能都没有这个文件，这种往往是最痛苦的，不过也是最锻炼梳理系统这项技能的。&lt;/p>
+&lt;p>那么我们就需要从下面这几个点来慢慢消化系统。&lt;/p>
+&lt;h2 id="系统权限">系统权限&lt;/h2>
+&lt;p>交接过来的系统，一定要开好对应的权限，这对你全面了解系统以及后续维护系统有着至关重要的的作用，若没有权限，当系统出现问题时，领导找到你问问题原因，而你却在向领导申请权限，世纪名场面。&lt;/p>
+&lt;p>以下是常见的系统权限：&lt;/p>
+&lt;ul>
+&lt;li>Gitlab 仓库权限；&lt;/li>
+&lt;li>Deploy 部署系统权限；&lt;/li>
+&lt;li>Log 日志系统权限；&lt;/li>
+&lt;li>Data 数据库管理系统权限；&lt;/li>
+&lt;li>Alert 系统报警配置权限；&lt;/li>
+&lt;li>Crond 任务调度器权限；&lt;/li>
+&lt;li>Middleware 根据不同系统的中间件权限，包括不限于 Notify、RocketMQ、Redis 等；&lt;/li>
+&lt;li>Auth 依赖系统授权信息权限；&lt;/li>
+&lt;li>Test 测试平台的权限；&lt;/li>
+&lt;li>API API 调试平台的权限；&lt;/li>
+&lt;li>Sys 系统相关注册管理权限；&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>接手项目，开启权限是第一步也是必须要做的事情。&lt;/strong>&lt;/p>
+&lt;h2 id="配置文件">配置文件&lt;/h2>
+&lt;p>通过配置文件可以看到一个系统的基本信息，比如说：&lt;/p>
+&lt;ul>
+&lt;li>系统环境配置信息、注册信息、协议相关信息；&lt;/li>
+&lt;li>系统使用数据库配置信息；&lt;/li>
+&lt;li>系统使用 Redis 等中间件配置信息；&lt;/li>
+&lt;li>业务上使用的一些值定义；&lt;/li>
+&lt;/ul>
+&lt;h2 id="库表设计">库表设计&lt;/h2>
+&lt;p>一般数据库表设计会存放在 dao 模块或者目录下，基本上是一表一文件定义，可以看到表定义的字段，并且可以看到对该表的一些“增删查改”动作。&lt;/p>
+&lt;p>若是底层系统设计，本身系统就是只提供给外部服务使用的，那么从数据库库表设计基本上就可以反推业务逻辑的设计，删除、更新、新增都是基本的业务逻辑动作，查询或者组合成事务的业务相对来说比较复杂，不过根据业务代码看着理解的话也比较简单一些。&lt;/p>
+&lt;h2 id="缓存设计">缓存设计&lt;/h2>
+&lt;p>缓存一般有两种，分别是：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>被动缓存&lt;/strong>：一般是用于高并发场景，用于缓解下游中间件或者接口的瞬时压力；&lt;/li>
+&lt;li>&lt;strong>主动缓存&lt;/strong>：这种是相对高级的缓存策略，用于分布式数据一致数据的返回；&lt;/li>
+&lt;/ul>
+&lt;p>分析刚接手的系统，从 cacheKey 就可以了解业务系统中为什么这样设计的：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">product.info.pid.XXXX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>上面这个例子可以看到记录的是一个产品 pid 为 XXXX 的缓存信息。&lt;/p>
+&lt;h2 id="协议文件">协议文件&lt;/h2>
+&lt;p>若是接手过来的系统按照语义命名及划分路由的话，则通过 API 接口文档来看是一个很好的方式，因为通过 API 基本可以确定接手过来的服务有哪些业务，针对不同的业务又有哪些操作。&lt;/p>
+&lt;p>针对不同的语言、不同的协议，也有一些细微的差别：&lt;/p>
+&lt;h3 id="java-dubbo-协议">Java Dubbo 协议&lt;/h3>
+&lt;p>一般 Java Dubbo 协议都是对外提供 API 模块的 pom 依赖的，声明都是使用接口来实现的：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// XXXX 业务模块&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">interface&lt;/span> &lt;span class="nc">XXXX&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 获取列表&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">DataA&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">getXXXList&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Context&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ctx&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">XXRequest&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 获取列表 基于 uid &lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">DataA&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">getXXXListByUid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Context&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ctx&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">XXRequest&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 基于 uid 删除 XX 信息&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Boolean&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">delXXInfoByUid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Context&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ctx&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">XXRequest&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">req&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="go-thrift-协议">Go Thrift 协议&lt;/h3>
+&lt;p>Go Thrift 是使用 &lt;a class="link" href="https://thrift.apache.org/docs/idl" target="_blank" rel="noopener"
+>IDL&lt;/a> 语言定义的协议，我们会基于 IDL 声明的接口，定义好接口出入参生成的 SDK 文件，通过看 IDL 定义的接口，就可以了解到接手的项目提供了哪些功能了：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-thrift" data-lang="thrift">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">struct&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">XXOrderResponse&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="kt">i64&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">orderId&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="kt">string&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">orderInfo&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">struct&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">XXOrderRequest&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="kt">i64&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">orderId&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">go.tag&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;json:&lt;/span>&lt;span class="se">\&amp;#34;&lt;/span>&lt;span class="s2">order_id&lt;/span>&lt;span class="se">\&amp;#34;&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c">// 接口定义
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="kd">service&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nc">OrderService&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c">// XX 订单
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">XXOrderResponse&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">XXOrderInfo&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">XXOrderRequest&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">params&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="go-http-协议">Go HTTP 协议&lt;/h3>
+&lt;p>目前公司使用居多的 HTTP 框架是 iris 还有一个自研的 migo 框架（基于 beego 框架开发），都有一个相似的特点，就是会把 router 单独定一个文件，即 router.go :&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Init _
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">func&lt;/span> &lt;span class="nf">Init&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">app&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">iris&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Application&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">middlewares&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">RecoveryMiddle&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">middlewares&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">PromeMiddle&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">middlewares&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">LoggerMiddle&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="c1">// 小心打日志的配置
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">innermiddle&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">CrossOrigin&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 是否使用跨域
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">middlewares&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">RateLimitMiddleWare&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 配置限流
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">PartyFunc&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;/product&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">cproduct&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Register&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="编程语言">编程语言&lt;/h2>
+&lt;p>从依赖方去挖掘系统，看系统依赖了哪些业务方，也可以看出系统依赖了哪些基础包，还可以看到依赖的包对应版本（有经验的人可以看出是否有 bug ）。&lt;/p>
+&lt;h3 id="java-maven">Java Maven&lt;/h3>
+&lt;p>目前 Java 主流的依赖方式就是使用 Maven POM 定义依赖并管理依赖：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;project&lt;/span> &lt;span class="na">xmlns=&lt;/span>&lt;span class="s">&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="na">xmlns:xsi=&lt;/span>&lt;span class="s">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="na">xsi:schemaLocation=&lt;/span>&lt;span class="s">&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;parent&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>product&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>cn.debuginn.blog&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.0-SNAPSHOT&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/parent&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;modelVersion&amp;gt;&lt;/span>4.0.0&lt;span class="nt">&amp;lt;/modelVersion&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>product-server&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>cn.debuginn.blog&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>product-api&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>${product-api-version}&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c">&amp;lt;!--单元测试--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.boot&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>spring-boot-starter-test&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/project&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="go-module">Go Module&lt;/h3>
+&lt;p>目前 Go 语言也是大一统到 go mod 管理版本依赖了，由于 Go 是源码依赖，使用 &lt;code>go mod tidy&lt;/code> 之后就可以通过点击依赖仓库来看源码了：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">module&lt;/span> &lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">debuginn&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">demo&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">go&lt;/span> &lt;span class="mf">1.20&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">require&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">dubbogo&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">gost&lt;/span> &lt;span class="nx">v1&lt;/span>&lt;span class="mf">.11.25&lt;/span> &lt;span class="c1">// indirect
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">playground&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">validator&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">v10&lt;/span> &lt;span class="nx">v10&lt;/span>&lt;span class="mf">.10.1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="k">go&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">redis&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">redis&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">v8&lt;/span> &lt;span class="nx">v8&lt;/span>&lt;span class="mf">.11.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">gobwas&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">ws&lt;/span> &lt;span class="nx">v1&lt;/span>&lt;span class="mf">.0.3&lt;/span> &lt;span class="c1">// indirect
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="流程图泳道图">流程图、泳道图&lt;/h2>
+&lt;p>通过上述方式与方法，最后就可以根据业务代码，画出业务流程图及对应的泳道了，同时，也可以基于依赖关系，画出系统的架构图，梳理一个系统的最好方式就是有所沉淀，通过读代码把代码转化为文档的方式即可以对消化的系统有所输出，又可以提升自己的技术能力。&lt;/p>
+&lt;h2 id="写在最后">写在最后&lt;/h2>
+&lt;p>最后，&lt;strong>一个好的系统，是由系统设计文档、代码、注释和覆盖率尽可能全面的测试用例组成的&lt;/strong>，很多情况下大家由于不可抗拒的原因，最后只留下了运行的代码，这也是撰写本文的主要原因，希望对大家有所帮助，最后大家有什么好的方式和方法也可以在评论区分享出来，让我们一起变得更强。&lt;/p></description></item></channel></rss>

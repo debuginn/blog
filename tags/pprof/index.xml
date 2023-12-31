@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pprof on Debug客栈</title><link>https://blog.debuginn.com/tags/pprof/</link><description>Recent content in pprof on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 01 May 2022 18:12:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/pprof/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 pprof 对 Go 程序进行分析优化</title><link>https://blog.debuginn.com/p/go-tools-pprof/</link><pubDate>Sun, 01 May 2022 18:12:00 +0800</pubDate><guid>https://blog.debuginn.com/p/go-tools-pprof/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262119034.jpg" alt="Featured image of post 使用 pprof 对 Go 程序进行分析优化" />&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在生产环境中，偶尔会发生 Go 程序 CPU 暴增的现象，排除某时段并发大的场景外，通过监控面板看不到程序是因为什么原因导致的，Go 语言原生就提供了工具 pprof，&lt;strong>Google 对于 pprof 的解释就是一个用于可视化和分析数据的工具。&lt;/strong> 通过使用 Go pprof 可以对程序的 CPU性能、内存占用、Goroutine wait share resource、mutex lock 做剖面分析，我们可以使用该工具收集运行时的程序性能指标，从而分析出程序中是否由于代码编写不合理导致存在不合理的资源占用情况，从而对程序进行优化用来提升其性能。&lt;/p>
+&lt;h2 id="功能">功能&lt;/h2>
+&lt;p>Go pprof 提供了以下五种不同维度观测其程序的功能：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>CPU Profiling&lt;/strong>：CPU 性能分析，按照指定时间采集监听其 Go 程序 CPU 的使用情况，可以确定 Go 程序在哪个程序段中占用 CPU 耗时长；&lt;/li>
+&lt;li>&lt;strong>Memory Profiling&lt;/strong>：内存性能分析，用来分析程序的内存堆栈区使用情况，用来检测是否存在内存泄漏；&lt;/li>
+&lt;li>&lt;strong>Block Profiling&lt;/strong>：Goroutine 等待共享资源阻塞分析；&lt;/li>
+&lt;li>&lt;strong>Mutex Profiling&lt;/strong>：互斥锁分析，用来报告共享资源使用互斥锁的竞争的情况；&lt;/li>
+&lt;li>&lt;strong>Goroutine Profiling&lt;/strong>：协程性能分析，用来报告对当前运行时的 Goroutine 操作及数量。&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用">使用&lt;/h2>
+&lt;p>Go pprof 工具的使用也是比较简单快捷的，可以使用runtime/pprof包生成一个 profile 文件，网上也有很多的教程，这里不再过多描述了，详细可以看下包提供的&lt;a class="link" href="https://pkg.go.dev/runtime/pprof" target="_blank" rel="noopener"
+>函数&lt;/a>，上面介绍了使用方法。&lt;/p>
+&lt;p>目前我们主要使用的是&lt;code>net/http/pprof&lt;/code>包，启动一个独立端口号 http 程序单独用来 Go 程序的分析，&lt;strong>搭配着 graphviz 组件来可视化程序来分析数据&lt;/strong>，使用起来也是比较方便的：&lt;/p>
+&lt;p>第一步，将&lt;code>net/http/pprof&lt;/code>包引用到程序中，建议直接放在程序入口处 &lt;code>main.go&lt;/code> 文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">_&lt;/span> &lt;span class="s">&amp;#34;net/http/pprof&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>第二步，若本身是一个 http 的程序，不需要此步骤，若不是 http web 程序或者不想将对应信息暴露在外网，可以单开一个 http web 程序用来专门监听服务：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 程序逻辑代码
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">_&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">http&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ListenAndServe&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;:8848&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">nil&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>第三步，运行主程序，访问 pprof 界面：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/ # 主界面
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/allocs # 所有过去内存分配的采样
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/block # 导致同步阻塞的堆栈跟踪
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/cmdline # 当前程序的命令行的完整调用路径
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/goroutine # 所有当前 Goroutine 的堆栈跟踪
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/heap # 活动对象的内存分配的采样
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/mutex # 争用互斥锁持有者的堆栈跟踪
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/profile # CPU 配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/threadcreate # 创建新 OS 线程的堆栈跟踪
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://127.0.0.1:8848/debug/pprof/trace # 当前程序执行的跟踪
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>后缀加上 &lt;code>?debug=1&lt;/code> 可以可视化查看对应描述，不加就可以下载成 profile 文件，使用 pprof 命令可视化查看对应数据。&lt;/p>
+&lt;p>第四步，使用 &lt;code>go tool pprof -http=:6001 profile&lt;/code> 命令查看分析程序。&lt;/p>
+&lt;h2 id="分析">分析&lt;/h2>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262125077.png"
+loading="lazy"
+alt="cpu profile"
+>&lt;/p>
+&lt;p>上图是针对 CPU 使用做的采集可视化，箭头越粗、方块越大就代表着对应的操作消耗 CPU 大，可以看到占用 CPU 最多的操作就是 json 的序列化和反序列化操作。&lt;/p>
+&lt;p>同理对应的内存性能、Goroutine 阻塞的分析都可以看出对应的操作。&lt;/p>
+&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>使用 go pprof 工具可以分析解剖程序运行性能问题，可以快速定位生产环境中遇到的问题，并作出优化或者 fix bug，最后祝大家不会写出 bug code，程序稳定、头发永在。&lt;/p></description></item></channel></rss>
