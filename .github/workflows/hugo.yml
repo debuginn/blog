@@ -30,7 +30,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          external_repository: debuginn/ghblog
-          personal_token: ${{ secrets.ACTION_ACCESS_TOKEN }}
-          publish_dir: ./public
-          publish_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
