@@ -20,7 +20,7 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 当然，您不习惯上方方式订阅，您可以选择你感兴趣的自媒体订阅方式，目前仅支持 **知乎专栏**、**腾讯云+社区**、**思否专栏**，请根据您的需求订阅：
 
 [![ZhiHu](https://img.shields.io/badge/知乎专栏(152关注)-0040ff?logo=zhihu&logoColor=white&style=for-the-badge)](https://www.zhihu.com/people/debuginn/posts)
-[![SF](https://img.shields.io/badge/思否社区(514关注)-145214?logo=jaeger&logoColor=white&style=for-the-badge)](https://segmentfault.com/blog/debuginn)
+[![SF](https://img.shields.io/badge/思否社区(622关注)-145214?logo=jaeger&logoColor=white&style=for-the-badge)](https://segmentfault.com/u/debuginn/articles)
 [![Tencent](https://img.shields.io/badge/腾讯云+社区(82关注)-7f00ff?logo=icloud&logoColor=white&style=for-the-badge)](https://cloud.tencent.com/developer/column/83947)
 
 ## 视频专区
