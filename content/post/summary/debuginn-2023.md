@@ -1,7 +1,6 @@
 ---
 title: "2023 年度总结"
-date: 2023-12-31T10:00:00+08:00
-draft: true
+date: 2023-12-31T14:00:00+08:00
 keywords: "Debug客栈,2023,2024,年度总结"
 comments: true
 tags: ["Debug客栈","2023","2024","年度总结"]
@@ -62,9 +61,9 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312221929863.jpg"
 
 今年由于旅游和徒步，拍了很多的照片，和往年一样，每年我都会精选十张图片放在摄影展站点中，欢迎你的访问。
 
-![摄影展](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312241511619.png)
-
 Debug客栈摄影展：[https://photo.debuginn.com](https://photo.debuginn.com)
+
+![摄影展](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312241511619.png)
 
 ## 阅读
 
