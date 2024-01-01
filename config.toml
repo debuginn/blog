@@ -45,7 +45,7 @@ default = "Licensed under CC BY-NC-SA 4.0"
 
 [params.comments]
 enabled = true
-provider = "giscus"
+provider = "utterances"
 
 [params.comments.giscus]
 repo = "debuginn/blog"
@@ -57,6 +57,11 @@ lightTheme = "light"
 darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
+
+[params.comments.utterances]
+repo = "debuginn/blog"
+issueTerm = "pathname"
+label = "💬"
 
 [[params.widgets.homepage]]
 type = "search"
