@@ -45,13 +45,13 @@ default = "Licensed under CC BY-NC-SA 4.0"
 
 [params.comments]
 enabled = true
-provider = "utterances"
+provider = "giscus"
 
 [params.comments.giscus]
 repo = "debuginn/blog"
-repoID = "R_kgDOKGn7uw"
+repoID = "R_kgDOI_rNgg"
 category = "General"
-categoryID = "DIC_kwDOKGn7u84CYrjC"
+categoryID = "DIC_kwDOI_rNgs4CUT4j"
 mapping = "pathname"
 lightTheme = "light"
 darkTheme = "dark"
