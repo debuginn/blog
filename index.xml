@@ -940,7 +940,7 @@ alt="NotByAi"
 &lt;/div>&lt;h2 id="流程图泳道图">流程图、泳道图&lt;/h2>
 &lt;p>通过上述方式与方法，最后就可以根据业务代码，画出业务流程图及对应的泳道了，同时，也可以基于依赖关系，画出系统的架构图，梳理一个系统的最好方式就是有所沉淀，通过读代码把代码转化为文档的方式即可以对消化的系统有所输出，又可以提升自己的技术能力。&lt;/p>
 &lt;h2 id="写在最后">写在最后&lt;/h2>
-&lt;p>最后，&lt;strong>一个好的系统，是由系统设计文档、代码、注释和覆盖率尽可能全面的测试用例组成的&lt;/strong>，很多情况下大家由于不可抗拒的原因，最后只留下了运行的代码，这也是撰写本文的主要原因，希望对大家有所帮助，最后大家有什么好的方式和方法也可以在评论区分享出来，让我们一起变得更强。&lt;/p></description></item><item><title>全站静态化升级完毕</title><link>https://blog.debuginn.com/p/debuginn-hugo-blog/</link><pubDate>Sun, 14 May 2023 13:14:07 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-hugo-blog/</guid><description>&lt;p>经历了三个月的整体站点迁移，数据的修复，网站的搭建，目前全站代码已经完成 github 代码托管部署，主站点重新调整设计，以后就不需要关心网站的动态部署问题了，代码托管的部署方式更有利于版本的迭代与维护，同时博客站点使用的是 markdown 文章，不必使用后台，也避免了被暴力破解的风险，接下来持续输出，更加注重文章的质量与水平，多输入多输出。&lt;/p>
+&lt;p>最后，&lt;strong>一个好的系统，是由系统设计文档、代码、注释和覆盖率尽可能全面的测试用例组成的&lt;/strong>，很多情况下大家由于不可抗拒的原因，最后只留下了运行的代码，这也是撰写本文的主要原因，希望对大家有所帮助，最后大家有什么好的方式和方法也可以在评论区分享出来，让我们一起变得更强。&lt;/p></description></item><item><title>全站静态化升级完毕</title><link>https://blog.debuginn.com/p/debuginn-hugo-blog/</link><pubDate>Sun, 14 May 2023 13:14:07 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-hugo-blog/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202401082202363.jpg" alt="Featured image of post 全站静态化升级完毕" />&lt;p>经历了三个月的整体站点迁移，数据的修复，网站的搭建，目前全站代码已经完成 github 代码托管部署，主站点重新调整设计，以后就不需要关心网站的动态部署问题了，代码托管的部署方式更有利于版本的迭代与维护，同时博客站点使用的是 markdown 文章，不必使用后台，也避免了被暴力破解的风险，接下来持续输出，更加注重文章的质量与水平，多输入多输出。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://debuginn.com" target="_blank" rel="noopener"
 >Debug客栈-主页 https://debuginn.com&lt;/a>&lt;/li>
@@ -18566,7 +18566,7 @@ beiJing&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Debug客栈 2018-2019年度干货分享</title><link>https://blog.debuginn.com/p/debuginn-2018/</link><pubDate>Fri, 28 Dec 2018 19:29:58 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2018/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304121931935.jpg" alt="Featured image of post Debug客栈 2018-2019年度干货分享" />&lt;p>转眼之间，自己已经成了大三狗了，记得上一年，自己还是一个刚有目标，刚有理想的孩子，现在已经转身一变，变成一块老腊肉了，?，再过一年的时间，自己将走向社会，去赚取自己人生过程中的真正的第一桶金。&lt;/p>
+&lt;/div></description></item><item><title>Debug客栈 2018-2019 年度干货分享</title><link>https://blog.debuginn.com/p/debuginn-2018/</link><pubDate>Fri, 28 Dec 2018 19:29:58 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2018/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304121931935.jpg" alt="Featured image of post Debug客栈 2018-2019 年度干货分享" />&lt;p>转眼之间，自己已经成了大三狗了，记得上一年，自己还是一个刚有目标，刚有理想的孩子，现在已经转身一变，变成一块老腊肉了，?，再过一年的时间，自己将走向社会，去赚取自己人生过程中的真正的第一桶金。&lt;/p>
 &lt;p>14号参加了学院的新生学习交流会，作为一个老学长给学弟学妹们讲解自己的人生规划，自己的大学之路怎么走过，感慨万千，大学四年时光匆匆而逝，面对新一届的新生，真的是老了，哈哈，其中，和我作伴演讲的邻班同学讲了一个深刻的问题，是“何为大学”，大学–单纯的是年纪大么？我不这么认为，大学之道，在于学，在于精，在于创新，只有不断地学习，充实自己的大学时光，才是大学之道。&lt;/p>
 &lt;p>又是一年给大家分享的时光，希望今年能够给你们传播一些比较好的经验、理念、公众号、还有一系列好玩的东西……&lt;/p>
 &lt;hr>
