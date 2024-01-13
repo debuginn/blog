@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>restful api on Debug客栈</title><link>https://blog.debuginn.com/tags/restful-api/</link><description>Recent content in restful api on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 13 Mar 2022 21:35:12 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/restful-api/index.xml" rel="self" type="application/rss+xml"/><item><title>Restful API 设计指北</title><link>https://blog.debuginn.com/p/design-restful-api/</link><pubDate>Sun, 13 Mar 2022 21:35:12 +0800</pubDate><guid>https://blog.debuginn.com/p/design-restful-api/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg" alt="Featured image of post Restful API 设计指北" />&lt;p>近期学习了Go语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API 的书写及规范化是非常重要的，针对于 API 中 Restful API 中设计比较规范的是 Github API，可以直接访问他们的 &lt;a class="link" href="https://api.github.com" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>restful api on Debug客栈</title><link>https://blog.debuginn.com/tags/restful-api/</link><description>Recent content in restful api on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 13 Mar 2022 21:35:12 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/restful-api/index.xml" rel="self" type="application/rss+xml"/><item><title>Restful API 设计指北</title><link>https://blog.debuginn.com/p/design-restful-api/</link><pubDate>Sun, 13 Mar 2022 21:35:12 +0800</pubDate><guid>https://blog.debuginn.com/p/design-restful-api/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg" alt="Featured image of post Restful API 设计指北" />&lt;p>近期学习了 Go 语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API 的书写及规范化是非常重要的，针对于 API 中 Restful API 中设计比较规范的是 Github API，可以直接访问他们的 &lt;a class="link" href="https://api.github.com" target="_blank" rel="noopener"
 >https://api.github.com&lt;/a> 直接查看 Github 针对与公共接口的链接及使用方法。&lt;/p>
 &lt;p>此篇文章也是针对于这几天学习 Restful API 做了一个笔记或小结，若有不足之处还望批评指正，谢谢。&lt;/p>
 &lt;h2 id="使用-https-协议">使用 HTTPS 协议&lt;/h2>
-&lt;p>这个协议使用本身与这个 API 设计标准没有什么直接联系，使用 HTTPS 协议主要目的是将用户客户端与 API 服务器链接过程中保证其数据的安全性 ?。&lt;/p>
+&lt;p>这个协议使用本身与这个 API 设计标准没有什么直接联系，使用 HTTPS 协议主要目的是将用户客户端与 API 服务器连接过程中保证其数据的安全性。&lt;/p>
 &lt;p>注意：由于 API 接口使用 HTTPS 协议，&lt;strong>不要让非 SSL 的链接访问重定向到 SSL 的链接&lt;/strong>。&lt;/p>
 &lt;h2 id="api-地址和版本问题">API 地址和版本问题&lt;/h2>
 &lt;p>为 API 使用专门子域名比较友好，例如使用如下链接使用：&lt;/p>
@@ -168,7 +168,7 @@
 &lt;tr>
 &lt;td>404&lt;/td>
 &lt;td>Not Found&lt;/td>
-&lt;td>客户端要访问的资源不存在，链接失效或者客户端伪造 URL 的时候回遇到这个情况&lt;/td>
+&lt;td>客户端要访问的资源不存在，链接失效或者客户端伪造 URL 的时候会遇到这个情况&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>405&lt;/td>
@@ -208,7 +208,7 @@
 &lt;h2 id="验证及授权">验证及授权&lt;/h2>
 &lt;p>一般来说，让任何人随意访问公开的 API 是不好的做法。验证和授权是两件事情：&lt;/p>
 &lt;ul>
-&lt;li>验证（Authentication）是为了确定用户是其申明的身份，比如提供账户的密码。不然的话，任何人伪造成其他身份（比如其他用户或者管理员）是非常危险的&lt;/li>
+&lt;li>验证（Authentication）是为了确定用户是其声明的身份，比如提供账户的密码。不然的话，任何人伪造成其他身份（比如其他用户或者管理员）是非常危险的&lt;/li>
 &lt;li>授权（Authorization）是为了保证用户有对请求资源特定操作的权限。比如用户的私人信息只能自己能访问，其他人无法看到；有些特殊的操作只能管理员可以操作，其他用户有只读的权限等等&lt;/li>
 &lt;/ul>
 &lt;p>如果没有通过验证（提供的用户名和密码不匹配，token 不正确等），需要返回&lt;code>401 Unauthorized&lt;/code>状态码，并在 body 中说明具体的错误信息；而没有被授权访问的资源操作，需要返回&lt;code>403 Forbidden&lt;/code>状态码，还有详细的错误信息。&lt;/p>
@@ -218,7 +218,7 @@
 &lt;p>比如访问 api.github.com，就可以看到 Github API 支持的资源操作。&lt;/p>
 &lt;h2 id="易读的-api-接口文档">易读的 API 接口文档&lt;/h2>
 &lt;p>API 最终是给人使用的，不管是公司内部，还是公开的 API 都是一样。即使我们遵循了上面提到的所有规范，设计的 API 非常优雅，用户还是不知道怎么使用我们的 API。最后一步，但非常重要的一步是：为你的 API 编写优秀的文档。&lt;/p>
-&lt;p>&lt;strong>注意：对每个请求以及返回的参数给出说明，最好给出一个详细而完整地示例。&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>注意：对每个请求以及返回的参数给出说明，最好给出一个详细而完整的示例。&lt;/strong>&lt;/p>
 &lt;h2 id="参考资料">参考资料&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a class="link" href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="noopener"

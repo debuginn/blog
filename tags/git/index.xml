@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on Debug客栈</title><link>https://blog.debuginn.com/tags/git/</link><description>Recent content in git on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 25 Mar 2022 22:30:21 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git常用命令汇总</title><link>https://blog.debuginn.com/p/git-command/</link><pubDate>Fri, 25 Mar 2022 22:30:21 +0800</pubDate><guid>https://blog.debuginn.com/p/git-command/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303252231697.jpg" alt="Featured image of post Git常用命令汇总" />&lt;h2 id="常规操作">常规操作&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on Debug客栈</title><link>https://blog.debuginn.com/tags/git/</link><description>Recent content in git on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 25 Mar 2022 22:30:21 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git 常用命令汇总</title><link>https://blog.debuginn.com/p/git-command/</link><pubDate>Fri, 25 Mar 2022 22:30:21 +0800</pubDate><guid>https://blog.debuginn.com/p/git-command/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303252231697.jpg" alt="Featured image of post Git 常用命令汇总" />&lt;h2 id="常规操作">常规操作&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>git push origin test&lt;/code> 推送本地分支到远程仓库&lt;/li>
 &lt;li>&lt;code>git rm -r --cached&lt;/code> 文件/文件夹名字 取消文件被版本控制&lt;/li>
 &lt;li>&lt;code>git reflog&lt;/code> 获取执行过的命令&lt;/li>
 &lt;li>&lt;code>git log --graph&lt;/code> 查看分支合并图&lt;/li>
-&lt;li>&lt;code>git merge --no-ff -m '合并描述'&lt;/code> 分支名 不使用Fast forward方式合并，采用这种方式合并可以看到合并记录&lt;/li>
+&lt;li>&lt;code>git merge --no-ff -m '合并描述'&lt;/code> 分支名 不使用&lt;code>Fast forward&lt;/code>方式合并，采用这种方式合并可以看到合并记录&lt;/li>
 &lt;li>&lt;code>git check-ignore -v 文件名&lt;/code> 查看忽略规则&lt;/li>
 &lt;li>&lt;code>git add -f 文件名&lt;/code> 强制将文件提交&lt;/li>
 &lt;/ul>
@@ -73,7 +73,7 @@
 &lt;li>&lt;code>git remote -v&lt;/code>查看远程仓库地址&lt;/li>
 &lt;li>&lt;code>git remote show origin&lt;/code>查看远程仓库详情信息&lt;/li>
 &lt;/ul>
-&lt;h2 id="查看某个-commit-提交属于那个分支">查看某个 commit 提交属于那个分支&lt;/h2>
+&lt;h2 id="查看某个-commit-提交属于哪个分支">查看某个 commit 提交属于哪个分支&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>git branch -l --contains &amp;lt;commit_id&amp;gt;&lt;/code> 本地分支&lt;/li>
 &lt;li>&lt;code>git branch -r --contains &amp;lt;commit_id&amp;gt;&lt;/code> 远程分支&lt;/li>
