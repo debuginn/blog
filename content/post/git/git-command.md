@@ -1,10 +1,6 @@
 ---
-title: "Git常用命令汇总"
+title: "Git 常用命令汇总"
 date: 2022-03-25T22:30:21+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "git"
 comments: true
 tags: ["git"]
@@ -18,7 +14,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303252231697.jpg"
 - `git rm -r --cached` 文件/文件夹名字 取消文件被版本控制 
 - `git reflog` 获取执行过的命令 
 - `git log --graph` 查看分支合并图 
-- `git merge --no-ff -m '合并描述'` 分支名 不使用Fast forward方式合并，采用这种方式合并可以看到合并记录 
+- `git merge --no-ff -m '合并描述'` 分支名 不使用`Fast forward`方式合并，采用这种方式合并可以看到合并记录 
 - `git check-ignore -v 文件名` 查看忽略规则 
 - `git add -f 文件名` 强制将文件提交
 
@@ -91,7 +87,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303252231697.jpg"
 - `git remote -v`查看远程仓库地址
 - `git remote show origin`查看远程仓库详情信息
 
-## 查看某个 commit 提交属于那个分支
+## 查看某个 commit 提交属于哪个分支
 
 - `git branch -l --contains <commit_id>` 本地分支
 - `git branch -r --contains <commit_id>` 远程分支
