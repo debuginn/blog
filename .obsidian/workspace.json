@@ -1,0 +1,124 @@
+{
+  "main": {
+    "id": "3d9e140d556434a0",
+    "type": "split",
+    "children": [
+      {
+        "id": "77c3443e9e0c6640",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15eb8be82b5e910c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ],
+        "stacked": true
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "93e49f82ffe14169",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab1baf465963d288",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1836dfdcd74bee03",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2bfa8d732a979fd9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "da309353622b2df2",
+    "type": "split",
+    "children": [
+      {
+        "id": "cea088168f0a4880",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d712b16a0f613986",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7be6ecbec5e729a2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "a3a725833392591d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "daily-notes:打开/创建今天的日记": true,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "a3a725833392591d",
+  "lastOpenFiles": [
+    "content/page/resume.md",
+    "content/page/search.md"
+  ]
+}
