@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "77c3443e9e0c6640",
+        "id": "4c86f2fbb134f1fd",
         "type": "tabs",
         "children": [
           {
-            "id": "15eb8be82b5e910c",
+            "id": "cd62b648142f6b1f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/page/links.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ],
@@ -74,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/page/links.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,7 +94,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/page/links.md"
+              }
             }
           },
           {
@@ -116,7 +123,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a3a725833392591d",
+  "active": "cd62b648142f6b1f",
   "lastOpenFiles": [
     "content/page/resume.md",
     "content/page/search.md"
