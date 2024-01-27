@@ -38,7 +38,7 @@ links:
     website: https://blognas.hwb0307.com
     description: 百代繁华一朝都，谁非过客；千秋明月吹角寒，花是主人。
   - title: 追梦者个人博客
-    image: https://www.codelin.site/favicon.png
+    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202401250946192.ico
     website: https://codelin.site/
     description: 不畏将来，不念过往。
   - title: Nemo
@@ -54,12 +54,17 @@ links:
     website: https://last2win.com/
     description: 浮云的博客
   - title: Halo
+    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202401250945310.png
     website: https://bluemiaomiao.github.io
     description: 大道至简，顺势而为。
   - title: 王明明的小站
     image: https://mingming.wang/logo.svg
     website: https://mingming.wang
     description: 记录&分享
+  - title: gorpeln 的个人博客
+    image: https://gorpeln.top/favicon.ico
+    website: https://gorpeln.top
+    description: 趁年轻，做自己想做的！
 
 comments: true
 ---

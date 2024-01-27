@@ -1,14 +1,9 @@
 ---
 title: "HTTP常见状态码"
 date: 2019-09-26T17:22:37+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "http status code"
 comments: true
-weight: 0
-tags: ["http status code"]
+tags: ["http"]
 categories: ["agreement"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303181451617.jpeg"
 ---
