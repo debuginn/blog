@@ -67,12 +67,6 @@ label = "💬"
 type = "search"
 
 [[params.widgets.homepage]]
-type = "categories"
-
-[params.widgets.homepage.params]
-limit = 16
-
-[[params.widgets.homepage]]
 type = "tag-cloud"
 
 [params.widgets.homepage.params]
