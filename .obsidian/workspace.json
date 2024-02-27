@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "1ccd59c468b33827",
+    "type": "split",
+    "children": [
+      {
+        "id": "b474bfaae7b13e4a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46faf78854f83fd6",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fc0967c5b86647af",
+    "type": "split",
+    "children": [
+      {
+        "id": "a05ffc2cd08c703c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "06bef3560972cd82",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "73613977aa2cd663",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6cbb2a3ca3c6ffab",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "631c8c0bc38f3614",
+    "type": "split",
+    "children": [
+      {
+        "id": "70f8fb1dee05214b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0552d7effd27b02a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "146f4443a5c82cd9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9216ecfc846dfeda",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "a96db281f81808c9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "88c43f867063a408",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "202ae256a2c25396",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 352.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templates:插入模板": true,
+      "graph:查看关系图谱": false,
+      "command-palette:打开命令面板": true
+    }
+  },
+  "active": "46faf78854f83fd6",
+  "lastOpenFiles": [
+    "content/page/read.md",
+    "content/page/about.md",
+    "content/page/archives.md",
+    "content/post/summary/debuginn-2023-rss.md",
+    "content/post/go/go-metheds-on-t.md",
+    "content/post/ajax/ajax-async-js-xml.md",
+    "未命名.canvas"
+  ]
+}

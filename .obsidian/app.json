@@ -1,0 +1,9 @@
+{
+  "strictLineBreaks": true,
+  "userIgnoreFilters": [
+    "layouts/",
+    "public/",
+    "static/",
+    "themes/"
+  ]
+}
