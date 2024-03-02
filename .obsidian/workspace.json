@@ -11,8 +11,12 @@
             "id": "46faf78854f83fd6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/page/subscribe.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -62,7 +66,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -81,7 +85,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/page/subscribe.md"
+              }
             }
           },
           {
@@ -113,6 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/page/subscribe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,6 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/page/subscribe.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 352.5
+    "width": 297.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,6 +166,9 @@
   },
   "active": "46faf78854f83fd6",
   "lastOpenFiles": [
+    "content/post/go/go-dev-design.md",
+    "content/post/go/go-tools-pprof.md",
+    "content/post/go/go-standard-lib-time-rate-pkg.md",
     "content/page/read.md",
     "content/page/about.md",
     "content/page/archives.md",
