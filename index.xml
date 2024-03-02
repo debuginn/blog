@@ -1062,21 +1062,26 @@ loading="lazy"
 alt="WeChat"
 >&lt;/p>
 &lt;h2 id="专栏订阅">专栏订阅&lt;/h2>
-&lt;p>当然，您不习惯上方方式订阅，您可以选择你感兴趣的自媒体订阅方式，目前仅支持 &lt;strong>知乎专栏&lt;/strong>、&lt;strong>腾讯云+社区&lt;/strong>、&lt;strong>思否专栏&lt;/strong>，请根据您的需求订阅：&lt;/p>
+&lt;p>当然，您不习惯上方方式订阅，您可以选择你感兴趣的自媒体订阅方式，目前仅支持 &lt;strong>知乎专栏&lt;/strong>、&lt;strong>腾讯云+社区&lt;/strong>、&lt;strong>思否专栏&lt;/strong>、&lt;strong>掘金社区&lt;/strong>，请根据您的需求订阅：&lt;/p>
 &lt;p>&lt;a class="link" href="https://www.zhihu.com/people/debuginn/posts" target="_blank" rel="noopener"
 >&lt;img src="https://img.shields.io/badge/%e7%9f%a5%e4%b9%8e%e4%b8%93%e6%a0%8f%28152%e5%85%b3%e6%b3%a8%29-0040ff?logo=zhihu&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
 loading="lazy"
 alt="ZhiHu"
 >&lt;/a>
 &lt;a class="link" href="https://segmentfault.com/u/debuginn/articles" target="_blank" rel="noopener"
->&lt;img src="https://img.shields.io/badge/%e6%80%9d%e5%90%a6%e7%a4%be%e5%8c%ba%28622%e5%85%b3%e6%b3%a8%29-145214?logo=jaeger&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+>&lt;img src="https://img.shields.io/badge/%e6%80%9d%e5%90%a6%e7%a4%be%e5%8c%ba%28622%e5%85%b3%e6%b3%a8%29-145214?logo=go&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
 loading="lazy"
 alt="SF"
 >&lt;/a>
 &lt;a class="link" href="https://cloud.tencent.com/developer/column/83947" target="_blank" rel="noopener"
->&lt;img src="https://img.shields.io/badge/%e8%85%be%e8%ae%af%e4%ba%91&amp;#43;%e7%a4%be%e5%8c%ba%2882%e5%85%b3%e6%b3%a8%29-7f00ff?logo=icloud&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+>&lt;img src="https://img.shields.io/badge/%e8%85%be%e8%ae%af%e7%a4%be%e5%8c%ba%28082%e5%85%b3%e6%b3%a8%29-7f00ff?logo=icloud&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
 loading="lazy"
 alt="Tencent"
+>&lt;/a>
+&lt;a class="link" href="https://juejin.cn/user/817692380500702/posts" target="_blank" rel="noopener"
+>&lt;img src="https://img.shields.io/badge/%e6%8e%98%e9%87%91%e7%a4%be%e5%8c%ba%28%e6%8e%a8%e8%8d%90%e5%85%b3%e6%b3%a8%29-007FFF?logo=juejin&amp;amp;logoColor=white&amp;amp;style=for-the-badge"
+loading="lazy"
+alt="Juejin"
 >&lt;/a>&lt;/p>
 &lt;h2 id="视频专区">视频专区&lt;/h2>
 &lt;p>我还不时制作视频上传至哔哩哔哩和 Youtube 网站：&lt;/p>
@@ -18794,7 +18799,7 @@ beiJing&lt;/p>
 &lt;li>&lt;code>header(‘Access-Control-Allow-Methods:POST,GET’)&lt;/code>;&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Ajax 异步的JavaScript与XML技术</title><link>https://blog.debuginn.com/p/ajax-async-js-xml/</link><pubDate>Tue, 17 Jul 2018 19:09:35 +0800</pubDate><guid>https://blog.debuginn.com/p/ajax-async-js-xml/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg" alt="Featured image of post Ajax 异步的JavaScript与XML技术" />&lt;h2 id="ajax技术简介">Ajax技术简介&lt;/h2>
+&lt;/ul></description></item><item><title>Ajax 异步的JavaScript与XML技术</title><link>https://blog.debuginn.com/p/ajax-async-js-xml/</link><pubDate>Tue, 17 Jul 2018 19:09:35 +0800</pubDate><guid>https://blog.debuginn.com/p/ajax-async-js-xml/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg" alt="Featured image of post Ajax 异步的JavaScript与XML技术" />&lt;h2 id="ajax-技术简介">Ajax 技术简介&lt;/h2>
 &lt;p>AJAX即“Asynchronous JavaScript and XML”（异步的JavaScript与XML技术），指的是一套综合了多项技术的浏览器端网页开发技术。Ajax的概念由杰西·詹姆士·贾瑞特所提出。传统的Web应用允许用户端填写表单（form），当提交表单时就向网页服务器发送一个请求。服务器接收并处理传来的表单，然后送回一个新的网页，但这个做法浪费了许多带宽，因为在前后两个页面中的大部分HTML码往往是相同的。由于每次应用的沟通都需要向服务器发送请求，应用的回应时间依赖于服务器的回应时间。这导致了用户界面的回应比本机应用慢得多。与此不同，AJAX应用可以仅向服务器发送并取回必须的数据，并在客户端采用JavaScript处理来自服务器的回应。因为在服务器和浏览器之间交换的数据大量减少，服务器回应更快了。同时，很多的处理工作可以在发出请求的客户端机器上完成，因此Web服务器的负荷也减少了。&lt;/p>
 &lt;h2 id="json技术">JSON技术&lt;/h2>
 &lt;p>&lt;a class="link" href="https://blog.debuginn.com/p/js-json/" >JavaScript 对象表示法JSON&lt;/a>&lt;/p>
