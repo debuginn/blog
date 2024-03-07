@@ -1,20 +1,16 @@
 ---
-title: Phoenix 框架 小米商城产品站革新之路
-date: 2024-03-07T18:45:00+08:00
+title: "Phoenix 框架 小米商城产品站革新之路"
+date: 2024-03-07T18:55:00+08:00
 draft: false
-keywords: phoenix,java
+keywords: "http,post,get"
 comments: true
-tags:
-  - phoenix
-  - java
-  - concurrence
-categories:
-  - java
-image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402111005028.jpeg
+tags: ["phoenix","java","concurrence"]
+categories: ["java"]
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402111005028.jpeg"
 ---
 ## 前言
 
-小米商城产品站之前由于历史原因，存在着诸多问题与不便，随着技术的快速变革，技术部**中台化的建设**，越来越不适用于现在快速迭代的业务需求，接下来我将以**技术的视角**讲解我们遇到的痛点，以及解决这些痛点的思路，也就是 Phoneix 框架诞生的故事。
+小米商城产品站之前由于历史原因，存在着诸多问题与不便，随着技术的快速变革，技术部**中台化的建设**，越来越不适用于现在快速迭代的业务需求，接下来我将以**技术的视角**讲解我们遇到的痛点，以及解决这些痛点的思路，也就是 Phoenix 框架诞生的故事。
 
 为啥要进行设计一个框架，其实是业务发展导向的结果，若是我们不进行设计，那么我们会遇到如下一些问题：
 
