@@ -164,14 +164,15 @@
       "command-palette:打开命令面板": true
     }
   },
-  "active": "73613977aa2cd663",
+  "active": "3ecc1dc1ebf1ad2f",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "content/post/java/phoenix/phoenix-framework-1.md",
     "content/post/go/go-concurrence-mutex.md",
     "content/post/go/go-array-slice-map.md",
     "content/post/go/go-mysql-transaction-operation.md",
     "content/post/go/go-use-gvm-switch-version.md",
     "content/post/go/go-use-brew-switch-version.md",
-    "content/post/java/phoenix/phoenix-framework-1.md",
     "content/post/java/phoenix",
     "content/post/debuginn/prometheus-gateway.md",
     "content/post/debuginn/data-mining-seo-in-website.md",
