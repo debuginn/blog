@@ -1,5 +1,7 @@
 {
-  "accentColor": "#079ae4",
+  "accentColor": "#821ee6",
   "cssTheme": "Border",
-  "translucency": true
+  "translucency": true,
+  "textFontFamily": "MiSans",
+  "interfaceFontFamily": "MiSans"
 }

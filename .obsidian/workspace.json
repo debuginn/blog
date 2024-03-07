@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "b474bfaae7b13e4a",
+        "id": "acde844485192c04",
         "type": "tabs",
         "children": [
           {
-            "id": "46faf78854f83fd6",
+            "id": "3ecc1dc1ebf1ad2f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/post/java/phoenix/phoenix-framework-1.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -52,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "监控",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -62,7 +66,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -81,7 +85,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/post/java/phoenix/phoenix-framework-1.md"
+              }
             }
           },
           {
@@ -113,6 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/post/java/phoenix/phoenix-framework-1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,6 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/post/java/phoenix/phoenix-framework-1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,17 +155,35 @@
       }
     ],
     "direction": "horizontal",
-    "width": 352.5
+    "width": 295.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "templates:插入模板": true,
+      "templates:插入模板": false,
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": true
     }
   },
-  "active": "46faf78854f83fd6",
+  "active": "73613977aa2cd663",
   "lastOpenFiles": [
+    "content/post/go/go-concurrence-mutex.md",
+    "content/post/go/go-array-slice-map.md",
+    "content/post/go/go-mysql-transaction-operation.md",
+    "content/post/go/go-use-gvm-switch-version.md",
+    "content/post/go/go-use-brew-switch-version.md",
+    "content/post/java/phoenix/phoenix-framework-1.md",
+    "content/post/java/phoenix",
+    "content/post/debuginn/prometheus-gateway.md",
+    "content/post/debuginn/data-mining-seo-in-website.md",
+    "content/post/go/go-net-socket.md",
+    "content/post/go/go-tools-pprof.md",
+    "content/post/go/go-mysql-sqlx-pkg.md",
+    "content/post/go/go-mysql-prepare.md",
+    "content/post/go/go-mysql-curd-operation.md",
+    "content/post/go/go-concurrence-rw-mutex.md",
+    "content/post/go/go-standard-lib-time-rate-pkg.md",
+    "content/post/debuginn/how-to-take-over-a-project.md",
+    "content/page/resume.md",
     "content/page/read.md",
     "content/page/about.md",
     "content/page/archives.md",

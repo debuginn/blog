@@ -21,5 +21,7 @@
   "Components@@tab-autohide": false,
   "Components@@icon-autohide": true,
   "Editor@@line-hover-indicator": true,
-  "Components@@setting-item-title-icon-remove": false
+  "Components@@setting-item-title-icon-remove": false,
+  "anuppuccin-theme-settings@@anp-kanban-hide-card-menus": false,
+  "anuppuccin-theme-settings@@anp-canvas-dark-bg": false
 }
