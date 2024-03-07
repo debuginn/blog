@@ -2,7 +2,7 @@
 title: Phoenix 框架 小米商城产品站革新之路
 date: 2024-03-07T18:45:00+08:00
 draft: false
-keywords: PhoenixCore,java
+keywords: phoenix,java
 comments: true
 tags:
   - phoenix
