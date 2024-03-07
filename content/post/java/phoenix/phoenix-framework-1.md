@@ -69,3 +69,5 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402111005028.jpeg
 Phoenix，最初在周志明老师的网站"凤凰架构"提及，一方面是对周老师的架构设计理解与 Java 相关知识学习的致敬，另一方面，Phoenix 不死鸟，软件的生命周期也是如此，随着业务的快速发展诞生、并随着业务的的收缩而凋亡，生生不息。
 
 最后，我会以系列的方式进行讲解这个框架遇到的问题以及解决思路，感谢大家的阅读，大家要是感兴趣的话推荐大家关注公众号，让我们一起变得更强～
+
+![WeChat](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302202248422.png)
