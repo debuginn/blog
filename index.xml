@@ -52,7 +52,11 @@ loading="lazy"
 alt="Phoenix"
 >&lt;/p>
 &lt;p>Phoenix，最初在周志明老师的网站&amp;quot;凤凰架构&amp;quot;提及，一方面是对周老师的架构设计理解与 Java 相关知识学习的致敬，另一方面，Phoenix 不死鸟，软件的生命周期也是如此，随着业务的快速发展诞生、并随着业务的的收缩而凋亡，生生不息。&lt;/p>
-&lt;p>最后，我会以系列的方式进行讲解这个框架遇到的问题以及解决思路，感谢大家的阅读，大家要是感兴趣的话推荐大家关注公众号，让我们一起变得更强～&lt;/p></description></item><item><title>2023 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2023/</link><pubDate>Sun, 31 Dec 2023 13:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312221929863.jpg" alt="Featured image of post 2023 年度总结" />&lt;h2 id="工作">工作&lt;/h2>
+&lt;p>最后，我会以系列的方式进行讲解这个框架遇到的问题以及解决思路，感谢大家的阅读，大家要是感兴趣的话推荐大家关注公众号，让我们一起变得更强～&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302202248422.png"
+loading="lazy"
+alt="WeChat"
+>&lt;/p></description></item><item><title>2023 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2023/</link><pubDate>Sun, 31 Dec 2023 13:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202312221929863.jpg" alt="Featured image of post 2023 年度总结" />&lt;h2 id="工作">工作&lt;/h2>
 &lt;p>今年工作经历了比较大的调整，由于部门技术栈逐渐趋于统一从 Go 技术栈转换到 Java 技术栈，也就是说我会双语言啦，自己也开始从事 Java 相关业务的开发，其实在 22 年底就开始接触 Java 服务了，按照学习计划，其实切换起来，还是相对来说比较简单，也没有太大的阻力，但是随着深入学习，发现自己学习的知识还是太少了，只能是 Java 庞大生态的冰山一角，值得自己骄傲的是，这一年，在 leader 和团队同事的支持和帮助下，我从 0 到 1 实现了一套并发框架，命名为 PhoenixCore，目前已经应用在了小米商城产品站（也就是说，只要你访问过小米商城，这套框架就为你提供过服务 😊），年后我会逐一整理并发表一系列的围绕并发框架的系列文章，来讲解我是如何实现这个框架以及我遇到的相关问题及解决思路。&lt;/p>
 &lt;h2 id="站点">站点&lt;/h2>
 &lt;p>今年，站点最大的变化就是完成了对&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
