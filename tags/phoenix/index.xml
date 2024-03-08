@@ -36,7 +36,7 @@ alt="并发调用组"
 >&lt;/p>
 &lt;p>这样就解决了依赖的问题，我们可以依次并行执行每个并发组的任务，这样就可以得到所有接口或依赖的结果。&lt;/p>
 &lt;p>那么获取到结果之后，怎么进行业务逻辑的编排，怎么隔离下游接口，其实原理很简单，既然任务可以进行分层，那么我们业务调用、业务编排、防腐蚀层也可以进行分层设计。&lt;/p>
-&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402110938648.jpeg"
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/20240308vidGwp.jpeg"
 loading="lazy"
 alt="分层设计"
 >&lt;/p>
