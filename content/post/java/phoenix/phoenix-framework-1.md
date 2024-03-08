@@ -54,7 +54,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402111005028.jpeg
 
 那么获取到结果之后，怎么进行业务逻辑的编排，怎么隔离下游接口，其实原理很简单，既然任务可以进行分层，那么我们业务调用、业务编排、防腐蚀层也可以进行分层设计。
 
-![分层设计](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402110938648.jpeg)
+![分层设计](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/20240308vidGwp.jpeg)
 
 - **Transfer 层**的作用是业务逻辑层，用来进行业务编排，将 BO 数据提供给客户端使用；
 - **Task 任务层**是并发执行的核心设计层，在这里通过并发分组的每个子 Task 在这里进行编排后执行调用，用来进行**超时控制、耗时统计**等操作；
