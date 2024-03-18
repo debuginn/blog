@@ -2,12 +2,8 @@
 title: "Restful API 设计指北"
 date: 2022-03-13T21:35:12+08:00
 draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "api,restful api"
 comments: true
-weight: 0
 tags: ["api","restful api"]
 categories: ["debuginn"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg"
