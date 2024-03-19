@@ -8,7 +8,7 @@ categories: ["java"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402111005028.jpeg"
 ---
 
-上篇文章主要讲了设计 Phoenix 框架前的遇到的问题和设计框架的思路 [《 Phoenix 框架 从0到1设计业务并发框架 小米商城产品站革新之路》](https://blog.debuginn.com/p/phoenix-framework-1/)，本篇文章主要讲一下如何设计框架的。
+上篇文章主要讲了设计 Phoenix 框架前的遇到的问题和设计框架的思路 [《 Phoenix 框架 从0到1设计业务并发框架 小米商城产品站革新之路》](/p/phoenix-framework-1/)，本篇文章主要讲一下如何设计框架的。
 
 **不死鸟并发框架，是自动构建有向图按照深度进行构建并发组并进行并发调用结果的框架。**
 
