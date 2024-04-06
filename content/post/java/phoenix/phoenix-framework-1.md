@@ -4,7 +4,7 @@ date: 2024-03-07T19:00:00+08:00
 keywords: "phoenix,java"
 comments: true
 tags: ["phoenix","java"]
-categories: ["java"]
+categories: ["phoenix"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202402111005028.jpeg"
 ---
 ## 前言
