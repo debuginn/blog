@@ -13,10 +13,6 @@ links:
     image: https://guopengzhen.com/img/avater.jpg
     website: https://guopengzhen.com
     description: Thoughts, stories and ideas of Patten Kuo .
-  - title: zz1984
-    image: https://s2.ax1x.com/2019/08/24/m6hdyR.th.jpg
-    website: https://www.zz1984.com/
-    description:  
   - title: 刘悦的技术博客
     image: https://v3u.cn/v3u/Public/images/logo_dark.png
     website: https://v3u.cn
