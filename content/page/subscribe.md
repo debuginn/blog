@@ -31,8 +31,9 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 [![BiliBili](https://img.shields.io/badge/Bilibili-ff0066?logo=bilibili&logoColor=white&style=for-the-badge)](https://space.bilibili.com/238989334)
 [![Youtube](https://img.shields.io/badge/Youtube-ff0000?logo=youtube&logoColor=white&style=for-the-badge)](https://www.youtube.com/@debuginn)
 
-{{< bilibili BV1eX4y1479w >}}
+{{< bilibili BV1eX4y1479w autoplay="false" >}}
 
-{{< youtube 3iBjPWTF8js >}}
+
+{{< youtube 3iBjPWTF8js autoplay="false" >}}
 
 ![Gopher](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)
