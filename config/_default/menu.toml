@@ -1,0 +1,48 @@
+# Configure main menu and social menu
+[[main]]
+identifier = "home"
+name = "主页"
+url = "/"
+[main.params]
+icon = "home"
+newtab = false
+
+[[main]]
+identifier = "subscribe"
+name = "订阅"
+url = "/subscribe"
+[main.params]
+icon = "rss"
+newtab = false
+
+[[main]]
+identifier = "post"
+name = "文章"
+url = "/archives"
+[main.params]
+icon = "archives"
+newtab = false
+
+[[main]]
+identifier = "links"
+name = "友链"
+url = "/links"
+[main.params]
+icon = "user"
+newtab = false
+
+[[social]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/debuginn"
+
+[social.params]
+icon = "brand-github"
+
+[[social]]
+identifier = "twitter"
+name = "Twitter"
+url = "https://twitter.com/idebuginn"
+
+[social.params]
+icon = "brand-twitter"
