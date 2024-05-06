@@ -6,6 +6,7 @@ url = "/"
 [main.params]
 icon = "home"
 newtab = false
+weight = 1
 
 [[main]]
 identifier = "subscribe"
@@ -14,6 +15,7 @@ url = "/subscribe"
 [main.params]
 icon = "rss"
 newtab = false
+weight = 2
 
 [[main]]
 identifier = "post"
@@ -22,6 +24,7 @@ url = "/archives"
 [main.params]
 icon = "archives"
 newtab = false
+weight = 3
 
 [[main]]
 identifier = "links"
@@ -30,6 +33,7 @@ url = "/links"
 [main.params]
 icon = "user"
 newtab = false
+weight = 4
 
 [[social]]
 identifier = "github"
