@@ -33,10 +33,10 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 
 ### 北京西山鬼笑石 · 日出
 
-{{< bilibili BV1eX4y1479w autoplay="false" >}}
+{{< bilibili BV1eX4y1479w >}}
 
 ### 北京第一高山 · 东灵山
 
-{{< youtube 3iBjPWTF8js autoplay="false" >}}
+{{< youtube 3iBjPWTF8js >}}
 
 ![Gopher](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)
