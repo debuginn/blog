@@ -3,37 +3,37 @@
 identifier = "home"
 name = "主页"
 url = "/"
+weight = 1
 [main.params]
 icon = "home"
 newtab = false
-weight = 1
 
 [[main]]
 identifier = "subscribe"
 name = "订阅"
 url = "/subscribe"
+weight = 2
 [main.params]
 icon = "rss"
 newtab = false
-weight = 2
 
 [[main]]
 identifier = "post"
 name = "文章"
 url = "/archives"
+weight = 3
 [main.params]
 icon = "archives"
 newtab = false
-weight = 3
 
 [[main]]
 identifier = "links"
 name = "友链"
 url = "/links"
+weight = 4
 [main.params]
 icon = "user"
 newtab = false
-weight = 4
 
 [[social]]
 identifier = "github"
