@@ -35,6 +35,15 @@ weight = 4
 icon = "user"
 newtab = false
 
+[[main]]
+identifier = "xlog"
+name = "xLog"
+url = "https://xlog.debuginn.com"
+weight = 5
+[main.params]
+icon = "link"
+newtab = true
+
 [[social]]
 identifier = "github"
 name = "GitHub"
