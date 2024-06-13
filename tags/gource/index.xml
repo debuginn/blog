@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gource on Debug客栈</title><link>https://blog.debuginn.com/tags/gource/</link><description>Recent content in Gource on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 16 Mar 2022 19:31:40 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/gource/index.xml" rel="self" type="application/rss+xml"/><item><title>Gource 版本可视化工具 使用手册</title><link>https://blog.debuginn.com/p/linux-tools-gource/</link><pubDate>Wed, 16 Mar 2022 19:31:40 +0800</pubDate><guid>https://blog.debuginn.com/p/linux-tools-gource/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303161933689.jpg" alt="Featured image of post Gource 版本可视化工具 使用手册" />&lt;p>&lt;strong>Gource&lt;/strong> 是一款版本控制可视化的工具，使用这个工具可以将自己的 Git 提交的代码包括对 &lt;strong>Mercurial&lt;/strong>，&lt;strong>Bazaar&lt;/strong> 和 &lt;strong>SVN&lt;/strong> 的内置日志生成可视化支持。Gource 还可以解析由多个第三方工具为 CVS 存储库生成的日志。
+提交的代码按照时间轴的顺序动态显示出来，可以使你的工作过程以动画的形式显现，并且 Gource 这个工具可以显示出来不同用户对一个代码库进行同一时间内的修改操作。&lt;/p>
+&lt;p>官方网站：&lt;a class="link" href="https://gource.io/" target="_blank" rel="noopener"
+>https://gource.io/&lt;/a>&lt;/p>
+&lt;h2 id="常用命令">&lt;a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="header-anchor">&lt;/a>常用命令
+&lt;/h2>&lt;p>在这里我列举几个经常使用到的命令，PS：你需要先进入到对应项目目录中去，这个很重要，要不然会提示该目录下没有 log 记录。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">gource &lt;span class="c1"># 使用Gource查看版本历史&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -f -1280×720 &lt;span class="c1"># 设置分辨率大小&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -s 0.5 &lt;span class="c1"># 每天以0.5秒的速度播放&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -o 1.mp4 &lt;span class="c1"># 将版本动画导出到 1.mp4 文件中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -s 0.1 -o 2.mp4 &lt;span class="c1"># 每天以0.1秒的速度导出到 2.mp4 文件中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource -f -b red &lt;span class="c1"># 将背景设置为红色&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gource --title “Gource” &lt;span class="c1"># 为gource设置title&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="基本命令">&lt;a href="#%e5%9f%ba%e6%9c%ac%e5%91%bd%e4%bb%a4" class="header-anchor">&lt;/a>基本命令
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ ~ gource -help
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Gource v0.51
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Usage: gource &lt;span class="o">[&lt;/span>options&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>path&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">用法: gource &lt;span class="o">[&lt;/span>选项&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>路径&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Options:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -h, --help 帮助
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -WIDTHxHEIGHT, --viewport 设定窗口大小
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -f, --fullscreen 全屏显示
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --screen SCREEN 画面编号
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --multi-sampling 启用多重采样
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --no-vsync 禁用垂直同步
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --start-date &lt;span class="s1">&amp;#39;YYYY-MM-DD hh:mm:ss +tz&amp;#39;&lt;/span> 从日期和可选时间开始
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --stop-date &lt;span class="s1">&amp;#39;YYYY-MM-DD hh:mm:ss +tz&amp;#39;&lt;/span> 停在某个日期和可选时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -p, --start-position POSITION 从某个位置开始&lt;span class="o">(&lt;/span>0.0-1.0 or &lt;span class="s1">&amp;#39;random&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --stop-position POSITION 停在某个位置
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -t, --stop-at-time SECONDS 在指定的秒数后停止
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --stop-at-end 在日志结尾处停止
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --dont-stop 在日志结束后继续运行
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --loop 在日志末尾循环
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -a, --auto-skip-seconds SECONDS 如果没有任何反应，则自动跳至下一个条目
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 持续几秒钟&lt;span class="o">(&lt;/span>default: 3&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --disable-auto-skip 禁用自动跳过
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -s, --seconds-per-day SECONDS 每天以秒为单位的速度&lt;span class="o">(&lt;/span>default: 10&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --realtime 实时播放速度
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --no-time-travel 如果提交时间是过去的时间请使用上一次提交的时间
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -c, --time-scale SCALE 更改模拟时间范围&lt;span class="o">(&lt;/span>default: 1.0&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -e, --elasticity FLOAT 节点弹性&lt;span class="o">(&lt;/span>default: 0.0&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --key 显示文件扩展名
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --user-image-dir DIRECTORY 包含要用作头像的图像的目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --default-user-image IMAGE 默认用户图像文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --colour-images 使用单色图像
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -i, --file-idle-time SECONDS 时间文件保持空闲&lt;span class="o">(&lt;/span>default: 0&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --max-files NUMBER 最大文件数或0（无限制）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --max-file-lag SECONDS 提交的最大时间文件可能会出现
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --log-command VCS 显示VCS日志命令&lt;span class="o">(&lt;/span>git,svn,hg,bzr,cvs2cl&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --log-format VCS 指定日志格式&lt;span class="o">(&lt;/span>git,svn,hg,bzr,cvs2cl,custom&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --load-config CONF_FILE 加载配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --save-config CONF_FILE 使用当前选项保存配置文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -o, --output-ppm-stream FILE 将PPM流输出到文件 &lt;span class="o">(&lt;/span>&lt;span class="s1">&amp;#39;-&amp;#39;&lt;/span> &lt;span class="k">for&lt;/span> STDOUT&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -r, --output-framerate FPS 输出帧率&lt;span class="o">(&lt;/span>25,30,60&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PATH可以是受支持的版本控制目录，日志文件，Gource配置文件或用于读取STDIN的&lt;span class="s1">&amp;#39;-&amp;#39;&lt;/span>。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">如果省略，则gource将尝试从当前目录生成日志。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">要查看完整的命令行选项，请使用 “-H”
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

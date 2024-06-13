@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>计算机网络 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link><description>Recent content in 计算机网络 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 15 Jun 2019 10:59:47 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>网络笔记之端口及常见端口号</title><link>https://blog.debuginn.com/p/network-notes-port/</link><pubDate>Sat, 15 Jun 2019 10:59:47 +0800</pubDate><guid>https://blog.debuginn.com/p/network-notes-port/</guid><description>&lt;h2 id="端口定义">&lt;a href="#%e7%ab%af%e5%8f%a3%e5%ae%9a%e4%b9%89" class="header-anchor">&lt;/a>端口定义
+&lt;/h2>&lt;blockquote>
+&lt;p>通信端口，又称为连接端口、端口、协议端口在计算机网络中是一种经由软件创建的服务，在一个计算机操作系统中扮演通信的端点。每个通信端口都会与主机的IP地址及通信协议关联。通信端口以16比特数字来表示，这被称为通信端口编号。 位于传输层的通信协议通常需要指定端口号，例如在TCP/IP协议族之下的TCP与UDP协议。
+引用来源：维基百科&lt;/p>
+&lt;/blockquote>
+&lt;p>传输层协议，如传输控制协议（TCP）与用户数据包协议（UDP），在分组表头中，定义了来源端口号与目的端口号。&lt;/p>
+&lt;p>一个通信端口号使用16位无符号整数（unsigned integer）来表示，其范围介于0与65535之间。&lt;/p>
+&lt;p>在TCP协议中，端口号0是被保留的，不可使用。&lt;/p>
+&lt;ul>
+&lt;li>1&amp;ndash;1023 系统保留，只能由root用户使用。&lt;/li>
+&lt;li>1024&amp;mdash;4999 由客户端程序自由分配。&lt;/li>
+&lt;li>5000&amp;mdash;65535 由服务器端程序自由分配在UDP协议中，来源端口号是可以选择要不要填上，如果设为0，则代表没有来源端口号。&lt;/li>
+&lt;/ul>
+&lt;h2 id="常见端口对照表">&lt;a href="#%e5%b8%b8%e8%a7%81%e7%ab%af%e5%8f%a3%e5%af%b9%e7%85%a7%e8%a1%a8" class="header-anchor">&lt;/a>常见端口对照表
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>端口号码 / 层&lt;/th>
+&lt;th>名称&lt;/th>
+&lt;th>注释&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>tcpmux&lt;/td>
+&lt;td>TCP 端口服务多路复用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>rje&lt;/td>
+&lt;td>远程作业入口&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>echo&lt;/td>
+&lt;td>Echo 服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>discard&lt;/td>
+&lt;td>用于连接测试的空服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>systat&lt;/td>
+&lt;td>用于列举连接了的端口的系统状态&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>daytime&lt;/td>
+&lt;td>给请求主机发送日期和时间&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>qotd&lt;/td>
+&lt;td>给连接了的主机发送每日格言&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>msp&lt;/td>
+&lt;td>消息发送协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>chargen&lt;/td>
+&lt;td>字符生成服务；发送无止境的字符流&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>ftp-data&lt;/td>
+&lt;td>FTP 数据端口&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>ftp&lt;/td>
+&lt;td>文件传输协议（FTP）端口；有时被文件服务协议（FSP）使用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>22&lt;/td>
+&lt;td>ssh&lt;/td>
+&lt;td>安全 Shell（SSH）服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>23&lt;/td>
+&lt;td>telnet&lt;/td>
+&lt;td>Telnet 服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>25&lt;/td>
+&lt;td>smtp&lt;/td>
+&lt;td>简单邮件传输协议（SMTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>37&lt;/td>
+&lt;td>time&lt;/td>
+&lt;td>时间协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>39&lt;/td>
+&lt;td>rlp&lt;/td>
+&lt;td>资源定位协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>42&lt;/td>
+&lt;td>nameserver&lt;/td>
+&lt;td>互联网名称服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>43&lt;/td>
+&lt;td>nicname&lt;/td>
+&lt;td>WHOIS 目录服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>49&lt;/td>
+&lt;td>tacacs&lt;/td>
+&lt;td>用于基于 TCP/IP 验证和访问的终端访问控制器访问控制系统&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>50&lt;/td>
+&lt;td>re-mail-ck&lt;/td>
+&lt;td>远程邮件检查协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>53&lt;/td>
+&lt;td>domain&lt;/td>
+&lt;td>域名服务（如 BIND）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>63&lt;/td>
+&lt;td>whois++&lt;/td>
+&lt;td>WHOIS++，被扩展了的 WHOIS 服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>67&lt;/td>
+&lt;td>bootps&lt;/td>
+&lt;td>引导协议（BOOTP）服务；还被动态主机配置协议（DHCP）服务使用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>68&lt;/td>
+&lt;td>bootpc&lt;/td>
+&lt;td>Bootstrap（BOOTP）客户；还被动态主机配置协议（DHCP）客户使用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>69&lt;/td>
+&lt;td>tftp&lt;/td>
+&lt;td>小文件传输协议（TFTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>70&lt;/td>
+&lt;td>gopher&lt;/td>
+&lt;td>Gopher 互联网文档搜寻和检索&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>71&lt;/td>
+&lt;td>netrjs-1&lt;/td>
+&lt;td>远程作业服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>72&lt;/td>
+&lt;td>netrjs-2&lt;/td>
+&lt;td>远程作业服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>73&lt;/td>
+&lt;td>netrjs-3&lt;/td>
+&lt;td>远程作业服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>73&lt;/td>
+&lt;td>netrjs-4&lt;/td>
+&lt;td>远程作业服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>79&lt;/td>
+&lt;td>finger&lt;/td>
+&lt;td>用于用户联系信息的 Finger 服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>80&lt;/td>
+&lt;td>http&lt;/td>
+&lt;td>用于万维网（WWW）服务的超文本传输协议（HTTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>88&lt;/td>
+&lt;td>kerberos&lt;/td>
+&lt;td>Kerberos 网络验证系统&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>95&lt;/td>
+&lt;td>supdup&lt;/td>
+&lt;td>Telnet 协议扩展&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>101&lt;/td>
+&lt;td>hostname&lt;/td>
+&lt;td>SRI-NIC 机器上的主机名服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>102&lt;/td>
+&lt;td>iso-tsap&lt;/td>
+&lt;td>ISO 开发环境（ISODE）网络应用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>105&lt;/td>
+&lt;td>csnet-ns&lt;/td>
+&lt;td>邮箱名称服务器；也被 CSO 名称服务器使用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>107&lt;/td>
+&lt;td>rtelnet&lt;/td>
+&lt;td>远程 Telnet&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>109&lt;/td>
+&lt;td>pop2&lt;/td>
+&lt;td>邮局协议版本2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>110&lt;/td>
+&lt;td>pop3&lt;/td>
+&lt;td>邮局协议版本3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>111&lt;/td>
+&lt;td>sunrpc&lt;/td>
+&lt;td>用于远程命令执行的远程过程调用（RPC）协议，被网络文件系统（NFS）使用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>113&lt;/td>
+&lt;td>auth&lt;/td>
+&lt;td>验证和身份识别协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>115&lt;/td>
+&lt;td>sftp&lt;/td>
+&lt;td>安全文件传输协议（SFTP）服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>117&lt;/td>
+&lt;td>uucp-path&lt;/td>
+&lt;td>Unix 到 Unix 复制协议（UUCP）路径服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>119&lt;/td>
+&lt;td>nntp&lt;/td>
+&lt;td>用于 USENET 讨论系统的网络新闻传输协议（NNTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>123&lt;/td>
+&lt;td>ntp&lt;/td>
+&lt;td>网络时间协议（NTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>137&lt;/td>
+&lt;td>netbios-ns&lt;/td>
+&lt;td>在红帽企业 Linux 中被 Samba 使用的 NETBIOS 名称服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>138&lt;/td>
+&lt;td>netbios-dgm&lt;/td>
+&lt;td>在红帽企业 Linux 中被 Samba 使用的 NETBIOS 数据报服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>139&lt;/td>
+&lt;td>netbios-ssn&lt;/td>
+&lt;td>在红帽企业 Linux 中被 Samba 使用的NET BIOS 会话服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>143&lt;/td>
+&lt;td>imap&lt;/td>
+&lt;td>互联网消息存取协议（IMAP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>161&lt;/td>
+&lt;td>snmp&lt;/td>
+&lt;td>简单网络管理协议（SNMP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>162&lt;/td>
+&lt;td>snmptrap&lt;/td>
+&lt;td>SNMP 的陷阱&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>163&lt;/td>
+&lt;td>cmip-man&lt;/td>
+&lt;td>通用管理信息协议（CMIP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>164&lt;/td>
+&lt;td>cmip-agent&lt;/td>
+&lt;td>通用管理信息协议（CMIP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>174&lt;/td>
+&lt;td>mailq&lt;/td>
+&lt;td>MAILQ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>177&lt;/td>
+&lt;td>xdmcp&lt;/td>
+&lt;td>X 显示管理器控制协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>178&lt;/td>
+&lt;td>nextstep&lt;/td>
+&lt;td>NeXTStep 窗口服务器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>179&lt;/td>
+&lt;td>bgp&lt;/td>
+&lt;td>边界网络协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>191&lt;/td>
+&lt;td>prospero&lt;/td>
+&lt;td>Cliffod Neuman 的 Prospero 服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>194&lt;/td>
+&lt;td>irc&lt;/td>
+&lt;td>互联网中继聊天（IRC）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>199&lt;/td>
+&lt;td>smux&lt;/td>
+&lt;td>SNMP UNIX 多路复用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>201&lt;/td>
+&lt;td>at-rtmp&lt;/td>
+&lt;td>AppleTalk 选路&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>202&lt;/td>
+&lt;td>at-nbp&lt;/td>
+&lt;td>AppleTalk 名称绑定&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>204&lt;/td>
+&lt;td>at-echo&lt;/td>
+&lt;td>AppleTalk echo 服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>206&lt;/td>
+&lt;td>at-zis&lt;/td>
+&lt;td>AppleTalk 区块信息&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>209&lt;/td>
+&lt;td>qmtp&lt;/td>
+&lt;td>快速邮件传输协议（QMTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>210&lt;/td>
+&lt;td>z39.50&lt;/td>
+&lt;td>NISO Z39.50 数据库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>213&lt;/td>
+&lt;td>ipx&lt;/td>
+&lt;td>互联网络分组交换协议（IPX），被 Novell Netware 环境常用的数据报协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>220&lt;/td>
+&lt;td>imap3&lt;/td>
+&lt;td>互联网消息存取协议版本3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>245&lt;/td>
+&lt;td>link&lt;/td>
+&lt;td>LINK&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>347&lt;/td>
+&lt;td>fatserv&lt;/td>
+&lt;td>Fatmen 服务器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>363&lt;/td>
+&lt;td>rsvp_tunnel&lt;/td>
+&lt;td>RSVP 隧道&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>369&lt;/td>
+&lt;td>rpc2portmap&lt;/td>
+&lt;td>Coda 文件系统端口映射器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>370&lt;/td>
+&lt;td>codaauth2&lt;/td>
+&lt;td>Coda 文件系统验证服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>372&lt;/td>
+&lt;td>ulistproc&lt;/td>
+&lt;td>UNIX Listserv&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>389&lt;/td>
+&lt;td>ldap&lt;/td>
+&lt;td>轻型目录存取协议（LDAP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>427&lt;/td>
+&lt;td>svrloc&lt;/td>
+&lt;td>服务位置协议（SLP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>434&lt;/td>
+&lt;td>mobileip-agent&lt;/td>
+&lt;td>可移互联网协议（IP）代理&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>435&lt;/td>
+&lt;td>mobilip-mn&lt;/td>
+&lt;td>可移互联网协议（IP）管理器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>443&lt;/td>
+&lt;td>https&lt;/td>
+&lt;td>安全超文本传输协议（HTTP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>444&lt;/td>
+&lt;td>snpp&lt;/td>
+&lt;td>小型网络分页协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>445&lt;/td>
+&lt;td>microsoft-ds&lt;/td>
+&lt;td>通过 TCP/IP 的服务器消息块（SMB）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>464&lt;/td>
+&lt;td>kpasswd&lt;/td>
+&lt;td>Kerberos 口令和钥匙改换服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>468&lt;/td>
+&lt;td>photuris&lt;/td>
+&lt;td>Photuris 会话钥匙管理协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>487&lt;/td>
+&lt;td>saft&lt;/td>
+&lt;td>简单不对称文件传输（SAFT）协议&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>488&lt;/td>
+&lt;td>gss-http&lt;/td>
+&lt;td>用于 HTTP 的通用安全服务（GSS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>496&lt;/td>
+&lt;td>pim-rp-disc&lt;/td>
+&lt;td>用于协议独立的多址传播（PIM）服务的会合点发现（RP-DISC）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500&lt;/td>
+&lt;td>isakmp&lt;/td>
+&lt;td>互联网安全关联和钥匙管理协议（ISAKMP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>535&lt;/td>
+&lt;td>iiop&lt;/td>
+&lt;td>互联网内部对象请求代理协议（IIOP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>538&lt;/td>
+&lt;td>gdomap&lt;/td>
+&lt;td>GNUstep 分布式对象映射器（GDOMAP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>546&lt;/td>
+&lt;td>dhcpv6-client&lt;/td>
+&lt;td>动态主机配置协议（DHCP）版本6客户&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>547&lt;/td>
+&lt;td>dhcpv6-server&lt;/td>
+&lt;td>动态主机配置协议（DHCP）版本6服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>554&lt;/td>
+&lt;td>rtsp&lt;/td>
+&lt;td>实时流播协议（RTSP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>563&lt;/td>
+&lt;td>nntps&lt;/td>
+&lt;td>通过安全套接字层的网络新闻传输协议（NNTPS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>565&lt;/td>
+&lt;td>whoami&lt;/td>
+&lt;td>whoami&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>587&lt;/td>
+&lt;td>submission&lt;/td>
+&lt;td>邮件消息提交代理（MSA）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>610&lt;/td>
+&lt;td>npmp-local&lt;/td>
+&lt;td>网络外设管理协议（NPMP）本地 / 分布式排队系统（DQS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>611&lt;/td>
+&lt;td>npmp-gui&lt;/td>
+&lt;td>网络外设管理协议（NPMP）GUI / 分布式排队系统（DQS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>612&lt;/td>
+&lt;td>hmmp-ind&lt;/td>
+&lt;td>HMMP 指示 / DQS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>631&lt;/td>
+&lt;td>ipp&lt;/td>
+&lt;td>互联网打印协议（IPP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>636&lt;/td>
+&lt;td>ldaps&lt;/td>
+&lt;td>通过安全套接字层的轻型目录访问协议（LDAPS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>674&lt;/td>
+&lt;td>acap&lt;/td>
+&lt;td>应用程序配置存取协议（ACAP）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>694&lt;/td>
+&lt;td>ha-cluster&lt;/td>
+&lt;td>用于带有高可用性的群集的心跳服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>749&lt;/td>
+&lt;td>kerberos-adm&lt;/td>
+&lt;td>Kerberos 版本5（v5）的“kadmin”数据库管理&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>750&lt;/td>
+&lt;td>kerberos-iv&lt;/td>
+&lt;td>Kerberos 版本4（v4）服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>765&lt;/td>
+&lt;td>webster&lt;/td>
+&lt;td>网络词典&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>767&lt;/td>
+&lt;td>phonebook&lt;/td>
+&lt;td>网络电话簿&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>873&lt;/td>
+&lt;td>rsync&lt;/td>
+&lt;td>rsync 文件传输服务&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>992&lt;/td>
+&lt;td>telnets&lt;/td>
+&lt;td>通过安全套接字层的 Telnet（TelnetS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>993&lt;/td>
+&lt;td>imaps&lt;/td>
+&lt;td>通过安全套接字层的互联网消息存取协议（IMAPS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>994&lt;/td>
+&lt;td>ircs&lt;/td>
+&lt;td>通过安全套接字层的互联网中继聊天（IRCS）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>995&lt;/td>
+&lt;td>pop3s&lt;/td>
+&lt;td>通过安全套接字层的邮局协议版本3（POPS3）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>计算机网络 网络技术基础</title><link>https://blog.debuginn.com/p/natwork-notes/</link><pubDate>Sat, 02 Dec 2017 23:09:19 +0800</pubDate><guid>https://blog.debuginn.com/p/natwork-notes/</guid><description>&lt;h2 id="计算机网络技术的形成与发展">&lt;a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e6%8a%80%e6%9c%af%e7%9a%84%e5%bd%a2%e6%88%90%e4%b8%8e%e5%8f%91%e5%b1%95" class="header-anchor">&lt;/a>计算机网络技术的形成与发展
+&lt;/h2>&lt;h3 id="主要知识点记录">&lt;a href="#%e4%b8%bb%e8%a6%81%e7%9f%a5%e8%af%86%e7%82%b9%e8%ae%b0%e5%bd%95" class="header-anchor">&lt;/a>主要知识点记录
+&lt;/h3>&lt;p>“三网融合” ：计算机网络、电信网与电视网之间的融合。&lt;/p>
+&lt;h3 id="unix操作系统">&lt;a href="#unix%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f" class="header-anchor">&lt;/a>UNIX操作系统
+&lt;/h3>&lt;ul>
+&lt;li>集中式、分时、多用户的系统架构&lt;/li>
+&lt;li>制订了基于Unix的易移植操作系统环境（POSIX）标准&lt;/li>
+&lt;/ul>
+&lt;h3 id="linux操作系统">&lt;a href="#linux%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f" class="header-anchor">&lt;/a>Linux操作系统
+&lt;/h3>&lt;p>常见的发行版本：Rad Hat、Mandrake、Slackware、SUSE、TurbpLinux、Debian、Caldera、Ubuntu，国内的有蓝点、红旗等。&lt;/p>
+&lt;h2 id="计算机网络的基本概念">&lt;a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="header-anchor">&lt;/a>计算机网络的基本概念
+&lt;/h2>&lt;h3 id="计算机网络的定义">&lt;a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e7%9a%84%e5%ae%9a%e4%b9%89" class="header-anchor">&lt;/a>计算机网络的定义
+&lt;/h3>&lt;p>&lt;strong>计算机网络&lt;/strong> 用相互共享资源的方式互联起来的自治计算机系统的集合。&lt;/p>
+&lt;p>&lt;strong>特征：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>主要目的是资源的共享&lt;/li>
+&lt;li>互联的计算机是分布在不同地理位置的多台独立的“自治计算机”&lt;/li>
+&lt;li>联网计算机之间的通讯需要遵循共同的网络协议。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>常见计算机名词区分：&lt;/strong>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>术语&lt;/th>
+&lt;th>英文名称&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>计算机网络&lt;/td>
+&lt;td>computer network&lt;/td>
+&lt;td>用相互共享资源的方式互联起来的自治计算机系统的集合&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>网络互联&lt;/td>
+&lt;td>internet&lt;/td>
+&lt;td>将多个计算机网络互联成大型网络系统的技术&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>互联网&lt;/td>
+&lt;td>Internet&lt;/td>
+&lt;td>指目前广泛应用、覆盖了全世界的大型网络系统&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>内部的专用网络系统&lt;/td>
+&lt;td>Intranet&lt;/td>
+&lt;td>将分布在不同地理位置的部门局域网连接起来的企业内部专用网络。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="计算机网络的分类">&lt;a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e7%9a%84%e5%88%86%e7%b1%bb" class="header-anchor">&lt;/a>计算机网络的分类
+&lt;/h3>&lt;p>按照覆盖的地理范围划分为：广域网、城域网、局域网、个人区域网。&lt;/p>
+&lt;h4 id="广域网技术">&lt;a href="#%e5%b9%bf%e5%9f%9f%e7%bd%91%e6%8a%80%e6%9c%af" class="header-anchor">&lt;/a>广域网技术
+&lt;/h4>&lt;p>WAN又称为远程网，覆盖的地理位置从几十千米到几千千米。&lt;/p>
+&lt;h4 id="城域网技术">&lt;a href="#%e5%9f%8e%e5%9f%9f%e7%bd%91%e6%8a%80%e6%9c%af" class="header-anchor">&lt;/a>城域网技术
+&lt;/h4>&lt;p>IEEE802协会对其的定义与特征表述：&lt;/p>
+&lt;p>以光纤为传输介质，能够提供45-150Mbps的高传输速率，支持数据、语音和视频综合业务的数据传输，可以覆盖50~100km的城市范围，实现高速的数据传输。&lt;/p>
+&lt;h4 id="局域网技术">&lt;a href="#%e5%b1%80%e5%9f%9f%e7%bd%91%e6%8a%80%e6%9c%af" class="header-anchor">&lt;/a>局域网技术
+&lt;/h4>&lt;p>局域网用于将有限范围的各种计算机，终端与外部设备互联成网。&lt;/p>
+&lt;p>特征如下：&lt;/p>
+&lt;ul>
+&lt;li>局域网覆盖有限的地理范围&lt;/li>
+&lt;li>提供高传输速率（10Mbps~100Gbps）、低误码率的高质量数据传输环境&lt;/li>
+&lt;li>一般为一个单位所有，易于建立、维护与扩展&lt;/li>
+&lt;li>决定局域网的三个因素：
+&lt;ul>
+&lt;li>拓扑&lt;/li>
+&lt;li>传输介质&lt;/li>
+&lt;li>介质访问控制方法&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>从介质访问控制方法的角度，分为以下两方面：
+&lt;ul>
+&lt;li>共享介质式局域网&lt;/li>
+&lt;li>交换式局域网&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="个人局域网技术">&lt;a href="#%e4%b8%aa%e4%ba%ba%e5%b1%80%e5%9f%9f%e7%bd%91%e6%8a%80%e6%9c%af" class="header-anchor">&lt;/a>个人局域网技术
+&lt;/h4>&lt;p>自身附近范围的个人操作空间。&lt;/p>
+&lt;p>无线个人局域网络 用无线通信技术实现联网设备之间的通信。&lt;/p>
+&lt;h3 id="计算机网络的拓扑结构">&lt;a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e7%9a%84%e6%8b%93%e6%89%91%e7%bb%93%e6%9e%84" class="header-anchor">&lt;/a>计算机网络的拓扑结构
+&lt;/h3>&lt;p>网络拓朴学知识补充： 拓扑学时间实体抽象成于其大小、形状无关的“点”，将连接实体的路线抽象成“线”。 计算机网络拓扑是通过网中节点与通信线路之间的几何关系表示的网络结构。 计算机网络拓扑是指通信子网的网络拓朴。&lt;/p>
+&lt;p>基本的网络拓朴有五种：星形、环形、总线型、树形与网形。&lt;/p>
+&lt;h4 id="星形拓扑">&lt;a href="#%e6%98%9f%e5%bd%a2%e6%8b%93%e6%89%91" class="header-anchor">&lt;/a>星形拓扑
+&lt;/h4>&lt;ol>
+&lt;li>通过点-点通信线路与中心节点连接。&lt;/li>
+&lt;li>任何两个节点之间的通信都要通过中心节点。&lt;/li>
+&lt;li>结构简单，易于实现，便于管理。&lt;/li>
+&lt;li>中心节点是全网性能与可靠性的预测，中心节点瘫痪会造成全网瘫痪。&lt;/li>
+&lt;/ol>
+&lt;h4 id="环形拓扑">&lt;a href="#%e7%8e%af%e5%bd%a2%e6%8b%93%e6%89%91" class="header-anchor">&lt;/a>环形拓扑
+&lt;/h4>&lt;ol>
+&lt;li>通过点-点通信线路连接成闭合的环路。&lt;/li>
+&lt;li>数据沿一个方向传送。&lt;/li>
+&lt;li>结构简单、传输延时稳定。&lt;/li>
+&lt;li>每个节点与连接节点之间的通信线路都会成为网络可靠性的瓶颈。&lt;/li>
+&lt;li>方便接点的加入和撤出、控制节点数据传输顺序。&lt;/li>
+&lt;/ol>
+&lt;h4 id="总线型拓扑">&lt;a href="#%e6%80%bb%e7%ba%bf%e5%9e%8b%e6%8b%93%e6%89%91" class="header-anchor">&lt;/a>总线型拓扑
+&lt;/h4>&lt;ol>
+&lt;li>所有的节点连接到一条作为公共传输介质的纵向，以广播的方式发送和接受数据。&lt;/li>
+&lt;li>但一个节点利用总线发送数据时，其他节点只能接受数据。&lt;/li>
+&lt;li>两个或两个以上的节点同时发送数据时，就会出现冲突，照成传输失败。&lt;/li>
+&lt;li>结构简单，但是得解决多节点访问总线的介质访问控制问题。&lt;/li>
+&lt;/ol>
+&lt;h4 id="树形拓扑">&lt;a href="#%e6%a0%91%e5%bd%a2%e6%8b%93%e6%89%91" class="header-anchor">&lt;/a>树形拓扑
+&lt;/h4>&lt;ol>
+&lt;li>按层次进行连接，信息交换主要在上下节点之间进行，相邻及同层节点之间通常不进行数据交换，或则交换量较小。&lt;/li>
+&lt;li>树形拓扑可以看成是星形拓扑的一种扩展，树形拓扑网络适用于汇集信息。&lt;/li>
+&lt;/ol>
+&lt;h4 id="网状拓扑">&lt;a href="#%e7%bd%91%e7%8a%b6%e6%8b%93%e6%89%91" class="header-anchor">&lt;/a>网状拓扑
+&lt;/h4>&lt;ol>
+&lt;li>节点之间的连接是任意的，没有规律。&lt;/li>
+&lt;li>系统可靠性高，广域网一般都采用网状拓扑。&lt;/li>
+&lt;li>必须采用路由算法、流量控制与拥塞控制方法。&lt;/li>
+&lt;/ol>
+&lt;h3 id="描述计算机网络传输性能的参数">&lt;a href="#%e6%8f%8f%e8%bf%b0%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e4%bc%a0%e8%be%93%e6%80%a7%e8%83%bd%e7%9a%84%e5%8f%82%e6%95%b0" class="header-anchor">&lt;/a>描述计算机网络传输性能的参数
+&lt;/h3>&lt;h4 id="数据传输率">&lt;a href="#%e6%95%b0%e6%8d%ae%e4%bc%a0%e8%be%93%e7%8e%87" class="header-anchor">&lt;/a>数据传输率
+&lt;/h4>&lt;p>数据传输率是每秒钟传输构成数据的二进制比特数。&lt;/p>
+&lt;p>单位：比特/秒（bit/second）简称：bps&lt;/p>
+&lt;p>数据传输率公式：
+S=1/T（bps）
+T:发送1比特所需的时间。
+常见速率换算公式：&lt;/p>
+&lt;h4 id="奈奎斯特准则与香农定律">&lt;a href="#%e5%a5%88%e5%a5%8e%e6%96%af%e7%89%b9%e5%87%86%e5%88%99%e4%b8%8e%e9%a6%99%e5%86%9c%e5%ae%9a%e5%be%8b" class="header-anchor">&lt;/a>奈奎斯特准则与香农定律
+&lt;/h4>&lt;p>&lt;strong>奈奎斯特准则&lt;/strong>&lt;/p>
+&lt;p>定义：具有理想低通矩形特性的信道在无噪声情况下的最高速率与带宽关系的公式。&lt;/p>
+&lt;blockquote>
+&lt;p>奈奎斯特准则指出：如果间隔为π/w（w=2πf），通过理想通信信道传输窄脉冲信号，则前后码元之间不会产生相互串扰。
+对于二进制数据信号的最大数据传输速率Rmax与通信信道带宽B（B=f，单位Hz）的关系可以转化为：
+$$
+R_{\max }=2f\left( bps\right)
+$$
+此准则描述了有限带宽、五噪声信道的最大数据传输速率与信道带宽之间的关系。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>香农定律&lt;/strong>&lt;/p>
+&lt;p>定义：在有随机热噪声信道上传输数据信号时，数据传输速率Rmax与信道带宽B，信号与噪声功率比S/N关系。&lt;/p>
+&lt;p>&lt;code>R max = 13 log 2 1 + S / N&lt;/code>&lt;/p>
+&lt;p>此定律描述了有限带宽、有随机热噪声的最大传输速率与信道带宽、信号噪声功率比之间的关系。&lt;/p></description></item></channel></rss>
