@@ -61,6 +61,10 @@ links:
     image: https://gorpeln.top/favicon.ico
     website: https://gorpeln.top
     description: 趁年轻，做自己想做的！
+  - title: Chaoszhu'Blog
+    image: https://chaoszhu.com/avatar.png
+    website: https://chaoszhu.com/
+    description: 好记性不如烂笔头~
 
 comments: true
 ---
