@@ -19,10 +19,10 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 
 当然，您不习惯上方方式订阅，您可以选择你感兴趣的自媒体订阅方式，目前仅支持 **知乎专栏**、**腾讯云+社区**、**思否专栏**、**掘金社区**，请根据您的需求订阅：
 
-[![ZhiHu](https://img.shields.io/badge/知乎专栏(155关注)-0040ff?logo=zhihu&logoColor=white&style=for-the-badge)](https://www.zhihu.com/people/debuginn/posts)
+[![ZhiHu](https://img.shields.io/badge/知乎专栏(156关注)-0040ff?logo=zhihu&logoColor=white&style=for-the-badge)](https://www.zhihu.com/people/debuginn/posts)
 [![SF](https://img.shields.io/badge/思否社区(622关注)-145214?logo=go&logoColor=white&style=for-the-badge)](https://segmentfault.com/u/debuginn/articles)
 [![Tencent](https://img.shields.io/badge/腾讯社区(083关注)-7f00ff?logo=icloud&logoColor=white&style=for-the-badge)](https://cloud.tencent.com/developer/column/83947)
-[![Juejin](https://img.shields.io/badge/掘金社区(推荐关注)-007FFF?logo=juejin&logoColor=white&style=for-the-badge)](https://juejin.cn/user/817692380500702/posts)
+[![Juejin](https://img.shields.io/badge/掘金社区(007关注)-007FFF?logo=juejin&logoColor=white&style=for-the-badge)](https://juejin.cn/user/817692380500702/posts)
 
 ## 视频专区
 
@@ -30,13 +30,5 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 
 [![BiliBili](https://img.shields.io/badge/Bilibili-ff0066?logo=bilibili&logoColor=white&style=for-the-badge)](https://space.bilibili.com/238989334)
 [![Youtube](https://img.shields.io/badge/Youtube-ff0000?logo=youtube&logoColor=white&style=for-the-badge)](https://www.youtube.com/@debuginn)
-
-### 北京西山鬼笑石 · 日出
-
-{{< bilibili BV1eX4y1479w >}}
-
-### 北京第一高山 · 东灵山
-
-{{< youtube 3iBjPWTF8js >}}
 
 ![Gopher](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)
