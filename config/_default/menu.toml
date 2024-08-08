@@ -75,3 +75,11 @@ url = "https://juejin.cn/user/817692380500702/posts"
 
 [social.params]
 icon = "brand-juejin"
+
+[[social]]
+identifier = "feedly"
+name = "Feedly"
+url = "https://blog.debuginn.com/index.xml"
+
+[social.params]
+icon = "brand-feedly"
