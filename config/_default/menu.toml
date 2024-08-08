@@ -1,16 +1,7 @@
 # Configure main menu and social menu
 [[main]]
-identifier = "home"
-name = "主页"
-url = "/"
-weight = 1
-[main.params]
-icon = "home"
-newtab = false
-
-[[main]]
 identifier = "subscribe"
-name = "订阅"
+name = "订阅本站"
 url = "/subscribe"
 weight = 2
 [main.params]
@@ -19,7 +10,7 @@ newtab = false
 
 [[main]]
 identifier = "post"
-name = "文章"
+name = "文章归档"
 url = "/archives"
 weight = 3
 [main.params]
@@ -28,12 +19,21 @@ newtab = false
 
 [[main]]
 identifier = "links"
-name = "友链"
+name = "友情链接"
 url = "/links"
 weight = 4
 [main.params]
 icon = "user"
 newtab = false
+
+[[main]]
+identifier = "photo"
+name = "摄影相册"
+url = "https://photo.debuginn.com"
+weight = 5
+[main.params]
+icon = "photo"
+newtab = true
 
 [[main]]
 identifier = "xlog"
@@ -47,39 +47,48 @@ newtab = true
 [[social]]
 identifier = "github"
 name = "GitHub"
+weight = 0
 url = "https://github.com/debuginn"
-
 [social.params]
 icon = "brand-github"
 
 [[social]]
 identifier = "twitter"
 name = "Twitter"
+weight = 1
 url = "https://twitter.com/idebuginn"
 
 [social.params]
 icon = "brand-x"
 
 [[social]]
-identifier = "wechat"
-name = "Wechat"
-url = "/subscribe"
-
+identifier = "email"
+name = "Email"
+weight = 2
+url = "https://mailchi.mp/510cad3f229f/debuginn"
 [social.params]
-icon = "brand-wechat"
+icon = "mail"
 
 [[social]]
 identifier = "juejin"
 name = "Juejin"
+weight = 3
 url = "https://juejin.cn/user/817692380500702/posts"
-
 [social.params]
 icon = "brand-juejin"
 
 [[social]]
+identifier = "zhihu"
+name = "Zhihu"
+weight = 4
+url = "https://juejin.cn/user/817692380500702/posts"
+[social.params]
+icon = "brand-zhihu"
+
+[[social]]
 identifier = "feedly"
 name = "Feedly"
+weight = 5
 url = "https://blog.debuginn.com/index.xml"
-
 [social.params]
 icon = "brand-feedly"
