@@ -3,7 +3,7 @@
 identifier = "subscribe"
 name = "订阅本站"
 url = "/subscribe"
-weight = 2
+weight = 1
 [main.params]
 icon = "rss"
 newtab = false
@@ -12,6 +12,15 @@ newtab = false
 identifier = "post"
 name = "文章归档"
 url = "/archives"
+weight = 2
+[main.params]
+icon = "archives"
+newtab = false
+
+[[main]]
+identifier = "post"
+name = "我的项目"
+url = "/project"
 weight = 3
 [main.params]
 icon = "archives"
@@ -23,7 +32,7 @@ name = "友情链接"
 url = "/links"
 weight = 4
 [main.params]
-icon = "user"
+icon = "git-branch"
 newtab = false
 
 [[main]]
@@ -39,7 +48,7 @@ newtab = true
 identifier = "xlog"
 name = "xLog"
 url = "https://xlog.debuginn.com"
-weight = 5
+weight = 6
 [main.params]
 icon = "link"
 newtab = true
@@ -81,7 +90,7 @@ icon = "brand-juejin"
 identifier = "zhihu"
 name = "Zhihu"
 weight = 5
-url = "https://juejin.cn/user/817692380500702/posts"
+url = "https://www.zhihu.com/people/debuginn/posts"
 [social.params]
 icon = "brand-zhihu"
 
