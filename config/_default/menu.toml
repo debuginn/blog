@@ -18,12 +18,12 @@ icon = "archives"
 newtab = false
 
 [[main]]
-identifier = "post"
+identifier = "project"
 name = "我的项目"
 url = "/project"
 weight = 3
 [main.params]
-icon = "archives"
+icon = "git-branch"
 newtab = false
 
 [[main]]
@@ -32,7 +32,7 @@ name = "友情链接"
 url = "/links"
 weight = 4
 [main.params]
-icon = "git-branch"
+icon = "link"
 newtab = false
 
 [[main]]
@@ -50,7 +50,7 @@ name = "xLog"
 url = "https://xlog.debuginn.com"
 weight = 6
 [main.params]
-icon = "link"
+icon = "webhook"
 newtab = true
 
 [[social]]
