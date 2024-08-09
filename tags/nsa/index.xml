@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nsa on Debug客栈</title><link>https://blog.debuginn.com/tags/nsa/</link><description>Recent content in Nsa on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 17 Aug 2019 22:43:36 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/nsa/index.xml" rel="self" type="application/rss+xml"/><item><title>关于5G的SA与NSA架构</title><link>https://blog.debuginn.com/p/about-5g-sa-nsa/</link><pubDate>Sat, 17 Aug 2019 22:43:36 +0800</pubDate><guid>https://blog.debuginn.com/p/about-5g-sa-nsa/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303182246662.jpg" alt="Featured image of post 关于5G的SA与NSA架构" />今天又一次看了何同学的5G的视频，从视频上看了关于何同学讲联通试运行的是NSA架构，SA架构还在研发试运行中，我就纳闷了，作为一个计算机行业的学生，怎么不明白这个架构名词，是自己out了么，后来上网找了资料，原来这个是通讯技术的专业名词，今天算是恶补了一下。
+2018年12月份的时候，我们其实已经发布了“半个”5G标准。是的没错，那个时候是“非独立组网(NSA)”的5G标准。 现在在等待SA组网标准。
+举个栗子 为了大家能够通俗易懂的描述这5G的两个架构，给大家举个栗子：
+话说这个张老板，家里养着一头肥朵1， 肥朵1 的小日子过得也很不错！
+但是突然有一天 肥朵 的价钱大涨，张老板想再养一只 肥朵，可是由于资金不足，（理想状态是一头 肥朵 需要有一个单独的房间）张老板很是苦恼，于是张老板给想出了两套方案：
+方案一：养 肥朵2 的时候，给 肥朵2 在建一个房子； 方案二：把 肥朵1 和 肥朵2 养在一起，只需将房子变大一点就可以了。 方案一按照理想状态的话，有一个比较大的缺点就是花费比较多，这就比较难受了&amp;hellip;&amp;hellip;，但是 肥朵 比较开心~~~~
+方案二是将房子重新升级变大即可作为资金花费最少，同时能够获得最大效益，张老板选择的面比较大，可就难受了 肥朵，唉，万恶的资本家。
+想必大家就已经知道制约SA和NSA的因素了吧！就是money~~~
+而 肥朵1 我们就可以看作是 4G基站 ，而把 肥朵2 看作是 5G基站；
+按照方案一 肥朵1 的房子 可以看作是 4G核心网络； 按照方案一 肥朵2 的房子 可以看作是 5G核心网络； 按照方案二的话是将 肥朵1 和肥朵2的房子 看作是4G核心网络，而 肥朵1 也是 4G基站，肥朵2 也是5G基站，请看下图 ：
+简而言之，之所以有SA与NSA架构主要是因为运营商愿意不愿意出钱重新部署。
+5G网络架构 目前讲到的都是 5G网络架构 中的两种，其实还有以下多种选项：
+这8个选项分为独立组网和非独立组网两组。其中选项1，2，5，6是独立组网，选项3，4，7，8是非独立组网。非独立组网的选项3，4，7还有不同的子选项。
+在这些选项中，选项1早已在4G结构中实现，选项6和选项8仅是理论存在的部署场景，不具有实际部署价值，标准中不予考虑。
+独立组网SA 选项1：就是单纯的4G核心网+4G核心站，就是纯4G组网架构； 选项2：可以看得出来，就是我们上面例子的方案一，纯5G组网架构； 选项5：只是对原本4G基站做了升级，变为增强型4G基站【eLTE eNB】； 选项6：就是将原本4G基站换为5G基站，然而核心网还是4G。 非独立组网NSA 个人感觉NSA还是要比SA复杂一些，但是这样是比较省钱的一种方式，在节省资金的情况下，不影响用户5G体验，相信这也是当下某某运营商的升级过渡期的优先解决方案。</description></item></channel></rss>

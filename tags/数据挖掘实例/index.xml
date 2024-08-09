@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据挖掘实例 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/</link><description>Recent content in 数据挖掘实例 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 17 Jun 2019 16:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Python 数据挖掘实例 决策树分析</title><link>https://blog.debuginn.com/p/python-decision-tree/</link><pubDate>Mon, 17 Jun 2019 16:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/python-decision-tree/</guid><description>安装Anaconda Python集成环境 下载环境 官网： https://www.anaconda.com/ 下载： https://www.anaconda.com/distribution/
+安装环境 下载过程中使用默认，但有一个页面需要确认，如下图。
+第一个勾是是否把 Anaconda 加入环境变量，这涉及到能否直接在 cmd中使用 conda、jupyter、 ipython 等命令，推荐打勾。
+第二个是是否设置 Anaconda 所带的 Python 3.6 为系统默认的 Python 版本，可以打勾。
+安装完成后，在开始菜单中显示“Anaconda2”如下图所示。
+安装第三方程序包 Graphviz 目的是在决策树算法中八进制最终的树结构。
+1、打开 Anaconda Prompt ，输入 conda install python-graphviz，回车即可完成安装，如下图所示，本图所示已经安装 了 graphviz 包，若之前没有安装，这时会花点时间安装，安装不用干预。
+安装完成后先输入 python，然后再输入 import graphviz，测试是否成功安装，如上图所示。 需要设置环境变量，才能使用新安装的 graphviz。
+Anaconda及依赖包环境变量设置 首先查看 anaconda 安装在哪个目录下，可以打开 Spyder 的属性，看一看目标是什么目 录。例如本机的 anaconda 安装路径为 C:\Users\lenovo\Anaconda2。
+下面设置环境变量
+在用户变量“path”里添加 C:\Users\debuginn\Anaconda2\Library\bin\graphviz 在系统变量的“path”里添加 C:\Users\debuginn\Anaconda2\Library\bin\graphviz\dot.exe 如果现在有正在打开的 anaconda 程序，例如正在 Spyder，那么关闭 Spyder，再启动，这 样刚才设置的环境变量生效。 决策树分析 格式化原始数据 将下图的表 demo 输入到 Excel 中，保存为.</description></item></channel></rss>

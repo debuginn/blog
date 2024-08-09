@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mutex on Debug客栈</title><link>https://blog.debuginn.com/tags/mutex/</link><description>Recent content in Mutex on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Nov 2020 20:34:12 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/mutex/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 并发编程之 Mutex</title><link>https://blog.debuginn.com/p/go-concurrence-mutex/</link><pubDate>Sun, 15 Nov 2020 20:34:12 +0800</pubDate><guid>https://blog.debuginn.com/p/go-concurrence-mutex/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302282003561.jpg" alt="Featured image of post Go 并发编程之 Mutex" />我们比较常见的大型项目的设计中都会出现并发访问问题，并发就是为了解决数据的准确性，保证同一个临界区的数据只能被一个线程进行操作，日常中使用到的并发场景也是很多的：
+计数器：计数器结果不准确； 秒杀系统：由于同一时间访问量比较大，导致的超卖； 用户账户异常：同一时间支付导致的账户透支； buffer 数据异常：更新 buffer 导致的数据混乱。 上面都是并发带来的数据准确性的问题，决绝方案就是使用互斥锁，也就是今天并发编程中的所要描述的 Mutex 并发原语。
+实现机制 互斥锁 Mutex 就是为了避免并发竞争建立的并发控制机制，其中有个“临界区”的概念。
+在并发编程过程中，如果程序中一部分资源或者变量会被并发访问或者修改，为了避免并发访问导致数据的不准确，这部分程序需要率先被保护起来，之后操作，操作结束后去除保护，这部分被保护的程序就叫做临界区。
+使用互斥锁，限定临界区只能同时由一个线程持有，若是临界区此时被一个线程持有，那么其他线程想进入到这个临界区的时候，就会失败或者等待释放锁，持有此临界区的线程退出，其他线程才有机会获得这个临界区。
+Mutex 是 Go 语言中使用最广泛的同步原语，也称为并发原语，解决的是并发读写共享资源，避免出现数据竞争 data race 问题。
+基本使用 互斥锁 Mutex 提供了两个方法 Lock 和 Unlock：进入到临界区使用 Lock 方法加锁，退出临界区使用 Unlock 方法释放锁。
+1 2 3 4 5 6 7 type Locker interface { Lock() Unlock() } func(m *Mutex)Lock() func(m *Mutex)Unlock() 当一个 goroutine 调用 Lock 方法获取到锁后，其他 goroutine 会阻塞在 Lock 的调用上，直到当前获取到锁的 goroutine 释放锁。
+接下来是一个计数器的例子，是由 100 个 goroutine 对计数器进行累加操作，最后输出结果：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;sync&amp;#34; ) func main() { var mu sync.</description></item></channel></rss>

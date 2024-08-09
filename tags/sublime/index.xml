@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sublime on Debug客栈</title><link>https://blog.debuginn.com/tags/sublime/</link><description>Recent content in Sublime on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 12 Nov 2017 20:41:15 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/sublime/index.xml" rel="self" type="application/rss+xml"/><item><title>Sublime Text 崇高的文本编辑器</title><link>https://blog.debuginn.com/p/sublime-text/</link><pubDate>Sun, 12 Nov 2017 20:41:15 +0800</pubDate><guid>https://blog.debuginn.com/p/sublime-text/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302202044967.jpg" alt="Featured image of post Sublime Text 崇高的文本编辑器" />安装 Sublime text3 软件 官方网址：https://www.sublimetext.com/3
+选择Windows - also available as a portable version一项，点击下载安装。
+安装 packagecontrol 插件 官方网址：https://packagecontrol.io/
+选择 Installation 项
+选择 SUBLIME TEXT3 代码进行复制
+打开 sublime text3 软件，选择 View-&amp;gt;Show Console 选项（或者按 Ctrl+~组合键），调出命令行，将代码粘贴至命令行，回车，进行安装 packagecontrol 插件；
+安装好之后在菜单栏Preferences栏目中会有packagecontrol选项，即安装成功。
+安装汉化插件 ChineseLocalization 安装 sublime 汉化插件 ChineseLocalization
+在弹出的框中，由于网速原因，请耐心等待…… 输入插件名称ChineseLocalization，回车[enter]进行安装
+各类插件安装推荐 其他插件均和 ChineseLocalization 插件安装过程一样，在此不再重复操作，只推荐几款插件。
+必备的插件安装 (初学者推荐安装) Emmet Emmet 的前身是大名鼎鼎的 Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿 CSS 选择器的语法来生成代码，大大提高了 HTML/CSS 代码编写的速度。
+PySide PySide 是跨平台的应用程序框架 Qt 的 Python 绑定版本。
+AutoFileName 一款在 Sublime Text 中可以自动补全文件路径及名称的插件。</description></item></channel></rss>

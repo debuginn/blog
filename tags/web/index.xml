@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Debug客栈</title><link>https://blog.debuginn.com/tags/web/</link><description>Recent content in Web on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 18 Mar 2022 14:56:17 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>PWA 渐进式Web应用程序</title><link>https://blog.debuginn.com/p/web-pwa-program/</link><pubDate>Fri, 18 Mar 2022 14:56:17 +0800</pubDate><guid>https://blog.debuginn.com/p/web-pwa-program/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303181458725.png" alt="Featured image of post PWA 渐进式Web应用程序" />简介 PWA是Progressive Web App的简称，是谷歌提出的新型Web技术，并由W3C及谷歌来推广这项技术，其主要目的是为了提升用户对网站原生使用体验，同时又能节省对网站的开启速度。
+在我们国内，类似于PWA的技术可以简单地理解为微信主导的小程序，不过小程序的使用需要进行微信小程序前端重构开发，而渐进式Web应用程序开发只需要运用现代Web API以及传统渐进式式策略来构建网站的方式。
+特点 由于这项技术是谷歌提出的，目前谷歌系的浏览器都支持PWA， 官方说有三个特点，分别是：
+可靠 - 即使在不稳定的网络环境下，也能瞬间加载并展现 体验 - 快速响应，并且有平滑的动画响应用户的操作 粘性 - 像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面 而我感觉使用这个技术最大的特点就是将网站缓存下来，开启网站只需要0.3秒之内，使得网站加载速度异常地快，同时对用户非常友好，增添其用户交互性。
+应用 近期对网站进行了PWA升级，只是用一个简单的插件就实现了对网站的APP转化，在开启我的网站的同时，在搜索栏会有加号提醒添加至桌面，如下图：
+若是对我的网站感兴趣，可以点击按钮安装PWA，不用安装APP即可获取本站服务，若是手机用户可以在出现的将此页面发送至桌面来进行订阅。
+功能 离线和缓存 Service Worker 这项技术主要是解决JS单线程问题，为了减少对浏览器网页开启峰值，页面加载问题。
+浏览器中的 javaScript 都是运行在一个单一主线程上的，在同一时间内只能做一件事情。随着 Web 业务不断复杂，我们逐渐在 js 中加了很多耗资源、耗时间的复杂运算过程，这些过程导致的性能问题在 WebApp 的复杂化过程中更加凸显出来。 什么是 Service Worker
+Service Worker 有以下功能和特性：
+一个独立的 worker 线程，独立于当前网页进程，有自己独立的 worker context。 一旦被 install，就永远存在，除非被手动 unregister 用到的时候可以直接唤醒，不用的时候自动睡眠 可编程拦截代理请求和返回，缓存文件，缓存的文件可以被网页进程取到（包括网络离线状态） 离线内容开发者可控 能向客户端推送消息 不能直接操作 DOM 必须在 HTTPS 环境下才能工作 异步实现，内部大都是通过 Promise 实现 Web存储 选择正确的存储机制对于本地设备存储和基于云的服务器存储都非常重要。 良好的存储引擎可确保以可靠的方式保存信息，并减少带宽和提升响应能力。正确的存储缓存策略是实现离线移动网页体验的核心构建基块。
+存储分类分为：数据模型、持久化、浏览器支持、事务处理、同步/异步。
+强黏贴用户 将站点添加至屏幕 为了吸引并留住用户，不仅仅自己网站需要比较高质量的文章，良好的交互，还需要一些营销手段增强网站的曝光度，提升与用户的交互。
+如果用户对你的网站比较感兴趣，最好的方式将站点添加到主屏幕，不但可以省去用户开启浏览器的操作，提高其转化率，这样就可以对用户强黏贴了。</description></item></channel></rss>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习笔记 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><description>Recent content in 学习笔记 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Nov 2017 14:34:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>操作系统 运行机制</title><link>https://blog.debuginn.com/p/os-runtime/</link><pubDate>Mon, 20 Nov 2017 14:34:00 +0800</pubDate><guid>https://blog.debuginn.com/p/os-runtime/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302221949419.jpg" alt="Featured image of post 操作系统 运行机制" />中央处理器CPU 单机系统： 一个计算机系统只有一个处理器。
+多处理器系统： 一个计算机系统有多个处理器。
+CPU的构成与基本工作方式 处理器一般由运算器、控制器、寄存器以及高速缓存构成。
+运算器 实现任何指令中的算术和逻辑运算，是计算机的核心; 控制器 负责控制程序运行的流程，包括取指令、维护CPU状态、CPU与内存的交互等; 寄存器 是指令在CPU内部做处理的过程中能够张村数据、地址以及指令信息的存储设备; 高速缓存 处于CPU和物理内存之间，一般由控制器中的内存管理单元MMU管理; 处理器中的寄存器 用户可见存储器：对于高级语言来说，编译器通过一定的算法分配并使用这些寄存器，以最大限度地减少程序运行过程中的访问存储器的次数，这对程序运行速度的影响很大。 控制和状态存储器：用于控制处理器的操作。
+数据寄存器：又称为通用寄存器，主要用于各种算术逻辑指令和访存指令，对具有浮点能力和多媒体能力处理能力的处理器来说，浮点处理过程的数据寄存器和整数处理时的数据寄存器一般是分离的。 地址寄存器：用于存储数据及指令的物理地址、线性地址、有效地址。 条形码寄存器：保存CPU操作结果的各种标记位。 作用：控制处理器的操作。
+控制和状态寄存器包括了程序计数器、指令寄存器和程序状态字。
+程序计数器（PC）：记录了将要取出的指令的地址。 指令寄存器（IR）：包含了最近取出的指令。 程序状态字（PSW）：记录了处理器的运行模式信息。 指令执行的基本过程 处理指令的最简单的方式包括两种步骤：处理器先从存储器中每次读取一条指令，然后执行这条指令。
+这些指令大致分为以下五类：
+访问存储器指令：负责处理器和存储器之间的数据传送。 I/O指令：负责处理器与I/O模块之间的数据传输及命令发送。 算术逻辑指令：又称为数据处理指令，用以执行有关数据的算术与逻辑操作。 控制转移指令：可以指令一个新的指令的执行起点。 处理器控制指令：用于修改处理器状态，改变处理器工作方式。 例： 假设程序计数器PC正指向2000h地址处的指令，指令机器描述如下：
+地址 指令 2000h MOVE [3340h], R1 2004h ADD R1, 1 2008h MOVE R1, [3340h] …… …… …… …… 指令MOVE被送入指令寄存器IR中，同时将自增一个指令的长度，（4个字节），取指之后PC为2004h。 这是一条访问内存的指令，树3340h所指定的双字地址单元中的数据取到通用寄存器R1中来。 CPU又从PC（地址为2004h）处取出指令ADD到IR中，PC变为2008h。 CPU根据指令将R1寄存器和立即数1相加。 访存指令MOVE被取到IR中，PC变为2004h。 特权指令与非特权指令 单用户单任务下使用计算机指令系统中的全部命令。 多用户多任务中，分为：特权模式和非特权模式。
+特权指令 ：是指指令系统中那些只能用操作系统使用的指令，这些特权指令是不允许一般的用户所使用的。
+用户只能使用非特权指令，因为只有操作系统才能使用所有的指令。
+处理器的状态 管态与目态 管态 ：指操作系统管理程序运行的状态，具有较高的特权级别，又称特权态、系统态。
+目态： 指用户程序运行时的状态，具有较低的特权级别，又称普通态、用户态。</description></item></channel></rss>

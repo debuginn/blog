@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Restful Api on Debug客栈</title><link>https://blog.debuginn.com/tags/restful-api/</link><description>Recent content in Restful Api on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 13 Mar 2022 21:35:12 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/restful-api/index.xml" rel="self" type="application/rss+xml"/><item><title>Restful API 设计指北</title><link>https://blog.debuginn.com/p/design-restful-api/</link><pubDate>Sun, 13 Mar 2022 21:35:12 +0800</pubDate><guid>https://blog.debuginn.com/p/design-restful-api/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303132137265.jpg" alt="Featured image of post Restful API 设计指北" />近期学习了 Go 语言，跟着七米在学习，学习过程中了解到了 API 的一个设计规范，也就是本文要讲的 Restful API 设计模式，现在互联网处在前后端分离的阶段，API 的书写及规范化是非常重要的，针对于 API 中 Restful API 中设计比较规范的是 Github API，可以直接访问他们的 https://api.github.com 直接查看 Github 针对与公共接口的链接及使用方法。
+此篇文章也是针对于这几天学习 Restful API 做了一个笔记或小结，若有不足之处还望批评指正，谢谢。
+使用 HTTPS 协议 这个协议使用本身与这个 API 设计标准没有什么直接联系，使用 HTTPS 协议主要目的是将用户客户端与 API 服务器连接过程中保证其数据的安全性。
+注意：由于 API 接口使用 HTTPS 协议，不要让非 SSL 的链接访问重定向到 SSL 的链接。
+API 地址和版本问题 为 API 使用专门子域名比较友好，例如使用如下链接使用：
+1 https://api.debuginn.com 也可以将 API 放在主域名下，例如：
+1 https://debuginn.com/api/ 当然，针对于 API 版本问题针对以上两种方法可以分别使用如下例子：
+1 2 3 4 # 针对于 API 子域名方式 api.domain/v1/ https://api.debuginn.com/v1/ # 针对于 主域名目录方式 domain/api/v1/ https://debuginn.</description></item></channel></rss>
