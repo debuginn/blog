@@ -5,7 +5,7 @@ keywords: "go,env,GOTRACEBACK"
 comments: true
 tags: ["go","env","GOTRACEBACK"]
 categories: ["golang"]
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302272119360.png"
+image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/20240909WOFpJS.jpg"
 ---
 
 近期迁移了一个 go 的项目至 k8s 机器上，发现机器不时会自动重启，当想看重启前日志的时候，Goroutine 运行的状态全部都打印了出来，由于公司云平台查看行数限制，看到最后，还是没有想要看到的 panic 的关键堆栈信息。
