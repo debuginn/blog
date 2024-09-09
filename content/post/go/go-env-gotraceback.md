@@ -1,9 +1,9 @@
 ---
 title: "使用 GOTRACEBACK 快速定位你的 Panic"
 date: 2024-09-09T19:30:00+08:00
-keywords: "go,env,gotraceback"
+keywords: "go,env,GOTRACEBACK"
 comments: true
-tags: ["go","env","gotraceback"]
+tags: ["go","env","GOTRACEBACK"]
 categories: ["golang"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302272119360.png"
 ---
