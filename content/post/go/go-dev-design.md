@@ -1,13 +1,8 @@
 ---
 title: "Go 语言开发设计指北"
 date: 2021-03-07T14:01:00+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "go,mysql,redis,code review,log,stat,go fmt"
 comments: true
-weight: 0
 tags: ["go","mysql","redis","code review","log","stat","go fmt"]
 categories: ["golang"]
 image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302272119360.png"
