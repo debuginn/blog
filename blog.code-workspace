@@ -3,5 +3,10 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"yaml.schemas": {
+			"https://json.schemastore.org/github-workflow.json": "file:///Users/debuginn/Code/src/github.com/debuginn/blog/.github/workflows/deploy.yml"
+		}
+	}
 }
