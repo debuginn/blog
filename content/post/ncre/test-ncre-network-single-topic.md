@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["NCRE"]
 categories: ["debuginn"]
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303261146594.jpg"
+image: "https://static.debuginn.com/202303261146594.jpg"
 ---
 
 **如果交换机的总带宽为14.4Gbps，它具有12个百兆的全双工端口，则其千兆的全双工端口数量最多为？**

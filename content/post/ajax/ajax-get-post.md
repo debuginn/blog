@@ -13,8 +13,8 @@ tags: [ "js","ajax","xml","post","get" ]
 categories: [ "js" ]
 
 
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
-imagePreview: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
+image: "https://static.debuginn.com/202304131856440.jpg"
+imagePreview: "https://static.debuginn.com/202304131856440.jpg"
 ---
 
 ## Ajax中的Get请求

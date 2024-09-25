@@ -13,7 +13,7 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 [![RSS](https://img.shields.io/badge/RSS订阅(经典)-ff6600?logo=rss&logoColor=white&style=for-the-badge)](https://blog.debuginn.com/index.xml)
 [![Github](https://img.shields.io/badge/Github(Follow)-000000?logo=github&logoColor=white&style=for-the-badge)](https://github.com/debuginn)
 
-![WeChat](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302202248422.png)
+![WeChat](https://static.debuginn.com/202302202248422.png)
 
 ## 专栏订阅
 
@@ -31,4 +31,4 @@ Debug客栈给您提供了四种常规订阅方式，分别是 **邮箱订阅**�
 [![BiliBili](https://img.shields.io/badge/Bilibili-ff0066?logo=bilibili&logoColor=white&style=for-the-badge)](https://space.bilibili.com/238989334)
 [![Youtube](https://img.shields.io/badge/Youtube-ff0000?logo=youtube&logoColor=white&style=for-the-badge)](https://www.youtube.com/@debuginn)
 
-![Gopher](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303022149399.png)
+![Gopher](https://static.debuginn.com/202303022149399.png)

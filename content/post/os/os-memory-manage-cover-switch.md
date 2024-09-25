@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["os", "system"]
 categories: ["OS"]
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302221853276.jpg"
+image: "https://static.debuginn.com/202302221853276.jpg"
 ---
 
 ## 覆盖技术
@@ -21,7 +21,7 @@ image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302221853276.jpg"
 
 该程序正文段所需要的内存空间是A（20KB）+B（50KB）+F（30KB）+C（30KB）+D（20KB）+E（40KB）=190KB，但是在采用了覆盖技术后只需要A（20KB）+B（50KB）+E（40KB）=110KB占用空间。
 
-![覆盖技术](https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131939488.png)
+![覆盖技术](https://static.debuginn.com/202304131939488.png)
 
 覆盖技术主要用于系统程序的内存管理上，MS-DOS系统分为两个部分。
 

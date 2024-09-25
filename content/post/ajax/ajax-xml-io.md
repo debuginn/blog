@@ -13,8 +13,8 @@ tags: ["js","ajax","xml"]
 categories: ["js"]
 
 
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
-imagePreview: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
+image: "https://static.debuginn.com/202304131856440.jpg"
+imagePreview: "https://static.debuginn.com/202304131856440.jpg"
 ---
 
 - Ajax负责请求xml和接收xml信息，dom负责处理xml信息 

@@ -13,8 +13,8 @@ tags: [ "ajax","js","xml" ]
 categories: [ "js" ]
 
 
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
-imagePreview: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202304131856440.jpg"
+image: "https://static.debuginn.com/202304131856440.jpg"
+imagePreview: "https://static.debuginn.com/202304131856440.jpg"
 ---
 
 ## Ajax 技术简介

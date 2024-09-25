@@ -1,4 +1,4 @@
 ---
 title: JavaScript
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202306202016717.png"
+image: "https://static.debuginn.com/202306202016717.png"
 ---
