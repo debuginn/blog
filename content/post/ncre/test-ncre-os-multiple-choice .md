@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["NCRE"]
 categories: ["debuginn"]
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303261146594.jpg"
+image: "https://static.debuginn.com/202303261146594.jpg"
 ---
 
 **保存在进程控制块中的是**

@@ -1,4 +1,4 @@
 ---
 title: Job
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302262202290.jpg"
+image: "https://static.debuginn.com/202302262202290.jpg"
 ---

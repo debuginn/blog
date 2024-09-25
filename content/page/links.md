@@ -2,7 +2,7 @@
 title: 友情链接
 links:
   - title: Debug客栈
-    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG
+    image: https://static.debuginn.com/202302182238057.JPG
     website: https://debuginn.com
     description: 做一个爱分享的程序猿
   - title: Moea
@@ -34,7 +34,7 @@ links:
     website: https://blognas.hwb0307.com
     description: 百代繁华一朝都，谁非过客；千秋明月吹角寒，花是主人。
   - title: 追梦者个人博客
-    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202401250946192.ico
+    image: https://static.debuginn.com/202401250946192.ico
     website: https://codelin.site/
     description: 不畏将来，不念过往。
   - title: Nemo
@@ -46,11 +46,11 @@ links:
     website: https://www.re1ife.top
     description: 一个淹死在时代浪潮里的coder
   - title: 浮云的博客
-    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202311181848462.ico
+    image: https://static.debuginn.com/202311181848462.ico
     website: https://last2win.com/
     description: 浮云的博客
   - title: Halo
-    image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202401250945310.png
+    image: https://static.debuginn.com/202401250945310.png
     website: https://bluemiaomiao.github.io
     description: 大道至简，顺势而为。
   - title: 王明明的小站
@@ -75,7 +75,7 @@ comments: true
 
 ```yaml
 - title: Debug客栈
-  image: https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302182238057.JPG
+  image: https://static.debuginn.com/202302182238057.JPG
   website: https://debuginn.com
   description: 做一个爱分享的程序猿
 ```

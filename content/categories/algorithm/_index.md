@@ -1,4 +1,4 @@
 ---
 title: Algorithm
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202303031922787.jpg"
+image: "https://static.debuginn.com/202303031922787.jpg"
 ---

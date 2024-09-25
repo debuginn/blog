@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["笔记", "数据结构"]
 categories: ["algorithm"]
-image: "https://cdn.jsdelivr.net/gh/debuginn/image@main/img/202302221903175.jpg"
+image: "https://static.debuginn.com/202302221903175.jpg"
 ---
 
 ## 算法原理
