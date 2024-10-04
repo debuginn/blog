@@ -17,7 +17,7 @@ image: "https://static.debuginn.com/202302262119034.jpg"
 
 下面是我目前所使用到的技术栈及工具：
 
-![技能树](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,postgres,redis,mongodb,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,vim,idea,vscode,md,postman,stackoverflow&theme=light)
+![技能树](https://skillicons.dev/icons?i=go,java,spring,maven,mysql,postgres,redis,mongodb,linux,bash,docker,kubernetes,grafana,prometheus,nginx,git,github,gitlab,vim,idea,vscode,md,postman,stackoverflow,apple,obsidian,ps,cloudflare&theme=light)
 
 ## 摄影
 
