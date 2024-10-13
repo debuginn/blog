@@ -2,9 +2,9 @@
 title: "Follow｜下一代的信息浏览器"
 date: 2024-10-13T13:00:00+08:00
 draft: false
-keywords: "follow,app,rss,rss3"
+keywords: "follow,app,RSS,RSS3"
 comments: true
-tags: ["follow", "app", "rss", "rss3"]
+tags: ["follow", "app", "RSS", "RSS3"]
 categories: ["debuginn"]
 image: "https://static.debuginn.com/20241013ivn8eL.jpeg"
 ---
