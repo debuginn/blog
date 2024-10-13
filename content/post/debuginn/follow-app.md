@@ -2,9 +2,9 @@
 title: "Follow｜下一代的信息浏览器"
 date: 2024-10-13T13:00:00+08:00
 draft: false
-keywords: "follow,app,rss,rss3"
+keywords: "follow,app,RSS,RSS3"
 comments: true
-tags: ["follow", "app", "rss", "rss3"]
+tags: ["follow", "app", "RSS", "RSS3"]
 categories: ["debuginn"]
 image: "https://static.debuginn.com/20241013ivn8eL.jpeg"
 ---
@@ -20,7 +20,7 @@ image: "https://static.debuginn.com/20241013ivn8eL.jpeg"
 Follow 不单单提供了 RSS 的订阅，它的定位更是官网中所描述的 "下一代的信息浏览器"，目前它提供的功能有：
 
 - **Articles** 文章订阅：偏向于传统的 RSS 订阅的模式；
-- **Social Media** 社交媒体：更加偏向于 Follow 自己刚兴趣的作者在提供订阅的 APP 上；
+- **Social Media** 社交媒体：更加偏向于 Follow 自己感兴趣的作者在提供订阅的 APP 上；
 - **Pictures** 图库订阅：订阅自己感兴趣的图片网站；
 - **Videos** 视频订阅：订阅自己的在 Youtube、BiliBili 等视频平台的 UP 主；
 - **Audio** 音频订阅：更像是播客类的订阅 APP；
