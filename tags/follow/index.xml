@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Follow on Debug客栈</title><link>https://blog.debuginn.com/tags/follow/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Follow on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 20 Oct 2024 20:30:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/follow/index.xml" rel="self" type="application/rss+xml"/><item><title>Follow ｜下一代信息浏览器 第二弹来了</title><link>https://blog.debuginn.com/p/follow-app-2/</link><pubDate>Sun, 20 Oct 2024 20:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app-2/</guid><description>&lt;img src="https://static.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow ｜下一代信息浏览器 第二弹来了" />&lt;p>大家好呀，&lt;a class="link" href="https://blog.debuginn.com/p/follow-app" >上篇文章&lt;/a>给大家推荐了我近期参与内测的一个软件 Follow，得到了大家热情地互动，今天继续给大家深度的分享一下 Follow 的特色功能，同时由于目前 Follow 处于内测邀请阶段，一码处于严重供不应求的状态，我也会给大家推荐下暂时平替的 RSS 开源软件，同时，大家可以关注我，等 Follow 公测开始，我会第一时间告知大家。&lt;/p>
+&lt;h2 id="特色功能">&lt;a href="#%e7%89%b9%e8%89%b2%e5%8a%9f%e8%83%bd" class="header-anchor">&lt;/a>特色功能
+&lt;/h2>&lt;h3 id="rss-搜索">&lt;a href="#rss-%e6%90%9c%e7%b4%a2" class="header-anchor">&lt;/a>RSS 搜索
+&lt;/h3>&lt;p>&lt;img src="https://static.debuginn.com/20241018ZBVyDd.png"
+loading="lazy"
+alt="search"
+>&lt;/p>
+&lt;p>作为 RSS 阅读器，提供搜索功能，大大降低了大家搜索感兴趣的源的信息，非常便捷方便。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>搜索&lt;/strong>：可以根据关键词搜索订阅感兴趣的方向的信息源；&lt;/li>
+&lt;li>&lt;strong>RSS&lt;/strong>：可以直接输入 RSS 订阅地址预览订阅；&lt;/li>
+&lt;li>&lt;strong>RSSHub&lt;/strong>：作者与另外一个开源作品组成生态，只要是网站信息开放的，那么&amp;quot;&lt;strong>万物皆可 RSS&lt;/strong>&amp;quot;；&lt;/li>
+&lt;li>&lt;strong>收件箱&lt;/strong>：你敢相信，也可以接收邮件 📧 ；&lt;/li>
+&lt;li>&lt;strong>RSS3&lt;/strong>：下一代的 RSS 信息订阅方式；&lt;/li>
+&lt;li>还有 RSS 阅读器的&lt;strong>导入功能&lt;/strong>，你可以快速切换到 Follow 上面来；&lt;/li>
+&lt;/ul>
+&lt;h3 id="谁在阅读">&lt;a href="#%e8%b0%81%e5%9c%a8%e9%98%85%e8%af%bb" class="header-anchor">&lt;/a>谁在阅读
+&lt;/h3>&lt;p>阅读器可以把相同订阅并阅读过这篇文章的网友罗列在文章左上方。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018vYtfMz.png"
+loading="lazy"
+alt="who read"
+>&lt;/p>
+&lt;p>同时，点击头像会把订阅者自己公开的订阅罗列出来，通过这个功能我补充了好多订阅源 😄&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018V86Unn.png"
+loading="lazy"
+alt="sylwair"
+>&lt;/p>
+&lt;h3 id="订阅热点-ai">&lt;a href="#%e8%ae%a2%e9%98%85%e7%83%ad%e7%82%b9-ai" class="header-anchor">&lt;/a>订阅热点 AI
+&lt;/h3>&lt;p>每天早晚 8 点 AI 基于订阅的源的阅读量来提取 Summary 列表供订阅者阅读。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018Jir4fe.png"
+loading="lazy"
+alt="hot"
+>&lt;/p>
+&lt;h3 id="生成摘要-ai">&lt;a href="#%e7%94%9f%e6%88%90%e6%91%98%e8%a6%81-ai" class="header-anchor">&lt;/a>生成摘要 AI
+&lt;/h3>&lt;p>生成摘要对我来说很重要，目前我订阅了上百个博客和科技媒体，摘要可以让我快速阅读文章核心内容，并确定是否我感兴趣的文章并继续阅读。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018hu1JkJ.png"
+loading="lazy"
+alt="summary"
+>&lt;/p>
+&lt;h3 id="双语翻译-ai">&lt;a href="#%e5%8f%8c%e8%af%ad%e7%bf%bb%e8%af%91-ai" class="header-anchor">&lt;/a>双语翻译 AI
+&lt;/h3>&lt;p>应该也是通过 AI 实现的自动翻译，可以对比着阅读，订阅英文专业文章也不吃力。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018andNgu.png"
+loading="lazy"
+alt="translate"
+>&lt;/p>
+&lt;h3 id="激励作者">&lt;a href="#%e6%bf%80%e5%8a%b1%e4%bd%9c%e8%80%85" class="header-anchor">&lt;/a>激励作者
+&lt;/h3>&lt;p>通过区块链技术，发行 &lt;code>POWER&lt;/code> 代币，你可以对你感兴趣的文章的作者进行打赏，用来提升作者的影响力和生产出更多高质量的内容，从而实现了&lt;strong>良性循环的激励创作体系&lt;/strong>。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018tqSDWT.png"
+loading="lazy"
+alt="gift"
+>&lt;/p>
+&lt;h3 id="视频订阅">&lt;a href="#%e8%a7%86%e9%a2%91%e8%ae%a2%e9%98%85" class="header-anchor">&lt;/a>视频订阅
+&lt;/h3>&lt;p>没错，你可以把 YouTube 或者哔哩哔哩上你感兴趣的 UP 主都订阅起来，他们发表的最新视频就可以通过 Follow 的自动化推送来及时提醒，直接可以在软件内播放，非常地便捷。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018A8zHK1.png"
+loading="lazy"
+alt="media"
+>&lt;/p>
+&lt;h3 id="图库订阅">&lt;a href="#%e5%9b%be%e5%ba%93%e8%ae%a2%e9%98%85" class="header-anchor">&lt;/a>图库订阅
+&lt;/h3>&lt;p>通过图片瀑布流的形式进行订阅，学习与鉴赏图像给大家带来的视觉冲击与色彩描述。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018n9RCRJ.png"
+loading="lazy"
+alt="picture"
+>&lt;/p>
+&lt;h3 id="播客集成">&lt;a href="#%e6%92%ad%e5%ae%a2%e9%9b%86%e6%88%90" class="header-anchor">&lt;/a>播客集成
+&lt;/h3>&lt;p>Follow 就是强大，当你不想去阅读文章的时候，你可以通过点击一键生成播客的模式，让文章生成类似播客的方式播放给你听，遥遥领先。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241018Jc5OmY.png"
+loading="lazy"
+alt="播客"
+>&lt;/p>
+&lt;p>介绍了这么多 Follow 的功能，相信大家已经跃跃欲试了，但是目前 Follow 处于内部测试，属于邀请阶段，我这边 5 天才可以生成一个邀请码，严重供不应求，在公测之前的这个阶段，大家没有拿到邀请码的不要灰心，接下来给大家介绍一个开源免费的 RSS 阅读器，先进行过渡。&lt;/p>
+&lt;h2 id="平替的软件">&lt;a href="#%e5%b9%b3%e6%9b%bf%e7%9a%84%e8%bd%af%e4%bb%b6" class="header-anchor">&lt;/a>平替的软件
+&lt;/h2>&lt;h3 id="苹果系统平替--netnewswire">&lt;a href="#%e8%8b%b9%e6%9e%9c%e7%b3%bb%e7%bb%9f%e5%b9%b3%e6%9b%bf--netnewswire" class="header-anchor">&lt;/a>苹果系统平替 # &lt;strong>NetNewsWire&lt;/strong>
+&lt;/h3>&lt;p>&lt;img src="https://static.debuginn.com/20241020AFvwsb.jpeg"
+loading="lazy"
+alt="NetNewsWire"
+>&lt;/p>
+&lt;ul>
+&lt;li>官网地址：&lt;a class="link" href="https://netnewswire.com/" target="_blank" rel="noopener"
+>https://netnewswire.com/&lt;/a>&lt;/li>
+&lt;li>Github 地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire" target="_blank" rel="noopener"
+>https://github.com/Ranchero-Software/NetNewsWire&lt;/a>&lt;/li>
+&lt;li>下载地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire/releases" target="_blank" rel="noopener"
+>https://github.com/Ranchero-Software/NetNewsWire/releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="windows-平替--fluent-reader">&lt;a href="#windows-%e5%b9%b3%e6%9b%bf--fluent-reader" class="header-anchor">&lt;/a>Windows 平替 # &lt;strong>Fluent Reader&lt;/strong>
+&lt;/h3>&lt;p>&lt;img src="https://static.debuginn.com/20241020NLzuRr.jpeg"
+loading="lazy"
+alt="Fluent Reader"
+>&lt;/p>
+&lt;ul>
+&lt;li>官网地址：&lt;a class="link" href="https://hyliu.me/fluent-reader/" target="_blank" rel="noopener"
+>https://hyliu.me/fluent-reader/&lt;/a>&lt;/li>
+&lt;li>Github 地址：&lt;a class="link" href="https://github.com/yang991178/fluent-reader" target="_blank" rel="noopener"
+>https://github.com/yang991178/fluent-reader&lt;/a>&lt;/li>
+&lt;li>下载地址：&lt;a class="link" href="https://github.com/yang991178/fluent-reader/releases" target="_blank" rel="noopener"
+>https://github.com/yang991178/fluent-reader/releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>由于我的主力机器目前是 Mac，大家有推荐的 windows rss app 可以评论区分享出来哈。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="写在最后">&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor">&lt;/a>写在最后
+&lt;/h2>&lt;p>最后，给大家推荐下我的订阅信息，大家可以去订阅感兴趣的信息源：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://app.follow.is/profile/@debuginn" target="_blank" rel="noopener"
+>https://app.follow.is/profile/@debuginn&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>同时，已经有 Follow 软件体验的小伙伴，推荐关注我自己收集创建的订阅列表：&lt;/p>
+&lt;ul>
+&lt;li>Go 语言爱好者：&lt;a class="link" href="https://app.follow.is/list/60633757623653376" target="_blank" rel="noopener"
+>https://app.follow.is/list/60633757623653376&lt;/a>&lt;/li>
+&lt;li>Java 语言爱好者：搭建 ing，敬请期待～&lt;/li>
+&lt;/ul>
+&lt;p>同时，大家可以关注我，等 Follow 公测开始，我会第一时间告知大家～&lt;/p></description></item><item><title>Follow｜下一代的信息浏览器</title><link>https://blog.debuginn.com/p/follow-app/</link><pubDate>Sun, 13 Oct 2024 13:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app/</guid><description>&lt;img src="https://static.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow｜下一代的信息浏览器" />&lt;p>近期体验了一款高效的私有化信息订阅平台，给大家推荐一下，官方则是描述为 Next-gen information browser，下一代的信息浏览器，它不单纯是一个 RSS 订阅软件，因为在传统的 RSS 仅仅订阅的是网站的 feed 流信息进行 follow。&lt;/p>
+&lt;p>而 Follow 则是与 RSSHub、RSS3 相结合的生态软件，从而扩展了很多的订阅源以供订阅。&lt;/p>
+&lt;h2 id="follow">&lt;a href="#follow" class="header-anchor">&lt;/a>Follow
+&lt;/h2>&lt;p>&lt;img src="https://static.debuginn.com/20241009Vpq1w7.jpg"
+loading="lazy"
+alt="Follow"
+>&lt;/p>
+&lt;p>Follow 不单单提供了 RSS 的订阅，它的定位更是官网中所描述的 &amp;ldquo;下一代的信息浏览器&amp;rdquo;，目前它提供的功能有：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Articles&lt;/strong> 文章订阅：偏向于传统的 RSS 订阅的模式；&lt;/li>
+&lt;li>&lt;strong>Social Media&lt;/strong> 社交媒体：更加偏向于 Follow 自己感兴趣的作者在提供订阅的 APP 上；&lt;/li>
+&lt;li>&lt;strong>Pictures&lt;/strong> 图库订阅：订阅自己感兴趣的图片网站；&lt;/li>
+&lt;li>&lt;strong>Videos&lt;/strong> 视频订阅：订阅自己的在 Youtube、BiliBili 等视频平台的 UP 主；&lt;/li>
+&lt;li>&lt;strong>Audio&lt;/strong> 音频订阅：更像是播客类的订阅 APP；&lt;/li>
+&lt;li>&lt;strong>Notifications&lt;/strong> 通知订阅：订阅新闻媒体的信息；&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>详见官网地址：&lt;a class="link" href="https://follow.is/" target="_blank" rel="noopener"
+>https://follow.is/&lt;/a>
+Github 地址：&lt;a class="link" href="https://github.com/RSSNext/follow" target="_blank" rel="noopener"
+>https://github.com/RSSNext/follow&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="逆算法化">&lt;a href="#%e9%80%86%e7%ae%97%e6%b3%95%e5%8c%96" class="header-anchor">&lt;/a>逆算法化
+&lt;/h2>&lt;p>在如今信息化时代，大家接收到的信息都是经过大数据、算法进行点对点的信息推送，导致大家的信息来源越来越趋向于单一、被动接受、羊群效应，大家少了思考、多了短暂地愉悦。&lt;/p>
+&lt;p>在 23 年，我就写了一篇文章叫做 &lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" >《2023 年为何我还在使用 RSS》&lt;/a>，文中我列举了 5 点好处，这也是我为什么大学毕业以来一直使用 RSS 阅读器的原因。&lt;/p>
+&lt;p>其实大家动不动刷抖音、快手、小红书或者微信视频号等短视频平台就会发现，短则半个小时，长则 4-5 个小时的时间都浪费在了这些 APP 上面，回头来看，看过了什么视频，学到了啥，基本上就属于短暂地愉悦，长时间来看就像游戏一种性质。&lt;/p>
+&lt;p>个人定制化的信息输入才是对自己认知与能力的快速提升。&lt;/p>
+&lt;p>其实 RSS 订阅为什么一直长久不衰，很大程度而言，是可以 Follow 自己感兴趣的领域以及作者的高质量的内容的输出，另外也可以屏蔽掉现在对大家苦不堪言的广告推送。&lt;/p>
+&lt;h2 id="亮点功能">&lt;a href="#%e4%ba%ae%e7%82%b9%e5%8a%9f%e8%83%bd" class="header-anchor">&lt;/a>亮点功能
+&lt;/h2>&lt;p>目前，Follow 给我带来眼前一亮的功能有如下三个，AI Summary、订阅共享以及邀请制。&lt;/p>
+&lt;h3 id="ai-summary">&lt;a href="#ai-summary" class="header-anchor">&lt;/a>AI Summary
+&lt;/h3>&lt;p>&lt;img src="https://static.debuginn.com/20241009tNs61I.png"
+loading="lazy"
+alt="summary"
+>&lt;/p>
+&lt;p>通过自动化设置，可以将文章使用 AI 生成摘要，一些复杂难懂且文章比较长的场景，通过 AI 进行总结，可以带来阅读效率的极大提升。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241010rGF6de.png"
+loading="lazy"
+alt="summary"
+>&lt;/p>
+&lt;h3 id="订阅共享">&lt;a href="#%e8%ae%a2%e9%98%85%e5%85%b1%e4%ba%ab" class="header-anchor">&lt;/a>订阅共享
+&lt;/h3>&lt;p>订阅共享功能是 Follow 的特色功能，大家可以通过订阅的文章了解到和自己一样订阅这个文章的人他（她）们订阅了什么信息，从而充实自己的订阅源。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241010Fe5wr7.png"
+loading="lazy"
+alt="share"
+>&lt;/p>
+&lt;h3 id="邀请制">&lt;a href="#%e9%82%80%e8%af%b7%e5%88%b6" class="header-anchor">&lt;/a>邀请制
+&lt;/h3>&lt;p>相信 Follow 的作者在开发这个软件的时候就有着成熟的产品推广的思路，实际上， Follow 本身是一块很优秀、完成度很高的软件，但是作者实施的邀请制度使得 Follow 在互联网中始终可以保持比较活跃的热度，从而让一款软件更容易地在社区、媒体上带来传播。&lt;/p>
+&lt;p>不得不说，创新之处，在于作者将区块链币的设计引入到了 Follow 之中，通过签到获取 &lt;code>$POWER &lt;/code> 代币，代币目前有两种用途：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>邀请&lt;/strong>：通过代币生成邀请码，进行分享，达到 APP 的裂变传播；&lt;/li>
+&lt;li>&lt;strong>赞赏&lt;/strong>：对于感兴趣的文章，你可以给认证过的作者打赏代币；&lt;/li>
+&lt;/ul>
+&lt;p>相信未来代币可以在 Follow 中有更多的场景和玩法，同时作者还承诺代币未来的价值，期待 (✧∀✧)&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20241013nluSz7.png"
+loading="lazy"
+alt="invite"
+>&lt;/p>
+&lt;h2 id="写在最后">&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor">&lt;/a>写在最后
+&lt;/h2>&lt;p>Follow 是一款非常成功的软件，在算法推荐为主流的时代，这一款 RSS 软件无疑给 RSS 圈带来了新的希望与活力，目前还在邀请阶段，凭借开源、简洁、RSS3 就已经获得了大家的追捧，希望公测时更加出色。&lt;/p>
+&lt;p>不过，目前的互联网环境，头部大厂都是尽可能地保留住自己的数字信息，从而选择了私域与闭源的策略，这样其实与最初互联网“开放”的原则相违背，带来的弊端是大家接触信息的成本变得高了起来，同时，RSS 阅读器也因为版权的原因，无法获取高质量的文章。&lt;/p>
+&lt;p>大家有推荐的 RSS 的订阅源也可以通过评论区分享出来，如果你感觉文章对你有所帮助的话可以关注下我，我会不时分享一些小众但也优秀的软件推荐给大家，让我们一起变得更强。&lt;/p>
+&lt;p>分享一下我的网站的订阅源与 Follow 的订阅列表：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Debug客栈&lt;/strong> RSS 订阅地址：&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+>https://blog.debuginn.com/index.xml&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Go 语言爱好者&lt;/strong> 订阅列表：&lt;a class="link" href="https://app.follow.is/list/60633757623653376" target="_blank" rel="noopener"
+>https://app.follow.is/list/60633757623653376&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>最后，我会从评论区中抽取一名朋友赠与 Follow 邀请码，感谢大家支持～&lt;/p></description></item></channel></rss>
