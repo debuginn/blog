@@ -35,6 +35,9 @@ default = "Licensed under CC BY-NC-SA 4.0"
 type = "search"
 
 [[widgets.homepage]]
+type = "wechat"
+
+[[widgets.homepage]]
 type = "archives"
 
 [widgets.homepage.params]
@@ -57,6 +60,9 @@ type = "search"
 
 [[widgets.page]]
 type = "toc"
+
+[[widgets.page]]
+type = "wechat"
 
 [opengraph.twitter]
 site = "idebuginn"
