@@ -35,25 +35,25 @@ default = "Licensed under CC BY-NC-SA 4.0"
 type = "search"
 
 [[widgets.homepage]]
-type = "wechat"
-
-[[widgets.homepage]]
 type = "archives"
 
 [widgets.homepage.params]
-limit = 3
+limit = 2
 
 [[widgets.homepage]]
 type = "categories"
 
 [widgets.homepage.params]
-limit = 16
+limit = 8
+
+[[widgets.homepage]]
+type = "wechat"
 
 [[widgets.homepage]]
 type = "tag-cloud"
 
 [widgets.homepage.params]
-limit = 16
+limit = 8
 
 [[widgets.page]]
 type = "search"
