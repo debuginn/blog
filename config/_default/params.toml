@@ -59,10 +59,10 @@ limit = 8
 type = "search"
 
 [[widgets.page]]
-type = "toc"
+type = "wechat"
 
 [[widgets.page]]
-type = "wechat"
+type = "toc"
 
 [opengraph.twitter]
 site = "idebuginn"
