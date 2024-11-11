@@ -76,8 +76,8 @@ comments: true
 ```yaml
 - title: Debug客栈
   image: https://static.debuginn.com/202302182238057.JPG
-  website: https://debuginn.com
-  description: 做一个爱分享的程序猿
+  website: https://blog.debuginn.com
+  description: 永远相信美好的事情即将发生～
 ```
 
 ## 友情提示
