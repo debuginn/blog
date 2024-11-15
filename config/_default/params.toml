@@ -55,9 +55,6 @@ type = "tag-cloud"
 [widgets.homepage.params]
 limit = 7
 
-[[widgets.homepage]]
-type = "map"
-
 [[widgets.page]]
 type = "search"
 
@@ -66,9 +63,6 @@ type = "toc"
 
 [[widgets.page]]
 type = "wechat"
-
-[[widgets.page]]
-type = "map"
 
 [opengraph.twitter]
 site = "idebuginn"
