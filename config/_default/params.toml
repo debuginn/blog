@@ -38,12 +38,6 @@ type = "search"
 type = "wechat"
 
 [[widgets.homepage]]
-type = "archives"
-
-[widgets.homepage.params]
-limit = 2
-
-[[widgets.homepage]]
 type = "categories"
 
 [widgets.homepage.params]
@@ -54,6 +48,12 @@ type = "tag-cloud"
 
 [widgets.homepage.params]
 limit = 7
+
+[[widgets.homepage]]
+type = "archives"
+
+[widgets.homepage.params]
+limit = 2
 
 [[widgets.page]]
 type = "search"
