@@ -27,9 +27,9 @@ Github： https://github.com/RSSNext/follow
 
 ## 功能简介
 
-- [Follow ｜下一代的信息浏览器](https://blog.debuginn.com/p/follow-app/)
-- [Follow ｜下一代信息浏览器 第二弹来了](https://blog.debuginn.com/p/follow-app-2/)
-- [2023 年为何我还在使用 RSS](https://blog.debuginn.com/p/debuginn-2023-rss/)
+- [Follow ｜下一代的信息浏览器](/p/follow-app/)
+- [Follow ｜下一代信息浏览器 第二弹来了](/p/follow-app-2/)
+- [2023 年为何我还在使用 RSS](/p/debuginn-2023-rss/)
 
 ## 订阅源推荐
 
