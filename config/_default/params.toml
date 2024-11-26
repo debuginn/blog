@@ -41,7 +41,7 @@ type = "wechat"
 type = "tag-cloud"
 
 [widgets.homepage.params]
-limit = 18
+limit = 32
 
 [[widgets.homepage]]
 type = "archives"
