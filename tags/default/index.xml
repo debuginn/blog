@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Default on Debug客栈</title><link>https://blog.debuginn.com/tags/default/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Default on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 18 Oct 2019 17:42:41 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/default/index.xml" rel="self" type="application/rss+xml"/><item><title>一些好玩的代码构图</title><link>https://blog.debuginn.com/p/code-picture/</link><pubDate>Fri, 18 Oct 2019 17:42:41 +0800</pubDate><guid>https://blog.debuginn.com/p/code-picture/</guid><description>&lt;img src="https://webp.debuginn.com/202303181147944.jpg" alt="Featured image of post 一些好玩的代码构图" />&lt;p>是不是经常在群中看到大神闲的无聊敲的代码构图，今天，他来了，搜集了网上尽可能多的代码构图，展示给大家，友情提示，推荐使用比较大的屏幕查看，效果会比较好的。&lt;/p>
+&lt;h2 id="no1-佛祖保佑永无bug">&lt;a href="#no1-%e4%bd%9b%e7%a5%96%e4%bf%9d%e4%bd%91%e6%b0%b8%e6%97%a0bug" class="header-anchor">&lt;/a>No.1 佛祖保佑，永无Bug
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> _ooOoo_
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> o8888888o
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 88&lt;span class="s2">&amp;#34; . &amp;#34;&lt;/span>&lt;span class="m">88&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">(&lt;/span>&lt;span class="p">|&lt;/span> -_- &lt;span class="p">|&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> O&lt;span class="se">\ &lt;/span> &lt;span class="o">=&lt;/span> /O
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ____/&lt;span class="sb">`&lt;/span>---&lt;span class="s1">&amp;#39;\____
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .&amp;#39;&lt;/span> &lt;span class="se">\\&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>// &lt;span class="sb">`&lt;/span>.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> / &lt;span class="se">\\&lt;/span>&lt;span class="o">||&lt;/span>&lt;span class="p">|&lt;/span> : &lt;span class="o">||&lt;/span>&lt;span class="p">|&lt;/span>// &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> / _&lt;span class="o">||||&lt;/span>&lt;span class="p">|&lt;/span> -:- &lt;span class="o">||||&lt;/span>&lt;span class="p">|&lt;/span>- &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="se">\\\ &lt;/span> - /// &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> &lt;span class="se">\_&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="se">\-&lt;/span>--/&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="se">\ &lt;/span> .-&lt;span class="se">\_&lt;/span>_ &lt;span class="sb">`&lt;/span>-&lt;span class="sb">`&lt;/span> ___/-. /
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ___&lt;span class="sb">`&lt;/span>. .&lt;span class="s1">&amp;#39; /--.--\ `. . __
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .&amp;#34;&amp;#34; &amp;#39;&lt;/span>&amp;lt; &lt;span class="sb">`&lt;/span>.___&lt;span class="se">\_&lt;/span>&amp;lt;&lt;span class="p">|&lt;/span>&amp;gt;_/___.&lt;span class="s1">&amp;#39; &amp;gt;&amp;#39;&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> : &lt;span class="sb">`&lt;/span>- &lt;span class="se">\`&lt;/span>.&lt;span class="p">;&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="se">\ &lt;/span>_ /&lt;span class="sb">`&lt;/span>&lt;span class="p">;&lt;/span>.&lt;span class="sb">`&lt;/span>/ - &lt;span class="sb">`&lt;/span> : &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="se">\ &lt;/span> &lt;span class="se">\ &lt;/span>&lt;span class="sb">`&lt;/span>-. &lt;span class="se">\_&lt;/span> __&lt;span class="se">\ &lt;/span>/__ _/ .-&lt;span class="sb">`&lt;/span> / /
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">======&lt;/span>&lt;span class="sb">`&lt;/span>-.____&lt;span class="sb">`&lt;/span>-.___&lt;span class="se">\_&lt;/span>____/___.-&lt;span class="sb">`&lt;/span>____.-&lt;span class="s1">&amp;#39;======
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> `=---=&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 佛祖保佑 永无BUG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no2-草泥马">&lt;a href="#no2-%e8%8d%89%e6%b3%a5%e9%a9%ac" class="header-anchor">&lt;/a>No.2 草泥马
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> ┌─┐ ┌─┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ┌──┘ ┴───────┘ ┴──┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ─── │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ─┬┘ └┬─ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ─┴─ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └───┐ ┌───┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ └──────────────┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ├─┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ┌─┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └─┐ ┐ ┌───────┬──┐ ┌──┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ─┤ ─┤ │ ─┤ ─┤
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └──┴──┘ └──┴──┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 神兽保佑
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 代码无BUG!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no3-知识就是力量">&lt;a href="#no3-%e7%9f%a5%e8%af%86%e5%b0%b1%e6%98%af%e5%8a%9b%e9%87%8f" class="header-anchor">&lt;/a>No.3 知识就是力量
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> .-~~~~~~~~~-._ _.-~~~~~~~~~-.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> __.&lt;span class="s1">&amp;#39; ~. .~ `.__
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .&amp;#39;&lt;/span>// &lt;span class="se">\.&lt;/span>/ &lt;span class="se">\\&lt;/span>&lt;span class="sb">`&lt;/span>.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .&lt;span class="s1">&amp;#39;// | \\`.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .&amp;#39;&lt;/span>// .-~&lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;~~~~-._ | _,-~~~~&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&lt;/span>~-. &lt;span class="se">\\&lt;/span>&lt;span class="sb">`&lt;/span>.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .&lt;span class="s1">&amp;#39;//.-&amp;#34; `-. | .-&amp;#39;&lt;/span> &lt;span class="s2">&amp;#34;-.\\`.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> .&amp;#39;//______.============-.. \ | / ..-============.______\\`.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">.&amp;#39;______________________________\|/______________________________`.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no4-史蒂文西蒙斯">&lt;a href="#no4-%e5%8f%b2%e8%92%82%e6%96%87%e8%a5%bf%e8%92%99%e6%96%af" class="header-anchor">&lt;/a>No.4 史蒂文西蒙斯
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> _.---..._
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ./^ ^-._
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ./^C&lt;span class="o">===&lt;/span>. ^&lt;span class="se">\.&lt;/span> /&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> .&lt;span class="p">|&lt;/span>&lt;span class="s1">&amp;#39; \\ _ ^|.^.|
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> ___.--&amp;#39;&lt;/span>_ &lt;span class="o">(&lt;/span> &lt;span class="o">)&lt;/span> . ./ /&lt;span class="o">||&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> /.---^T&lt;span class="se">\ &lt;/span> , &lt;span class="p">|&lt;/span> / /&lt;span class="o">||&lt;/span>&lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> C&lt;span class="s1">&amp;#39; ._`| ._ / __,-/ / /-,||
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> \ \/ ; /O / _ |) )|,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> i \./^O\./_,-^/^ ,;-^,&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="se">\ &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sb">`&lt;/span>--/ ..-^^ &lt;span class="p">|&lt;/span>_-^
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sb">`&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="se">\^&lt;/span>- /&lt;span class="p">|&lt;/span>:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> i. .-- / &lt;span class="s1">&amp;#39;|.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> i ==&amp;#39;&lt;/span> /&lt;span class="s1">&amp;#39; |\._
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> _./`._ // |. ^-ooo.._
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> _.oo../&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> ^-.__./X/ . &lt;span class="sb">`&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>&lt;span class="c1">#######b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> d#### &lt;span class="p">|&lt;/span>&lt;span class="err">&amp;#39;&lt;/span> ^^^^ / &lt;span class="p">|&lt;/span> _&lt;span class="se">\#&lt;/span>&lt;span class="c1">######&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#####b ^^^^^^^^--. ...--^--^^^^^^^_.d######&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">######b._ Y _.d#########&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">##########b._ | _.d#############&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;Piccolo&amp;#34;&lt;/span> no. &lt;span class="m">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>from Dragonball Z&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --- Steven J. Simmons
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no5-这样很忍者">&lt;a href="#no5-%e8%bf%99%e6%a0%b7%e5%be%88%e5%bf%8d%e8%80%85" class="header-anchor">&lt;/a>No.5 这样很忍者
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> _
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="se">\&amp;#34;&lt;/span>-._ _.--&lt;span class="s2">&amp;#34;~~&amp;#34;&lt;/span>--._
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="se">\ &lt;/span> &lt;span class="s2">&amp;#34; ^. ___
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> / \.-~_.-~
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> .-----&amp;#39; /\/&amp;#34;&lt;/span>&lt;span class="se">\ &lt;/span>/~-._ /
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> / __ _/&lt;span class="se">\-&lt;/span>.__&lt;span class="se">\L&lt;/span>_.-/&lt;span class="se">\ &lt;/span> &lt;span class="s2">&amp;#34;-.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> /.-&amp;#34;&lt;/span> &lt;span class="se">\ &lt;/span> &lt;span class="o">(&lt;/span> &lt;span class="sb">`&lt;/span> &lt;span class="se">\_&lt;/span>o&amp;gt;&lt;span class="s2">&amp;#34;&amp;lt;o_/ \ .--._\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> /&amp;#39; \ \: &amp;#34;&lt;/span> :/_/ &lt;span class="s2">&amp;#34;`
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> / /\ &amp;#34;&lt;/span>&lt;span class="se">\ &lt;/span> ~ /~&lt;span class="s2">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \ I \/]&amp;#34;&lt;/span>-._ _.-&lt;span class="s2">&amp;#34;[
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> ___ \|___/ ./ l \___ ___
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> .--v~ &amp;#34;&lt;/span>v&lt;span class="sb">`&lt;/span> &lt;span class="o">(&lt;/span> &lt;span class="sb">`&lt;/span>-.__ __.-&lt;span class="s1">&amp;#39; ) ~v&amp;#34; ~v--.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .-{ | : \_ &amp;#34;~&amp;#34; _/ : | }-.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> / \ | ~-.,___,.-~ | / \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> ] \ | | / [
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> /\ \| : : |/ /\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> / ^._ _K.___,^ ^.___,K_ _.^ \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> / / &amp;#34;~/ &amp;#34;\ /&amp;#34; \~&amp;#34; \ \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> / / / \ _ : _ / \ \ \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">.^--./ / Y___________l___________Y \ \.--^.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">[ \ / | [/ ] | \ / ]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">| &amp;#34;v&amp;#34; l________[____/]________j -Row }r&amp;#34; /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">}------t / \ /`-. /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">| | Y Y / &amp;#34;-._/
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">}-----v&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> : &lt;span class="p">|&lt;/span> 7-. /
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>_&lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> l &lt;span class="p">|&lt;/span> / . &lt;span class="s2">&amp;#34;-._/
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">l .[_] : \ : r[]/_. /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \_____] &amp;#34;&lt;/span>--. &lt;span class="s2">&amp;#34;-.____/
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> &amp;#34;&lt;/span>Dragonball Z&lt;span class="s2">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> ---Row
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="no6-皮卡丘皮卡丘">&lt;a href="#no6-%e7%9a%ae%e5%8d%a1%e4%b8%98%e7%9a%ae%e5%8d%a1%e4%b8%98" class="header-anchor">&lt;/a>No.6 皮卡丘皮卡丘
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">quu..__
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$$$b&lt;/span> &lt;span class="sb">`&lt;/span>---.__
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$$&lt;/span>&lt;span class="s2">b `--. ___.---uuudP
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> `&lt;/span>&lt;span class="nv">$$&lt;/span>&lt;span class="s2">b `.__.------.__ __.---&amp;#39; &lt;/span>&lt;span class="nv">$$$$&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$b&lt;/span>&lt;span class="s2"> -&amp;#39; `-.-&amp;#39; &lt;/span>&lt;span class="nv">$$&lt;/span>$&lt;span class="s2">&amp;#34;&lt;/span> .&lt;span class="s1">&amp;#39;|
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> &amp;#34;. d$&amp;#34; _.&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sb">`&lt;/span>. / ...&lt;span class="s2">&amp;#34; .&amp;#39; |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> `./ ..::-&amp;#39; _.&amp;#39; |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> / .:::-&amp;#39; .-&amp;#39; .&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> : ::&amp;#39;&amp;#39;\ _.&amp;#39; |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> .&amp;#39; .-. .-. `. .&amp;#39; |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> : /&amp;#39;&lt;/span>&lt;span class="nv">$$&lt;/span>&lt;span class="s2">| .@&amp;#34;&lt;/span>$&lt;span class="se">\ &lt;/span> &lt;span class="sb">`&lt;/span>. .&lt;span class="s1">&amp;#39; _.-&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .&lt;span class="s1">&amp;#39;|$u$$| |$$,$$| | &amp;lt; _.-&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> &lt;span class="sb">`&lt;/span>:&lt;span class="nv">$$&lt;/span>:&lt;span class="s1">&amp;#39; :$$$$$: `. `. .-&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> : &lt;span class="sb">`&lt;/span>&lt;span class="s2">&amp;#34;--&amp;#39; | `-. \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> :##. == .###. `. `. `\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> |##: :###: | &amp;gt; &amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> |#&amp;#39; `..&amp;#39;`..&amp;#39; `###&amp;#39; x: / /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \ xXX| / ./
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \ xXXX&amp;#39;| / ./
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> /`-. `. / /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> : `- ..........., | / .&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | ``:::::::&amp;#39; . |&amp;lt; `.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | ``` | x| \ `.:``.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | .&amp;#39; /&amp;#39; xXX| `:`M`M&amp;#39;:.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | | ; /:&amp;#39; xXXX&amp;#39;| -&amp;#39;MMMMM:&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> `. .&amp;#39; : /:&amp;#39; |-&amp;#39;MMMM.-&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | | .&amp;#39; /&amp;#39; .&amp;#39;MMM.-&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> `&amp;#39;`&amp;#39; : ,&amp;#39; |MMM&amp;lt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | `&amp;#39; |tbap\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \ :MM.-&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \ | .&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> \. `. /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> / .:::::::.. : /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | .:::::::::::`. /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> | .:::------------\ /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> / .&amp;#39;&amp;#39; &amp;gt;::&amp;#39; /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> `&amp;#39;,: : .&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> `:.:&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no7-a-computer">&lt;a href="#no7-a-computer" class="header-anchor">&lt;/a>No.7 A computer
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> ,----------------, ,---------,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,-----------------------, ,&lt;span class="s2">&amp;#34; ,&amp;#34;&lt;/span>&lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ,&lt;span class="s2">&amp;#34; ,&amp;#34;&lt;/span>&lt;span class="p">|&lt;/span> ,&lt;span class="s2">&amp;#34; ,&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------+ &lt;span class="p">|&lt;/span> ,&lt;span class="s2">&amp;#34; ,&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> .-----------------. &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> +---------+ &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> -&lt;span class="o">==&lt;/span>----&lt;span class="s1">&amp;#39;| |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> | | I LOVE DOS! | | | | | |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> | | Bad command or | | |/----|`---= | |
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> | | C:\&amp;gt;_ | | | ,/|==== ooo | ;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> | | | | | // |(((( [33]| ,&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> | `-----------------&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span>,&lt;span class="s2">&amp;#34; .;&amp;#39;| |(((( | ,&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------+ &lt;span class="p">;;&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>,&lt;span class="s2">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> /_)______________(_/ //&amp;#39; | +---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> ___________________________/___ `,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> / oooooooooooooooo .o. oooo /, \,&amp;#34;&lt;/span>-----------
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> / &lt;span class="o">==&lt;/span>&lt;span class="nv">ooooooooooooooo&lt;/span>&lt;span class="o">==&lt;/span>.o. &lt;span class="nv">ooo&lt;/span>&lt;span class="o">=&lt;/span> // ,&lt;span class="sb">`&lt;/span>&lt;span class="se">\-&lt;/span>-&lt;span class="o">{)&lt;/span>B ,&lt;span class="s2">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">/_==__==========__==_ooo__ooo=_/&amp;#39; /___________,&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no8-翼龙">&lt;a href="#no8-%e7%bf%bc%e9%be%99" class="header-anchor">&lt;/a>No.8 翼龙
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> __----~~~~~~~~~~~------___
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> . . ~~//&lt;span class="o">====&lt;/span>...... __--~ ~~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -. &lt;span class="se">\_&lt;/span>&lt;span class="p">|&lt;/span>// &lt;span class="o">||&lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="se">\\&lt;/span> ~~~~~~::::... /~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ___-&lt;span class="o">==&lt;/span>_ _-~o~ &lt;span class="se">\/&lt;/span> &lt;span class="o">||&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="se">\\&lt;/span> _/~~-
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> __---~~~.&lt;span class="o">==&lt;/span>~&lt;span class="o">||&lt;/span>&lt;span class="se">\=&lt;/span>_ -_--~/_-~&lt;span class="p">|&lt;/span>- &lt;span class="p">|&lt;/span>&lt;span class="se">\\&lt;/span> &lt;span class="se">\\&lt;/span> _/~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> _-~~ .&lt;span class="o">=&lt;/span>~ &lt;span class="p">|&lt;/span> &lt;span class="se">\\&lt;/span>-_ &lt;span class="s1">&amp;#39;-~7 /- / || \ /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .~ .~ | \\ -_ / /- / || \ /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">/ ____ / | \\ ~-_/ /|- _/ .|| \ /
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">|~~ ~~|--~~~~--_ \ ~==-/ | \~--===~~ .\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> &amp;#39;&lt;/span> ~-&lt;span class="p">|&lt;/span> /&lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span>-~&lt;span class="se">\~&lt;/span>~ __--~~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span>-~~-_/ &lt;span class="p">|&lt;/span> &lt;span class="p">|&lt;/span> ~&lt;span class="se">\_&lt;/span> _-~ /&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> / &lt;span class="se">\ &lt;/span> &lt;span class="se">\_&lt;/span>_ &lt;span class="se">\/&lt;/span>~ &lt;span class="se">\_&lt;/span>_
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> _--~ _/ &lt;span class="p">|&lt;/span> .-~~____--~-/ ~~&lt;span class="o">==&lt;/span>.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">((&lt;/span>-&amp;gt;/~ &lt;span class="s1">&amp;#39;.|||&amp;#39;&lt;/span> -_&lt;span class="p">|&lt;/span> ~~-/ , . _&lt;span class="o">||&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -_ ~&lt;span class="se">\ &lt;/span> ~~---l__i__i__i--~~_/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> _-~-__ ~&lt;span class="o">)&lt;/span> &lt;span class="se">\-&lt;/span>-______________--~~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> //.-~~~-~_--~- &lt;span class="p">|&lt;/span>-------~~~~~~~~
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> //.-~~~--&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no9-不知道像啥">&lt;a href="#no9-%e4%b8%8d%e7%9f%a5%e9%81%93%e5%83%8f%e5%95%a5" class="header-anchor">&lt;/a>No.9 不知道像啥
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> &lt;span class="o">)&lt;/span> &lt;span class="o">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> /+++&lt;span class="o">=))&lt;/span> &lt;span class="o">((=&lt;/span>+++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> /++++++++// &lt;span class="se">\\&lt;/span>+++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> /++++++++++//&lt;span class="o">(&lt;/span> /&lt;span class="se">\ &lt;/span> &lt;span class="o">)&lt;/span>&lt;span class="se">\\&lt;/span>++++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> /+++++++++++// &lt;span class="se">\\&lt;/span>^^// &lt;span class="se">\\&lt;/span>+++++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> _/++++++++++++// &lt;span class="o">{{&lt;/span>@::@&lt;span class="o">}}&lt;/span> &lt;span class="se">\\&lt;/span>++++++++++++&lt;span class="se">\_&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> /+++++++++++++&lt;span class="o">((&lt;/span> &lt;span class="o">{&lt;/span>&lt;span class="se">\/&lt;/span>&lt;span class="o">}&lt;/span> &lt;span class="o">))&lt;/span>+++++++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> /+++++++++++++++&lt;span class="se">\\&lt;/span> &amp;lt;**&amp;gt; //+++++++++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> /+++++++++++++++++&lt;span class="se">\\&lt;/span> / VV &lt;span class="se">\ &lt;/span> //+++++++++++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>/+++++++++++++++++++&lt;span class="se">\\&lt;/span>/******&lt;span class="se">\/&lt;/span>/+++++++++++++++++++&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="p">|&lt;/span>+/&lt;span class="p">|&lt;/span>++++++++++/&lt;span class="se">\+&lt;/span>+++++&lt;span class="o">(&lt;/span>***/&lt;span class="se">\*&lt;/span>**&lt;span class="o">)&lt;/span>++++++/&lt;span class="se">\+&lt;/span>+++++++++&lt;span class="p">|&lt;/span>&lt;span class="se">\+\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="p">|&lt;/span>/ &lt;span class="p">|&lt;/span>+/&lt;span class="se">\+&lt;/span>/&lt;span class="se">\+&lt;/span>/&lt;span class="se">\/&lt;/span> &lt;span class="se">\+&lt;/span>/&lt;span class="se">\+&lt;/span>+&lt;span class="se">\*&lt;/span>*&lt;span class="p">|&lt;/span>**&lt;span class="p">|&lt;/span>**/++/&lt;span class="se">\+&lt;/span>/ &lt;span class="se">\/\+&lt;/span>/&lt;span class="se">\+&lt;/span>/&lt;span class="se">\+&lt;/span>&lt;span class="p">|&lt;/span> &lt;span class="se">\|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">v &lt;span class="p">|&lt;/span>/ V V V V &lt;span class="se">\+\|&lt;/span>*&lt;span class="p">|&lt;/span>**&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>/+/ V v V V &lt;span class="se">\|&lt;/span> v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> v /*&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>**&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>*&lt;span class="se">\.&lt;/span>.. v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">(&lt;/span>**&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>**&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>**&lt;span class="o">)&lt;/span>. .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> __&lt;span class="se">\*&lt;/span>&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>**&lt;span class="p">|&lt;/span>*&lt;span class="p">|&lt;/span>*/__. .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">(&lt;/span>vvv&lt;span class="o">(&lt;/span>VVV&lt;span class="o">)(&lt;/span>VVV&lt;span class="o">)&lt;/span>vvv&lt;span class="o">)&lt;/span>. .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ............../ /
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> / ............../
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">((&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no10-性感的-girl">&lt;a href="#no10-%e6%80%a7%e6%84%9f%e7%9a%84-girl" class="header-anchor">&lt;/a>No.10 性感的 girl
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> .::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .::::::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> :::::::::::
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ..:::::::::::&lt;span class="s1">&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> &amp;#39;&lt;/span>::::::::::::&lt;span class="s1">&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .::::::::::
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> &amp;#39;&lt;/span>::::::::::::::..
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ..::::::::::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="sb">``&lt;/span>::::::::::::::::
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ::::&lt;span class="sb">``&lt;/span>:::::::::&lt;span class="s1">&amp;#39; .:::.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> ::::&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;:::::&amp;#39;&lt;/span> .::::::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .::::&lt;span class="s1">&amp;#39; :::: .:::::::&amp;#39;&lt;/span>::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .:::&lt;span class="s1">&amp;#39; ::::: .:::::::::&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;:::::.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> .::&amp;#39;&lt;/span> :::::.:::::::::&lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>:::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .::&lt;span class="s1">&amp;#39; ::::::::::::::&amp;#39;&lt;/span> &lt;span class="sb">``&lt;/span>::::.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...::: ::::::::::::&lt;span class="s1">&amp;#39; ``::.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">```` &amp;#39;&lt;/span>:. &lt;span class="s1">&amp;#39;:::::::::&amp;#39;&lt;/span> ::::..
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;.:::::&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;:&amp;#39;&lt;/span>&lt;span class="sb">````&lt;/span>..
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="no11-最后一张龙珠">&lt;a href="#no11-%e6%9c%80%e5%90%8e%e4%b8%80%e5%bc%a0%e9%be%99%e7%8f%a0" class="header-anchor">&lt;/a>No.11 最后一张龙珠
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;span class="lnt">121
+&lt;/span>&lt;span class="lnt">122
+&lt;/span>&lt;span class="lnt">123
+&lt;/span>&lt;span class="lnt">124
+&lt;/span>&lt;span class="lnt">125
+&lt;/span>&lt;span class="lnt">126
+&lt;/span>&lt;span class="lnt">127
+&lt;/span>&lt;span class="lnt">128
+&lt;/span>&lt;span class="lnt">129
+&lt;/span>&lt;span class="lnt">130
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> MMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMM .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMM M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMM M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMM M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMM:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> oMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .MMMMMMMMMMMMMMo MMMMMMMMMMMMMMM M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">MMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMM. oMMMMMMMMMMMMMMM.M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM: H
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM . MMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM M MMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM M MMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MM. MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM M MMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM .MMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .MMMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HMMMMMMMMMMMMMMMMMMMMM.MMMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMM MMM.oMMMMMMM..MMMMMMMMM:MMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMM MM..MMMMMMM...MMMMMMM. MMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMM ..MMMMMM...MMMMMM ..MMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMM:M.MMM.M.. MMMMM M..MMMMM...MMMMMMMMMMMMMMMMMM MMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMM. .M..MM.M...MMMMMM..MMMMM.. MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMM..M....M.....:MMM .MMMMMM..MMMMMMM...MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMM.M.. ...M......MM.MMMMM.......MHM.M .MMMMMMMMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMM..MM. . MMM.....MMMMMM.M.....M ..MM..M MMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .MMMMMHMM. ..MMMM. MMM............o..... . .MMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMM. M... .........................M..:.MMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> oMMM............ .................M.M.MMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .....MM........................ . MMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M.....M.....................o.MM.MMMMMMMM.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M........................M.. ...MMMMMMMMMMMMMo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> :....MMM..............MMM..oMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...MMM.............MMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .............:MMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..... MMM.....M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M M.............
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ................M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ooM.................MM MoMMMMMoooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMoooM......................MoooooooH..oMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MHooooMoM.....................MMooooooM........M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> oooooooMoooM......... o........MoooooooM............
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Mooooooooooo.......M.........Moooooooo:..............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooMoooooooooM...M........:Mooooooooooo:..............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..oooooooooooo .........Mooooooooooooooo..............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...Mooo:oooooooo.M....ooooooooooooooooooo..M...........M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...oooooMoooooooM..Mooooooooooooo:oooooooM.M...........M.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...ooooooMoo:ooooMoooooooooooooHoooooooooH:M. ...........:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..MoooooooMoooooooooooooooooo:ooooooMooooMoM..............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..ooooooooooMooooooooooooooHoooooooMooHooooM...............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...ooooooooooooooooooo:MooooooooooooooMoMoooM................
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...oooooooooooooooooooooooooooooooooooooMooMM................M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...MooooooooooooooooooooooooooooooooooooooooMo ................
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...MooooooooooooooooooooooooooooooooooooooooM M................M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...ooooooooooooooooooooooooooooooooooooooooM ................M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...MoooooooooooooooooooooooooooooooooooooooMM .:...............
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .....MooooooooooooooooooooooooooooooooooooMoo .............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...... ooooooooooooooooooooooooooooooooooooM M..............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M........MooooMMM MM MM MMMMMMMMMooooooooM M...............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .........HM M: MM :MMMMMM M M...............
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..........M M MoM M M................M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M.........:M MoH M M M MooooHoooMM. M M...............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..........Moooo MMooM oooooMooooooooM M..............H
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M.........MooooM Mooo : ooooooMooooMoooM M........ . .o.M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> H.. .....ooooo oooo M MooooooooooooooM M... MMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMooooM M oooo . ooooooMooooooooM .MMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMooooH : ooooH oooooooooooooooo MMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMoooo ooooM Moooooooooooooooo .MMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMoooo ooooM MooooooooooooooooM MMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMoooM ooooM ooooooooooooooooo MMMMMMMMMMM:M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMoooM MooooM oooooooooooMoooooo MH...........
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> . ......Mooo. MooooM oooooooooooooooooo M............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M.M......oooo MooooM Moooooooooooooooooo: .........M.....
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M.M.....Moooo MooooM ooooooooooooooooooM .M............
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .......MooooH MooooM oooooooooMoooooooooo M..o...M..o....M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .o....HMooooM MooooH MooooooooMooooooooooM .:M...M.......M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M..M.....MoooM :oooo: .MooooooooHooMoooooooooM M M... ..oM.M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M...M.:.Mooo. MMMMooooo oooooooooooMoooooooooooooM ....M. M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M:M..o.Moooooooooooooo MooooooooooooooMooooooooooooM .Mo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooooooooooooMooooooooooooMoMoooooooooooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Mooooooooooooooo:ooooooooooooooooooooooooooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ooooooooooooooooMooooooooooMoooooooooooooooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ooooooooooooooooMoooooooooooMooooooooooooooooHo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ooMooooooooooooooMoooooooooooooooooooooooooooMoM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooMoooooooooooooo.ooooooooooooooooooooooooooo:oM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MoooooooooooooooooooooooooooooooooooooooooooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MoooMooooooooooooooMooooooooooooooooooooooooooooo.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MoooMooooooooooooooMoooooooooooooooooooooooooMooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooooooooooooooooMoooooooooooooooooooooooooMoooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooMoooooooooooooMoooooooooooooooooooooooooMoHooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ooooooMooooooooooooooooooooooooooooooooooooooooMoMoooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooooooooooooooooooMooooooooooooooooooooooooooMoooooH:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MoooooooMooooooooooooMoooooooooooooooooooooooooooooHoooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooooooMoooooooooooMoooooooooooooooooooooooooMoooMooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Moooooooooooooooooooooooooooooooooooooooooooooo.oooMooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MoooooooooooooooooooooooooooooooooooooooooooooMoooooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooooooooooooooooooMoooooooooooooooooooooooooooooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooooooooooooooooooMHooooooooooooooooooooMoooo:ooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMooooooooooooooooooMoMHoooooooooooooooooooooooMooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMoooooooooooooooMMooo MMooooooooooooooooooooooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMoooooooooooooMooooo oooooooooooooooooooooMooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooMMoooooooooMoooMMoM ooooHooooooooooooooooMooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MooooMooooooMooooMoooM MoooooMoooooooooooooMooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ooooooMMooooooooMooooM MoooooooooMooooooooooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HooooooMoooooooMooooM HoooooooHooMooooooooooooo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> oooMoooooooooHoooM MoooooooooMoooooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HooooooooooooHM MooooooooMMoooooooM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMM Moooooo:MooooHMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMM: ... MMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M............M MMMMMMMMM ....
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M.MM.......... M.............M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> M ..............MM M..............
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMM............MMMM ..MMMMMMMM ....M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMM...M
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .MMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> :MMMMMMMMMMMMMMMMMMH MMMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> By EBEN Jérôme MMMMMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> MMMMMMMMMMMMMMM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HMMMMMM
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
