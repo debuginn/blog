@@ -11,10 +11,14 @@
             "id": "9420d154e7650d58",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "templates/create-blog-post.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "create-blog-post"
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "templates/create-blog-post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "create-blog-post 的反向链接列表"
             }
           },
           {
@@ -107,11 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "templates/create-blog-post.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "create-blog-post 的出链列表"
             }
           },
           {
@@ -132,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "templates/create-blog-post.md"
+              },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "create-blog-post 的大纲"
             }
           },
           {
@@ -148,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -167,10 +175,12 @@
   },
   "active": "9420d154e7650d58",
   "lastOpenFiles": [
+    "content/post/debuginn-2024.md",
+    "content/post/ajax/ajax-async-js-xml.md",
     "content/post/java/phoenix/phoenix-framework-1.md",
-    "_Templates/create-blog-post.md",
+    "templates/create-blog-post.md",
     "debuginn-2024.md",
     "content/post/summary/debuginn-2023.md",
-    "_Templates"
+    "templates"
   ]
 }
