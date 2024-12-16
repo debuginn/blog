@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/mysql/mysql-chooes-storage-engine.md",
+                "file": "content/post/ncre/test-ncre-network-single-topic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mysql-chooes-storage-engine"
+              "title": "test-ncre-network-single-topic"
             }
           }
         ]
@@ -172,6 +172,9 @@
   },
   "active": "b614b31364fcda90",
   "lastOpenFiles": [
+    "content/post/ncre/test-ncre-network-multiple-choice .md",
+    "content/post/mysql/mysql-lock-occ-pcc.md",
+    "content/post/mysql/mysql-chooes-storage-engine.md",
     "content/post/lqb/lpb-19-b-cplus-bear-pre-calc.md",
     "content/post/js/js-snowflake.md",
     "未命名.md",
