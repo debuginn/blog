@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b491aba99a85fd4c",
+        "id": "f909ee6fe0981015",
         "type": "tabs",
         "children": [
           {
-            "id": "b614b31364fcda90",
+            "id": "8a92e7e5a19f71af",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/post/ncre/test-ncre-network-single-topic.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "test-ncre-network-single-topic"
+              "title": "新标签页"
             }
           }
         ]
@@ -170,8 +166,9 @@
       "quickadd:QuickAdd": false
     }
   },
-  "active": "b614b31364fcda90",
+  "active": "8a92e7e5a19f71af",
   "lastOpenFiles": [
+    "content/post/ncre/test-ncre-network-single-topic.md",
     "content/post/ncre/test-ncre-network-multiple-choice .md",
     "content/post/mysql/mysql-lock-occ-pcc.md",
     "content/post/mysql/mysql-chooes-storage-engine.md",
