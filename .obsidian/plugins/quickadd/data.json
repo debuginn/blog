@@ -1,11 +1,11 @@
 {
   "choices": [
     {
-      "id": "9df442f3-71ef-4147-8d6a-7e97f9478986",
+      "id": "a0f0e5d1-ccb8-4ff3-b8bf-7ae223582271",
       "name": "✍️ 新建博客",
       "type": "Template",
       "command": false,
-      "templatePath": "_Templates/create-blog-post.md",
+      "templatePath": "templates/create-blog-post.md",
       "fileNameFormat": {
         "enabled": false,
         "format": ""
@@ -34,7 +34,7 @@
   "macros": [],
   "inputPrompt": "single-line",
   "devMode": false,
-  "templateFolderPath": "_Templates",
+  "templateFolderPath": "templates",
   "announceUpdates": true,
   "version": "1.11.5",
   "disableOnlineFeatures": true,
