@@ -12,7 +12,9 @@
       },
       "folder": {
         "enabled": true,
-        "folders": [],
+        "folders": [
+          "content/post"
+        ],
         "chooseWhenCreatingNote": false,
         "createInSameFolderAsActiveFile": false,
         "chooseFromSubfolders": false

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "75357dd6049d5e4f",
+        "id": "6c4a5d67181190a7",
         "type": "tabs",
         "children": [
           {
-            "id": "e1fa00f5c498d7e4",
+            "id": "9420d154e7650d58",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -165,9 +165,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e1fa00f5c498d7e4",
+  "active": "9420d154e7650d58",
   "lastOpenFiles": [
+    "content/post/java/phoenix/phoenix-framework-1.md",
     "_Templates/create-blog-post.md",
+    "debuginn-2024.md",
     "content/post/summary/debuginn-2023.md",
     "_Templates"
   ]

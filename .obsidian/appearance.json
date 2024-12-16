@@ -1,3 +1,5 @@
 {
-  "cssTheme": "Border"
+  "cssTheme": "Border",
+  "textFontFamily": "MiSans",
+  "interfaceFontFamily": "MiSans VF"
 }
