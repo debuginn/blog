@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/lqb/lpb-19-b-cplus-bear-pre-calc.md",
+                "file": "content/post/mysql/mysql-chooes-storage-engine.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lpb-19-b-cplus-bear-pre-calc"
+              "title": "mysql-chooes-storage-engine"
             }
           }
         ]
@@ -172,6 +172,7 @@
   },
   "active": "b614b31364fcda90",
   "lastOpenFiles": [
+    "content/post/lqb/lpb-19-b-cplus-bear-pre-calc.md",
     "content/post/js/js-snowflake.md",
     "未命名.md",
     "content/post/debuginn-2024.md",
