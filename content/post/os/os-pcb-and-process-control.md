@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["os", "system"]
 categories: ["OS"]
-image: "https://webp.debuginn.com/202302221853276.jpg"
+image: "https://static.debuginn.com/202302221853276.jpg"
 ---
 
 ## 进程控制块PCB
