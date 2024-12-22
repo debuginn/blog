@@ -3,7 +3,7 @@ title: "我的项目"
 date: 2023-03-17T15:39:10+08:00
 keywords: "我的项目"
 comments: true
-image: "https://webp.debuginn.com/202302262119034.jpg"
+image: "https://static.debuginn.com/202302262119034.jpg"
 ---
 
 ## 🤠 Hi，我是 Meng小羽
