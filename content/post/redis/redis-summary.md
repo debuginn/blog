@@ -10,7 +10,7 @@ comments: true
 weight: 0
 tags: ["redis"]
 categories: ["sql"]
-image: "https://static.debuginn.com/202303152015654.jpg"
+image: "https://webp.debuginn.com/202303152015654.jpg"
 ---
 
 **1.Redis数据结构有哪些 ？**
