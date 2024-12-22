@@ -2,3 +2,5 @@
 .DS_Store
 themes/.DS_Store
 /resources
+.obsidian
+/templates

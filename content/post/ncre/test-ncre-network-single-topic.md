@@ -1,16 +1,14 @@
 ---
-title: "【NCRE四级网络工程师】计算机网络单选题"
+title: 【NCRE四级网络工程师】计算机网络单选题
 date: 2019-02-26T11:58:07+08:00
 draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
-keywords: "NCRE"
+keywords: NCRE
 comments: true
-weight: 0
-tags: ["NCRE"]
-categories: ["debuginn"]
-image: "https://webp.debuginn.com/202303261146594.jpg"
+tags:
+  - NCRE
+categories:
+  - debuginn
+image: https://webp.debuginn.com/202303261146594.jpg
 ---
 
 **如果交换机的总带宽为14.4Gbps，它具有12个百兆的全双工端口，则其千兆的全双工端口数量最多为？**
