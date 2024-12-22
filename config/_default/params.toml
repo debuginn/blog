@@ -93,9 +93,3 @@ darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 lang = "zh-CN"
-
-# webpCloudProxy
-[webpCloudProxy]
-enable = true
-proxyUrl = "https://webp.debuginn.com"
-convertTypeList = ["jpg", "jpeg", "png", "gif"]
