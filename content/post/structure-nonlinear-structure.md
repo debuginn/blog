@@ -1,13 +1,8 @@
 ---
 title: "数据结构 非线性结构"
 date: 2017-12-01T23:17:09+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "笔记,数据结构"
 comments: true
-weight: 0
 tags: ["笔记", "数据结构"]
 categories: ["algorithm"]
 image: "https://webp.debuginn.com/202302221903175.jpg"

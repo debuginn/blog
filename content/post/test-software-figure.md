@@ -1,13 +1,8 @@
 ---
 title: "软件工程 活动图、状态图、顺序图实验题"
 date: 2019-07-04T16:48:56+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comments: true
-weight: 0
 tags: ["软件工程"]
 categories: ["software"]
 image: "https://webp.debuginn.com/202303191159338.jpg"

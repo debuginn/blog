@@ -2,12 +2,8 @@
 title: "软件工程 怎样建立甘特图"
 date: 2019-03-13T22:02:53+08:00
 draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comments: true
-weight: 0
 tags: ["软件工程"]
 categories: ["software"]
 image: "https://webp.debuginn.com/202303191228166.jpg"

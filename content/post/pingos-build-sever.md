@@ -1,13 +1,8 @@
 ---
 title: "搭建流媒体服务器 PingOS 平台搭建"
 date: 2020-04-03T23:19:45+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "pingos,ffmpeg,hls"
 comments: true
-weight: 0
 tags: ["pingos","ffmpeg","hls"]
 categories: ["debuginn"]
 image: "https://webp.debuginn.com/202303121930279.jpg"

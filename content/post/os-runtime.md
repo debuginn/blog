@@ -1,13 +1,8 @@
 ---
 title: "操作系统 运行机制"
 date: 2017-11-20T14:34:00+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "os,runtime,运行机制"
 comments: true
-weight: 0
 tags: ["os", "runtime", "操作系统", "学习笔记"]
 categories: ["OS"]
 image: "https://webp.debuginn.com/202302221949419.jpg"

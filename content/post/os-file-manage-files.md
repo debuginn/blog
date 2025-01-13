@@ -1,13 +1,8 @@
 ---
 title: "操作系统 文件管理 文件的结构"
 date: 2018-01-26T19:16:33+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "os,introduction"
 comments: true
-weight: 0
 tags: ["os", "system"]
 categories: ["OS"]
 image: "https://webp.debuginn.com/202302221853276.jpg"

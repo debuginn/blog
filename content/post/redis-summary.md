@@ -1,13 +1,8 @@
 ---
 title: "Redis 知识点汇总"
 date: 2020-01-28T20:14:18+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "redis"
 comments: true
-weight: 0
 tags: ["redis"]
 categories: ["sql"]
 image: "https://webp.debuginn.com/202303152015654.jpg"
