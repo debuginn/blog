@@ -1,13 +1,8 @@
 ---
 title: "二维码会使用完么"
 date: 2019-11-20T20:09:25+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "qrcode"
 comments: true
-weight: 0
 tags: ["qrcode"]
 categories: ["debuginn"]
 image: "https://webp.debuginn.com/202303162011356.jpg"

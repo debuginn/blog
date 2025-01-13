@@ -1,13 +1,8 @@
 ---
 title: "再见Windows7，中学时期的一代神器"
 date: 2019-06-05T16:09:53+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "windows"
 comments: true
-weight: 0
 tags: ["windows"]
 categories: ["debuginn"]
 image: "https://webp.debuginn.com/202303241241419.jpg"

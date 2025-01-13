@@ -1,13 +1,10 @@
 ---
 title: 【NCRE四级网络工程师】计算机网络单选题
 date: 2019-02-26T11:58:07+08:00
-draft: false
-keywords: NCRE
+keywords: "NCRE"
 comments: true
-tags:
-  - NCRE
-categories:
-  - debuginn
+tags: ["NCRE"]
+categories: ["debuginn"]
 image: https://webp.debuginn.com/202303261146594.jpg
 ---
 

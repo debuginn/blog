@@ -1,13 +1,8 @@
 ---
 title: "PWA 渐进式Web应用程序"
 date: 2022-03-18T14:56:17+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "web,pwa"
 comments: true
-weight: 0
 tags: ["web","pwa"]
 categories: ["debuginn"]
 image: "https://webp.debuginn.com/202303181458725.png"

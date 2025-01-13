@@ -1,13 +1,8 @@
 ---
 title: "软件质量测试 因果图测试用例 自动售货机"
 date: 2019-07-03T18:31:12+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "软件质量测试"
 comments: true
-weight: 0
 tags: ["软件质量测试"]
 categories: ["software"]
 image: "https://webp.debuginn.com/202303191412328.jpg"

@@ -1,13 +1,8 @@
 ---
 title: "软件质量测试知识点"
 date: 2019-07-03T18:33:02+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "软件质量测试"
 comments: true
-weight: 0
 tags: ["软件质量测试"]
 categories: ["software"]
 image: "https://webp.debuginn.com/202303191356876.jpg"

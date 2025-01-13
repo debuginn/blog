@@ -1,13 +1,8 @@
 ---
 title: "软件工程 用例习题"
 date: 2019-07-04T23:11:33+08:00
-draft: false
-author: "Meng小羽"
-authorLink: "https://debuginn.com"
-authorEmail: "debuginn@icloud.com"
 keywords: "软件工程"
 comments: true
-weight: 0
 tags: ["软件工程"]
 categories: ["software"]
 image: "https://webp.debuginn.com/202303182313879.jpg"
