@@ -1,0 +1,1358 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RSS on Debug客栈</title><link>https://blog.debuginn.com/tags/rss/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in RSS on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 18 Nov 2024 19:30:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/rss/index.xml" rel="self" type="application/rss+xml"/><item><title>Follow 给我空投了 1w 代币，可以无限发码啦～</title><link>https://blog.debuginn.com/p/follow-app-airdrop/</link><pubDate>Mon, 18 Nov 2024 19:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app-airdrop/</guid><description>&lt;img src="https://webp.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow 给我空投了 1w 代币，可以无限发码啦～" />&lt;h2 id="follow-airdrop">&lt;a href="#follow-airdrop" class="header-anchor">&lt;/a>Follow Airdrop
+&lt;/h2>&lt;p>由于较早的参与 Follow 的内测，现在也当了一回原始股东的感觉，终于分红了～&lt;/p>
+&lt;p>今天看官网提供了 9051 $POWER 代币，按照公测到自由下载预估时间，再加上邀请码生成需要有使用时间限制，差不多可以无限发码啦～&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241102Sg7rhN.png"
+loading="lazy"
+alt="Airdrop"
+>&lt;/p>
+&lt;h2 id="下载地址">&lt;a href="#%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80" class="header-anchor">&lt;/a>下载地址
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">官网地址：https://follow.is/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Github： https://github.com/RSSNext/follow
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">下载地址：https://github.com/RSSNext/Follow/releases
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="功能简介">&lt;a href="#%e5%8a%9f%e8%83%bd%e7%ae%80%e4%bb%8b" class="header-anchor">&lt;/a>功能简介
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://blog.debuginn.com/p/follow-app/" >Follow ｜下一代的信息浏览器&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://blog.debuginn.com/p/follow-app-2/" >Follow ｜下一代信息浏览器 第二弹来了&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" >2023 年为何我还在使用 RSS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="订阅源推荐">&lt;a href="#%e8%ae%a2%e9%98%85%e6%ba%90%e6%8e%a8%e8%8d%90" class="header-anchor">&lt;/a>订阅源推荐
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">我的订阅源：https://app.follow.is/share/users/@debuginn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Go 语言爱好者：https://app.follow.is/list/60633757623653376
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">新闻资讯：https://app.follow.is/list/67389023042166784
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">互联网相关资讯: https://app.follow.is/list/66698003857126400
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Web开发关注领域：https://app.follow.is/list/63404832700630016
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">摄影相关的领域：https://app.follow.is/share/lists/60649442771759104
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">AI前沿资讯：https://app.follow.is/share/lists/67498814495306752
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="邀请码">&lt;a href="#%e9%82%80%e8%af%b7%e7%a0%81" class="header-anchor">&lt;/a>邀请码
+&lt;/h2>&lt;p>大家最关心的就是邀请码了，今日到账后，我会陆续给大家生成邀请码发送给大家，大家可以关注我的公众号，同时希望把你感兴趣的订阅源在评论区分享出来，&lt;strong>分享优质的订阅源将优先获得邀请码哦&lt;/strong>，最后，感谢您的关注，让我们一起变得更强～&lt;/p></description></item><item><title>Follow ｜下一代信息浏览器 第二弹来了</title><link>https://blog.debuginn.com/p/follow-app-2/</link><pubDate>Sun, 20 Oct 2024 20:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app-2/</guid><description>&lt;img src="https://webp.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow ｜下一代信息浏览器 第二弹来了" />&lt;p>大家好呀，&lt;a class="link" href="https://blog.debuginn.com/p/follow-app" >上篇文章&lt;/a>给大家推荐了我近期参与内测的一个软件 Follow，得到了大家热情地互动，今天继续给大家深度的分享一下 Follow 的特色功能，同时由于目前 Follow 处于内测邀请阶段，一码处于严重供不应求的状态，我也会给大家推荐下暂时平替的 RSS 开源软件，同时，大家可以关注我，等 Follow 公测开始，我会第一时间告知大家。&lt;/p>
+&lt;h2 id="特色功能">&lt;a href="#%e7%89%b9%e8%89%b2%e5%8a%9f%e8%83%bd" class="header-anchor">&lt;/a>特色功能
+&lt;/h2>&lt;h3 id="rss-搜索">&lt;a href="#rss-%e6%90%9c%e7%b4%a2" class="header-anchor">&lt;/a>RSS 搜索
+&lt;/h3>&lt;p>&lt;img src="https://webp.debuginn.com/20241018ZBVyDd.png"
+loading="lazy"
+alt="search"
+>&lt;/p>
+&lt;p>作为 RSS 阅读器，提供搜索功能，大大降低了大家搜索感兴趣的源的信息，非常便捷方便。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>搜索&lt;/strong>：可以根据关键词搜索订阅感兴趣的方向的信息源；&lt;/li>
+&lt;li>&lt;strong>RSS&lt;/strong>：可以直接输入 RSS 订阅地址预览订阅；&lt;/li>
+&lt;li>&lt;strong>RSSHub&lt;/strong>：作者与另外一个开源作品组成生态，只要是网站信息开放的，那么&amp;quot;&lt;strong>万物皆可 RSS&lt;/strong>&amp;quot;；&lt;/li>
+&lt;li>&lt;strong>收件箱&lt;/strong>：你敢相信，也可以接收邮件 📧 ；&lt;/li>
+&lt;li>&lt;strong>RSS3&lt;/strong>：下一代的 RSS 信息订阅方式；&lt;/li>
+&lt;li>还有 RSS 阅读器的&lt;strong>导入功能&lt;/strong>，你可以快速切换到 Follow 上面来；&lt;/li>
+&lt;/ul>
+&lt;h3 id="谁在阅读">&lt;a href="#%e8%b0%81%e5%9c%a8%e9%98%85%e8%af%bb" class="header-anchor">&lt;/a>谁在阅读
+&lt;/h3>&lt;p>阅读器可以把相同订阅并阅读过这篇文章的网友罗列在文章左上方。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018vYtfMz.png"
+loading="lazy"
+alt="who read"
+>&lt;/p>
+&lt;p>同时，点击头像会把订阅者自己公开的订阅罗列出来，通过这个功能我补充了好多订阅源 😄&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018V86Unn.png"
+loading="lazy"
+alt="sylwair"
+>&lt;/p>
+&lt;h3 id="订阅热点-ai">&lt;a href="#%e8%ae%a2%e9%98%85%e7%83%ad%e7%82%b9-ai" class="header-anchor">&lt;/a>订阅热点 AI
+&lt;/h3>&lt;p>每天早晚 8 点 AI 基于订阅的源的阅读量来提取 Summary 列表供订阅者阅读。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018Jir4fe.png"
+loading="lazy"
+alt="hot"
+>&lt;/p>
+&lt;h3 id="生成摘要-ai">&lt;a href="#%e7%94%9f%e6%88%90%e6%91%98%e8%a6%81-ai" class="header-anchor">&lt;/a>生成摘要 AI
+&lt;/h3>&lt;p>生成摘要对我来说很重要，目前我订阅了上百个博客和科技媒体，摘要可以让我快速阅读文章核心内容，并确定是否我感兴趣的文章并继续阅读。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018hu1JkJ.png"
+loading="lazy"
+alt="summary"
+>&lt;/p>
+&lt;h3 id="双语翻译-ai">&lt;a href="#%e5%8f%8c%e8%af%ad%e7%bf%bb%e8%af%91-ai" class="header-anchor">&lt;/a>双语翻译 AI
+&lt;/h3>&lt;p>应该也是通过 AI 实现的自动翻译，可以对比着阅读，订阅英文专业文章也不吃力。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018andNgu.png"
+loading="lazy"
+alt="translate"
+>&lt;/p>
+&lt;h3 id="激励作者">&lt;a href="#%e6%bf%80%e5%8a%b1%e4%bd%9c%e8%80%85" class="header-anchor">&lt;/a>激励作者
+&lt;/h3>&lt;p>通过区块链技术，发行 &lt;code>POWER&lt;/code> 代币，你可以对你感兴趣的文章的作者进行打赏，用来提升作者的影响力和生产出更多高质量的内容，从而实现了&lt;strong>良性循环的激励创作体系&lt;/strong>。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018tqSDWT.png"
+loading="lazy"
+alt="gift"
+>&lt;/p>
+&lt;h3 id="视频订阅">&lt;a href="#%e8%a7%86%e9%a2%91%e8%ae%a2%e9%98%85" class="header-anchor">&lt;/a>视频订阅
+&lt;/h3>&lt;p>没错，你可以把 YouTube 或者哔哩哔哩上你感兴趣的 UP 主都订阅起来，他们发表的最新视频就可以通过 Follow 的自动化推送来及时提醒，直接可以在软件内播放，非常地便捷。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018A8zHK1.png"
+loading="lazy"
+alt="media"
+>&lt;/p>
+&lt;h3 id="图库订阅">&lt;a href="#%e5%9b%be%e5%ba%93%e8%ae%a2%e9%98%85" class="header-anchor">&lt;/a>图库订阅
+&lt;/h3>&lt;p>通过图片瀑布流的形式进行订阅，学习与鉴赏图像给大家带来的视觉冲击与色彩描述。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018n9RCRJ.png"
+loading="lazy"
+alt="picture"
+>&lt;/p>
+&lt;h3 id="播客集成">&lt;a href="#%e6%92%ad%e5%ae%a2%e9%9b%86%e6%88%90" class="header-anchor">&lt;/a>播客集成
+&lt;/h3>&lt;p>Follow 就是强大，当你不想去阅读文章的时候，你可以通过点击一键生成播客的模式，让文章生成类似播客的方式播放给你听，遥遥领先。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241018Jc5OmY.png"
+loading="lazy"
+alt="播客"
+>&lt;/p>
+&lt;p>介绍了这么多 Follow 的功能，相信大家已经跃跃欲试了，但是目前 Follow 处于内部测试，属于邀请阶段，我这边 5 天才可以生成一个邀请码，严重供不应求，在公测之前的这个阶段，大家没有拿到邀请码的不要灰心，接下来给大家介绍一个开源免费的 RSS 阅读器，先进行过渡。&lt;/p>
+&lt;h2 id="平替的软件">&lt;a href="#%e5%b9%b3%e6%9b%bf%e7%9a%84%e8%bd%af%e4%bb%b6" class="header-anchor">&lt;/a>平替的软件
+&lt;/h2>&lt;h3 id="苹果系统平替--netnewswire">&lt;a href="#%e8%8b%b9%e6%9e%9c%e7%b3%bb%e7%bb%9f%e5%b9%b3%e6%9b%bf--netnewswire" class="header-anchor">&lt;/a>苹果系统平替 # &lt;strong>NetNewsWire&lt;/strong>
+&lt;/h3>&lt;p>&lt;img src="https://webp.debuginn.com/20241020AFvwsb.jpeg"
+loading="lazy"
+alt="NetNewsWire"
+>&lt;/p>
+&lt;ul>
+&lt;li>官网地址：&lt;a class="link" href="https://netnewswire.com/" target="_blank" rel="noopener"
+>https://netnewswire.com/&lt;/a>&lt;/li>
+&lt;li>Github 地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire" target="_blank" rel="noopener"
+>https://github.com/Ranchero-Software/NetNewsWire&lt;/a>&lt;/li>
+&lt;li>下载地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire/releases" target="_blank" rel="noopener"
+>https://github.com/Ranchero-Software/NetNewsWire/releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="windows-平替--fluent-reader">&lt;a href="#windows-%e5%b9%b3%e6%9b%bf--fluent-reader" class="header-anchor">&lt;/a>Windows 平替 # &lt;strong>Fluent Reader&lt;/strong>
+&lt;/h3>&lt;p>&lt;img src="https://webp.debuginn.com/20241020NLzuRr.jpeg"
+loading="lazy"
+alt="Fluent Reader"
+>&lt;/p>
+&lt;ul>
+&lt;li>官网地址：&lt;a class="link" href="https://hyliu.me/fluent-reader/" target="_blank" rel="noopener"
+>https://hyliu.me/fluent-reader/&lt;/a>&lt;/li>
+&lt;li>Github 地址：&lt;a class="link" href="https://github.com/yang991178/fluent-reader" target="_blank" rel="noopener"
+>https://github.com/yang991178/fluent-reader&lt;/a>&lt;/li>
+&lt;li>下载地址：&lt;a class="link" href="https://github.com/yang991178/fluent-reader/releases" target="_blank" rel="noopener"
+>https://github.com/yang991178/fluent-reader/releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>由于我的主力机器目前是 Mac，大家有推荐的 windows rss app 可以评论区分享出来哈。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="写在最后">&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor">&lt;/a>写在最后
+&lt;/h2>&lt;p>最后，给大家推荐下我的订阅信息，大家可以去订阅感兴趣的信息源：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://app.follow.is/profile/@debuginn" target="_blank" rel="noopener"
+>https://app.follow.is/profile/@debuginn&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>同时，已经有 Follow 软件体验的小伙伴，推荐关注我自己收集创建的订阅列表：&lt;/p>
+&lt;ul>
+&lt;li>Go 语言爱好者：&lt;a class="link" href="https://app.follow.is/list/60633757623653376" target="_blank" rel="noopener"
+>https://app.follow.is/list/60633757623653376&lt;/a>&lt;/li>
+&lt;li>Java 语言爱好者：搭建 ing，敬请期待～&lt;/li>
+&lt;/ul>
+&lt;p>同时，大家可以关注我，等 Follow 公测开始，我会第一时间告知大家～&lt;/p></description></item><item><title>Follow｜下一代的信息浏览器</title><link>https://blog.debuginn.com/p/follow-app/</link><pubDate>Sun, 13 Oct 2024 13:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app/</guid><description>&lt;img src="https://webp.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow｜下一代的信息浏览器" />&lt;p>近期体验了一款高效的私有化信息订阅平台，给大家推荐一下，官方则是描述为 Next-gen information browser，下一代的信息浏览器，它不单纯是一个 RSS 订阅软件，因为在传统的 RSS 仅仅订阅的是网站的 feed 流信息进行 follow。&lt;/p>
+&lt;p>而 Follow 则是与 RSSHub、RSS3 相结合的生态软件，从而扩展了很多的订阅源以供订阅。&lt;/p>
+&lt;h2 id="follow">&lt;a href="#follow" class="header-anchor">&lt;/a>Follow
+&lt;/h2>&lt;p>&lt;img src="https://webp.debuginn.com/20241009Vpq1w7.jpg"
+loading="lazy"
+alt="Follow"
+>&lt;/p>
+&lt;p>Follow 不单单提供了 RSS 的订阅，它的定位更是官网中所描述的 &amp;ldquo;下一代的信息浏览器&amp;rdquo;，目前它提供的功能有：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Articles&lt;/strong> 文章订阅：偏向于传统的 RSS 订阅的模式；&lt;/li>
+&lt;li>&lt;strong>Social Media&lt;/strong> 社交媒体：更加偏向于 Follow 自己感兴趣的作者在提供订阅的 APP 上；&lt;/li>
+&lt;li>&lt;strong>Pictures&lt;/strong> 图库订阅：订阅自己感兴趣的图片网站；&lt;/li>
+&lt;li>&lt;strong>Videos&lt;/strong> 视频订阅：订阅自己的在 Youtube、BiliBili 等视频平台的 UP 主；&lt;/li>
+&lt;li>&lt;strong>Audio&lt;/strong> 音频订阅：更像是播客类的订阅 APP；&lt;/li>
+&lt;li>&lt;strong>Notifications&lt;/strong> 通知订阅：订阅新闻媒体的信息；&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>详见官网地址：&lt;a class="link" href="https://follow.is/" target="_blank" rel="noopener"
+>https://follow.is/&lt;/a>
+Github 地址：&lt;a class="link" href="https://github.com/RSSNext/follow" target="_blank" rel="noopener"
+>https://github.com/RSSNext/follow&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="逆算法化">&lt;a href="#%e9%80%86%e7%ae%97%e6%b3%95%e5%8c%96" class="header-anchor">&lt;/a>逆算法化
+&lt;/h2>&lt;p>在如今信息化时代，大家接收到的信息都是经过大数据、算法进行点对点的信息推送，导致大家的信息来源越来越趋向于单一、被动接受、羊群效应，大家少了思考、多了短暂地愉悦。&lt;/p>
+&lt;p>在 23 年，我就写了一篇文章叫做 &lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" >《2023 年为何我还在使用 RSS》&lt;/a>，文中我列举了 5 点好处，这也是我为什么大学毕业以来一直使用 RSS 阅读器的原因。&lt;/p>
+&lt;p>其实大家动不动刷抖音、快手、小红书或者微信视频号等短视频平台就会发现，短则半个小时，长则 4-5 个小时的时间都浪费在了这些 APP 上面，回头来看，看过了什么视频，学到了啥，基本上就属于短暂地愉悦，长时间来看就像游戏一种性质。&lt;/p>
+&lt;p>个人定制化的信息输入才是对自己认知与能力的快速提升。&lt;/p>
+&lt;p>其实 RSS 订阅为什么一直长久不衰，很大程度而言，是可以 Follow 自己感兴趣的领域以及作者的高质量的内容的输出，另外也可以屏蔽掉现在对大家苦不堪言的广告推送。&lt;/p>
+&lt;h2 id="亮点功能">&lt;a href="#%e4%ba%ae%e7%82%b9%e5%8a%9f%e8%83%bd" class="header-anchor">&lt;/a>亮点功能
+&lt;/h2>&lt;p>目前，Follow 给我带来眼前一亮的功能有如下三个，AI Summary、订阅共享以及邀请制。&lt;/p>
+&lt;h3 id="ai-summary">&lt;a href="#ai-summary" class="header-anchor">&lt;/a>AI Summary
+&lt;/h3>&lt;p>&lt;img src="https://webp.debuginn.com/20241009tNs61I.png"
+loading="lazy"
+alt="summary"
+>&lt;/p>
+&lt;p>通过自动化设置，可以将文章使用 AI 生成摘要，一些复杂难懂且文章比较长的场景，通过 AI 进行总结，可以带来阅读效率的极大提升。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241010rGF6de.png"
+loading="lazy"
+alt="summary"
+>&lt;/p>
+&lt;h3 id="订阅共享">&lt;a href="#%e8%ae%a2%e9%98%85%e5%85%b1%e4%ba%ab" class="header-anchor">&lt;/a>订阅共享
+&lt;/h3>&lt;p>订阅共享功能是 Follow 的特色功能，大家可以通过订阅的文章了解到和自己一样订阅这个文章的人他（她）们订阅了什么信息，从而充实自己的订阅源。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241010Fe5wr7.png"
+loading="lazy"
+alt="share"
+>&lt;/p>
+&lt;h3 id="邀请制">&lt;a href="#%e9%82%80%e8%af%b7%e5%88%b6" class="header-anchor">&lt;/a>邀请制
+&lt;/h3>&lt;p>相信 Follow 的作者在开发这个软件的时候就有着成熟的产品推广的思路，实际上， Follow 本身是一块很优秀、完成度很高的软件，但是作者实施的邀请制度使得 Follow 在互联网中始终可以保持比较活跃的热度，从而让一款软件更容易地在社区、媒体上带来传播。&lt;/p>
+&lt;p>不得不说，创新之处，在于作者将区块链币的设计引入到了 Follow 之中，通过签到获取 &lt;code>$POWER &lt;/code> 代币，代币目前有两种用途：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>邀请&lt;/strong>：通过代币生成邀请码，进行分享，达到 APP 的裂变传播；&lt;/li>
+&lt;li>&lt;strong>赞赏&lt;/strong>：对于感兴趣的文章，你可以给认证过的作者打赏代币；&lt;/li>
+&lt;/ul>
+&lt;p>相信未来代币可以在 Follow 中有更多的场景和玩法，同时作者还承诺代币未来的价值，期待 (✧∀✧)&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/20241013nluSz7.png"
+loading="lazy"
+alt="invite"
+>&lt;/p>
+&lt;h2 id="写在最后">&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor">&lt;/a>写在最后
+&lt;/h2>&lt;p>Follow 是一款非常成功的软件，在算法推荐为主流的时代，这一款 RSS 软件无疑给 RSS 圈带来了新的希望与活力，目前还在邀请阶段，凭借开源、简洁、RSS3 就已经获得了大家的追捧，希望公测时更加出色。&lt;/p>
+&lt;p>不过，目前的互联网环境，头部大厂都是尽可能地保留住自己的数字信息，从而选择了私域与闭源的策略，这样其实与最初互联网“开放”的原则相违背，带来的弊端是大家接触信息的成本变得高了起来，同时，RSS 阅读器也因为版权的原因，无法获取高质量的文章。&lt;/p>
+&lt;p>大家有推荐的 RSS 的订阅源也可以通过评论区分享出来，如果你感觉文章对你有所帮助的话可以关注下我，我会不时分享一些小众但也优秀的软件推荐给大家，让我们一起变得更强。&lt;/p>
+&lt;p>分享一下我的网站的订阅源与 Follow 的订阅列表：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Debug客栈&lt;/strong> RSS 订阅地址：&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+>https://blog.debuginn.com/index.xml&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Go 语言爱好者&lt;/strong> 订阅列表：&lt;a class="link" href="https://app.follow.is/list/60633757623653376" target="_blank" rel="noopener"
+>https://app.follow.is/list/60633757623653376&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>最后，我会从评论区中抽取一名朋友赠与 Follow 邀请码，感谢大家支持～&lt;/p></description></item><item><title>2023 年为何我还在使用 RSS</title><link>https://blog.debuginn.com/p/debuginn-2023-rss/</link><pubDate>Mon, 04 Dec 2023 23:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023-rss/</guid><description>&lt;img src="https://webp.debuginn.com/202312042307782.jpeg" alt="Featured image of post 2023 年为何我还在使用 RSS" />&lt;h2 id="什么是-rss">&lt;a href="#%e4%bb%80%e4%b9%88%e6%98%af-rss" class="header-anchor">&lt;/a>什么是 RSS
+&lt;/h2>&lt;blockquote>
+&lt;p>RSS（英文全称：RDF Site Summary 或 Really Simple Syndication），中文译作简易信息聚合，也称聚合内容，是一种消息来源格式规范，用以聚合多个网站更新的内容并自动通知网站订阅者。使用 RSS 后，网站订阅者便无需再手动查看网站是否有新的内容，同时 RSS 可将多个网站更新的内容进行整合，以摘要的形式呈现，有助于订阅者快速获取重要信息，并选择性地点阅查看。&lt;/p>
+&lt;/blockquote>
+&lt;p>RSS 作为 1999 年诞生的技术，并在 2009 年更新完最后一版本后，没有再进一步更新的技术，为啥在 2023 年，我还在使用这个“原始”的技术？&lt;/p>
+&lt;p>&lt;strong>答案是肯定的，因为 RSS 好用，通过 RSS 我可以聚合我感兴趣领域的博客，每日定时拉取获得博客作者新发布的内容。&lt;/strong>&lt;/p>
+&lt;h2 id="rss-的优点">&lt;a href="#rss-%e7%9a%84%e4%bc%98%e7%82%b9" class="header-anchor">&lt;/a>RSS 的优点
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>聚合阅读&lt;/strong>，通过 RSS 阅读器订阅网站，我可以每日在特定时间来阅读有更新的站点；&lt;/li>
+&lt;li>&lt;strong>订阅免费&lt;/strong>，订阅的网站，无需进行付费，便可以使用开源的阅读器进行阅读；&lt;/li>
+&lt;li>&lt;strong>稳定输出&lt;/strong>，订阅的网站，无需借助第三方平台进行数据传输或者聚合，只要网站在，源也就在；&lt;/li>
+&lt;li>&lt;strong>阅读友好&lt;/strong>，使用 RSS 阅读器阅读网站，可以过滤源网站内的广告和观看各种风格各异的 UI ，更专注于内容；&lt;/li>
+&lt;li>&lt;strong>避免发散&lt;/strong>，目前大量的短视频 APP 快速产出无营养的视频，不能注意精力去阅读；&lt;/li>
+&lt;/ul>
+&lt;h2 id="怎么订阅">&lt;a href="#%e6%80%8e%e4%b9%88%e8%ae%a2%e9%98%85" class="header-anchor">&lt;/a>怎么订阅
+&lt;/h2>&lt;h3 id="直接订阅">&lt;a href="#%e7%9b%b4%e6%8e%a5%e8%ae%a2%e9%98%85" class="header-anchor">&lt;/a>直接订阅
+&lt;/h3>&lt;p>针对你感兴趣的网站，一般网站都会有类似彩虹 🌈 的表示，如下图：&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/202312031744451.png"
+loading="lazy"
+alt="RSS订阅"
+>&lt;/p>
+&lt;p>当然，你要是感觉我的内容对你有帮助，欢迎通过 RSS 订阅，&lt;a class="link" href="https://blog.debuginn.com/subscribe" >订阅地址&lt;/a>。&lt;/p>
+&lt;h3 id="rsshub">&lt;a href="#rsshub" class="header-anchor">&lt;/a>RSSHub
+&lt;/h3>&lt;p>当然，随着这一项技术不再那么流行，一些站点在开发的时候就不再提供 RSS 内容输出的支持，但是由于有大众的阅读，这里就给大家推荐 RSSHub，通过讲源网站输出内容进行 RSS 标准格式的封装来提供 RSS 订阅。&lt;/p>
+&lt;ul>
+&lt;li>官方网站：&lt;a class="link" href="https://rsshub.app/" target="_blank" rel="noopener"
+>https://rsshub.app/&lt;/a>&lt;/li>
+&lt;li>官方文档：&lt;a class="link" href="https://docs.rsshub.app/" target="_blank" rel="noopener"
+>https://docs.rsshub.app/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="订阅工具">&lt;a href="#%e8%ae%a2%e9%98%85%e5%b7%a5%e5%85%b7" class="header-anchor">&lt;/a>订阅工具
+&lt;/h2>&lt;h3 id="netnewswire">&lt;a href="#netnewswire" class="header-anchor">&lt;/a>Netnewswire
+&lt;/h3>&lt;p>Netnewswire 是一款开源的 IOS/MacOS 的阅读器，他支持 iCloud 云备份，可以在 iPhone/iPad/Mac 上随时切换阅读。&lt;/p>
+&lt;ul>
+&lt;li>官方网站：&lt;a class="link" href="https://netnewswire.com/" target="_blank" rel="noopener"
+>https://netnewswire.com/&lt;/a>&lt;/li>
+&lt;li>开源地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire" target="_blank" rel="noopener"
+>https://github.com/Ranchero-Software/NetNewsWire&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="rsshub-radar">&lt;a href="#rsshub-radar" class="header-anchor">&lt;/a>RSSHub Radar
+&lt;/h3>&lt;p>是一款浏览器插件，目前主流的浏览器都支持安装，可以帮助我快速发现和订阅当前网站的 RSS 和 RSSHub，开源且免费。&lt;/p>
+&lt;ul>
+&lt;li>插件地址：&lt;a class="link" href="https://chrome.google.com/webstore/detail/kefjpfngnndepjbopdmoebkipbgkggaa" target="_blank" rel="noopener"
+>https://chrome.google.com/webstore/detail/kefjpfngnndepjbopdmoebkipbgkggaa&lt;/a>&lt;/li>
+&lt;li>开源地址：&lt;a class="link" href="https://github.com/DIYgod/RSSHub-Radar" target="_blank" rel="noopener"
+>https://github.com/DIYgod/RSSHub-Radar&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>安装好，通过点击图标，可以查看网站支持的订阅方式以及订阅的内容范围，可以便捷的跳转到阅读器进行订阅。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/202312031800365.png"
+loading="lazy"
+alt="RSSHub Radar"
+>&lt;/p>
+&lt;h2 id="订阅分享">&lt;a href="#%e8%ae%a2%e9%98%85%e5%88%86%e4%ba%ab" class="header-anchor">&lt;/a>订阅分享
+&lt;/h2>&lt;p>目前我订阅了 61 个网站源，包含科技、技术、设计、创意、阅读等板块，在这里分享出来，大家喜欢的话就可以点击订阅。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">名称&lt;/th>
+&lt;th>网站地址&lt;/th>
+&lt;th>订阅地址&lt;/th>
+&lt;th>类别&lt;/th>
+&lt;th>备注&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">爱范儿&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.ifanr.com" target="_blank" rel="noopener"
+>https://www.ifanr.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.ifanr.com/feed" target="_blank" rel="noopener"
+>https://www.ifanr.com/feed&lt;/a>&lt;/td>
+&lt;td>科技,IT&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">财新周刊&lt;/td>
+&lt;td>&lt;a class="link" href="https://weekly.caixin.com" target="_blank" rel="noopener"
+>https://weekly.caixin.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://rsshub.app/caixin/weekly" target="_blank" rel="noopener"
+>https://rsshub.app/caixin/weekly&lt;/a>&lt;/td>
+&lt;td>财经&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">彩虹Smiling™️&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.smilingblog.cn" target="_blank" rel="noopener"
+>https://www.smilingblog.cn&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.smilingblog.cn/feed" target="_blank" rel="noopener"
+>https://www.smilingblog.cn/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">菜鸟Miao&lt;/td>
+&lt;td>&lt;a class="link" href="https://newbmiao.github.io" target="_blank" rel="noopener"
+>https://newbmiao.github.io&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://newbmiao.github.io/atom.xml" target="_blank" rel="noopener"
+>https://newbmiao.github.io/atom.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">茶歇驿站&lt;/td>
+&lt;td>&lt;a class="link" href="https://maiyang.me" target="_blank" rel="noopener"
+>https://maiyang.me&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://maiyang.me/index.xml" target="_blank" rel="noopener"
+>https://maiyang.me/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">潮流周刊&lt;/td>
+&lt;td>&lt;a class="link" href="https://weekly.tw93.fun" target="_blank" rel="noopener"
+>https://weekly.tw93.fun&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://weekly.tw93.fun/rss.xml" target="_blank" rel="noopener"
+>https://weekly.tw93.fun/rss.xml&lt;/a>&lt;/td>
+&lt;td>周刊&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">程序印象&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.cn18k.com" target="_blank" rel="noopener"
+>https://www.cn18k.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.cn18k.com/atom.xml" target="_blank" rel="noopener"
+>https://www.cn18k.com/atom.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">程序员的喵&lt;/td>
+&lt;td>&lt;a class="link" href="https://catcoding.me" target="_blank" rel="noopener"
+>https://catcoding.me&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://catcoding.me/atom.xml" target="_blank" rel="noopener"
+>https://catcoding.me/atom.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">大俊的博客&lt;/td>
+&lt;td>&lt;a class="link" href="https://darjun.github.io" target="_blank" rel="noopener"
+>https://darjun.github.io&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://darjun.github.io/index.xml" target="_blank" rel="noopener"
+>https://darjun.github.io/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">董泽润的技术笔记&lt;/td>
+&lt;td>&lt;a class="link" href="https://mytechshares.com" target="_blank" rel="noopener"
+>https://mytechshares.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://mytechshares.com/atom.xml" target="_blank" rel="noopener"
+>https://mytechshares.com/atom.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">飞雪无情的博客&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.flysnow.org" target="_blank" rel="noopener"
+>https://www.flysnow.org&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.flysnow.org/index.xml" target="_blank" rel="noopener"
+>https://www.flysnow.org/index.xml&lt;/a>&lt;/td>
+&lt;td>IT,GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">峰云就她了&lt;/td>
+&lt;td>&lt;a class="link" href="https://xiaorui.cc" target="_blank" rel="noopener"
+>https://xiaorui.cc&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://xiaorui.cc/feed" target="_blank" rel="noopener"
+>https://xiaorui.cc/feed&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">虹线&lt;/td>
+&lt;td>&lt;a class="link" href="https://1q43.blog" target="_blank" rel="noopener"
+>https://1q43.blog&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://1q43.blog/feed" target="_blank" rel="noopener"
+>https://1q43.blog/feed&lt;/a>&lt;/td>
+&lt;td>IT&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">极客公园&lt;/td>
+&lt;td>&lt;a class="link" href="http://mainssl.geekpark.net" target="_blank" rel="noopener"
+>http://mainssl.geekpark.net&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.geekpark.net/rss" target="_blank" rel="noopener"
+>https://www.geekpark.net/rss&lt;/a>&lt;/td>
+&lt;td>科技,IT&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">煎鱼&lt;/td>
+&lt;td>&lt;a class="link" href="https://eddycjy.com" target="_blank" rel="noopener"
+>https://eddycjy.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://eddycjy.com/index.xml" target="_blank" rel="noopener"
+>https://eddycjy.com/index.xml&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">酷 壳&lt;/td>
+&lt;td>&lt;a class="link" href="https://coolshell.cn" target="_blank" rel="noopener"
+>https://coolshell.cn&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://coolshell.cn/feed" target="_blank" rel="noopener"
+>https://coolshell.cn/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>R.I.P.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">李文周的博客&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.liwenzhou.com" target="_blank" rel="noopener"
+>https://www.liwenzhou.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.liwenzhou.com/index.xml" target="_blank" rel="noopener"
+>https://www.liwenzhou.com/index.xml&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">刘未鹏&lt;/td>
+&lt;td>&lt;a class="link" href="https://mindhacks.cn" target="_blank" rel="noopener"
+>https://mindhacks.cn&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://mindhacks.cn/feed" target="_blank" rel="noopener"
+>https://mindhacks.cn/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">美团技术团队&lt;/td>
+&lt;td>&lt;a class="link" href="https://tech.meituan.com" target="_blank" rel="noopener"
+>https://tech.meituan.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://tech.meituan.com/feed/" target="_blank" rel="noopener"
+>https://tech.meituan.com/feed/&lt;/a>&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">面向信仰编程&lt;/td>
+&lt;td>&lt;a class="link" href="https://draveness.me" target="_blank" rel="noopener"
+>https://draveness.me&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://draveness.me/feed.xml" target="_blank" rel="noopener"
+>https://draveness.me/feed.xml&lt;/a>&lt;/td>
+&lt;td>计算机&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">鸟窝&lt;/td>
+&lt;td>&lt;a class="link" href="https://colobu.com" target="_blank" rel="noopener"
+>https://colobu.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://colobu.com/atom.xml" target="_blank" rel="noopener"
+>https://colobu.com/atom.xml&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">苹果fans博客&lt;/td>
+&lt;td>&lt;a class="link" href="http://www.mac52ipod.cn" target="_blank" rel="noopener"
+>http://www.mac52ipod.cn&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.mac52ipod.cn/feed.php/feed" target="_blank" rel="noopener"
+>https://www.mac52ipod.cn/feed.php/feed&lt;/a>&lt;/td>
+&lt;td>Apple&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">阮一峰的网络日志&lt;/td>
+&lt;td>&lt;a class="link" href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener"
+>http://www.ruanyifeng.com/blog&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="http://www.ruanyifeng.com/blog/atom.xml" target="_blank" rel="noopener"
+>http://www.ruanyifeng.com/blog/atom.xml&lt;/a>&lt;/td>
+&lt;td>周刊&lt;/td>
+&lt;td>科技爱好者周刊&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">四火的唠叨&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.raychase.net" target="_blank" rel="noopener"
+>https://www.raychase.net&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.raychase.net/feed" target="_blank" rel="noopener"
+>https://www.raychase.net/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">唐巧的博客&lt;/td>
+&lt;td>&lt;a class="link" href="http://blog.devtang.com" target="_blank" rel="noopener"
+>http://blog.devtang.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="http://blog.devtang.com/atom.xml" target="_blank" rel="noopener"
+>http://blog.devtang.com/atom.xml&lt;/a>&lt;/td>
+&lt;td>阅读&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">湾区日报&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.wanqu.co" target="_blank" rel="noopener"
+>https://www.wanqu.co&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://rsshub.app/wanqu/news" target="_blank" rel="noopener"
+>https://rsshub.app/wanqu/news&lt;/a>&lt;/td>
+&lt;td>科技&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">微软亚洲研究院&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;a class="link" href="https://api.feeddd.org/feeds/63744936e11908407781ff61" target="_blank" rel="noopener"
+>https://api.feeddd.org/feeds/63744936e11908407781ff61&lt;/a>&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">午夜咖啡&lt;/td>
+&lt;td>&lt;a class="link" href="http://jolestar.com" target="_blank" rel="noopener"
+>http://jolestar.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://jolestar.com/feed.xml" target="_blank" rel="noopener"
+>https://jolestar.com/feed.xml&lt;/a>&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">徐靖峰&lt;/td>
+&lt;td>&lt;a class="link" href="https://lexburner.github.io" target="_blank" rel="noopener"
+>https://lexburner.github.io&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://lexburner.github.io/atom.xml" target="_blank" rel="noopener"
+>https://lexburner.github.io/atom.xml&lt;/a>&lt;/td>
+&lt;td>Java&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">阳志平的网志&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.yangzhiping.com" target="_blank" rel="noopener"
+>https://www.yangzhiping.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.yangzhiping.com/feed" target="_blank" rel="noopener"
+>https://www.yangzhiping.com/feed&lt;/a>&lt;/td>
+&lt;td>技术&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">一个草根站长的博客&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.zz1984.com" target="_blank" rel="noopener"
+>https://www.zz1984.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.zz1984.com/feed/" target="_blank" rel="noopener"
+>https://www.zz1984.com/feed/&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">月光博客&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.williamlong.info" target="_blank" rel="noopener"
+>https://www.williamlong.info&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.williamlong.info/feed" target="_blank" rel="noopener"
+>https://www.williamlong.info/feed&lt;/a>&lt;/td>
+&lt;td>科技&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">云风的 BLOG&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.codingnow.com" target="_blank" rel="noopener"
+>https://blog.codingnow.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.codingnow.com/atom.xml" target="_blank" rel="noopener"
+>https://blog.codingnow.com/atom.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">知乎每日精选&lt;/td>
+&lt;td>&lt;a class="link" href="http://www.zhihu.com" target="_blank" rel="noopener"
+>http://www.zhihu.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.zhihu.com/rss" target="_blank" rel="noopener"
+>https://www.zhihu.com/rss&lt;/a>&lt;/td>
+&lt;td>热点&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">竹新社&lt;/td>
+&lt;td>&lt;a class="link" href="https://t.me/s/tnews365" target="_blank" rel="noopener"
+>https://t.me/s/tnews365&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://rsshub.app/telegram/channel/tnews365" target="_blank" rel="noopener"
+>https://rsshub.app/telegram/channel/tnews365&lt;/a>&lt;/td>
+&lt;td>新闻&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">AIGC Weekly&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;a class="link" href="https://quail.ink/op7418/feed/atom" target="_blank" rel="noopener"
+>https://quail.ink/op7418/feed/atom&lt;/a>&lt;/td>
+&lt;td>AI&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Apple Newsroom&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.apple.com" target="_blank" rel="noopener"
+>https://www.apple.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.apple.com/newsroom/rss-feed.rss" target="_blank" rel="noopener"
+>https://www.apple.com/newsroom/rss-feed.rss&lt;/a>&lt;/td>
+&lt;td>Apple&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">BMPI&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.bmpi.dev" target="_blank" rel="noopener"
+>https://www.bmpi.dev&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.bmpi.dev/index.xml" target="_blank" rel="noopener"
+>https://www.bmpi.dev/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">chai2010 的博客&lt;/td>
+&lt;td>&lt;a class="link" href="https://chai2010.cn" target="_blank" rel="noopener"
+>https://chai2010.cn&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://chai2010.cn/index.xml" target="_blank" rel="noopener"
+>https://chai2010.cn/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Dave Cheney&lt;/td>
+&lt;td>&lt;a class="link" href="https://dave.cheney.net" target="_blank" rel="noopener"
+>https://dave.cheney.net&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://dave.cheney.net/feed/rss" target="_blank" rel="noopener"
+>https://dave.cheney.net/feed/rss&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Debug客栈&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.debuginn.com" target="_blank" rel="noopener"
+>https://blog.debuginn.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+>https://blog.debuginn.com/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>关注&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Go Programming Blog&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.ardanlabs.com/blog" target="_blank" rel="noopener"
+>https://www.ardanlabs.com/blog&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.ardanlabs.com/blog/index.xml" target="_blank" rel="noopener"
+>https://www.ardanlabs.com/blog/index.xml&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">huxihx&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.cnblogs.com/huxi2b/rss" target="_blank" rel="noopener"
+>https://www.cnblogs.com/huxi2b/rss&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">idealclover&lt;/td>
+&lt;td>&lt;a class="link" href="https://idealclover.top" target="_blank" rel="noopener"
+>https://idealclover.top&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://idealclover.top/feed" target="_blank" rel="noopener"
+>https://idealclover.top/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Issues on 省流&lt;/td>
+&lt;td>&lt;a class="link" href="https://shengliu.tech/issues/" target="_blank" rel="noopener"
+>https://shengliu.tech/issues/&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://shengliu.tech/issues/index.xml" target="_blank" rel="noopener"
+>https://shengliu.tech/issues/index.xml&lt;/a>&lt;/td>
+&lt;td>日报&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">KAIX.IN&lt;/td>
+&lt;td>&lt;a class="link" href="https://kaix.in" target="_blank" rel="noopener"
+>https://kaix.in&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://kaix.in/feed" target="_blank" rel="noopener"
+>https://kaix.in/feed&lt;/a>&lt;/td>
+&lt;td>咖啡,创业&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">LinkinStar&amp;rsquo;s Blog&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.linkinstars.com" target="_blank" rel="noopener"
+>https://www.linkinstars.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.linkinstars.com/atom.xml" target="_blank" rel="noopener"
+>https://www.linkinstars.com/atom.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">No Headback&lt;/td>
+&lt;td>&lt;a class="link" href="http://xargin.com" target="_blank" rel="noopener"
+>http://xargin.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://xargin.com/feed" target="_blank" rel="noopener"
+>https://xargin.com/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">OpenAI Blog&lt;/td>
+&lt;td>&lt;a class="link" href="https://openai.com/blog" target="_blank" rel="noopener"
+>https://openai.com/blog&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://rsshub.app/openai/blog" target="_blank" rel="noopener"
+>https://rsshub.app/openai/blog&lt;/a>&lt;/td>
+&lt;td>AI&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Wujunze`s Blog&lt;/td>
+&lt;td>&lt;a class="link" href="https://wujunze.com/posts" target="_blank" rel="noopener"
+>https://wujunze.com/posts&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://wujunze.com/posts/index.xml" target="_blank" rel="noopener"
+>https://wujunze.com/posts/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Pseudoyu&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.pseudoyu.com/zh" target="_blank" rel="noopener"
+>https://www.pseudoyu.com/zh&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://www.pseudoyu.com/zh/index.xml" target="_blank" rel="noopener"
+>https://www.pseudoyu.com/zh/index.xml&lt;/a>&lt;/td>
+&lt;td>周报&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Ri Xu Online&lt;/td>
+&lt;td>&lt;a class="link" href="https://xuri.me" target="_blank" rel="noopener"
+>https://xuri.me&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://xuri.me/feed" target="_blank" rel="noopener"
+>https://xuri.me/feed&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">SegmentFault行业快讯&lt;/td>
+&lt;td>&lt;a class="link" href="https://segmentfault.com/blog/news" target="_blank" rel="noopener"
+>https://segmentfault.com/blog/news&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://segmentfault.com/feeds/blog/news" target="_blank" rel="noopener"
+>https://segmentfault.com/feeds/blog/news&lt;/a>&lt;/td>
+&lt;td>周刊,科技&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">STRRL&amp;rsquo;s backyard&lt;/td>
+&lt;td>&lt;a class="link" href="https://strrl.dev" target="_blank" rel="noopener"
+>https://strrl.dev&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://strrl.dev/index.xml" target="_blank" rel="noopener"
+>https://strrl.dev/index.xml&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">The Go Blog&lt;/td>
+&lt;td>&lt;a class="link" href="https://go.dev/blog" target="_blank" rel="noopener"
+>https://go.dev/blog&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://go.dev/blog/feed.atom" target="_blank" rel="noopener"
+>https://go.dev/blog/feed.atom&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">The GoLand Blog&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.jetbrains.com" target="_blank" rel="noopener"
+>https://blog.jetbrains.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://blog.jetbrains.com/go/feed" target="_blank" rel="noopener"
+>https://blog.jetbrains.com/go/feed&lt;/a>&lt;/td>
+&lt;td>GoLand&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Tinyfool的个人网站&lt;/td>
+&lt;td>&lt;a class="link" href="https://codechina.org" target="_blank" rel="noopener"
+>https://codechina.org&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://codechina.org/feed" target="_blank" rel="noopener"
+>https://codechina.org/feed&lt;/a>&lt;/td>
+&lt;td>博客&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">Tony Bai&lt;/td>
+&lt;td>&lt;a class="link" href="https://tonybai.com" target="_blank" rel="noopener"
+>https://tonybai.com&lt;/a>&lt;/td>
+&lt;td>&lt;a class="link" href="https://tonybai.com/feed" target="_blank" rel="noopener"
+>https://tonybai.com/feed&lt;/a>&lt;/td>
+&lt;td>GO&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>OPML 订阅文件：&lt;a class="link" href="https://webp.debuginn.com/202312032154291.opml" target="_blank" rel="noopener"
+>Feed订阅源文件&lt;/a>&lt;/p>
+&lt;p>最后，你要有认为值得推荐的或者有价值的博客，都可以在评论区分享出来，让我们站在巨人的肩膀上变得更强～&lt;/p></description></item><item><title>如何将豆瓣观影记录实时同步至博客中</title><link>https://blog.debuginn.com/p/douban-movies-to-blog/</link><pubDate>Thu, 03 Mar 2022 19:28:59 +0800</pubDate><guid>https://blog.debuginn.com/p/douban-movies-to-blog/</guid><description>&lt;img src="https://webp.debuginn.com/202303031942110.jpg" alt="Featured image of post 如何将豆瓣观影记录实时同步至博客中" />&lt;p>事情的起因是这样的，前几日在看 &lt;a class="link" href="https://idealclover.top" target="_blank" rel="noopener"
+>idealclover&lt;/a> 大佬的博客，不经意间看到了他的&lt;a class="link" href="https://idealclover.top/movies.html" target="_blank" rel="noopener"
+>豆瓣观影记录&lt;/a>，他博客中关于豆瓣观影记录是实时同步的，很好奇是如何实现的，经过查看，他是爬取的豆瓣观影界面来实现的，其实关于豆瓣观影记录，网上也有很多的教程，恰巧自己所学的 Go 语言也可以做简单的爬虫实现其效果，于是开始上手造轮子了，PS：了解到非法爬取网站信息是违法的，之前豆瓣 API 接口，关闭访问，在豆瓣上找了好久，终于在我的主页中找到了对于观影记录的官方提供 RSS 订阅，打开订阅，看到有自己所需要的字段，比较好获取，于是就开始了此项目。&lt;/p>
+&lt;h2 id="分析">&lt;a href="#%e5%88%86%e6%9e%90" class="header-anchor">&lt;/a>分析
+&lt;/h2>&lt;p>首先，需要获取豆瓣提供的 XML 文件，在我的主页右下角就可以看到 RSS 订阅链接：&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/202303031930118.png"
+loading="lazy"
+alt="豆瓣订阅地址"
+>&lt;/p>
+&lt;p>找到了订阅地址，点击查看 XML 结构，可以看到豆瓣提供的结构还是挺理想的：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;rss&lt;/span> &lt;span class="na">xmlns:content=&lt;/span>&lt;span class="s">&amp;#34;http://purl.org/rss/1.0/modules/content/&amp;#34;&lt;/span> &lt;span class="na">xmlns:dc=&lt;/span>&lt;span class="s">&amp;#34;http://purl.org/dc/elements/1.1/&amp;#34;&lt;/span> &lt;span class="na">version=&lt;/span>&lt;span class="s">&amp;#34;2.0&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;channel&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;title&amp;gt;&lt;/span>Meng小羽 的收藏&lt;span class="nt">&amp;lt;/title&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;link&amp;gt;&lt;/span>https://www.douban.com/people/debuginn/&lt;span class="nt">&amp;lt;/link&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">&amp;lt;![CDATA[ Meng小羽 的收藏：想看、在看和看过的书和电影，想听、在听和听过的音乐 ]]&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;language&amp;gt;&lt;/span>zh-cn&lt;span class="nt">&amp;lt;/language&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;copyright&amp;gt;&lt;/span>© 2013, douban.com.&lt;span class="nt">&amp;lt;/copyright&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;pubDate&amp;gt;&lt;/span>Sat, 30 May 2020 09:14:08 GMT&lt;span class="nt">&amp;lt;/pubDate&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;item&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;title&amp;gt;&lt;/span>看过黑衣人：全球追缉&lt;span class="nt">&amp;lt;/title&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;link&amp;gt;&lt;/span>http://movie.douban.com/subject/19971676/&lt;span class="nt">&amp;lt;/link&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">&amp;lt;![CDATA[ &amp;lt;table&amp;gt;&amp;lt;tr&amp;gt; &amp;lt;td width=&amp;#34;80px&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;https://movie.douban.com/subject/19971676/&amp;#34; title=&amp;#34;Men in Black International&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2558701068.webp&amp;#34; alt=&amp;#34;Men in Black International&amp;#34;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;p&amp;gt;推荐: 力荐&amp;lt;/p&amp;gt; &amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt; ]]&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dc:creator&amp;gt;&lt;/span>Meng小羽&lt;span class="nt">&amp;lt;/dc:creator&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;pubDate&amp;gt;&lt;/span>Sat, 30 May 2020 09:14:08 GMT&lt;span class="nt">&amp;lt;/pubDate&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;guid&lt;/span> &lt;span class="na">isPermaLink=&lt;/span>&lt;span class="s">&amp;#34;false&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>https://www.douban.com/people/debuginn/interests/2402808825&lt;span class="nt">&amp;lt;/guid&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/item&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ......
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;channel&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其实，我们提取的主要就是 item 标签下对应的电影信息内容：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;item&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;title&amp;gt;&lt;/span>看过黑衣人：全球追缉&lt;span class="nt">&amp;lt;/title&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;link&amp;gt;&lt;/span>http://movie.douban.com/subject/19971676/&lt;span class="nt">&amp;lt;/link&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cp">&amp;lt;![CDATA[ &amp;lt;table&amp;gt;&amp;lt;tr&amp;gt; &amp;lt;td width=&amp;#34;80px&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;https://movie.douban.com/subject/19971676/&amp;#34; title=&amp;#34;Men in Black International&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2558701068.webp&amp;#34; alt=&amp;#34;Men in Black International&amp;#34;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; &amp;lt;p&amp;gt;推荐: 力荐&amp;lt;/p&amp;gt; &amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt; ]]&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;dc:creator&amp;gt;&lt;/span>Meng小羽&lt;span class="nt">&amp;lt;/dc:creator&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;pubDate&amp;gt;&lt;/span>Sat, 30 May 2020 09:14:08 GMT&lt;span class="nt">&amp;lt;/pubDate&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;guid&lt;/span> &lt;span class="na">isPermaLink=&lt;/span>&lt;span class="s">&amp;#34;false&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>https://www.douban.com/people/debuginn/interests/2402808825&lt;span class="nt">&amp;lt;/guid&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/item&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="设计">&lt;a href="#%e8%ae%be%e8%ae%a1" class="header-anchor">&lt;/a>设计
+&lt;/h2>&lt;p>根据豆瓣官方提供的 XML 标签数据，可以利用 Go 语言中 &lt;code>encoding/xml&lt;/code> 包来进行对数据的映射，可以设计成如下结构体：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 豆瓣 xml 描述结构体&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Attributes&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">XMLName&lt;/span> &lt;span class="nx">xml&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Name&lt;/span> &lt;span class="s">`xml:&amp;#34;rss&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Version&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;version,attr&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Channel&lt;/span> &lt;span class="nx">Channel&lt;/span> &lt;span class="s">`xml:&amp;#34;channel&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// XML 主题结构拆分&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Channel&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Title&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;title&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Link&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;link&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Description&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;description&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Language&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;language&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Copyright&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;copyright&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Pubdate&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;pubDate&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">MovieItem&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="nx">MovieItem&lt;/span> &lt;span class="s">`xml:&amp;#34;item&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 豆瓣 电影列表结构体&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">MovieItem&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Title&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;title&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Link&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;link&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Description&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;description&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Pubdate&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="s">`xml:&amp;#34;pubDate&amp;#34;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可以和 XML 文件对应字段进行匹配，可以从上面的结构体中我们可以看到，最终我们想获取到的数据就是结构体 &lt;code>MovieItem&lt;/code> 的数据。&lt;/p>
+&lt;p>由于是从网上链接获取数据的，在这里首先我们需要将网上豆瓣提供的 XML 文件转换成 &lt;code>[]byte&lt;/code> 类型的数据：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 获取 xml 文件数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">getXMLData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">url&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">byte&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="kt">error&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 读取 xml 文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">client&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">http&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Client&lt;/span>&lt;span class="p">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">http&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewRequest&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;GET&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">url&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">nil&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 自定义Header&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Header&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;User-Agent&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">resp&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">client&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Do&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">nil&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="nx">resp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 关闭文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 读取所有文件内容保存至 []byte&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">ioutil&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadAll&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Body&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">nil&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>上面这个函数实现的就是将 XML 文件保存至 Go 语言的数据结构的操作，现在可以将 XML 文件成功读取出来，接下来就是要进行 XML 字段与上面作出的结构体之间的映射，其实映射至结构体的过程是比较简单的，首先声明 &lt;code>Attributes{}&lt;/code> 类型的结构体，之后通过&lt;code> xml.Unmarshal&lt;/code> 来实现映射拷贝，就可以得到对应的结构体类型的数据，由于我们想要的数据是结构体数据中的一部分，即 &lt;code>MovieItem&lt;/code>，在得到结构体数据后就可以将想要的这一部分的数据选择抽取出来：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">v&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">Attributes&lt;/span>&lt;span class="p">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">unMarshalErr&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">xml&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Unmarshal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">v&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">unMarshalErr&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;xml unmarshal failed, err:%v\n&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">movieItem&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">v&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Channel&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">MovieItem&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="map-转换">&lt;a href="#map-%e8%bd%ac%e6%8d%a2" class="header-anchor">&lt;/a>Map 转换
+&lt;/h2>&lt;p>在这里我们可以得到结构体中嵌套的结构体，在结构体中有一些字段我们是不想要的，需要进行处理，对于 &lt;code>description&lt;/code> 这个字段中，官方提供的是一段 HTML 描述串，其中电影的描述文件是我们所需要的，对于 HTML 字符串的拆分，我们可以借助strings.Split 函数来实现截取，使用 &lt;code>\&amp;quot;&lt;/code> 符号截取，虽然可以获取到我们想要的数据了，但是由于这个是嵌套的结构体，我们需要做一个匹配的 &lt;code>map&lt;/code> 来进行存储处理好的数据，可以看代码中我的设计：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">MoviesMap&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">map&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kd">interface&lt;/span>&lt;span class="p">{})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">movieItem&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">movie&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">map&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="kt">string&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">description&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">strings&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">movieItem&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">Description&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;\&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">movie&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Title&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">string&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="nb">rune&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">movieItem&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">Title&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">:])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">movie&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Link&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">movieItem&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">Link&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">movie&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Img&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">description&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">movie&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Pubdate&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">movieItem&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">Pubdate&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">MoviesMap&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">movie&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>外层 map 是采用 &lt;code>map[int]interface{}&lt;/code> 类型，在 &lt;code>interface{}&lt;/code> 中存储这内层 &lt;code>map map[string]string&lt;/code> 类型。&lt;/p>
+&lt;p>针对于 Img 地址的获取，是现根据特定符号拆分，之后获取制定位置的数据获取的。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">0 map[Img:https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2558701068.jpg Link:http://movie.douban.com/subject/19971676/ Pubdate:Sat, 30 May 2020 09:14:08 GMT Title:黑衣人：全球追缉]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1 map[Img:https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2263408369.jpg Link:http://movie.douban.com/subject/1294371/ Pubdate:Thu, 28 May 2020 10:06:23 GMT Title:摩登时代]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">......
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>最后就是将这个 map 做一下序列化处理，这样就可以返回给前台数据了。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">data&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Marshal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">MoviesMap&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="服务">&lt;a href="#%e6%9c%8d%e5%8a%a1" class="header-anchor">&lt;/a>服务
+&lt;/h2>&lt;p>处理好数据，做了对应的处理，怎么将数据作为服务端提供给前台，在这里需要使用 Web 服务，Go 中可以使用原生 Web，不过我在这里使用的是之前学过的 Gin 框架，来提供服务的：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">r&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">gin&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Default&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">r&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">GET&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;/doubanmovies&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">context&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">gin&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Context&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">context&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">JSON&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">http&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">StatusOK&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">MoviesMap&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">_&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">r&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;:8080&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://webp.debuginn.com/202303031934481.png"
+loading="lazy"
+alt="api json数据"
+>&lt;/p>
+&lt;p>启动服务，可以得到对应的 json 数据，你若以为现在就可以实现了，那么你错了，远远没有那么简单&amp;hellip;&amp;hellip;&lt;/p>
+&lt;h2 id="前台">&lt;a href="#%e5%89%8d%e5%8f%b0" class="header-anchor">&lt;/a>前台
+&lt;/h2>&lt;p>由于我知晓我的博客采用的前台 UI 技术是 MDUI， 我利用自身的卡片 UI 迅速设计了一个模块，因为后期需要放在我的博客页面上，前端读取数据采用的是 VUE 和 axios 技术：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-container-fluid&amp;#34;&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;app&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-row&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">v-for&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;item in info&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-col-xs-6 mdui-col-sm-4 mdui-col-md-3 mdui-col-lg-3 mdui-m-b-1 mdui-m-t-1&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a&lt;/span> &lt;span class="na">:href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;item.Link&amp;#34;&lt;/span> &lt;span class="na">target&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;_blank&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-card mdui-hoverable&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-card-media&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">img&lt;/span> &lt;span class="na">:src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;item.Img&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;height: 260px;&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-card-media-covered&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-card-primary&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;mdui-card-primary-subtitle&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>{{ item.Title }}&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">a&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">script&lt;/span> &lt;span class="nx">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;./static/js/mdui.min.js&amp;#34;&lt;/span>&lt;span class="o">&amp;gt;&amp;lt;&lt;/span>&lt;span class="err">/script&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">script&lt;/span> &lt;span class="nx">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js&amp;#34;&lt;/span>&lt;span class="o">&amp;gt;&amp;lt;&lt;/span>&lt;span class="err">/script&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">script&lt;/span> &lt;span class="nx">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&amp;#34;&lt;/span>&lt;span class="o">&amp;gt;&amp;lt;&lt;/span>&lt;span class="err">/script&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">script&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">new&lt;/span> &lt;span class="nx">Vue&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">el&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;#app&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">data&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">info&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">mounted&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">axios&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;http://127.0.0.1:8080/doubanmovies&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">response&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">info&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">data&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 请求失败处理
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="err">/script&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设计好了以后，访问页面，却加载不出来，emmmmmm&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/202303031935689.png"
+loading="lazy"
+alt="CORS"
+>&lt;/p>
+&lt;h2 id="cors">&lt;a href="#cors" class="header-anchor">&lt;/a>CORS
+&lt;/h2>&lt;p>看到了是 CORS 同源策略的原因，接下来就是要解决同源问题了，方法比较简单，就是将 Go 服务端加上 CORS 同源策略就可以了，方法如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">r&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">gin&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Default&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">r&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">Cors&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">r&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">GET&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;/doubanmovies&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">context&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">gin&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Context&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">context&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">JSON&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">http&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">StatusOK&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">MoviesMap&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">_&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">r&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;:8080&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在路由访问中添加 &lt;code>Cors()&lt;/code> 函数：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 跨域&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">Cors&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="nx">gin&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">HandlerFunc&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">c&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">gin&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Context&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">method&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Method&lt;/span> &lt;span class="c1">//请求方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">origin&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Header&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Origin&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">//请求头部&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">headerKeys&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">string&lt;/span> &lt;span class="c1">// 声明请求头keys&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="nx">k&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="k">range&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Header&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headerKeys&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">headerKeys&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">k&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headerStr&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">strings&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">headerKeys&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;, &amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">headerStr&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headerStr&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;access-control-allow-origin, access-control-allow-headers, %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">headerStr&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headerStr&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;access-control-allow-origin, access-control-allow-headers&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">origin&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Writer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nf">Set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Allow-Origin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;*&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Allow-Origin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;*&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 这是允许访问所有域&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Allow-Methods&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;POST, GET, OPTIONS, PUT, DELETE,UPDATE&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">//服务器支持的所有跨域请求的方法,为了避免浏览次请求的多次&amp;#39;预检&amp;#39;请求&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// header的类型&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Allow-Headers&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Authorization, Content-Length, X-CSRF-Token, Token,session,X_Requested_With,Accept, Origin, Host, Connection, Accept-Encoding, Accept-Language,DNT, X-CustomHeader, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type, Pragma&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 允许跨域设置 可以返回其他子段&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Expose-Headers&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma,FooBar&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 跨域关键设置 让浏览器可以解析&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Max-Age&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;172800&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 缓存请求信息 单位为秒&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Access-Control-Allow-Credentials&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;false&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 跨域请求是否需要带cookie信息 默认设置为true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;content-type&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;application/json&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 设置返回格式是json&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//放行所有OPTIONS方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">method&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s">&amp;#34;OPTIONS&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">JSON&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">http&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">StatusOK&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Options Request!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理请求&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Next&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 处理请求&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这样就可以看到结果了，如下图：&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/202303031937830.png"
+loading="lazy"
+alt="演示"
+>&lt;/p>
+&lt;p>看到结果后，心中窃喜，感觉成功了，接下来就需要将 Go 服务部署到我的服务器中去了，部署步骤比较简单，就不过多解释了，最后访问服务器 IP 及对应单口可以呈现结果，最后将前台代码粘贴到新建的页面中，生成预览，emmmm，啥都没有，浏览器居然报 HTTPS 请求 HTTP 资源是不安全的，吐了一口血，解决吧，唉，经过查询资料，得出如下两个解决方案：&lt;/p>
+&lt;ul>
+&lt;li>Gin 框架服务本身使用 SSL 证书，实现 HTTPS 访问，不过需要配置域名；&lt;/li>
+&lt;li>使用 Nginx 服务做一下代理，将一个特定链接代理到本身服务中去。&lt;/li>
+&lt;/ul>
+&lt;p>作为学生党的我，没有太多的资金去申请过多的 SSL 证书（省着点用），于是我就在我的 debuginn.com 子域名下做了一个代理。&lt;/p>
+&lt;h2 id="代理">&lt;a href="#%e4%bb%a3%e7%90%86" class="header-anchor">&lt;/a>代理
+&lt;/h2>&lt;p>Nginx 代理实现也是比较简单的，就是将前端访问某个接口代理至服务器中某个端口的服务中，表面上看是 Nginx 在做数据处理，实际上是 Nginx 只做了一个代理转发，由于我www.debuginn.com 子域名本身就是 https 的，所以设置好了代理之后，就可以使用固定的代理链接访问了，配置如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">server{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">.....&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">location&lt;/span> &lt;span class="s">/douban_movies&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://127.0.0.1:8080&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">Host&lt;/span> &lt;span class="nv">$host:80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Real-IP&lt;/span> &lt;span class="nv">$remote_addr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Forwarded-For&lt;/span> &lt;span class="nv">$proxy_add_x_forwarded_for&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这样就可以实现 https 资源访问了：&lt;del>&lt;a class="link" href="https://debuginn.com/doubanmovies" target="_blank" rel="noopener"
+>https://debuginn.com/doubanmovies&lt;/a>&lt;/del>&lt;/p>
+&lt;h2 id="效果">&lt;a href="#%e6%95%88%e6%9e%9c" class="header-anchor">&lt;/a>效果
+&lt;/h2>&lt;p>解决了 HTTPS 访问 HTTP 资源的问题，就解决了所有问题，实现了效果。&lt;/p>
+&lt;p>&lt;img src="https://webp.debuginn.com/202303031939914.png"
+loading="lazy"
+alt="我的观影"
+>&lt;/p>
+&lt;p>具体效果如下：&lt;del>&lt;a class="link" href="https://debuginn.com/doubanmovies" target="_blank" rel="noopener"
+>https://debuginn.com/doubanmovies&lt;/a>&lt;/del>&lt;/p>
+&lt;h2 id="开源">&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor">&lt;/a>开源
+&lt;/h2>&lt;p>针对于此小项目，我已经开源至 Github 中，若是你感兴趣或者有什么建议，可以联系我，我们一起改进，同时希望你可以给我一个 Star，万分感谢！&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/debuginn/douban-movies" target="_blank" rel="noopener"
+>https://github.com/debuginn/douban-movies&lt;/a>&lt;/p></description></item></channel></rss>

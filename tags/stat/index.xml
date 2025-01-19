@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stat on Debug客栈</title><link>https://blog.debuginn.com/tags/stat/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Stat on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 07 Mar 2021 14:01:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/stat/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 语言开发设计指北</title><link>https://blog.debuginn.com/p/go-dev-design/</link><pubDate>Sun, 07 Mar 2021 14:01:00 +0800</pubDate><guid>https://blog.debuginn.com/p/go-dev-design/</guid><description>&lt;img src="https://webp.debuginn.com/202302272119360.png" alt="Featured image of post Go 语言开发设计指北" />&lt;p>Go 语言是一种强类型、编译型的语言，在开发过程中，代码规范是尤为重要的，一个小小的失误可能会带来严重的事故，拥有一个良好的 Go 语言开发习惯是尤为重要的，遵守开发规范便于维护、便于阅读理解和增加系统的健壮性。&lt;/p>
+&lt;p>以下是我们项目组开发规范加上自己开发遇到的问题及补充，希望对你有所帮助：
+注：我们将以下约束分为三个等级，分别是：【强制】、【推荐】、【参考】。&lt;/p>
+&lt;h2 id="go-编码相关">&lt;a href="#go-%e7%bc%96%e7%a0%81%e7%9b%b8%e5%85%b3" class="header-anchor">&lt;/a>Go 编码相关
+&lt;/h2>&lt;p>【强制】代码风格规范遵循 go 官方标准：&lt;a class="link" href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener"
+>CodeReviewComments&lt;/a>，请使用官方 golint &lt;a class="link" href="https://github.com/golang/lint" target="_blank" rel="noopener"
+>lint&lt;/a> 进行风格静态分析；&lt;/p>
+&lt;p>【强制】代码格式规范依照 gofmt，请安装相关 IDE 插件，在保存代码或者编译时，自动将源码通过 gofmt 做格式化处理，保证团队代码格式一致（比如空格，递进等）&lt;/p>
+&lt;p>【强制】业务处理代码中不能开 goroutine，此举会导致 goroutine 数量不可控，容易引起系统雪崩，如果需要启用 goroutine 做异步处理，请在初始化时启用固定数量 goroutine，通过 channel 和业务处理代码交互，初始化 goroutine 的函数，原则上应该从 main 函数入口处明确的调用：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">crond&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">recover&lt;/span>&lt;span class="p">();&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// dump stack &amp;amp; log&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// init system&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="nf">crond&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="nf">crond2&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// handlers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】异步开启 goroutine 的地方（如各种 cronder )，需要在最顶层增加 recover()，捕捉 panic，避免个别 cronder 出错导致整体退出：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">globalCrond&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">ticker&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">C&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">projectCrond&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">itemCrond&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">userCrond&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">projectCrond&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">recover&lt;/span>&lt;span class="p">();&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 打日志，并预警&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// do &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】当有并发读写 map 的操作，必须加上读写锁 RWMutex，否则 go runtime 会因为并发读写报 panic，或者使用 sync.Map 替代；&lt;/p>
+&lt;p>【强制】对于提供给外部使用的 package，返回函数里必须带上 err 返回，并且保证在 err == nil 情况下，返回结果不为 nil，比如：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">resp&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">package1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">GetUserInfo&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">xxxxx&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 在err == nil 情况下，resp不能为nil或者空值&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】当操作有多个层级的结构体时，基于&lt;strong>防御性编程&lt;/strong>的原则，需要对每个层级做空指针或者空数据判别，特别是在处理复杂的页面结构时，如：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">type&lt;/span> &lt;span class="nx">Section&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Item&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">SectionItem&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Height&lt;/span> &lt;span class="kt">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Width&lt;/span> &lt;span class="kt">int64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">type&lt;/span> &lt;span class="nx">SectionItem&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Tag&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Icon&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">ImageURL&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">ImageList&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Action&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">SectionAction&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">type&lt;/span> &lt;span class="nx">SectionAction&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Type&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Path&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Extra&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">getSectionActionPath&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">section&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">Section&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">path&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">img&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="kt">error&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">section&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Item&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">section&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Action&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 要做好足够防御，避免因为空指针导致的panic&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">err&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Errorf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;section item is invalid&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">path&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">section&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Action&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">img&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">section&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ImageURL&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 对取数组的内容，也一定加上防御性判断&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">section&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ImageList&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">img&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">section&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ImageList&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【推荐】生命期在函数内的资源对象，如果函数逻辑较为复杂，建议使用 defer 进行回收：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">MakeProject&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">conn&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">pool&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Get&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="nx">pool&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">conn&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>对于生命期在函数内的对象，定义在函数内，将使用栈空间，减少 gc 压力：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">MakeProject&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">project&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">Project&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">project&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">Project&lt;/span>&lt;span class="p">{}&lt;/span> &lt;span class="c1">// 使用堆空间&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">tempProject&lt;/span> &lt;span class="nx">Project&lt;/span> &lt;span class="c1">// 使用栈空间&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】不能在循环里加 defer，特别是 defer 执行回收资源操作时。因为 defer 是函数结束时才能执行，并非循环结束时执行，某些情况下会导致资源（如连接资源）被大量占用而程序异常：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 反例：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">row&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">db&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Query&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SELECT ...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="nx">row&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 这个操作会导致循环里积攒许多临时资源无法释放&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 正确的处理，可以在循环结束时直接close资源，如果处理逻辑较复杂，可以打包成函数：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">func&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">row&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">db&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Query&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SELECT ...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="nx">row&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Close&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【推荐】对于可预见容量的 slice 或者 map，在 make 初始化时，指定cap大小，可以大大降低内存损耗，如：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">headList&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="nx">home&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Sections&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">srcHomeSection&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">tailList&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="nx">home&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Sections&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">srcHomeSection&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">dstHomeSection&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">([]&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nx">home&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Sections&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">srcHomeSection&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">…&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">appendToHead&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headList&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">headList&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">info&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tailList&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">tailList&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">info&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">…&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">dstHomeSection&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">dstHomeSection&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">headList&lt;/span>&lt;span class="err">…&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">dstHomeSection&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">dstHomeSection&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">tailList&lt;/span>&lt;span class="err">…&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【推荐】逻辑操作中涉及到频繁拼接字符串的代码，请使用 bytes.Buffer 替代。使用 string 进行拼接会导致每次拼接都新增 string 对象，增加 GC 负担：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 正例：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">buf&lt;/span> &lt;span class="nx">bytes&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Buffer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="nx">_&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">name&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="k">range&lt;/span> &lt;span class="nx">userList&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">buf&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WriteString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">buf&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WriteString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;,&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">return&lt;/span> &lt;span class="nx">buf&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">String&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 反例：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="nx">_&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">name&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="k">range&lt;/span> &lt;span class="nx">userList&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="nx">name&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s">&amp;#34;,&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">return&lt;/span> &lt;span class="nx">result&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】对于固定的正则表达式，可以在&lt;strong>全局变量初始化时完成预编译&lt;/strong>，可以有效加快匹配速度，不需要在每次函数请求中预编译：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">wordReg&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">regexp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">MustCompile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;[\\w]+&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">matchWord&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">word&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">bool&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">wordReg&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">MatchString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">word&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【推荐】JSON 解析时，遇到不确定是什么结构的字段，建议使用 json.RawMessage 而不要用 interface，这样可以根据业务场景，做二次 unmarshal 而且性能比 interface 快很多；&lt;/p>
+&lt;p>【强制】锁使用的粒度需要根据实际情况进行把控，如果变量只读，则无需加锁；读写，则使用读写锁 sync.RWMutex；&lt;/p>
+&lt;p>【强制】使用随机数时(&lt;code>math/rand&lt;/code>)，必须要做随机初始化(&lt;code>rand.Seed&lt;/code>)，否则产生出的随机数是可预期的，在某些场合下会带来安全问题。一般情况下，使用&lt;code>math/rand&lt;/code>可以满足业务需求，如果开发的是安全模块，建议使用&lt;code>crypto/rand&lt;/code>，安全性更好；&lt;/p>
+&lt;p>【推荐】对性能要求很高的服务，或者对程序响应时间要求高的服务，应该避免开启大量 gouroutine；
+说明：官方虽然号称 goroutine 是廉价的，可以大量开启 goroutine，但是由于 goroutine 的调度并没有实现优先级控制，使得一些关键性的 goroutine（如网络/磁盘IO，控制全局资源的goroutine）没有及时得到调度而拖慢了整体服务的响应时间，因而在系统设计时，如果对性能要求很高，应避免开启大量goroutine。&lt;/p>
+&lt;h2 id="打点规范">&lt;a href="#%e6%89%93%e7%82%b9%e8%a7%84%e8%8c%83" class="header-anchor">&lt;/a>打点规范
+&lt;/h2>&lt;p>【强制】打点使用.来做分隔符，打点名称需要包含业务名，模块，函数，函数处理分支等，参考如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 业务名.服务名.模块.功能.方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">service&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">gateway&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">action&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kd">func&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】打点使用场景是监控系统的实时状态，不适合存储任何业务数据；&lt;/p>
+&lt;p>【强制】在打点个数太多时，展示时速度会变慢。建议单个服务打点的key不超过10000个，key中单个维度不同值不超过 1000个（&lt;strong>千万不要用 user_id 来打点&lt;/strong>)；&lt;/p>
+&lt;p>【推荐】如果展示的时候需要拿成百上千个key的数据通过 Graphite 的聚合函数做聚合，最后得到一个或几个 key。这种情况下可以在打点的时候就把这个要聚合的点聚合好，这样展示的时候只要拿这几个 key，对展示速度是巨大的提升。&lt;/p>
+&lt;h2 id="日志相关">&lt;a href="#%e6%97%a5%e5%bf%97%e7%9b%b8%e5%85%b3" class="header-anchor">&lt;/a>日志相关
+&lt;/h2>&lt;p>【强制】日志信息需带上下文，其中 logid 必须带上，同一个请求打的日志都需带上 logid，这样可以根据 logid 查找该次请求相关的信息；&lt;/p>
+&lt;p>【强制】对&lt;code>debug/notice/info&lt;/code> 级别的日志输出，必须使用条件输出或者使用占位符方式，避免使用字符拼接方式：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Debug&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;get home page failed %s, id %d&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">id&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】如果是解析 json 出错的日志，需要将报错 err 及原内容一并输出，以方便核查原因；&lt;/p>
+&lt;p>【推荐】对&lt;code>debug/notice/info&lt;/code>级别的日志，在打印日志时，默认不显示调用位置（如&lt;code>/path/to/code.go:335&lt;/code>）
+说明：go 获取调用栈信息是比较耗时的操作(&lt;code>runtime.Caller&lt;/code>)，对于性能要求很高的服务，特别是大量调用的地方，应尽量避免开发人员在使用该功能时，需知悉这个调用带来的代价。&lt;/p>
+&lt;h2 id="redis-相关">&lt;a href="#redis-%e7%9b%b8%e5%85%b3" class="header-anchor">&lt;/a>Redis 相关
+&lt;/h2>&lt;p>【推荐】统一使用:作为前缀后缀分隔符，这里可以根据 Redis 中间件 key proxy 怎么解析分析 Key 进行自定义，便于基础服务的数据可视化及问题排查；&lt;/p>
+&lt;p>【强制】避免使用 &lt;code>HMGET/HGETALL/HVALS/HKEYS/SMEMBERS&lt;/code> 阻塞命令这类命令在 value 较大时，对 Redis 的 CPU/带宽消耗较高，容易导致响应过慢引发系统雪崩；&lt;/p>
+&lt;p>【强制】不可把 Redis 当成存储，如有统计相关的需求，可以考虑异步同步到数据库进行统计，Redis 应该回归缓存的本质；&lt;/p>
+&lt;p>【推荐】避免使用大 key，按经验超过 10k 的 value，可以压缩(&lt;code>gzip/snappy&lt;/code>等算法)后存入内存，可以减少内存使用，其次降低网络消耗，提高响应速度：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">value&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">RedisCache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">GetGzip&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">…&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">RedisCache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetExGzip&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【推荐】Redis 的分布式锁，可以使用:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">lock&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nx">redis&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Do&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SET&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">lockKey&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">randint&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;EX&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">expire&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;NX&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">unlock&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nx">redis&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">GetAndDel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">lockKey&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">randint&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// redis暂不支持，可以用lua脚本&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【推荐】尽量避免在逻辑循环代码中调用 Redis，会产生流量放大效应，请求量较大时需采用其他方法优化（比如静态配置文件）；&lt;/p>
+&lt;p>【推荐】key 尽量离散读写，通过&lt;code>uid/imei/xid&lt;/code>等跟用户/请求相关的后缀分摊到不同分片，避免分片负载不均衡；&lt;/p>
+&lt;p>【参考】当缓存量大，请求量较高，可能超出 Redis 承受范围时，可充分利用本地缓存(localcache)+redis缓存的组合方案来缓解压力，削减峰值：&lt;/p>
+&lt;p>使用这个方法需要具备这几个条件：&lt;/p>
+&lt;ul>
+&lt;li>cache 内容与用户无关，key 状态不多，属于公共信息；&lt;/li>
+&lt;li>该cache内容时效性较高，但是访问量较大，有峰值流量。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">key&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;demoid:3344&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">value&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">localcacche&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">value&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">rediscache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 随机缓存 1~5s，各个机器间错开峰值，只要比 redis缓存短即可&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">localcache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetEx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">rand&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Int63n&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 从其他系统或者数据库获取数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">appoint&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">GetValue&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 同时设置到redis及localcache中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">rediscache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetEx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">content&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">localcache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetEx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">content&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">rand&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Int63n&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【参考】对于请求量高，实时性也高的内容，如果纯粹使用缓存，当缓存失效瞬间，会导致大量请求穿透到后端服务，导致后端服务有雪崩危险：&lt;/p>
+&lt;p>如何兼顾扛峰值，保护后端系统，同时也能保持实时性呢？在这种场景下，可以采用随机更新法更新数据，方法如下：&lt;/p>
+&lt;ol>
+&lt;li>正常请求从缓存中读取，缓存失效则从后端服务获取；&lt;/li>
+&lt;li>在请求中根据随机概率 1%（或者根据实际业务场景设置比率）会跳过读取缓存操作，直接从后端服务获取数据，并更新缓存。&lt;/li>
+&lt;/ol>
+&lt;p>这种做法能保证最低时效性，并且当访问量越大，更新概率越高，使得内容实时性也越高。&lt;/p>
+&lt;p>如果结合上一条 &lt;code>localcache+rediscache&lt;/code> 做一二级缓存，则可以达到扛峰值同时保持实时性。&lt;/p>
+&lt;h2 id="数据库相关">&lt;a href="#%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9b%b8%e5%85%b3" class="header-anchor">&lt;/a>数据库相关
+&lt;/h2>&lt;p>【强制】操作数据库 sql 必须使用 stmt 格式，使用占位符替代参数，禁止拼接 sql；&lt;/p>
+&lt;p>【强制】SQL语句查询时，不得使用 &lt;code>SELECT *&lt;/code> （即形如 &lt;code>SELECT * FROM tbl WHERE&lt;/code>），必须明确的给出要查询的列名，避免表新增字段后报错；&lt;/p>
+&lt;p>【强制】对于线上业务 SQL，需保证命中索引，索引设计基于业务需求及字段区分度，一般可区分状态不高的字段（如 status 等只有几个状态），不建议加到索引中；&lt;/p>
+&lt;p>【强制】在成熟的语言中，有实体类，数据访问层(&lt;code>repository / dao&lt;/code>)和业务逻辑层( service )；在我们的规范中存储实体 struct 放置于 entities 包下；&lt;/p>
+&lt;p>【强制】对于联合索引，需将区分度较大的字段放前面，区分度小放后面，查找时可以减少被检索数据量；&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="o">--&lt;/span> &lt;span class="nx">字段区分度&lt;/span> &lt;span class="nx">item_id&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">project_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">alter&lt;/span> &lt;span class="nx">table&lt;/span> &lt;span class="nx">xxx&lt;/span> &lt;span class="nx">add&lt;/span> &lt;span class="nx">index&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nf">idx_item_project&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">item_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">project_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】所有数据库表必须有主键 id；&lt;/p>
+&lt;p>【强制】主键索引名为 pk字段名; 唯一索引名为 uk字段名; 普通索引名则为 idx_字段名；&lt;/p>
+&lt;p>【强制】防止因字段类型不同造成的隐式转换，导致索引失效，造成全表扫描问题；&lt;/p>
+&lt;p>【强制】业务上有唯一特性的字段，即使是多字段的组合，也必须建成唯一索引；&lt;/p>
+&lt;p>【强制】一般事务标准操作流程：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">TestTXExample&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">t&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">testing&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">T&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 打开事务&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">db&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Beginx&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%v&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// defer异常&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">needRollback&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">defer&lt;/span> &lt;span class="kd">func&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">r&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">recover&lt;/span>&lt;span class="p">();&lt;/span> &lt;span class="nx">r&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c1">// 处理recover，避免因为panic，资源无法释放&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%v&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">r&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">needRollback&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">needRollback&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">xlog&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Cause&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;test.example.transaction.rollback&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Rollback&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 事务的逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">err&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nf">InsertLog&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">tx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">GenTestData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%v&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 提交事务&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">err&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">tx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Commit&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%v&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">needRollback&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>【强制】执行事务操作时，请确保&lt;code>SELECT ... FOR UPDATE&lt;/code>条件命中索引，使用行锁，避免一个事务锁全表的情况;&lt;/p>
+&lt;p>【强制】禁止超过三个表的 join，需要 join 的字段，数据类型必须一致，多表关联查询时，保证被关联的字段有索引;&lt;/p>
+&lt;p>【强制】数据库 max_open 连接数不可设置过高，会导致代理连接数打满导致不可用状况;&lt;/p></description></item></channel></rss>
