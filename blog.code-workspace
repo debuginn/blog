@@ -9,7 +9,8 @@
 			"https://json.schemastore.org/github-workflow.json": "file:///Users/debuginn/Code/src/github.com/debuginn/blog/.github/workflows/deploy.yml"
 		},
 		"cSpell.words": [
-			"newtab"
+			"newtab",
+			"wechat"
 		]
 	}
 }
