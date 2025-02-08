@@ -65,6 +65,10 @@ links:
     image: https://chaoszhu.com/avatar.png
     website: https://chaoszhu.com/
     description: 好记性不如烂笔头~
+  - title: 汐塔魔法屋
+    image: https://blog.storical.space/images/icon.png
+    website: https://blog.storical.space/
+    description: 种下一颗有故事的种子，让它带着魔法和奇迹生根发芽
 
 comments: true
 ---
