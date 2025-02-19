@@ -38,9 +38,6 @@ type = "search"
 type = "wechat"
 
 [[widgets.homepage]]
-type = "zsxq"
-
-[[widgets.homepage]]
 type = "tag-cloud"
 
 [widgets.homepage.params]
@@ -60,9 +57,6 @@ type = "toc"
 
 [[widgets.page]]
 type = "wechat"
-
-[[widgets.page]]
-type = "zsxq"
 
 [opengraph.twitter]
 site = "idebuginn"
