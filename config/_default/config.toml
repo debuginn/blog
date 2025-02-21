@@ -1,7 +1,6 @@
 # Change baseurl before deploy
 baseurl = "https://blog.debuginn.com"
 languageCode = "zh-cn"
-paginate = 6
 title = "Debug客栈"
 
 # Theme i18n support
@@ -17,3 +16,6 @@ disqusShortname = "hugo-theme-stack"
 
 # googleAnalytics
 googleAnalytics = "G-B1XEJXPQPW"
+
+[pagination]
+pagerSize = 10
