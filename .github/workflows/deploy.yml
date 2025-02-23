@@ -16,6 +16,12 @@ jobs:
             contents: write
 
         steps:
+            - name: Install SSH key
+              uses: shimataro/ssh-key-action@v2
+              with:
+                key: ${{ secrets.SSH_PRIVATE_KEY }}
+                known_hosts: unnecessary
+
             - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
@@ -24,12 +30,7 @@ jobs:
 
             - name: Update submodule
               run: |
-                old_hash=$(git ls-tree HEAD -- content | cut -d' ' -f3)
                 git submodule update --remote --recursive
-                new_hash=$(git ls-tree HEAD -- content | cut -d' ' -f3)
-                git add content
-                git commit -m "Update content submodule" || echo "No changes to commit"
-                git push
 
             - name: Cache Hugo resources
               uses: actions/cache@v4
