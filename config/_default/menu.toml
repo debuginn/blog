@@ -36,15 +36,6 @@ icon = "link"
 newtab = false
 
 [[main]]
-identifier = "job"
-name = "找我内推"
-url = "/p/mi-work/"
-weight = 5
-[main.params]
-icon = "briefcase"
-newtab = false
-
-[[main]]
 identifier = "photo"
 name = "摄影相册"
 url = "https://photo.debuginn.com"
