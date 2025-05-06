@@ -37,7 +37,7 @@ newtab = false
 
 [[main]]
 identifier = "photo"
-name = "摄影相册"
+name = "摄影展集"
 url = "https://photo.debuginn.com"
 weight = 6
 [main.params]
