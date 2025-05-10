@@ -1,0 +1,374 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="定义 二叉排序树要么是空二叉树，要么具有如下特点：\n二叉排序树中，如果其根结点有左子树，那么左子树上所有结点的值都小于根结点的值； 二叉排序树中，如果其根结点有右子树，那么右子树上所有结点的值都大小根结点的值； 二叉排序树的左右子树也要求都是二叉排序树； 例如，下图就是一个二叉排序树：\n二叉排序树关键字的操作 使用二叉排序树查找关键字 二叉排序树中查找某关键字时，查找过程类似于次优二叉树，在二叉排序树不为空树的前提下，首先将被查找值同树的根结点进行比较，会有 3 种不同的结果：\n如果相等，查找成功； 如果比较结果为根结点的关键字值较大，则说明该关键字可能存在其左子树中； 如果比较结果为根结点的关键字值较小，则说明该关键字可能存在其右子树中； 实现函数为：（运用递归的方法）\n1 2 3 4 5 6 7 8 9 10 11 12 BiTree SearchBST(BiTree T,KeyType key){ //如果递归过程中 T 为空，则查找结果，返回NULL；或者查找成功，返回指向该关键字的指针 if (!T || key==T->data) { return T; }else if(key<T->data){ //递归遍历其左孩子 return SearchBST(T->lchild, key); }else{ //递归遍历其右孩子 return SearchBST(T->rchild, key); } } 二叉排序树本身是动态查找表的一种表示形式，有时会在查找过程中插入或者删除表中元素，当因为查找失败而需要插入数据元素时，该数据元素的插入位置一定位于二叉排序树的叶子结点，并且一定是查找失败时访问的最后一个结点的左孩子或者右孩子。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 c++ //插入函数 BOOL InsertBST(BiTree T,ElemType e){ BiTree p=NULL; //如果查找不成功，需做插入操作 if (!SearchBST(T, e,NULL,&amp;p)) { //初始化插入结点 BiTree s=(BiTree)malloc(sizeof(BiTree)); s->data=e; s->lchild=s->rchild=NULL; //如果 p 为NULL，说明该二叉排序树为空树，此时插入的结点为整棵树的根结点 if (!p) { T=s; } //如果 p 不为 NULL，则 p 指向的为查找失败的最后一个叶子结点，只需要通过比较 p 和 e 的值确定 s 到底是 p 的左孩子还是右孩子 else if(e<p->data){ p->lchild=s; }else{ p->rchild=s; } return true; } //如果查找成功，不需要做插入操作，插入失败 return false; } 例如，假设原二叉排序树为空树，在对动态查找表 {3，5，7，2，1} 做查找以及插入操作时，可以构建出一个含有表中所有关键字的二叉排序树，过程如图 所示:\n"><meta name=keywords content="笔记,数据结构"><title>数据结构 二叉排序树</title>
+<link rel=canonical href=https://blog.debuginn.com/p/structure-binary-sort-tree/><link rel=stylesheet href=/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css><meta property='og:title' content="数据结构 二叉排序树"><meta property='og:description' content="定义 二叉排序树要么是空二叉树，要么具有如下特点：\n二叉排序树中，如果其根结点有左子树，那么左子树上所有结点的值都小于根结点的值； 二叉排序树中，如果其根结点有右子树，那么右子树上所有结点的值都大小根结点的值； 二叉排序树的左右子树也要求都是二叉排序树； 例如，下图就是一个二叉排序树：\n二叉排序树关键字的操作 使用二叉排序树查找关键字 二叉排序树中查找某关键字时，查找过程类似于次优二叉树，在二叉排序树不为空树的前提下，首先将被查找值同树的根结点进行比较，会有 3 种不同的结果：\n如果相等，查找成功； 如果比较结果为根结点的关键字值较大，则说明该关键字可能存在其左子树中； 如果比较结果为根结点的关键字值较小，则说明该关键字可能存在其右子树中； 实现函数为：（运用递归的方法）\n1 2 3 4 5 6 7 8 9 10 11 12 BiTree SearchBST(BiTree T,KeyType key){ //如果递归过程中 T 为空，则查找结果，返回NULL；或者查找成功，返回指向该关键字的指针 if (!T || key==T->data) { return T; }else if(key<T->data){ //递归遍历其左孩子 return SearchBST(T->lchild, key); }else{ //递归遍历其右孩子 return SearchBST(T->rchild, key); } } 二叉排序树本身是动态查找表的一种表示形式，有时会在查找过程中插入或者删除表中元素，当因为查找失败而需要插入数据元素时，该数据元素的插入位置一定位于二叉排序树的叶子结点，并且一定是查找失败时访问的最后一个结点的左孩子或者右孩子。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 c++ //插入函数 BOOL InsertBST(BiTree T,ElemType e){ BiTree p=NULL; //如果查找不成功，需做插入操作 if (!SearchBST(T, e,NULL,&amp;p)) { //初始化插入结点 BiTree s=(BiTree)malloc(sizeof(BiTree)); s->data=e; s->lchild=s->rchild=NULL; //如果 p 为NULL，说明该二叉排序树为空树，此时插入的结点为整棵树的根结点 if (!p) { T=s; } //如果 p 不为 NULL，则 p 指向的为查找失败的最后一个叶子结点，只需要通过比较 p 和 e 的值确定 s 到底是 p 的左孩子还是右孩子 else if(e<p->data){ p->lchild=s; }else{ p->rchild=s; } return true; } //如果查找成功，不需要做插入操作，插入失败 return false; } 例如，假设原二叉排序树为空树，在对动态查找表 {3，5，7，2，1} 做查找以及插入操作时，可以构建出一个含有表中所有关键字的二叉排序树，过程如图 所示:\n"><meta property='og:url' content='https://blog.debuginn.com/p/structure-binary-sort-tree/'><meta property='og:site_name' content='Debug客栈'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='笔记'><meta property='article:tag' content='数据结构'><meta property='article:published_time' content='2017-11-26T22:01:25+08:00'><meta property='article:modified_time' content='2017-11-26T22:01:25+08:00'><meta property='og:image' content='https://webp.debuginn.com/202302221903175.jpg'><meta name=twitter:site content="@idebuginn"><meta name=twitter:creator content="@idebuginn"><meta name=twitter:title content="数据结构 二叉排序树"><meta name=twitter:description content="定义 二叉排序树要么是空二叉树，要么具有如下特点：\n二叉排序树中，如果其根结点有左子树，那么左子树上所有结点的值都小于根结点的值； 二叉排序树中，如果其根结点有右子树，那么右子树上所有结点的值都大小根结点的值； 二叉排序树的左右子树也要求都是二叉排序树； 例如，下图就是一个二叉排序树：\n二叉排序树关键字的操作 使用二叉排序树查找关键字 二叉排序树中查找某关键字时，查找过程类似于次优二叉树，在二叉排序树不为空树的前提下，首先将被查找值同树的根结点进行比较，会有 3 种不同的结果：\n如果相等，查找成功； 如果比较结果为根结点的关键字值较大，则说明该关键字可能存在其左子树中； 如果比较结果为根结点的关键字值较小，则说明该关键字可能存在其右子树中； 实现函数为：（运用递归的方法）\n1 2 3 4 5 6 7 8 9 10 11 12 BiTree SearchBST(BiTree T,KeyType key){ //如果递归过程中 T 为空，则查找结果，返回NULL；或者查找成功，返回指向该关键字的指针 if (!T || key==T->data) { return T; }else if(key<T->data){ //递归遍历其左孩子 return SearchBST(T->lchild, key); }else{ //递归遍历其右孩子 return SearchBST(T->rchild, key); } } 二叉排序树本身是动态查找表的一种表示形式，有时会在查找过程中插入或者删除表中元素，当因为查找失败而需要插入数据元素时，该数据元素的插入位置一定位于二叉排序树的叶子结点，并且一定是查找失败时访问的最后一个结点的左孩子或者右孩子。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 c++ //插入函数 BOOL InsertBST(BiTree T,ElemType e){ BiTree p=NULL; //如果查找不成功，需做插入操作 if (!SearchBST(T, e,NULL,&amp;p)) { //初始化插入结点 BiTree s=(BiTree)malloc(sizeof(BiTree)); s->data=e; s->lchild=s->rchild=NULL; //如果 p 为NULL，说明该二叉排序树为空树，此时插入的结点为整棵树的根结点 if (!p) { T=s; } //如果 p 不为 NULL，则 p 指向的为查找失败的最后一个叶子结点，只需要通过比较 p 和 e 的值确定 s 到底是 p 的左孩子还是右孩子 else if(e<p->data){ p->lchild=s; }else{ p->rchild=s; } return true; } //如果查找成功，不需要做插入操作，插入失败 return false; } 例如，假设原二叉排序树为空树，在对动态查找表 {3，5，7，2，1} 做查找以及插入操作时，可以构建出一个含有表中所有关键字的二叉排序树，过程如图 所示:\n"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://webp.debuginn.com/202302221903175.jpg'><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1XEJXPQPW"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1XEJXPQPW")}</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=https://webp.debuginn.com/20250506fT6oPc.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🌏</span></figure><div class=site-meta><h1 class=site-name><a href=/>Debug客栈</a></h1><h2 class=site-description>永远相信美好的事情即将发生</h2></div></header><ol class=menu-social><li><a href=https://mailchi.mp/510cad3f229f/debuginn target=_blank title=Email rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 19H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v5.5"/><path d="M19 22v-6"/><path d="M22 19l-3-3-3 3"/><path d="M3 7l9 6 9-6"/></svg></a></li><li><a href=https://x.com/idebuginn target=_blank title=x rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></svg></a></li><li><a href=https://github.com/debuginn target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://juejin.cn/user/817692380500702/posts target=_blank title=Juejin rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-juejin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 12l10 7.422L22 12"/><path d="M7 9l5 4 5-4"/><path d="M11 6l1 .8 1-.8-1-.8z"/></svg></a></li><li><a href=https://www.zhihu.com/people/debuginn/posts target=_blank title=Zhihu rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-zhihu"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 6h6v12h-2l-2 2-1-2h-1z"/><path d="M4 12h6.5"/><path d="M10.5 6h-5"/><path d="M6 4c-.5 2.5-1.5 3.5-2.5 4.5"/><path d="M8 6v7c0 4.5-2 5.5-4 7"/><path d="M11 18l-3-5"/></svg></a></li><li><a href=https://blog.debuginn.com/index.xml target=_blank title=Rss rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 102 0 1 1 0 10-2 0"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/subscribe><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 014 0 7 7 0 014 6v3a4 4 0 002 3H4a4 4 0 002-3v-3a7 7 0 014-6"/><path d="M9 17v1a3 3 0 006 0v-1"/><path d="M21 6.727A11.05 11.05.0 0018.206 3"/><path d="M3 6.727A11.05 11.05.0 015.792 3"/></svg>
+<span>订阅本站</span></a></li><li><a href=/archives><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>文章归档</span></a></li><li><a href=/project><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-branch"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 18m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M7 6M5 6a2 2 0 104 0A2 2 0 105 6"/><path d="M17 6m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M7 8v8"/><path d="M9 18h6a2 2 0 002-2v-5"/><path d="M14 14l3-3 3 3"/></svg>
+<span>我的项目</span></a></li><li><a href=/links><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6-6"/><path d="M11 6l.463-.536a5 5 0 017.071 7.072L18 13"/><path d="M13 18l-.397.534a5.068 5.068.0 01-7.127.0 4.972 4.972.0 010-7.071L6 11"/></svg>
+<span>友情链接</span></a></li><li><a href=https://photo.debuginn.com target=_blank><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-photo"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8h.01"/><path d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6z"/><path d="M3 16l5-5c.928-.893 2.072-.893 3 0l5 5"/><path d="M14 14l1-1c.928-.893 2.072-.893 3 0l3 3"/></svg>
+<span>摄影展集</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><form action=/search/ class="search-form widget"><p><label>搜索</label>
+<input name=keyword required placeholder=输入关键词...>
+<button title=搜索><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg></button></p></form><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#定义>定义</a></li><li><a href=#二叉排序树关键字的操作>二叉排序树关键字的操作</a><ol><li><a href=#使用二叉排序树查找关键字>使用二叉排序树查找关键字</a></li><li><a href=#删除关键字>删除关键字</a></li></ol></li><li><a href=#代码实现>代码实现</a></li><li><a href=#总结>总结</a></li></ol></nav></div></section><section class=widget><img src=https://webp.debuginn.com/20241111FZS0zY.png alt=WeChat style=border-radius:10px;width:100%></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/structure-binary-sort-tree/><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy alt="Featured image of post 数据结构 二叉排序树"></a></div><div class=article-details><header class=article-category><a href=/categories/algorithm/>Algorithm</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/structure-binary-sort-tree/>数据结构 二叉排序树</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Nov 26, 2017</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 4 分钟</time></div></footer></div></header><section class=article-content><h2 id=定义><a href=#%e5%ae%9a%e4%b9%89 class=header-anchor></a>定义</h2><p>二叉排序树要么是空二叉树，要么具有如下特点：</p><ul><li>二叉排序树中，如果其根结点有左子树，那么左子树上所有结点的值都小于根结点的值；</li><li>二叉排序树中，如果其根结点有右子树，那么右子树上所有结点的值都大小根结点的值；</li><li>二叉排序树的左右子树也要求都是二叉排序树；</li></ul><p>例如，下图就是一个二叉排序树：</p><p><img src=https://webp.debuginn.com/202304142202688.png loading=lazy alt=二叉排序树></p><h2 id=二叉排序树关键字的操作><a href=#%e4%ba%8c%e5%8f%89%e6%8e%92%e5%ba%8f%e6%a0%91%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e6%93%8d%e4%bd%9c class=header-anchor></a>二叉排序树关键字的操作</h2><h3 id=使用二叉排序树查找关键字><a href=#%e4%bd%bf%e7%94%a8%e4%ba%8c%e5%8f%89%e6%8e%92%e5%ba%8f%e6%a0%91%e6%9f%a5%e6%89%be%e5%85%b3%e9%94%ae%e5%ad%97 class=header-anchor></a>使用二叉排序树查找关键字</h3><p>二叉排序树中查找某关键字时，查找过程类似于次优二叉树，在二叉排序树不为空树的前提下，首先将被查找值同树的根结点进行比较，会有 3 种不同的结果：</p><ul><li>如果相等，查找成功；</li><li>如果比较结果为根结点的关键字值较大，则说明该关键字可能存在其左子树中；</li><li>如果比较结果为根结点的关键字值较小，则说明该关键字可能存在其右子树中；</li></ul><p>实现函数为：（运用递归的方法）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=n>BiTree</span> <span class=nf>SearchBST</span><span class=p>(</span><span class=n>BiTree</span> <span class=n>T</span><span class=p>,</span><span class=n>KeyType</span> <span class=n>key</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//如果递归过程中 T 为空，则查找结果，返回NULL；或者查找成功，返回指向该关键字的指针
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>T</span> <span class=o>||</span> <span class=n>key</span><span class=o>==</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>T</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span><span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>key</span><span class=o>&lt;</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//递归遍历其左孩子
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>return</span> <span class=nf>SearchBST</span><span class=p>(</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>,</span> <span class=n>key</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//递归遍历其右孩子
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>return</span> <span class=nf>SearchBST</span><span class=p>(</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>,</span> <span class=n>key</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>二叉排序树本身是动态查找表的一种表示形式，有时会在查找过程中插入或者删除表中元素，当因为查找失败而需要插入数据元素时，该数据元素的插入位置一定位于二叉排序树的叶子结点，并且一定是查找失败时访问的最后一个结点的左孩子或者右孩子。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=n>c</span><span class=o>++</span>
+</span></span><span class=line><span class=cl> <span class=c1>//插入函数
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=n>BOOL</span> <span class=nf>InsertBST</span><span class=p>(</span><span class=n>BiTree</span> <span class=n>T</span><span class=p>,</span><span class=n>ElemType</span> <span class=n>e</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>     <span class=n>BiTree</span> <span class=n>p</span><span class=o>=</span><span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>     <span class=c1>//如果查找不成功，需做插入操作
+</span></span></span><span class=line><span class=cl><span class=c1></span>     <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nf>SearchBST</span><span class=p>(</span><span class=n>T</span><span class=p>,</span> <span class=n>e</span><span class=p>,</span><span class=nb>NULL</span><span class=p>,</span><span class=o>&amp;</span><span class=n>p</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>         <span class=c1>//初始化插入结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>         <span class=n>BiTree</span> <span class=n>s</span><span class=o>=</span><span class=p>(</span><span class=n>BiTree</span><span class=p>)</span><span class=nf>malloc</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=n>BiTree</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>         <span class=n>s</span><span class=o>-&gt;</span><span class=n>data</span><span class=o>=</span><span class=n>e</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>         <span class=n>s</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=o>=</span><span class=n>s</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=o>=</span><span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>         <span class=c1>//如果 p 为NULL，说明该二叉排序树为空树，此时插入的结点为整棵树的根结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>         <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>p</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>             <span class=n>T</span><span class=o>=</span><span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>         <span class=p>}</span>
+</span></span><span class=line><span class=cl>         <span class=c1>//如果 p 不为 NULL，则 p 指向的为查找失败的最后一个叶子结点，只需要通过比较 p 和 e 的值确定 s 到底是 p 的左孩子还是右孩子
+</span></span></span><span class=line><span class=cl><span class=c1></span>         <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>e</span><span class=o>&lt;</span><span class=n>p</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>             <span class=n>p</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=o>=</span><span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>         <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>             <span class=n>p</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=o>=</span><span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>         <span class=p>}</span>
+</span></span><span class=line><span class=cl>         <span class=k>return</span> <span class=nb>true</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>     <span class=p>}</span>
+</span></span><span class=line><span class=cl>     <span class=c1>//如果查找成功，不需要做插入操作，插入失败
+</span></span></span><span class=line><span class=cl><span class=c1></span>     <span class=k>return</span> <span class=nb>false</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>例如，假设原二叉排序树为空树，在对动态查找表 <code>{3，5，7，2，1}</code> 做查找以及插入操作时，可以构建出一个含有表中所有关键字的二叉排序树，过程如图 所示:</p><p><img src=https://webp.debuginn.com/202304142204171.png loading=lazy alt=插入数></p><p>通过不断的查找和插入操作，最终构建的二叉排序树如图 （5） 所示。当使用中序遍历算法遍历二叉排序树时，得到的序列为：1 2 3 5 7 ，为有序序列。</p><blockquote><p>一个无序序列可以通过构建一棵二叉排序树，从而变成一个有序序列。</p></blockquote><h3 id=删除关键字><a href=#%e5%88%a0%e9%99%a4%e5%85%b3%e9%94%ae%e5%ad%97 class=header-anchor></a>删除关键字</h3><p>在查找过程中，如果在使用二叉排序树表示的动态查找表中删除某个数据元素时，需要在成功删除该结点的同时，依旧使这棵树为二叉排序树。</p><p>假设要删除的为结点 p，则对于二叉排序树来说，需要根据结点 p 所在不同的位置作不同的操作，有以下 3 种可能：</p><ol><li>结点 p 为叶子结点，此时只需要删除该结点，并修改其双亲结点的指针即可；</li><li>结点 p 只有左子树或者只有右子树，此时只需要将其左子树或者右子树直接变为结点 p 双亲结点的左子树即可；</li><li>结点 p 左右子树都有，此时有两种处理方式：<ul><li>令结点 p 的左子树为其双亲结点的左子树；结点 p 的右子树为其自身直接前驱结点的右子树，如图所示；</li><li>用结点 p 的直接前驱（或直接后继）来代替结点 p，同时在二叉排序树中对其直接前驱（或直接后继）做删除操作。如图为使用直接前驱代替结点 p：</li></ul></li></ol><p><img src=https://webp.debuginn.com/202304142205621.png loading=lazy alt=删除节点></p><blockquote><p>在对左图进行中序遍历时，得到的结点 p 的直接前驱结点为结点 s，所以直接用结点 s 覆盖结点 p，由于结点 s 还有左孩子，根据第 2 条规则，直接将其变为双亲结点的右孩子。</p></blockquote><h2 id=代码实现><a href=#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0 class=header-anchor></a>代码实现</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span><span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span><span class=cpf>&lt;stdlib.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#define TRUE 1
+</span></span></span><span class=line><span class=cl><span class=cp>#define FALSE 0
+</span></span></span><span class=line><span class=cl><span class=cp>#define ElemType int
+</span></span></span><span class=line><span class=cl><span class=cp>#define  KeyType int
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=cm>/* 二叉排序树的节点结构定义 */</span>
+</span></span><span class=line><span class=cl><span class=k>typedef</span> <span class=k>struct</span> <span class=n>BiTNode</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>data</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>struct</span> <span class=n>BiTNode</span> <span class=o>*</span><span class=n>lchild</span><span class=p>,</span> <span class=o>*</span><span class=n>rchild</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=n>BiTNode</span><span class=p>,</span> <span class=o>*</span><span class=n>BiTree</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//二叉排序树查找算法
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>SearchBST</span><span class=p>(</span><span class=n>BiTree</span> <span class=n>T</span><span class=p>,</span><span class=n>KeyType</span> <span class=n>key</span><span class=p>,</span><span class=n>BiTree</span> <span class=n>f</span><span class=p>,</span><span class=n>BiTree</span> <span class=o>*</span><span class=n>p</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//如果 T 指针为空，说明查找失败，令 p 指针指向查找过程中最后一个叶子结点，并返回查找失败的信息
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>T</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>p</span><span class=o>=</span><span class=n>f</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>FALSE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//如果相等，令 p 指针指向该关键字，并返回查找成功信息
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>key</span><span class=o>==</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>p</span><span class=o>=</span><span class=n>T</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>TRUE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//如果 key 值比 T 根结点的值小，则查找其左子树；反之，查找其右子树
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>key</span><span class=o>&lt;</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nf>SearchBST</span><span class=p>(</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>,</span><span class=n>key</span><span class=p>,</span><span class=n>T</span><span class=p>,</span><span class=n>p</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nf>SearchBST</span><span class=p>(</span><span class=n>T</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>,</span><span class=n>key</span><span class=p>,</span><span class=n>T</span><span class=p>,</span><span class=n>p</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>InsertBST</span><span class=p>(</span><span class=n>BiTree</span> <span class=o>*</span><span class=n>T</span><span class=p>,</span><span class=n>ElemType</span> <span class=n>e</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=n>BiTree</span> <span class=n>p</span><span class=o>=</span><span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//如果查找不成功，需做插入操作
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nf>SearchBST</span><span class=p>((</span><span class=o>*</span><span class=n>T</span><span class=p>),</span> <span class=n>e</span><span class=p>,</span><span class=nb>NULL</span><span class=p>,</span><span class=o>&amp;</span><span class=n>p</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//初始化插入结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>BiTree</span> <span class=n>s</span><span class=o>=</span><span class=p>(</span><span class=n>BiTree</span><span class=p>)</span><span class=nf>malloc</span><span class=p>(</span><span class=k>sizeof</span><span class=p>(</span><span class=n>BiTree</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>        <span class=n>s</span><span class=o>-&gt;</span><span class=n>data</span><span class=o>=</span><span class=n>e</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>s</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=o>=</span><span class=n>s</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=o>=</span><span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果 p 为NULL，说明该二叉排序树为空树，此时插入的结点为整棵树的根结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=n>p</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>T</span><span class=o>=</span><span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果 p 不为 NULL，则 p 指向的为查找失败的最后一个叶子结点，只需要通过比较 p 和 e 的值确定 s 到底是 p 的左孩子还是右孩子
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>e</span> <span class=o>&lt;</span> <span class=n>p</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>p</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=o>=</span><span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>p</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=o>=</span><span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>TRUE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//如果查找成功，不需要做插入操作，插入失败
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=n>FALSE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>//删除函数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>Delete</span><span class=p>(</span><span class=n>BiTree</span> <span class=o>*</span><span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>BiTree</span> <span class=n>q</span><span class=p>,</span> <span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//情况 1，结点 p 本身为叶子结点，直接删除即可
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span><span class=p>(</span><span class=o>!</span><span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>lchild</span> <span class=o>&amp;&amp;</span> <span class=o>!</span><span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>p</span> <span class=o>=</span> <span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=o>!</span><span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>){</span> <span class=c1>//左子树为空，只需用结点 p 的右子树根结点代替结点 p 即可；
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>q</span> <span class=o>=</span> <span class=o>*</span><span class=n>p</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>p</span> <span class=o>=</span> <span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nf>free</span><span class=p>(</span><span class=n>q</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=o>!</span><span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>){</span><span class=c1>//右子树为空，只需用结点 p 的左子树根结点代替结点 p 即可；
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>q</span> <span class=o>=</span> <span class=o>*</span><span class=n>p</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>p</span> <span class=o>=</span> <span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>;</span><span class=c1>//这里不是指针 *p 指向左子树，而是将左子树存储的结点的地址赋值给指针变量 p
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nf>free</span><span class=p>(</span><span class=n>q</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span><span class=p>{</span><span class=c1>//左右子树均不为空，采用第 2 种方式
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>q</span> <span class=o>=</span> <span class=o>*</span><span class=n>p</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>s</span> <span class=o>=</span> <span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//遍历，找到结点 p 的直接前驱
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>while</span><span class=p>(</span><span class=n>s</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>q</span> <span class=o>=</span> <span class=n>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>s</span> <span class=o>=</span> <span class=n>s</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//直接改变结点 p 的值
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>(</span><span class=o>*</span><span class=n>p</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>data</span> <span class=o>=</span> <span class=n>s</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//判断结点 p 的左子树 s 是否有右子树，分为两种情况讨论
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span><span class=p>(</span> <span class=n>q</span> <span class=o>!=</span> <span class=o>*</span><span class=n>p</span> <span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>q</span><span class=o>-&gt;</span><span class=n>rchild</span> <span class=o>=</span> <span class=n>s</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>;</span><span class=c1>//若有，则在删除直接前驱结点的同时，令前驱的左孩子结点改为 q 指向结点的孩子结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>q</span><span class=o>-&gt;</span><span class=n>lchild</span> <span class=o>=</span> <span class=n>s</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>;</span><span class=c1>//否则，直接将左子树上移即可
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=nf>free</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>TRUE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>DeleteBST</span><span class=p>(</span><span class=n>BiTree</span> <span class=o>*</span><span class=n>T</span><span class=p>,</span> <span class=kt>int</span> <span class=n>key</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span> <span class=o>!</span><span class=p>(</span><span class=o>*</span><span class=n>T</span><span class=p>)){</span><span class=c1>//不存在关键字等于key的数据元素
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>return</span> <span class=n>FALSE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span> <span class=n>key</span> <span class=o>==</span> <span class=p>(</span><span class=o>*</span><span class=n>T</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>data</span> <span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=nf>Delete</span><span class=p>(</span><span class=n>T</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>TRUE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span> <span class=k>if</span><span class=p>(</span> <span class=n>key</span> <span class=o>&lt;</span> <span class=p>(</span><span class=o>*</span><span class=n>T</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=c1>//使用递归的方式
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>return</span> <span class=nf>DeleteBST</span><span class=p>(</span><span class=o>&amp;</span><span class=p>(</span><span class=o>*</span><span class=n>T</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>,</span> <span class=n>key</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=nf>DeleteBST</span><span class=p>(</span><span class=o>&amp;</span><span class=p>(</span><span class=o>*</span><span class=n>T</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>,</span> <span class=n>key</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>order</span><span class=p>(</span><span class=n>BiTree</span> <span class=n>t</span><span class=p>)</span><span class=c1>//中序输出
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span><span class=n>t</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nf>order</span><span class=p>(</span><span class=n>t</span><span class=o>-&gt;</span><span class=n>lchild</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;%d &#34;</span><span class=p>,</span> <span class=n>t</span><span class=o>-&gt;</span><span class=n>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>order</span><span class=p>(</span><span class=n>t</span><span class=o>-&gt;</span><span class=n>rchild</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>a</span><span class=p>[</span><span class=mi>5</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>9</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>    <span class=n>BiTree</span> <span class=n>T</span> <span class=o>=</span> <span class=nb>NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span> <span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=nf>InsertBST</span><span class=p>(</span><span class=o>&amp;</span><span class=n>T</span><span class=p>,</span> <span class=n>a</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;中序遍历二叉排序树：</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>order</span><span class=p>(</span><span class=n>T</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;删除3后，中序遍历二叉排序树：</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>DeleteBST</span><span class=p>(</span><span class=o>&amp;</span><span class=n>T</span><span class=p>,</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>order</span><span class=p>(</span><span class=n>T</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>运行结果：</p><blockquote><p>中序遍历二叉排序树： 2 3 4 5 9
+删除3后，中序遍历二叉排序树： 2 4 5 9</p></blockquote><h2 id=总结><a href=#%e6%80%bb%e7%bb%93 class=header-anchor></a>总结</h2><p>使用二叉排序树在查找表中做查找操作的时间复杂度同建立的二叉树本身的结构有关。即使查找表中各数据元素完全相同，但是不同的排列顺序，构建出的二叉排序树大不相同。
+例如：查找表 <code>{45，24，53，12，37，93}</code> 和表 <code>{12，24，37，45，53，93}</code> 各自构建的二叉排序树图下图所示：</p><p><img src=https://webp.debuginn.com/202304142207320.png loading=lazy alt=二叉排序树></p><p>使用二叉排序树实现动态查找操作的过程，实际上就是从二叉排序树的根结点到查找元素结点的过程，所以时间复杂度同被查找元素所在的树的深度（层次数）有关。</p><p>本博文从 <a class=link href=http://data.biancheng.net/view/58.html target=_blank rel=noopener>二叉排序树（二叉查找树）及C语言实现 严长生</a> 转载而来，表示感谢。</p></section><footer class=article-footer><section class=article-tags><a href=/tags/%E7%AC%94%E8%AE%B0/>笔记</a>
+<a href=/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/structure-avl-tree/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 平衡二叉树AVL树</h2></div></a></article><article class=has-image><a href=/p/structure-nonlinear-structure/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 非线性结构</h2></div></a></article><article class=has-image><a href=/p/structure-static-tree-table-lookup/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 静态树表查找算法</h2></div></a></article><article class=has-image><a href=/p/structure-key-tree-search/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 键树查找法</h2></div></a></article><article class=has-image><a href=/p/structure-huffman-tree/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 哈夫曼树</h2></div></a></article></div></div></aside><script src=https://giscus.app/client.js data-repo=debuginn/blog data-repo-id=R_kgDOI_rNgg data-category=General data-category-id=DIC_kwDOI_rNgs4CUT4j data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light data-lang=zh-CN data-loading crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light":"dark")}})()</script><footer class=site-footer><section class=copyright>&copy;
+2017 -
+2025 Debug客栈</section><section class=powerby><a href=https://debuginn.com>主页</a>&nbsp;·&nbsp<a href=https://blog.debuginn.com/>博客</a>&nbsp;·&nbsp<a href=https://photo.debuginn.com>摄影</a>&nbsp;·&nbsp<a href=/project/>项目</a>&nbsp;·&nbsp<a href=/about/>关于</a><br>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.30.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167312285165454" crossorigin=anonymous></script><script defer src=https://cloud.umami.is/script.js data-website-id=fe36cfb2-8a2b-4457-a3e9-961f7d732026></script></body></html>
