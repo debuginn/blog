@@ -47,9 +47,6 @@
                 {{ "<" | html }}img src="{{ $image.permalink | absURL }}" alt="Featured image of post {{ .Title }}" {{ "/>" | html}}
             {{- end -}}
             {{ $content }}
-            <p>
-                <img src="https://webp.debuginn.com/202302202248422.png" alt="wechat" />
-            </p>
         </description>
         </item>
         {{ end }}
