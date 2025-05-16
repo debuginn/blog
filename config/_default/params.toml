@@ -93,3 +93,4 @@ darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 lang = "zh-CN"
+defaultCommentOrder = "newest"
