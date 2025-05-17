@@ -1,0 +1,568 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="与哈夫曼树相关名词 路径：在一棵树中，一个节点到另一个节点之间的通路。\n路径长度：在一条路径中，每经过一个节点，路径都要加1.\n节点的权：给每一个节点赋予一个新的数值。\n节点的带全路径长度：从根节点到该节点之间的路径长度与该节点的乘积。\n树的带权路径长度为树中所有叶子结点的带权路径长度之和。通常记作 “WPL” 。\n此树的带全路径长度为：\nWPL = 7 * 1 + 5 * 2 + 2 * 3 + 4 * 3\n哈夫曼树 当用 n 个结点（都做叶子结点且都有各自的权值）试图构建一棵树时，如果构建的这棵树的带权路径长度最小，称这棵树为“最优二叉树”，有时也叫“赫夫曼树”或者“哈夫曼树”。\n遵循一个原则，那就是：权重越大的结点离树根越近。\n构建哈夫曼树 对于给定的有各自权值的 n 个结点，构建哈夫曼树有一个行之有效的办法：\n在 n 个权值中选出两个最小的权值，对应的两个结点组成一个新的二叉树，且新二叉树的根结点的权值为左右孩子权值的和； 在原有的 n 个权值中删除那两个最小的权值，同时将新的权值加入到 n–2 个权值的行列中，以此类推； 重复 1 和 2 ，直到所以的结点构建成了一棵二叉树为止，这棵树就是哈夫曼树。 （A）给定了四个结点a，b，c，d，权值分别为7，5，2，4； 第一步如（B）所示，找出现有权值中最小的两个，2 和 4 ，相应的结点 c 和 d 构建一个新的二叉树，树根的权值为 2 + 4 = 6，同时将原有权值中的 2 和 4 删掉，将新的权值 6 加入； 进入（C），重复之前的步骤。直到（D）中，所有的结点构建成了一个全新的二叉树，这就是哈夫曼树。 哈夫曼树的节点结构 构建哈夫曼树时，首先需要确定树中结点的构成。由于哈夫曼树的构建是从叶子结点开始，不断地构建新的父结点，直至树根，所以结点中应包含指向父结点的指针。但是在使用哈夫曼树时是从树根开始，根据需求遍历树中的结点，因此每个结点需要有指向其左孩子和右孩子的指针。\n"><meta name=keywords content="笔记,数据结构"><title>数据结构 哈夫曼树</title>
+<link rel=canonical href=https://blog.debuginn.com/p/structure-huffman-tree/><link rel=stylesheet href=/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css><meta property='og:title' content="数据结构 哈夫曼树"><meta property='og:description' content="与哈夫曼树相关名词 路径：在一棵树中，一个节点到另一个节点之间的通路。\n路径长度：在一条路径中，每经过一个节点，路径都要加1.\n节点的权：给每一个节点赋予一个新的数值。\n节点的带全路径长度：从根节点到该节点之间的路径长度与该节点的乘积。\n树的带权路径长度为树中所有叶子结点的带权路径长度之和。通常记作 “WPL” 。\n此树的带全路径长度为：\nWPL = 7 * 1 + 5 * 2 + 2 * 3 + 4 * 3\n哈夫曼树 当用 n 个结点（都做叶子结点且都有各自的权值）试图构建一棵树时，如果构建的这棵树的带权路径长度最小，称这棵树为“最优二叉树”，有时也叫“赫夫曼树”或者“哈夫曼树”。\n遵循一个原则，那就是：权重越大的结点离树根越近。\n构建哈夫曼树 对于给定的有各自权值的 n 个结点，构建哈夫曼树有一个行之有效的办法：\n在 n 个权值中选出两个最小的权值，对应的两个结点组成一个新的二叉树，且新二叉树的根结点的权值为左右孩子权值的和； 在原有的 n 个权值中删除那两个最小的权值，同时将新的权值加入到 n–2 个权值的行列中，以此类推； 重复 1 和 2 ，直到所以的结点构建成了一棵二叉树为止，这棵树就是哈夫曼树。 （A）给定了四个结点a，b，c，d，权值分别为7，5，2，4； 第一步如（B）所示，找出现有权值中最小的两个，2 和 4 ，相应的结点 c 和 d 构建一个新的二叉树，树根的权值为 2 + 4 = 6，同时将原有权值中的 2 和 4 删掉，将新的权值 6 加入； 进入（C），重复之前的步骤。直到（D）中，所有的结点构建成了一个全新的二叉树，这就是哈夫曼树。 哈夫曼树的节点结构 构建哈夫曼树时，首先需要确定树中结点的构成。由于哈夫曼树的构建是从叶子结点开始，不断地构建新的父结点，直至树根，所以结点中应包含指向父结点的指针。但是在使用哈夫曼树时是从树根开始，根据需求遍历树中的结点，因此每个结点需要有指向其左孩子和右孩子的指针。\n"><meta property='og:url' content='https://blog.debuginn.com/p/structure-huffman-tree/'><meta property='og:site_name' content='Debug客栈'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='笔记'><meta property='article:tag' content='数据结构'><meta property='article:published_time' content='2017-11-28T19:33:23+08:00'><meta property='article:modified_time' content='2017-11-28T19:33:23+08:00'><meta property='og:image' content='https://webp.debuginn.com/202302221903175.jpg'><meta name=twitter:site content="@idebuginn"><meta name=twitter:creator content="@idebuginn"><meta name=twitter:title content="数据结构 哈夫曼树"><meta name=twitter:description content="与哈夫曼树相关名词 路径：在一棵树中，一个节点到另一个节点之间的通路。\n路径长度：在一条路径中，每经过一个节点，路径都要加1.\n节点的权：给每一个节点赋予一个新的数值。\n节点的带全路径长度：从根节点到该节点之间的路径长度与该节点的乘积。\n树的带权路径长度为树中所有叶子结点的带权路径长度之和。通常记作 “WPL” 。\n此树的带全路径长度为：\nWPL = 7 * 1 + 5 * 2 + 2 * 3 + 4 * 3\n哈夫曼树 当用 n 个结点（都做叶子结点且都有各自的权值）试图构建一棵树时，如果构建的这棵树的带权路径长度最小，称这棵树为“最优二叉树”，有时也叫“赫夫曼树”或者“哈夫曼树”。\n遵循一个原则，那就是：权重越大的结点离树根越近。\n构建哈夫曼树 对于给定的有各自权值的 n 个结点，构建哈夫曼树有一个行之有效的办法：\n在 n 个权值中选出两个最小的权值，对应的两个结点组成一个新的二叉树，且新二叉树的根结点的权值为左右孩子权值的和； 在原有的 n 个权值中删除那两个最小的权值，同时将新的权值加入到 n–2 个权值的行列中，以此类推； 重复 1 和 2 ，直到所以的结点构建成了一棵二叉树为止，这棵树就是哈夫曼树。 （A）给定了四个结点a，b，c，d，权值分别为7，5，2，4； 第一步如（B）所示，找出现有权值中最小的两个，2 和 4 ，相应的结点 c 和 d 构建一个新的二叉树，树根的权值为 2 + 4 = 6，同时将原有权值中的 2 和 4 删掉，将新的权值 6 加入； 进入（C），重复之前的步骤。直到（D）中，所有的结点构建成了一个全新的二叉树，这就是哈夫曼树。 哈夫曼树的节点结构 构建哈夫曼树时，首先需要确定树中结点的构成。由于哈夫曼树的构建是从叶子结点开始，不断地构建新的父结点，直至树根，所以结点中应包含指向父结点的指针。但是在使用哈夫曼树时是从树根开始，根据需求遍历树中的结点，因此每个结点需要有指向其左孩子和右孩子的指针。\n"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://webp.debuginn.com/202302221903175.jpg'><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1XEJXPQPW"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1XEJXPQPW")}</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=https://webp.debuginn.com/20250506fT6oPc.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🌏</span></figure><div class=site-meta><h1 class=site-name><a href=/>Debug客栈</a></h1><h2 class=site-description>永远相信美好的事情即将发生</h2></div></header><ol class=menu-social><li><a href=https://mailchi.mp/510cad3f229f/debuginn target=_blank title=Email rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 19H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v5.5"/><path d="M19 22v-6"/><path d="M22 19l-3-3-3 3"/><path d="M3 7l9 6 9-6"/></svg></a></li><li><a href=https://x.com/idebuginn target=_blank title=x rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></svg></a></li><li><a href=https://github.com/debuginn target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://juejin.cn/user/817692380500702/posts target=_blank title=Juejin rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-juejin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 12l10 7.422L22 12"/><path d="M7 9l5 4 5-4"/><path d="M11 6l1 .8 1-.8-1-.8z"/></svg></a></li><li><a href=https://www.zhihu.com/people/debuginn/posts target=_blank title=Zhihu rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-zhihu"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 6h6v12h-2l-2 2-1-2h-1z"/><path d="M4 12h6.5"/><path d="M10.5 6h-5"/><path d="M6 4c-.5 2.5-1.5 3.5-2.5 4.5"/><path d="M8 6v7c0 4.5-2 5.5-4 7"/><path d="M11 18l-3-5"/></svg></a></li><li><a href=https://blog.debuginn.com/index.xml target=_blank title=Rss rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 102 0 1 1 0 10-2 0"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/subscribe><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 014 0 7 7 0 014 6v3a4 4 0 002 3H4a4 4 0 002-3v-3a7 7 0 014-6"/><path d="M9 17v1a3 3 0 006 0v-1"/><path d="M21 6.727A11.05 11.05.0 0018.206 3"/><path d="M3 6.727A11.05 11.05.0 015.792 3"/></svg>
+<span>订阅本站</span></a></li><li><a href=/archives><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>文章归档</span></a></li><li><a href=/project><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-branch"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 18m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M7 6M5 6a2 2 0 104 0A2 2 0 105 6"/><path d="M17 6m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M7 8v8"/><path d="M9 18h6a2 2 0 002-2v-5"/><path d="M14 14l3-3 3 3"/></svg>
+<span>我的项目</span></a></li><li><a href=/links><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6-6"/><path d="M11 6l.463-.536a5 5 0 017.071 7.072L18 13"/><path d="M13 18l-.397.534a5.068 5.068.0 01-7.127.0 4.972 4.972.0 010-7.071L6 11"/></svg>
+<span>友情链接</span></a></li><li><a href=https://photo.debuginn.com target=_blank><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-photo"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8h.01"/><path d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6z"/><path d="M3 16l5-5c.928-.893 2.072-.893 3 0l5 5"/><path d="M14 14l1-1c.928-.893 2.072-.893 3 0l3 3"/></svg>
+<span>摄影展集</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><form action=/search/ class="search-form widget"><p><label>搜索</label>
+<input name=keyword required placeholder=输入关键词...>
+<button title=搜索><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg></button></p></form><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#与哈夫曼树相关名词>与哈夫曼树相关名词</a></li><li><a href=#哈夫曼树>哈夫曼树</a></li><li><a href=#构建哈夫曼树>构建哈夫曼树</a></li><li><a href=#哈夫曼树的节点结构>哈夫曼树的节点结构</a><ol><li><a href=#哈夫曼树中的查找算法>哈夫曼树中的查找算法</a></li></ol></li><li><a href=#哈夫曼编码>哈夫曼编码</a></li><li><a href=#遍历哈夫曼树程序设计>遍历哈夫曼树程序设计</a></li></ol></nav></div></section><section class=widget><img src=https://webp.debuginn.com/20241111FZS0zY.png alt=WeChat style=border-radius:10px;width:100%></section><section class=widget style=height:100px;border-radius:20px><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-7167312285165454 data-ad-slot=3692601567 data-ad-format=auto data-full-width-responsive=true></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/structure-huffman-tree/><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy alt="Featured image of post 数据结构 哈夫曼树"></a></div><div class=article-details><header class=article-category><a href=/categories/algorithm/>Algorithm</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/structure-huffman-tree/>数据结构 哈夫曼树</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Nov 28, 2017</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 6 分钟</time></div></footer></div></header><section class=article-content><h2 id=与哈夫曼树相关名词><a href=#%e4%b8%8e%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91%e7%9b%b8%e5%85%b3%e5%90%8d%e8%af%8d class=header-anchor></a>与哈夫曼树相关名词</h2><p>路径：在一棵树中，一个节点到另一个节点之间的通路。</p><p>路径长度：在一条路径中，每经过一个节点，路径都要加1.</p><p>节点的权：给每一个节点赋予一个新的数值。</p><p>节点的带全路径长度：从根节点到该节点之间的路径长度与该节点的乘积。</p><p>树的带权路径长度为树中所有叶子结点的带权路径长度之和。通常记作 “WPL” 。</p><p><img src=https://webp.debuginn.com/202304141934409.png loading=lazy alt=哈夫曼树></p><p>此树的带全路径长度为：</p><blockquote><p>WPL = 7 * 1 + 5 * 2 + 2 * 3 + 4 * 3</p></blockquote><h2 id=哈夫曼树><a href=#%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91 class=header-anchor></a>哈夫曼树</h2><p>当用 n 个结点（都做叶子结点且都有各自的权值）试图构建一棵树时，如果构建的这棵树的带权路径长度最小，称这棵树为“最优二叉树”，有时也叫“赫夫曼树”或者“哈夫曼树”。</p><p>遵循一个原则，那就是：权重越大的结点离树根越近。</p><h2 id=构建哈夫曼树><a href=#%e6%9e%84%e5%bb%ba%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91 class=header-anchor></a>构建哈夫曼树</h2><p>对于给定的有各自权值的 n 个结点，构建哈夫曼树有一个行之有效的办法：</p><ol><li>在 n 个权值中选出两个最小的权值，对应的两个结点组成一个新的二叉树，且新二叉树的根结点的权值为左右孩子权值的和；</li><li>在原有的 n 个权值中删除那两个最小的权值，同时将新的权值加入到 n–2 个权值的行列中，以此类推；</li><li>重复 1 和 2 ，直到所以的结点构建成了一棵二叉树为止，这棵树就是哈夫曼树。</li></ol><p><img src=https://webp.debuginn.com/202304141935930.png loading=lazy alt=构建哈夫曼树></p><ul><li>（A）给定了四个结点a，b，c，d，权值分别为7，5，2，4；</li><li>第一步如（B）所示，找出现有权值中最小的两个，2 和 4 ，相应的结点 c 和 d 构建一个新的二叉树，树根的权值为 2 + 4 = 6，同时将原有权值中的 2 和 4 删掉，将新的权值 6 加入；</li><li>进入（C），重复之前的步骤。直到（D）中，所有的结点构建成了一个全新的二叉树，这就是哈夫曼树。</li></ul><h2 id=哈夫曼树的节点结构><a href=#%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91%e7%9a%84%e8%8a%82%e7%82%b9%e7%bb%93%e6%9e%84 class=header-anchor></a>哈夫曼树的节点结构</h2><p>构建哈夫曼树时，首先需要确定树中结点的构成。由于哈夫曼树的构建是从叶子结点开始，不断地构建新的父结点，直至树根，所以结点中应包含指向父结点的指针。但是在使用哈夫曼树时是从树根开始，根据需求遍历树中的结点，因此每个结点需要有指向其左孩子和右孩子的指针。</p><p><strong>代码结构：</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>//哈夫曼树结点结构
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>typedef</span> <span class=k>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>weight</span><span class=p>;</span><span class=c1>//结点权重
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=n>parent</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>;</span><span class=c1>//父结点、左孩子、右孩子在数组中的位置下标
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=n>HTNode</span><span class=p>,</span> <span class=o>*</span><span class=n>HuffmanTree</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=哈夫曼树中的查找算法><a href=#%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91%e4%b8%ad%e7%9a%84%e6%9f%a5%e6%89%be%e7%ae%97%e6%b3%95 class=header-anchor></a>哈夫曼树中的查找算法</h3><p>构建哈夫曼树时，需要每次根据各个结点的权重值，筛选出其中值最小的两个结点，然后构建二叉树。</p><p>查找权重值最小的两个结点的思想是：从树组起始位置开始，首先找到两个无父结点的结点（说明还未使用其构建成树），然后和后续无父结点的结点依次做比较，有两种情况需要考虑：</p><ul><li>如果比两个结点中较小的那个还小，就保留这个结点，删除原来较大的结点；</li><li>如果介于两个结点权重值之间，替换原来较大的结点；</li></ul><p><strong>代码结构：</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>//HT数组中存放的哈夫曼树，end表示HT数组中存放结点的最终位置，s1和s2传递的是HT数组中权重值最小的两个结点在数组中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>Select</span><span class=p>(</span><span class=n>HuffmanTree</span> <span class=n>HT</span><span class=p>,</span> <span class=kt>int</span> <span class=n>end</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>s1</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>s2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>min1</span><span class=p>,</span> <span class=n>min2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//遍历数组初始下标为 1
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//找到还没构建树的结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>while</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>parent</span> <span class=o>!=</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>end</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>min1</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>s1</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>parent</span> <span class=o>!=</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>end</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//对找到的两个结点比较大小，min2为大的，min1为小的
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span> <span class=o>&lt;</span> <span class=n>min1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>min2</span> <span class=o>=</span> <span class=n>min1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=o>*</span><span class=n>s1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>min1</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>s1</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>min2</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//两个结点和后续的所有未构建成树的结点做比较
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;=</span> <span class=n>end</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果有父结点，直接跳过，进行下一个
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>parent</span> <span class=o>!=</span> <span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=k>continue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果比最小的还小，将min2=min1，min1赋值新的结点的下标
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span> <span class=o>&lt;</span> <span class=n>min1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>min2</span> <span class=o>=</span> <span class=n>min1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>min1</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=o>*</span><span class=n>s1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>s1</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果介于两者之间，min2赋值为新的结点的位置下标
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span> <span class=o>&gt;=</span> <span class=n>min1</span> <span class=o>&amp;&amp;</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span> <span class=o>&lt;</span> <span class=n>min2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>min2</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>注意：s1和s2传入的是实参的地址，所以函数运行完成后，实参中存放的自然就是哈夫曼树中权重值最小的两个结点在数组中的位置。</p></blockquote><h2 id=哈夫曼编码><a href=#%e5%93%88%e5%a4%ab%e6%9b%bc%e7%bc%96%e7%a0%81 class=header-anchor></a>哈夫曼编码</h2><p>哈夫曼编码就是在哈夫曼树的基础上构建的，这种编码方式最大的优点就是用最少的字符包含最多的信息内容。</p><p>根据发送信息的内容，通过统计文本中相同字符的个数作为每个字符的权值，建立哈夫曼树。对于树中的每一个子树，统一规定其左孩子标记为 0 ，右孩子标记为 1 。这样，用到哪个字符时，从哈夫曼树的根结点开始，依次写出经过结点的标记，最终得到的就是该结点的哈夫曼编码。</p><blockquote><p>文本中字符出现的次数越多，在哈夫曼树中的体现就是越接近树根。编码的长度越短。</p></blockquote><p><img src=https://webp.debuginn.com/202304142149107.png loading=lazy alt=哈夫曼编码></p><p>如图所示，字符 a 用到的次数最多，其次是字符 b 。字符 a 在哈夫曼编码是 0 ，字符 b 编码为 10 ，字符 c 的编码为 110 ，字符 d 的编码为 111 。</p><p>使用<strong>程序求哈夫曼编码</strong>有两种方法：</p><ol><li>从叶子结点一直找到根结点，逆向记录途中经过的标记。例如，图中字符 c 的哈夫曼编码从结点 c 开始一直找到根结点，结果为：0 1 1 ，所以字符 c 的哈夫曼编码为：1 1 0（逆序输出）。</li></ol><p>实现代码：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>//HT为哈夫曼树，HC为存储结点哈夫曼编码的二维动态数组，n为结点的个数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>HuffmanCoding</span><span class=p>(</span><span class=n>HuffmanTree</span> <span class=n>HT</span><span class=p>,</span> <span class=n>HuffmanCode</span> <span class=o>*</span><span class=n>HC</span><span class=p>,</span><span class=kt>int</span> <span class=n>n</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>HC</span> <span class=o>=</span> <span class=p>(</span><span class=n>HuffmanCode</span><span class=p>)</span> <span class=nf>malloc</span><span class=p>((</span><span class=n>n</span><span class=o>+</span><span class=mi>1</span><span class=p>)</span> <span class=o>*</span> <span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=kt>char</span> <span class=o>*</span><span class=n>cd</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=nf>malloc</span><span class=p>(</span><span class=n>n</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span><span class=p>));</span> <span class=c1>//存放结点哈夫曼编码的字符串数组
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>cd</span><span class=p>[</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;\0&#39;</span><span class=p>;</span><span class=c1>//字符串结束符
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>1</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;=</span><span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//从叶子结点出发，得到的哈夫曼编码是逆序的，需要在字符串数组中逆序存放
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>int</span> <span class=n>start</span> <span class=o>=</span> <span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//当前结点在数组中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>int</span> <span class=n>c</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//当前结点的父结点在数组中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>parent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 一直寻找到根结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>while</span><span class=p>(</span><span class=n>j</span> <span class=o>!=</span> <span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 如果该结点是父结点的左孩子则对应路径编码为0，否则为右孩子编码为1
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>left</span> <span class=o>==</span> <span class=n>c</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=o>--</span><span class=n>start</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;0&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=o>--</span><span class=n>start</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;1&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=c1>//以父结点为孩子结点，继续朝树根的方向遍历
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>c</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>j</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>parent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//跳出循环后，cd数组中从下标 start 开始，存放的就是该结点的哈夫曼编码
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>(</span><span class=o>*</span><span class=n>HC</span><span class=p>)[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=nf>malloc</span><span class=p>((</span><span class=n>n</span><span class=o>-</span><span class=n>start</span><span class=p>)</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>        <span class=nf>strcpy</span><span class=p>((</span><span class=o>*</span><span class=n>HC</span><span class=p>)[</span><span class=n>i</span><span class=p>],</span> <span class=o>&amp;</span><span class=n>cd</span><span class=p>[</span><span class=n>start</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//使用malloc申请的cd动态数组需要手动释放
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nf>free</span><span class=p>(</span><span class=n>cd</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>从根结点出发，一直到叶子结点，记录途中经过的标记。例如，求图中字符 c 的哈夫曼编码，就从根结点开始，依次为：1 1 0。</li></ol><p>实现代码：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>//HT为哈夫曼树，HC为存储结点哈夫曼编码的二维动态数组，n为结点的个数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>HuffmanCoding</span><span class=p>(</span><span class=n>HuffmanTree</span> <span class=n>HT</span><span class=p>,</span> <span class=n>HuffmanCode</span> <span class=o>*</span><span class=n>HC</span><span class=p>,</span><span class=kt>int</span> <span class=n>n</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>HC</span> <span class=o>=</span> <span class=p>(</span><span class=n>HuffmanCode</span><span class=p>)</span> <span class=nf>malloc</span><span class=p>((</span><span class=n>n</span><span class=o>+</span><span class=mi>1</span><span class=p>)</span> <span class=o>*</span> <span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>m</span><span class=o>=</span><span class=mi>2</span><span class=o>*</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>p</span><span class=o>=</span><span class=n>m</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>cdlen</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>char</span> <span class=o>*</span><span class=n>cd</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=nf>malloc</span><span class=p>(</span><span class=n>n</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//将各个结点的权重用于记录访问结点的次数，首先初始化为0
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>1</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;=</span><span class=n>m</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//一开始 p 初始化为 m，也就是从树根开始。一直到p为0
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>while</span> <span class=p>(</span><span class=n>p</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果当前结点一次没有访问，进入这个if语句
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span> <span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>weight</span><span class=o>==</span><span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>weight</span><span class=o>=</span><span class=mi>1</span><span class=p>;</span><span class=c1>//重置访问次数为1
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=c1>//如果有左孩子，则访问左孩子，并且存储走过的标记为0
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>left</span><span class=o>!=</span><span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>p</span><span class=o>=</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>left</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=n>cdlen</span><span class=o>++</span><span class=p>]</span><span class=o>=</span><span class=sc>&#39;0&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=c1>//当前结点没有左孩子，也没有右孩子，说明为叶子结点，直接记录哈夫曼编码
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>right</span><span class=o>==</span><span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>                <span class=p>(</span><span class=o>*</span><span class=n>HC</span><span class=p>)[</span><span class=n>p</span><span class=p>]</span><span class=o>=</span><span class=p>(</span><span class=kt>char</span><span class=o>*</span><span class=p>)</span><span class=nf>malloc</span><span class=p>((</span><span class=n>cdlen</span><span class=o>+</span><span class=mi>1</span><span class=p>)</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=n>cdlen</span><span class=p>]</span><span class=o>=</span><span class=sc>&#39;\0&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=nf>strcpy</span><span class=p>((</span><span class=o>*</span><span class=n>HC</span><span class=p>)[</span><span class=n>p</span><span class=p>],</span> <span class=n>cd</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果weight为1，说明访问过一次，即是从其左孩子返回的
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>weight</span><span class=o>==</span><span class=mi>1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>weight</span><span class=o>=</span><span class=mi>2</span><span class=p>;</span><span class=c1>//设置访问次数为2
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=c1>//如果有右孩子，遍历右孩子，记录标记值 1
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>right</span><span class=o>!=</span><span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>p</span><span class=o>=</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>right</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=n>cdlen</span><span class=o>++</span><span class=p>]</span><span class=o>=</span><span class=sc>&#39;1&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果访问次数为 2，说明左右孩子都遍历完了，返回父结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>weight</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>p</span><span class=o>=</span><span class=n>HT</span><span class=p>[</span><span class=n>p</span><span class=p>].</span><span class=n>parent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>--</span><span class=n>cdlen</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=遍历哈夫曼树程序设计><a href=#%e9%81%8d%e5%8e%86%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1 class=header-anchor></a>遍历哈夫曼树程序设计</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdlib.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=c1>//哈夫曼树结点结构
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>typedef</span> <span class=k>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>weight</span><span class=p>;</span><span class=c1>//结点权重
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=n>parent</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>right</span><span class=p>;</span><span class=c1>//父结点、左孩子、右孩子在数组中的位置下标
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span><span class=n>HTNode</span><span class=p>,</span> <span class=o>*</span><span class=n>HuffmanTree</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//动态二维数组，存储哈夫曼编码
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>typedef</span> <span class=kt>char</span> <span class=o>**</span> <span class=n>HuffmanCode</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//HT数组中存放的哈夫曼树，end表示HT数组中存放结点的最终位置，s1和s2传递的是HT数组中权重值最小的两个结点在数组中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>Select</span><span class=p>(</span><span class=n>HuffmanTree</span> <span class=n>HT</span><span class=p>,</span> <span class=kt>int</span> <span class=n>end</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>s1</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>s2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>min1</span><span class=p>,</span> <span class=n>min2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//遍历数组初始下标为 1
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//找到还没构建树的结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>while</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>parent</span> <span class=o>!=</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>end</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>min1</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>s1</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>parent</span> <span class=o>!=</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>end</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//对找到的两个结点比较大小，min2为大的，min1为小的
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span> <span class=o>&lt;</span> <span class=n>min1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>min2</span> <span class=o>=</span> <span class=n>min1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=o>*</span><span class=n>s1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>min1</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>s1</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span><span class=k>else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>min2</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//两个结点和后续的所有未构建成树的结点做比较
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;=</span> <span class=n>end</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果有父结点，直接跳过，进行下一个
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>parent</span> <span class=o>!=</span> <span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=k>continue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果比最小的还小，将min2=min1，min1赋值新的结点的下标
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span> <span class=o>&lt;</span> <span class=n>min1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>min2</span> <span class=o>=</span> <span class=n>min1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>min1</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=o>*</span><span class=n>s1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>s1</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//如果介于两者之间，min2赋值为新的结点的位置下标
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span> <span class=o>&gt;=</span> <span class=n>min1</span> <span class=o>&amp;&amp;</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span> <span class=o>&lt;</span> <span class=n>min2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>min2</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>*</span><span class=n>s2</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//HT为地址传递的存储哈夫曼树的数组，w为存储结点权重值的数组，n为结点个数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>CreateHuffmanTree</span><span class=p>(</span><span class=n>HuffmanTree</span> <span class=o>*</span><span class=n>HT</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>w</span><span class=p>,</span> <span class=kt>int</span> <span class=n>n</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span><span class=n>n</span><span class=o>&lt;=</span><span class=mi>1</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span> <span class=c1>// 如果只有一个编码就相当于0
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=n>m</span> <span class=o>=</span> <span class=mi>2</span><span class=o>*</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span> <span class=c1>// 哈夫曼树总节点数，n就是叶子结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>*</span><span class=n>HT</span> <span class=o>=</span> <span class=p>(</span><span class=n>HuffmanTree</span><span class=p>)</span> <span class=nf>malloc</span><span class=p>((</span><span class=n>m</span><span class=o>+</span><span class=mi>1</span><span class=p>)</span> <span class=o>*</span> <span class=k>sizeof</span><span class=p>(</span><span class=n>HTNode</span><span class=p>));</span> <span class=c1>// 0号位置不用
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>HuffmanTree</span> <span class=n>p</span> <span class=o>=</span> <span class=o>*</span><span class=n>HT</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 初始化哈夫曼树中的所有结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>weight</span> <span class=o>=</span> <span class=o>*</span><span class=p>(</span><span class=n>w</span><span class=o>+</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>parent</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>left</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>right</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//从树组的下标 n+1 开始初始化哈夫曼树中除叶子结点外的结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>n</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>m</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>weight</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>parent</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>left</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=n>p</span><span class=o>+</span><span class=n>i</span><span class=p>)</span><span class=o>-&gt;</span><span class=n>right</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//构建哈夫曼树
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>n</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>m</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>s1</span><span class=p>,</span> <span class=n>s2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nf>Select</span><span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>,</span> <span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>s1</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>s2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>s1</span><span class=p>].</span><span class=n>parent</span> <span class=o>=</span> <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>s2</span><span class=p>].</span><span class=n>parent</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>i</span><span class=p>].</span><span class=n>left</span> <span class=o>=</span> <span class=n>s1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>i</span><span class=p>].</span><span class=n>right</span> <span class=o>=</span> <span class=n>s2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>i</span><span class=p>].</span><span class=n>weight</span> <span class=o>=</span> <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>s1</span><span class=p>].</span><span class=n>weight</span> <span class=o>+</span> <span class=p>(</span><span class=o>*</span><span class=n>HT</span><span class=p>)[</span><span class=n>s2</span><span class=p>].</span><span class=n>weight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>//HT为哈夫曼树，HC为存储结点哈夫曼编码的二维动态数组，n为结点的个数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>HuffmanCoding</span><span class=p>(</span><span class=n>HuffmanTree</span> <span class=n>HT</span><span class=p>,</span> <span class=n>HuffmanCode</span> <span class=o>*</span><span class=n>HC</span><span class=p>,</span><span class=kt>int</span> <span class=n>n</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>HC</span> <span class=o>=</span> <span class=p>(</span><span class=n>HuffmanCode</span><span class=p>)</span> <span class=nf>malloc</span><span class=p>((</span><span class=n>n</span><span class=o>+</span><span class=mi>1</span><span class=p>)</span> <span class=o>*</span> <span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=kt>char</span> <span class=o>*</span><span class=n>cd</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=nf>malloc</span><span class=p>(</span><span class=n>n</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span><span class=p>));</span> <span class=c1>//存放结点哈夫曼编码的字符串数组
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>cd</span><span class=p>[</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;\0&#39;</span><span class=p>;</span><span class=c1>//字符串结束符
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>1</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;=</span><span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//从叶子结点出发，得到的哈夫曼编码是逆序的，需要在字符串数组中逆序存放
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>int</span> <span class=n>start</span> <span class=o>=</span> <span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//当前结点在数组中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>int</span> <span class=n>c</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//当前结点的父结点在数组中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>parent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 一直寻找到根结点
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>while</span><span class=p>(</span><span class=n>j</span> <span class=o>!=</span> <span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 如果该结点是父结点的左孩子则对应路径编码为0，否则为右孩子编码为1
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span><span class=p>(</span><span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>left</span> <span class=o>==</span> <span class=n>c</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=o>--</span><span class=n>start</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;0&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span>
+</span></span><span class=line><span class=cl>                <span class=n>cd</span><span class=p>[</span><span class=o>--</span><span class=n>start</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;1&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=c1>//以父结点为孩子结点，继续朝树根的方向遍历
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>c</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>j</span> <span class=o>=</span> <span class=n>HT</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>parent</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>//跳出循环后，cd数组中从下标 start 开始，存放的就是该结点的哈夫曼编码
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>(</span><span class=o>*</span><span class=n>HC</span><span class=p>)[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=nf>malloc</span><span class=p>((</span><span class=n>n</span><span class=o>-</span><span class=n>start</span><span class=p>)</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>char</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>        <span class=nf>strcpy</span><span class=p>((</span><span class=o>*</span><span class=n>HC</span><span class=p>)[</span><span class=n>i</span><span class=p>],</span> <span class=o>&amp;</span><span class=n>cd</span><span class=p>[</span><span class=n>start</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=c1>//使用malloc申请的cd动态数组需要手动释放
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nf>free</span><span class=p>(</span><span class=n>cd</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>//打印哈夫曼编码的函数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>void</span> <span class=nf>PrintHuffmanCode</span><span class=p>(</span><span class=n>HuffmanCode</span> <span class=n>htable</span><span class=p>,</span><span class=kt>int</span> <span class=o>*</span><span class=n>w</span><span class=p>,</span><span class=kt>int</span> <span class=n>n</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Huffman code : </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;%d code = %s</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span><span class=n>w</span><span class=p>[</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>],</span> <span class=n>htable</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>w</span><span class=p>[</span><span class=mi>5</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>2</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>5</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>HuffmanTree</span> <span class=n>htree</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>HuffmanCode</span> <span class=n>htable</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=nf>CreateHuffmanTree</span><span class=p>(</span><span class=o>&amp;</span><span class=n>htree</span><span class=p>,</span> <span class=n>w</span><span class=p>,</span> <span class=n>n</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>HuffmanCoding</span><span class=p>(</span><span class=n>htree</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>htable</span><span class=p>,</span> <span class=n>n</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>PrintHuffmanCode</span><span class=p>(</span><span class=n>htable</span><span class=p>,</span> <span class=n>n</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>本节中介绍了两种遍历哈夫曼树获得哈夫曼编码的方法，同时也给出了各自完整的实现代码的函数，在完整代码中使用的是第一种逆序遍历哈夫曼树的方法。</p></blockquote><p>本博文从 <a class=link href=http://data.biancheng.net/view/33.html target=_blank rel=noopener>哈夫曼树（赫夫曼树、最优树）及C语言实现 严长生</a> 转载而来，表示感谢。</p></section><footer class=article-footer><section class=article-tags><a href=/tags/%E7%AC%94%E8%AE%B0/>笔记</a>
+<a href=/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/structure-avl-tree/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 平衡二叉树AVL树</h2></div></a></article><article class=has-image><a href=/p/structure-nonlinear-structure/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 非线性结构</h2></div></a></article><article class=has-image><a href=/p/structure-static-tree-table-lookup/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 静态树表查找算法</h2></div></a></article><article class=has-image><a href=/p/structure-key-tree-search/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 键树查找法</h2></div></a></article><article class=has-image><a href=/p/strucrure-algorithm-block-search/><div class=article-image><img src=https://webp.debuginn.com/202302221903175.jpg loading=lazy data-key data-hash=https://webp.debuginn.com/202302221903175.jpg></div><div class=article-details><h2 class=article-title>数据结构 分块查找法</h2></div></a></article></div></div></aside><script src=https://giscus.app/client.js data-repo=debuginn/blog data-repo-id=R_kgDOI_rNgg data-category=General data-category-id=DIC_kwDOI_rNgs4CUT4j data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light data-lang=zh-CN data-loading crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light":"dark")}})()</script><footer class=site-footer><section class=copyright>&copy;
+2017 -
+2025 Debug客栈</section><section class=powerby><a href=https://debuginn.com>主页</a>&nbsp;·&nbsp<a href=https://blog.debuginn.com/>博客</a>&nbsp;·&nbsp<a href=https://photo.debuginn.com>摄影</a>&nbsp;·&nbsp<a href=/project/>项目</a>&nbsp;·&nbsp<a href=/about/>关于</a><br>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.30.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script src=https://gcore.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167312285165454" crossorigin=anonymous></script><script defer src=https://cloud.umami.is/script.js data-website-id=fe36cfb2-8a2b-4457-a3e9-961f7d732026></script></body></html>

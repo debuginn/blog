@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Json on Debug客栈</title><link>https://blog.debuginn.com/tags/json/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Json on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Jul 2018 19:12:22 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/json/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript 对象表示法JSON</title><link>https://blog.debuginn.com/p/js-json/</link><pubDate>Mon, 16 Jul 2018 19:12:22 +0800</pubDate><guid>https://blog.debuginn.com/p/js-json/</guid><description>&lt;img src="https://webp.debuginn.com/202304131856440.jpg" alt="Featured image of post JavaScript 对象表示法JSON" />&lt;h2 id="json基本概念">&lt;a href="#json%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="header-anchor">&lt;/a>JSON基本概念
+&lt;/h2>&lt;ul>
+&lt;li>JSON：JavaScript对象表示法（JavaScript Object Notation）&lt;/li>
+&lt;li>JSON是存储和交换文本信息的语法，类似XML。采用键值对的方式来组织，易于人们阅读和编写，同时也有益于机器解析与生成。&lt;/li>
+&lt;li>JSON是独立于语言的，不管是什么语言，都可以及逆行解析json，按照json规则来就行。&lt;/li>
+&lt;/ul>
+&lt;h2 id="json和xml对比">&lt;a href="#json%e5%92%8cxml%e5%af%b9%e6%af%94" class="header-anchor">&lt;/a>JSON和XML对比
+&lt;/h2>&lt;ul>
+&lt;li>JSON的长度相对于XML来说比较短小&lt;/li>
+&lt;li>JSON读写速度比较快&lt;/li>
+&lt;li>JSON可以使用JavaScript内建的方法直接进行解析，转换成JavaScript对象，十分的方便&lt;/li>
+&lt;/ul>
+&lt;h2 id="语法规则">&lt;a href="#%e8%af%ad%e6%b3%95%e8%a7%84%e5%88%99" class="header-anchor">&lt;/a>语法规则
+&lt;/h2>&lt;p>书写格式是：名称/值对&lt;/p>
+&lt;p>名称/值对组合中的名称写在前面（在双引号中），值对写在后面（同样在双引号中），中间用冒号隔开，比如“name”:”张三”&lt;/p></description></item></channel></rss>
