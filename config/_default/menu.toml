@@ -44,6 +44,15 @@ weight = 6
 icon = "photo"
 newtab = true
 
+[[main]]
+identifier = "profile"
+name = "我的主页"
+url = "https://debuginn.com"
+weight = 7
+[main.params]
+icon = "home-star"
+newtab = true
+
 [[social]]
 identifier = "github"
 name = "GitHub"
