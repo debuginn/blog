@@ -44,13 +44,13 @@ type = "tag-cloud"
 limit = 18
 
 [[widgets.homepage]]
-type = "ad"
-
-[[widgets.homepage]]
 type = "archives"
 
 [widgets.homepage.params]
 limit = 2
+
+[[widgets.homepage]]
+type = "ad"
 
 [[widgets.page]]
 type = "search"
@@ -99,4 +99,3 @@ darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 lang = "zh-CN"
-defaultCommentOrder = "newest"
