@@ -18,7 +18,7 @@ subtitle = "永远相信美好的事情即将发生"
 [sidebar.avatar]
 enabled = true
 local = false
-src = "https://webp.debuginn.com/20250506fT6oPc.jpg"
+src = "https://static.debuginn.com/20250506fT6oPc.jpg"
 
 [article]
 headingAnchor = true
@@ -65,7 +65,7 @@ card = "summary_large_image"
 [defaultImage.opengraph]
 enabled = true
 local = false
-src = "https://webp.debuginn.com/20250506fT6oPc.jpg"
+src = "https://static.debuginn.com/20250506fT6oPc.jpg"
 
 [colorScheme]
 toggle = true
