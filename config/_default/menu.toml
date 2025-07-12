@@ -56,7 +56,7 @@ newtab = true
 [[social]]
 identifier = "github"
 name = "GitHub"
-weight = 3
+weight = 1
 url = "https://github.com/debuginn"
 [social.params]
 icon = "brand-github"
@@ -71,17 +71,9 @@ url = "https://x.com/idebuginn"
 icon = "brand-x"
 
 [[social]]
-identifier = "email"
-name = "Email"
-weight = 1
-url = "https://mailchi.mp/510cad3f229f/debuginn"
-[social.params]
-icon = "mail-up"
-
-[[social]]
 identifier = "juejin"
 name = "Juejin"
-weight = 4
+weight = 3
 url = "https://juejin.cn/user/817692380500702/posts"
 [social.params]
 icon = "brand-juejin"
@@ -89,7 +81,7 @@ icon = "brand-juejin"
 [[social]]
 identifier = "zhihu"
 name = "Zhihu"
-weight = 5
+weight = 4
 url = "https://www.zhihu.com/people/debuginn/posts"
 [social.params]
 icon = "brand-zhihu"
@@ -97,7 +89,7 @@ icon = "brand-zhihu"
 [[social]]
 identifier = "rss"
 name = "Rss"
-weight = 6
+weight = 5
 url = "https://blog.debuginn.com/index.xml"
 [social.params]
 icon = "rss"
