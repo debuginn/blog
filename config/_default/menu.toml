@@ -36,6 +36,15 @@ icon = "link"
 newtab = false
 
 [[main]]
+identifier = "use"
+name = "我的使用"
+url = "/use"
+weight = 5
+[main.params]
+icon = "user-cog"
+newtab = false
+
+[[main]]
 identifier = "photo"
 name = "摄影展集"
 url = "https://photo.debuginn.com"
