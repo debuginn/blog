@@ -18,4 +18,4 @@ disqusShortname = "hugo-theme-stack"
 googleAnalytics = "G-B1XEJXPQPW"
 
 [pagination]
-pagerSize = 6
+pagerSize = 8
