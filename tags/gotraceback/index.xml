@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GOTRACEBACK on Debug客栈</title><link>https://blog.debuginn.com/tags/gotraceback/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in GOTRACEBACK on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 09 Sep 2024 19:30:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/gotraceback/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 GOTRACEBACK 快速定位你的 Panic</title><link>https://blog.debuginn.com/p/go-env-gotraceback/</link><pubDate>Mon, 09 Sep 2024 19:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/go-env-gotraceback/</guid><description>&lt;img src="https://static.debuginn.com/20240909WOFpJS.jpg" alt="Featured image of post 使用 GOTRACEBACK 快速定位你的 Panic" />&lt;p>近期迁移了一个 go 的项目至 k8s 机器上，发现机器不时会自动重启，当想看重启前日志的时候，Goroutine 运行的状态全部都打印了出来，由于公司云平台查看行数限制，看到最后，还是没有想要看到的 panic 的关键堆栈信息。&lt;/p>
+&lt;p>前期，由于频繁的重启，怀疑是哪里出现了未捕获的 panic 导致的，于是在使用的第三方包 RocketMQ 和 Talos 等 SDK 包进行了生产消费初始化的 recover 并且对项目中 channel 的关键操作中也添加了 recover 捕获，但是并没有解决问题，还是时不时的出现重启。&lt;/p>
+&lt;p>在查找 Go 官方文档，发现可以设置这个环境变量 GOTRACEBACK 可以控制 panic 发生后堆栈跟踪的打印级别。&lt;/p>
+&lt;h2 id="gotraceback">&lt;a href="#gotraceback" class="header-anchor">&lt;/a>GOTRACEBACK
+&lt;/h2>&lt;p>Go 运行时使用该环境变量来决定在程序崩溃或出现未处理的 panic 时应该输出多少堆栈跟踪信息，它是在运行 Go 程序时通过环境变量传递给 Go 运行时的。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>none&lt;/code> 当程序崩溃时，不输出任何堆栈信息；&lt;/li>
+&lt;li>&lt;code>single&lt;/code> 仅显示导致崩溃，出现 panic 的 goroutine 的堆栈信息；&lt;/li>
+&lt;li>&lt;code>all&lt;/code> 显示所有的 goroutine 的堆栈信息；&lt;/li>
+&lt;li>&lt;code>system&lt;/code> 显示所有的 goroutine 的堆栈信息，包括运行时内部 goroutine 的信息；&lt;/li>
+&lt;li>&lt;code>crash&lt;/code> 显示所有的 goroutine 的堆栈信息，然后核心转储程序并退出；&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a class="link" href="https://pkg.go.dev/runtime" target="_blank" rel="noopener"
+>runtime package - runtime - Go Packages&lt;/a>&lt;/p>
+&lt;h2 id="源代码">&lt;a href="#%e6%ba%90%e4%bb%a3%e7%a0%81" class="header-anchor">&lt;/a>源代码
+&lt;/h2>&lt;blockquote>
+&lt;p>基于 Go 1.20 版本&lt;/p>&lt;/blockquote>
+&lt;h3 id="设置-gotraceback">&lt;a href="#%e8%ae%be%e7%bd%ae-gotraceback" class="header-anchor">&lt;/a>设置 GOTRACEBACK
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//go:linkname setTraceback runtime/debug.SetTraceback &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">setTraceback&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">level&lt;/span> &lt;span class="kt">string&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">t&lt;/span> &lt;span class="kt">uint32&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="nx">level&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;none&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;single&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="nx">tracebackShift&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;all&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">&amp;lt;&amp;lt;&lt;/span>&lt;span class="nx">tracebackShift&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nx">tracebackAll&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;system&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="o">&amp;lt;&amp;lt;&lt;/span>&lt;span class="nx">tracebackShift&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nx">tracebackAll&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;crash&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="o">&amp;lt;&amp;lt;&lt;/span>&lt;span class="nx">tracebackShift&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nx">tracebackAll&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nx">tracebackCrash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">default&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">tracebackAll&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">n&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">ok&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nf">atoi&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">level&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">ok&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">n&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">uint32&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">n&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="o">|=&lt;/span> &lt;span class="nb">uint32&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">n&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="nx">tracebackShift&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// when C owns the process, simply exit&amp;#39;ing the process on fatal errors &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// and panics is surprising. Be louder and abort instead. if islibrary || isarchive { &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="o">|=&lt;/span> &lt;span class="nx">tracebackCrash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="o">|=&lt;/span> &lt;span class="nx">traceback_env&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">atomic&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Store&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">traceback_cache&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">t&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="获取-gotraceback">&lt;a href="#%e8%8e%b7%e5%8f%96-gotraceback" class="header-anchor">&lt;/a>获取 GOTRACEBACK
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Keep a cached value to make gotraceback fast,// since we call it on every call to gentraceback. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// The cached value is a uint32 in which the low bits &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// are the &amp;#34;crash&amp;#34; and &amp;#34;all&amp;#34; settings and the remaining &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// bits are the traceback value (0 off, 1 on, 2 include system).const ( &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tracebackCrash&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="kc">iota&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tracebackAll&lt;/span> &lt;span class="nx">tracebackShift&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">iota&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">traceback_cache&lt;/span> &lt;span class="kt">uint32&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="nx">tracebackShift&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">traceback_env&lt;/span> &lt;span class="kt">uint32&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// gotraceback returns the current traceback settings.// &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// If level is 0, suppress all tracebacks. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// If level is 1, show tracebacks, but exclude runtime frames. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// If level is 2, show tracebacks including runtime frames. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// If all is set, print all goroutine stacks. Otherwise, print just the current goroutine. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// If crash is set, crash (core dump, etc) after tracebacking.// &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//go:nosplit &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">gotraceback&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">level&lt;/span> &lt;span class="kt">int32&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">all&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">crash&lt;/span> &lt;span class="kt">bool&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">gp&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nf">getg&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">t&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">atomic&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">traceback_cache&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">crash&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">t&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">tracebackCrash&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">all&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">throwing&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="nx">throwTypeUser&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">t&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">tracebackAll&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">traceback&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">level&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">int32&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">traceback&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">throwing&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="nx">throwTypeRuntime&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Always include runtime frames in runtime throws unless &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// otherwise overridden by m.traceback. level = 2 &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">level&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">int32&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">t&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="nx">tracebackShift&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="基于-gotraceback-打印堆栈信息">&lt;a href="#%e5%9f%ba%e4%ba%8e-gotraceback-%e6%89%93%e5%8d%b0%e5%a0%86%e6%a0%88%e4%bf%a1%e6%81%af" class="header-anchor">&lt;/a>基于 GOTRACEBACK 打印堆栈信息
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// gp is the crashing g running on this M, but may be a user G, while getg() is &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// always g0. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">dopanic_m&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="nx">g&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">pc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">sp&lt;/span> &lt;span class="kt">uintptr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="kt">bool&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sig&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">signame&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nf">signame&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sig&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">signame&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;[signal &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">signame&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;[signal &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sig&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34; code=&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sigcode0&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="s">&amp;#34; addr=&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sigcode1&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="s">&amp;#34; pc=&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sigpc&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="s">&amp;#34;]\n&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">level&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">all&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">docrash&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nf">gotraceback&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">level&lt;/span> &lt;span class="p">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">gp&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">curg&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">all&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">gp&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">g0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;\n&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">goroutineheader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">traceback&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">pc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">sp&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="nx">level&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">throwing&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="nx">throwTypeRuntime&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;\nruntime stack:\n&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">traceback&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">pc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">sp&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">gp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">!&lt;/span>&lt;span class="nx">didothers&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">all&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">didothers&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">tracebackothers&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">gp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">unlock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">paniclk&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">panicking&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Some other m is panicking too. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Let it print what it needs to print. // Wait forever without chewing up cpu. // It will exit when it&amp;#39;s done. lock(&amp;amp;deadlock) &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">lock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">deadlock&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">printDebugLog&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">docrash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="测试">&lt;a href="#%e6%b5%8b%e8%af%95" class="header-anchor">&lt;/a>测试
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;os&amp;#34;&lt;/span> &lt;span class="s">&amp;#34;time&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">env&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;GOTRACEBACK&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;GOTRACEBACK: %s\n&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="nf">a&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="nf">b&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">go&lt;/span> &lt;span class="nf">a&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sleep&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Second&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">a&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sleep&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Millisecond&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;aaaaaaa\n&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">b&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sleep&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Millisecond&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">panic&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;b panic ......&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="all-显示所有信息">&lt;a href="#all-%e6%98%be%e7%a4%ba%e6%89%80%e6%9c%89%e4%bf%a1%e6%81%af" class="header-anchor">&lt;/a>All 显示所有信息
+&lt;/h3>&lt;p>&lt;img src="https://static.debuginn.com/20240827iHys3u.png"
+loading="lazy"
+alt="20240827iHys3u"
+>&lt;/p>
+&lt;p>可以看到，运行时所有的 Goroutine 信息都被打印了出来。&lt;/p>
+&lt;h3 id="none-不输出任何信息">&lt;a href="#none-%e4%b8%8d%e8%be%93%e5%87%ba%e4%bb%bb%e4%bd%95%e4%bf%a1%e6%81%af" class="header-anchor">&lt;/a>None 不输出任何信息
+&lt;/h3>&lt;p>&lt;img src="https://static.debuginn.com/20240827iDAwRU.png"
+loading="lazy"
+alt="20240827iDAwRU"
+>&lt;/p>
+&lt;p>设置为 none 后，只会将运行信息打印出来，非用户打印信息不会抛出。&lt;/p>
+&lt;h3 id="single-只显示导致崩溃的-goroutine-信息">&lt;a href="#single-%e5%8f%aa%e6%98%be%e7%a4%ba%e5%af%bc%e8%87%b4%e5%b4%a9%e6%ba%83%e7%9a%84-goroutine-%e4%bf%a1%e6%81%af" class="header-anchor">&lt;/a>Single 只显示导致崩溃的 Goroutine 信息
+&lt;/h3>&lt;p>这个设置参数也是默认的设置：&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/20240827t9D7HY.png"
+loading="lazy"
+alt="20240827t9D7HY"
+>&lt;/p>
+&lt;p>这里只会显示导致 panic 的 goroutine 的堆栈信息以及运行状态。&lt;/p></description></item></channel></rss>
