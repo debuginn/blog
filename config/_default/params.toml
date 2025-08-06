@@ -65,7 +65,7 @@ type = "toc"
 type = "donation"
 
 [widgets.homepage.params]
-qrcode = "20241111FZS0zY.png"
+qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
 solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
 bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
 ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
