@@ -2,16 +2,37 @@
 {{- $params := .Params -}}
 
 <section class="widget donation">
-
     <div class="donation-card crypto-card">
         <div class="crypto-section">
+            {{ if $params.solana }}
+            <div class="crypto-item">
+                <span class="crypto-label">Solana:</span>
+                <div class="crypto-address">
+                    <code>{{ $params.solana }}</code>
+                </div>
+                <button class="copy-btn" data-clipboard-text="{{ $params.solana }}" title="Copy">
+                    Copy
+                </button>
+            </div>
+            {{ end }}
             {{ if $params.bitcoin }}
             <div class="crypto-item">
-                <span class="crypto-label">比特币:</span>
+                <span class="crypto-label">Bitcoin:</span>
                 <div class="crypto-address">
                     <code>{{ $params.bitcoin }}</code>
                 </div>
                 <button class="copy-btn" data-clipboard-text="{{ $params.bitcoin }}" title="Copy">
+                    Copy
+                </button>
+            </div>
+            {{ end }}
+            {{ if $params.ethereum }}
+            <div class="crypto-item">
+                <span class="crypto-label">Ethereum:</span>
+                <div class="crypto-address">
+                    <code>{{ $params.ethereum }}</code>
+                </div>
+                <button class="copy-btn" data-clipboard-text="{{ $params.ethereum }}" title="Copy">
                     Copy
                 </button>
             </div>
@@ -30,7 +51,7 @@
 <style>
     .donation-card {
         border-radius: 12px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
         transition: box-shadow 0.2s ease;
     }
 
@@ -68,9 +89,45 @@
         display: flex;
         align-items: flex-start;
         gap: 1px;
+        background: var(--card-background, #f8f9fa);
         border-radius: 6px;
         padding: 8px 12px;
-        border: 1px solid #e9ecef;
+        border: 1px solid var(--card-border, #e9ecef);
+        color: var(--card-text-color-main, #333);
+        transition: all 0.2s ease;
+    }
+
+    .crypto-item:hover {
+        background: var(--card-background-hover, #f0f0f0);
+        border-color: var(--card-border-hover, #d0d7de);
+    }
+
+    html[data-scheme="dark"] .crypto-item,
+    body.dark .crypto-item,
+    .dark .crypto-item {
+        background: var(--card-background-selected, rgba(64, 64, 64, 0.3)) !important;
+        border: 1px solid var(--card-border, #404040) !important;
+        color: var(--card-text-color-main, #f0f0f0) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    html[data-scheme="dark"] .crypto-item:hover,
+    body.dark .crypto-item:hover,
+    .dark .crypto-item:hover {
+        background: var(--card-background-selected-hover, rgba(64, 64, 64, 0.4)) !important;
+        border-color: var(--card-border-hover, #606060) !important;
+    }
+
+    html[data-scheme="dark"] .crypto-label,
+    body.dark .crypto-label,
+    .dark .crypto-label {
+        color: #e2e8f0 !important;
+    }
+
+    html[data-scheme="dark"] .crypto-address code,
+    body.dark .crypto-address code,
+    .dark .crypto-address code {
+        color: #f0f0f0 !important;
     }
 
     .crypto-label {
@@ -78,7 +135,7 @@
         color: #555;
         font-weight: 500;
         white-space: nowrap;
-        min-width: 50px;
+        min-width: 40px;
         margin-top: 2px;
     }
 
@@ -94,7 +151,7 @@
         background: transparent;
         border: none;
         padding: 0;
-        font-size: 0.85em;
+        font-size: 0.6em;
         color: #495057;
         word-break: break-all;
         font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
@@ -113,8 +170,8 @@
         transition: background-color 0.2s ease;
         white-space: nowrap;
         font-weight: 500;
-        min-width: 60px;
-        width: 60px;
+        min-width: 56px;
+        width: 56px;
         flex-shrink: 0;
         align-self: flex-start;
         margin-top: 2px;
@@ -151,6 +208,22 @@
             flex-direction: column;
             gap: 8px;
             align-items: stretch;
+        }
+
+        html[data-scheme="dark"] .crypto-item,
+        body.dark .crypto-item,
+        .dark .crypto-item {
+            background: var(--card-background-selected, rgba(64, 64, 64, 0.3));
+            border: 1px solid var(--card-border, #404040);
+            color: var(--card-text-color-main, #f0f0f0);
+            backdrop-filter: blur(10px);
+        }
+
+        html[data-scheme="dark"] .crypto-item:hover,
+        body.dark .crypto-item:hover,
+        .dark .crypto-item:hover {
+            background: var(--card-background-selected-hover, rgba(64, 64, 64, 0.4));
+            border-color: var(--card-border-hover, #606060);
         }
 
         .crypto-label {
