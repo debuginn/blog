@@ -4,3 +4,10 @@ themes/.DS_Store
 /resources
 .obsidian
 /templates
+
+# 忽略 public 目录下的所有文件
+/public/*
+
+# 但保留 ads.txt 和 CNAME 文件
+!/public/ads.txt
+!/public/CNAME

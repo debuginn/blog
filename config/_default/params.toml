@@ -49,6 +49,16 @@ type = "archives"
 [widgets.homepage.params]
 limit = 2
 
+[[widgets.homepage]]
+type = "donation"
+
+[widgets.homepage.params]
+title = "如果你觉得我的内容有帮助，欢迎赞赏支持！"
+qrcode = "donation-qr.png" # 你的赞赏码图片
+bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp" # 你的比特币地址
+ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E" # 你的以太坊地址
+message = "感谢你的支持！❤️"
+
 [[widgets.page]]
 type = "search"
 

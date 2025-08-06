@@ -1,0 +1,258 @@
+{{- $context := .Context -}}
+{{- $params := .Params -}}
+
+<section class="widget donation">
+    <div class="donation-card">
+        <div class="donation-content">
+            {{ if $params.qrcode }}
+            <div class="qr-section">
+                <img src="{{ $params.qrcode }}" alt="{{ T " widget.donation.qrcode" }}" class="donation-qr">
+            </div>
+            {{ end }}
+
+            <div class="crypto-section">
+                {{ if $params.bitcoin }}
+                <div class="crypto-item">
+                    <span class="crypto-label">比特币:</span>
+                    <div class="crypto-address">
+                        <code>{{ $params.bitcoin }}</code>
+                    </div>
+                    <button class="copy-btn" data-clipboard-text="{{ $params.bitcoin }}" title="复制">
+                        复制
+                    </button>
+                </div>
+                {{ end }}
+
+                {{ if $params.ethereum }}
+                <div class="crypto-item">
+                    <span class="crypto-label">以太坊:</span>
+                    <div class="crypto-address">
+                        <code>{{ $params.ethereum }}</code>
+                    </div>
+                    <button class="copy-btn" data-clipboard-text="{{ $params.ethereum }}" title="复制">
+                        复制
+                    </button>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .donation-header {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .donation-header .widget-icon {
+        margin-bottom: 8px;
+        opacity: 0.6;
+    }
+
+    .donation-header .widget-title {
+        margin: 0 0 8px 0;
+        color: #333;
+        font-size: 1.3em;
+        font-weight: 500;
+    }
+
+    .donation-message {
+        color: #666;
+        font-size: 0.9em;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .donation-card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        padding: 20px;
+        margin: 0;
+        border: 1px solid #f0f0f0;
+        transition: box-shadow 0.2s ease;
+    }
+
+    .donation-card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .donation-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .qr-section {
+        text-align: center;
+    }
+
+    .donation-qr {
+        max-width: 140px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .crypto-section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .crypto-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1px;
+        background: #f8f9fa;
+        border-radius: 6px;
+        padding: 8px 12px;
+        border: 1px solid #e9ecef;
+    }
+
+    .crypto-label {
+        font-size: 0.9em;
+        color: #555;
+        font-weight: 500;
+        white-space: nowrap;
+        min-width: 60px;
+        margin-top: 2px;
+    }
+
+    .crypto-address {
+        flex: 1;
+        background: transparent;
+        border: none;
+        padding: 0;
+        min-width: 0;
+    }
+
+    .crypto-address code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-size: 0.85em;
+        color: #495057;
+        word-break: break-all;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        display: block;
+        line-height: 1.4;
+    }
+
+    .copy-btn {
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 4px 8px;
+        cursor: pointer;
+        font-size: 0.8em;
+        transition: background-color 0.2s ease;
+        white-space: nowrap;
+        font-weight: 500;
+        min-width: 60px;
+        width: 60px;
+        flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: 2px;
+    }
+
+    .copy-btn:hover {
+        background: #0056b3;
+    }
+
+    .copy-btn:active {
+        transform: scale(0.98);
+    }
+
+    /* 深色模式适配 */
+    @media (prefers-color-scheme: dark) {
+        .donation-header .widget-title {
+            color: #e0e0e0;
+        }
+
+        .donation-message {
+            color: #aaa;
+        }
+
+        .donation-card {
+            background: #1a1a1a;
+            border-color: #333;
+            color: #e0e0e0;
+        }
+
+        .crypto-item {
+            background: #2a2a2a;
+            border-color: #444;
+        }
+
+        .crypto-label {
+            color: #ccc;
+        }
+
+        .crypto-address code {
+            color: #e0e0e0;
+        }
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .donation-card {
+            padding: 16px;
+        }
+
+        .donation-qr {
+            max-width: 120px;
+        }
+
+        .crypto-item {
+            flex-direction: column;
+            gap: 8px;
+            align-items: stretch;
+        }
+
+        .crypto-label {
+            min-width: auto;
+            text-align: center;
+        }
+
+        .copy-btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+
+            copyButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const text = this.getAttribute('data-clipboard-text');
+                    const originalText = this.textContent;
+
+                    navigator.clipboard.writeText(text).then(function () {
+                        button.textContent = '已复制!';
+                        button.style.background = '#28a745';
+
+                        setTimeout(function () {
+                            button.textContent = originalText;
+                            button.style.background = '#007bff';
+                        }, 1500);
+                    }).catch(function () {
+                        button.textContent = '复制失败';
+                        button.style.background = '#dc3545';
+
+                        setTimeout(function () {
+                            button.textContent = originalText;
+                            button.style.background = '#007bff';
+                        }, 1500);
+                    });
+                });
+            });
+        });
+    })();
+</script>
