@@ -2,110 +2,72 @@
 {{- $params := .Params -}}
 
 <section class="widget donation">
-    <div class="donation-card">
-        <div class="donation-content">
-            {{ if $params.qrcode }}
-            <div class="qr-section">
-                <img src="{{ $params.qrcode }}" alt="{{ T " widget.donation.qrcode" }}" class="donation-qr">
+
+    <div class="donation-card crypto-card">
+        <div class="crypto-section">
+            {{ if $params.bitcoin }}
+            <div class="crypto-item">
+                <span class="crypto-label">比特币:</span>
+                <div class="crypto-address">
+                    <code>{{ $params.bitcoin }}</code>
+                </div>
+                <button class="copy-btn" data-clipboard-text="{{ $params.bitcoin }}" title="Copy">
+                    Copy
+                </button>
             </div>
             {{ end }}
-
-            <div class="crypto-section">
-                {{ if $params.bitcoin }}
-                <div class="crypto-item">
-                    <span class="crypto-label">比特币:</span>
-                    <div class="crypto-address">
-                        <code>{{ $params.bitcoin }}</code>
-                    </div>
-                    <button class="copy-btn" data-clipboard-text="{{ $params.bitcoin }}" title="复制">
-                        复制
-                    </button>
-                </div>
-                {{ end }}
-
-                {{ if $params.ethereum }}
-                <div class="crypto-item">
-                    <span class="crypto-label">以太坊:</span>
-                    <div class="crypto-address">
-                        <code>{{ $params.ethereum }}</code>
-                    </div>
-                    <button class="copy-btn" data-clipboard-text="{{ $params.ethereum }}" title="复制">
-                        复制
-                    </button>
-                </div>
-                {{ end }}
+        </div>
+        {{ if $params.qrcode }}
+        <div class="donation-card">
+            <div class="qr-section">
+                <img src="{{ $params.qrcode }}" alt="donation" class="donation-qr">
             </div>
         </div>
+        {{ end }}
     </div>
 </section>
 
 <style>
-    .donation-header {
-        text-align: center;
-        margin-bottom: 16px;
-    }
-
-    .donation-header .widget-icon {
-        margin-bottom: 8px;
-        opacity: 0.6;
-    }
-
-    .donation-header .widget-title {
-        margin: 0 0 8px 0;
-        color: #333;
-        font-size: 1.3em;
-        font-weight: 500;
-    }
-
-    .donation-message {
-        color: #666;
-        font-size: 0.9em;
-        margin: 0;
-        line-height: 1.4;
-    }
-
     .donation-card {
-        background: #ffffff;
         border-radius: 12px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 20px;
-        margin: 0;
-        border: 1px solid #f0f0f0;
         transition: box-shadow 0.2s ease;
+    }
+
+    .donation-card:last-child {
+        margin-bottom: 0;
     }
 
     .donation-card:hover {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .donation-content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
     .qr-section {
         text-align: center;
+        padding: 0;
     }
 
     .donation-qr {
-        max-width: 140px;
+        width: 100%;
+        max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        box-shadow: none;
+        display: block;
+        margin-bottom: 0;
     }
 
     .crypto-section {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 5px;
+        padding: 10px;
     }
 
     .crypto-item {
         display: flex;
         align-items: flex-start;
         gap: 1px;
-        background: #f8f9fa;
         border-radius: 6px;
         padding: 8px 12px;
         border: 1px solid #e9ecef;
@@ -116,7 +78,7 @@
         color: #555;
         font-weight: 500;
         white-space: nowrap;
-        min-width: 60px;
+        min-width: 50px;
         margin-top: 2px;
     }
 
@@ -141,8 +103,8 @@
     }
 
     .copy-btn {
-        background: #007bff;
-        color: white;
+        background: #fafafa;
+        color: #545455;
         border: none;
         border-radius: 4px;
         padding: 4px 8px;
@@ -159,51 +121,30 @@
     }
 
     .copy-btn:hover {
-        background: #0056b3;
+        background: #d7d7d7;
     }
 
     .copy-btn:active {
         transform: scale(0.98);
     }
 
-    /* 深色模式适配 */
-    @media (prefers-color-scheme: dark) {
-        .donation-header .widget-title {
-            color: #e0e0e0;
-        }
-
-        .donation-message {
-            color: #aaa;
-        }
-
-        .donation-card {
-            background: #1a1a1a;
-            border-color: #333;
-            color: #e0e0e0;
-        }
-
-        .crypto-item {
-            background: #2a2a2a;
-            border-color: #444;
-        }
-
-        .crypto-label {
-            color: #ccc;
-        }
-
-        .crypto-address code {
-            color: #e0e0e0;
-        }
-    }
-
     /* 响应式设计 */
     @media (max-width: 768px) {
         .donation-card {
+            margin: 0 -16px 20px -16px;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
             padding: 16px;
         }
 
+        .donation-card:last-child {
+            margin-bottom: 0;
+        }
+
         .donation-qr {
-            max-width: 120px;
+            width: 100%;
+            max-width: 100%;
         }
 
         .crypto-item {
@@ -225,34 +166,28 @@
 </style>
 
 <script>
-    (function () {
-        document.addEventListener('DOMContentLoaded', function () {
-            const copyButtons = document.querySelectorAll('.copy-btn');
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyButtons = document.querySelectorAll('.copy-btn');
 
-            copyButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    const text = this.getAttribute('data-clipboard-text');
-                    const originalText = this.textContent;
+        copyButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const text = this.getAttribute('data-clipboard-text');
+                const originalText = this.textContent;
 
-                    navigator.clipboard.writeText(text).then(function () {
-                        button.textContent = '已复制!';
-                        button.style.background = '#28a745';
+                navigator.clipboard.writeText(text).then(function () {
+                    button.textContent = 'Copied!';
 
-                        setTimeout(function () {
-                            button.textContent = originalText;
-                            button.style.background = '#007bff';
-                        }, 1500);
-                    }).catch(function () {
-                        button.textContent = '复制失败';
-                        button.style.background = '#dc3545';
+                    setTimeout(function () {
+                        button.textContent = originalText;
+                    }, 1500);
+                }).catch(function () {
+                    button.textContent = 'Failed!';
 
-                        setTimeout(function () {
-                            button.textContent = originalText;
-                            button.style.background = '#007bff';
-                        }, 1500);
-                    });
+                    setTimeout(function () {
+                        button.textContent = originalText;
+                    }, 1500);
                 });
             });
         });
-    })();
+    });
 </script>
