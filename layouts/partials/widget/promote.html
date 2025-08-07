@@ -1,0 +1,25 @@
+{{- $context := .Context -}}
+{{- $params := .Params -}}
+
+<section class="widget promote">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "eye-discount" }}
+    </div>
+    <h2 class="widget-title section-title">
+        {{ $context.Site.Params.promote.title }}
+    </h2>
+    <div class="promote-card crypto-card">
+        <div class="promote-section">
+            {{- range $context.Site.Params.promote.items }}
+            <a href="{{ .href }}"{{ if .target }} target="{{ .target }}"{{ end }} class="promote-item-link">
+                <div class="promote-item">
+                    <span class="promote-label">{{ partial "helper/icon" .icon }}</span>
+                    <div class="promote-text">
+                        {{ .text }}
+                    </div>
+                </div>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>

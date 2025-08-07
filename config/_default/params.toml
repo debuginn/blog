@@ -3,14 +3,6 @@ mainSections = ["post"]
 # Output page's full content in RSS.
 rssFullContent = true
 
-# Global donation configuration
-[donation]
-title = "赞赏"
-qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
-solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
-bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
-ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
-
 [footer]
 since = 2017
 customText = '<a href="https://debuginn.com">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/">博客</a>&nbsp;·&nbsp<a href="https://photo.debuginn.com">摄影</a>&nbsp;·&nbsp<a href="/project/">项目</a>&nbsp;·&nbsp<a href="/use/">使用</a>&nbsp;·&nbsp<a href="/about/">关于</a>'
@@ -46,19 +38,16 @@ type = "search"
 type = "wechat"
 
 [[widgets.homepage]]
+type = "promote"
+
+[[widgets.homepage]]
+type = "donation"
+
+[[widgets.homepage]]
 type = "tag-cloud"
 
 [widgets.homepage.params]
 limit = 18
-
-[[widgets.homepage]]
-type = "archives"
-
-[widgets.homepage.params]
-limit = 2
-
-[[widgets.homepage]]
-type = "donation"
 
 [[widgets.page]]
 type = "search"
@@ -71,6 +60,9 @@ type = "toc"
 
 [[widgets.page]]
 type = "donation"
+
+[[widgets.page]]
+type = "promote"
 
 [opengraph.twitter]
 site = "idebuginn"
@@ -107,3 +99,35 @@ darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 lang = "zh-CN"
+
+[donation]
+title = "赞赏"
+qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
+solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
+bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
+ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
+
+[promote]
+title = "推广"
+
+[[promote.items]]
+href = "/p/mi-work/"
+icon = "briefcase"
+text = "来小米，一起玩！校招、社招均可内推！"
+
+[[promote.items]]
+href = "https://cloud.siliconflow.cn/i/ftshEbe9"
+icon = "ai"
+text = "硅基流动，一站式大模型云服务平台。"
+target = "_blank"
+
+[[promote.items]]
+href = "https://www.xflash.live/#/register?code=GZRNxKBh"
+icon = "network"
+text = "XFlash Cloud，已经稳定使用 3 年。"
+target = "_blank"
+
+[[promote.items]]
+href = "#"
+icon = "ad"
+text = "广告位招租，欢迎联系！"

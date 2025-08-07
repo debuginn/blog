@@ -1,3 +1,346 @@
 /*
     You can add your own custom styles here.
 */
+
+// =========== 推广卡片样式  start ======================
+.donation-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background-color: rgb(66, 66, 66);
+    }
+}
+
+// 二维码区域
+.qr-section {
+    text-align: center;
+    padding: 0;
+}
+
+.donation-qr {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: none;
+    display: block;
+    margin-bottom: 0;
+}
+
+// 加密货币区域
+.crypto-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.crypto-item {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 1px solid #e9ecef;
+    color: #333;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #f0f0f0;
+        border-color: #d0d7de;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        background: #424242 !important;
+        border: 1px solid #5d5d5d !important;
+        color: #f0f0f0 !important;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+            background: rgba(64, 64, 64, 0.4) !important;
+            border-color: #606060 !important;
+        }
+    }
+}
+
+.crypto-label {
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap;
+    min-width: 40px;
+    margin-top: 2px;
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        color: #e2e8f0 !important;
+    }
+}
+
+.crypto-address {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+
+    code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-size: 0.6em;
+        color: #495057;
+        word-break: break-all;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        display: block;
+        line-height: 1.4;
+
+        // 暗色主题
+        html[data-scheme="dark"] &,
+        body.dark &,
+        .dark & {
+            color: #f0f0f0 !important;
+        }
+    }
+}
+
+.copy-btn {
+    background: #ffffff;
+    color: #545455;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    font-weight: 500;
+    min-width: 56px;
+    width: 56px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+
+    &:hover {
+        background: #d7d7d7;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background: #929292;
+        color: #ebebeb;
+    }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+    .donation-card {
+        margin: 0 -16px 20px -16px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .donation-qr {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .crypto-item {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+
+        // 暗色主题
+        html[data-scheme="dark"] &,
+        body.dark &,
+        .dark & {
+            background: rgba(64, 64, 64, 0.3);
+            border: 1px solid #404040;
+            color: #f0f0f0;
+            backdrop-filter: blur(10px);
+
+            &:hover {
+                background: rgba(64, 64, 64, 0.4);
+                border-color: #606060;
+            }
+        }
+    }
+
+    .crypto-label {
+        min-width: auto;
+        text-align: center;
+    }
+
+    .copy-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+//  ============== 捐赠卡片样式  end ======================
+
+//  ============== 推广卡片样式  start ======================
+.promote-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background-color: rgb(66, 66, 66);
+    }
+}
+
+.donation-address {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+
+    code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-size: 0.9em;
+        color: #495057;
+        word-break: break-all;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        display: block;
+        line-height: 1.4;
+
+        // 暗色主题
+        html[data-scheme="dark"] &,
+        body.dark &,
+        .dark & {
+            color: #f0f0f0 !important;
+        }
+    }
+}
+
+// 推广区域
+.promote-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.promote-item {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 1px solid #e9ecef;
+    color: #333;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #f0f0f0;
+        border-color: #d0d7de;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        background: #424242 !important;
+        border: 1px solid #5d5d5d !important;
+        color: #f0f0f0 !important;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+            background: rgba(64, 64, 64, 0.4) !important;
+            border-color: #606060 !important;
+        }
+    }
+}
+
+.promote-label {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap;
+    min-width: 40px;
+    margin-top: 2px;
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        color: #e2e8f0 !important;
+    }
+}
+
+.promote-text {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: inherit;
+    display: block;
+    transition: all 0.2s ease;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &:visited {
+        color: inherit;
+    }
+
+    &:focus {
+        outline: none;
+        color: inherit;
+    }
+}
+
+//  ============== 推广卡片样式  end ======================
