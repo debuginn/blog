@@ -3,6 +3,14 @@ mainSections = ["post"]
 # Output page's full content in RSS.
 rssFullContent = true
 
+# Global donation configuration
+[donation]
+title = "如果您觉得这里的文章对您有帮助，那就请我喝杯咖啡吧～"
+qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
+solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
+bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
+ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
+
 [footer]
 since = 2017
 customText = '<a href="https://debuginn.com">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/">博客</a>&nbsp;·&nbsp<a href="https://photo.debuginn.com">摄影</a>&nbsp;·&nbsp<a href="/project/">项目</a>&nbsp;·&nbsp<a href="/use/">使用</a>&nbsp;·&nbsp<a href="/about/">关于</a>'
@@ -63,12 +71,6 @@ type = "toc"
 
 [[widgets.page]]
 type = "donation"
-
-[widgets.homepage.params]
-qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
-solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
-bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
-ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
 
 [opengraph.twitter]
 site = "idebuginn"

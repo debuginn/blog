@@ -1,47 +1,55 @@
 {{- $context := .Context -}}
 {{- $params := .Params -}}
 
-<section class="widget donation">
+<section class="widget">
     <div class="donation-card crypto-card">
         <div class="crypto-section">
-            {{ if $params.solana }}
+            {{ if $context.Site.Params.donation.title }}
+            <div class="crypto-item">
+                <span class="crypto-title">
+                    {{ $context.Site.Params.donation.title }}
+                </span>
+            </div>
+            {{ end }}
+            {{ if $context.Site.Params.donation.solana }}
             <div class="crypto-item">
                 <span class="crypto-label">Solana:</span>
                 <div class="crypto-address">
-                    <code>{{ $params.solana }}</code>
+                    <code>{{ $context.Site.Params.donation.solana }}</code>
                 </div>
-                <button class="copy-btn" data-clipboard-text="{{ $params.solana }}" title="Copy">
+                <button class="copy-btn" data-clipboard-text="{{ $context.Site.Params.donation.solana }}" title="Copy">
                     Copy
                 </button>
             </div>
             {{ end }}
-            {{ if $params.bitcoin }}
+            {{ if $context.Site.Params.donation.bitcoin }}
             <div class="crypto-item">
                 <span class="crypto-label">Bitcoin:</span>
                 <div class="crypto-address">
-                    <code>{{ $params.bitcoin }}</code>
+                    <code>{{ $context.Site.Params.donation.bitcoin }}</code>
                 </div>
-                <button class="copy-btn" data-clipboard-text="{{ $params.bitcoin }}" title="Copy">
+                <button class="copy-btn" data-clipboard-text="{{ $context.Site.Params.donation.bitcoin }}" title="Copy">
                     Copy
                 </button>
             </div>
             {{ end }}
-            {{ if $params.ethereum }}
+            {{ if $context.Site.Params.donation.ethereum }}
             <div class="crypto-item">
                 <span class="crypto-label">Ethereum:</span>
                 <div class="crypto-address">
-                    <code>{{ $params.ethereum }}</code>
+                    <code>{{ $context.Site.Params.donation.ethereum }}</code>
                 </div>
-                <button class="copy-btn" data-clipboard-text="{{ $params.ethereum }}" title="Copy">
+                <button class="copy-btn" data-clipboard-text="{{ $context.Site.Params.donation.ethereum }}"
+                    title="Copy">
                     Copy
                 </button>
             </div>
             {{ end }}
         </div>
-        {{ if $params.qrcode }}
+        {{ if $context.Site.Params.donation.qrcode }}
         <div class="donation-card">
             <div class="qr-section">
-                <img src="{{ $params.qrcode }}" alt="donation" class="donation-qr">
+                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
             </div>
         </div>
         {{ end }}
@@ -50,9 +58,14 @@
 
 <style>
     .donation-card {
+        background-color: #ffffff;
         border-radius: 12px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
         transition: box-shadow 0.2s ease;
+    }
+
+    html[data-scheme="dark"] .donation-card {
+        background-color: rgb(66 66 66);
     }
 
     .donation-card:last-child {
@@ -66,6 +79,11 @@
     .qr-section {
         text-align: center;
         padding: 0;
+    }
+
+    .crypto-title {
+        font-family: var(--base-font-family);
+        font-weight: 500;
     }
 
     .donation-qr {
@@ -89,33 +107,33 @@
         display: flex;
         align-items: flex-start;
         gap: 1px;
-        background: var(--card-background, #f8f9fa);
+        background: #f8f9fa;
         border-radius: 6px;
         padding: 8px 12px;
-        border: 1px solid var(--card-border, #e9ecef);
-        color: var(--card-text-color-main, #333);
+        border: 1px solid #e9ecef;
+        color: #333;
         transition: all 0.2s ease;
     }
 
     .crypto-item:hover {
-        background: var(--card-background-hover, #f0f0f0);
-        border-color: var(--card-border-hover, #d0d7de);
+        background: #f0f0f0;
+        border-color: #d0d7de;
     }
 
     html[data-scheme="dark"] .crypto-item,
     body.dark .crypto-item,
     .dark .crypto-item {
-        background: var(--card-background-selected, rgba(64, 64, 64, 0.3)) !important;
-        border: 1px solid var(--card-border, #404040) !important;
-        color: var(--card-text-color-main, #f0f0f0) !important;
+        background: #424242 !important;
+        border: 1px solid #5d5d5d !important;
+        color: #f0f0f0 !important;
         backdrop-filter: blur(10px);
     }
 
     html[data-scheme="dark"] .crypto-item:hover,
     body.dark .crypto-item:hover,
     .dark .crypto-item:hover {
-        background: var(--card-background-selected-hover, rgba(64, 64, 64, 0.4)) !important;
-        border-color: var(--card-border-hover, #606060) !important;
+        background: rgba(64, 64, 64, 0.4) !important;
+        border-color: #606060 !important;
     }
 
     html[data-scheme="dark"] .crypto-label,
@@ -160,7 +178,7 @@
     }
 
     .copy-btn {
-        background: #fafafa;
+        background: #ffffff;
         color: #545455;
         border: none;
         border-radius: 4px;
@@ -183,6 +201,11 @@
 
     .copy-btn:active {
         transform: scale(0.98);
+    }
+
+    html[data-scheme="dark"] .copy-btn {
+        background: #929292;
+        color: #ebebeb;
     }
 
     /* 响应式设计 */
@@ -213,17 +236,17 @@
         html[data-scheme="dark"] .crypto-item,
         body.dark .crypto-item,
         .dark .crypto-item {
-            background: var(--card-background-selected, rgba(64, 64, 64, 0.3));
-            border: 1px solid var(--card-border, #404040);
-            color: var(--card-text-color-main, #f0f0f0);
+            background: rgba(64, 64, 64, 0.3);
+            border: 1px solid #404040;
+            color: #f0f0f0;
             backdrop-filter: blur(10px);
         }
 
         html[data-scheme="dark"] .crypto-item:hover,
         body.dark .crypto-item:hover,
         .dark .crypto-item:hover {
-            background: var(--card-background-selected-hover, rgba(64, 64, 64, 0.4));
-            border-color: var(--card-border-hover, #606060);
+            background: rgba(64, 64, 64, 0.4);
+            border-color: #606060;
         }
 
         .crypto-label {
