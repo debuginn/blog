@@ -1,19 +1,18 @@
 {{- $context := .Context -}}
 {{- $params := .Params -}}
 
-<section class="widget">
+<section class="widget donation">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "currency-ethereum" }}
+    </div>
+    <h2 class="widget-title section-title">
+        {{ $context.Site.Params.donation.title }}
+    </h2>
     <div class="donation-card crypto-card">
         <div class="crypto-section">
-            {{ if $context.Site.Params.donation.title }}
-            <div class="crypto-item">
-                <span class="crypto-title">
-                    {{ $context.Site.Params.donation.title }}
-                </span>
-            </div>
-            {{ end }}
             {{ if $context.Site.Params.donation.solana }}
             <div class="crypto-item">
-                <span class="crypto-label">Solana:</span>
+                <span class="crypto-label">SOL</span>
                 <div class="crypto-address">
                     <code>{{ $context.Site.Params.donation.solana }}</code>
                 </div>
@@ -24,7 +23,7 @@
             {{ end }}
             {{ if $context.Site.Params.donation.bitcoin }}
             <div class="crypto-item">
-                <span class="crypto-label">Bitcoin:</span>
+                <span class="crypto-label">BTC</span>
                 <div class="crypto-address">
                     <code>{{ $context.Site.Params.donation.bitcoin }}</code>
                 </div>
@@ -35,7 +34,7 @@
             {{ end }}
             {{ if $context.Site.Params.donation.ethereum }}
             <div class="crypto-item">
-                <span class="crypto-label">Ethereum:</span>
+                <span class="crypto-label">ETH</span>
                 <div class="crypto-address">
                     <code>{{ $context.Site.Params.donation.ethereum }}</code>
                 </div>
@@ -79,11 +78,6 @@
     .qr-section {
         text-align: center;
         padding: 0;
-    }
-
-    .crypto-title {
-        font-family: var(--base-font-family);
-        font-weight: 500;
     }
 
     .donation-qr {

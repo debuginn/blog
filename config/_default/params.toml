@@ -5,7 +5,7 @@ rssFullContent = true
 
 # Global donation configuration
 [donation]
-title = "如果您觉得这里的文章对您有帮助，那就请我喝杯咖啡吧～"
+title = "赞赏"
 qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
 solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
 bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
