@@ -23,12 +23,6 @@
     }
 }
 
-// 二维码区域
-.qr-section {
-    text-align: center;
-    padding: 0;
-}
-
 .donation-qr {
     width: 100%;
     max-width: 100%;
@@ -40,14 +34,14 @@
 }
 
 // 加密货币区域
-.crypto-section {
+.donation-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.crypto-item {
+.donation-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -79,7 +73,7 @@
     }
 }
 
-.crypto-label {
+.donation-label {
     color: #555;
     font-weight: 500;
     white-space: nowrap;
@@ -94,7 +88,7 @@
     }
 }
 
-.crypto-address {
+.donation-address {
     flex: 1;
     background: transparent;
     border: none;
@@ -123,7 +117,7 @@
     }
 }
 
-.copy-btn {
+.donation-btn {
     background: #ffffff;
     color: #545455;
     border: none;
@@ -155,56 +149,35 @@
     }
 }
 
-// 响应式设计
-@media (max-width: 768px) {
-    .donation-card {
-        margin: 0 -16px 20px -16px;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        padding: 16px;
+.donation-address {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    .donation-qr {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .crypto-item {
-        flex-direction: column;
-        gap: 8px;
-        align-items: stretch;
+    code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-size: 0.6em;
+        color: #495057;
+        word-break: break-all;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        display: block;
+        line-height: 1.4;
 
         // 暗色主题
         html[data-scheme="dark"] &,
         body.dark &,
         .dark & {
-            background: rgba(64, 64, 64, 0.3);
-            border: 1px solid #404040;
-            color: #f0f0f0;
-            backdrop-filter: blur(10px);
-
-            &:hover {
-                background: rgba(64, 64, 64, 0.4);
-                border-color: #606060;
-            }
+            color: #f0f0f0 !important;
         }
     }
-
-    .crypto-label {
-        min-width: auto;
-        text-align: center;
-    }
-
-    .copy-btn {
-        width: 100%;
-        text-align: center;
-    }
 }
+
 //  ============== 捐赠卡片样式  end ======================
 
 //  ============== 推广卡片样式  start ======================
@@ -225,35 +198,6 @@
     // 暗色主题
     html[data-scheme="dark"] & {
         background-color: rgb(66, 66, 66);
-    }
-}
-
-.donation-address {
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 0;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-
-    code {
-        background: transparent;
-        border: none;
-        padding: 0;
-        font-size: 0.9em;
-        color: #495057;
-        word-break: break-all;
-        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-        display: block;
-        line-height: 1.4;
-
-        // 暗色主题
-        html[data-scheme="dark"] &,
-        body.dark &,
-        .dark & {
-            color: #f0f0f0 !important;
-        }
     }
 }
 

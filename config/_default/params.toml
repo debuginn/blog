@@ -47,7 +47,7 @@ type = "donation"
 type = "tag-cloud"
 
 [widgets.homepage.params]
-limit = 18
+limit = 32
 
 [[widgets.page]]
 type = "search"
@@ -103,9 +103,18 @@ lang = "zh-CN"
 [donation]
 title = "赞赏"
 qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
-solana = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
-bitcoin = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
-ethereum = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
+
+[[donation.cryptos]]
+label = "SOL"
+address = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
+
+[[donation.cryptos]]
+label = "BTC"
+address = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
+
+[[donation.cryptos]]
+label = "ETH"
+address = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
 
 [promote]
 title = "推广"
@@ -124,10 +133,5 @@ target = "_blank"
 [[promote.items]]
 href = "https://www.xflash.live/#/register?code=GZRNxKBh"
 icon = "network"
-text = "XFlash Cloud，已经稳定使用 3 年。"
+text = "XFlash Cloud，稳定好用速度快。"
 target = "_blank"
-
-[[promote.items]]
-href = "#"
-icon = "ad"
-text = "广告位招租，欢迎联系！"

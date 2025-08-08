@@ -8,7 +8,7 @@
     <h2 class="widget-title section-title">
         {{ $context.Site.Params.promote.title }}
     </h2>
-    <div class="promote-card crypto-card">
+    <div class="promote-card">
         <div class="promote-section">
             {{- range $context.Site.Params.promote.items }}
             <a href="{{ .href }}"{{ if .target }} target="{{ .target }}"{{ end }} class="promote-item-link">
