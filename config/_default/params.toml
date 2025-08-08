@@ -62,13 +62,13 @@ type = "wechat"
 type = "toc"
 
 [[widgets.page]]
-type = "popular"
-
-[[widgets.page]]
 type = "donation"
 
 [[widgets.page]]
 type = "promote"
+
+[[widgets.page]]
+type = "popular"
 
 [opengraph.twitter]
 site = "idebuginn"
