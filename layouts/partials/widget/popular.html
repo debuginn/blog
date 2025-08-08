@@ -1,0 +1,28 @@
+{{- $context := .Context -}}
+{{- $params := .Params -}}
+
+<section class="widget popular">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "flame" }}
+    </div>
+    <h2 class="widget-title section-title">
+        {{ $context.Site.Params.popular.title }}
+    </h2>
+    <div class="popular-card">
+        <div class="popular-section">
+            {{- range $context.Site.Params.popular.items }}
+            <a href="{{ .href }}"{{ if .target }} target="{{ .target }}"{{ end }} class="popular-item-link">
+                <div class="popular-item">
+                    <span class="popular-label">{{ partial "helper/icon" .icon }}</span>
+                    <div class="popular-text">
+                        {{ .text }}
+                    </div>
+                    <div class="popular-views">
+                        {{ if .views }}{{ .views }} 阅读{{ end }}
+                    </div>
+                </div>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>

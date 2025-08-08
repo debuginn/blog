@@ -288,3 +288,126 @@
 }
 
 //  ============== 推广卡片样式  end ======================
+
+//  ============== 热门卡片样式  start ======================
+.popular-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background-color: rgb(66, 66, 66);
+    }
+}
+
+// 热门区域
+.popular-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.popular-item {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 1px solid #e9ecef;
+    color: #333;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #f0f0f0;
+        border-color: #d0d7de;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        background: #424242 !important;
+        border: 1px solid #5d5d5d !important;
+        color: #f0f0f0 !important;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+            background: rgba(64, 64, 64, 0.4) !important;
+            border-color: #606060 !important;
+        }
+    }
+}
+
+.popular-label {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap;
+    min-width: 40px;
+    margin-top: 2px;
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        color: #e2e8f0 !important;
+    }
+}
+
+.popular-text {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: inherit;
+    display: block;
+    transition: all 0.2s ease;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &:visited {
+        color: inherit;
+    }
+
+    &:focus {
+        outline: none;
+        color: inherit;
+    }
+}
+
+.popular-views {
+    font-size: 0.75em;
+    color: #888;
+    margin-top: 2px;
+    white-space: nowrap;
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        color: #aaa !important;
+    }
+}
+
+//  ============== 热门卡片样式  end ======================

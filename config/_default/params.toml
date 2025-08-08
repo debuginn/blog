@@ -38,6 +38,9 @@ type = "search"
 type = "wechat"
 
 [[widgets.homepage]]
+type = "popular"
+
+[[widgets.homepage]]
 type = "promote"
 
 [[widgets.homepage]]
@@ -57,6 +60,9 @@ type = "wechat"
 
 [[widgets.page]]
 type = "toc"
+
+[[widgets.page]]
+type = "popular"
 
 [[widgets.page]]
 type = "donation"
@@ -135,3 +141,36 @@ href = "https://www.xflash.live/#/register?code=GZRNxKBh"
 icon = "network"
 text = "XFlash Cloud，稳定好用速度快。"
 target = "_blank"
+
+[popular]
+title = "热门"
+
+[[popular.items]]
+href = "/p/work-5-years/"
+icon = "brand-linkedin"
+text = "入职 5 周年，我和小米的 5 周年"
+views = "1.2k"
+
+[[popular.items]]
+href = "/p/financial-hongkong-card/"
+icon = "wallet"
+text = "港卡开卡指南"
+views = "856"
+
+[[popular.items]]
+href = "/use/"
+icon = "devices"
+text = "我的使用"
+views = "437"
+
+[[popular.items]]
+href = "/p/travel-bohainan/"
+icon = "car"
+text = "游记 五一环渤海南海岸自驾之旅"
+views = "326"
+
+[[popular.items]]
+href = "/p/travel-dawanqu/"
+icon = "building-airport"
+text = "游记 港澳深大湾区风球中旅程"
+views = "289"
