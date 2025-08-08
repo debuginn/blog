@@ -8,48 +8,23 @@
     <h2 class="widget-title section-title">
         {{ $context.Site.Params.donation.title }}
     </h2>
-    <div class="donation-card crypto-card">
-        <div class="crypto-section">
-            {{ if $context.Site.Params.donation.solana }}
-            <div class="crypto-item">
-                <span class="crypto-label">SOL</span>
-                <div class="crypto-address">
-                    <code>{{ $context.Site.Params.donation.solana }}</code>
+    <div class="donation-card">
+        <div class="donation-section">
+            {{- range $context.Site.Params.donation.cryptos }}
+            <div class="donation-item">
+                <span class="donation-label">{{ .label }}</span>
+                <div class="donation-address">
+                    <code>{{ .address }}</code>
                 </div>
-                <button class="copy-btn" data-clipboard-text="{{ $context.Site.Params.donation.solana }}" title="Copy">
+                <button class="donation-btn" data-clipboard-text="{{ .address }}" title="Copy">
                     Copy
                 </button>
             </div>
-            {{ end }}
-            {{ if $context.Site.Params.donation.bitcoin }}
-            <div class="crypto-item">
-                <span class="crypto-label">BTC</span>
-                <div class="crypto-address">
-                    <code>{{ $context.Site.Params.donation.bitcoin }}</code>
-                </div>
-                <button class="copy-btn" data-clipboard-text="{{ $context.Site.Params.donation.bitcoin }}" title="Copy">
-                    Copy
-                </button>
-            </div>
-            {{ end }}
-            {{ if $context.Site.Params.donation.ethereum }}
-            <div class="crypto-item">
-                <span class="crypto-label">ETH</span>
-                <div class="crypto-address">
-                    <code>{{ $context.Site.Params.donation.ethereum }}</code>
-                </div>
-                <button class="copy-btn" data-clipboard-text="{{ $context.Site.Params.donation.ethereum }}"
-                    title="Copy">
-                    Copy
-                </button>
-            </div>
-            {{ end }}
+            {{- end }}
         </div>
         {{ if $context.Site.Params.donation.qrcode }}
         <div class="donation-card">
-            <div class="qr-section">
-                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
-            </div>
+            <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
         </div>
         {{ end }}
     </div>
