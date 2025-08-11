@@ -109,6 +109,7 @@ lang = "zh-CN"
 [donation]
 title = "赞赏"
 qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
+link = "#"
 
 [[donation.cryptos]]
 label = "BTC"
@@ -116,15 +117,9 @@ address = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
 
 [[donation.cryptos]]
 label = "ETH"
-address = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
+address = "0xd06a56704ecb1eee65abcaa3101d88e2a8225a4e"
 donate = true
 amount = 0.001
-
-[[donation.cryptos]]
-label = "USDT"
-address = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
-donate = true
-amount = 10
 
 [promote]
 title = "推广"
@@ -165,7 +160,7 @@ views = "856"
 href = "/use/"
 icon = "devices"
 text = "我的使用"
-views = "437"
+views = "447"
 
 [[popular.items]]
 href = "/p/travel-bohainan/"
@@ -177,4 +172,4 @@ views = "326"
 href = "/p/travel-dawanqu/"
 icon = "building-airport"
 text = "游记 港澳深大湾区风球中旅程"
-views = "289"
+views = "119"
