@@ -51,6 +51,7 @@
     border: 1px solid #e9ecef;
     color: #333;
     transition: all 0.2s ease;
+    position: relative; // 添加相对定位
 
     &:hover {
         background: #f0f0f0;
@@ -79,6 +80,7 @@
     white-space: nowrap;
     min-width: 40px;
     margin-top: 2px;
+    margin-right: 4px;
 
     // 暗色主题
     html[data-scheme="dark"] &,
@@ -117,7 +119,7 @@
     }
 }
 
-.donation-btn {
+.donation-btn-copy {
     background: #ffffff;
     color: #545455;
     border: none;
@@ -133,6 +135,40 @@
     flex-shrink: 0;
     align-self: flex-start;
     margin-top: 2px;
+    margin-left: 2px;
+
+    &:hover {
+        background: #d7d7d7;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background: #929292;
+        color: #ebebeb;
+    }
+}
+
+.donate-btn-donate {
+    background: #ffffff;
+    color: #545455;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    font-weight: 500;
+    min-width: 56px;
+    width: 56px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+    margin-left: 2px;
 
     &:hover {
         background: #d7d7d7;
@@ -178,6 +214,61 @@
     }
 }
 
+
+.donation-amount-input {
+    background: #ffffff;
+    color: #545455;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    font-weight: 500;
+    width: 78px;
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%); // 垂直居中
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 10; // 确保在上层显示
+    
+    &:focus {
+        outline: none;
+        border-color: #0969da;
+        box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.1);
+    }
+    
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background: #929292;
+        color: #ebebeb;
+        border-color: #606060;
+        
+        &:focus {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.1);
+        }
+    }
+}
+
+.donate-btn-donate.active {
+    background: #0969da;
+    color: #ffffff;
+    
+    &:hover {
+        background: #0860ca;
+    }
+    
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background: #58a6ff;
+        color: #dddedf;
+        
+        &:hover {
+            background: #4493f8;
+        }
+    }
+}
 //  ============== 捐赠卡片样式  end ======================
 
 //  ============== 推广卡片样式  start ======================

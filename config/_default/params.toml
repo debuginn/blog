@@ -111,16 +111,20 @@ title = "赞赏"
 qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
 
 [[donation.cryptos]]
-label = "SOL"
-address = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
-
-[[donation.cryptos]]
 label = "BTC"
 address = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
 
 [[donation.cryptos]]
 label = "ETH"
 address = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
+donate = true
+amount = 0.001
+
+[[donation.cryptos]]
+label = "USDT"
+address = "0xd06a56704eCb1EEe65AbcAa3101d88E2a8225a4E"
+donate = true
+amount = 10
 
 [promote]
 title = "推广"
