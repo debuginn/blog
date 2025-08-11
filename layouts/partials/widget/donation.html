@@ -11,21 +11,339 @@
     <div class="donation-card">
         <div class="donation-section">
             {{- range $context.Site.Params.donation.cryptos }}
-            <div class="donation-item">
+            <div class="donation-item" data-crypto="{{ .label | lower }}">
+                <div class="donation-item-bg">
+                    {{ if eq (.label | lower) "eth" }}
+                        {{ partial "helper/icon" "currency-ethereum" }}
+                    {{ else if eq (.label | lower) "btc" }}
+                        {{ partial "helper/icon" "coin-bitcoin" }}
+                    {{ else }}
+                        {{ partial "helper/icon" "wallet" }}
+                    {{ end }}
+                </div>
                 <span class="donation-label">{{ .label }}</span>
                 <div class="donation-address">
                     <code>{{ .address }}</code>
                 </div>
-                <button class="donation-btn" data-clipboard-text="{{ .address }}" title="Copy">
+                <button class="donation-btn-copy" data-clipboard-text="{{ .address }}" title="Copy">
                     Copy
                 </button>
+                <input type="number" class="donation-amount-input" value="{{ .amount | default 1 }}" step="0.001"
+                    min="0" style="display: none;">
+                {{- if and (isset . "donate") .donate }}
+                <button class="donate-btn-donate" title="Donate" onclick="toggleDonateMode(this)"
+                    data-address="{{ .address }}">
+                    Donate
+                </button>
+                {{- end }}
             </div>
             {{- end }}
         </div>
         {{ if $context.Site.Params.donation.qrcode }}
         <div class="donation-card">
+            {{ if $context.Site.Params.donation.link }}
+            <a href="{{ $context.Site.Params.donation.link }}" target="{{ $context.Site.Params.donation.target | default "_self" }}" rel="noopener noreferrer">
+                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
+            </a>
+            {{ else }}
             <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
+            {{ end }}
         </div>
         {{ end }}
     </div>
 </section>
+
+<!-- 自定义弹窗组件 -->
+<div id="donation-modal" class="donation-modal" style="display: none;">
+    <div class="donation-modal-overlay"></div>
+    <div class="donation-modal-content">
+        <div class="donation-modal-header">
+            <div class="donation-modal-icon">
+                <span id="donation-modal-icon-content"></span>
+            </div>
+            <h3 id="donation-modal-title">提示</h3>
+        </div>
+        <div class="donation-modal-body">
+            <p id="donation-modal-message"></p>
+        </div>
+        <div class="donation-modal-footer">
+            <button id="donation-modal-confirm" class="donation-modal-btn donation-modal-btn-primary"
+                onclick="closeDonationModal()">确定</button>
+            <button id="donation-modal-cancel" class="donation-modal-btn donation-modal-btn-secondary"
+                onclick="closeDonationModal()" style="display: none;">取消</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 弹窗管理函数
+    function showDonationModal(message, type = 'info', title = '提示') {
+        const modal = document.getElementById('donation-modal');
+        const titleEl = document.getElementById('donation-modal-title');
+        const messageEl = document.getElementById('donation-modal-message');
+        const iconEl = document.getElementById('donation-modal-icon-content');
+        const iconContainer = iconEl.parentElement;
+
+        // 设置内容
+        titleEl.textContent = title;
+        messageEl.textContent = message;
+
+        // 设置图标和样式
+        iconContainer.className = 'donation-modal-icon ' + type;
+        switch (type) {
+            case 'success':
+                iconEl.textContent = '✓';
+                break;
+            case 'error':
+                iconEl.textContent = '✕';
+                break;
+            case 'warning':
+                iconEl.textContent = '⚠';
+                break;
+            default:
+                iconEl.textContent = 'ℹ';
+        }
+
+        // 显示弹窗
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDonationModal() {
+        const modal = document.getElementById('donation-modal');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    // 点击遮罩层关闭弹窗
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('donation-modal');
+        const overlay = modal.querySelector('.donation-modal-overlay');
+        overlay.addEventListener('click', closeDonationModal);
+
+        // ESC 键关闭弹窗
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeDonationModal();
+            }
+        });
+    });
+
+    async function toggleDonateMode(donateBtn) {
+        const donationItem = donateBtn.closest('.donation-item');
+        const amountInput = donationItem.querySelector('.donation-amount-input');
+        const address = donateBtn.getAttribute('data-address');
+        const label = donationItem.querySelector('.donation-label').textContent.trim();
+
+        // 去除文本内容的空格，确保比较准确
+        const buttonText = donateBtn.textContent.trim();
+
+        if (buttonText === 'Donate') {
+            // 第一次点击：显示输入框，按钮变为 Pay
+            donateBtn.classList.add('active');
+            donateBtn.textContent = 'Pay';
+            amountInput.style.display = 'block';
+            amountInput.focus();
+        } else if (buttonText === 'Pay') {
+            // 第二次点击：唤起钱包支付
+            const amount = amountInput.value;
+            if (!amount || amount <= 0) {
+                showDonationModal('请输入有效的捐赠金额', 'warning', '输入错误');
+                return;
+            }
+            // 转换为数值类型
+            const amountNum = parseFloat(amount);
+            // 支付过程中禁用按钮，防止重复点击
+            donateBtn.disabled = true;
+            donateBtn.textContent = 'Paying';
+
+            try {
+                await payWithWallet(address, amountNum, label);
+                // 支付成功后重置状态
+                resetDonateButton(donateBtn, amountInput);
+            } catch (error) {
+                console.error('支付失败:', error);
+                showDonationModal('支付失败: ' + error.message, 'error', '支付失败');
+                // 支付失败后恢复 Pay 状态
+                donateBtn.textContent = 'Pay';
+            } finally {
+                // 无论成功失败都重新启用按钮
+                donateBtn.disabled = false;
+            }
+        } else {
+            // 取消状态：恢复初始状态
+            resetDonateButton(donateBtn, amountInput);
+        }
+    }
+
+    function resetDonateButton(donateBtn, amountInput) {
+        donateBtn.classList.remove('active');
+        donateBtn.textContent = 'Donate';
+        donateBtn.disabled = false;
+        amountInput.style.display = 'none';
+        // 获取配置的默认金额，确保为数值类型
+        const donationItem = donateBtn.closest('.donation-item');
+        const defaultAmountStr = donationItem.querySelector('.donation-amount-input').getAttribute('value');
+        const defaultAmount = parseFloat(defaultAmountStr);
+        amountInput.value = defaultAmount;
+    }
+
+    // 获取代币配置
+    function getTokenConfig(label) {
+        const tokenConfigs = {
+            'ETH': {
+                symbol: 'ETH',
+                decimals: 18,
+                contractAddress: null,
+                chainId: '0x1',
+                network: 'ethereum'
+            }
+        };
+
+        // 尝试匹配标签中的代币符号
+        for (const [key, config] of Object.entries(tokenConfigs)) {
+            if (label.toUpperCase().includes(key)) {
+                return config;
+            }
+        }
+
+        // 默认返回 ETH 配置
+        return tokenConfigs.ETH;
+    }
+
+    async function payWithWallet(toAddress, amount, label) {
+        const tokenConfig = getTokenConfig(label);
+
+        // 检查是否支持该代币
+        if (tokenConfig.error) {
+            showDonationModal(tokenConfig.error, 'error', '不支持的代币');
+            throw new Error(tokenConfig.error);
+        }
+
+        // 只支持以太坊网络
+        return await payWithEthereum(toAddress, amount, tokenConfig);
+    }
+
+    async function payWithEthereum(toAddress, amount, tokenConfig) {
+        // 检查是否安装了以太坊钱包
+        if (typeof window.ethereum === 'undefined') {
+            showDonationModal('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）', 'warning', '未检测到钱包');
+            throw new Error('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）');
+        }
+
+        try {
+            // 请求连接钱包
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+            // 检查网络
+            const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+            if (chainId !== tokenConfig.chainId) {
+                showDonationModal(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`, 'warning', '网络错误');
+                throw new Error(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`);
+            }
+
+            // 获取当前账户
+            const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+            if (accounts.length === 0) {
+                showDonationModal('请先连接钱包账户', 'warning', '未连接账户');
+                throw new Error('请先连接钱包账户');
+            }
+
+            const fromAddress = accounts[0];
+
+            let txHash;
+
+            if (tokenConfig.contractAddress) {
+                // ERC-20 代币转账
+                txHash = await sendERC20Token(fromAddress, toAddress, amount, tokenConfig);
+            } else {
+                // ETH 原生代币转账
+                txHash = await sendETH(fromAddress, toAddress, amount, tokenConfig);
+            }
+
+            showDonationModal(`支付成功！\n交易哈希: ${txHash}`, 'success', '支付成功');
+            
+            // 隐藏金额输入框
+            const amountInput = document.querySelector('.donation-amount-input');
+            if (amountInput) {
+                amountInput.style.display = 'none';
+            }
+            
+            return txHash;
+
+        } catch (error) {
+            if (error.code === 4001) {
+                showDonationModal('用户取消了交易', 'info', '交易取消');
+                throw new Error('用户取消了交易');
+            } else {
+                throw error;
+            }
+        }
+    }
+
+    async function sendETH(fromAddress, toAddress, amount, tokenConfig) {
+        // 将 ETH 金额转换为 Wei
+        const amountInWei = '0x' + (parseFloat(amount) * Math.pow(10, tokenConfig.decimals)).toString(16);
+
+        const transactionParameters = {
+            to: toAddress,
+            from: fromAddress,
+            value: amountInWei,
+            gas: '0x5208', // 21000 gas (标准转账)
+        };
+
+        return await window.ethereum.request({
+            method: 'eth_sendTransaction',
+            params: [transactionParameters],
+        });
+    }
+
+    async function sendERC20Token(fromAddress, toAddress, amount, tokenConfig) {
+        // ERC-20 转账需要调用合约的 transfer 方法
+        const amountInUnits = (parseFloat(amount) * Math.pow(10, tokenConfig.decimals)).toString(16);
+
+        // ERC-20 transfer 方法的 ABI 编码
+        // transfer(address,uint256)
+        const methodId = '0xa9059cbb'; // transfer 方法的签名
+        const paddedAddress = toAddress.slice(2).padStart(64, '0');
+        const paddedAmount = amountInUnits.padStart(64, '0');
+        const data = methodId + paddedAddress + paddedAmount;
+
+        const transactionParameters = {
+            to: tokenConfig.contractAddress,
+            from: fromAddress,
+            data: data,
+            gas: '0x186A0', // 100000 gas (ERC-20 转账)
+        };
+
+        return await window.ethereum.request({
+            method: 'eth_sendTransaction',
+            params: [transactionParameters],
+        });
+    }
+</script>
+
+<!-- 捐赠卡片复制按钮 -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyButtons = document.querySelectorAll('.donation-btn-copy');
+
+        copyButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const text = this.getAttribute('data-clipboard-text');
+                const originalText = this.textContent;
+                navigator.clipboard.writeText(text).then(function () {
+                    button.textContent = 'Copied!';
+                    setTimeout(function () {
+                        button.textContent = originalText;
+                    }, 1500);
+                }).catch(function () {
+                    button.textContent = 'Failed!';
+                    setTimeout(function () {
+                        button.textContent = originalText;
+                    }, 1500);
+                });
+            });
+        });
+    });
+</script>
