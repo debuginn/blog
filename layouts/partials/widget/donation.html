@@ -181,8 +181,26 @@
             // 检查网络
             const chainId = await window.ethereum.request({ method: 'eth_chainId' });
             if (chainId !== tokenConfig.chainId) {
-                showToast(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`, 'warning');
-                throw new Error(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`);
+                try {
+                    // 尝试自动切换到正确的网络
+                    await window.ethereum.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: tokenConfig.chainId }],
+                    });
+                    showToast('已切换到以太坊主网', 'success');
+                } catch (switchError) {
+                    // 如果切换失败，提供更详细的错误信息
+                    if (switchError.code === 4902) {
+                        showToast('请在钱包中手动添加以太坊主网', 'warning', 4000);
+                        throw new Error('请在钱包中手动添加以太坊主网');
+                    } else if (switchError.code === 4001) {
+                        showToast('用户拒绝切换网络', 'info');
+                        throw new Error('用户拒绝切换网络');
+                    } else {
+                        showToast(`网络切换失败，请手动切换到以太坊主网 (Chain ID: ${tokenConfig.chainId})`, 'warning', 4000);
+                        throw new Error(`网络切换失败，请手动切换到以太坊主网 (Chain ID: ${tokenConfig.chainId})`);
+                    }
+                }
             }
 
             // 获取当前账户
