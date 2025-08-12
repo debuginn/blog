@@ -8,30 +8,30 @@
     <h2 class="widget-title section-title">
         {{ $context.Site.Params.donation.title }}
     </h2>
-    <div class="donation-card">
-        <div class="donation-section">
+    <div class="stack-widget-donation-card">
+        <div class="stack-widget-donation-section">
             {{- range $context.Site.Params.donation.cryptos }}
-            <div class="donation-item" data-crypto="{{ .label | lower }}">
-                <div class="donation-item-bg">
+            <div class="stack-widget-donation-item" data-crypto="{{ .label | lower }}">
+                <div class="stack-widget-donation-item-bg">
                     {{ if eq (.label | lower) "eth" }}
-                        {{ partial "helper/icon" "currency-ethereum" }}
+                    {{ partial "helper/icon" "currency-ethereum" }}
                     {{ else if eq (.label | lower) "btc" }}
-                        {{ partial "helper/icon" "coin-bitcoin" }}
+                    {{ partial "helper/icon" "coin-bitcoin" }}
                     {{ else }}
-                        {{ partial "helper/icon" "wallet" }}
+                    {{ partial "helper/icon" "wallet" }}
                     {{ end }}
                 </div>
-                <span class="donation-label">{{ .label }}</span>
-                <div class="donation-address">
+                <span class="stack-widget-donation-label">{{ .label }}</span>
+                <div class="stack-widget-donation-address">
                     <code>{{ .address }}</code>
                 </div>
-                <button class="donation-btn-copy" data-clipboard-text="{{ .address }}" title="Copy">
+                <button class="stack-widget-donation-btn-copy" data-clipboard-text="{{ .address }}" title="Copy">
                     Copy
                 </button>
-                <input type="number" class="donation-amount-input" value="{{ .amount | default 1 }}" step="0.001"
-                    min="0" style="display: none;">
+                <input type="number" class="stack-widget-donation-amount-input" value="{{ .amount | default 1 }}"
+                    step="0.001" min="0" style="display: none;">
                 {{- if and (isset . "donate") .donate }}
-                <button class="donate-btn-donate" title="Donate" onclick="toggleDonateMode(this)"
+                <button class="stack-widget-donate-btn-donate" title="Donate" onclick="toggleDonateMode(this)"
                     data-address="{{ .address }}">
                     Donate
                 </button>
@@ -40,13 +40,14 @@
             {{- end }}
         </div>
         {{ if $context.Site.Params.donation.qrcode }}
-        <div class="donation-card">
+        <div class="stack-widget-donation-card">
             {{ if $context.Site.Params.donation.link }}
-            <a href="{{ $context.Site.Params.donation.link }}" target="{{ $context.Site.Params.donation.target | default "_self" }}" rel="noopener noreferrer">
-                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
+            <a href="{{ $context.Site.Params.donation.link }}"
+                target="{{ $context.Site.Params.donation.target | default " _self" }}" rel="noopener noreferrer">
+                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="stack-widget-donation-qr">
             </a>
             {{ else }}
-            <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
+            <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="stack-widget-donation-qr">
             {{ end }}
         </div>
         {{ end }}
@@ -54,22 +55,22 @@
 </section>
 
 <!-- 自定义弹窗组件 -->
-<div id="donation-modal" class="donation-modal" style="display: none;">
-    <div class="donation-modal-overlay"></div>
-    <div class="donation-modal-content">
-        <div class="donation-modal-header">
-            <div class="donation-modal-icon">
-                <span id="donation-modal-icon-content"></span>
+<div id="stack-widget-donation-modal" class="stack-widget-donation-modal" style="display: none;">
+    <div class="stack-widget-donation-modal-overlay"></div>
+    <div class="stack-widget-donation-modal-content">
+        <div class="stack-widget-donation-modal-header">
+            <div class="stack-widget-donation-modal-icon">
+                <span id="stack-widget-donation-modal-icon-content"></span>
             </div>
-            <h3 id="donation-modal-title">提示</h3>
+            <h3 id="stack-widget-donation-modal-title">提示</h3>
         </div>
-        <div class="donation-modal-body">
-            <p id="donation-modal-message"></p>
+        <div class="stack-widget-donation-modal-body">
+            <p id="stack-widget-donation-modal-message"></p>
         </div>
-        <div class="donation-modal-footer">
-            <button id="donation-modal-confirm" class="donation-modal-btn donation-modal-btn-primary"
+        <div class="stack-widget-donation-modal-footer">
+            <button id="stack-widget-donation-modal-confirm" class="stack-widget-donation-modal-btn stack-widget-donation-modal-btn-primary"
                 onclick="closeDonationModal()">确定</button>
-            <button id="donation-modal-cancel" class="donation-modal-btn donation-modal-btn-secondary"
+            <button id="stack-widget-donation-modal-cancel" class="stack-widget-donation-modal-btn stack-widget-donation-modal-btn-secondary"
                 onclick="closeDonationModal()" style="display: none;">取消</button>
         </div>
     </div>
@@ -78,10 +79,10 @@
 <script>
     // 弹窗管理函数
     function showDonationModal(message, type = 'info', title = '提示') {
-        const modal = document.getElementById('donation-modal');
-        const titleEl = document.getElementById('donation-modal-title');
-        const messageEl = document.getElementById('donation-modal-message');
-        const iconEl = document.getElementById('donation-modal-icon-content');
+        const modal = document.getElementById('stack-widget-donation-modal');
+        const titleEl = document.getElementById('stack-widget-donation-modal-title');
+        const messageEl = document.getElementById('stack-widget-donation-modal-message');
+        const iconEl = document.getElementById('stack-widget-donation-modal-icon-content');
         const iconContainer = iconEl.parentElement;
 
         // 设置内容
@@ -89,7 +90,7 @@
         messageEl.textContent = message;
 
         // 设置图标和样式
-        iconContainer.className = 'donation-modal-icon ' + type;
+        iconContainer.className = 'stack-widget-donation-modal-icon ' + type;
         switch (type) {
             case 'success':
                 iconEl.textContent = '✓';
@@ -110,15 +111,15 @@
     }
 
     function closeDonationModal() {
-        const modal = document.getElementById('donation-modal');
+        const modal = document.getElementById('stack-widget-donation-modal');
         modal.style.display = 'none';
         document.body.style.overflow = '';
     }
 
     // 点击遮罩层关闭弹窗
     document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('donation-modal');
-        const overlay = modal.querySelector('.donation-modal-overlay');
+        const modal = document.getElementById('stack-widget-donation-modal');
+        const overlay = modal.querySelector('.stack-widget-donation-modal-overlay');
         overlay.addEventListener('click', closeDonationModal);
 
         // ESC 键关闭弹窗
@@ -130,10 +131,10 @@
     });
 
     async function toggleDonateMode(donateBtn) {
-        const donationItem = donateBtn.closest('.donation-item');
-        const amountInput = donationItem.querySelector('.donation-amount-input');
+        const donationItem = donateBtn.closest('.stack-widget-donation-item');
+        const amountInput = donationItem.querySelector('.stack-widget-donation-amount-input');
         const address = donateBtn.getAttribute('data-address');
-        const label = donationItem.querySelector('.donation-label').textContent.trim();
+        const label = donationItem.querySelector('.stack-widget-donation-label').textContent.trim();
 
         // 去除文本内容的空格，确保比较准确
         const buttonText = donateBtn.textContent.trim();
@@ -182,8 +183,8 @@
         donateBtn.disabled = false;
         amountInput.style.display = 'none';
         // 获取配置的默认金额，确保为数值类型
-        const donationItem = donateBtn.closest('.donation-item');
-        const defaultAmountStr = donationItem.querySelector('.donation-amount-input').getAttribute('value');
+        const donationItem = donateBtn.closest('.stack-widget-donation-item');
+        const defaultAmountStr = donationItem.querySelector('.stack-widget-donation-amount-input').getAttribute('value');
         const defaultAmount = parseFloat(defaultAmountStr);
         amountInput.value = defaultAmount;
     }
@@ -262,13 +263,13 @@
             }
 
             showDonationModal(`支付成功！\n交易哈希: ${txHash}`, 'success', '支付成功');
-            
+
             // 隐藏金额输入框
             const amountInput = document.querySelector('.donation-amount-input');
             if (amountInput) {
                 amountInput.style.display = 'none';
             }
-            
+
             return txHash;
 
         } catch (error) {
@@ -326,7 +327,7 @@
 <!-- 捐赠卡片复制按钮 -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const copyButtons = document.querySelectorAll('.donation-btn-copy');
+        const copyButtons = document.querySelectorAll('.stack-widget-donation-btn-copy');
 
         copyButtons.forEach(function (button) {
             button.addEventListener('click', function () {

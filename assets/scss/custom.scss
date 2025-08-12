@@ -3,7 +3,7 @@
 */
 
 // =========== 赞赏卡片样式  start ======================
-.donation-card {
+.stack-widget-donation-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -23,7 +23,7 @@
     }
 }
 
-.donation-qr {
+.stack-widget-donation-qr {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -34,20 +34,20 @@
 }
 
 // 二维码链接样式
-.donation-card a {
+.stack-widget-donation-card a {
     display: block;
     text-decoration: none;
 }
 
 // 加密货币区域
-.donation-section {
+.stack-widget-donation-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.donation-item {
+.stack-widget-donation-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -81,7 +81,7 @@
     }
 }
 
-.donation-item-bg {
+.stack-widget-donation-item-bg {
     position: absolute;
     top: 0;
     left: -3px;
@@ -107,7 +107,7 @@
     }
 }
 
-.donation-label {
+.stack-widget-donation-label {
     color: #555;
     font-weight: 500;
     white-space: nowrap;
@@ -125,7 +125,7 @@
     }
 }
 
-.donation-address {
+.stack-widget-donation-address {
     flex: 1;
     background: transparent;
     border: none;
@@ -156,7 +156,7 @@
     }
 }
 
-.donation-btn-copy {
+.stack-widget-donation-btn-copy {
     background: #ffffff;
     color: #545455;
     border: none;
@@ -191,7 +191,7 @@
     }
 }
 
-.donate-btn-donate {
+.stack-widget-donate-btn-donate {
     background: #ffffff;
     color: #545455;
     border: none;
@@ -226,7 +226,7 @@
     }
 }
 
-.donation-address {
+.stack-widget-donation-address {
     flex: 1;
     background: transparent;
     border: none;
@@ -256,7 +256,7 @@
 }
 
 
-.donation-amount-input {
+.stack-widget-donation-amount-input {
     background: #ffffff;
     color: #545455;
     border: 1px solid #d0d7de;
@@ -292,7 +292,7 @@
     }
 }
 
-.donate-btn-donate.active {
+.stack-widget-donate-btn-donate.active {
     background: #0969da;
     color: #ffffff;
     
@@ -311,7 +311,7 @@
     }
 }
 // 弹窗样式
-.donation-modal {
+.stack-widget-donation-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -323,7 +323,7 @@
     justify-content: center;
 }
 
-.donation-modal-overlay {
+.stack-widget-donation-modal-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -333,7 +333,7 @@
     backdrop-filter: blur(4px);
 }
 
-.donation-modal-content {
+.stack-widget-donation-modal-content {
     position: relative;
     background: white;
     border-radius: 12px;
@@ -356,7 +356,7 @@
     }
 }
 
-.donation-modal-header {
+.stack-widget-donation-modal-header {
     padding: 20px 20px 15px;
     border-bottom: 1px solid #eee;
     display: flex;
@@ -364,7 +364,7 @@
     gap: 12px;
 }
 
-.donation-modal-icon {
+.stack-widget-donation-modal-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -395,7 +395,7 @@
     }
 }
 
-.donation-modal-title {
+.stack-widget-donation-modal-title {
     flex: 1;
     margin: 0;
     font-size: 18px;
@@ -403,7 +403,7 @@
     color: #333;
 }
 
-.donation-modal-close {
+.stack-widget-donation-modal-close {
     background: none;
     border: none;
     font-size: 24px;
@@ -424,25 +424,25 @@
     }
 }
 
-.donation-modal-body {
+.stack-widget-donation-modal-body {
     padding: 20px;
 }
 
-.donation-modal-message {
+.stack-widget-donation-modal-message {
     margin: 0;
     line-height: 1.6;
     color: #666;
     font-size: 14px;
 }
 
-.donation-modal-footer {
+.stack-widget-donation-modal-footer {
     padding: 15px 20px 20px;
     display: flex;
     gap: 10px;
     justify-content: flex-end;
 }
 
-.donation-modal-btn {
+.stack-widget-donation-modal-btn {
     padding: 8px 20px;
     border: none;
     border-radius: 6px;
@@ -473,24 +473,24 @@
 
 // 暗色主题适配
 html[data-scheme="dark"] {
-    .donation-modal-content {
+    .stack-widget-donation-modal-content {
         background: #2d2d2d;
         color: #fff;
     }
     
-    .donation-modal-header {
+    .stack-widget-donation-modal-header {
         border-bottom-color: #444;
     }
     
-    .donation-modal-title {
+    .stack-widget-donation-modal-title {
         color: #fff;
     }
     
-    .donation-modal-message {
+    .stack-widget-donation-modal-message {
         color: #ccc;
     }
     
-    .donation-modal-close:hover {
+    .stack-widget-donation-modal-close:hover {
         background: #444;
         color: #fff;
     }
