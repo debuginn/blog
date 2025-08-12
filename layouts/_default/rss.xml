@@ -47,6 +47,17 @@
                 {{ "<" | html }}img src="{{ $image.permalink | absURL }}" alt="Featured image of post {{ .Title }}" {{ "/>" | html}}
             {{- end -}}
             {{ $content }}
+            {{- if .Site.Params.popular.items -}}
+                {{ "<br><br><strong>热门文章:</strong><br>" | html }}
+                {{- range .Site.Params.popular.items -}}
+                    {{- $href := .href -}}
+                    {{- if not (hasPrefix .href "http") -}}
+                        {{- $href = printf "%s%s" $.Site.BaseURL .href -}}
+                    {{- end -}}
+                    {{ printf "<a href=\"%s\">%s</a> (浏览量: %s)<br>" $href .text .views | html }}
+                {{- end -}}
+            {{- end -}}
+            {{ "<hr /><img src=\"https://static.debuginn.com/20241111FZS0zY.png\" alt=\"关注二维码\" />" | html }}
         </description>
         </item>
         {{ end }}
