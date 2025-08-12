@@ -8,30 +8,30 @@
     <h2 class="widget-title section-title">
         {{ $context.Site.Params.donation.title }}
     </h2>
-    <div class="donation-card">
-        <div class="donation-section">
+    <div class="stack-widget-donation-card">
+        <div class="stack-widget-donation-section">
             {{- range $context.Site.Params.donation.cryptos }}
-            <div class="donation-item" data-crypto="{{ .label | lower }}">
-                <div class="donation-item-bg">
+            <div class="stack-widget-donation-item" data-crypto="{{ .label | lower }}">
+                <div class="stack-widget-donation-item-bg">
                     {{ if eq (.label | lower) "eth" }}
-                        {{ partial "helper/icon" "currency-ethereum" }}
+                    {{ partial "helper/icon" "currency-ethereum" }}
                     {{ else if eq (.label | lower) "btc" }}
-                        {{ partial "helper/icon" "coin-bitcoin" }}
+                    {{ partial "helper/icon" "coin-bitcoin" }}
                     {{ else }}
-                        {{ partial "helper/icon" "wallet" }}
+                    {{ partial "helper/icon" "wallet" }}
                     {{ end }}
                 </div>
-                <span class="donation-label">{{ .label }}</span>
-                <div class="donation-address">
+                <span class="stack-widget-donation-label">{{ .label }}</span>
+                <div class="stack-widget-donation-address">
                     <code>{{ .address }}</code>
                 </div>
-                <button class="donation-btn-copy" data-clipboard-text="{{ .address }}" title="Copy">
+                <button class="stack-widget-donation-btn-copy" data-clipboard-text="{{ .address }}" title="Copy">
                     Copy
                 </button>
-                <input type="number" class="donation-amount-input" value="{{ .amount | default 1 }}" step="0.001"
-                    min="0" style="display: none;">
+                <input type="number" class="stack-widget-donation-amount-input" value="{{ .amount | default 1 }}"
+                    step="0.001" min="0" style="display: none;">
                 {{- if and (isset . "donate") .donate }}
-                <button class="donate-btn-donate" title="Donate" onclick="toggleDonateMode(this)"
+                <button class="stack-widget-donate-btn-donate" title="Donate" onclick="toggleDonateMode(this)"
                     data-address="{{ .address }}">
                     Donate
                 </button>
@@ -40,100 +40,43 @@
             {{- end }}
         </div>
         {{ if $context.Site.Params.donation.qrcode }}
-        <div class="donation-card">
+        <div class="stack-widget-donation-card">
             {{ if $context.Site.Params.donation.link }}
-            <a href="{{ $context.Site.Params.donation.link }}" target="{{ $context.Site.Params.donation.target | default "_self" }}" rel="noopener noreferrer">
-                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
+            <a href="{{ $context.Site.Params.donation.link }}"
+                target="{{ $context.Site.Params.donation.target | default " _self" }}" rel="noopener noreferrer">
+                <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="stack-widget-donation-qr">
             </a>
             {{ else }}
-            <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="donation-qr">
+            <img src="{{ $context.Site.Params.donation.qrcode }}" alt="donation" class="stack-widget-donation-qr">
             {{ end }}
         </div>
         {{ end }}
     </div>
 </section>
 
-<!-- 自定义弹窗组件 -->
-<div id="donation-modal" class="donation-modal" style="display: none;">
-    <div class="donation-modal-overlay"></div>
-    <div class="donation-modal-content">
-        <div class="donation-modal-header">
-            <div class="donation-modal-icon">
-                <span id="donation-modal-icon-content"></span>
-            </div>
-            <h3 id="donation-modal-title">提示</h3>
-        </div>
-        <div class="donation-modal-body">
-            <p id="donation-modal-message"></p>
-        </div>
-        <div class="donation-modal-footer">
-            <button id="donation-modal-confirm" class="donation-modal-btn donation-modal-btn-primary"
-                onclick="closeDonationModal()">确定</button>
-            <button id="donation-modal-cancel" class="donation-modal-btn donation-modal-btn-secondary"
-                onclick="closeDonationModal()" style="display: none;">取消</button>
-        </div>
-    </div>
-</div>
+<!-- 简单的 Toast 组件 -->
+<div id="stack-widget-donation-toast" class="stack-widget-donation-toast"></div>
 
 <script>
-    // 弹窗管理函数
-    function showDonationModal(message, type = 'info', title = '提示') {
-        const modal = document.getElementById('donation-modal');
-        const titleEl = document.getElementById('donation-modal-title');
-        const messageEl = document.getElementById('donation-modal-message');
-        const iconEl = document.getElementById('donation-modal-icon-content');
-        const iconContainer = iconEl.parentElement;
-
-        // 设置内容
-        titleEl.textContent = title;
-        messageEl.textContent = message;
-
-        // 设置图标和样式
-        iconContainer.className = 'donation-modal-icon ' + type;
-        switch (type) {
-            case 'success':
-                iconEl.textContent = '✓';
-                break;
-            case 'error':
-                iconEl.textContent = '✕';
-                break;
-            case 'warning':
-                iconEl.textContent = '⚠';
-                break;
-            default:
-                iconEl.textContent = 'ℹ';
-        }
-
-        // 显示弹窗
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+    // Toast 管理函数
+    function showToast(message, type = 'info', duration = 3000) {
+        const toast = document.getElementById('stack-widget-donation-toast');
+        
+        // 设置消息和类型
+        toast.textContent = message;
+        toast.className = `stack-widget-donation-toast stack-widget-donation-toast-${type} stack-widget-donation-toast-show`;
+        
+        // 自动隐藏
+        setTimeout(() => {
+            toast.className = 'stack-widget-donation-toast';
+        }, duration);
     }
-
-    function closeDonationModal() {
-        const modal = document.getElementById('donation-modal');
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    // 点击遮罩层关闭弹窗
-    document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('donation-modal');
-        const overlay = modal.querySelector('.donation-modal-overlay');
-        overlay.addEventListener('click', closeDonationModal);
-
-        // ESC 键关闭弹窗
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.style.display === 'flex') {
-                closeDonationModal();
-            }
-        });
-    });
 
     async function toggleDonateMode(donateBtn) {
-        const donationItem = donateBtn.closest('.donation-item');
-        const amountInput = donationItem.querySelector('.donation-amount-input');
+        const donationItem = donateBtn.closest('.stack-widget-donation-item');
+        const amountInput = donationItem.querySelector('.stack-widget-donation-amount-input');
         const address = donateBtn.getAttribute('data-address');
-        const label = donationItem.querySelector('.donation-label').textContent.trim();
+        const label = donationItem.querySelector('.stack-widget-donation-label').textContent.trim();
 
         // 去除文本内容的空格，确保比较准确
         const buttonText = donateBtn.textContent.trim();
@@ -148,7 +91,7 @@
             // 第二次点击：唤起钱包支付
             const amount = amountInput.value;
             if (!amount || amount <= 0) {
-                showDonationModal('请输入有效的捐赠金额', 'warning', '输入错误');
+                showToast('请输入有效的捐赠金额', 'warning');
                 return;
             }
             // 转换为数值类型
@@ -163,7 +106,7 @@
                 resetDonateButton(donateBtn, amountInput);
             } catch (error) {
                 console.error('支付失败:', error);
-                showDonationModal('支付失败: ' + error.message, 'error', '支付失败');
+                showToast('支付失败: ' + error.message, 'error');
                 // 支付失败后恢复 Pay 状态
                 donateBtn.textContent = 'Pay';
             } finally {
@@ -182,8 +125,8 @@
         donateBtn.disabled = false;
         amountInput.style.display = 'none';
         // 获取配置的默认金额，确保为数值类型
-        const donationItem = donateBtn.closest('.donation-item');
-        const defaultAmountStr = donationItem.querySelector('.donation-amount-input').getAttribute('value');
+        const donationItem = donateBtn.closest('.stack-widget-donation-item');
+        const defaultAmountStr = donationItem.querySelector('.stack-widget-donation-amount-input').getAttribute('value');
         const defaultAmount = parseFloat(defaultAmountStr);
         amountInput.value = defaultAmount;
     }
@@ -216,7 +159,7 @@
 
         // 检查是否支持该代币
         if (tokenConfig.error) {
-            showDonationModal(tokenConfig.error, 'error', '不支持的代币');
+            showToast(tokenConfig.error, 'error');
             throw new Error(tokenConfig.error);
         }
 
@@ -227,7 +170,7 @@
     async function payWithEthereum(toAddress, amount, tokenConfig) {
         // 检查是否安装了以太坊钱包
         if (typeof window.ethereum === 'undefined') {
-            showDonationModal('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）', 'warning', '未检测到钱包');
+            showToast('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）', 'warning', 4000);
             throw new Error('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）');
         }
 
@@ -238,14 +181,14 @@
             // 检查网络
             const chainId = await window.ethereum.request({ method: 'eth_chainId' });
             if (chainId !== tokenConfig.chainId) {
-                showDonationModal(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`, 'warning', '网络错误');
+                showToast(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`, 'warning');
                 throw new Error(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`);
             }
 
             // 获取当前账户
             const accounts = await window.ethereum.request({ method: 'eth_accounts' });
             if (accounts.length === 0) {
-                showDonationModal('请先连接钱包账户', 'warning', '未连接账户');
+                showToast('请先连接钱包账户', 'warning');
                 throw new Error('请先连接钱包账户');
             }
 
@@ -261,19 +204,19 @@
                 txHash = await sendETH(fromAddress, toAddress, amount, tokenConfig);
             }
 
-            showDonationModal(`支付成功！\n交易哈希: ${txHash}`, 'success', '支付成功');
-            
+            showToast(`支付成功！交易哈希: ${txHash.slice(0, 10)}...`, 'success', 5000);
+
             // 隐藏金额输入框
             const amountInput = document.querySelector('.donation-amount-input');
             if (amountInput) {
                 amountInput.style.display = 'none';
             }
-            
+
             return txHash;
 
         } catch (error) {
             if (error.code === 4001) {
-                showDonationModal('用户取消了交易', 'info', '交易取消');
+                showToast('用户取消了交易', 'info');
                 throw new Error('用户取消了交易');
             } else {
                 throw error;
@@ -326,7 +269,7 @@
 <!-- 捐赠卡片复制按钮 -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const copyButtons = document.querySelectorAll('.donation-btn-copy');
+        const copyButtons = document.querySelectorAll('.stack-widget-donation-btn-copy');
 
         copyButtons.forEach(function (button) {
             button.addEventListener('click', function () {
@@ -334,11 +277,13 @@
                 const originalText = this.textContent;
                 navigator.clipboard.writeText(text).then(function () {
                     button.textContent = 'Copied!';
+                    showToast('地址已复制到剪贴板', 'success');
                     setTimeout(function () {
                         button.textContent = originalText;
                     }, 1500);
                 }).catch(function () {
                     button.textContent = 'Failed!';
+                    showToast('复制失败', 'error');
                     setTimeout(function () {
                         button.textContent = originalText;
                     }, 1500);

@@ -8,16 +8,17 @@
     <h2 class="widget-title section-title">
         {{ $context.Site.Params.popular.title }}
     </h2>
-    <div class="popular-card">
-        <div class="popular-section">
+    <div class="stack-widget-popular-card">
+        <div class="stack-widget-popular-section">
             {{- range $context.Site.Params.popular.items }}
-            <a href="{{ .href }}"{{ if .target }} target="{{ .target }}"{{ end }} class="popular-item-link">
-                <div class="popular-item">
-                    <span class="popular-label">{{ partial "helper/icon" .icon }}</span>
-                    <div class="popular-text">
+            <a href="{{ .href }}" {{ if .target }} target="{{ .target }}" {{ end }}
+                class="stack-widget-popular-item-link">
+                <div class="stack-widget-popular-item">
+                    <span class="stack-widget-popular-label">{{ partial "helper/icon" .icon }}</span>
+                    <div class="stack-widget-popular-text">
                         {{ .text }}
                     </div>
-                    <div class="popular-views">
+                    <div class="stack-widget-popular-views">
                         {{ if .views }}{{ .views }} 阅读{{ end }}
                     </div>
                 </div>

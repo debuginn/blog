@@ -3,7 +3,7 @@
 */
 
 // =========== 赞赏卡片样式  start ======================
-.donation-card {
+.stack-widget-donation-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -23,7 +23,7 @@
     }
 }
 
-.donation-qr {
+.stack-widget-donation-qr {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -34,20 +34,20 @@
 }
 
 // 二维码链接样式
-.donation-card a {
+.stack-widget-donation-card a {
     display: block;
     text-decoration: none;
 }
 
 // 加密货币区域
-.donation-section {
+.stack-widget-donation-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.donation-item {
+.stack-widget-donation-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -81,7 +81,7 @@
     }
 }
 
-.donation-item-bg {
+.stack-widget-donation-item-bg {
     position: absolute;
     top: 0;
     left: -3px;
@@ -107,7 +107,7 @@
     }
 }
 
-.donation-label {
+.stack-widget-donation-label {
     color: #555;
     font-weight: 500;
     white-space: nowrap;
@@ -125,7 +125,7 @@
     }
 }
 
-.donation-address {
+.stack-widget-donation-address {
     flex: 1;
     background: transparent;
     border: none;
@@ -156,7 +156,7 @@
     }
 }
 
-.donation-btn-copy {
+.stack-widget-donation-btn-copy {
     background: #ffffff;
     color: #545455;
     border: none;
@@ -191,7 +191,7 @@
     }
 }
 
-.donate-btn-donate {
+.stack-widget-donate-btn-donate {
     background: #ffffff;
     color: #545455;
     border: none;
@@ -226,37 +226,7 @@
     }
 }
 
-.donation-address {
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 0;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-
-    code {
-        background: transparent;
-        border: none;
-        padding: 0;
-        font-size: 0.6em;
-        color: #495057;
-        word-break: break-all;
-        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-        display: block;
-        line-height: 1.4;
-
-        // 暗色主题
-        html[data-scheme="dark"] &,
-        body.dark &,
-        .dark & {
-            color: #f0f0f0 !important;
-        }
-    }
-}
-
-
-.donation-amount-input {
+.stack-widget-donation-amount-input {
     background: #ffffff;
     color: #545455;
     border: 1px solid #d0d7de;
@@ -292,7 +262,7 @@
     }
 }
 
-.donate-btn-donate.active {
+.stack-widget-donate-btn-donate.active {
     background: #0969da;
     color: #ffffff;
     
@@ -310,196 +280,78 @@
         }
     }
 }
-// 弹窗样式
-.donation-modal {
+
+// Toast 样式
+.stack-widget-donation-toast {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.donation-modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-}
-
-.donation-modal-content {
-    position: relative;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    max-width: 400px;
-    width: 90%;
-    max-height: 80vh;
-    overflow: hidden;
-    animation: modalSlideIn 0.3s ease-out;
-}
-
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.donation-modal-header {
-    padding: 20px 20px 15px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.donation-modal-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
-
-    &.success {
-        background: #e8f5e8;
-        color: #4caf50;
-    }
-
-    &.error {
-        background: #ffeaea;
-        color: #f44336;
-    }
-
-    &.warning {
-        background: #fff8e1;
-        color: #ff9800;
-    }
-
-    &.info {
-        background: #e3f2fd;
-        color: #2196f3;
-    }
-}
-
-.donation-modal-title {
-    flex: 1;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-}
-
-.donation-modal-close {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #999;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.2s;
-
-    &:hover {
-        background: #f5f5f5;
-        color: #666;
-    }
-}
-
-.donation-modal-body {
-    padding: 20px;
-}
-
-.donation-modal-message {
-    margin: 0;
-    line-height: 1.6;
-    color: #666;
-    font-size: 14px;
-}
-
-.donation-modal-footer {
-    padding: 15px 20px 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-.donation-modal-btn {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
-    transition: all 0.2s;
-    min-width: 80px;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    max-width: 80vw;
+    text-align: center;
+    word-wrap: break-word;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
-    &.donation-modal-btn-primary {
-        background: #007bff;
+    &.stack-widget-donation-toast-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.stack-widget-donation-toast-success {
+        background: rgba(76, 175, 80, 0.9);
         color: white;
-
-        &:hover {
-            background: #0056b3;
-        }
     }
 
-    &.donation-modal-btn-secondary {
-        background: #6c757d;
+    &.stack-widget-donation-toast-error {
+        background: rgba(244, 67, 54, 0.9);
         color: white;
+    }
 
-        &:hover {
-            background: #545b62;
+    &.stack-widget-donation-toast-warning {
+        background: rgba(255, 152, 0, 0.9);
+        color: white;
+    }
+
+    &.stack-widget-donation-toast-info {
+        background: rgba(33, 150, 243, 0.9);
+        color: white;
+    }
+
+    // 暗色主题适配
+    html[data-scheme="dark"] & {
+        &.stack-widget-donation-toast-success {
+            background: rgba(76, 175, 80, 0.95);
         }
-    }
-}
 
-// 暗色主题适配
-html[data-scheme="dark"] {
-    .donation-modal-content {
-        background: #2d2d2d;
-        color: #fff;
-    }
-    
-    .donation-modal-header {
-        border-bottom-color: #444;
-    }
-    
-    .donation-modal-title {
-        color: #fff;
-    }
-    
-    .donation-modal-message {
-        color: #ccc;
-    }
-    
-    .donation-modal-close:hover {
-        background: #444;
-        color: #fff;
+        &.stack-widget-donation-toast-error {
+            background: rgba(244, 67, 54, 0.95);
+        }
+
+        &.stack-widget-donation-toast-warning {
+            background: rgba(255, 152, 0, 0.95);
+        }
+
+        &.stack-widget-donation-toast-info {
+            background: rgba(33, 150, 243, 0.95);
+        }
     }
 }
 
 //  ============== 赞赏卡片样式  end ======================
 
 //  ============== 推广卡片样式  start ======================
-.promote-card {
+.stack-widget-promote-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -520,14 +372,14 @@ html[data-scheme="dark"] {
 }
 
 // 推广区域
-.promote-section {
+.stack-widget-promote-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.promote-item {
+.stack-widget-promote-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -559,7 +411,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.promote-label {
+.stack-widget-promote-label {
     font-size: 0.9em;
     color: #555;
     font-weight: 500;
@@ -575,7 +427,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.promote-text {
+.stack-widget-promote-text {
     flex: 1;
     background: transparent;
     border: none;
@@ -608,7 +460,7 @@ html[data-scheme="dark"] {
 //  ============== 推广卡片样式  end ======================
 
 //  ============== 热门卡片样式  start ======================
-.popular-card {
+.stack-widget-popular-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -629,14 +481,14 @@ html[data-scheme="dark"] {
 }
 
 // 热门区域
-.popular-section {
+.stack-widget-popular-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.popular-item {
+.stack-widget-popular-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -668,7 +520,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.popular-label {
+.stack-widget-popular-label {
     font-size: 0.9em;
     color: #555;
     font-weight: 500;
@@ -684,7 +536,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.popular-text {
+.stack-widget-popular-text {
     flex: 1;
     background: transparent;
     border: none;
@@ -714,7 +566,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.popular-views {
+.stack-widget-popular-views {
     font-size: 0.75em;
     color: #888;
     margin-top: 2px;
