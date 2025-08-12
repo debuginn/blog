@@ -54,81 +54,23 @@
     </div>
 </section>
 
-<!-- 自定义弹窗组件 -->
-<div id="stack-widget-donation-modal" class="stack-widget-donation-modal" style="display: none;">
-    <div class="stack-widget-donation-modal-overlay"></div>
-    <div class="stack-widget-donation-modal-content">
-        <div class="stack-widget-donation-modal-header">
-            <div class="stack-widget-donation-modal-icon">
-                <span id="stack-widget-donation-modal-icon-content"></span>
-            </div>
-            <h3 id="stack-widget-donation-modal-title">提示</h3>
-        </div>
-        <div class="stack-widget-donation-modal-body">
-            <p id="stack-widget-donation-modal-message"></p>
-        </div>
-        <div class="stack-widget-donation-modal-footer">
-            <button id="stack-widget-donation-modal-confirm" class="stack-widget-donation-modal-btn stack-widget-donation-modal-btn-primary"
-                onclick="closeDonationModal()">确定</button>
-            <button id="stack-widget-donation-modal-cancel" class="stack-widget-donation-modal-btn stack-widget-donation-modal-btn-secondary"
-                onclick="closeDonationModal()" style="display: none;">取消</button>
-        </div>
-    </div>
-</div>
+<!-- 简单的 Toast 组件 -->
+<div id="stack-widget-donation-toast" class="stack-widget-donation-toast"></div>
 
 <script>
-    // 弹窗管理函数
-    function showDonationModal(message, type = 'info', title = '提示') {
-        const modal = document.getElementById('stack-widget-donation-modal');
-        const titleEl = document.getElementById('stack-widget-donation-modal-title');
-        const messageEl = document.getElementById('stack-widget-donation-modal-message');
-        const iconEl = document.getElementById('stack-widget-donation-modal-icon-content');
-        const iconContainer = iconEl.parentElement;
-
-        // 设置内容
-        titleEl.textContent = title;
-        messageEl.textContent = message;
-
-        // 设置图标和样式
-        iconContainer.className = 'stack-widget-donation-modal-icon ' + type;
-        switch (type) {
-            case 'success':
-                iconEl.textContent = '✓';
-                break;
-            case 'error':
-                iconEl.textContent = '✕';
-                break;
-            case 'warning':
-                iconEl.textContent = '⚠';
-                break;
-            default:
-                iconEl.textContent = 'ℹ';
-        }
-
-        // 显示弹窗
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+    // Toast 管理函数
+    function showToast(message, type = 'info', duration = 3000) {
+        const toast = document.getElementById('stack-widget-donation-toast');
+        
+        // 设置消息和类型
+        toast.textContent = message;
+        toast.className = `stack-widget-donation-toast stack-widget-donation-toast-${type} stack-widget-donation-toast-show`;
+        
+        // 自动隐藏
+        setTimeout(() => {
+            toast.className = 'stack-widget-donation-toast';
+        }, duration);
     }
-
-    function closeDonationModal() {
-        const modal = document.getElementById('stack-widget-donation-modal');
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    // 点击遮罩层关闭弹窗
-    document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('stack-widget-donation-modal');
-        const overlay = modal.querySelector('.stack-widget-donation-modal-overlay');
-        overlay.addEventListener('click', closeDonationModal);
-
-        // ESC 键关闭弹窗
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.style.display === 'flex') {
-                closeDonationModal();
-            }
-        });
-    });
 
     async function toggleDonateMode(donateBtn) {
         const donationItem = donateBtn.closest('.stack-widget-donation-item');
@@ -149,7 +91,7 @@
             // 第二次点击：唤起钱包支付
             const amount = amountInput.value;
             if (!amount || amount <= 0) {
-                showDonationModal('请输入有效的捐赠金额', 'warning', '输入错误');
+                showToast('请输入有效的捐赠金额', 'warning');
                 return;
             }
             // 转换为数值类型
@@ -164,7 +106,7 @@
                 resetDonateButton(donateBtn, amountInput);
             } catch (error) {
                 console.error('支付失败:', error);
-                showDonationModal('支付失败: ' + error.message, 'error', '支付失败');
+                showToast('支付失败: ' + error.message, 'error');
                 // 支付失败后恢复 Pay 状态
                 donateBtn.textContent = 'Pay';
             } finally {
@@ -217,7 +159,7 @@
 
         // 检查是否支持该代币
         if (tokenConfig.error) {
-            showDonationModal(tokenConfig.error, 'error', '不支持的代币');
+            showToast(tokenConfig.error, 'error');
             throw new Error(tokenConfig.error);
         }
 
@@ -228,7 +170,7 @@
     async function payWithEthereum(toAddress, amount, tokenConfig) {
         // 检查是否安装了以太坊钱包
         if (typeof window.ethereum === 'undefined') {
-            showDonationModal('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）', 'warning', '未检测到钱包');
+            showToast('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）', 'warning', 4000);
             throw new Error('请先安装支持以太坊的浏览器钱包（如 MetaMask、Trust Wallet、Coinbase Wallet 等）');
         }
 
@@ -239,14 +181,14 @@
             // 检查网络
             const chainId = await window.ethereum.request({ method: 'eth_chainId' });
             if (chainId !== tokenConfig.chainId) {
-                showDonationModal(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`, 'warning', '网络错误');
+                showToast(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`, 'warning');
                 throw new Error(`请切换到正确的网络 (Chain ID: ${tokenConfig.chainId})`);
             }
 
             // 获取当前账户
             const accounts = await window.ethereum.request({ method: 'eth_accounts' });
             if (accounts.length === 0) {
-                showDonationModal('请先连接钱包账户', 'warning', '未连接账户');
+                showToast('请先连接钱包账户', 'warning');
                 throw new Error('请先连接钱包账户');
             }
 
@@ -262,7 +204,7 @@
                 txHash = await sendETH(fromAddress, toAddress, amount, tokenConfig);
             }
 
-            showDonationModal(`支付成功！\n交易哈希: ${txHash}`, 'success', '支付成功');
+            showToast(`支付成功！交易哈希: ${txHash.slice(0, 10)}...`, 'success', 5000);
 
             // 隐藏金额输入框
             const amountInput = document.querySelector('.donation-amount-input');
@@ -274,7 +216,7 @@
 
         } catch (error) {
             if (error.code === 4001) {
-                showDonationModal('用户取消了交易', 'info', '交易取消');
+                showToast('用户取消了交易', 'info');
                 throw new Error('用户取消了交易');
             } else {
                 throw error;
@@ -335,11 +277,13 @@
                 const originalText = this.textContent;
                 navigator.clipboard.writeText(text).then(function () {
                     button.textContent = 'Copied!';
+                    showToast('地址已复制到剪贴板', 'success');
                     setTimeout(function () {
                         button.textContent = originalText;
                     }, 1500);
                 }).catch(function () {
                     button.textContent = 'Failed!';
+                    showToast('复制失败', 'error');
                     setTimeout(function () {
                         button.textContent = originalText;
                     }, 1500);
