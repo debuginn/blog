@@ -8,13 +8,14 @@
     <h2 class="widget-title section-title">
         {{ $context.Site.Params.promote.title }}
     </h2>
-    <div class="promote-card">
-        <div class="promote-section">
+    <div class="stack-widget-promote-card">
+        <div class="stack-widget-promote-section">
             {{- range $context.Site.Params.promote.items }}
-            <a href="{{ .href }}"{{ if .target }} target="{{ .target }}"{{ end }} class="promote-item-link">
-                <div class="promote-item">
-                    <span class="promote-label">{{ partial "helper/icon" .icon }}</span>
-                    <div class="promote-text">
+            <a href="{{ .href }}" {{ if .target }} target="{{ .target }}" {{ end }}
+                class="stack-widget-promote-item-link">
+                <div class="stack-widget-promote-item">
+                    <span class="stack-widget-promote-label">{{ partial "helper/icon" .icon }}</span>
+                    <div class="stack-widget-promote-text">
                         {{ .text }}
                     </div>
                 </div>

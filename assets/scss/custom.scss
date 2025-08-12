@@ -499,7 +499,7 @@ html[data-scheme="dark"] {
 //  ============== 赞赏卡片样式  end ======================
 
 //  ============== 推广卡片样式  start ======================
-.promote-card {
+.stack-widget-promote-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -520,14 +520,14 @@ html[data-scheme="dark"] {
 }
 
 // 推广区域
-.promote-section {
+.stack-widget-promote-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.promote-item {
+.stack-widget-promote-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -559,7 +559,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.promote-label {
+.stack-widget-promote-label {
     font-size: 0.9em;
     color: #555;
     font-weight: 500;
@@ -575,7 +575,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.promote-text {
+.stack-widget-promote-text {
     flex: 1;
     background: transparent;
     border: none;
@@ -608,7 +608,7 @@ html[data-scheme="dark"] {
 //  ============== 推广卡片样式  end ======================
 
 //  ============== 热门卡片样式  start ======================
-.popular-card {
+.stack-widget-popular-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -629,14 +629,14 @@ html[data-scheme="dark"] {
 }
 
 // 热门区域
-.popular-section {
+.stack-widget-popular-section {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
 
-.popular-item {
+.stack-widget-popular-item {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -668,7 +668,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.popular-label {
+.stack-widget-popular-label {
     font-size: 0.9em;
     color: #555;
     font-weight: 500;
@@ -684,7 +684,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.popular-text {
+.stack-widget-popular-text {
     flex: 1;
     background: transparent;
     border: none;
@@ -714,7 +714,7 @@ html[data-scheme="dark"] {
     }
 }
 
-.popular-views {
+.stack-widget-popular-views {
     font-size: 0.75em;
     color: #888;
     margin-top: 2px;
