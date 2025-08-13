@@ -45,7 +45,7 @@
             {{- $image := partial "helper/image" (dict "Context" . "Type" "rss") -}}
             {{- if $image.exists -}}
                 {{ "<" | html }}img src="{{ $image.permalink | absURL }}" alt="Featured image of post {{ .Title }}" {{ "/>" | html}}
-            {{- end -}}{{ $content }}</description>
+            {{- end -}}{{ $content }}<br/><hr/><img src="https://static.debuginn.com/202302202248422.png" alt="关注微信公众号" /></description>
         </item>
         {{ end }}
     </channel>
