@@ -5,7 +5,7 @@ rssFullContent = true
 
 [footer]
 since = 2017
-customText = '<a href="https://debuginn.com">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/">博客</a>&nbsp;·&nbsp<a href="https://photo.debuginn.com">摄影</a>&nbsp;·&nbsp<a href="/project/">项目</a>&nbsp;·&nbsp<a href="/use/">使用</a>&nbsp;·&nbsp<a href="/about/">关于</a>'
+customText = '<a href="https://debuginn.com">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/">博客</a>&nbsp;·&nbsp<a href="https://photo.debuginn.com">摄影</a>&nbsp;·&nbsp<a href="/project/">项目</a>&nbsp;·&nbsp<a href="/use/">使用</a>&nbsp;·&nbsp<a href="/reward/">赞赏</a>&nbsp;·&nbsp<a href="/about/">关于</a>'
 
 [dateFormat]
 published = "Jan 02, 2006"
@@ -51,6 +51,12 @@ type = "tag-cloud"
 
 [widgets.homepage.params]
 limit = 32
+
+[[widgets.homepage]]
+type = "archives"
+
+[widgets.homepage.params]
+limit = 3
 
 [[widgets.page]]
 type = "search"
@@ -109,7 +115,7 @@ lang = "zh-CN"
 [donation]
 title = "赞赏"
 qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
-link = "#"
+link = "/reward/"
 
 [[donation.cryptos]]
 label = "BTC"
@@ -148,19 +154,19 @@ title = "热门"
 href = "/p/work-5-years/"
 icon = "brand-linkedin"
 text = "入职 5 周年，我和小米的 5 周年"
-views = "1.2k"
+views = "2.2k"
+
+[[popular.items]]
+href = "/use/"
+icon = "rss"
+text = "Follow｜下一代的信息浏览器"
+views = "1.7k"
 
 [[popular.items]]
 href = "/p/financial-hongkong-card/"
 icon = "wallet"
 text = "港卡开卡指南"
 views = "856"
-
-[[popular.items]]
-href = "/use/"
-icon = "devices"
-text = "我的使用"
-views = "447"
 
 [[popular.items]]
 href = "/p/travel-bohainan/"
