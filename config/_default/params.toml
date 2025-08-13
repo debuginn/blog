@@ -109,7 +109,6 @@ lang = "zh-CN"
 [donation]
 title = "赞赏"
 qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
-link = "#"
 
 [[donation.cryptos]]
 label = "BTC"
