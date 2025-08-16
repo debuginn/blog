@@ -118,9 +118,11 @@ qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
 link = "/reward/"
 
 [[donation.cryptos]]
-label = "BTC"
-address = "bc1quwwdn506pknw8tl8ynrgjql2350cpmxmgjttdp"
-icon = "coin-bitcoin"
+label = "SOL"
+address = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
+donate = true
+amount = 0.005
+icon = "coin-solana"
 
 [[donation.cryptos]]
 label = "ETH"
