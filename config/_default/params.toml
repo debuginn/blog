@@ -118,16 +118,16 @@ qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
 link = "/reward/"
 
 [[donation.cryptos]]
-label = "SOL"
-address = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
-icon = "currency-solana"
-
-[[donation.cryptos]]
 label = "ETH"
 address = "0xd06a56704ecb1eee65abcaa3101d88e2a8225a4e"
 donate = true
 amount = 0.001
 icon = "currency-ethereum"
+
+[[donation.cryptos]]
+label = "SOL"
+address = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
+icon = "currency-solana"
 
 [promote]
 title = "推广"
