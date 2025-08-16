@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Debug客栈</title><link>https://blog.debuginn.com/tags/tools/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Tools on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 12 Nov 2017 20:41:15 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Sublime Text 崇高的文本编辑器</title><link>https://blog.debuginn.com/p/sublime-text/</link><pubDate>Sun, 12 Nov 2017 20:41:15 +0800</pubDate><guid>https://blog.debuginn.com/p/sublime-text/</guid><description>&lt;img src="https://static.debuginn.com/202302202044967.jpg" alt="Featured image of post Sublime Text 崇高的文本编辑器" />&lt;h2 id="安装-sublime-text3-软件">&lt;a href="#%e5%ae%89%e8%a3%85-sublime-text3-%e8%bd%af%e4%bb%b6" class="header-anchor">&lt;/a>安装 Sublime text3 软件
+&lt;/h2>&lt;p>官方网址：&lt;a class="link" href="https://www.sublimetext.com/3" target="_blank" rel="noopener"
+>https://www.sublimetext.com/3&lt;/a>&lt;/p>
+&lt;p>选择Windows - also available as a portable version一项，点击下载安装。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302202046837.png"
+loading="lazy"
+alt="sublime下载界面"
+>&lt;/p>
+&lt;h2 id="安装-packagecontrol-插件">&lt;a href="#%e5%ae%89%e8%a3%85-packagecontrol-%e6%8f%92%e4%bb%b6" class="header-anchor">&lt;/a>安装 packagecontrol 插件
+&lt;/h2>&lt;p>&lt;img src="https://static.debuginn.com/202302202047443.jpg"
+loading="lazy"
+alt="https://packagecontrol.io"
+>&lt;/p>
+&lt;p>官方网址：&lt;a class="link" href="https://packagecontrol.io/" target="_blank" rel="noopener"
+>https://packagecontrol.io/&lt;/a>&lt;/p>
+&lt;p>选择 Installation 项&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302202048556.jpg"
+loading="lazy"
+alt="复制代码界面"
+>&lt;/p>
+&lt;p>选择 SUBLIME TEXT3 代码进行复制&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302202049660.jpg"
+loading="lazy"
+alt="sulime 输入框界面"
+>&lt;/p>
+&lt;p>打开 sublime text3 软件，选择 &lt;code>View-&amp;gt;Show Console&lt;/code> 选项（或者按 &lt;code>Ctrl+~组合键&lt;/code>），调出命令行，将代码粘贴至命令行，回车，进行安装 packagecontrol 插件；&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302202051068.jpg"
+loading="lazy"
+alt="Preferences"
+>&lt;/p>
+&lt;p>安装好之后在菜单栏Preferences栏目中会有packagecontrol选项，即安装成功。&lt;/p>
+&lt;h2 id="安装汉化插件-chineselocalization">&lt;a href="#%e5%ae%89%e8%a3%85%e6%b1%89%e5%8c%96%e6%8f%92%e4%bb%b6-chineselocalization" class="header-anchor">&lt;/a>安装汉化插件 ChineseLocalization
+&lt;/h2>&lt;p>&lt;img src="https://static.debuginn.com/202302202054550.jpg"
+loading="lazy"
+alt="Preferences"
+>&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302202055358.jpg"
+loading="lazy"
+alt="ChineseLocalization"
+>&lt;/p>
+&lt;p>安装 sublime 汉化插件 ChineseLocalization&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302202055437.jpg"
+loading="lazy"
+alt="install"
+>&lt;/p>
+&lt;p>在弹出的框中，由于网速原因，请耐心等待……
+输入插件名称ChineseLocalization，回车&lt;code>[enter]&lt;/code>进行安装&lt;/p>
+&lt;h2 id="各类插件安装推荐">&lt;a href="#%e5%90%84%e7%b1%bb%e6%8f%92%e4%bb%b6%e5%ae%89%e8%a3%85%e6%8e%a8%e8%8d%90" class="header-anchor">&lt;/a>各类插件安装推荐
+&lt;/h2>&lt;p>其他插件均和 ChineseLocalization 插件安装过程一样，在此不再重复操作，只推荐几款插件。&lt;/p>
+&lt;h3 id="必备的插件安装-初学者推荐安装">&lt;a href="#%e5%bf%85%e5%a4%87%e7%9a%84%e6%8f%92%e4%bb%b6%e5%ae%89%e8%a3%85-%e5%88%9d%e5%ad%a6%e8%80%85%e6%8e%a8%e8%8d%90%e5%ae%89%e8%a3%85" class="header-anchor">&lt;/a>必备的插件安装 (初学者推荐安装)
+&lt;/h3>&lt;h4 id="emmet">&lt;a href="#emmet" class="header-anchor">&lt;/a>Emmet
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202057493.jpg"
+loading="lazy"
+alt="emmet"
+>&lt;/p>
+&lt;p>Emmet 的前身是大名鼎鼎的 Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿 CSS 选择器的语法来生成代码，大大提高了 HTML/CSS 代码编写的速度。&lt;/p>
+&lt;h4 id="pyside">&lt;a href="#pyside" class="header-anchor">&lt;/a>PySide
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202058785.jpg"
+loading="lazy"
+alt="pyside"
+>&lt;/p>
+&lt;p>PySide 是跨平台的应用程序框架 Qt 的 Python 绑定版本。&lt;/p>
+&lt;h4 id="autofilename">&lt;a href="#autofilename" class="header-anchor">&lt;/a>AutoFileName
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202059582.jpg"
+loading="lazy"
+alt="AutoFileName"
+>&lt;/p>
+&lt;p>一款在 Sublime Text 中可以自动补全文件路径及名称的插件。&lt;/p>
+&lt;h4 id="docblockr">&lt;a href="#docblockr" class="header-anchor">&lt;/a>DocBlockr
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202100975.jpg"
+loading="lazy"
+alt="DocBlockr"
+>&lt;/p>
+&lt;p>DocBlockr 是一款 Sublime Text 2 &amp;amp; 3 都可以使用的代码快注释插件。支持的语言有：JavaScript (including ES6), PHP, ActionScript, Haxe,CoffeeScript, TypeScript, Java, Groovy, Objective C, C, C++ and Rust.&lt;/p>
+&lt;h4 id="brackethighlighter">&lt;a href="#brackethighlighter" class="header-anchor">&lt;/a>BracketHighlighter
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202101837.jpg"
+loading="lazy"
+alt="BracketHighlighter"
+>&lt;/p>
+&lt;p>BracketHighlighter 是一款 Sublime 下匹配标签高亮的小插件，可以把匹配到的如 {}、()、”、””等对应的符号或者标签高亮显示。&lt;/p>
+&lt;h4 id="browser-refresh">&lt;a href="#browser-refresh" class="header-anchor">&lt;/a>Browser Refresh
+&lt;/h4>&lt;p>通过一个快捷键可以实现保存文件，切换到浏览器并自动刷新浏览器来查看更改结果。&lt;/p>
+&lt;h4 id="converttoutf8">&lt;a href="#converttoutf8" class="header-anchor">&lt;/a>ConvertToUTF8
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202102109.jpg"
+loading="lazy"
+alt="ConvertToUTF8"
+>&lt;/p>
+&lt;p>解决文档保存编码问题。&lt;/p>
+&lt;h4 id="colorpicker">&lt;a href="#colorpicker" class="header-anchor">&lt;/a>ColorPicker
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202102561.jpg"
+loading="lazy"
+alt="ColorPicker"
+>&lt;/p>
+&lt;p>一个多平台的颜色选择器插件。默认情况下，十六进制颜色代码使用大写字母插入。&lt;/p>
+&lt;h3 id="进阶的程序猿推荐插件安装">&lt;a href="#%e8%bf%9b%e9%98%b6%e7%9a%84%e7%a8%8b%e5%ba%8f%e7%8c%bf%e6%8e%a8%e8%8d%90%e6%8f%92%e4%bb%b6%e5%ae%89%e8%a3%85" class="header-anchor">&lt;/a>进阶的程序猿推荐插件安装
+&lt;/h3>&lt;h4 id="a-file-icon">&lt;a href="#a-file-icon" class="header-anchor">&lt;/a>a file icon
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202103090.jpg"
+loading="lazy"
+alt="a file icon"
+>&lt;/p>
+&lt;p>美化插件。可以更清楚了解每个文件的类型，一目了然。&lt;/p>
+&lt;h4 id="git">&lt;a href="#git" class="header-anchor">&lt;/a>git
+&lt;/h4>&lt;p>&lt;img src="https://static.debuginn.com/202302202104673.jpg"
+loading="lazy"
+alt="git"
+>&lt;/p>
+&lt;p>版本控制仓库，推荐学习使用。&lt;/p><br/><hr/><img src="https://static.debuginn.com/202302202248422.png" alt="关注微信公众号"/></description></item></channel></rss>

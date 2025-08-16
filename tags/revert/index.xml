@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Revert on Debug客栈</title><link>https://blog.debuginn.com/tags/revert/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Revert on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 21 Sep 2021 17:33:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/revert/index.xml" rel="self" type="application/rss+xml"/><item><title>Git 命令 reset 和 revert 的区别</title><link>https://blog.debuginn.com/p/git-reset-revert/</link><pubDate>Tue, 21 Sep 2021 17:33:00 +0800</pubDate><guid>https://blog.debuginn.com/p/git-reset-revert/</guid><description>&lt;img src="https://static.debuginn.com/202302262207101.jpg" alt="Featured image of post Git 命令 reset 和 revert 的区别" />&lt;h2 id="前言">&lt;a href="#%e5%89%8d%e8%a8%80" class="header-anchor">&lt;/a>前言
+&lt;/h2>&lt;p>在团队开发中，使用 Git 作为版本开发工具，可以便捷地协同多人管理并行开发，但是由于自己或者其他人代码提交污染了远程分支，就需要对远程代码进行恢复操作，Git 提供了 reset 和 revert 两种命令来进行恢复操作，这两种操作效果是截然不同的，不太清楚这个原理的同学需要了解一下，以免在实际的开发过程中翻车，导致线上远程仓库不可逆转的操作。&lt;/p>
+&lt;p>首先从英文释义来讲，reset 是重置的意思，revert 是恢复、还原的意思，作为 Coder ，第一感觉 reset 的效果比 revert 更猛一些，实际情况也的确如此，让我们一起探讨一下吧。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302262208546.png"
+loading="lazy"
+alt="git"
+>&lt;/p>
+&lt;h2 id="背景">&lt;a href="#%e8%83%8c%e6%99%af" class="header-anchor">&lt;/a>背景
+&lt;/h2>&lt;p>Git 的每一次提交都是一次 commit，上图可以看到在时间线上有三次提交，此时 HEAD 指向 main 分支，main 分支又指向最新的 Commit3。&lt;/p>
+&lt;ul>
+&lt;li>HEAD 是指向当前分支的最新提交的指针，可以在任意分支进行切换；&lt;/li>
+&lt;li>main （master）分支，是一个 git 代码仓库的主分支也是默认分支；&lt;/li>
+&lt;li>commit 每一次提交代码都会产生一个 commit id 来标识工作区的变更与改动。&lt;/li>
+&lt;/ul>
+&lt;h2 id="实践出真理">&lt;a href="#%e5%ae%9e%e8%b7%b5%e5%87%ba%e7%9c%9f%e7%90%86" class="header-anchor">&lt;/a>实践出真理
+&lt;/h2>&lt;p>为了直接明白的了解其原理，我这里在 github 上创建一个空白的仓库，按照上图创建三次提交：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit b0ef8f9125226af8f06ff1aba7c1f1fc83adea9b &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master, origin/master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 338bf3e30983d34074f37a18b3ff80ea9bca75f0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:09 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 2.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 6b166ed34962da08d944e2b1d3f36d9015dd8f35
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:35:16 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="git-reset">&lt;a href="#git-reset" class="header-anchor">&lt;/a>Git Reset
+&lt;/h3>&lt;p>&lt;code>git reset&lt;/code> 的作用是将 HEAD 指向指定的版本上去：&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302262210014.png"
+loading="lazy"
+alt="git reset"
+>&lt;/p>
+&lt;p>&lt;strong>1 使用 git log 查看提交记录：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit b0ef8f9125226af8f06ff1aba7c1f1fc83adea9b &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master, origin/master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 338bf3e30983d34074f37a18b3ff80ea9bca75f0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:09 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 2.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit 6b166ed34962da08d944e2b1d3f36d9015dd8f35
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:35:16 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这里可以看到我们提交了三次记录，我们现在想恢复到第一次 commit 提交的时候。&lt;/p>
+&lt;p>&lt;strong>2 使用 git reset &amp;ndash;hard 命令操作：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ demo git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git reset --hard 6b166ed34962da08d944e2b1d3f36d9015dd8f35
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HEAD 现在位于 6b166ed feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再次查看 git log :&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit 6b166ed34962da08d944e2b1d3f36d9015dd8f35 &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:35:16 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 1.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此时我们可以看到已经恢复到了第一次提交代码的时候，目前我们是使用 &lt;code>git reset --hard&lt;/code> 的方式，其实这里存在着三种方式，TODO 下一篇 git 操作讲一下。&lt;/p>
+&lt;p>这时候我们只是讲本地的 HEAD 指向了 main 分支的 commit 1，但是远程并没有变更，此时需要强行推一下就可以了。&lt;/p>
+&lt;p>&lt;strong>3 使用git push -f 强行推送到远程：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ demo git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git push -f
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">总共 0（差异 0），复用 0（差异 0），包复用 &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">To github.com:debuginn/demo.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> + b98f95e...6b166ed master -&amp;gt; master &lt;span class="o">(&lt;/span>forced update&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://static.debuginn.com/202302262212430.png"
+loading="lazy"
+alt="github"
+>&lt;/p>
+&lt;p>此时我们可以看到远程也没有了我们之前提交的三次记录而是只有第一次的提交记录。&lt;/p>
+&lt;p>在团队合作的共同操作一个仓库的时候， git reset 命令一定要慎重使用，在使用的时候一定要再三确认其他同学的代码是否会被重置操作而导致代码丢失，导致一些提交记录的丢失，这些都是不可逆的，一定要慎重。&lt;/p>
+&lt;h3 id="git-revert">&lt;a href="#git-revert" class="header-anchor">&lt;/a>Git revert
+&lt;/h3>&lt;p>&lt;code>git revert&lt;/code> 是用来重做某一个 commit 提交的内容，在我们原始的提交之中，我们会发现分支上面有创建了一个新的 commit 提交，而此时我们对于想重做的某个 commit 提交的内容都不存在了：&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302262214658.png"
+loading="lazy"
+alt="git revert"
+>&lt;/p>
+&lt;p>&lt;strong>1 使用git log查看提交记录：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 16:36:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>2 使用git revert命令重做操作：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">➜ demo git:&lt;span class="o">(&lt;/span>master&lt;span class="o">)&lt;/span> git revert 338bf3e30983d34074f37a18b3ff80ea9bca75f0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">删除 2.go
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>master ef822b7&lt;span class="o">]&lt;/span> Revert &lt;span class="s2">&amp;#34;feat add 2.go&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">1&lt;/span> file changed, &lt;span class="m">9&lt;/span> deletions&lt;span class="o">(&lt;/span>-&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> delete mode &lt;span class="m">100644&lt;/span> 2.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再次查看 git log :&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">commit ef822b71c33a2dbbdaa350fddcfa14e8fc55e543 &lt;span class="o">(&lt;/span>HEAD -&amp;gt; master, origin/master&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 17:12:00 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Revert &lt;span class="s2">&amp;#34;feat add 2.go&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> This reverts commit 338bf3e30983d34074f37a18b3ff80ea9bca75f0.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">commit b0ef8f9125226af8f06ff1aba7c1f1fc83adea9b
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Author: debuginn &amp;lt;debuginn@icloud.com&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Date: Tue Sep &lt;span class="m">21&lt;/span> 17:05:39 &lt;span class="m">2021&lt;/span> +0800
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> feat add 3.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可以看到当前已经重做了一下 commit 2 的提交，已经讲 2.go 删除掉了。&lt;/p>
+&lt;p>&lt;img src="https://static.debuginn.com/202302262217507.png"
+loading="lazy"
+alt="github"
+>&lt;/p>
+&lt;p>可以看到 github 上面有了四次提交记录。&lt;/p>
+&lt;h2 id="总结">&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor">&lt;/a>总结
+&lt;/h2>&lt;p>git reset和git revert都是属于重新恢复工作区以及远程提交的方式，但这两种操作有着截然不同的结果：&lt;/p>
+&lt;ul>
+&lt;li>git reset是将之前的提交记录全部抹去，将 HEAD 指向自己重置的提交记录，对应的提交记录都不复存在；&lt;/li>
+&lt;li>git revert 操作是将选择的某一次提交记录 重做，若之后又有提交，提交记录还存在，只是将指定提交的代码给清除掉。&lt;/li>
+&lt;/ul>
+&lt;p>选择合适的方式回滚自己的代码在团队合作中很重要，但是要慎重操作，不要丢失代码哦。&lt;/p><br/><hr/><img src="https://static.debuginn.com/202302202248422.png" alt="关注微信公众号"/></description></item></channel></rss>
