@@ -120,9 +120,7 @@ link = "/reward/"
 [[donation.cryptos]]
 label = "SOL"
 address = "5LupLo8NuTfC411zAPo6UZTuasoTHaueuptVyGKmsdBV"
-donate = true
-amount = 0.005
-icon = "coin-solana"
+icon = "currency-solana"
 
 [[donation.cryptos]]
 label = "ETH"
