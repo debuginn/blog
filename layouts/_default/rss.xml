@@ -45,7 +45,7 @@
             {{- $image := partial "helper/image" (dict "Context" . "Type" "rss") -}}
             {{- if $image.exists -}}
                 {{ "<" | html }}img src="{{ $image.permalink | absURL }}" alt="Featured image of post {{ .Title }}" {{ "/>" | html}}
-            {{- end -}}{{ $content }}<hr/><p>关注微信公众号，第一时间获取最新内容，让我们一起变得更强！</p><p><img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /></p><p><strong>Debug客栈：</strong><a href="https://debuginn.com">主页</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/">博客</a>&nbsp;·&nbsp<a href="https://photo.debuginn.com">摄影</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/subscribe/">订阅</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/project/">项目</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/use/">使用</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/reward/">赞赏</a>&nbsp;·&nbsp<a href="https://blog.debuginn.com/about/">关于</a></p>
+            {{- end -}}{{ $content }}<hr/><p>关注微信公众号，第一时间获取最新内容，让我们一起变得更强！</p><p><img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /></p><p><strong>Debug客栈：</strong>{{- range .Site.Menus.main -}}<a href="{{ .URL | absURL }}">{{ .Name }}</a> / {{- end -}}</p>
         </description>
         </item>
         {{ end }}
