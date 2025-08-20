@@ -13,13 +13,7 @@
             {{- range $context.Site.Params.donation.cryptos }}
             <div class="stack-widget-donation-item" data-crypto="{{ .label | lower }}">
                 <div class="stack-widget-donation-item-bg">
-                    {{ if eq (.label | lower) "eth" }}
-                    {{ partial "helper/icon" "currency-ethereum" }}
-                    {{ else if eq (.label | lower) "btc" }}
-                    {{ partial "helper/icon" "coin-bitcoin" }}
-                    {{ else }}
-                    {{ partial "helper/icon" "wallet" }}
-                    {{ end }}
+                    {{ partial "helper/icon" (.icon | default "wallet") }}
                 </div>
                 <span class="stack-widget-donation-label">{{ .label }}</span>
                 <div class="stack-widget-donation-address">
