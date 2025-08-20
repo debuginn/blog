@@ -58,6 +58,9 @@ type = "archives"
 [widgets.homepage.params]
 limit = 3
 
+[[widgets.homepage]]
+type = "ad"
+
 [[widgets.page]]
 type = "search"
 
@@ -75,6 +78,9 @@ type = "promote"
 
 [[widgets.page]]
 type = "popular"
+
+[[widgets.page]]
+type = "ad"
 
 [opengraph.twitter]
 site = "idebuginn"
@@ -181,3 +187,6 @@ href = "/p/travel-dawanqu/"
 icon = "building-airport"
 text = "游记 港澳深大湾区风球中旅程"
 views = "119"
+
+[ad]
+title = "广告"
