@@ -581,3 +581,25 @@
 }
 
 //  ============== 热门卡片样式  end ======================
+
+// =============== 广告卡片样式 start =====================
+.stack-widget-ad-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background-color: rgb(66, 66, 66);
+    }
+}
+// =============== 广告卡片样式 end   =====================
