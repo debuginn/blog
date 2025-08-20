@@ -590,7 +590,7 @@
     overflow: hidden; // 防止内容溢出
     max-height: 200px;
     min-height: 100px;
-    height: 200px;
+    padding: 5px;
 
     &:last-child {
         margin-bottom: 0;
@@ -605,7 +605,7 @@
     .adsbygoogle {
         max-width: 100%;
         width: 100% !important;
-        height: 200px;
+        height: 100%;
         overflow: hidden;
     }
 }
