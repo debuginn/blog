@@ -93,12 +93,12 @@
     opacity: 0.05;
     pointer-events: none;
     z-index: 1;
-    
+
     svg {
         width: 66px;
         height: 66px;
     }
-    
+
     // 暗色主题
     html[data-scheme="dark"] &,
     body.dark &,
@@ -242,19 +242,19 @@
     text-align: center;
     box-sizing: border-box;
     z-index: 10; // 确保在上层显示
-    
+
     &:focus {
         outline: none;
         border-color: #0969da;
         box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.1);
     }
-    
+
     // 暗色主题
     html[data-scheme="dark"] & {
         background: #929292;
         color: #ebebeb;
         border-color: #606060;
-        
+
         &:focus {
             border-color: #58a6ff;
             box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.1);
@@ -265,16 +265,16 @@
 .stack-widget-donate-btn-donate.active {
     background: #0969da;
     color: #ffffff;
-    
+
     &:hover {
         background: #0860ca;
     }
-    
+
     // 暗色主题
     html[data-scheme="dark"] & {
         background: #58a6ff;
         color: #dddedf;
-        
+
         &:hover {
             background: #4493f8;
         }
@@ -588,6 +588,8 @@
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
     transition: box-shadow 0.2s ease;
+    padding: 10px;
+    overflow: hidden; // 防止内容溢出
 
     &:last-child {
         margin-bottom: 0;
@@ -601,5 +603,14 @@
     html[data-scheme="dark"] & {
         background-color: rgb(66, 66, 66);
     }
+
+    // 确保广告内容不会突破容器
+    .adsbygoogle {
+        max-width: 100%;
+        width: 100% !important;
+        height: auto;
+        overflow: hidden;
+    }
 }
+
 // =============== 广告卡片样式 end   =====================
