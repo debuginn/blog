@@ -17,5 +17,26 @@
 </section>
 
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    // 异步加载Google AdSense脚本
+    (function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167312285165454';
+        script.crossOrigin = 'anonymous';
+        
+        script.onload = function() {
+            // 脚本加载完成后初始化广告
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        };
+        // 脚本加载超时处理
+        script.onTimeout = function() {
+            console.error('Google AdSense脚本加载超时');
+        };
+        // 脚本加载失败时的处理
+        script.onerror = function() {
+            console.error('Google AdSense脚本加载失败');
+        };
+        
+        document.head.appendChild(script);
+    })();
 </script>
