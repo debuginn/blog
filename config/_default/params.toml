@@ -162,31 +162,31 @@ title = "热门"
 href = "/p/work-5-years/"
 icon = "brand-linkedin"
 text = "入职 5 周年，我和小米的 5 周年"
-views = "2.2k"
+views = "2.2k+"
 
 [[popular.items]]
-href = "/p/follow-app/"
+href = "/tags/follow/"
 icon = "rss"
-text = "Follow｜下一代的信息浏览器"
-views = "1.7k"
+text = "Follow 下一代的 RSS 阅读器"
+views = "1.9k+"
 
 [[popular.items]]
 href = "/p/financial-hongkong-card/"
 icon = "wallet"
 text = "港卡开卡指南"
-views = "856"
+views = "886+"
 
 [[popular.items]]
 href = "/p/travel-bohainan/"
 icon = "car"
 text = "游记 五一环渤海南海岸自驾之旅"
-views = "326"
+views = "326+"
 
 [[popular.items]]
 href = "/p/travel-dawanqu/"
 icon = "building-airport"
 text = "游记 港澳深大湾区风球中旅程"
-views = "119"
+views = "119+"
 
 [ad]
 title = "广告"
