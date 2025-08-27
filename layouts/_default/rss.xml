@@ -45,7 +45,7 @@
             {{- $image := partial "helper/image" (dict "Context" . "Type" "rss") -}}
             {{- if $image.exists -}}
                 {{ "<" | html }}img src="{{ $image.permalink | absURL }}" alt="Featured image of post {{ .Title }}" {{ "/>" | html}}
-            {{- end -}}{{ $content }}<hr/><p>关注微信公众号，第一时间获取最新内容，让我们一起变得更强！</p><p><img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /></p><p><strong>Debug客栈：</strong>{{- range .Site.Menus.main -}}<a href="{{ .URL | absURL }}">{{ .Name }}</a> / {{- end -}}</p>
+            {{- end -}}{{ $content }}{{ "<hr/>" | html }}{{ "<p>" | html }}关注微信公众号，第一时间获取最新内容，让我们一起变得更强！{{ "</p>" | html }}{{ "<p>" | html }}{{ "<" | html }}img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" {{ "/>" | html }}{{ "</p>" | html }}{{ "<p>" | html }}{{ "<strong>" | html }}Debug客栈：{{ "</strong>" | html }}{{- range $index, $element := .Site.Menus.main -}}{{- if $index -}} / {{ end -}}{{ "<" | html }}a href="{{ .URL | absURL }}"{{ ">" | html }}{{ .Name }}{{ "</a>" | html }}{{- end -}}{{ "</p>" | html }}
         </description>
         </item>
         {{ end }}
