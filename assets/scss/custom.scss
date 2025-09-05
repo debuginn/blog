@@ -611,3 +611,203 @@
     }
 }
 // =============== 广告卡片样式 end   =====================
+
+//  ============== 邮件订阅卡片样式  start ======================
+.stack-widget-email-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+    padding: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background-color: rgb(66, 66, 66);
+    }
+}
+
+.stack-widget-email-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #f0f0f0;
+        border-color: #d0d7de;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        background: #424242 !important;
+        border: 1px solid #5d5d5d !important;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+            background: rgba(64, 64, 64, 0.4) !important;
+            border-color: #606060 !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+.stack-widget-email-input {
+    flex: 1;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 0.9em;
+    outline: none;
+    min-width: 0;
+
+    &::placeholder {
+        color: #666;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        color: #f0f0f0 !important;
+
+        &::placeholder {
+            color: #999 !important;
+        }
+    }
+}
+
+.stack-widget-email-submit {
+    padding: 4px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    min-width: 60px;
+    flex-shrink: 0;
+
+    &:hover:not(:disabled) {
+        background: #0056b3;
+        transform: translateY(-1px);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 8px 12px;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] &,
+    body.dark &,
+    .dark & {
+        background: #007bff !important;
+        color: #ebebeb !important;
+
+        &:hover:not(:disabled) {
+            background: #0056b3 !important;
+        }
+    }
+}
+
+
+
+// Toast 样式
+.stack-widget-email-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    max-width: 80vw;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    &.stack-widget-email-toast-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.stack-widget-email-toast-success {
+        background: rgba(76, 175, 80, 0.9);
+        color: white;
+    }
+
+    &.stack-widget-email-toast-error {
+        background: rgba(244, 67, 54, 0.9);
+        color: white;
+    }
+
+    &.stack-widget-email-toast-warning {
+        background: rgba(255, 152, 0, 0.9);
+        color: white;
+    }
+
+    &.stack-widget-email-toast-info {
+        background: rgba(33, 150, 243, 0.9);
+        color: white;
+    }
+
+    // 暗色主题
+    html[data-scheme="dark"] & {
+        background: rgba(0, 0, 0, 0.9);
+        
+        &.stack-widget-email-toast-success {
+            background: rgba(76, 175, 80, 0.9);
+        }
+
+        &.stack-widget-email-toast-error {
+            background: rgba(244, 67, 54, 0.9);
+        }
+
+        &.stack-widget-email-toast-warning {
+            background: rgba(255, 152, 0, 0.9);
+        }
+
+        &.stack-widget-email-toast-info {
+            background: rgba(33, 150, 243, 0.9);
+        }
+    }
+}
+
+//  ============== 邮件订阅卡片样式  end ======================
