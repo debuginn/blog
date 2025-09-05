@@ -44,6 +44,9 @@ type = "popular"
 type = "promote"
 
 [[widgets.homepage]]
+type = "email"
+
+[[widgets.homepage]]
 type = "donation"
 
 [[widgets.homepage]]
@@ -69,6 +72,9 @@ type = "wechat"
 
 [[widgets.page]]
 type = "toc"
+
+[[widgets.page]]
+type = "email"
 
 [[widgets.page]]
 type = "donation"
@@ -187,6 +193,14 @@ href = "/p/travel-dawanqu/"
 icon = "building-airport"
 text = "游记 港澳深大湾区风球中旅程"
 views = "119+"
+
+[email]
+title = "订阅"
+placeholder = "输入邮箱，获取最新文章推送"
+buttonText = "订阅"
+mailchimpUrl = "https://us3.list-manage.com/subscribe/post-json"
+u = "397828d3cf4dbe2593b9da8e3"
+id = "b7404a6937"
 
 [ad]
 title = "广告"

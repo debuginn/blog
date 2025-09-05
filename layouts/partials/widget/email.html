@@ -1,0 +1,142 @@
+{{- $context := .Context -}}
+{{- $params := .Params -}}
+
+<section class="widget email">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "mail" }}
+    </div>
+    <h2 class="widget-title section-title">
+        {{ $context.Site.Params.email.title | default "邮件订阅" }}
+    </h2>
+    <div class="stack-widget-email-card">
+        <div class="stack-widget-email-section">
+            <form id="email-subscribe-form" class="stack-widget-email-form" novalidate>
+                <input type="email" id="email-input" name="EMAIL"
+                    placeholder="{{ $context.Site.Params.email.placeholder | default " 请输入您的邮箱地址" }}"
+                    class="stack-widget-email-input" required>
+                <button type="submit" class="stack-widget-email-submit" id="subscribe-btn">
+                    {{ $context.Site.Params.email.buttonText | default "订阅" }}
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 简单的 Toast 组件 -->
+<div id="stack-widget-email-toast" class="stack-widget-email-toast"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('email-subscribe-form');
+        const emailInput = document.getElementById('email-input');
+        const submitBtn = document.getElementById('subscribe-btn');
+
+        // Mailchimp API endpoint
+        const MAILCHIMP_URL = '{{ $context.Site.Params.email.mailchimpUrl }}';
+
+        // Toast 管理函数
+        function showToast(message, type = 'info', duration = 3000) {
+            const toast = document.getElementById('stack-widget-email-toast');
+            
+            // 设置消息和类型
+            toast.textContent = message;
+            toast.className = `stack-widget-email-toast stack-widget-email-toast-${type} stack-widget-email-toast-show`;
+            
+            // 自动隐藏
+            setTimeout(() => {
+                toast.className = 'stack-widget-email-toast';
+            }, duration);
+        }
+
+        function showMessage(message, type = 'info') {
+            showToast(message, type, 5000);
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            if (!email) {
+                showMessage('请输入邮箱地址', 'error');
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                showMessage('请输入有效的邮箱地址', 'error');
+                return;
+            }
+
+            // 禁用按钮，防止重复提交
+            submitBtn.disabled = true;
+            submitBtn.textContent = '订阅中...';
+
+            // 使用 JSONP 方式调用 Mailchimp API
+            const script = document.createElement('script');
+            const callbackName = 'mailchimpCallback_' + Date.now();
+
+            // 创建全局回调函数
+            window[callbackName] = function (data) {
+                // 清理
+                document.head.removeChild(script);
+                delete window[callbackName];
+
+                // 恢复按钮状态
+                submitBtn.disabled = false;
+                submitBtn.textContent = '{{ $context.Site.Params.email.buttonText | default "订阅" }}';
+
+                if (data.result === 'success') {
+                    showMessage('订阅成功！感谢您的订阅！', 'success');
+                    emailInput.value = '';
+                } else {
+                    let errorMessage = '订阅失败，请稍后重试';
+                    if (data.msg) {
+                        if (data.msg.includes('already subscribed')) {
+                            errorMessage = '该邮箱已经订阅过了';
+                        } else if (data.msg.includes('invalid')) {
+                            errorMessage = '邮箱地址无效';
+                        } else {
+                            errorMessage = data.msg.replace(/\d+ - /, '');
+                        }
+                    }
+                    showMessage(errorMessage, 'error');
+                }
+            };
+
+            // 构建请求URL
+            const params = new URLSearchParams({
+                u: '{{ $context.Site.Params.email.u | default "your_mailchimp_u_parameter" }}',
+                id: '{{ $context.Site.Params.email.id | default "your_mailchimp_id_parameter" }}',
+                EMAIL: email,
+                c: callbackName
+            });
+
+            script.src = `${MAILCHIMP_URL}?${params.toString()}`;
+            script.onerror = function () {
+                // 清理
+                document.head.removeChild(script);
+                delete window[callbackName];
+
+                // 恢复按钮状态
+                submitBtn.disabled = false;
+                submitBtn.textContent = '{{ $context.Site.Params.email.buttonText | default "订阅" }}';
+
+                showMessage('网络错误，请稍后重试', 'error');
+            };
+
+            document.head.appendChild(script);
+        });
+
+        // 回车键提交
+        emailInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                form.dispatchEvent(new Event('submit'));
+            }
+        });
+    });
+</script>
