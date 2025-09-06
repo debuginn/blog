@@ -168,7 +168,7 @@ title = "热门"
 href = "/p/work-5-years/"
 icon = "brand-linkedin"
 text = "入职 5 周年，我和小米的 5 周年"
-views = "2.2k+"
+views = "2.3k+"
 
 [[popular.items]]
 href = "/tags/follow/"
@@ -183,16 +183,10 @@ text = "港卡开卡指南"
 views = "886+"
 
 [[popular.items]]
-href = "/p/travel-bohainan/"
-icon = "car"
-text = "游记 五一环渤海南海岸自驾之旅"
-views = "326+"
-
-[[popular.items]]
-href = "/p/travel-dawanqu/"
+href = "/categories/travel/"
 icon = "building-airport"
-text = "游记 港澳深大湾区风球中旅程"
-views = "119+"
+text = "游记系列 跟我一起环游中国"
+views = "500+"
 
 [email]
 title = "订阅"
