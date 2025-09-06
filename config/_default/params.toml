@@ -150,15 +150,15 @@ icon = "briefcase"
 text = "来小米，一起玩！校招、社招均可内推！"
 
 [[promote.items]]
-href = "https://cloud.siliconflow.cn/i/ftshEbe9"
-icon = "ai"
-text = "硅基流动，一站式大模型云服务平台。"
+href = "https://www.xflash.live/#/register?code=GZRNxKBh"
+icon = "network"
+text = "XFlash Cloud，稳定好用速度快节点多"
 target = "_blank"
 
 [[promote.items]]
-href = "https://www.xflash.live/#/register?code=GZRNxKBh"
-icon = "network"
-text = "XFlash Cloud，稳定好用速度快。"
+href = "https://app.cloudcone.com/?ref=13045"
+icon = "cloud-network"
+text = "CloudCone，廉价 VPS 服务"
 target = "_blank"
 
 [popular]
