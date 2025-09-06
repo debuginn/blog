@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2023 on Debug客栈</title><link>https://blog.debuginn.com/tags/2023/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 2023 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 31 Dec 2023 13:30:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/2023/index.xml" rel="self" type="application/rss+xml"/><item><title>2023 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2023/</link><pubDate>Sun, 31 Dec 2023 13:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023/</guid><description>&lt;img src="https://static.debuginn.com/202312221929863.jpg" alt="Featured image of post 2023 年度总结" /&gt;&lt;h2 id="工作"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;工作
+&lt;/h2&gt;&lt;p&gt;今年工作经历了比较大的调整，由于部门技术栈逐渐趋于统一从 Go 技术栈转换到 Java 技术栈，也就是说我会双语言啦，自己也开始从事 Java 相关业务的开发，其实在 22 年底就开始接触 Java 服务了，按照学习计划，其实切换起来，还是相对来说比较简单，也没有太大的阻力，但是随着深入学习，发现自己学习的知识还是太少了，只能是 Java 庞大生态的冰山一角，值得自己骄傲的是，这一年，在 leader 和团队同事的支持和帮助下，我从 0 到 1 实现了一套并发框架，命名为 PhoenixCore，目前已经应用在了小米商城产品站（也就是说，只要你访问过小米商城，这套框架就为你提供过服务 😊），年后我会逐一整理并发表一系列的围绕并发框架的系列文章，来讲解我是如何实现这个框架以及我遇到的相关问题及解决思路。&lt;/p&gt;
+&lt;h2 id="站点"&gt;&lt;a href="#%e7%ab%99%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;站点
+&lt;/h2&gt;&lt;p&gt;今年，站点最大的变化就是完成了对&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
+&gt;站点的静态化建设&lt;/a&gt;，可以将重点放在博客文章的输出中去，同时省去了自己维护站点的大量精力。目前站点的运营模式就是 Github 来提供文章的编写及打包发布，使用 Github pages 部署，CDN 使用免费的 Cloudflare 和 jsDelivr，（这也就代表着网站可能会出现访问不稳定 😛），同时将站点域名从 debuginn.cn 转换为 &lt;a class="link" href="https://debuginn.com" target="_blank" rel="noopener"
+&gt;debuginn.com&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;今年由于站点域名和子域名的调整，统计开始包含自己的子域名访问记录，由于期间有部分访问记录丢失，环比指标都有下降，不过随着自己开始专注于文章的输出，情况开始变好。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202312231204963.png"
+loading="lazy"
+alt="访问人数"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202312231209707.png"
+loading="lazy"
+alt="访问国家"
+&gt;&lt;/p&gt;
+&lt;p&gt;由于自己重新调整了博客链接组织结构，404 的页面一直占据着很高的比例 😂。&lt;/p&gt;
+&lt;h2 id="文章"&gt;&lt;a href="#%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;文章
+&lt;/h2&gt;&lt;p&gt;今年输出并不是很多，还是和去年一样，都一一陈列一下吧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" target="_blank" rel="noopener"
+&gt;2023 年为何我还在使用 RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/talk-about-chat-gpt/" target="_blank" rel="noopener"
+&gt;谈谈 ChatGPT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/how-to-take-over-a-project/" target="_blank" rel="noopener"
+&gt;如何接手并维护一个项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
+&gt;全站静态化升级完毕&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/faas-notes/" target="_blank" rel="noopener"
+&gt;FAAS 调研笔记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/financing-long-bridge/" target="_blank" rel="noopener"
+&gt;长桥港美股团办活动&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望我的文章可以带给你帮助，希望我和大家一起变得更强～&lt;/p&gt;
+&lt;h2 id="开源"&gt;&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor"&gt;&lt;/a&gt;开源
+&lt;/h2&gt;&lt;p&gt;今年由于自己博客迁移到了 &lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+&gt;Github&lt;/a&gt;，所以说活跃多了起来 🐶。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202312231221971.png"
+loading="lazy"
+alt="github-2023"
+&gt;&lt;/p&gt;
+&lt;h2 id="生活"&gt;&lt;a href="#%e7%94%9f%e6%b4%bb" class="header-anchor"&gt;&lt;/a&gt;生活
+&lt;/h2&gt;&lt;p&gt;23年去了很多地方旅游，云南（昆明、大理、丽江、香格里拉）、甘肃、天津、河北（张家口）、山东（济宁、威海、青岛）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3月份去奥森桃花谷看了桃花，人很多、花更美；&lt;/li&gt;
+&lt;li&gt;4月份和自己的爱人一起去了云南，喂了滇池的海鸥、感受到了苍山洱海的美、看到了大冰的小屋、看到了雄伟的玉龙雪山、体验到了香格里拉藏区人们的淳朴与善良好客；&lt;/li&gt;
+&lt;li&gt;5月份去了甘肃老家，感受到了大西北的豪情、辽阔，看到了一望无际的荒漠与祁连山脉，看到了《隐入尘烟》中甘肃特色的土房子，品尝到了特色的面卷子与羔羊；&lt;/li&gt;
+&lt;li&gt;同 5月去了环球影城，感受到了电影世界。去北动看“西直门三太子”萌兰，很遗憾天太热，没看到，只看到了萌大和其他熊猫；&lt;/li&gt;
+&lt;li&gt;6月去了天津，看了民国风的五大道，听了场相声，还品尝了特色小吃；&lt;/li&gt;
+&lt;li&gt;7月陪着姐姐姐夫大外甥在北京城逛了一番，很快乐；&lt;/li&gt;
+&lt;li&gt;10月回了趟家，之后去威海，自驾到了山东最东端 - 始皇东巡处，看到了搁浅的“布鲁维斯号”，去青岛的海鲜市场，买了海鲜，赶了海。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;23年，也一直坚持着徒步，参加了 4次活动，其中 2次夜爬活动，看到了星空、看到了日出。&lt;/p&gt;
+&lt;h2 id="摄影"&gt;&lt;a href="#%e6%91%84%e5%bd%b1" class="header-anchor"&gt;&lt;/a&gt;摄影
+&lt;/h2&gt;&lt;p&gt;今年由于旅游和徒步，拍了很多的照片，和往年一样，每年我都会精选十张图片放在摄影展站点中，欢迎你的访问。&lt;/p&gt;
+&lt;p&gt;Debug客栈摄影展：&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+&gt;https://photo.debuginn.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202312311401449.jpg"
+loading="lazy"
+alt="摄影展"
+&gt;&lt;/p&gt;
+&lt;h2 id="阅读"&gt;&lt;a href="#%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;阅读
+&lt;/h2&gt;&lt;p&gt;今年继续阅读，继续成长～&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文论《毛泽东选集》看了新民主主义革命至抗日战争的相关章节，不得不佩服领袖的远见与决策，推荐阅读；&lt;/li&gt;
+&lt;li&gt;理财《富爸爸穷爸爸》怎么去积累财富，摆脱穷人思维，跳出“老鼠赛跑”游戏；&lt;/li&gt;
+&lt;li&gt;技术《Apache Dubbo 微服务从入门到精通》Java 协议相关书籍；&lt;/li&gt;
+&lt;li&gt;传记《埃隆·马斯克传》遵循“第一性原理”，创造奇迹的人，推荐阅读；&lt;/li&gt;
+&lt;li&gt;小说《太白金星有点烦》如何规划西天取经，看太白金星与观音菩萨的运作；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;23年，是成长的一年，也是幸福的一年，今年工作稳定前行，努力突破自己，生活上稳定前行，这一年去了很多的地方，看到了世间不同的生活方式，24年，继续努力，奔着小目标继续前进，继续收获快乐、幸福与圆满。&lt;/p&gt;
+&lt;p&gt;2024，新年快乐～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2022 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2022/</link><pubDate>Sat, 31 Dec 2022 10:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2022/</guid><description>&lt;img src="https://static.debuginn.com/202302251041682.jpg" alt="Featured image of post 2022 年度总结" /&gt;&lt;p&gt;今年，时光依旧不饶人，步入社会以来，时间就似乎不会慢下来，都在光速飞逝，很遗憾，今年疫情依旧没有结束，3 月份的时候还作为密切接触者被隔离了 21 天，总的来说，今年有悲伤同时又十分幸运，感觉冥冥之中都是安排好的。&lt;/p&gt;
+&lt;h2 id="网站数据"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;网站数据
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://analytics.google.com/analytics/web/#/p260538804/reports/reportinghub?params=_u.dateOption%3DyearToDate%26_u.comparisonOption%3Ddisabled" target="_blank" rel="noopener"
+&gt;2022年统计数据共享链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202302251044940.jpg"
+loading="lazy"
+alt="访客地图"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202302251044112.jpg"
+loading="lazy"
+alt="访客数量 &amp; top 文章"
+&gt;&lt;/p&gt;
+&lt;h2 id="摄影专区"&gt;&lt;a href="#%e6%91%84%e5%bd%b1%e4%b8%93%e5%8c%ba" class="header-anchor"&gt;&lt;/a&gt;摄影专区
+&lt;/h2&gt;&lt;p&gt;今年为了兴趣爱好买了一台微单 索尼 α6400+18135 镜头，同时，也想着把自己的摄影作品呈现给大家，每年我都会更新一批图片到这里，选 10 张自己认为比较好的图片拿来展出，水平不高，但是每一张照片背后都有属于它的专属意义。&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+&gt;直达链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202302251045907.jpg"
+loading="lazy"
+alt="摄影站点"
+&gt;&lt;/p&gt;
+&lt;h2 id="年度事件"&gt;&lt;a href="#%e5%b9%b4%e5%ba%a6%e4%ba%8b%e4%bb%b6" class="header-anchor"&gt;&lt;/a&gt;年度事件
+&lt;/h2&gt;&lt;h3 id="疫情-有感动有奇迹"&gt;&lt;a href="#%e7%96%ab%e6%83%85-%e6%9c%89%e6%84%9f%e5%8a%a8%e6%9c%89%e5%a5%87%e8%bf%b9" class="header-anchor"&gt;&lt;/a&gt;疫情 有感动有奇迹
+&lt;/h3&gt;&lt;p&gt;记得在 3 月份的某一天，突然接到领导通知，大家全体居家办公，具体情况听通知，不得外出，下午就接到了确认密接的防疫办的电话，让在家等着去集中隔离，由于密接人数比较多，第二天下午才安排到酒店隔离，一切安排都没有那么混乱，大家都有序进行隔离入住，庆幸的是，隔离的地方还不错，至少可以安心的在隔离期间办公了，隔离期间还下了一场雪，别有一番风景。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202302251046480.jpeg"
+loading="lazy"
+alt="隔离期间的雪"
+&gt;&lt;/p&gt;
+&lt;p&gt;隔离期间，大家互相勉励，配合大白检测，大家都很有信心，隔离结束之后，得知大家作为密接都没有被感染 😷，像是一个奇迹，大家都好好滴，同时也传来了确诊同事阳转阴的好消息。&lt;/p&gt;
+&lt;p&gt;回头想来，这次防疫应该是北京政府做的一轮比较优秀的防疫案例了，做到了透明、快且安全。&lt;/p&gt;
+&lt;h3 id="是的-我们就这样相遇了"&gt;&lt;a href="#%e6%98%af%e7%9a%84-%e6%88%91%e4%bb%ac%e5%b0%b1%e8%bf%99%e6%a0%b7%e7%9b%b8%e9%81%87%e4%ba%86" class="header-anchor"&gt;&lt;/a&gt;是的 我们就这样相遇了
+&lt;/h3&gt;&lt;p&gt;都说红螺寺和雍和宫很灵验，去寺院诚心叩拜了每一个佛祖菩萨，感谢佛祖菩萨，的确如此，&lt;strong&gt;是的，我们就这样相遇了&lt;/strong&gt;，新的一年和她，真好。&lt;/p&gt;
+&lt;p&gt;新的一年，我们的故事正在续写～&lt;/p&gt;
+&lt;p&gt;我坚信真诚的对待感情总会有好的结果，感谢相遇，感谢这神奇的缘分～&lt;/p&gt;
+&lt;p&gt;ps：不过多介绍，还有下文哦～&lt;/p&gt;
+&lt;h3 id="是的-我成杨过了"&gt;&lt;a href="#%e6%98%af%e7%9a%84-%e6%88%91%e6%88%90%e6%9d%a8%e8%bf%87%e4%ba%86" class="header-anchor"&gt;&lt;/a&gt;是的 我成杨过了
+&lt;/h3&gt;&lt;p&gt;12月17号在喉咙疼了好几天的情况下，最后还是测量的体温在 38.5 度，我已经感觉中招了，不出意外，接下来连续三天都持续高烧，浑身上下疼痛，之后还流鼻血，应该是高烧烧的，之后就是居家躺尸阶段，没有精神同时伴随有轻微咳嗽，后来做了抗原检测，果然中招，不过目前好了。大家注意防护与提高自身免疫力，很重要的。&lt;/p&gt;
+&lt;h2 id="好物分享"&gt;&lt;a href="#%e5%a5%bd%e7%89%a9%e5%88%86%e4%ba%ab" class="header-anchor"&gt;&lt;/a&gt;好物分享
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;摄影设备：微单 索尼 α6400+18135 镜头；&lt;/li&gt;
+&lt;li&gt;键鼠套装：Mac 新一代键盘、触控板套装；&lt;/li&gt;
+&lt;li&gt;显示设备：目前主力生产使用的 LG HDR 4k 显示器；&lt;/li&gt;
+&lt;li&gt;辅助灯光：目前使用的是小米屏幕挂灯 1s，搭配米家使用非常流畅；&lt;/li&gt;
+&lt;li&gt;充电设备：小米无线充电宝+座充底座，既可以室内充当无线充电，又可以户外活动使用；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="年度书籍"&gt;&lt;a href="#%e5%b9%b4%e5%ba%a6%e4%b9%a6%e7%b1%8d" class="header-anchor"&gt;&lt;/a&gt;年度书籍
+&lt;/h2&gt;&lt;p&gt;今年算是奋起阅读的一年了，短短三个月时间就啃下来很多书，很有营养，以后也要给自己补补能量，让自己变得更强。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;技术 《Effective Go 中英双语版》bingo，很棒的一本 Go 入门数据；&lt;/li&gt;
+&lt;li&gt;公司 《一往无前》范海涛，讲解公司创立到十周年发生的故事;&lt;/li&gt;
+&lt;li&gt;小说 《黄金时代》王小波，自由？背叛？性？ 读完没有啥感觉；&lt;/li&gt;
+&lt;li&gt;散文 《乖，摸摸头》大冰，第二次读，算是疫情三年禁锢肉体的另一种解脱；&lt;/li&gt;
+&lt;li&gt;技术 《图解 HTTP》上野，用通俗易懂的漫画讲解；&lt;/li&gt;
+&lt;li&gt;技术 《分布式缓存：原理、架构及Go语言实现》胡世杰，讲的很透彻，数据提供的很透彻；&lt;/li&gt;
+&lt;li&gt;技术 《深入理解Java虚拟机JVM高级特性与最佳实践》周志明，java 进阶书籍，值得推荐；&lt;/li&gt;
+&lt;li&gt;技术 《深入设计模式》，设计模式算是 code 中让房子长什么样的设计方法论了；&lt;/li&gt;
+&lt;li&gt;散文 《保重》大冰，没有读完，算是给自己的青春留下一章吧，保重；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="年度文章"&gt;&lt;a href="#%e5%b9%b4%e5%ba%a6%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;年度文章
+&lt;/h2&gt;&lt;p&gt;本年度很懒，没有出啥文章，就写了两篇，那就算作年度文章吧～&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/p/go-tools-pprof/" &gt;https://blog.debuginn.com/p/go-tools-pprof/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="github-个人页面"&gt;&lt;a href="#github-%e4%b8%aa%e4%ba%ba%e9%a1%b5%e9%9d%a2" class="header-anchor"&gt;&lt;/a&gt;Github 个人页面
+&lt;/h2&gt;&lt;p&gt;今年倾心打造自己的技术主页，术业有专攻，对自己在技术专业能力方面在 23年有更高的要求，同时希望自己在技术圈可以成为有影响力的人，来帮助更多的同行，同时也在不断的提升自己，&lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+&gt;直达链接&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.debuginn.com/202302251051076.jpg"
+loading="lazy"
+alt="Meng小羽的 GitHub 个人页面"
+&gt;&lt;/p&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;这一年总的来说是给自己带来很大成长的一年，褪去了年少的青涩，增加了一点成熟的模样，也懂得了珍惜当下，活好每一天，爱人爱己，学会了倾听、学会了表达、学会了接受失去、同时也学会了迎接未来，感恩、感谢、感激、感动，这就是我的 2022年。&lt;/p&gt;
+&lt;p&gt;2023年，祝大家新年快乐， happy new year ～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
