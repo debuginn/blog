@@ -75,17 +75,8 @@ identifier = "x"
 name = "x"
 weight = 2
 url = "https://x.com/idebuginn"
-
 [social.params]
 icon = "brand-x"
-
-[[social]]
-identifier = "juejin"
-name = "Juejin"
-weight = 3
-url = "https://juejin.cn/user/817692380500702/posts"
-[social.params]
-icon = "brand-juejin"
 
 [[social]]
 identifier = "zhihu"
