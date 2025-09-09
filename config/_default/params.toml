@@ -126,7 +126,7 @@ lang = "zh-CN"
 
 [donation]
 title = "赞赏"
-qrcode = "https://static.debuginn.com/20250905zRtdBM.png"
+qrcode = "https://static.debuginn.com/20250807C6FEAA.png"
 link = "/reward/"
 
 [[donation.cryptos]]
