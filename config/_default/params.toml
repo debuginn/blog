@@ -61,9 +61,6 @@ type = "archives"
 [widgets.homepage.params]
 limit = 3
 
-[[widgets.homepage]]
-type = "ad"
-
 [[widgets.page]]
 type = "search"
 
