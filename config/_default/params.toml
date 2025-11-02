@@ -162,28 +162,14 @@ target = "_blank"
 title = "热门"
 
 [[popular.items]]
-href = "/p/work-5-years/"
-icon = "brand-linkedin"
-text = "入职 5 周年，我和小米的 5 周年"
-views = "2.3k+"
-
-[[popular.items]]
-href = "/tags/follow/"
-icon = "rss"
-text = "Follow 下一代的信息浏览器"
-views = "1.9k+"
-
-[[popular.items]]
 href = "/p/financial-hongkong-card/"
 icon = "wallet"
 text = "港卡开卡指南"
-views = "886+"
 
 [[popular.items]]
 href = "/categories/travel/"
 icon = "building-airport"
 text = "游记系列 跟我一起环游中国"
-views = "500+"
 
 [email]
 title = "订阅"
