@@ -165,13 +165,11 @@ title = "热门"
 href = "/p/financial-hongkong-card/"
 icon = "wallet"
 text = "港卡开卡指南"
-views = "886+"
 
 [[popular.items]]
 href = "/categories/travel/"
 icon = "building-airport"
 text = "游记系列 跟我一起环游中国"
-views = "500+"
 
 [email]
 title = "订阅"
