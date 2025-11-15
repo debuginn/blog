@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Follow on Debug客栈</title><link>https://blog.debuginn.com/tags/follow/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Follow on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 18 Nov 2024 19:30:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/follow/index.xml" rel="self" type="application/rss+xml"/><item><title>Follow 给我空投了 1w 代币，可以无限发码啦～</title><link>https://blog.debuginn.com/p/follow-app-airdrop/</link><pubDate>Mon, 18 Nov 2024 19:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app-airdrop/</guid><description>&lt;img src="https://webp.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow 给我空投了 1w 代币，可以无限发码啦～" /&gt;&lt;h2 id="follow-airdrop"&gt;&lt;a href="#follow-airdrop" class="header-anchor"&gt;&lt;/a&gt;Follow Airdrop
+&lt;/h2&gt;&lt;p&gt;由于较早的参与 Follow 的内测，现在也当了一回原始股东的感觉，终于分红了～&lt;/p&gt;
+&lt;p&gt;今天看官网提供了 9051 $POWER 代币，按照公测到自由下载预估时间，再加上邀请码生成需要有使用时间限制，差不多可以无限发码啦～&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241102Sg7rhN.png"
+loading="lazy"
+alt="Airdrop"
+&gt;&lt;/p&gt;
+&lt;h2 id="下载地址"&gt;&lt;a href="#%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80" class="header-anchor"&gt;&lt;/a&gt;下载地址
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;官网地址：https://follow.is/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Github： https://github.com/RSSNext/follow
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;下载地址：https://github.com/RSSNext/Follow/releases
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="功能简介"&gt;&lt;a href="#%e5%8a%9f%e8%83%bd%e7%ae%80%e4%bb%8b" class="header-anchor"&gt;&lt;/a&gt;功能简介
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app/" &gt;Follow ｜下一代的信息浏览器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app-2/" &gt;Follow ｜下一代信息浏览器 第二弹来了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" &gt;2023 年为何我还在使用 RSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="订阅源推荐"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e6%ba%90%e6%8e%a8%e8%8d%90" class="header-anchor"&gt;&lt;/a&gt;订阅源推荐
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;我的订阅源：https://app.follow.is/share/users/@debuginn
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Go 语言爱好者：https://app.follow.is/list/60633757623653376
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;新闻资讯：https://app.follow.is/list/67389023042166784
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;互联网相关资讯: https://app.follow.is/list/66698003857126400
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Web开发关注领域：https://app.follow.is/list/63404832700630016
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;摄影相关的领域：https://app.follow.is/share/lists/60649442771759104
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;AI前沿资讯：https://app.follow.is/share/lists/67498814495306752
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="邀请码"&gt;&lt;a href="#%e9%82%80%e8%af%b7%e7%a0%81" class="header-anchor"&gt;&lt;/a&gt;邀请码
+&lt;/h2&gt;&lt;p&gt;大家最关心的就是邀请码了，今日到账后，我会陆续给大家生成邀请码发送给大家，大家可以关注我的公众号，同时希望把你感兴趣的订阅源在评论区分享出来，&lt;strong&gt;分享优质的订阅源将优先获得邀请码哦&lt;/strong&gt;，最后，感谢您的关注，让我们一起变得更强～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Follow ｜下一代信息浏览器 第二弹来了</title><link>https://blog.debuginn.com/p/follow-app-2/</link><pubDate>Sun, 20 Oct 2024 20:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app-2/</guid><description>&lt;img src="https://webp.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow ｜下一代信息浏览器 第二弹来了" /&gt;&lt;p&gt;大家好呀，&lt;a class="link" href="https://blog.debuginn.com/p/follow-app" &gt;上篇文章&lt;/a&gt;给大家推荐了我近期参与内测的一个软件 Follow，得到了大家热情地互动，今天继续给大家深度的分享一下 Follow 的特色功能，同时由于目前 Follow 处于内测邀请阶段，一码处于严重供不应求的状态，我也会给大家推荐下暂时平替的 RSS 开源软件，同时，大家可以关注我，等 Follow 公测开始，我会第一时间告知大家。&lt;/p&gt;
+&lt;h2 id="特色功能"&gt;&lt;a href="#%e7%89%b9%e8%89%b2%e5%8a%9f%e8%83%bd" class="header-anchor"&gt;&lt;/a&gt;特色功能
+&lt;/h2&gt;&lt;h3 id="rss-搜索"&gt;&lt;a href="#rss-%e6%90%9c%e7%b4%a2" class="header-anchor"&gt;&lt;/a&gt;RSS 搜索
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018ZBVyDd.png"
+loading="lazy"
+alt="search"
+&gt;&lt;/p&gt;
+&lt;p&gt;作为 RSS 阅读器，提供搜索功能，大大降低了大家搜索感兴趣的源的信息，非常便捷方便。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;搜索&lt;/strong&gt;：可以根据关键词搜索订阅感兴趣的方向的信息源；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RSS&lt;/strong&gt;：可以直接输入 RSS 订阅地址预览订阅；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RSSHub&lt;/strong&gt;：作者与另外一个开源作品组成生态，只要是网站信息开放的，那么&amp;quot;&lt;strong&gt;万物皆可 RSS&lt;/strong&gt;&amp;quot;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;收件箱&lt;/strong&gt;：你敢相信，也可以接收邮件 📧 ；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RSS3&lt;/strong&gt;：下一代的 RSS 信息订阅方式；&lt;/li&gt;
+&lt;li&gt;还有 RSS 阅读器的&lt;strong&gt;导入功能&lt;/strong&gt;，你可以快速切换到 Follow 上面来；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="谁在阅读"&gt;&lt;a href="#%e8%b0%81%e5%9c%a8%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;谁在阅读
+&lt;/h3&gt;&lt;p&gt;阅读器可以把相同订阅并阅读过这篇文章的网友罗列在文章左上方。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018vYtfMz.png"
+loading="lazy"
+alt="who read"
+&gt;&lt;/p&gt;
+&lt;p&gt;同时，点击头像会把订阅者自己公开的订阅罗列出来，通过这个功能我补充了好多订阅源 😄&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018V86Unn.png"
+loading="lazy"
+alt="sylwair"
+&gt;&lt;/p&gt;
+&lt;h3 id="订阅热点-ai"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e7%83%ad%e7%82%b9-ai" class="header-anchor"&gt;&lt;/a&gt;订阅热点 AI
+&lt;/h3&gt;&lt;p&gt;每天早晚 8 点 AI 基于订阅的源的阅读量来提取 Summary 列表供订阅者阅读。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018Jir4fe.png"
+loading="lazy"
+alt="hot"
+&gt;&lt;/p&gt;
+&lt;h3 id="生成摘要-ai"&gt;&lt;a href="#%e7%94%9f%e6%88%90%e6%91%98%e8%a6%81-ai" class="header-anchor"&gt;&lt;/a&gt;生成摘要 AI
+&lt;/h3&gt;&lt;p&gt;生成摘要对我来说很重要，目前我订阅了上百个博客和科技媒体，摘要可以让我快速阅读文章核心内容，并确定是否我感兴趣的文章并继续阅读。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018hu1JkJ.png"
+loading="lazy"
+alt="summary"
+&gt;&lt;/p&gt;
+&lt;h3 id="双语翻译-ai"&gt;&lt;a href="#%e5%8f%8c%e8%af%ad%e7%bf%bb%e8%af%91-ai" class="header-anchor"&gt;&lt;/a&gt;双语翻译 AI
+&lt;/h3&gt;&lt;p&gt;应该也是通过 AI 实现的自动翻译，可以对比着阅读，订阅英文专业文章也不吃力。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018andNgu.png"
+loading="lazy"
+alt="translate"
+&gt;&lt;/p&gt;
+&lt;h3 id="激励作者"&gt;&lt;a href="#%e6%bf%80%e5%8a%b1%e4%bd%9c%e8%80%85" class="header-anchor"&gt;&lt;/a&gt;激励作者
+&lt;/h3&gt;&lt;p&gt;通过区块链技术，发行 &lt;code&gt;POWER&lt;/code&gt; 代币，你可以对你感兴趣的文章的作者进行打赏，用来提升作者的影响力和生产出更多高质量的内容，从而实现了&lt;strong&gt;良性循环的激励创作体系&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018tqSDWT.png"
+loading="lazy"
+alt="gift"
+&gt;&lt;/p&gt;
+&lt;h3 id="视频订阅"&gt;&lt;a href="#%e8%a7%86%e9%a2%91%e8%ae%a2%e9%98%85" class="header-anchor"&gt;&lt;/a&gt;视频订阅
+&lt;/h3&gt;&lt;p&gt;没错，你可以把 YouTube 或者哔哩哔哩上你感兴趣的 UP 主都订阅起来，他们发表的最新视频就可以通过 Follow 的自动化推送来及时提醒，直接可以在软件内播放，非常地便捷。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018A8zHK1.png"
+loading="lazy"
+alt="media"
+&gt;&lt;/p&gt;
+&lt;h3 id="图库订阅"&gt;&lt;a href="#%e5%9b%be%e5%ba%93%e8%ae%a2%e9%98%85" class="header-anchor"&gt;&lt;/a&gt;图库订阅
+&lt;/h3&gt;&lt;p&gt;通过图片瀑布流的形式进行订阅，学习与鉴赏图像给大家带来的视觉冲击与色彩描述。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018n9RCRJ.png"
+loading="lazy"
+alt="picture"
+&gt;&lt;/p&gt;
+&lt;h3 id="播客集成"&gt;&lt;a href="#%e6%92%ad%e5%ae%a2%e9%9b%86%e6%88%90" class="header-anchor"&gt;&lt;/a&gt;播客集成
+&lt;/h3&gt;&lt;p&gt;Follow 就是强大，当你不想去阅读文章的时候，你可以通过点击一键生成播客的模式，让文章生成类似播客的方式播放给你听，遥遥领先。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241018Jc5OmY.png"
+loading="lazy"
+alt="播客"
+&gt;&lt;/p&gt;
+&lt;p&gt;介绍了这么多 Follow 的功能，相信大家已经跃跃欲试了，但是目前 Follow 处于内部测试，属于邀请阶段，我这边 5 天才可以生成一个邀请码，严重供不应求，在公测之前的这个阶段，大家没有拿到邀请码的不要灰心，接下来给大家介绍一个开源免费的 RSS 阅读器，先进行过渡。&lt;/p&gt;
+&lt;h2 id="平替的软件"&gt;&lt;a href="#%e5%b9%b3%e6%9b%bf%e7%9a%84%e8%bd%af%e4%bb%b6" class="header-anchor"&gt;&lt;/a&gt;平替的软件
+&lt;/h2&gt;&lt;h3 id="苹果系统平替--netnewswire"&gt;&lt;a href="#%e8%8b%b9%e6%9e%9c%e7%b3%bb%e7%bb%9f%e5%b9%b3%e6%9b%bf--netnewswire" class="header-anchor"&gt;&lt;/a&gt;苹果系统平替 # &lt;strong&gt;NetNewsWire&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241020AFvwsb.jpeg"
+loading="lazy"
+alt="NetNewsWire"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官网地址：&lt;a class="link" href="https://netnewswire.com/" target="_blank" rel="noopener"
+&gt;https://netnewswire.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github 地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire" target="_blank" rel="noopener"
+&gt;https://github.com/Ranchero-Software/NetNewsWire&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire/releases" target="_blank" rel="noopener"
+&gt;https://github.com/Ranchero-Software/NetNewsWire/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="windows-平替--fluent-reader"&gt;&lt;a href="#windows-%e5%b9%b3%e6%9b%bf--fluent-reader" class="header-anchor"&gt;&lt;/a&gt;Windows 平替 # &lt;strong&gt;Fluent Reader&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241020NLzuRr.jpeg"
+loading="lazy"
+alt="Fluent Reader"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官网地址：&lt;a class="link" href="https://hyliu.me/fluent-reader/" target="_blank" rel="noopener"
+&gt;https://hyliu.me/fluent-reader/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github 地址：&lt;a class="link" href="https://github.com/yang991178/fluent-reader" target="_blank" rel="noopener"
+&gt;https://github.com/yang991178/fluent-reader&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载地址：&lt;a class="link" href="https://github.com/yang991178/fluent-reader/releases" target="_blank" rel="noopener"
+&gt;https://github.com/yang991178/fluent-reader/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于我的主力机器目前是 Mac，大家有推荐的 windows rss app 可以评论区分享出来哈。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="写在最后"&gt;&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;写在最后
+&lt;/h2&gt;&lt;p&gt;最后，给大家推荐下我的订阅信息，大家可以去订阅感兴趣的信息源：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://app.follow.is/profile/@debuginn" target="_blank" rel="noopener"
+&gt;https://app.follow.is/profile/@debuginn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同时，已经有 Follow 软件体验的小伙伴，推荐关注我自己收集创建的订阅列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go 语言爱好者：&lt;a class="link" href="https://app.follow.is/list/60633757623653376" target="_blank" rel="noopener"
+&gt;https://app.follow.is/list/60633757623653376&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Java 语言爱好者：搭建 ing，敬请期待～&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同时，大家可以关注我，等 Follow 公测开始，我会第一时间告知大家～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Follow｜下一代的信息浏览器</title><link>https://blog.debuginn.com/p/follow-app/</link><pubDate>Sun, 13 Oct 2024 13:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/follow-app/</guid><description>&lt;img src="https://webp.debuginn.com/20241013ivn8eL.jpeg" alt="Featured image of post Follow｜下一代的信息浏览器" /&gt;&lt;p&gt;近期体验了一款高效的私有化信息订阅平台，给大家推荐一下，官方则是描述为 Next-gen information browser，下一代的信息浏览器，它不单纯是一个 RSS 订阅软件，因为在传统的 RSS 仅仅订阅的是网站的 feed 流信息进行 follow。&lt;/p&gt;
+&lt;p&gt;而 Follow 则是与 RSSHub、RSS3 相结合的生态软件，从而扩展了很多的订阅源以供订阅。&lt;/p&gt;
+&lt;h2 id="follow"&gt;&lt;a href="#follow" class="header-anchor"&gt;&lt;/a&gt;Follow
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241009Vpq1w7.jpg"
+loading="lazy"
+alt="Follow"
+&gt;&lt;/p&gt;
+&lt;p&gt;Follow 不单单提供了 RSS 的订阅，它的定位更是官网中所描述的 &amp;ldquo;下一代的信息浏览器&amp;rdquo;，目前它提供的功能有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Articles&lt;/strong&gt; 文章订阅：偏向于传统的 RSS 订阅的模式；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Social Media&lt;/strong&gt; 社交媒体：更加偏向于 Follow 自己感兴趣的作者在提供订阅的 APP 上；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pictures&lt;/strong&gt; 图库订阅：订阅自己感兴趣的图片网站；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Videos&lt;/strong&gt; 视频订阅：订阅自己的在 Youtube、BiliBili 等视频平台的 UP 主；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio&lt;/strong&gt; 音频订阅：更像是播客类的订阅 APP；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt; 通知订阅：订阅新闻媒体的信息；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;详见官网地址：&lt;a class="link" href="https://follow.is/" target="_blank" rel="noopener"
+&gt;https://follow.is/&lt;/a&gt;
+Github 地址：&lt;a class="link" href="https://github.com/RSSNext/follow" target="_blank" rel="noopener"
+&gt;https://github.com/RSSNext/follow&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="逆算法化"&gt;&lt;a href="#%e9%80%86%e7%ae%97%e6%b3%95%e5%8c%96" class="header-anchor"&gt;&lt;/a&gt;逆算法化
+&lt;/h2&gt;&lt;p&gt;在如今信息化时代，大家接收到的信息都是经过大数据、算法进行点对点的信息推送，导致大家的信息来源越来越趋向于单一、被动接受、羊群效应，大家少了思考、多了短暂地愉悦。&lt;/p&gt;
+&lt;p&gt;在 23 年，我就写了一篇文章叫做 &lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" &gt;《2023 年为何我还在使用 RSS》&lt;/a&gt;，文中我列举了 5 点好处，这也是我为什么大学毕业以来一直使用 RSS 阅读器的原因。&lt;/p&gt;
+&lt;p&gt;其实大家动不动刷抖音、快手、小红书或者微信视频号等短视频平台就会发现，短则半个小时，长则 4-5 个小时的时间都浪费在了这些 APP 上面，回头来看，看过了什么视频，学到了啥，基本上就属于短暂地愉悦，长时间来看就像游戏一种性质。&lt;/p&gt;
+&lt;p&gt;个人定制化的信息输入才是对自己认知与能力的快速提升。&lt;/p&gt;
+&lt;p&gt;其实 RSS 订阅为什么一直长久不衰，很大程度而言，是可以 Follow 自己感兴趣的领域以及作者的高质量的内容的输出，另外也可以屏蔽掉现在对大家苦不堪言的广告推送。&lt;/p&gt;
+&lt;h2 id="亮点功能"&gt;&lt;a href="#%e4%ba%ae%e7%82%b9%e5%8a%9f%e8%83%bd" class="header-anchor"&gt;&lt;/a&gt;亮点功能
+&lt;/h2&gt;&lt;p&gt;目前，Follow 给我带来眼前一亮的功能有如下三个，AI Summary、订阅共享以及邀请制。&lt;/p&gt;
+&lt;h3 id="ai-summary"&gt;&lt;a href="#ai-summary" class="header-anchor"&gt;&lt;/a&gt;AI Summary
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241009tNs61I.png"
+loading="lazy"
+alt="summary"
+&gt;&lt;/p&gt;
+&lt;p&gt;通过自动化设置，可以将文章使用 AI 生成摘要，一些复杂难懂且文章比较长的场景，通过 AI 进行总结，可以带来阅读效率的极大提升。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241010rGF6de.png"
+loading="lazy"
+alt="summary"
+&gt;&lt;/p&gt;
+&lt;h3 id="订阅共享"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e5%85%b1%e4%ba%ab" class="header-anchor"&gt;&lt;/a&gt;订阅共享
+&lt;/h3&gt;&lt;p&gt;订阅共享功能是 Follow 的特色功能，大家可以通过订阅的文章了解到和自己一样订阅这个文章的人他（她）们订阅了什么信息，从而充实自己的订阅源。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241010Fe5wr7.png"
+loading="lazy"
+alt="share"
+&gt;&lt;/p&gt;
+&lt;h3 id="邀请制"&gt;&lt;a href="#%e9%82%80%e8%af%b7%e5%88%b6" class="header-anchor"&gt;&lt;/a&gt;邀请制
+&lt;/h3&gt;&lt;p&gt;相信 Follow 的作者在开发这个软件的时候就有着成熟的产品推广的思路，实际上， Follow 本身是一块很优秀、完成度很高的软件，但是作者实施的邀请制度使得 Follow 在互联网中始终可以保持比较活跃的热度，从而让一款软件更容易地在社区、媒体上带来传播。&lt;/p&gt;
+&lt;p&gt;不得不说，创新之处，在于作者将区块链币的设计引入到了 Follow 之中，通过签到获取 &lt;code&gt;$POWER &lt;/code&gt; 代币，代币目前有两种用途：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;邀请&lt;/strong&gt;：通过代币生成邀请码，进行分享，达到 APP 的裂变传播；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;赞赏&lt;/strong&gt;：对于感兴趣的文章，你可以给认证过的作者打赏代币；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相信未来代币可以在 Follow 中有更多的场景和玩法，同时作者还承诺代币未来的价值，期待 (✧∀✧)&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241013nluSz7.png"
+loading="lazy"
+alt="invite"
+&gt;&lt;/p&gt;
+&lt;h2 id="写在最后"&gt;&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;写在最后
+&lt;/h2&gt;&lt;p&gt;Follow 是一款非常成功的软件，在算法推荐为主流的时代，这一款 RSS 软件无疑给 RSS 圈带来了新的希望与活力，目前还在邀请阶段，凭借开源、简洁、RSS3 就已经获得了大家的追捧，希望公测时更加出色。&lt;/p&gt;
+&lt;p&gt;不过，目前的互联网环境，头部大厂都是尽可能地保留住自己的数字信息，从而选择了私域与闭源的策略，这样其实与最初互联网“开放”的原则相违背，带来的弊端是大家接触信息的成本变得高了起来，同时，RSS 阅读器也因为版权的原因，无法获取高质量的文章。&lt;/p&gt;
+&lt;p&gt;大家有推荐的 RSS 的订阅源也可以通过评论区分享出来，如果你感觉文章对你有所帮助的话可以关注下我，我会不时分享一些小众但也优秀的软件推荐给大家，让我们一起变得更强。&lt;/p&gt;
+&lt;p&gt;分享一下我的网站的订阅源与 Follow 的订阅列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Debug客栈&lt;/strong&gt; RSS 订阅地址：&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+&gt;https://blog.debuginn.com/index.xml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Go 语言爱好者&lt;/strong&gt; 订阅列表：&lt;a class="link" href="https://app.follow.is/list/60633757623653376" target="_blank" rel="noopener"
+&gt;https://app.follow.is/list/60633757623653376&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后，我会从评论区中抽取一名朋友赠与 Follow 邀请码，感谢大家支持～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
