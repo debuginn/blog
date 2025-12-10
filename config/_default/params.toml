@@ -145,6 +145,7 @@ title = "推广"
 href = "/p/mi-work/"
 icon = "briefcase"
 text = "来小米，一起玩！校招、社招均可内推！"
+target = "_blank"
 
 [[promote.items]]
 href = "https://www.xflash.org/#/register?code=yGSImRR7"
@@ -165,11 +166,13 @@ title = "热门"
 href = "/p/financial-hongkong-card/"
 icon = "wallet"
 text = "港卡开卡指南"
+target = "_blank"
 
 [[popular.items]]
 href = "/categories/travel/"
 icon = "building-airport"
 text = "游记系列 跟我一起环游中国"
+target = "_blank"
 
 [email]
 title = "订阅"
