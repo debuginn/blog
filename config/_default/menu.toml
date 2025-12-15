@@ -6,7 +6,7 @@ url = "/subscribe"
 weight = 1
 [main.params]
 icon = "bell-ringing"
-newtab = true
+newtab = false
 
 [[main]]
 identifier = "post"
@@ -15,7 +15,7 @@ url = "/archives"
 weight = 2
 [main.params]
 icon = "archives"
-newtab = true
+newtab = false
 
 [[main]]
 identifier = "project"
@@ -24,7 +24,7 @@ url = "/project"
 weight = 3
 [main.params]
 icon = "git-branch"
-newtab = true
+newtab = false
 
 [[main]]
 identifier = "links"
@@ -33,7 +33,7 @@ url = "/links"
 weight = 4
 [main.params]
 icon = "link"
-newtab = true
+newtab = false
 
 [[main]]
 identifier = "use"
@@ -42,7 +42,7 @@ url = "/use"
 weight = 5
 [main.params]
 icon = "user-cog"
-newtab = true
+newtab = false
 
 [[main]]
 identifier = "photo"
