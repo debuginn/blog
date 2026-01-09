@@ -106,3 +106,19 @@ jobs:
           folder: public
           clean: true
           single-commit: true
+
+  new-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example Step
+        run: echo "This is a new job running at the same level as build"
+      - name: Wait for 60 seconds
+        run: sleep 60
+      - name: IndexNow
+        uses: bojieyang/indexnow-action@v1
+        with:
+          sitemap-location: "https://blog.debuginn.com/sitemap.xml"
+          endpoint: "www.bing.com"
+          since: 1
+          since-unit: "day"
+          key: ${{ secrets.INDEXNOW_KEY }}
