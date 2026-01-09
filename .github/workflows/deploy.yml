@@ -1,109 +1,130 @@
 name: Deploy to Github Pages
 
 on:
-    push:
-        branches:
-            - main
-        paths:
-            - content
-    schedule:
-        - cron: '*/5 * * * *' # 每 5 分钟运行一次
-    # Allows you to run this workflow manually from the Actions tab
-    workflow_dispatch:
-    repository_dispatch:
-        types:
-            - content-updated
+  push:
+    branches:
+      - main
+    paths:
+      - content
+  schedule:
+    - cron: "*/5 * * * *" # 每 5 分钟运行一次
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - content-updated
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        permissions:
-            # Give the default GITHUB_TOKEN write permission to commit and push the
-            # added or changed files to the repository.
-            contents: write
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
 
-        steps:
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-            - uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
-                  submodules: true
-                  token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check main commit processed
+        id: main_cache
+        uses: actions/cache@v4
+        with:
+          path: .ci-cache/main
+          key: main-${{ github.sha }}
 
-            - name: Check main commit processed
-              id: main_cache
-              uses: actions/cache@v4
-              with:
-                  path: .ci-cache/main
-                  key: main-${{ github.sha }}
+      - name: Detect main change
+        id: detect_main
+        env:
+          CACHE_HIT: ${{ steps.main_cache.outputs.cache-hit }}
+        run: |
+          if [ "$CACHE_HIT" = "true" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
-            - name: Detect main change
-              id: detect_main
-              env:
-                  CACHE_HIT: ${{ steps.main_cache.outputs.cache-hit }}
-              run: |
-                if [ "$CACHE_HIT" = "true" ]; then
-                  echo "changed=false" >> "$GITHUB_OUTPUT"
-                else
-                  echo "changed=true" >> "$GITHUB_OUTPUT"
-                fi
+      - name: Update submodule
+        run: |
+          git submodule update --remote --recursive
 
-            - name: Update submodule
-              run: |
-                git submodule update --remote --recursive
+      - name: Detect content change
+        id: detect_content
+        run: |
+          if git diff --quiet HEAD -- content; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
-            - name: Detect content change
-              id: detect_content
-              run: |
-                if git diff --quiet HEAD -- content; then
-                  echo "changed=false" >> "$GITHUB_OUTPUT"
-                else
-                  echo "changed=true" >> "$GITHUB_OUTPUT"
-                fi
+      - name: Commit submodule update
+        if: ${{ steps.detect_content.outputs.changed == 'true' && github.event_name == 'schedule' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content
+          git commit -m "chore: update content submodule"
+          git push
 
-            - name: Commit submodule update
-              if: ${{ steps.detect_content.outputs.changed == 'true' && github.event_name == 'schedule' }}
-              run: |
-                git config user.name "github-actions[bot]"
-                git config user.email "github-actions[bot]@users.noreply.github.com"
-                git add content
-                git commit -m "chore: update content submodule"
-                git push
+      - name: Persist main marker
+        run: |
+          mkdir -p .ci-cache/main
+          echo "$GITHUB_SHA" > .ci-cache/main/sha.txt
 
-            - name: Persist main marker
-              run: |
-                mkdir -p .ci-cache/main
-                echo "$GITHUB_SHA" > .ci-cache/main/sha.txt
+      - name: Cache Hugo resources
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-hugo-resources
+        with:
+          path: resources
+          key: ${{ env.cache-name }}
 
-            - name: Cache Hugo resources
-              uses: actions/cache@v4
-              env:
-                  cache-name: cache-hugo-resources
-              with:
-                  path: resources
-                  key: ${{ env.cache-name }}
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "^1.17.0"
+      - run: go version
 
-            - uses: actions/setup-go@v5
-              with:
-                  go-version: "^1.17.0"
-            - run: go version
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
 
-            - name: Setup Hugo
-              uses: peaceiris/actions-hugo@v2
-              with:
-                  hugo-version: "latest"
-                  extended: true
+      - name: Build
+        if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
+        run: hugo --minify --gc
 
-            - name: Build
-              if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
-              run: hugo --minify --gc
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
+        with:
+          branch: gh-pages
+          folder: public
+          clean: true
+          single-commit: true
 
-            - name: Deploy 🚀
-              uses: JamesIves/github-pages-deploy-action@v4
-              if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
-              with:
-                  branch: gh-pages
-                  folder: public
-                  clean: true
-                  single-commit: true
+      - name: Notify Google Sitemap 📢
+        if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://blog.debuginn.com/index.xml"
+          echo "Google Sitemap notified"
+
+      # - name: Push latest RSS post to Baidu 📢
+      #   if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
+      #   run: |
+      #       LATEST_URL=$(curl -s https://blog.debuginn.com/index.xml \
+      #         | sed -n 's:.*<item>.*<link>\(.*\)</link>.*:\1:p' \
+      #         | head -n 1)
+      #       if [ -z "$LATEST_URL" ]; then
+      #         echo "No URL found in RSS, skip."
+      #         exit 0
+      #       fi
+      #       echo "Push to Baidu: $LATEST_URL"
+      #       echo "$LATEST_URL" | curl -H 'Content-Type:text/plain' \
+      #         --data-binary @- \
+      #         "http://data.zz.baidu.com/urls?site=${{ secrets.BAIDU_SITE }}&token=${{ secrets.BAIDU_TOKEN }}"
+      #       echo "Baidu Sitemap notified"
