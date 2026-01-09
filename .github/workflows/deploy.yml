@@ -118,6 +118,6 @@ jobs:
         with:
           sitemap-location: "https://blog.debuginn.com/sitemap.xml"
           endpoint: "www.bing.com"
-          since: 1
+          since: 7
           since-unit: "day"
           key: ${{ secrets.INDEXNOW_KEY }}
