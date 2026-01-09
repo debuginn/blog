@@ -114,10 +114,7 @@ jobs:
       - name: Wait for 60 seconds
         run: sleep 60
       - name: Bing IndexNow
-        uses: bojieyang/indexnow-action@v1
+        uses: bojieyang/indexnow-action@v2
         with:
-          sitemap-location: "https://blog.debuginn.com/sitemap.xml"
-          endpoint: "www.bing.com"
-          since: 7
-          since-unit: "day"
+          sitemap-location: 'https://blog.debuginn.com/sitemap.xml'
           key: ${{ secrets.INDEXNOW_KEY }}
