@@ -15,7 +15,7 @@ on:
       - content-updated
 
 jobs:
-  build:
+  deploy-site:
     runs-on: ubuntu-latest
 
     permissions:
@@ -107,11 +107,10 @@ jobs:
           clean: true
           single-commit: true
 
-  new-job:
+  submit-site:
+    needs: deploy-site
     runs-on: ubuntu-latest
     steps:
-      - name: Example Step
-        run: echo "This is a new job running at the same level as build"
       - name: Wait for 60 seconds
         run: sleep 60
       - name: IndexNow
