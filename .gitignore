@@ -12,3 +12,4 @@ themes/.DS_Store
 # 但保留 ads.txt 和 CNAME 文件
 !/public/ads.txt
 !/public/CNAME
+!/public/baidu_verify_codeva-ytplSl8XeI.html
