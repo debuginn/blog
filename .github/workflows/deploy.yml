@@ -113,7 +113,7 @@ jobs:
     steps:
       - name: Wait for 60 seconds
         run: sleep 60
-      - name: IndexNow
+      - name: Bing IndexNow
         uses: bojieyang/indexnow-action@v1
         with:
           sitemap-location: "https://blog.debuginn.com/sitemap.xml"
