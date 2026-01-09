@@ -106,25 +106,3 @@ jobs:
           folder: public
           clean: true
           single-commit: true
-
-      - name: Notify Google Sitemap 📢
-        if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
-        run: |
-          curl -s "https://www.google.com/ping?sitemap=https://blog.debuginn.com/index.xml"
-          echo "Google Sitemap notified"
-
-      # - name: Push latest RSS post to Baidu 📢
-      #   if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
-      #   run: |
-      #       LATEST_URL=$(curl -s https://blog.debuginn.com/index.xml \
-      #         | sed -n 's:.*<item>.*<link>\(.*\)</link>.*:\1:p' \
-      #         | head -n 1)
-      #       if [ -z "$LATEST_URL" ]; then
-      #         echo "No URL found in RSS, skip."
-      #         exit 0
-      #       fi
-      #       echo "Push to Baidu: $LATEST_URL"
-      #       echo "$LATEST_URL" | curl -H 'Content-Type:text/plain' \
-      #         --data-binary @- \
-      #         "http://data.zz.baidu.com/urls?site=${{ secrets.BAIDU_SITE }}&token=${{ secrets.BAIDU_TOKEN }}"
-      #       echo "Baidu Sitemap notified"
