@@ -118,3 +118,6 @@ jobs:
         with:
           sitemap-location: 'https://blog.debuginn.com/sitemap.xml'
           key: ${{ secrets.INDEXNOW_KEY }}
+          since: 7
+          since-unit: "day"
+          key-location: 'https://blog.debuginn.com/${{ secrets.INDEXNOW_KEY }}.txt'
