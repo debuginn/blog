@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>订阅 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E8%AE%A2%E9%98%85/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 订阅 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 04 Dec 2023 23:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E8%AE%A2%E9%98%85/index.xml" rel="self" type="application/rss+xml"/><item><title>2023 年为何我还在使用 RSS</title><link>https://blog.debuginn.com/p/debuginn-2023-rss/</link><pubDate>Mon, 04 Dec 2023 23:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023-rss/</guid><description>&lt;img src="https://webp.debuginn.com/202312042307782.jpeg" alt="Featured image of post 2023 年为何我还在使用 RSS" /&gt;&lt;h2 id="什么是-rss"&gt;&lt;a href="#%e4%bb%80%e4%b9%88%e6%98%af-rss" class="header-anchor"&gt;&lt;/a&gt;什么是 RSS
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;RSS（英文全称：RDF Site Summary 或 Really Simple Syndication），中文译作简易信息聚合，也称聚合内容，是一种消息来源格式规范，用以聚合多个网站更新的内容并自动通知网站订阅者。使用 RSS 后，网站订阅者便无需再手动查看网站是否有新的内容，同时 RSS 可将多个网站更新的内容进行整合，以摘要的形式呈现，有助于订阅者快速获取重要信息，并选择性地点阅查看。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;RSS 作为 1999 年诞生的技术，并在 2009 年更新完最后一版本后，没有再进一步更新的技术，为啥在 2023 年，我还在使用这个“原始”的技术？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;答案是肯定的，因为 RSS 好用，通过 RSS 我可以聚合我感兴趣领域的博客，每日定时拉取获得博客作者新发布的内容。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="rss-的优点"&gt;&lt;a href="#rss-%e7%9a%84%e4%bc%98%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;RSS 的优点
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;聚合阅读&lt;/strong&gt;，通过 RSS 阅读器订阅网站，我可以每日在特定时间来阅读有更新的站点；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;订阅免费&lt;/strong&gt;，订阅的网站，无需进行付费，便可以使用开源的阅读器进行阅读；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定输出&lt;/strong&gt;，订阅的网站，无需借助第三方平台进行数据传输或者聚合，只要网站在，源也就在；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阅读友好&lt;/strong&gt;，使用 RSS 阅读器阅读网站，可以过滤源网站内的广告和观看各种风格各异的 UI ，更专注于内容；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;避免发散&lt;/strong&gt;，目前大量的短视频 APP 快速产出无营养的视频，不能注意精力去阅读；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="怎么订阅"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e8%ae%a2%e9%98%85" class="header-anchor"&gt;&lt;/a&gt;怎么订阅
+&lt;/h2&gt;&lt;h3 id="直接订阅"&gt;&lt;a href="#%e7%9b%b4%e6%8e%a5%e8%ae%a2%e9%98%85" class="header-anchor"&gt;&lt;/a&gt;直接订阅
+&lt;/h3&gt;&lt;p&gt;针对你感兴趣的网站，一般网站都会有类似彩虹 🌈 的表示，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312031744451.png"
+loading="lazy"
+alt="RSS订阅"
+&gt;&lt;/p&gt;
+&lt;p&gt;当然，你要是感觉我的内容对你有帮助，欢迎通过 RSS 订阅，&lt;a class="link" href="https://blog.debuginn.com/subscribe" &gt;订阅地址&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id="rsshub"&gt;&lt;a href="#rsshub" class="header-anchor"&gt;&lt;/a&gt;RSSHub
+&lt;/h3&gt;&lt;p&gt;当然，随着这一项技术不再那么流行，一些站点在开发的时候就不再提供 RSS 内容输出的支持，但是由于有大众的阅读，这里就给大家推荐 RSSHub，通过讲源网站输出内容进行 RSS 标准格式的封装来提供 RSS 订阅。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官方网站：&lt;a class="link" href="https://rsshub.app/" target="_blank" rel="noopener"
+&gt;https://rsshub.app/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官方文档：&lt;a class="link" href="https://docs.rsshub.app/" target="_blank" rel="noopener"
+&gt;https://docs.rsshub.app/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="订阅工具"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e5%b7%a5%e5%85%b7" class="header-anchor"&gt;&lt;/a&gt;订阅工具
+&lt;/h2&gt;&lt;h3 id="netnewswire"&gt;&lt;a href="#netnewswire" class="header-anchor"&gt;&lt;/a&gt;Netnewswire
+&lt;/h3&gt;&lt;p&gt;Netnewswire 是一款开源的 IOS/MacOS 的阅读器，他支持 iCloud 云备份，可以在 iPhone/iPad/Mac 上随时切换阅读。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官方网站：&lt;a class="link" href="https://netnewswire.com/" target="_blank" rel="noopener"
+&gt;https://netnewswire.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开源地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire" target="_blank" rel="noopener"
+&gt;https://github.com/Ranchero-Software/NetNewsWire&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="rsshub-radar"&gt;&lt;a href="#rsshub-radar" class="header-anchor"&gt;&lt;/a&gt;RSSHub Radar
+&lt;/h3&gt;&lt;p&gt;是一款浏览器插件，目前主流的浏览器都支持安装，可以帮助我快速发现和订阅当前网站的 RSS 和 RSSHub，开源且免费。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;插件地址：&lt;a class="link" href="https://chrome.google.com/webstore/detail/kefjpfngnndepjbopdmoebkipbgkggaa" target="_blank" rel="noopener"
+&gt;https://chrome.google.com/webstore/detail/kefjpfngnndepjbopdmoebkipbgkggaa&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开源地址：&lt;a class="link" href="https://github.com/DIYgod/RSSHub-Radar" target="_blank" rel="noopener"
+&gt;https://github.com/DIYgod/RSSHub-Radar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装好，通过点击图标，可以查看网站支持的订阅方式以及订阅的内容范围，可以便捷的跳转到阅读器进行订阅。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312031800365.png"
+loading="lazy"
+alt="RSSHub Radar"
+&gt;&lt;/p&gt;
+&lt;h2 id="订阅分享"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e5%88%86%e4%ba%ab" class="header-anchor"&gt;&lt;/a&gt;订阅分享
+&lt;/h2&gt;&lt;p&gt;目前我订阅了 61 个网站源，包含科技、技术、设计、创意、阅读等板块，在这里分享出来，大家喜欢的话就可以点击订阅。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;名称&lt;/th&gt;
+&lt;th&gt;网站地址&lt;/th&gt;
+&lt;th&gt;订阅地址&lt;/th&gt;
+&lt;th&gt;类别&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;爱范儿&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ifanr.com" target="_blank" rel="noopener"
+&gt;https://www.ifanr.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ifanr.com/feed" target="_blank" rel="noopener"
+&gt;https://www.ifanr.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技,IT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;财新周刊&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://weekly.caixin.com" target="_blank" rel="noopener"
+&gt;https://weekly.caixin.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/caixin/weekly" target="_blank" rel="noopener"
+&gt;https://rsshub.app/caixin/weekly&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;财经&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;彩虹Smiling™️&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.smilingblog.cn" target="_blank" rel="noopener"
+&gt;https://www.smilingblog.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.smilingblog.cn/feed" target="_blank" rel="noopener"
+&gt;https://www.smilingblog.cn/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;菜鸟Miao&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://newbmiao.github.io" target="_blank" rel="noopener"
+&gt;https://newbmiao.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://newbmiao.github.io/atom.xml" target="_blank" rel="noopener"
+&gt;https://newbmiao.github.io/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;茶歇驿站&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://maiyang.me" target="_blank" rel="noopener"
+&gt;https://maiyang.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://maiyang.me/index.xml" target="_blank" rel="noopener"
+&gt;https://maiyang.me/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;潮流周刊&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://weekly.tw93.fun" target="_blank" rel="noopener"
+&gt;https://weekly.tw93.fun&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://weekly.tw93.fun/rss.xml" target="_blank" rel="noopener"
+&gt;https://weekly.tw93.fun/rss.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周刊&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;程序印象&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.cn18k.com" target="_blank" rel="noopener"
+&gt;https://www.cn18k.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.cn18k.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://www.cn18k.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;程序员的喵&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://catcoding.me" target="_blank" rel="noopener"
+&gt;https://catcoding.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://catcoding.me/atom.xml" target="_blank" rel="noopener"
+&gt;https://catcoding.me/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;大俊的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://darjun.github.io" target="_blank" rel="noopener"
+&gt;https://darjun.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://darjun.github.io/index.xml" target="_blank" rel="noopener"
+&gt;https://darjun.github.io/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;董泽润的技术笔记&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mytechshares.com" target="_blank" rel="noopener"
+&gt;https://mytechshares.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mytechshares.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://mytechshares.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;飞雪无情的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.flysnow.org" target="_blank" rel="noopener"
+&gt;https://www.flysnow.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.flysnow.org/index.xml" target="_blank" rel="noopener"
+&gt;https://www.flysnow.org/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;IT,GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;峰云就她了&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xiaorui.cc" target="_blank" rel="noopener"
+&gt;https://xiaorui.cc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xiaorui.cc/feed" target="_blank" rel="noopener"
+&gt;https://xiaorui.cc/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;虹线&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://1q43.blog" target="_blank" rel="noopener"
+&gt;https://1q43.blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://1q43.blog/feed" target="_blank" rel="noopener"
+&gt;https://1q43.blog/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;IT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;极客公园&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://mainssl.geekpark.net" target="_blank" rel="noopener"
+&gt;http://mainssl.geekpark.net&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.geekpark.net/rss" target="_blank" rel="noopener"
+&gt;https://www.geekpark.net/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技,IT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;煎鱼&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://eddycjy.com" target="_blank" rel="noopener"
+&gt;https://eddycjy.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://eddycjy.com/index.xml" target="_blank" rel="noopener"
+&gt;https://eddycjy.com/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;酷 壳&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://coolshell.cn" target="_blank" rel="noopener"
+&gt;https://coolshell.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://coolshell.cn/feed" target="_blank" rel="noopener"
+&gt;https://coolshell.cn/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;R.I.P.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;李文周的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.liwenzhou.com" target="_blank" rel="noopener"
+&gt;https://www.liwenzhou.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.liwenzhou.com/index.xml" target="_blank" rel="noopener"
+&gt;https://www.liwenzhou.com/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;刘未鹏&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mindhacks.cn" target="_blank" rel="noopener"
+&gt;https://mindhacks.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mindhacks.cn/feed" target="_blank" rel="noopener"
+&gt;https://mindhacks.cn/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;美团技术团队&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tech.meituan.com" target="_blank" rel="noopener"
+&gt;https://tech.meituan.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tech.meituan.com/feed/" target="_blank" rel="noopener"
+&gt;https://tech.meituan.com/feed/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;面向信仰编程&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://draveness.me" target="_blank" rel="noopener"
+&gt;https://draveness.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://draveness.me/feed.xml" target="_blank" rel="noopener"
+&gt;https://draveness.me/feed.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;计算机&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;鸟窝&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://colobu.com" target="_blank" rel="noopener"
+&gt;https://colobu.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://colobu.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://colobu.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;苹果fans博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.mac52ipod.cn" target="_blank" rel="noopener"
+&gt;http://www.mac52ipod.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.mac52ipod.cn/feed.php/feed" target="_blank" rel="noopener"
+&gt;https://www.mac52ipod.cn/feed.php/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Apple&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;阮一峰的网络日志&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener"
+&gt;http://www.ruanyifeng.com/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.ruanyifeng.com/blog/atom.xml" target="_blank" rel="noopener"
+&gt;http://www.ruanyifeng.com/blog/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周刊&lt;/td&gt;
+&lt;td&gt;科技爱好者周刊&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;四火的唠叨&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.raychase.net" target="_blank" rel="noopener"
+&gt;https://www.raychase.net&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.raychase.net/feed" target="_blank" rel="noopener"
+&gt;https://www.raychase.net/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;唐巧的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://blog.devtang.com" target="_blank" rel="noopener"
+&gt;http://blog.devtang.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://blog.devtang.com/atom.xml" target="_blank" rel="noopener"
+&gt;http://blog.devtang.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;阅读&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;湾区日报&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.wanqu.co" target="_blank" rel="noopener"
+&gt;https://www.wanqu.co&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/wanqu/news" target="_blank" rel="noopener"
+&gt;https://rsshub.app/wanqu/news&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;微软亚洲研究院&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://api.feeddd.org/feeds/63744936e11908407781ff61" target="_blank" rel="noopener"
+&gt;https://api.feeddd.org/feeds/63744936e11908407781ff61&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;午夜咖啡&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://jolestar.com" target="_blank" rel="noopener"
+&gt;http://jolestar.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://jolestar.com/feed.xml" target="_blank" rel="noopener"
+&gt;https://jolestar.com/feed.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;徐靖峰&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://lexburner.github.io" target="_blank" rel="noopener"
+&gt;https://lexburner.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://lexburner.github.io/atom.xml" target="_blank" rel="noopener"
+&gt;https://lexburner.github.io/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Java&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;阳志平的网志&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.yangzhiping.com" target="_blank" rel="noopener"
+&gt;https://www.yangzhiping.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.yangzhiping.com/feed" target="_blank" rel="noopener"
+&gt;https://www.yangzhiping.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;一个草根站长的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.zz1984.com" target="_blank" rel="noopener"
+&gt;https://www.zz1984.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.zz1984.com/feed/" target="_blank" rel="noopener"
+&gt;https://www.zz1984.com/feed/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;月光博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.williamlong.info" target="_blank" rel="noopener"
+&gt;https://www.williamlong.info&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.williamlong.info/feed" target="_blank" rel="noopener"
+&gt;https://www.williamlong.info/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;云风的 BLOG&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.codingnow.com" target="_blank" rel="noopener"
+&gt;https://blog.codingnow.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.codingnow.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://blog.codingnow.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;知乎每日精选&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.zhihu.com" target="_blank" rel="noopener"
+&gt;http://www.zhihu.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.zhihu.com/rss" target="_blank" rel="noopener"
+&gt;https://www.zhihu.com/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;热点&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;竹新社&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://t.me/s/tnews365" target="_blank" rel="noopener"
+&gt;https://t.me/s/tnews365&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/telegram/channel/tnews365" target="_blank" rel="noopener"
+&gt;https://rsshub.app/telegram/channel/tnews365&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;新闻&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;AIGC Weekly&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://quail.ink/op7418/feed/atom" target="_blank" rel="noopener"
+&gt;https://quail.ink/op7418/feed/atom&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;AI&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Apple Newsroom&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.apple.com" target="_blank" rel="noopener"
+&gt;https://www.apple.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.apple.com/newsroom/rss-feed.rss" target="_blank" rel="noopener"
+&gt;https://www.apple.com/newsroom/rss-feed.rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Apple&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;BMPI&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.bmpi.dev" target="_blank" rel="noopener"
+&gt;https://www.bmpi.dev&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.bmpi.dev/index.xml" target="_blank" rel="noopener"
+&gt;https://www.bmpi.dev/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;chai2010 的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://chai2010.cn" target="_blank" rel="noopener"
+&gt;https://chai2010.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://chai2010.cn/index.xml" target="_blank" rel="noopener"
+&gt;https://chai2010.cn/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Dave Cheney&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://dave.cheney.net" target="_blank" rel="noopener"
+&gt;https://dave.cheney.net&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://dave.cheney.net/feed/rss" target="_blank" rel="noopener"
+&gt;https://dave.cheney.net/feed/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Debug客栈&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.debuginn.com" target="_blank" rel="noopener"
+&gt;https://blog.debuginn.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+&gt;https://blog.debuginn.com/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;关注&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Go Programming Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ardanlabs.com/blog" target="_blank" rel="noopener"
+&gt;https://www.ardanlabs.com/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ardanlabs.com/blog/index.xml" target="_blank" rel="noopener"
+&gt;https://www.ardanlabs.com/blog/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;huxihx&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.cnblogs.com/huxi2b/rss" target="_blank" rel="noopener"
+&gt;https://www.cnblogs.com/huxi2b/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;idealclover&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://idealclover.top" target="_blank" rel="noopener"
+&gt;https://idealclover.top&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://idealclover.top/feed" target="_blank" rel="noopener"
+&gt;https://idealclover.top/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Issues on 省流&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://shengliu.tech/issues/" target="_blank" rel="noopener"
+&gt;https://shengliu.tech/issues/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://shengliu.tech/issues/index.xml" target="_blank" rel="noopener"
+&gt;https://shengliu.tech/issues/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;日报&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;KAIX.IN&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://kaix.in" target="_blank" rel="noopener"
+&gt;https://kaix.in&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://kaix.in/feed" target="_blank" rel="noopener"
+&gt;https://kaix.in/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;咖啡,创业&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;LinkinStar&amp;rsquo;s Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.linkinstars.com" target="_blank" rel="noopener"
+&gt;https://www.linkinstars.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.linkinstars.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://www.linkinstars.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;No Headback&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://xargin.com" target="_blank" rel="noopener"
+&gt;http://xargin.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xargin.com/feed" target="_blank" rel="noopener"
+&gt;https://xargin.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;OpenAI Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://openai.com/blog" target="_blank" rel="noopener"
+&gt;https://openai.com/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/openai/blog" target="_blank" rel="noopener"
+&gt;https://rsshub.app/openai/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;AI&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Wujunze`s Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://wujunze.com/posts" target="_blank" rel="noopener"
+&gt;https://wujunze.com/posts&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://wujunze.com/posts/index.xml" target="_blank" rel="noopener"
+&gt;https://wujunze.com/posts/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Pseudoyu&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.pseudoyu.com/zh" target="_blank" rel="noopener"
+&gt;https://www.pseudoyu.com/zh&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.pseudoyu.com/zh/index.xml" target="_blank" rel="noopener"
+&gt;https://www.pseudoyu.com/zh/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周报&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Ri Xu Online&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xuri.me" target="_blank" rel="noopener"
+&gt;https://xuri.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xuri.me/feed" target="_blank" rel="noopener"
+&gt;https://xuri.me/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;SegmentFault行业快讯&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://segmentfault.com/blog/news" target="_blank" rel="noopener"
+&gt;https://segmentfault.com/blog/news&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://segmentfault.com/feeds/blog/news" target="_blank" rel="noopener"
+&gt;https://segmentfault.com/feeds/blog/news&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周刊,科技&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;STRRL&amp;rsquo;s backyard&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://strrl.dev" target="_blank" rel="noopener"
+&gt;https://strrl.dev&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://strrl.dev/index.xml" target="_blank" rel="noopener"
+&gt;https://strrl.dev/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;The Go Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://go.dev/blog" target="_blank" rel="noopener"
+&gt;https://go.dev/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://go.dev/blog/feed.atom" target="_blank" rel="noopener"
+&gt;https://go.dev/blog/feed.atom&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;The GoLand Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.jetbrains.com" target="_blank" rel="noopener"
+&gt;https://blog.jetbrains.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.jetbrains.com/go/feed" target="_blank" rel="noopener"
+&gt;https://blog.jetbrains.com/go/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GoLand&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Tinyfool的个人网站&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://codechina.org" target="_blank" rel="noopener"
+&gt;https://codechina.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://codechina.org/feed" target="_blank" rel="noopener"
+&gt;https://codechina.org/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Tony Bai&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tonybai.com" target="_blank" rel="noopener"
+&gt;https://tonybai.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tonybai.com/feed" target="_blank" rel="noopener"
+&gt;https://tonybai.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;OPML 订阅文件：&lt;a class="link" href="https://webp.debuginn.com/202312032154291.opml" target="_blank" rel="noopener"
+&gt;Feed订阅源文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最后，你要有认为值得推荐的或者有价值的博客，都可以在评论区分享出来，让我们站在巨人的肩膀上变得更强～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
