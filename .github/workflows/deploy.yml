@@ -1,61 +1,37 @@
-name: Deploy to Github Pages
+name: Deploy Blog (Event Driven)
 
 on:
   push:
     branches:
       - main
-    paths:
-      - content
-  schedule:
-    - cron: "*/5 * * * *" # 每 5 分钟运行一次
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   repository_dispatch:
     types:
       - content-updated
 
-jobs:
-  deploy-site:
-    runs-on: ubuntu-latest
-    outputs:
-      should_deploy: ${{ steps.check_deploy.outputs.should_deploy }}
+permissions:
+  contents: write
 
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
-      contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # 1 Checkout 主仓库 + submodule（只读）
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check main commit processed
-        id: main_cache
-        uses: actions/cache@v4
-        with:
-          path: .ci-cache/main
-          key: main-${{ github.sha }}
-
-      - name: Detect main change
-        id: detect_main
-        env:
-          CACHE_HIT: ${{ steps.main_cache.outputs.cache-hit }}
-        run: |
-          if [ "$CACHE_HIT" = "true" ]; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Update submodule
+      # 2 拉取 submodule 最新内容（不写回 main）
+      - name: Update content submodule
         run: |
           git submodule update --remote --recursive
 
+      # 3 判断 content 是否真的发生变化
       - name: Detect content change
-        id: detect_content
+        id: content
         run: |
           if git diff --quiet HEAD -- content; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -63,75 +39,75 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Check deploy requirement
-        id: check_deploy
+      # 4 统一判断是否需要部署
+      - name: Decide deploy
+        id: deploy
         run: |
-          if [[ "${{ github.event_name }}" != "schedule" ]] || \
-            [[ "${{ steps.detect_content.outputs.changed }}" == "true" ]] || \
-            [[ "${{ steps.detect_main.outputs.changed }}" == "true" ]]; then
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ steps.content.outputs.changed }}" == "true" ]]; then
             echo "should_deploy=true" >> "$GITHUB_OUTPUT"
           else
             echo "should_deploy=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit submodule update
-        if: ${{ steps.detect_content.outputs.changed == 'true' && github.event_name == 'schedule' }}
+      # 5 无需部署时提示并结束
+      - name: Skip deploy when not required
+        if: steps.deploy.outputs.should_deploy == 'false'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content
-          git commit -m "chore: update content submodule"
-          git push
+          echo "No deploy required. Exit workflow."
 
-      - name: Persist main marker
-        run: |
-          mkdir -p .ci-cache/main
-          echo "$GITHUB_SHA" > .ci-cache/main/sha.txt
-
-      - name: Cache Hugo resources
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-hugo-resources
+      # 6 Setup Go（Hugo 模块依赖）
+      - name: Setup Go
+        if: steps.deploy.outputs.should_deploy == 'true'
+        uses: actions/setup-go@v5
         with:
-          path: resources
-          key: ${{ env.cache-name }}
+          go-version: "^1.17"
 
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "^1.17.0"
-      - run: go version
-
+      # 7 Setup Hugo
       - name: Setup Hugo
+        if: steps.deploy.outputs.should_deploy == 'true'
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: latest
           extended: true
 
-      - name: Build
-        if: ${{ steps.check_deploy.outputs.should_deploy == 'true' }}
-        run: hugo --minify --gc
+      # 8 Hugo 资源缓存（只用于加速）
+      - name: Cache Hugo resources
+        if: steps.deploy.outputs.should_deploy == 'true'
+        uses: actions/cache@v4
+        with:
+          path: resources
+          key: hugo-resources-${{ hashFiles('config/**', 'themes/**', 'go.sum') }}
 
-      - name: Deploy 🚀
+      # 9 Build
+      - name: Build site
+        if: steps.deploy.outputs.should_deploy == 'true'
+        run: |
+          hugo --minify --gc
+
+      # 10 Deploy 到 gh-pages
+      - name: Deploy to GitHub Pages
+        if: steps.deploy.outputs.should_deploy == 'true'
         uses: JamesIves/github-pages-deploy-action@v4
-        if: ${{ steps.check_deploy.outputs.should_deploy == 'true' }}
         with:
           branch: gh-pages
           folder: public
           clean: true
           single-commit: true
 
-  submit-site:
-    needs: deploy-site
-    runs-on: ubuntu-latest
-    if: ${{ needs.deploy-site.outputs.should_deploy == 'true' }}
-    steps:
-      - name: Wait for 60 seconds
+      # 11 等待 Pages 生效
+      - name: Wait for GitHub Pages to be ready
+        if: steps.deploy.outputs.should_deploy == 'true'
         run: sleep 60
-      - name: Bing IndexNow
+
+      # 12 提交 IndexNow
+      - name: Submit IndexNow
+        if: steps.deploy.outputs.should_deploy == 'true'
         uses: bojieyang/indexnow-action@v2
         with:
-          sitemap-location: "https://blog.debuginn.com/sitemap.xml"
+          sitemap-location: https://blog.debuginn.com/sitemap.xml
           key: ${{ secrets.INDEXNOW_KEY }}
           since: 7
-          since-unit: "day"
-          key-location: "https://blog.debuginn.com/${{ secrets.INDEXNOW_KEY }}.txt"
+          since-unit: day
+          key-location: https://blog.debuginn.com/${{ secrets.INDEXNOW_KEY }}.txt
