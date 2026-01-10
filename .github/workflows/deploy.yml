@@ -17,6 +17,8 @@ on:
 jobs:
   deploy-site:
     runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.check_deploy.outputs.should_deploy }}
 
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
@@ -61,6 +63,17 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Check deploy requirement
+        id: check_deploy
+        run: |
+          if [[ "${{ github.event_name }}" != "schedule" ]] || \
+            [[ "${{ steps.detect_content.outputs.changed }}" == "true" ]] || \
+            [[ "${{ steps.detect_main.outputs.changed }}" == "true" ]]; then
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Commit submodule update
         if: ${{ steps.detect_content.outputs.changed == 'true' && github.event_name == 'schedule' }}
         run: |
@@ -95,12 +108,12 @@ jobs:
           extended: true
 
       - name: Build
-        if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
+        if: ${{ steps.check_deploy.outputs.should_deploy == 'true' }}
         run: hugo --minify --gc
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
-        if: ${{ github.event_name != 'schedule' || steps.detect_content.outputs.changed == 'true' || steps.detect_main.outputs.changed == 'true' }}
+        if: ${{ steps.check_deploy.outputs.should_deploy == 'true' }}
         with:
           branch: gh-pages
           folder: public
@@ -110,14 +123,15 @@ jobs:
   submit-site:
     needs: deploy-site
     runs-on: ubuntu-latest
+    if: ${{ needs.deploy-site.outputs.should_deploy == 'true' }}
     steps:
       - name: Wait for 60 seconds
         run: sleep 60
       - name: Bing IndexNow
         uses: bojieyang/indexnow-action@v2
         with:
-          sitemap-location: 'https://blog.debuginn.com/sitemap.xml'
+          sitemap-location: "https://blog.debuginn.com/sitemap.xml"
           key: ${{ secrets.INDEXNOW_KEY }}
           since: 7
           since-unit: "day"
-          key-location: 'https://blog.debuginn.com/${{ secrets.INDEXNOW_KEY }}.txt'
+          key-location: "https://blog.debuginn.com/${{ secrets.INDEXNOW_KEY }}.txt"
