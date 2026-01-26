@@ -1,3 +1,3 @@
 # Permalinks format of each content section
-post = "/p/:filename/"
-page = "/:filename/"
+post = "/p/:contentbasename/"
+page = "/:contentbasename/"
