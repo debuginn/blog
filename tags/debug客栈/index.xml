@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debug客栈</title><link>https://blog.debuginn.com/tags/debug%E5%AE%A2%E6%A0%88/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 31 Dec 2025 11:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/debug%E5%AE%A2%E6%A0%88/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2025/</link><pubDate>Wed, 31 Dec 2025 11:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2025/</guid><description>&lt;img src="https://webp.debuginn.com/20251230bDqf7H.jpeg" alt="Featured image of post 2025 年度总结" /&gt;&lt;p&gt;大家好呀，我是 Meng小羽，又到了一年一度写年度总结的时候了，每年的总结总是要感慨下时间过得可真快呀，今年最重要的人生大事就是&lt;strong&gt;我结婚了&lt;/strong&gt;，从此不再是一个人，而是两个人的小家庭，同时自己也多了一个丈夫的角色，也意味着要承担起更多家庭的责任。&lt;/p&gt;
+&lt;p&gt;今年，是幸福的一年，也是收获颇多的一年，无论是从家庭、个人 IP、站点还是工作，都有着不同的体验与感想。&lt;/p&gt;
+&lt;p&gt;接下来，是我的 &lt;strong&gt;2025 年年度总结&lt;/strong&gt;，想与你一起分享这一年的成长与变化。&lt;/p&gt;
+&lt;h2 id="生活"&gt;&lt;a href="#%e7%94%9f%e6%b4%bb" class="header-anchor"&gt;&lt;/a&gt;生活
+&lt;/h2&gt;&lt;p&gt;今年生活最大的改变就是开篇所说的结婚了，首先要感谢我的妻子，在我们订婚、拍婚纱照、领证、备婚、出阁宴、结婚中，相比我的付出而言，多操心了很多，为了我们的小家庭也贡献与付出了很多，我不是一个浪漫的人，但是有一个浪漫的妻子，多亏了我的妻子，让我的生活也充满了很多的浪漫的瞬间与难忘的时刻。之后要感谢我的爸爸妈妈姐姐姐夫，对于我们新式婚礼的理解与支持。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251230KIsvrG.jpg"
+loading="lazy"
+alt="大合影"
+&gt;&lt;/p&gt;
+&lt;p&gt;婚前，我认为生活不单单是大人们（我家的风俗习惯，没有结婚的人都是小孩子一样对待）口中的柴米油盐，一直过平淡且稳定的生活。当然，不可否定的是大人们一味的稳定不是没有道理的，特别在我的老家：山东。&lt;/p&gt;
+&lt;p&gt;婚后，我认为稳定的生活固然很好，但是在现代社会，除了稳定的生活，还要有创造价值的能力，因为纯靠稳定的生活只能保障家庭的稳定，但是抵御外部干扰的能力对于家庭来说还是太薄弱了，当然，可能原本的稳定的生活已经让一个人或者一个家庭付出了很多，很难抽出时间来提升自己或者提高家庭的幸福感，但是我认为纳瓦尔的观点是正确的，一个人需要时间去学习与提升自己，进而可以创造更有价值的事物，从而将自己宝贵的时间转化为复利效应。另外，生活中的不时的浪漫是提升家庭幸福度非常好的润滑剂与养料。要不然日复一日的重复工作和生活会让人变成 “机器人”。&lt;/p&gt;
+&lt;h2 id="工作"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;工作
+&lt;/h2&gt;&lt;p&gt;今年，是我入职的第 5 年，有很多的感悟，也写了篇文章 &lt;a class="link" href="https://blog.debuginn.com/p/work-5-years/" &gt;《入职 5 周年，我和小米的 5 周年》&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20250708YetNyt.jpeg"
+loading="lazy"
+alt="5 years"
+&gt;&lt;/p&gt;
+&lt;p&gt;今年工作内容也变得丰富起来，今年开始了全栈的路线，可谓是天下大势、合久必分、分久必合，大学时期，自己开始做项目，做比赛，需要前后端都有所了解及开发能力，现在在职场中，最开始为了更加合理的分工，将前后端逐渐分离，同时前端工程化越来越完善，服务端也走向了微服务化、FAAS 的道路，都在工程化的道路上发展出来不同的分支。现在为了降低沟通成本，提升开发效率。一些公司包括我所在的公司项目组内，也在试点全栈工程师，我也是第一时间参加到试点的项目中去。&lt;/p&gt;
+&lt;p&gt;未来，搭配着 AI ，前后端的界限会逐渐变得模糊不清，前后端的语言也会变成工具，一个人可以完成对一个产品的设计、开发与测试上线，AI 在我们使用不同的工具与语言面前更多的是担任着胶水层的概念，我们只需要对一个产品具有不断的创新和 Idea，接下来就让 AI 使用工具给我们实现，测试和上线也可以托管给 AI 生成的自动化工具或者脚本，但是目前阶段并不能代替开发者的角色，而对于开发者的&lt;strong&gt;要求变得更加的全面&lt;/strong&gt;，因为要做到 AI 构建软件的上帝视角，来应对开发中遇到的问题，同时具备提升解决问题的能力。&lt;/p&gt;
+&lt;p&gt;不过，全栈对于工程师来说未必不是一件好事，大家都说 35 岁，是职业发展的门槛，不妨利用所学的技术，学会去发现生活中的需求，并把需求搞成一个产品，说不定就可以享受到技术带来的“复利”效应。&lt;/p&gt;
+&lt;h2 id="站点"&gt;&lt;a href="#%e7%ab%99%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;站点
+&lt;/h2&gt;&lt;p&gt;今年，各家 AI 搜索功能的爆发，给我们带来最直观的感觉就是对互联网搜索带来的冲击是非常巨大的，不开玩笑的说，各家的 AI 爬虫访问量比真人访问的量都多，当然，相信从今年开始，网站的浏览量会逐年降低。虽然说浏览量会逐步降低，但是我不会放弃对站点的维护与不时文章的发表，每个技术人都有一个属于自己的数字后花园，对于我而言，博客和我的卫星站点就是我的答案。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251229SO9ug7.jpg"
+loading="lazy"
+alt="浏览量"
+&gt;&lt;/p&gt;
+&lt;p&gt;AI 给大家带来的搜索习惯的改变是革命性的，特别对于个人博客类型网站来说，访问量下降是感受最为强烈的。网站去年访问 3.6w ，今年只有 8016 环比下降约 78%。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251229VsUbFA.jpg"
+loading="lazy"
+alt="访问国家"
+&gt;&lt;/p&gt;
+&lt;h2 id="文章"&gt;&lt;a href="#%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;文章
+&lt;/h2&gt;&lt;p&gt;25年，文章发表数量和去年一样，但是有一个变化，就是我也开始在博客上发表我的游记类的文章，同时意味着我的网站也不单纯是技术类的站点，更像是一个人兴趣爱好与这个世界在交朋友一样。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251230zyEs3c.jpg"
+loading="lazy"
+alt="post"
+&gt;&lt;/p&gt;
+&lt;h3 id="游记"&gt;&lt;a href="#%e6%b8%b8%e8%ae%b0" class="header-anchor"&gt;&lt;/a&gt;游记
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/travel-bohainan/" &gt;游记 五一环渤海南海岸自驾之旅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/travel-dawanqu/" &gt;游记 港澳深大湾区风球中旅程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/travel-zhangbei/" &gt;游记 张北草原天路自驾之旅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/travel-fuzhou-honeymoon/" &gt;游记 福建 5天4夜 蜜月旅行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/categories/travel/" &gt;【游记系列】跟我一起环游中国&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="工具"&gt;&lt;a href="#%e5%b7%a5%e5%85%b7" class="header-anchor"&gt;&lt;/a&gt;工具
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/financial-hongkong-card/" &gt;港卡开卡指南&lt;/a&gt;，推荐去香港旅游的时候一定要办理；&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/free-photo/" &gt;免费无版权图片素材网站推荐&lt;/a&gt;，自媒体配图十分需要，加收藏夹吃灰；&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/wechat-red-packet-25/" &gt;送送送，微信红包封面了，速领～&lt;/a&gt;，今年敬请期待～&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="其他"&gt;&lt;a href="#%e5%85%b6%e4%bb%96" class="header-anchor"&gt;&lt;/a&gt;其他
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/work-5-years/" &gt;入职 5 周年，我和小米的 5 周年&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/meetup-trae/" &gt;首场 Trae Meetup， 国产 AI IDE 有着不一样的思路&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="开源"&gt;&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor"&gt;&lt;/a&gt;开源
+&lt;/h2&gt;&lt;p&gt;今年和去年一样，开源的数据只有贡献的博客文章还有静态网点的一些改动。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251222IpeOJr.png"
+loading="lazy"
+alt="github"
+&gt;&lt;/p&gt;
+&lt;h2 id="摄影"&gt;&lt;a href="#%e6%91%84%e5%bd%b1" class="header-anchor"&gt;&lt;/a&gt;摄影
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://photo.debuginn.com/2025" target="_blank" rel="noopener"
+&gt;https://photo.debuginn.com/2025&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251227Bou96r.jpg"
+loading="lazy"
+alt="2025 photo"
+&gt;&lt;/p&gt;
+&lt;h2 id="阅读"&gt;&lt;a href="#%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;阅读
+&lt;/h2&gt;&lt;p&gt;今年，同样，站在巨人的肩膀上，阅读了一些有营养的书籍，也阅读了一些小说或文章集合。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251226WCnO6h.jpg"
+loading="lazy"
+alt="read"
+&gt;&lt;/p&gt;
+&lt;p&gt;还有《左耳听风》和《自洽的程序员》，电子书的形式，推荐给大家阅读。&lt;/p&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://webp.debuginn.com/20251230x3hGSb.jpg"
+loading="lazy"
+alt="2026"
+&gt;&lt;/p&gt;
+&lt;p&gt;写到这里的时候，自己已经坐上了回家的地铁，25年，感慨万千，但最终汇成一句网上流行的话，“万千灯火，总有一盏为我而亮”，虽是租房，但家里有我有她也有十七（我们养的猫咪），未来还需继续努力奋斗，为了我、为了她，更为了我们的小家。&lt;/p&gt;
+&lt;p&gt;这就是我的 25 年，感谢你的阅读，你的 25 年又是怎么度过的呢，相信你有也很多经历与感悟，欢迎你在评论区分享你的世界 🌏。&lt;/p&gt;
+&lt;p&gt;另外，给大家发了红包，大家支付宝搜索 &lt;code&gt;debuginn2026&lt;/code&gt; 即可领取。&lt;/p&gt;
+&lt;p&gt;2026年，祝你新年快乐～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2024 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2024/</link><pubDate>Tue, 31 Dec 2024 18:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2024/</guid><description>&lt;img src="https://webp.debuginn.com/20241229aK3HCm.jpeg" alt="Featured image of post 2024 年度总结" /&gt;&lt;p&gt;2024 年，这一年就像做梦一样的度过，还好，我终是梦醒了，也没有睡过头。&lt;/p&gt;
+&lt;p&gt;这一年里，我完成了许多人生中的“第一次”：第一次踏上新疆的土地，第一次参加演唱会，第一次深入草原腹地。我亲眼目睹了边疆的辽阔与壮丽，体验了万人狂欢的热烈夜晚，也感受到了“风吹草低见牛羊”的诗意与真实。&lt;/p&gt;
+&lt;p&gt;我的个人站点也迎来了第 8 个年头。在兢兢业业工作的同时，我不断努力打造个人 IP，将我对编程事业的热爱，与业务摄影、科技探索、硬件发烧友的多重身份分享给更多人。在这过程中，我也结识了许多志同道合的朋友，拓宽了自己的视野与圈子。&lt;/p&gt;
+&lt;p&gt;接下来是我对 2024 年的总结，想与你分享。&lt;/p&gt;
+&lt;h2 id="工作"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;工作
+&lt;/h2&gt;&lt;p&gt;从去年正式转向 Java 技术栈以来，今年我也没有让大家失望。我将自研的 Phoenix 框架开发思路与经验分享给大家，同时还得到了相关领域大佬们的宝贵建议与新颖的想法，受益良多。今年，我更是在双技术栈并行的模式下投入生产，深刻体会到了两种语言各自独特的魅力与设计哲学，这种探索让人充满收获感。&lt;/p&gt;
+&lt;p&gt;在工作中，我持续保持高质量输出，并不断提升自己的技术影响力。在项目中，我逐渐担任核心研发角色，并成功迈入高级开发工程师的行列，迎来了个人职业发展的重要里程碑。&lt;/p&gt;
+&lt;p&gt;回望今年，这也是我入职公司的第 4 年多，再过半年，我就能解锁金米兔的成就啦 🎉。这段旅程充满挑战，但也伴随着成长与喜悦。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302262202290.jpg"
+loading="lazy"
+alt="miwork"
+&gt;&lt;/p&gt;
+&lt;h2 id="站点"&gt;&lt;a href="#%e7%ab%99%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;站点
+&lt;/h2&gt;&lt;p&gt;今年，我的站点终于在静态化的阵营中稳稳站住了脚。经过不断摸索，我逐步完善并打造出了一套专属的部署模式，兼具高效性与性价比，让站点的运维更加从容。&lt;/p&gt;
+&lt;p&gt;同时，我也在持续努力创作优质文章，不断丰富站点的内容。今年，站点的曝光度与流量都有了显著增长，看到更多人关注与认可我的分享，倍感欣慰与动力十足。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241231x7t5lP.jpg"
+loading="lazy"
+alt="访问者地图"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241231xT0S2m.jpg"
+loading="lazy"
+alt="访问量"
+&gt;&lt;/p&gt;
+&lt;h2 id="文章"&gt;&lt;a href="#%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;文章
+&lt;/h2&gt;&lt;p&gt;24 年，我一共书写了 9 篇文章，在这里再给大家分享一下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-1/" &gt;Phoenix框架 从0到1设计业务并发框架 小米商城产品站革新之路&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-2/" &gt;Phoenix框架 从0到1设计业务并发框架 怎么组织设计一个框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-3/" &gt;Phoenix框架 从0到1设计业务并发框架 并发线程池的核心设计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-4/" &gt;Phoenix框架 从0到1设计业务并发框架 自动构建有向无循环图设计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/go-env-gotraceback/" &gt;使用 GOTRACEBACK 快速定位你的 Panic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app/" &gt;Follow｜下一代的信息浏览器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app-2/" &gt;Follow ｜下一代信息浏览器 第二弹来了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app-airdrop/" &gt;Follow 给我空投了 1w 代币，可以无限发码啦～&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/answer-anotherdayu/" &gt;答 《博客作者呀，我想采访你这 9 个问题！》 问卷&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;今年的主要精力都投入在工作上，因此开源方面的分享相对较少。可以说，这一年更多是一个沉淀与积累的过程，专注于提升技术能力和积累宝贵的工作经验，为未来的发展打下更扎实的基础。&lt;/p&gt;
+&lt;h2 id="开源"&gt;&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor"&gt;&lt;/a&gt;开源
+&lt;/h2&gt;&lt;p&gt;今年的开源主要体现在博客和站点的维护上，但其实，分享文章与传播技术，又何尝不是另一种形式的开源呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241231a0w1gk.jpeg"
+loading="lazy"
+alt="github"
+&gt;&lt;/p&gt;
+&lt;h2 id="生活"&gt;&lt;a href="#%e7%94%9f%e6%b4%bb" class="header-anchor"&gt;&lt;/a&gt;生活
+&lt;/h2&gt;&lt;p&gt;今年，是我人生中最难忘的一年。感恩上帝、菩萨、佛祖的眷顾（我始终相信这个世界有神的存在，只是我不确定祂在人间的表达形式，所以对每一种可能都怀着虔诚与敬畏）。感激家人一直以来的陪伴与关怀，而我最想感谢的，是在我最艰难的时候始终陪伴在身边、鼓励我的她。&lt;/p&gt;
+&lt;p&gt;这一场如梦般的经历，好在我醒了过来，并且没有睡过头。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225JuJDgq.jpeg"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;今年，我也走过了许多地方，见证了人世间的悲欢离合，用镜头记录下无数动人的瞬间。赛里木湖的湛蓝、《苹果香》中的蓝色小屋、风吹草低的牛羊、第四纪火山的奇特地貌、一望无际的戈壁滩、肉眼可见的深邃银河、万人大合唱的震撼、还有海上的日落与月升……每一处风景都饱含故事，每一帧画面都充满了意义。这一年，旅途不仅拓宽了视野，更丰富了心灵。&lt;/p&gt;
+&lt;p&gt;在这里分享给大家。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225feEOQU.jpeg"
+loading="lazy"
+alt="新疆·果子沟大桥"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225l5WfKG.jpeg"
+loading="lazy"
+alt="北京·天坛"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225ivgCkw.jpeg"
+loading="lazy"
+alt="北京·鸟巢五月天演唱会"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225yXBPO5.jpeg"
+loading="lazy"
+alt="乌兰察布·乌兰布统火山"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225emJVQx.jpeg"
+loading="lazy"
+alt="乌兰察布·草原"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225wm4pMb.jpeg"
+loading="lazy"
+alt="兰州·马踏飞燕"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225ZQvVjT.jpeg"
+loading="lazy"
+alt="金昌·银河"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225Gpckpo.jpeg"
+loading="lazy"
+alt="北京·古北水镇长城"
+&gt;&lt;/p&gt;
+&lt;h2 id="摄影"&gt;&lt;a href="#%e6%91%84%e5%bd%b1" class="header-anchor"&gt;&lt;/a&gt;摄影
+&lt;/h2&gt;&lt;p&gt;和往年一样，每年我都会精选图片放在摄影展站点中，欢迎你的访问。&lt;/p&gt;
+&lt;p&gt;Debug客栈摄影展：&lt;a class="link" href="https://photo.debuginn.com/2024/" target="_blank" rel="noopener"
+&gt;https://photo.debuginn.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225A9zeI4.jpg"
+loading="lazy"
+alt="2024年度照片"
+&gt;&lt;/p&gt;
+&lt;h2 id="阅读"&gt;&lt;a href="#%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;阅读
+&lt;/h2&gt;&lt;p&gt;今年阅读的书籍比较少，但是都非常有营养。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/20241225GxCeHJ.JPG"
+loading="lazy"
+alt="2024 books"
+&gt;&lt;/p&gt;
+&lt;p&gt;感谢同事分享的马伯庸老师的《太白金星有点烦》和《长安的荔枝》，我理解他的作品为神话历史类讽刺小说？&lt;/p&gt;
+&lt;p&gt;还有一本来自豆瓣高分作品《我在北京送快递》，跟着作者体验最真实的凡人歌。&lt;/p&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;2024 年，收获了很多，也得到了很多。人生很长、要经历无数悲欢离合、阴晴圆缺，人生又很短、岁岁年年转瞬即逝、不得停留。珍惜当下、过好每一天、与自己的爱人、亲人和朋友。&lt;/p&gt;
+&lt;p&gt;最后，感谢你的阅读，让我们 2025 年变得更强～&lt;/p&gt;
+&lt;p&gt;2025 年，新年快乐！&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2023 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2023/</link><pubDate>Sun, 31 Dec 2023 13:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023/</guid><description>&lt;img src="https://webp.debuginn.com/202312221929863.jpg" alt="Featured image of post 2023 年度总结" /&gt;&lt;h2 id="工作"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;工作
+&lt;/h2&gt;&lt;p&gt;今年工作经历了比较大的调整，由于部门技术栈逐渐趋于统一从 Go 技术栈转换到 Java 技术栈，也就是说我会双语言啦，自己也开始从事 Java 相关业务的开发，其实在 22 年底就开始接触 Java 服务了，按照学习计划，其实切换起来，还是相对来说比较简单，也没有太大的阻力，但是随着深入学习，发现自己学习的知识还是太少了，只能是 Java 庞大生态的冰山一角，值得自己骄傲的是，这一年，在 leader 和团队同事的支持和帮助下，我从 0 到 1 实现了一套并发框架，命名为 PhoenixCore，目前已经应用在了小米商城产品站（也就是说，只要你访问过小米商城，这套框架就为你提供过服务 😊），年后我会逐一整理并发表一系列的围绕并发框架的系列文章，来讲解我是如何实现这个框架以及我遇到的相关问题及解决思路。&lt;/p&gt;
+&lt;h2 id="站点"&gt;&lt;a href="#%e7%ab%99%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;站点
+&lt;/h2&gt;&lt;p&gt;今年，站点最大的变化就是完成了对&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
+&gt;站点的静态化建设&lt;/a&gt;，可以将重点放在博客文章的输出中去，同时省去了自己维护站点的大量精力。目前站点的运营模式就是 Github 来提供文章的编写及打包发布，使用 Github pages 部署，CDN 使用免费的 Cloudflare 和 jsDelivr，（这也就代表着网站可能会出现访问不稳定 😛），同时将站点域名从 debuginn.cn 转换为 &lt;a class="link" href="https://debuginn.com" target="_blank" rel="noopener"
+&gt;debuginn.com&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;今年由于站点域名和子域名的调整，统计开始包含自己的子域名访问记录，由于期间有部分访问记录丢失，环比指标都有下降，不过随着自己开始专注于文章的输出，情况开始变好。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312231204963.png"
+loading="lazy"
+alt="访问人数"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312231209707.png"
+loading="lazy"
+alt="访问国家"
+&gt;&lt;/p&gt;
+&lt;p&gt;由于自己重新调整了博客链接组织结构，404 的页面一直占据着很高的比例 😂。&lt;/p&gt;
+&lt;h2 id="文章"&gt;&lt;a href="#%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;文章
+&lt;/h2&gt;&lt;p&gt;今年输出并不是很多，还是和去年一样，都一一陈列一下吧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" target="_blank" rel="noopener"
+&gt;2023 年为何我还在使用 RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/talk-about-chat-gpt/" target="_blank" rel="noopener"
+&gt;谈谈 ChatGPT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/how-to-take-over-a-project/" target="_blank" rel="noopener"
+&gt;如何接手并维护一个项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
+&gt;全站静态化升级完毕&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/faas-notes/" target="_blank" rel="noopener"
+&gt;FAAS 调研笔记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/financing-long-bridge/" target="_blank" rel="noopener"
+&gt;长桥港美股团办活动&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望我的文章可以带给你帮助，希望我和大家一起变得更强～&lt;/p&gt;
+&lt;h2 id="开源"&gt;&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor"&gt;&lt;/a&gt;开源
+&lt;/h2&gt;&lt;p&gt;今年由于自己博客迁移到了 &lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+&gt;Github&lt;/a&gt;，所以说活跃多了起来 🐶。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312231221971.png"
+loading="lazy"
+alt="github-2023"
+&gt;&lt;/p&gt;
+&lt;h2 id="生活"&gt;&lt;a href="#%e7%94%9f%e6%b4%bb" class="header-anchor"&gt;&lt;/a&gt;生活
+&lt;/h2&gt;&lt;p&gt;23年去了很多地方旅游，云南（昆明、大理、丽江、香格里拉）、甘肃、天津、河北（张家口）、山东（济宁、威海、青岛）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3月份去奥森桃花谷看了桃花，人很多、花更美；&lt;/li&gt;
+&lt;li&gt;4月份和自己的爱人一起去了云南，喂了滇池的海鸥、感受到了苍山洱海的美、看到了大冰的小屋、看到了雄伟的玉龙雪山、体验到了香格里拉藏区人们的淳朴与善良好客；&lt;/li&gt;
+&lt;li&gt;5月份去了甘肃老家，感受到了大西北的豪情、辽阔，看到了一望无际的荒漠与祁连山脉，看到了《隐入尘烟》中甘肃特色的土房子，品尝到了特色的面卷子与羔羊；&lt;/li&gt;
+&lt;li&gt;同 5月去了环球影城，感受到了电影世界。去北动看“西直门三太子”萌兰，很遗憾天太热，没看到，只看到了萌大和其他熊猫；&lt;/li&gt;
+&lt;li&gt;6月去了天津，看了民国风的五大道，听了场相声，还品尝了特色小吃；&lt;/li&gt;
+&lt;li&gt;7月陪着姐姐姐夫大外甥在北京城逛了一番，很快乐；&lt;/li&gt;
+&lt;li&gt;10月回了趟家，之后去威海，自驾到了山东最东端 - 始皇东巡处，看到了搁浅的“布鲁维斯号”，去青岛的海鲜市场，买了海鲜，赶了海。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;23年，也一直坚持着徒步，参加了 4次活动，其中 2次夜爬活动，看到了星空、看到了日出。&lt;/p&gt;
+&lt;h2 id="摄影"&gt;&lt;a href="#%e6%91%84%e5%bd%b1" class="header-anchor"&gt;&lt;/a&gt;摄影
+&lt;/h2&gt;&lt;p&gt;今年由于旅游和徒步，拍了很多的照片，和往年一样，每年我都会精选十张图片放在摄影展站点中，欢迎你的访问。&lt;/p&gt;
+&lt;p&gt;Debug客栈摄影展：&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+&gt;https://photo.debuginn.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312311401449.jpg"
+loading="lazy"
+alt="摄影展"
+&gt;&lt;/p&gt;
+&lt;h2 id="阅读"&gt;&lt;a href="#%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;阅读
+&lt;/h2&gt;&lt;p&gt;今年继续阅读，继续成长～&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文论《毛泽东选集》看了新民主主义革命至抗日战争的相关章节，不得不佩服领袖的远见与决策，推荐阅读；&lt;/li&gt;
+&lt;li&gt;理财《富爸爸穷爸爸》怎么去积累财富，摆脱穷人思维，跳出“老鼠赛跑”游戏；&lt;/li&gt;
+&lt;li&gt;技术《Apache Dubbo 微服务从入门到精通》Java 协议相关书籍；&lt;/li&gt;
+&lt;li&gt;传记《埃隆·马斯克传》遵循“第一性原理”，创造奇迹的人，推荐阅读；&lt;/li&gt;
+&lt;li&gt;小说《太白金星有点烦》如何规划西天取经，看太白金星与观音菩萨的运作；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;23年，是成长的一年，也是幸福的一年，今年工作稳定前行，努力突破自己，生活上稳定前行，这一年去了很多的地方，看到了世间不同的生活方式，24年，继续努力，奔着小目标继续前进，继续收获快乐、幸福与圆满。&lt;/p&gt;
+&lt;p&gt;2024，新年快乐～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2023 年为何我还在使用 RSS</title><link>https://blog.debuginn.com/p/debuginn-2023-rss/</link><pubDate>Mon, 04 Dec 2023 23:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023-rss/</guid><description>&lt;img src="https://webp.debuginn.com/202312042307782.jpeg" alt="Featured image of post 2023 年为何我还在使用 RSS" /&gt;&lt;h2 id="什么是-rss"&gt;&lt;a href="#%e4%bb%80%e4%b9%88%e6%98%af-rss" class="header-anchor"&gt;&lt;/a&gt;什么是 RSS
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;RSS（英文全称：RDF Site Summary 或 Really Simple Syndication），中文译作简易信息聚合，也称聚合内容，是一种消息来源格式规范，用以聚合多个网站更新的内容并自动通知网站订阅者。使用 RSS 后，网站订阅者便无需再手动查看网站是否有新的内容，同时 RSS 可将多个网站更新的内容进行整合，以摘要的形式呈现，有助于订阅者快速获取重要信息，并选择性地点阅查看。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;RSS 作为 1999 年诞生的技术，并在 2009 年更新完最后一版本后，没有再进一步更新的技术，为啥在 2023 年，我还在使用这个“原始”的技术？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;答案是肯定的，因为 RSS 好用，通过 RSS 我可以聚合我感兴趣领域的博客，每日定时拉取获得博客作者新发布的内容。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="rss-的优点"&gt;&lt;a href="#rss-%e7%9a%84%e4%bc%98%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;RSS 的优点
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;聚合阅读&lt;/strong&gt;，通过 RSS 阅读器订阅网站，我可以每日在特定时间来阅读有更新的站点；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;订阅免费&lt;/strong&gt;，订阅的网站，无需进行付费，便可以使用开源的阅读器进行阅读；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定输出&lt;/strong&gt;，订阅的网站，无需借助第三方平台进行数据传输或者聚合，只要网站在，源也就在；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阅读友好&lt;/strong&gt;，使用 RSS 阅读器阅读网站，可以过滤源网站内的广告和观看各种风格各异的 UI ，更专注于内容；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;避免发散&lt;/strong&gt;，目前大量的短视频 APP 快速产出无营养的视频，不能注意精力去阅读；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="怎么订阅"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e8%ae%a2%e9%98%85" class="header-anchor"&gt;&lt;/a&gt;怎么订阅
+&lt;/h2&gt;&lt;h3 id="直接订阅"&gt;&lt;a href="#%e7%9b%b4%e6%8e%a5%e8%ae%a2%e9%98%85" class="header-anchor"&gt;&lt;/a&gt;直接订阅
+&lt;/h3&gt;&lt;p&gt;针对你感兴趣的网站，一般网站都会有类似彩虹 🌈 的表示，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312031744451.png"
+loading="lazy"
+alt="RSS订阅"
+&gt;&lt;/p&gt;
+&lt;p&gt;当然，你要是感觉我的内容对你有帮助，欢迎通过 RSS 订阅，&lt;a class="link" href="https://blog.debuginn.com/subscribe" &gt;订阅地址&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id="rsshub"&gt;&lt;a href="#rsshub" class="header-anchor"&gt;&lt;/a&gt;RSSHub
+&lt;/h3&gt;&lt;p&gt;当然，随着这一项技术不再那么流行，一些站点在开发的时候就不再提供 RSS 内容输出的支持，但是由于有大众的阅读，这里就给大家推荐 RSSHub，通过讲源网站输出内容进行 RSS 标准格式的封装来提供 RSS 订阅。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官方网站：&lt;a class="link" href="https://rsshub.app/" target="_blank" rel="noopener"
+&gt;https://rsshub.app/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官方文档：&lt;a class="link" href="https://docs.rsshub.app/" target="_blank" rel="noopener"
+&gt;https://docs.rsshub.app/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="订阅工具"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e5%b7%a5%e5%85%b7" class="header-anchor"&gt;&lt;/a&gt;订阅工具
+&lt;/h2&gt;&lt;h3 id="netnewswire"&gt;&lt;a href="#netnewswire" class="header-anchor"&gt;&lt;/a&gt;Netnewswire
+&lt;/h3&gt;&lt;p&gt;Netnewswire 是一款开源的 IOS/MacOS 的阅读器，他支持 iCloud 云备份，可以在 iPhone/iPad/Mac 上随时切换阅读。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官方网站：&lt;a class="link" href="https://netnewswire.com/" target="_blank" rel="noopener"
+&gt;https://netnewswire.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开源地址：&lt;a class="link" href="https://github.com/Ranchero-Software/NetNewsWire" target="_blank" rel="noopener"
+&gt;https://github.com/Ranchero-Software/NetNewsWire&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="rsshub-radar"&gt;&lt;a href="#rsshub-radar" class="header-anchor"&gt;&lt;/a&gt;RSSHub Radar
+&lt;/h3&gt;&lt;p&gt;是一款浏览器插件，目前主流的浏览器都支持安装，可以帮助我快速发现和订阅当前网站的 RSS 和 RSSHub，开源且免费。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;插件地址：&lt;a class="link" href="https://chrome.google.com/webstore/detail/kefjpfngnndepjbopdmoebkipbgkggaa" target="_blank" rel="noopener"
+&gt;https://chrome.google.com/webstore/detail/kefjpfngnndepjbopdmoebkipbgkggaa&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;开源地址：&lt;a class="link" href="https://github.com/DIYgod/RSSHub-Radar" target="_blank" rel="noopener"
+&gt;https://github.com/DIYgod/RSSHub-Radar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装好，通过点击图标，可以查看网站支持的订阅方式以及订阅的内容范围，可以便捷的跳转到阅读器进行订阅。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202312031800365.png"
+loading="lazy"
+alt="RSSHub Radar"
+&gt;&lt;/p&gt;
+&lt;h2 id="订阅分享"&gt;&lt;a href="#%e8%ae%a2%e9%98%85%e5%88%86%e4%ba%ab" class="header-anchor"&gt;&lt;/a&gt;订阅分享
+&lt;/h2&gt;&lt;p&gt;目前我订阅了 61 个网站源，包含科技、技术、设计、创意、阅读等板块，在这里分享出来，大家喜欢的话就可以点击订阅。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;名称&lt;/th&gt;
+&lt;th&gt;网站地址&lt;/th&gt;
+&lt;th&gt;订阅地址&lt;/th&gt;
+&lt;th&gt;类别&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;爱范儿&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ifanr.com" target="_blank" rel="noopener"
+&gt;https://www.ifanr.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ifanr.com/feed" target="_blank" rel="noopener"
+&gt;https://www.ifanr.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技,IT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;财新周刊&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://weekly.caixin.com" target="_blank" rel="noopener"
+&gt;https://weekly.caixin.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/caixin/weekly" target="_blank" rel="noopener"
+&gt;https://rsshub.app/caixin/weekly&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;财经&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;彩虹Smiling™️&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.smilingblog.cn" target="_blank" rel="noopener"
+&gt;https://www.smilingblog.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.smilingblog.cn/feed" target="_blank" rel="noopener"
+&gt;https://www.smilingblog.cn/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;菜鸟Miao&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://newbmiao.github.io" target="_blank" rel="noopener"
+&gt;https://newbmiao.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://newbmiao.github.io/atom.xml" target="_blank" rel="noopener"
+&gt;https://newbmiao.github.io/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;茶歇驿站&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://maiyang.me" target="_blank" rel="noopener"
+&gt;https://maiyang.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://maiyang.me/index.xml" target="_blank" rel="noopener"
+&gt;https://maiyang.me/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;潮流周刊&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://weekly.tw93.fun" target="_blank" rel="noopener"
+&gt;https://weekly.tw93.fun&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://weekly.tw93.fun/rss.xml" target="_blank" rel="noopener"
+&gt;https://weekly.tw93.fun/rss.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周刊&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;程序印象&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.cn18k.com" target="_blank" rel="noopener"
+&gt;https://www.cn18k.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.cn18k.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://www.cn18k.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;程序员的喵&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://catcoding.me" target="_blank" rel="noopener"
+&gt;https://catcoding.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://catcoding.me/atom.xml" target="_blank" rel="noopener"
+&gt;https://catcoding.me/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;大俊的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://darjun.github.io" target="_blank" rel="noopener"
+&gt;https://darjun.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://darjun.github.io/index.xml" target="_blank" rel="noopener"
+&gt;https://darjun.github.io/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;董泽润的技术笔记&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mytechshares.com" target="_blank" rel="noopener"
+&gt;https://mytechshares.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mytechshares.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://mytechshares.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;飞雪无情的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.flysnow.org" target="_blank" rel="noopener"
+&gt;https://www.flysnow.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.flysnow.org/index.xml" target="_blank" rel="noopener"
+&gt;https://www.flysnow.org/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;IT,GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;峰云就她了&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xiaorui.cc" target="_blank" rel="noopener"
+&gt;https://xiaorui.cc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xiaorui.cc/feed" target="_blank" rel="noopener"
+&gt;https://xiaorui.cc/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;虹线&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://1q43.blog" target="_blank" rel="noopener"
+&gt;https://1q43.blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://1q43.blog/feed" target="_blank" rel="noopener"
+&gt;https://1q43.blog/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;IT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;极客公园&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://mainssl.geekpark.net" target="_blank" rel="noopener"
+&gt;http://mainssl.geekpark.net&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.geekpark.net/rss" target="_blank" rel="noopener"
+&gt;https://www.geekpark.net/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技,IT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;煎鱼&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://eddycjy.com" target="_blank" rel="noopener"
+&gt;https://eddycjy.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://eddycjy.com/index.xml" target="_blank" rel="noopener"
+&gt;https://eddycjy.com/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;酷 壳&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://coolshell.cn" target="_blank" rel="noopener"
+&gt;https://coolshell.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://coolshell.cn/feed" target="_blank" rel="noopener"
+&gt;https://coolshell.cn/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;R.I.P.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;李文周的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.liwenzhou.com" target="_blank" rel="noopener"
+&gt;https://www.liwenzhou.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.liwenzhou.com/index.xml" target="_blank" rel="noopener"
+&gt;https://www.liwenzhou.com/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;刘未鹏&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mindhacks.cn" target="_blank" rel="noopener"
+&gt;https://mindhacks.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://mindhacks.cn/feed" target="_blank" rel="noopener"
+&gt;https://mindhacks.cn/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;美团技术团队&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tech.meituan.com" target="_blank" rel="noopener"
+&gt;https://tech.meituan.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tech.meituan.com/feed/" target="_blank" rel="noopener"
+&gt;https://tech.meituan.com/feed/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;面向信仰编程&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://draveness.me" target="_blank" rel="noopener"
+&gt;https://draveness.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://draveness.me/feed.xml" target="_blank" rel="noopener"
+&gt;https://draveness.me/feed.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;计算机&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;鸟窝&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://colobu.com" target="_blank" rel="noopener"
+&gt;https://colobu.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://colobu.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://colobu.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;苹果fans博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.mac52ipod.cn" target="_blank" rel="noopener"
+&gt;http://www.mac52ipod.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.mac52ipod.cn/feed.php/feed" target="_blank" rel="noopener"
+&gt;https://www.mac52ipod.cn/feed.php/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Apple&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;阮一峰的网络日志&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener"
+&gt;http://www.ruanyifeng.com/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.ruanyifeng.com/blog/atom.xml" target="_blank" rel="noopener"
+&gt;http://www.ruanyifeng.com/blog/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周刊&lt;/td&gt;
+&lt;td&gt;科技爱好者周刊&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;四火的唠叨&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.raychase.net" target="_blank" rel="noopener"
+&gt;https://www.raychase.net&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.raychase.net/feed" target="_blank" rel="noopener"
+&gt;https://www.raychase.net/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;唐巧的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://blog.devtang.com" target="_blank" rel="noopener"
+&gt;http://blog.devtang.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://blog.devtang.com/atom.xml" target="_blank" rel="noopener"
+&gt;http://blog.devtang.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;阅读&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;湾区日报&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.wanqu.co" target="_blank" rel="noopener"
+&gt;https://www.wanqu.co&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/wanqu/news" target="_blank" rel="noopener"
+&gt;https://rsshub.app/wanqu/news&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;微软亚洲研究院&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://api.feeddd.org/feeds/63744936e11908407781ff61" target="_blank" rel="noopener"
+&gt;https://api.feeddd.org/feeds/63744936e11908407781ff61&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;午夜咖啡&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://jolestar.com" target="_blank" rel="noopener"
+&gt;http://jolestar.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://jolestar.com/feed.xml" target="_blank" rel="noopener"
+&gt;https://jolestar.com/feed.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;徐靖峰&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://lexburner.github.io" target="_blank" rel="noopener"
+&gt;https://lexburner.github.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://lexburner.github.io/atom.xml" target="_blank" rel="noopener"
+&gt;https://lexburner.github.io/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Java&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;阳志平的网志&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.yangzhiping.com" target="_blank" rel="noopener"
+&gt;https://www.yangzhiping.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.yangzhiping.com/feed" target="_blank" rel="noopener"
+&gt;https://www.yangzhiping.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;技术&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;一个草根站长的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.zz1984.com" target="_blank" rel="noopener"
+&gt;https://www.zz1984.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.zz1984.com/feed/" target="_blank" rel="noopener"
+&gt;https://www.zz1984.com/feed/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;月光博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.williamlong.info" target="_blank" rel="noopener"
+&gt;https://www.williamlong.info&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.williamlong.info/feed" target="_blank" rel="noopener"
+&gt;https://www.williamlong.info/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;科技&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;云风的 BLOG&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.codingnow.com" target="_blank" rel="noopener"
+&gt;https://blog.codingnow.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.codingnow.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://blog.codingnow.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;知乎每日精选&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://www.zhihu.com" target="_blank" rel="noopener"
+&gt;http://www.zhihu.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.zhihu.com/rss" target="_blank" rel="noopener"
+&gt;https://www.zhihu.com/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;热点&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;竹新社&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://t.me/s/tnews365" target="_blank" rel="noopener"
+&gt;https://t.me/s/tnews365&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/telegram/channel/tnews365" target="_blank" rel="noopener"
+&gt;https://rsshub.app/telegram/channel/tnews365&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;新闻&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;AIGC Weekly&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://quail.ink/op7418/feed/atom" target="_blank" rel="noopener"
+&gt;https://quail.ink/op7418/feed/atom&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;AI&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Apple Newsroom&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.apple.com" target="_blank" rel="noopener"
+&gt;https://www.apple.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.apple.com/newsroom/rss-feed.rss" target="_blank" rel="noopener"
+&gt;https://www.apple.com/newsroom/rss-feed.rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Apple&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;BMPI&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.bmpi.dev" target="_blank" rel="noopener"
+&gt;https://www.bmpi.dev&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.bmpi.dev/index.xml" target="_blank" rel="noopener"
+&gt;https://www.bmpi.dev/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;chai2010 的博客&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://chai2010.cn" target="_blank" rel="noopener"
+&gt;https://chai2010.cn&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://chai2010.cn/index.xml" target="_blank" rel="noopener"
+&gt;https://chai2010.cn/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Dave Cheney&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://dave.cheney.net" target="_blank" rel="noopener"
+&gt;https://dave.cheney.net&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://dave.cheney.net/feed/rss" target="_blank" rel="noopener"
+&gt;https://dave.cheney.net/feed/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Debug客栈&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.debuginn.com" target="_blank" rel="noopener"
+&gt;https://blog.debuginn.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.debuginn.com/index.xml" target="_blank" rel="noopener"
+&gt;https://blog.debuginn.com/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;关注&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Go Programming Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ardanlabs.com/blog" target="_blank" rel="noopener"
+&gt;https://www.ardanlabs.com/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.ardanlabs.com/blog/index.xml" target="_blank" rel="noopener"
+&gt;https://www.ardanlabs.com/blog/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;huxihx&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.cnblogs.com/huxi2b/rss" target="_blank" rel="noopener"
+&gt;https://www.cnblogs.com/huxi2b/rss&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;idealclover&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://idealclover.top" target="_blank" rel="noopener"
+&gt;https://idealclover.top&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://idealclover.top/feed" target="_blank" rel="noopener"
+&gt;https://idealclover.top/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Issues on 省流&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://shengliu.tech/issues/" target="_blank" rel="noopener"
+&gt;https://shengliu.tech/issues/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://shengliu.tech/issues/index.xml" target="_blank" rel="noopener"
+&gt;https://shengliu.tech/issues/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;日报&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;KAIX.IN&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://kaix.in" target="_blank" rel="noopener"
+&gt;https://kaix.in&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://kaix.in/feed" target="_blank" rel="noopener"
+&gt;https://kaix.in/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;咖啡,创业&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;LinkinStar&amp;rsquo;s Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.linkinstars.com" target="_blank" rel="noopener"
+&gt;https://www.linkinstars.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.linkinstars.com/atom.xml" target="_blank" rel="noopener"
+&gt;https://www.linkinstars.com/atom.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;No Headback&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="http://xargin.com" target="_blank" rel="noopener"
+&gt;http://xargin.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xargin.com/feed" target="_blank" rel="noopener"
+&gt;https://xargin.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;OpenAI Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://openai.com/blog" target="_blank" rel="noopener"
+&gt;https://openai.com/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://rsshub.app/openai/blog" target="_blank" rel="noopener"
+&gt;https://rsshub.app/openai/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;AI&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Wujunze`s Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://wujunze.com/posts" target="_blank" rel="noopener"
+&gt;https://wujunze.com/posts&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://wujunze.com/posts/index.xml" target="_blank" rel="noopener"
+&gt;https://wujunze.com/posts/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Pseudoyu&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.pseudoyu.com/zh" target="_blank" rel="noopener"
+&gt;https://www.pseudoyu.com/zh&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://www.pseudoyu.com/zh/index.xml" target="_blank" rel="noopener"
+&gt;https://www.pseudoyu.com/zh/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周报&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Ri Xu Online&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xuri.me" target="_blank" rel="noopener"
+&gt;https://xuri.me&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://xuri.me/feed" target="_blank" rel="noopener"
+&gt;https://xuri.me/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;SegmentFault行业快讯&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://segmentfault.com/blog/news" target="_blank" rel="noopener"
+&gt;https://segmentfault.com/blog/news&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://segmentfault.com/feeds/blog/news" target="_blank" rel="noopener"
+&gt;https://segmentfault.com/feeds/blog/news&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;周刊,科技&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;STRRL&amp;rsquo;s backyard&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://strrl.dev" target="_blank" rel="noopener"
+&gt;https://strrl.dev&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://strrl.dev/index.xml" target="_blank" rel="noopener"
+&gt;https://strrl.dev/index.xml&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;The Go Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://go.dev/blog" target="_blank" rel="noopener"
+&gt;https://go.dev/blog&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://go.dev/blog/feed.atom" target="_blank" rel="noopener"
+&gt;https://go.dev/blog/feed.atom&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;The GoLand Blog&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.jetbrains.com" target="_blank" rel="noopener"
+&gt;https://blog.jetbrains.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://blog.jetbrains.com/go/feed" target="_blank" rel="noopener"
+&gt;https://blog.jetbrains.com/go/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GoLand&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Tinyfool的个人网站&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://codechina.org" target="_blank" rel="noopener"
+&gt;https://codechina.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://codechina.org/feed" target="_blank" rel="noopener"
+&gt;https://codechina.org/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;博客&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;Tony Bai&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tonybai.com" target="_blank" rel="noopener"
+&gt;https://tonybai.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a class="link" href="https://tonybai.com/feed" target="_blank" rel="noopener"
+&gt;https://tonybai.com/feed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;OPML 订阅文件：&lt;a class="link" href="https://webp.debuginn.com/202312032154291.opml" target="_blank" rel="noopener"
+&gt;Feed订阅源文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最后，你要有认为值得推荐的或者有价值的博客，都可以在评论区分享出来，让我们站在巨人的肩膀上变得更强～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>全站静态化升级完毕</title><link>https://blog.debuginn.com/p/debuginn-hugo-blog/</link><pubDate>Sun, 14 May 2023 13:14:07 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-hugo-blog/</guid><description>&lt;img src="https://webp.debuginn.com/202401082202363.jpg" alt="Featured image of post 全站静态化升级完毕" /&gt;&lt;p&gt;经历了三个月的整体站点迁移，数据的修复，网站的搭建，目前全站代码已经完成 github 代码托管部署，主站点重新调整设计，以后就不需要关心网站的动态部署问题了，代码托管的部署方式更有利于版本的迭代与维护，同时博客站点使用的是 markdown 文章，不必使用后台，也避免了被暴力破解的风险，接下来持续输出，更加注重文章的质量与水平，多输入多输出。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://debuginn.com" target="_blank" rel="noopener"
+&gt;Debug客栈-主页 https://debuginn.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com" target="_blank" rel="noopener"
+&gt;Debug客栈-博客 https://blog.debuginn.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://notes.debuginn.com" target="_blank" rel="noopener"
+&gt;Debug客栈-笔记 https://notes.debuginn.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+&gt;Debug客栈-摄影 https://photo.debuginn.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感谢支持，欢迎你持续访问与评论～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2022 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2022/</link><pubDate>Sat, 31 Dec 2022 10:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2022/</guid><description>&lt;img src="https://webp.debuginn.com/202302251041682.jpg" alt="Featured image of post 2022 年度总结" /&gt;&lt;p&gt;今年，时光依旧不饶人，步入社会以来，时间就似乎不会慢下来，都在光速飞逝，很遗憾，今年疫情依旧没有结束，3 月份的时候还作为密切接触者被隔离了 21 天，总的来说，今年有悲伤同时又十分幸运，感觉冥冥之中都是安排好的。&lt;/p&gt;
+&lt;h2 id="网站数据"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;网站数据
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://analytics.google.com/analytics/web/#/p260538804/reports/reportinghub?params=_u.dateOption%3DyearToDate%26_u.comparisonOption%3Ddisabled" target="_blank" rel="noopener"
+&gt;2022年统计数据共享链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302251044940.jpg"
+loading="lazy"
+alt="访客地图"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302251044112.jpg"
+loading="lazy"
+alt="访客数量 &amp; top 文章"
+&gt;&lt;/p&gt;
+&lt;h2 id="摄影专区"&gt;&lt;a href="#%e6%91%84%e5%bd%b1%e4%b8%93%e5%8c%ba" class="header-anchor"&gt;&lt;/a&gt;摄影专区
+&lt;/h2&gt;&lt;p&gt;今年为了兴趣爱好买了一台微单 索尼 α6400+18135 镜头，同时，也想着把自己的摄影作品呈现给大家，每年我都会更新一批图片到这里，选 10 张自己认为比较好的图片拿来展出，水平不高，但是每一张照片背后都有属于它的专属意义。&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+&gt;直达链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302251045907.jpg"
+loading="lazy"
+alt="摄影站点"
+&gt;&lt;/p&gt;
+&lt;h2 id="年度事件"&gt;&lt;a href="#%e5%b9%b4%e5%ba%a6%e4%ba%8b%e4%bb%b6" class="header-anchor"&gt;&lt;/a&gt;年度事件
+&lt;/h2&gt;&lt;h3 id="疫情-有感动有奇迹"&gt;&lt;a href="#%e7%96%ab%e6%83%85-%e6%9c%89%e6%84%9f%e5%8a%a8%e6%9c%89%e5%a5%87%e8%bf%b9" class="header-anchor"&gt;&lt;/a&gt;疫情 有感动有奇迹
+&lt;/h3&gt;&lt;p&gt;记得在 3 月份的某一天，突然接到领导通知，大家全体居家办公，具体情况听通知，不得外出，下午就接到了确认密接的防疫办的电话，让在家等着去集中隔离，由于密接人数比较多，第二天下午才安排到酒店隔离，一切安排都没有那么混乱，大家都有序进行隔离入住，庆幸的是，隔离的地方还不错，至少可以安心的在隔离期间办公了，隔离期间还下了一场雪，别有一番风景。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302251046480.jpeg"
+loading="lazy"
+alt="隔离期间的雪"
+&gt;&lt;/p&gt;
+&lt;p&gt;隔离期间，大家互相勉励，配合大白检测，大家都很有信心，隔离结束之后，得知大家作为密接都没有被感染 😷，像是一个奇迹，大家都好好滴，同时也传来了确诊同事阳转阴的好消息。&lt;/p&gt;
+&lt;p&gt;回头想来，这次防疫应该是北京政府做的一轮比较优秀的防疫案例了，做到了透明、快且安全。&lt;/p&gt;
+&lt;h3 id="是的-我们就这样相遇了"&gt;&lt;a href="#%e6%98%af%e7%9a%84-%e6%88%91%e4%bb%ac%e5%b0%b1%e8%bf%99%e6%a0%b7%e7%9b%b8%e9%81%87%e4%ba%86" class="header-anchor"&gt;&lt;/a&gt;是的 我们就这样相遇了
+&lt;/h3&gt;&lt;p&gt;都说红螺寺和雍和宫很灵验，去寺院诚心叩拜了每一个佛祖菩萨，感谢佛祖菩萨，的确如此，&lt;strong&gt;是的，我们就这样相遇了&lt;/strong&gt;，新的一年和她，真好。&lt;/p&gt;
+&lt;p&gt;新的一年，我们的故事正在续写～&lt;/p&gt;
+&lt;p&gt;我坚信真诚的对待感情总会有好的结果，感谢相遇，感谢这神奇的缘分～&lt;/p&gt;
+&lt;p&gt;ps：不过多介绍，还有下文哦～&lt;/p&gt;
+&lt;h3 id="是的-我成杨过了"&gt;&lt;a href="#%e6%98%af%e7%9a%84-%e6%88%91%e6%88%90%e6%9d%a8%e8%bf%87%e4%ba%86" class="header-anchor"&gt;&lt;/a&gt;是的 我成杨过了
+&lt;/h3&gt;&lt;p&gt;12月17号在喉咙疼了好几天的情况下，最后还是测量的体温在 38.5 度，我已经感觉中招了，不出意外，接下来连续三天都持续高烧，浑身上下疼痛，之后还流鼻血，应该是高烧烧的，之后就是居家躺尸阶段，没有精神同时伴随有轻微咳嗽，后来做了抗原检测，果然中招，不过目前好了。大家注意防护与提高自身免疫力，很重要的。&lt;/p&gt;
+&lt;h2 id="好物分享"&gt;&lt;a href="#%e5%a5%bd%e7%89%a9%e5%88%86%e4%ba%ab" class="header-anchor"&gt;&lt;/a&gt;好物分享
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;摄影设备：微单 索尼 α6400+18135 镜头；&lt;/li&gt;
+&lt;li&gt;键鼠套装：Mac 新一代键盘、触控板套装；&lt;/li&gt;
+&lt;li&gt;显示设备：目前主力生产使用的 LG HDR 4k 显示器；&lt;/li&gt;
+&lt;li&gt;辅助灯光：目前使用的是小米屏幕挂灯 1s，搭配米家使用非常流畅；&lt;/li&gt;
+&lt;li&gt;充电设备：小米无线充电宝+座充底座，既可以室内充当无线充电，又可以户外活动使用；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="年度书籍"&gt;&lt;a href="#%e5%b9%b4%e5%ba%a6%e4%b9%a6%e7%b1%8d" class="header-anchor"&gt;&lt;/a&gt;年度书籍
+&lt;/h2&gt;&lt;p&gt;今年算是奋起阅读的一年了，短短三个月时间就啃下来很多书，很有营养，以后也要给自己补补能量，让自己变得更强。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;技术 《Effective Go 中英双语版》bingo，很棒的一本 Go 入门数据；&lt;/li&gt;
+&lt;li&gt;公司 《一往无前》范海涛，讲解公司创立到十周年发生的故事;&lt;/li&gt;
+&lt;li&gt;小说 《黄金时代》王小波，自由？背叛？性？ 读完没有啥感觉；&lt;/li&gt;
+&lt;li&gt;散文 《乖，摸摸头》大冰，第二次读，算是疫情三年禁锢肉体的另一种解脱；&lt;/li&gt;
+&lt;li&gt;技术 《图解 HTTP》上野，用通俗易懂的漫画讲解；&lt;/li&gt;
+&lt;li&gt;技术 《分布式缓存：原理、架构及Go语言实现》胡世杰，讲的很透彻，数据提供的很透彻；&lt;/li&gt;
+&lt;li&gt;技术 《深入理解Java虚拟机JVM高级特性与最佳实践》周志明，java 进阶书籍，值得推荐；&lt;/li&gt;
+&lt;li&gt;技术 《深入设计模式》，设计模式算是 code 中让房子长什么样的设计方法论了；&lt;/li&gt;
+&lt;li&gt;散文 《保重》大冰，没有读完，算是给自己的青春留下一章吧，保重；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="年度文章"&gt;&lt;a href="#%e5%b9%b4%e5%ba%a6%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;年度文章
+&lt;/h2&gt;&lt;p&gt;本年度很懒，没有出啥文章，就写了两篇，那就算作年度文章吧～&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/p/go-tools-pprof/" &gt;https://blog.debuginn.com/p/go-tools-pprof/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="github-个人页面"&gt;&lt;a href="#github-%e4%b8%aa%e4%ba%ba%e9%a1%b5%e9%9d%a2" class="header-anchor"&gt;&lt;/a&gt;Github 个人页面
+&lt;/h2&gt;&lt;p&gt;今年倾心打造自己的技术主页，术业有专攻，对自己在技术专业能力方面在 23年有更高的要求，同时希望自己在技术圈可以成为有影响力的人，来帮助更多的同行，同时也在不断的提升自己，&lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+&gt;直达链接&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302251051076.jpg"
+loading="lazy"
+alt="Meng小羽的 GitHub 个人页面"
+&gt;&lt;/p&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;这一年总的来说是给自己带来很大成长的一年，褪去了年少的青涩，增加了一点成熟的模样，也懂得了珍惜当下，活好每一天，爱人爱己，学会了倾听、学会了表达、学会了接受失去、同时也学会了迎接未来，感恩、感谢、感激、感动，这就是我的 2022年。&lt;/p&gt;
+&lt;p&gt;2023年，祝大家新年快乐， happy new year ～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2021 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2021/</link><pubDate>Thu, 30 Dec 2021 08:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2021/</guid><description>&lt;img src="https://webp.debuginn.com/202302262128413.jpg" alt="Featured image of post 2021 年度总结" /&gt;&lt;p&gt;今年，时间依旧飞快流逝，转眼间，自己已经毕业了小2年了，渐渐的自己开始习惯了北漂的生活，一个人的北京，自由与孤独同在。也体会到了离家远的遗憾，远的连奶奶最后一面也没有见到，第一次感受到了亲人阴阳两隔的无奈与悲哀。疫情 😷 在全球范围内还在持续，国内偶尔也零星的出现，但愿 22 年疫情结束，全世界人们都可以回归到疫情之前，和爱人、亲人、朋友去想去的地方，去探索多彩的世界。&lt;/p&gt;
+&lt;h2 id="网站数据"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;网站数据
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://analytics.google.com/analytics/web/#/p260538804/reports/reportinghub?params=_u.dateOption%3DyearToDate%26_u.comparisonOption%3Ddisabled" target="_blank" rel="noopener"
+&gt;2021年统计数据共享链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302262132632.png"
+loading="lazy"
+alt="访问数据"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302262133191.png"
+loading="lazy"
+alt="访问国家/地区"
+&gt;&lt;/p&gt;
+&lt;p&gt;今年，写了一些在工作中使用到的 Golang 的一些技巧及思考，以及一些规范。&lt;/p&gt;
+&lt;p&gt;让我意外的是大家对 Go 语言入门学习有着很大的兴趣，下面这个文章是今年访问最多的文章，访问量：2785&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/p/go-dev-design/" &gt;https://blog.debuginn.com/p/go-dev-design/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="技术导航"&gt;&lt;a href="#%e6%8a%80%e6%9c%af%e5%af%bc%e8%88%aa" class="header-anchor"&gt;&lt;/a&gt;技术导航
+&lt;/h2&gt;&lt;p&gt;经常游荡于各个大厂的技术博客之中，于是做了一个集合导航，后续计划将大佬们也收集到此，大家有好的技术分享网站也可以评论区留言分享一下。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2020 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2020/</link><pubDate>Thu, 31 Dec 2020 23:59:59 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2020/</guid><description>&lt;img src="https://webp.debuginn.com/202302272141603.jpeg" alt="Featured image of post 2020 年度总结" /&gt;&lt;p&gt;今年，最大的感受就是时间过的太快了，一切都是那么的来不及 &amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2020 年&lt;/strong&gt;，疫情、毕业、工作，学生时代的 END，社会人时代的 START &amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2021 年&lt;/strong&gt;，希望一切都在慢慢变好，新的开始、新的未来！！！&lt;/p&gt;
+&lt;p&gt;每一次总结都是新的开始的起点，那么，接下来就开始吧～&lt;/p&gt;
+&lt;h2 id="网站数据"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;网站数据
+&lt;/h2&gt;&lt;p&gt;今年是小站运行的第 4 年，感谢大家的支持与访问，这是我分享的天地、同时也是见证我成长的地方，加油～ 一往无前 ！！！&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202302272142177.png"
+loading="lazy"
+alt="2020 年度访问"
+&gt;&lt;/p&gt;
+&lt;h2 id="最受欢迎的文章"&gt;&lt;a href="#%e6%9c%80%e5%8f%97%e6%ac%a2%e8%bf%8e%e7%9a%84%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;最受欢迎的文章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/design-restful-api/" &gt;🔥🔥🔥 Restful API 设计指北&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🔥🔥 吊打百度，多吉搜索引擎&lt;/li&gt;
+&lt;li&gt;🔥 程序猿的 Chrome 浏览器插件推荐&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/pingos-build-sever/" &gt;搭建流媒体服务器 PingOS 平台搭建&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/mysql-chooes-storage-engine/" &gt;怎么优雅的选择 MySQL 存储引擎&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="more-页面"&gt;&lt;a href="#more-%e9%a1%b5%e9%9d%a2" class="header-anchor"&gt;&lt;/a&gt;More 页面
+&lt;/h2&gt;&lt;p&gt;2020 看见的我不止一面，这里记录了我的 MORE&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/about" &gt;https://debuginn.com/about&lt;/a&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2019 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2019/</link><pubDate>Tue, 31 Dec 2019 08:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2019/</guid><description>&lt;img src="https://webp.debuginn.com/202304121931935.jpg" alt="Featured image of post 2019 年度总结" /&gt;&lt;p&gt;2019年，这一年来是我经历最多的一年，上半年的我还在学校上着学校学年安排的课程，谈着美好的校园恋爱，下半年就脱离了校园生活，开始独自一人的北漂生活，这一年来也是这个社会变化较大的一年，5G 的商业化的元年，最难就业的一年，等等，这一年现在告诉自己，我坚持了下来，在这个多变的社会生存了下来，顺利找到了实习工作，从&lt;strong&gt;校园实验室&lt;/strong&gt;生活转变为&lt;strong&gt;两点一线的上班生活&lt;/strong&gt;，开始了不一样的生活体验。&lt;/p&gt;
+&lt;p&gt;这一年来，我的博客访问量也逐渐增多，网站使用了阿里云 ECS + OSS + CDN 全套服务提升性能，虽然写的文章不及&lt;a class="link" href="http://www.ruanyifeng.com/" target="_blank" rel="noopener"
+&gt;阮一峰老师&lt;/a&gt;的千万分之一，但是我可以自豪的说，这一年我坚持了下来，持续的积累技术知识及新型的技术的评价让我的博客文章逐渐的多了起来，在项目中的开发知识积累也都写在博客上面，逐步丰富自己的技术栈，使自己成为一个足够优秀的人，来到北京逐渐发现，自己是那千万人中最最平凡的一类人，正如现在实习公司所说：“平凡人做非凡事，成就非凡人生价值”，不断的提升自己的技术能力及分析问题的能力是我现在要做的，另外也是我2020年博客更新的一大方向，2019年，感谢支持Debug客栈成长的小伙伴们，谢谢你们的鼓励与支持，你也可以加入我的QQ群聊，大话人生 @Debug客栈交流群。&lt;/p&gt;
+&lt;p&gt;2020年，迎来我大学的结束，并且我也将从实习生的身份转变为应届生，开始了真正的工作，去为社会主义添砖加瓦，2020年加油，奥力给！！！&lt;/p&gt;
+&lt;h2 id="热门文章"&gt;&lt;a href="#%e7%83%ad%e9%97%a8%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;热门文章
+&lt;/h2&gt;&lt;p&gt;接下来将网站本年度每月阅读量最高的文章张贴如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一月 蓝桥杯 基础练习 数的读法&lt;/li&gt;
+&lt;li&gt;二月 【NCRE四级网络工程师】计算机网络多选题&lt;/li&gt;
+&lt;li&gt;三月 解决百度网盘限速问题&lt;/li&gt;
+&lt;li&gt;四月 可能是史上最全的无版权免费图片网站推荐文章&lt;/li&gt;
+&lt;li&gt;五月 Laravel5.8+LayUI踩坑之路&lt;/li&gt;
+&lt;li&gt;六月 Laravel5.8学习日常之清除视图缓存&lt;/li&gt;
+&lt;li&gt;七月 给网站文字添加高逼格&amp;quot;抖音&amp;quot;效果&lt;/li&gt;
+&lt;li&gt;八月 关于5G的SA与NSA架构&lt;/li&gt;
+&lt;li&gt;九月 PWA 渐进式Web应用程序&lt;/li&gt;
+&lt;li&gt;十月 Windows常用软件清单&lt;/li&gt;
+&lt;li&gt;十一月 MacBook Pro 2019款 入手体验&lt;/li&gt;
+&lt;li&gt;十二月 PhpStorm Mac / Windows常用快捷键&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中在2019年访客最多的文章是：关于5G的SA与NSA架构&lt;/p&gt;
+&lt;h2 id="网站访客"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e8%ae%bf%e5%ae%a2" class="header-anchor"&gt;&lt;/a&gt;网站访客
+&lt;/h2&gt;&lt;p&gt;这里公布的是从&lt;strong&gt;2019年8月20日&lt;/strong&gt;开始统计，使用&lt;strong&gt;Google Analytics&lt;/strong&gt;统计的数据：&lt;/p&gt;
+&lt;p&gt;用户访问量：8125，事件数：9.5万，新用户数：2.1万。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202303161958776.png"
+loading="lazy"
+alt="用户访问量"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202303161958253.png"
+loading="lazy"
+alt="用户访问量"
+&gt;&lt;/p&gt;
+&lt;p&gt;Google Analytics 在线报告：&lt;a class="link" href="https://analytics.google.com/analytics/web/#/p207970635/reports/home?params=_u..nav%3Dga1-experimental%26_u.dateOption%3DyearToDate%26_u.comparisonOption%3Ddisabled%26_r.4..cardDateRange%3Dcustom%26_r.4..date00%3D20190820%26_r.4..date01%3D20191227" target="_blank" rel="noopener"
+&gt;点击此处访问&lt;/a&gt;（需墙）&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://webp.debuginn.com/202303161959295.jpg"
+loading="lazy"
+alt="2020年，新年快乐"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2018 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2018/</link><pubDate>Fri, 28 Dec 2018 19:29:58 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2018/</guid><description>&lt;img src="https://webp.debuginn.com/202304121931935.jpg" alt="Featured image of post 2018 年度总结" /&gt;&lt;p&gt;转眼之间，自己已经成了大三狗了，记得上一年，自己还是一个刚有目标，刚有理想的孩子，现在已经转身一变，变成一块老腊肉了，?，再过一年的时间，自己将走向社会，去赚取自己人生过程中的真正的第一桶金。&lt;/p&gt;
+&lt;p&gt;14号参加了学院的新生学习交流会，作为一个老学长给学弟学妹们讲解自己的人生规划，自己的大学之路怎么走过，感慨万千，大学四年时光匆匆而逝，面对新一届的新生，真的是老了，哈哈，其中，和我作伴演讲的邻班同学讲了一个深刻的问题，是“何为大学”，大学–单纯的是年纪大么？我不这么认为，大学之道，在于学，在于精，在于创新，只有不断地学习，充实自己的大学时光，才是大学之道。&lt;/p&gt;
+&lt;p&gt;又是一年给大家分享的时光，希望今年能够给你们传播一些比较好的经验、理念、公众号、还有一系列好玩的东西……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;和上年一样，希望给大家带来一些比较实用的工具及网页，还有公众号，等等福利。&lt;/p&gt;
+&lt;p&gt;emmm 没有喽&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>新域名 debuginn.cn 上线了</title><link>https://blog.debuginn.com/p/debuginn-cn/</link><pubDate>Mon, 29 Oct 2018 19:33:39 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-cn/</guid><description>&lt;p&gt;，太贵了，后来听说.cn域名是咱国家的域名，而且根服务器在咱国家，而且第二年续费及第一年的购买只需要28元钱，还是比较实惠的，原本本网站的域名是&lt;code&gt;roguefeathers.link&lt;/code&gt;现在改为&lt;code&gt;debuginn.cn&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;取此域名有几个含义：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Debug客栈：&lt;code&gt;Debug&lt;/code&gt;这一个词，就是一个在程序员界的“调试”一词，取此词语正好是用于我的网站在不断更新，加上我就是一名编程菜鸟，取此义也是对编程的一种热爱；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;debuginn&lt;/code&gt; 正好是 Debug客栈 的英文解释；&lt;/li&gt;
+&lt;li&gt;接受了同僚之间的建议，域名还是取一个简单易记的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;另外，本人在此声明一下，以后此网站唯一域名：&lt;code&gt;debuginn.cn&lt;/code&gt;，谢谢大家的支持，嘿嘿。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
