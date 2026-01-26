@@ -82,8 +82,8 @@ type = "promote"
 [[widgets.page]]
 type = "popular"
 
-[[widgets.page]]
-type = "ad"
+# [[widgets.page]]
+# type = "ad"
 
 [opengraph.twitter]
 site = "idebuginn"
@@ -179,5 +179,5 @@ mailchimpUrl = "https://us3.list-manage.com/subscribe/post-json"
 u = "397828d3cf4dbe2593b9da8e3"
 id = "b7404a6937"
 
-[ad]
-title = "广告"
+# [ad]
+# title = "广告"
