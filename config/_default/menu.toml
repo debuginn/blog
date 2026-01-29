@@ -79,6 +79,14 @@ url = "https://x.com/idebuginn"
 icon = "brand-x"
 
 [[social]]
+identifier = "telegram"
+name = "Telegram"
+weight = 3
+url = "https://t.me/xiaoyupark"
+[social.params]
+icon = "brand-telegram"
+
+[[social]]
 identifier = "zhihu"
 name = "Zhihu"
 weight = 4
