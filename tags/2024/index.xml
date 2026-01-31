@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2024 on Debug客栈</title><link>https://blog.debuginn.com/tags/2024/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 2024 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Tue, 31 Dec 2024 18:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/2024/index.xml" rel="self" type="application/rss+xml"/><item><title>2024 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2024/</link><pubDate>Tue, 31 Dec 2024 18:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2024/</guid><description>&lt;p&gt;2024 年，这一年就像做梦一样的度过，还好，我终是梦醒了，也没有睡过头。&lt;/p&gt;
+&lt;p&gt;这一年里，我完成了许多人生中的“第一次”：第一次踏上新疆的土地，第一次参加演唱会，第一次深入草原腹地。我亲眼目睹了边疆的辽阔与壮丽，体验了万人狂欢的热烈夜晚，也感受到了“风吹草低见牛羊”的诗意与真实。&lt;/p&gt;
+&lt;p&gt;我的个人站点也迎来了第 8 个年头。在兢兢业业工作的同时，我不断努力打造个人 IP，将我对编程事业的热爱，与业务摄影、科技探索、硬件发烧友的多重身份分享给更多人。在这过程中，我也结识了许多志同道合的朋友，拓宽了自己的视野与圈子。&lt;/p&gt;
+&lt;p&gt;接下来是我对 2024 年的总结，想与你分享。&lt;/p&gt;
+&lt;h2 id="工作"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;工作
+&lt;/h2&gt;&lt;p&gt;从去年正式转向 Java 技术栈以来，今年我也没有让大家失望。我将自研的 Phoenix 框架开发思路与经验分享给大家，同时还得到了相关领域大佬们的宝贵建议与新颖的想法，受益良多。今年，我更是在双技术栈并行的模式下投入生产，深刻体会到了两种语言各自独特的魅力与设计哲学，这种探索让人充满收获感。&lt;/p&gt;
+&lt;p&gt;在工作中，我持续保持高质量输出，并不断提升自己的技术影响力。在项目中，我逐渐担任核心研发角色，并成功迈入高级开发工程师的行列，迎来了个人职业发展的重要里程碑。&lt;/p&gt;
+&lt;p&gt;回望今年，这也是我入职公司的第 4 年多，再过半年，我就能解锁金米兔的成就啦 🎉。这段旅程充满挑战，但也伴随着成长与喜悦。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302262202290_15271164261878095628.jpg"
+width="1603"
+height="902"
+loading="lazy"
+alt="miwork"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;h2 id="站点"&gt;&lt;a href="#%e7%ab%99%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;站点
+&lt;/h2&gt;&lt;p&gt;今年，我的站点终于在静态化的阵营中稳稳站住了脚。经过不断摸索，我逐步完善并打造出了一套专属的部署模式，兼具高效性与性价比，让站点的运维更加从容。&lt;/p&gt;
+&lt;p&gt;同时，我也在持续努力创作优质文章，不断丰富站点的内容。今年，站点的曝光度与流量都有了显著增长，看到更多人关注与认可我的分享，倍感欣慰与动力十足。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241231x7t5lP_2206433805490895863.jpg"
+width="799"
+height="413"
+loading="lazy"
+alt="访问者地图"
+class="gallery-image"
+data-flex-grow="193"
+data-flex-basis="464px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241231xT0S2m_3382886673534380228.jpg"
+width="720"
+height="415"
+loading="lazy"
+alt="访问量"
+class="gallery-image"
+data-flex-grow="173"
+data-flex-basis="416px"
+&gt;&lt;/p&gt;
+&lt;h2 id="文章"&gt;&lt;a href="#%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;文章
+&lt;/h2&gt;&lt;p&gt;24 年，我一共书写了 9 篇文章，在这里再给大家分享一下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-1/" &gt;Phoenix框架 从0到1设计业务并发框架 小米商城产品站革新之路&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-2/" &gt;Phoenix框架 从0到1设计业务并发框架 怎么组织设计一个框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-3/" &gt;Phoenix框架 从0到1设计业务并发框架 并发线程池的核心设计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-4/" &gt;Phoenix框架 从0到1设计业务并发框架 自动构建有向无循环图设计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/go-env-gotraceback/" &gt;使用 GOTRACEBACK 快速定位你的 Panic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app/" &gt;Follow｜下一代的信息浏览器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app-2/" &gt;Follow ｜下一代信息浏览器 第二弹来了&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/follow-app-airdrop/" &gt;Follow 给我空投了 1w 代币，可以无限发码啦～&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/answer-anotherdayu/" &gt;答 《博客作者呀，我想采访你这 9 个问题！》 问卷&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;今年的主要精力都投入在工作上，因此开源方面的分享相对较少。可以说，这一年更多是一个沉淀与积累的过程，专注于提升技术能力和积累宝贵的工作经验，为未来的发展打下更扎实的基础。&lt;/p&gt;
+&lt;h2 id="开源"&gt;&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor"&gt;&lt;/a&gt;开源
+&lt;/h2&gt;&lt;p&gt;今年的开源主要体现在博客和站点的维护上，但其实，分享文章与传播技术，又何尝不是另一种形式的开源呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241231a0w1gk_11227879911762401096.jpg"
+width="2220"
+height="1184"
+loading="lazy"
+alt="github"
+class="gallery-image"
+data-flex-grow="187"
+data-flex-basis="450px"
+&gt;&lt;/p&gt;
+&lt;h2 id="生活"&gt;&lt;a href="#%e7%94%9f%e6%b4%bb" class="header-anchor"&gt;&lt;/a&gt;生活
+&lt;/h2&gt;&lt;p&gt;今年，是我人生中最难忘的一年。感恩上帝、菩萨、佛祖的眷顾（我始终相信这个世界有神的存在，只是我不确定祂在人间的表达形式，所以对每一种可能都怀着虔诚与敬畏）。感激家人一直以来的陪伴与关怀，而我最想感谢的，是在我最艰难的时候始终陪伴在身边、鼓励我的她。&lt;/p&gt;
+&lt;p&gt;这一场如梦般的经历，好在我醒了过来，并且没有睡过头。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225JuJDgq_17510108198205043890.jpg"
+width="1600"
+height="1067"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+&gt;&lt;/p&gt;
+&lt;p&gt;今年，我也走过了许多地方，见证了人世间的悲欢离合，用镜头记录下无数动人的瞬间。赛里木湖的湛蓝、《苹果香》中的蓝色小屋、风吹草低的牛羊、第四纪火山的奇特地貌、一望无际的戈壁滩、肉眼可见的深邃银河、万人大合唱的震撼、还有海上的日落与月升……每一处风景都饱含故事，每一帧画面都充满了意义。这一年，旅途不仅拓宽了视野，更丰富了心灵。&lt;/p&gt;
+&lt;p&gt;在这里分享给大家。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225feEOQU_806741500412414417.jpg"
+width="6000"
+height="4000"
+loading="lazy"
+alt="新疆·果子沟大桥"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225l5WfKG_13718108361311794091.jpg"
+width="4000"
+height="6000"
+loading="lazy"
+alt="北京·天坛"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225ivgCkw_3186331467568239074.jpg"
+width="6000"
+height="4000"
+loading="lazy"
+alt="北京·鸟巢五月天演唱会"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225yXBPO5_6241071794635549719.jpg"
+width="6000"
+height="4000"
+loading="lazy"
+alt="乌兰察布·乌兰布统火山"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225emJVQx_18159654142188985473.jpg"
+width="6000"
+height="4000"
+loading="lazy"
+alt="乌兰察布·草原"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225wm4pMb_9381179338378610437.jpg"
+width="4000"
+height="6000"
+loading="lazy"
+alt="兰州·马踏飞燕"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225ZQvVjT_1462892484011692670.jpg"
+width="6000"
+height="4000"
+loading="lazy"
+alt="金昌·银河"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225Gpckpo_6734914659854574928.jpg"
+width="6000"
+height="4000"
+loading="lazy"
+alt="北京·古北水镇长城"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;h2 id="摄影"&gt;&lt;a href="#%e6%91%84%e5%bd%b1" class="header-anchor"&gt;&lt;/a&gt;摄影
+&lt;/h2&gt;&lt;p&gt;和往年一样，每年我都会精选图片放在摄影展站点中，欢迎你的访问。&lt;/p&gt;
+&lt;p&gt;Debug客栈摄影展：&lt;a class="link" href="https://photo.debuginn.com/2024/" target="_blank" rel="noopener"
+&gt;https://photo.debuginn.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225A9zeI4_14375202256786990137.jpg"
+width="1792"
+height="998"
+loading="lazy"
+alt="2024年度照片"
+class="gallery-image"
+data-flex-grow="179"
+data-flex-basis="430px"
+&gt;&lt;/p&gt;
+&lt;h2 id="阅读"&gt;&lt;a href="#%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;阅读
+&lt;/h2&gt;&lt;p&gt;今年阅读的书籍比较少，但是都非常有营养。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20241225GxCeHJ_828060124909349821.jpg"
+width="2160"
+height="2160"
+loading="lazy"
+alt="2024 books"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+&gt;&lt;/p&gt;
+&lt;p&gt;感谢同事分享的马伯庸老师的《太白金星有点烦》和《长安的荔枝》，我理解他的作品为神话历史类讽刺小说？&lt;/p&gt;
+&lt;p&gt;还有一本来自豆瓣高分作品《我在北京送快递》，跟着作者体验最真实的凡人歌。&lt;/p&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;2024 年，收获了很多，也得到了很多。人生很长、要经历无数悲欢离合、阴晴圆缺，人生又很短、岁岁年年转瞬即逝、不得停留。珍惜当下、过好每一天、与自己的爱人、亲人和朋友。&lt;/p&gt;
+&lt;p&gt;最后，感谢你的阅读，让我们 2025 年变得更强～&lt;/p&gt;
+&lt;p&gt;2025 年，新年快乐！&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2023 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2023/</link><pubDate>Sun, 31 Dec 2023 13:30:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2023/</guid><description>&lt;h2 id="工作"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;工作
+&lt;/h2&gt;&lt;p&gt;今年工作经历了比较大的调整，由于部门技术栈逐渐趋于统一从 Go 技术栈转换到 Java 技术栈，也就是说我会双语言啦，自己也开始从事 Java 相关业务的开发，其实在 22 年底就开始接触 Java 服务了，按照学习计划，其实切换起来，还是相对来说比较简单，也没有太大的阻力，但是随着深入学习，发现自己学习的知识还是太少了，只能是 Java 庞大生态的冰山一角，值得自己骄傲的是，这一年，在 leader 和团队同事的支持和帮助下，我从 0 到 1 实现了一套并发框架，命名为 PhoenixCore，目前已经应用在了小米商城产品站（也就是说，只要你访问过小米商城，这套框架就为你提供过服务 😊），年后我会逐一整理并发表一系列的围绕并发框架的系列文章，来讲解我是如何实现这个框架以及我遇到的相关问题及解决思路。&lt;/p&gt;
+&lt;h2 id="站点"&gt;&lt;a href="#%e7%ab%99%e7%82%b9" class="header-anchor"&gt;&lt;/a&gt;站点
+&lt;/h2&gt;&lt;p&gt;今年，站点最大的变化就是完成了对&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
+&gt;站点的静态化建设&lt;/a&gt;，可以将重点放在博客文章的输出中去，同时省去了自己维护站点的大量精力。目前站点的运营模式就是 Github 来提供文章的编写及打包发布，使用 Github pages 部署，CDN 使用免费的 Cloudflare 和 jsDelivr，（这也就代表着网站可能会出现访问不稳定 😛），同时将站点域名从 debuginn.cn 转换为 &lt;a class="link" href="https://debuginn.com" target="_blank" rel="noopener"
+&gt;debuginn.com&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;今年由于站点域名和子域名的调整，统计开始包含自己的子域名访问记录，由于期间有部分访问记录丢失，环比指标都有下降，不过随着自己开始专注于文章的输出，情况开始变好。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202312231204963_9263971029976507638.png"
+width="1666"
+height="900"
+loading="lazy"
+alt="访问人数"
+class="gallery-image"
+data-flex-grow="185"
+data-flex-basis="444px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202312231209707_12769708922138696502.png"
+width="1986"
+height="902"
+loading="lazy"
+alt="访问国家"
+class="gallery-image"
+data-flex-grow="220"
+data-flex-basis="528px"
+&gt;&lt;/p&gt;
+&lt;p&gt;由于自己重新调整了博客链接组织结构，404 的页面一直占据着很高的比例 😂。&lt;/p&gt;
+&lt;h2 id="文章"&gt;&lt;a href="#%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;文章
+&lt;/h2&gt;&lt;p&gt;今年输出并不是很多，还是和去年一样，都一一陈列一下吧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-2023-rss/" target="_blank" rel="noopener"
+&gt;2023 年为何我还在使用 RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/talk-about-chat-gpt/" target="_blank" rel="noopener"
+&gt;谈谈 ChatGPT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/how-to-take-over-a-project/" target="_blank" rel="noopener"
+&gt;如何接手并维护一个项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/debuginn-hugo-blog/" target="_blank" rel="noopener"
+&gt;全站静态化升级完毕&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/faas-notes/" target="_blank" rel="noopener"
+&gt;FAAS 调研笔记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/financing-long-bridge/" target="_blank" rel="noopener"
+&gt;长桥港美股团办活动&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望我的文章可以带给你帮助，希望我和大家一起变得更强～&lt;/p&gt;
+&lt;h2 id="开源"&gt;&lt;a href="#%e5%bc%80%e6%ba%90" class="header-anchor"&gt;&lt;/a&gt;开源
+&lt;/h2&gt;&lt;p&gt;今年由于自己博客迁移到了 &lt;a class="link" href="https://github.com/debuginn" target="_blank" rel="noopener"
+&gt;Github&lt;/a&gt;，所以说活跃多了起来 🐶。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202312231221971_11449834724362113146.png"
+width="1540"
+height="368"
+loading="lazy"
+alt="github-2023"
+class="gallery-image"
+data-flex-grow="418"
+data-flex-basis="1004px"
+&gt;&lt;/p&gt;
+&lt;h2 id="生活"&gt;&lt;a href="#%e7%94%9f%e6%b4%bb" class="header-anchor"&gt;&lt;/a&gt;生活
+&lt;/h2&gt;&lt;p&gt;23年去了很多地方旅游，云南（昆明、大理、丽江、香格里拉）、甘肃、天津、河北（张家口）、山东（济宁、威海、青岛）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3月份去奥森桃花谷看了桃花，人很多、花更美；&lt;/li&gt;
+&lt;li&gt;4月份和自己的爱人一起去了云南，喂了滇池的海鸥、感受到了苍山洱海的美、看到了大冰的小屋、看到了雄伟的玉龙雪山、体验到了香格里拉藏区人们的淳朴与善良好客；&lt;/li&gt;
+&lt;li&gt;5月份去了甘肃老家，感受到了大西北的豪情、辽阔，看到了一望无际的荒漠与祁连山脉，看到了《隐入尘烟》中甘肃特色的土房子，品尝到了特色的面卷子与羔羊；&lt;/li&gt;
+&lt;li&gt;同 5月去了环球影城，感受到了电影世界。去北动看“西直门三太子”萌兰，很遗憾天太热，没看到，只看到了萌大和其他熊猫；&lt;/li&gt;
+&lt;li&gt;6月去了天津，看了民国风的五大道，听了场相声，还品尝了特色小吃；&lt;/li&gt;
+&lt;li&gt;7月陪着姐姐姐夫大外甥在北京城逛了一番，很快乐；&lt;/li&gt;
+&lt;li&gt;10月回了趟家，之后去威海，自驾到了山东最东端 - 始皇东巡处，看到了搁浅的“布鲁维斯号”，去青岛的海鲜市场，买了海鲜，赶了海。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;23年，也一直坚持着徒步，参加了 4次活动，其中 2次夜爬活动，看到了星空、看到了日出。&lt;/p&gt;
+&lt;h2 id="摄影"&gt;&lt;a href="#%e6%91%84%e5%bd%b1" class="header-anchor"&gt;&lt;/a&gt;摄影
+&lt;/h2&gt;&lt;p&gt;今年由于旅游和徒步，拍了很多的照片，和往年一样，每年我都会精选十张图片放在摄影展站点中，欢迎你的访问。&lt;/p&gt;
+&lt;p&gt;Debug客栈摄影展：&lt;a class="link" href="https://photo.debuginn.com" target="_blank" rel="noopener"
+&gt;https://photo.debuginn.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202312311401449_11528192487757326128.jpg"
+width="3910"
+height="2052"
+loading="lazy"
+alt="摄影展"
+class="gallery-image"
+data-flex-grow="190"
+data-flex-basis="457px"
+&gt;&lt;/p&gt;
+&lt;h2 id="阅读"&gt;&lt;a href="#%e9%98%85%e8%af%bb" class="header-anchor"&gt;&lt;/a&gt;阅读
+&lt;/h2&gt;&lt;p&gt;今年继续阅读，继续成长～&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文论《毛泽东选集》看了新民主主义革命至抗日战争的相关章节，不得不佩服领袖的远见与决策，推荐阅读；&lt;/li&gt;
+&lt;li&gt;理财《富爸爸穷爸爸》怎么去积累财富，摆脱穷人思维，跳出“老鼠赛跑”游戏；&lt;/li&gt;
+&lt;li&gt;技术《Apache Dubbo 微服务从入门到精通》Java 协议相关书籍；&lt;/li&gt;
+&lt;li&gt;传记《埃隆·马斯克传》遵循“第一性原理”，创造奇迹的人，推荐阅读；&lt;/li&gt;
+&lt;li&gt;小说《太白金星有点烦》如何规划西天取经，看太白金星与观音菩萨的运作；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;23年，是成长的一年，也是幸福的一年，今年工作稳定前行，努力突破自己，生活上稳定前行，这一年去了很多的地方，看到了世间不同的生活方式，24年，继续努力，奔着小目标继续前进，继续收获快乐、幸福与圆满。&lt;/p&gt;
+&lt;p&gt;2024，新年快乐～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

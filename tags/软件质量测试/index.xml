@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件质量测试 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%B5%8B%E8%AF%95/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 软件质量测试 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 03 Jul 2019 18:33:02 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml"/><item><title>软件质量测试知识点</title><link>https://blog.debuginn.com/p/test-software-quality/</link><pubDate>Wed, 03 Jul 2019 18:33:02 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-quality/</guid><description>&lt;p&gt;&lt;strong&gt;1、什么是软件、软件的特征有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;软件是计算机程序、规程以及可能的相关文档和运行计算机系统需要的数据。即计算机程序、规程、文档和软件系统运行所必需的数据。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;软件的特征：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;软件是由开发产生，不是用传统方法制造的；&lt;/li&gt;
+&lt;li&gt;软件不会像硬件那样有磨损；&lt;/li&gt;
+&lt;li&gt;软件不能通过已有构件组装，只能自己定义。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2、软件分为哪几类？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;系统软件、应用软件、WEB软件、工程和科学软件、嵌入式软件、产品线软件、人工智能软件等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、什么是软件质量、软件质量从哪几个方面看？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;软件质量 是指软件系统或系统中的软件部分的质量，既满足用户需求，也包括功能需求和性能需求的程度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从哪几个方面来看软件质量？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;软件结构方面：软件应具有良好的结构；&lt;/li&gt;
+&lt;li&gt;功能和性能方面：其软件应能够按照既定的工作要求工作，并且与明确规定的功能、性能需求一直；&lt;/li&gt;
+&lt;li&gt;开发标准与文档方面：软件开发应用必须和明确沉稳的开发标准一致，遵循软件开发准则，做到软件文档资料齐全。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;4、软件测试与软件调试的区别是什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;软件测试：在规定的条件下对程序进行操作，以发现程序错误，衡量软件质量，并对其是否能满足设计要求进行评估的过程；&lt;/li&gt;
+&lt;li&gt;软件调试：将编制的程序投入实际运行前，用手工或编译程序等方法进行测试，修正语法错误和逻辑错误的过程；&lt;/li&gt;
+&lt;li&gt;测试是为了发现软件中存在的错误，调试是为了证明软件开发的正确性；&lt;/li&gt;
+&lt;li&gt;测试以已知条件开始，使用预先定义的程序，且有预知的结果，不可预见的仅是程序是否通过测试. 调试一般是以不可预知的内部条件开始，除统计性调试外，结果是不可预见的；&lt;/li&gt;
+&lt;li&gt;测试是有计划性的，需要进行测试设计，调试是不受时间约束的；&lt;/li&gt;
+&lt;li&gt;测试经历发现错误、改正错误、重新测试的过程，调试是一个推理的过程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5、软件测试的方法有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;静态方法和动态方法：静态方法分为代码检查、静态结构分析、代码质量度量，动态方法分为功能确认与接口测试、覆盖率分析及性能分析；&lt;/li&gt;
+&lt;li&gt;黑盒测试方法：主要有等价类划分、边值分析、因果图、错误推测、穷举输入测试方法；&lt;/li&gt;
+&lt;li&gt;白盒测试方法：逻辑覆盖、域测试、路径测试、程序插桩、程序编译；&lt;/li&gt;
+&lt;li&gt;灰盒测试，介于黑盒白盒测试之间；&lt;/li&gt;
+&lt;li&gt;软件开发阶段的测试方法：需求测试、单元测试、集成测试、性能测试、容量测试、配置测试、安装测试、安全性测试。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;6、什么是黑盒测试、白盒测试和灰盒测试？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;黑盒测试也称功能测试或数据驱动测试，是已知软件所需功能，通过测试来检测每个功能是否都能正常使用。&lt;/li&gt;
+&lt;li&gt;白盒测试也称结构测试或逻辑驱动测试，知道软件内部的工作过程，可通过测试来检测软件内部的动作是否按照规格说明书所规定正常运行，并且按照软件内部的结构测试程序来检测程序中的每条道路是否都能按照预定要求进行正常工作，而不考虑功能是否正确。&lt;/li&gt;
+&lt;li&gt;灰盒测试介于黑盒与白盒之间，关注对于输入的正确性，同时也关注内部表现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;7、什么是软件质量控制模型TSQC？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191358662_15604422305975240297.png"
+width="504"
+height="259"
+loading="lazy"
+alt="TSQC模型"
+class="gallery-image"
+data-flex-grow="194"
+data-flex-basis="467px"
+&gt;&lt;/p&gt;
+&lt;p&gt;TSQC过程是一个调节和控制那些影响软件质量的参数的过程。隐形软件质量的参数如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;产品：所有可交付物；&lt;/li&gt;
+&lt;li&gt;过程：所有活动的集合；&lt;/li&gt;
+&lt;li&gt;资源：活动的物质基础（人力、技术、设备、时间、资金等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TSQC过程是PDCA的几个活动的循环。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;计划Plan：确定参数要求；&lt;/li&gt;
+&lt;li&gt;实施Do：根据要求开展活动；&lt;/li&gt;
+&lt;li&gt;检查Check：通过评审、度量、测试确认满足要求；&lt;/li&gt;
+&lt;li&gt;改进Action：纠正参数要求再开发。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;8、软件质量控制的实施过程有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;预开发阶段：主要活动包括买主与客户研究建立需求、发布招标请求、选择资源、与开发者签订合同；&lt;/li&gt;
+&lt;li&gt;开发阶段：涵盖从产品开发到移交产品别获得客户的满意度结束的全过程；&lt;/li&gt;
+&lt;li&gt;维护阶段：主要是对产品的及时更新。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;9、软件质量保证模型有哪些？分别是啥？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;McCall模型：分别面向软件产品的运行、修正、转移；&lt;/li&gt;
+&lt;li&gt;Boehm模型：着手于软件总体功效，对于软件系统而言，除了有用性以外，开发过程必定是一个时间、金钱、能量的小号过程；&lt;/li&gt;
+&lt;li&gt;FURPS模型：功能性、可用性、可靠性、性能及支持度评估；&lt;/li&gt;
+&lt;li&gt;ISO 9126：功能性、可靠性、可用性、效率、可维护性及可移植性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;10、什么是冗余技术？又分为哪几种技术？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;冗余技术又称储备技术，有时也称容灾备份技术，它是利用系统的并联模型来提高系统可靠性的一种手段；&lt;/p&gt;
+&lt;p&gt;冗余技术分为工作冗余和后备冗余。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;11、软件影响因素有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;需求分析定义错误；&lt;/li&gt;
+&lt;li&gt;设计错误；&lt;/li&gt;
+&lt;li&gt;编码错误；&lt;/li&gt;
+&lt;li&gt;测试错误；&lt;/li&gt;
+&lt;li&gt;文档错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;12、软件的差错、故障和失效是什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;异常：偏离期望的状态（或预期值）的任何情形都称为异常；&lt;/li&gt;
+&lt;li&gt;缺陷：不符合使用要求，或与技术规格说明不一致的任何状态都称为缺陷；&lt;/li&gt;
+&lt;li&gt;差错：
+&lt;ul&gt;
+&lt;li&gt;计算的，观测的或测量的值与真实的规定的或理论上正确的值或者条件之间的差别；&lt;/li&gt;
+&lt;li&gt;一个不正确的步骤、过程、数据定义；&lt;/li&gt;
+&lt;li&gt;一个不正确的结果；&lt;/li&gt;
+&lt;li&gt;一次产生不正确的结果的人的活动；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;故障：一个计算机程序中出现的不正确的步骤、过程、数据定义常称为故障；&lt;/li&gt;
+&lt;li&gt;失效：一个程序运行的外部结果与软件产品的要求出现不一致时称为失效。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;13、什么是软件可靠性模型？都有哪些模型？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为预计或估算软件的可靠性所建立的可靠性框图和数学模型 。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Musa模型，包括基本模型和对数模型；&lt;/li&gt;
+&lt;li&gt;Shooman模型；&lt;/li&gt;
+&lt;li&gt;aoel-oknmoto模型；&lt;/li&gt;
+&lt;li&gt;测试成功模型；&lt;/li&gt;
+&lt;li&gt;威布尔模型。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;14、为什么需要软件评审？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提高项目的生产率；&lt;/li&gt;
+&lt;li&gt;改善软件的质量；&lt;/li&gt;
+&lt;li&gt;在评审过程中使开发团队的其他成员更熟悉产品和开发过程；&lt;/li&gt;
+&lt;li&gt;通过评审标志软件开发的一个阶段的完成；&lt;/li&gt;
+&lt;li&gt;生产出更容易维护的软件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;15、软件评审有哪些内容？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;管理评审；&lt;/li&gt;
+&lt;li&gt;技术评审；&lt;/li&gt;
+&lt;li&gt;文档评审；&lt;/li&gt;
+&lt;li&gt;过程评审。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;16、评审的方法及技术有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;评审的方法：特别检查、轮查、走查、团队评审、监视；&lt;/p&gt;
+&lt;p&gt;评审的技术：缺陷检查表、规则表、评审工具的使用、从不同角度理解产品、场景分析技术。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;17、如何准备评审会议？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;何时召开评审会议；&lt;/li&gt;
+&lt;li&gt;选择那些评审材料；&lt;/li&gt;
+&lt;li&gt;打包分发评审材料；&lt;/li&gt;
+&lt;li&gt;合理安排评审活动进程。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;18、召开评审会议有几个步骤？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;评审预备；&lt;/li&gt;
+&lt;li&gt;评审开始；&lt;/li&gt;
+&lt;li&gt;评审决议；&lt;/li&gt;
+&lt;li&gt;评审结果；&lt;/li&gt;
+&lt;li&gt;几个原则。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;19、提高程序质量的技术有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内存分配方式：从静态存储区域分配；在栈上创建；从堆上分配&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;面向对象的设计规则&lt;/p&gt;
+&lt;p&gt;1）开-闭原则 2）里氏代换原则 3）依赖倒转原则 4）合成/聚合复用原则 5）迪米特原则 6）接口隔离原则 7）基本的设计模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;20、软件测试的原则有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在整个开发过程中要尽早地和不断的进行软件测试；&lt;/li&gt;
+&lt;li&gt;在开始测试时不应默认程序中不存在错误；&lt;/li&gt;
+&lt;li&gt;在设计测试用例时要给出测试的预期结果；&lt;/li&gt;
+&lt;li&gt;测试工作应避免由系统开发人员或开发机构本身来承担；&lt;/li&gt;
+&lt;li&gt;对合理和不合理的输入数据都要进行测试；&lt;/li&gt;
+&lt;li&gt;重点测试错误群集的程序区段；&lt;/li&gt;
+&lt;li&gt;除检查程序功能是否有多余；&lt;/li&gt;
+&lt;li&gt;用穷举例测试是不可能的；&lt;/li&gt;
+&lt;li&gt;长期完整的保留所有的测试用例和测试文件，直到该软件产品被废弃为止。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;21、软件测试过程有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;单元测试、集成测试、系统测试、验收测试、在所有测试过程中始终贯穿着回归测试。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191405290_8226028796942955360.png"
+width="818"
+height="505"
+loading="lazy"
+alt="软件测试过程V字模型"
+class="gallery-image"
+data-flex-grow="161"
+data-flex-basis="388px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;22、软件测试的种类有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;单元测试、集成测试、功能测试、压力/负载测试、验收测试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;23、白盒测试方法工具有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1）静态测试方法 工具：logiscope软件，P.RQA软件，c++Test；&lt;/p&gt;
+&lt;p&gt;2）动态测试方法：代码检查法，静态结构分析法，静态质量度量法，逻辑覆盖法，基本路径测试法，域测试，符号测试，路径覆盖，程序变异；&lt;/p&gt;
+&lt;p&gt;工具：DevPartner软件、Purity系列、xUnit系列框架（单元测试工具）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;24、黑盒测试工具有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1）功能测试工具：WinRunner，AutoIT，Twist&lt;/p&gt;
+&lt;p&gt;2）性能测试工具：LoadRunner&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;25、黑盒测试方法有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;等价类划分&lt;/li&gt;
+&lt;li&gt;边界值分析法&lt;/li&gt;
+&lt;li&gt;因果图法&lt;/li&gt;
+&lt;li&gt;功能图法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;26、划分等价类的原则是什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在输入条件规定了取值范围或值的个数和情况下可以确立一个有效等价类和两个无效等价类；&lt;/li&gt;
+&lt;li&gt;在输入条件规定了输入值的集合或者规定了“必须如何”的条件的情况下可以确立一个有效等价类和一个无效等价类；&lt;/li&gt;
+&lt;li&gt;在输入条件是一个布尔量的情况下可以确定一个有效等价类和一个无效等价类；&lt;/li&gt;
+&lt;li&gt;在规定了输入数据的一组值（假设n个）并且程序要对每一个输入值分别处理的情况下可以确立n个有效等价类和一个无效等价类；&lt;/li&gt;
+&lt;li&gt;在规定了输入数据必须遵守的规则的情况下可以确立一个有效等价类（符合规则）和若干个无效等价类（从不同角度违反规则）；&lt;/li&gt;
+&lt;li&gt;在确知已划分的等价类中各元素在程序处理中的方式不同的情况下应将该等价类进一步划分为更小的等价类。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;27、软件测试 经典测试用例三角形问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/p/test-software-triangle-problem/" &gt;软件质量测试 等价类划分 三角形问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;28、因果图测试用例问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/p/test-software-vending-mechine/" &gt;软件质量测试 因果图测试用例 自动售货机&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;29、白盒测试程序的结构有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;顺序结构、分支结构、循环结构 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;30、白盒测试方法的覆盖标准有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;逻辑覆盖，循环覆盖，基本路径测试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;31、逻辑覆盖包括那些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;分支结构的测试和循环结构的测试、 分支结构的测试又包括语句覆盖 、分支覆盖 、条件覆盖、分支-条件覆盖、条件组合覆盖、路径覆盖。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;32、集成测试策略有：非渐增式集成和渐增式集成。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;33、什么是渐进增式集成？什么是非渐增式继承？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;光分别测试每个模块，再把所有模块按设计要求放在一起，结合所要的程序，这种方法称为非渐增式集成；&lt;/p&gt;
+&lt;p&gt;把一个要测试的模块与已经测试好的那些模块结合起来进行测试，测试完以后再把下一个应该测试的模块结合起来进行测试，这种每次增加一个模块的方法称为渐增式集成。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;34.渐增式集成分为：自顶向下增式集成测试，自底向上增式集成测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;35.面向对象的集成测试的步骤&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先选定检测的类，仔细给出类的状态和相应的行为，类或成员函数间传递的消息，输入或输出的界定等&lt;/li&gt;
+&lt;li&gt;确定覆盖标准&lt;/li&gt;
+&lt;li&gt;利用结构关系图，确定待测类的所有关联&lt;/li&gt;
+&lt;li&gt;根据程序中类的对象构造测试用例，确认使用什么输入法激发类的状态，使用类的服务和期望产生什么行为等&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;36.常用的技术测试有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1）抽样测试 2）正交阵列测试&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件质量测试 因果图测试用例 自动售货机</title><link>https://blog.debuginn.com/p/test-software-vending-mechine/</link><pubDate>Wed, 03 Jul 2019 18:31:12 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-vending-mechine/</guid><description>&lt;h2 id="问题描述"&gt;&lt;a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0" class="header-anchor"&gt;&lt;/a&gt;问题描述
+&lt;/h2&gt;&lt;p&gt;有一个饮料自动售货机（处理单价为5角钱）的控制处理软件，它的软件规格说明如下：
+若投入5角钱的硬币，按下“橙汁”或“啤酒”的按钮，则相应的饮料就送出来。
+若投入1元钱的硬币，同样也是按“橙汁”或“啤酒”的按钮，则自动售货机在送出相应饮料的同时退回5角钱的硬币。&lt;/p&gt;
+&lt;h2 id="分析情况"&gt;&lt;a href="#%e5%88%86%e6%9e%90%e6%83%85%e5%86%b5" class="header-anchor"&gt;&lt;/a&gt;分析情况
+&lt;/h2&gt;&lt;p&gt;怎么分析这种具有一定实际意义的情况呢？
+按照因果图的说法，我们先分析一下，把原因与结果先找出来：
+原因是输入条件，在自动售货机里，硬币的投入、按钮的按下，都是输入，这样的话就有以下几个原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（1）投入5角硬币&lt;/li&gt;
+&lt;li&gt;（2）投入1元硬币&lt;/li&gt;
+&lt;li&gt;（3）按下“橙汁”按钮&lt;/li&gt;
+&lt;li&gt;（4）按下“啤酒”按钮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结果有哪些呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1）送出“橙汁”饮料&lt;/li&gt;
+&lt;li&gt;(2）送出“啤酒”饮料&lt;/li&gt;
+&lt;li&gt;(3）找5角硬币&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;按照因果关系，把因果图的雏形画出来：&lt;/p&gt;
+&lt;h2 id="因果测试图判定"&gt;&lt;a href="#%e5%9b%a0%e6%9e%9c%e6%b5%8b%e8%af%95%e5%9b%be%e5%88%a4%e5%ae%9a" class="header-anchor"&gt;&lt;/a&gt;因果测试图判定
+&lt;/h2&gt;&lt;p&gt;再加上因果图的约束关系，那么图形就成为以下：&lt;/p&gt;
+&lt;p&gt;根据最终的因果图生成判定表：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191413964_12179568218842652632.png"
+width="612"
+height="433"
+loading="lazy"
+alt="因果图生成判定表"
+class="gallery-image"
+data-flex-grow="141"
+data-flex-basis="339px"
+&gt;&lt;/p&gt;
+&lt;p&gt;最后把测试用例写出来：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191414741_17618016719214522976.png"
+width="651"
+height="499"
+loading="lazy"
+alt="测试用例"
+class="gallery-image"
+data-flex-grow="130"
+data-flex-basis="313px"
+&gt;&lt;/p&gt;
+&lt;p&gt;转载自文章： &lt;a class="link" href="https://blog.csdn.net/xuhongge/article/details/2627464" target="_blank" rel="noopener"
+&gt;测试用例设计技术-因果图之二&lt;/a&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件质量测试 等价类划分 三角形问题</title><link>https://blog.debuginn.com/p/test-software-triangle-problem/</link><pubDate>Wed, 03 Jul 2019 18:18:38 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-triangle-problem/</guid><description>&lt;h2 id="问题描述"&gt;&lt;a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0" class="header-anchor"&gt;&lt;/a&gt;问题描述
+&lt;/h2&gt;&lt;p&gt;一个程序读入3个整数，把这三个数值看作一个三角形的3条边的长度值。这个程序要打印出信息，说明这个三角形是不等边的、是等腰的、还是等边的。&lt;/p&gt;
+&lt;p&gt;我们可以设三角形的3条边分别为A，B，C。如果它们能够构成三角形的3条边，必须满足：
+A&amp;gt;0，B&amp;gt;0，C&amp;gt;0，且A+B&amp;gt;C，B+C&amp;gt;A，A+C&amp;gt;B。
+如果是等腰的，还要判断A=B，或B=C，或A=C。
+如果是等边的，则需判断是否A=B，且B=C，且A=C。&lt;/p&gt;
+&lt;h2 id="等价类划分"&gt;&lt;a href="#%e7%ad%89%e4%bb%b7%e7%b1%bb%e5%88%92%e5%88%86" class="header-anchor"&gt;&lt;/a&gt;等价类划分
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191420550_16142566782211912681.png"
+width="665"
+height="356"
+loading="lazy"
+alt="判定关系表"
+class="gallery-image"
+data-flex-grow="186"
+data-flex-basis="448px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191421993_5200865533495091365.png"
+width="671"
+height="394"
+loading="lazy"
+alt="等价类划分表"
+class="gallery-image"
+data-flex-grow="170"
+data-flex-basis="408px"
+&gt;&lt;/p&gt;
+&lt;h2 id="代码实现"&gt;&lt;a href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0" class="header-anchor"&gt;&lt;/a&gt;代码实现
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;float&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;请输入三角形三边&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;scanf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;,&lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;,&lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;等腰三角形&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;等边三角形&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;直角三角形&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;普通三角形&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;转载自文章： &lt;a class="link" href="https://www.cnblogs.com/youxin/p/3516821.html" target="_blank" rel="noopener"
+&gt;软件测试-三角形问题&lt;/a&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

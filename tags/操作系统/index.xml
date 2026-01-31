@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>操作系统 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 操作系统 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 20 Nov 2017 14:34:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>操作系统 运行机制</title><link>https://blog.debuginn.com/p/os-runtime/</link><pubDate>Mon, 20 Nov 2017 14:34:00 +0800</pubDate><guid>https://blog.debuginn.com/p/os-runtime/</guid><description>&lt;h2 id="中央处理器cpu"&gt;&lt;a href="#%e4%b8%ad%e5%a4%ae%e5%a4%84%e7%90%86%e5%99%a8cpu" class="header-anchor"&gt;&lt;/a&gt;中央处理器CPU
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;单机系统：&lt;/strong&gt; 一个计算机系统只有一个处理器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;多处理器系统：&lt;/strong&gt; 一个计算机系统有多个处理器。&lt;/p&gt;
+&lt;h2 id="cpu的构成与基本工作方式"&gt;&lt;a href="#cpu%e7%9a%84%e6%9e%84%e6%88%90%e4%b8%8e%e5%9f%ba%e6%9c%ac%e5%b7%a5%e4%bd%9c%e6%96%b9%e5%bc%8f" class="header-anchor"&gt;&lt;/a&gt;CPU的构成与基本工作方式
+&lt;/h2&gt;&lt;p&gt;处理器一般由运算器、控制器、寄存器以及高速缓存构成。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;运算器&lt;/strong&gt; 实现任何指令中的算术和逻辑运算，是计算机的核心;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;控制器&lt;/strong&gt; 负责控制程序运行的流程，包括取指令、维护CPU状态、CPU与内存的交互等;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;寄存器&lt;/strong&gt; 是指令在CPU内部做处理的过程中能够张村数据、地址以及指令信息的存储设备;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高速缓存&lt;/strong&gt; 处于CPU和物理内存之间，一般由控制器中的内存管理单元MMU管理;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="处理器中的寄存器"&gt;&lt;a href="#%e5%a4%84%e7%90%86%e5%99%a8%e4%b8%ad%e7%9a%84%e5%af%84%e5%ad%98%e5%99%a8" class="header-anchor"&gt;&lt;/a&gt;处理器中的寄存器
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;用户可见存储器：对于高级语言来说，编译器通过一定的算法分配并使用这些寄存器，以最大限度地减少程序运行过程中的访问存储器的次数，这对程序运行速度的影响很大。 控制和状态存储器：用于控制处理器的操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;数据寄存器：又称为通用寄存器，主要用于各种算术逻辑指令和访存指令，对具有浮点能力和多媒体能力处理能力的处理器来说，浮点处理过程的数据寄存器和整数处理时的数据寄存器一般是分离的。&lt;/li&gt;
+&lt;li&gt;地址寄存器：用于存储数据及指令的物理地址、线性地址、有效地址。&lt;/li&gt;
+&lt;li&gt;条形码寄存器：保存CPU操作结果的各种标记位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;作用&lt;/strong&gt;：控制处理器的操作。&lt;/p&gt;
+&lt;p&gt;控制和状态寄存器包括了程序计数器、指令寄存器和程序状态字。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;程序计数器（PC）：记录了将要取出的指令的地址。&lt;/li&gt;
+&lt;li&gt;指令寄存器（IR）：包含了最近取出的指令。&lt;/li&gt;
+&lt;li&gt;程序状态字（PSW）：记录了处理器的运行模式信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="指令执行的基本过程"&gt;&lt;a href="#%e6%8c%87%e4%bb%a4%e6%89%a7%e8%a1%8c%e7%9a%84%e5%9f%ba%e6%9c%ac%e8%bf%87%e7%a8%8b" class="header-anchor"&gt;&lt;/a&gt;指令执行的基本过程
+&lt;/h3&gt;&lt;p&gt;处理指令的最简单的方式包括两种步骤：处理器先从存储器中每次读取一条指令，然后执行这条指令。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302221954410_11206374306542862480.png"
+width="640"
+height="203"
+loading="lazy"
+alt="处理指令步骤"
+class="gallery-image"
+data-flex-grow="315"
+data-flex-basis="756px"
+&gt;&lt;/p&gt;
+&lt;p&gt;这些指令大致分为以下五类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;访问存储器指令：负责处理器和存储器之间的数据传送。&lt;/li&gt;
+&lt;li&gt;I/O指令：负责处理器与I/O模块之间的数据传输及命令发送。&lt;/li&gt;
+&lt;li&gt;算术逻辑指令：又称为数据处理指令，用以执行有关数据的算术与逻辑操作。&lt;/li&gt;
+&lt;li&gt;控制转移指令：可以指令一个新的指令的执行起点。&lt;/li&gt;
+&lt;li&gt;处理器控制指令：用于修改处理器状态，改变处理器工作方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例： 假设程序计数器PC正指向2000h地址处的指令，指令机器描述如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;地址&lt;/th&gt;
+&lt;th&gt;指令&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2000h&lt;/td&gt;
+&lt;td&gt;MOVE&lt;/td&gt;
+&lt;td&gt;[3340h],&lt;/td&gt;
+&lt;td&gt;R1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2004h&lt;/td&gt;
+&lt;td&gt;ADD&lt;/td&gt;
+&lt;td&gt;R1,&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2008h&lt;/td&gt;
+&lt;td&gt;MOVE&lt;/td&gt;
+&lt;td&gt;R1,&lt;/td&gt;
+&lt;td&gt;[3340h]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;……&lt;/td&gt;
+&lt;td&gt;……&lt;/td&gt;
+&lt;td&gt;……&lt;/td&gt;
+&lt;td&gt;……&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol&gt;
+&lt;li&gt;指令MOVE被送入指令寄存器IR中，同时将自增一个指令的长度，（4个字节），取指之后PC为2004h。&lt;/li&gt;
+&lt;li&gt;这是一条访问内存的指令，树3340h所指定的双字地址单元中的数据取到通用寄存器R1中来。&lt;/li&gt;
+&lt;li&gt;CPU又从PC（地址为2004h）处取出指令ADD到IR中，PC变为2008h。&lt;/li&gt;
+&lt;li&gt;CPU根据指令将R1寄存器和立即数1相加。&lt;/li&gt;
+&lt;li&gt;访存指令MOVE被取到IR中，PC变为2004h。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="特权指令与非特权指令"&gt;&lt;a href="#%e7%89%b9%e6%9d%83%e6%8c%87%e4%bb%a4%e4%b8%8e%e9%9d%9e%e7%89%b9%e6%9d%83%e6%8c%87%e4%bb%a4" class="header-anchor"&gt;&lt;/a&gt;特权指令与非特权指令
+&lt;/h3&gt;&lt;p&gt;单用户单任务下使用计算机指令系统中的全部命令。
+多用户多任务中，分为：特权模式和非特权模式。&lt;/p&gt;
+&lt;p&gt;特权指令 ：是指指令系统中那些只能用操作系统使用的指令，这些特权指令是不允许一般的用户所使用的。&lt;/p&gt;
+&lt;p&gt;用户只能使用非特权指令，因为只有操作系统才能使用所有的指令。&lt;/p&gt;
+&lt;h2 id="处理器的状态"&gt;&lt;a href="#%e5%a4%84%e7%90%86%e5%99%a8%e7%9a%84%e7%8a%b6%e6%80%81" class="header-anchor"&gt;&lt;/a&gt;处理器的状态
+&lt;/h2&gt;&lt;h3 id="管态与目态"&gt;&lt;a href="#%e7%ae%a1%e6%80%81%e4%b8%8e%e7%9b%ae%e6%80%81" class="header-anchor"&gt;&lt;/a&gt;管态与目态
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;管态&lt;/strong&gt; ：指操作系统管理程序运行的状态，具有较高的特权级别，又称特权态、系统态。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目态&lt;/strong&gt;： 指用户程序运行时的状态，具有较低的特权级别，又称普通态、用户态。&lt;/p&gt;
+&lt;p&gt;例： 英特尔X86系列处理器特权级别&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;R0：运行操作系统的核心代码&lt;/li&gt;
+&lt;li&gt;R1：运行关键设备驱动程序和I/O处理例程&lt;/li&gt;
+&lt;li&gt;R2：运行其他受保护的贡献代码&lt;/li&gt;
+&lt;li&gt;R3：运行各种用户程序
+R0到R3特权能力依次降低，R0相当于双状态系统的管态，R3相当于目态，而R1和R2则介于两者之间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="cpu-状态的转换"&gt;&lt;a href="#cpu-%e7%8a%b6%e6%80%81%e7%9a%84%e8%bd%ac%e6%8d%a2" class="header-anchor"&gt;&lt;/a&gt;CPU 状态的转换
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;目态到管态的转换，权限提升&lt;/li&gt;
+&lt;li&gt;管态到目态的转换，可以通过设置PSW指令（修改程序状态字），实现从操作系统向用户程序的转换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="限制用户程序执行特权指令"&gt;&lt;a href="#%e9%99%90%e5%88%b6%e7%94%a8%e6%88%b7%e7%a8%8b%e5%ba%8f%e6%89%a7%e8%a1%8c%e7%89%b9%e6%9d%83%e6%8c%87%e4%bb%a4" class="header-anchor"&gt;&lt;/a&gt;限制用户程序执行特权指令
+&lt;/h3&gt;&lt;h2 id="程序状态字-psw"&gt;&lt;a href="#%e7%a8%8b%e5%ba%8f%e7%8a%b6%e6%80%81%e5%ad%97-psw" class="header-anchor"&gt;&lt;/a&gt;程序状态字 PSW
+&lt;/h2&gt;&lt;p&gt;程序状态字PSW：用程序计数器PC这个专门的寄存器来指示下一条要执行的指令。&lt;/p&gt;
+&lt;p&gt;PSW包括以下状态代码：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CPU的工作状态码&lt;/li&gt;
+&lt;li&gt;条件码&lt;/li&gt;
+&lt;li&gt;中断屏蔽码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;某些常见标志位：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CF：进位标志位&lt;/li&gt;
+&lt;li&gt;ZF：结构为零标志位&lt;/li&gt;
+&lt;li&gt;SF：符号标志位&lt;/li&gt;
+&lt;li&gt;OF：溢出标志位&lt;/li&gt;
+&lt;li&gt;TF：陷阱标志位&lt;/li&gt;
+&lt;li&gt;IF：中断使能标志位&lt;/li&gt;
+&lt;li&gt;VIF：虚拟中断标志位&lt;/li&gt;
+&lt;li&gt;VIP：虚拟中断带决标志位&lt;/li&gt;
+&lt;li&gt;IOPL：IO特权级别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="存储体系"&gt;&lt;a href="#%e5%ad%98%e5%82%a8%e4%bd%93%e7%b3%bb" class="header-anchor"&gt;&lt;/a&gt;存储体系
+&lt;/h2&gt;&lt;p&gt;一个作业必须把它的程序和数据存放在主存储器中才能运行。&lt;/p&gt;
+&lt;h3 id="存储器的层次结构"&gt;&lt;a href="#%e5%ad%98%e5%82%a8%e5%99%a8%e7%9a%84%e5%b1%82%e6%ac%a1%e7%bb%93%e6%9e%84" class="header-anchor"&gt;&lt;/a&gt;存储器的层次结构
+&lt;/h3&gt;&lt;p&gt;设计主要考虑三方面：容量、速度和成本。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;容量&lt;/strong&gt;是存储系统的基础。&lt;/p&gt;
+&lt;p&gt;速度存储系统的&lt;strong&gt;速度&lt;/strong&gt;则要能匹配处理器的速度。&lt;/p&gt;
+&lt;p&gt;存储器的&lt;strong&gt;成本&lt;/strong&gt;和其他部件相比应该在一个合适的范围内。&lt;/p&gt;
+&lt;h3 id="容量速度和成本的匹配"&gt;&lt;a href="#%e5%ae%b9%e9%87%8f%e9%80%9f%e5%ba%a6%e5%92%8c%e6%88%90%e6%9c%ac%e7%9a%84%e5%8c%b9%e9%85%8d" class="header-anchor"&gt;&lt;/a&gt;容量、速度和成本的匹配
+&lt;/h3&gt;&lt;p&gt;存储速度越快，平均每比特价格越高，容量越小，平均每比特的价格越低，同时容量也增大。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302222008421_1606420150847935218.png"
+width="936"
+height="619"
+loading="lazy"
+alt="存储器的层次结构"
+class="gallery-image"
+data-flex-grow="151"
+data-flex-basis="362px"
+&gt;&lt;/p&gt;
+&lt;h3 id="存储访问局部性原理"&gt;&lt;a href="#%e5%ad%98%e5%82%a8%e8%ae%bf%e9%97%ae%e5%b1%80%e9%83%a8%e6%80%a7%e5%8e%9f%e7%90%86" class="header-anchor"&gt;&lt;/a&gt;存储访问局部性原理
+&lt;/h3&gt;&lt;h2 id="存储保护"&gt;&lt;a href="#%e5%ad%98%e5%82%a8%e4%bf%9d%e6%8a%a4" class="header-anchor"&gt;&lt;/a&gt;存储保护
+&lt;/h2&gt;&lt;h3 id="界地址寄存器界限寄存器"&gt;&lt;a href="#%e7%95%8c%e5%9c%b0%e5%9d%80%e5%af%84%e5%ad%98%e5%99%a8%e7%95%8c%e9%99%90%e5%af%84%e5%ad%98%e5%99%a8" class="header-anchor"&gt;&lt;/a&gt;界地址寄存器（界限寄存器）
+&lt;/h3&gt;&lt;p&gt;在CPU中设置一队界限寄存器来存放用户作业在主存中的下限和上限地址，分别称为下限寄存器和上限寄存器。指出程序在内存的存放位置。&lt;/p&gt;
+&lt;p&gt;越界中断又称存储保护中断，每当CPU要访问主存时，硬件自动被访问的主存地址与界限存储器的内容进行比较，以判断是否越界。如果未越界，则按此地址访问主存，否则将产生程序中断。&lt;/p&gt;
+&lt;h3 id="存储键"&gt;&lt;a href="#%e5%ad%98%e5%82%a8%e9%94%ae" class="header-anchor"&gt;&lt;/a&gt;存储键
+&lt;/h3&gt;&lt;p&gt;每个存储块都有一个与其相关的由二进位组成的存储保护键。&lt;/p&gt;
+&lt;p&gt;每当一个用户作业被允许进入主存时，操作系统分给他一个唯一的、不与其他作业相同的存储键号；并将分配该作业的各存储快的存储键，也设置成同样的键号。操作系统同时将该作业的存储键号存放到程序状态字PSW的存储键域中，这样，每当CPU访问主存时，都将对主存块的存储键与PSW中的钥匙进行比较。如果相比配，则允许访问；否则，拒绝并报警。&lt;/p&gt;
+&lt;h2 id="中断和异常机制"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e5%92%8c%e5%bc%82%e5%b8%b8%e6%9c%ba%e5%88%b6" class="header-anchor"&gt;&lt;/a&gt;中断和异常机制
+&lt;/h2&gt;&lt;h3 id="中断与异常"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e4%b8%8e%e5%bc%82%e5%b8%b8" class="header-anchor"&gt;&lt;/a&gt;中断与异常
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;中断&lt;/strong&gt; 指CPU对系统中或者系统外发生的异步事件的响应。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;异步事件&lt;/strong&gt; 是指无一定时间关系的随机发生的事件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中断是所有要打断处理器的正常工作次序，并要求其去处理某一事件的一种手段。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;中断事件：又称中断源，引起中断的事件。&lt;/li&gt;
+&lt;li&gt;中断请求：中断源向处理器发出的请求信号。&lt;/li&gt;
+&lt;li&gt;中断处理程序：处理中断事件的程序。&lt;/li&gt;
+&lt;li&gt;中断断点：处理器暂时当前程序转而处理中断的过程。&lt;/li&gt;
+&lt;li&gt;中断响应：处理器暂停当前程序转而处理中断的过程。&lt;/li&gt;
+&lt;li&gt;中断返回：中断处理结束后恢复原来程序的执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;中断字一个计算机系统提供的中断源的有序集合。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;中断向量表&lt;/strong&gt;：中断处理程序入口地址映射表。
+&lt;strong&gt;中断向量&lt;/strong&gt;：表中的每一项，主要是由程序状态字PSW和指令计数器PC的值组成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中断是由外部事件引发的。 异常则是由正在执行的指令引发的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="中断与异常的分类"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e4%b8%8e%e5%bc%82%e5%b8%b8%e7%9a%84%e5%88%86%e7%b1%bb" class="header-anchor"&gt;&lt;/a&gt;中断与异常的分类
+&lt;/h3&gt;&lt;h4 id="中断"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad" class="header-anchor"&gt;&lt;/a&gt;中断
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;时钟中断：是由处理器内部的计时器产生。&lt;/li&gt;
+&lt;li&gt;输入输出（I/O）中断：正常完成或则发生的错误。&lt;/li&gt;
+&lt;li&gt;控制台中断：如系统操作员通过控制台发出的命令。&lt;/li&gt;
+&lt;li&gt;硬件故障中断：由掉电、存储器校验错等硬件故障引起的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="异常"&gt;&lt;a href="#%e5%bc%82%e5%b8%b8" class="header-anchor"&gt;&lt;/a&gt;异常
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;程序性中断：由指令执行结果产生。&lt;/li&gt;
+&lt;li&gt;访问指令异常：要求操作系统提供系统服务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="中断系统"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e7%b3%bb%e7%bb%9f" class="header-anchor"&gt;&lt;/a&gt;中断系统
+&lt;/h2&gt;&lt;p&gt;中断系统：是由硬件及软件相互配合、相互渗透而使得计算机系统得以充分发挥能力的计算机模式。&lt;/p&gt;
+&lt;p&gt;中斷系統的硬件中断装置和软件中断处理程序。硬件终端装置负责捕获中断源发出的中断请求，并以一定的方式响应中断源，然后将处理器的控制权移交给特定的中断处理程序.中断处理程序就是针对中断事件的性质而执行的一系列操作。&lt;/p&gt;
+&lt;h3 id="中断请求的接受"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e8%af%b7%e6%b1%82%e7%9a%84%e6%8e%a5%e5%8f%97" class="header-anchor"&gt;&lt;/a&gt;中断请求的接受
+&lt;/h3&gt;&lt;p&gt;中断请求的接受是通过在计算机硬件上的终端逻辑线路和中断寄存器实现的。&lt;/p&gt;
+&lt;p&gt;触发器的值为1时，表示该触发器接收到了中断信号，为0时表示无中断信号。&lt;/p&gt;
+&lt;h4 id="中断响应"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e5%93%8d%e5%ba%94" class="header-anchor"&gt;&lt;/a&gt;中断响应
+&lt;/h4&gt;&lt;p&gt;响应机制：处理器控制不见中的设置有中断信号扫描结构，它在每条指令执行周期内的最后时刻扫描出中断寄存器，查看是否有中断信号的到来。&lt;/p&gt;
+&lt;p&gt;有中断到来=》处理器结构硬件终端装置发来的中断向量代号。
+无中断到来=》处理器就继续执行下一条指令。&lt;/p&gt;
+&lt;p&gt;中断请求响应的工作过程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;处理器接受中断信号&lt;/li&gt;
+&lt;li&gt;保护现场个，将中断断点的程序状态字PSW和程序计数器PC值存入系统堆栈。&lt;/li&gt;
+&lt;li&gt;分析中断向量，取得中断向量程序的入口程序。&lt;/li&gt;
+&lt;li&gt;将处理器的PC值置为中断处理程序的入口地址。&lt;/li&gt;
+&lt;li&gt;调解中断处理程序。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="中断处理"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e5%a4%84%e7%90%86" class="header-anchor"&gt;&lt;/a&gt;中断处理
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;接受和响应中断。&lt;/li&gt;
+&lt;li&gt;保护中断现场。&lt;/li&gt;
+&lt;li&gt;分析中断向量。&lt;/li&gt;
+&lt;li&gt;调用中断处理程序。&lt;/li&gt;
+&lt;li&gt;中断处理结束恢复现场。&lt;/li&gt;
+&lt;li&gt;原有程序继续执行。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="几种典型的中断的处理"&gt;&lt;a href="#%e5%87%a0%e7%a7%8d%e5%85%b8%e5%9e%8b%e7%9a%84%e4%b8%ad%e6%96%ad%e7%9a%84%e5%a4%84%e7%90%86" class="header-anchor"&gt;&lt;/a&gt;几种典型的中断的处理
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;I/O中断：一般是由I/O设备的控制器或者通道发出。
+&lt;ol&gt;
+&lt;li&gt;时钟中断&lt;/li&gt;
+&lt;li&gt;维护软件时钟&lt;/li&gt;
+&lt;li&gt;处理器调度&lt;/li&gt;
+&lt;li&gt;控制系统定时任务&lt;/li&gt;
+&lt;li&gt;实时处理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;硬件故障中断：一般是由硬件的问题引起的。例如复位硬件或者更换设备。&lt;/li&gt;
+&lt;li&gt;程序性中断：程序指令出错、指令越权或者指令寻址越界而引发的系统保护。&lt;/li&gt;
+&lt;li&gt;系统服务请求（访管中断）：应用程序设计接口API。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="中断优先级与终端屏蔽"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e4%bc%98%e5%85%88%e7%ba%a7%e4%b8%8e%e7%bb%88%e7%ab%af%e5%b1%8f%e8%94%bd" class="header-anchor"&gt;&lt;/a&gt;中断优先级与终端屏蔽
+&lt;/h3&gt;&lt;h4 id="多级中断与中断优先级"&gt;&lt;a href="#%e5%a4%9a%e7%ba%a7%e4%b8%ad%e6%96%ad%e4%b8%8e%e4%b8%ad%e6%96%ad%e4%bc%98%e5%85%88%e7%ba%a7" class="header-anchor"&gt;&lt;/a&gt;多级中断与中断优先级
+&lt;/h4&gt;&lt;p&gt;硬件上，多级中断系统表现为有多根中断请求线从不同设备连接到中断逻辑线路上。&lt;/p&gt;
+&lt;p&gt;各类中断信号依据其紧急程度和重要性划分级别。
+解决如果有重要程度相当的多个中断信号同时到达时，如何选择首个被处理的中断信号的问题。&lt;/p&gt;
+&lt;h4 id="中断屏蔽"&gt;&lt;a href="#%e4%b8%ad%e6%96%ad%e5%b1%8f%e8%94%bd" class="header-anchor"&gt;&lt;/a&gt;中断屏蔽
+&lt;/h4&gt;&lt;p&gt;在整个中断系统中，可以允许或则禁止中断系统对某些类别中断的响应。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在程序状态字PSW中设计有中断屏蔽位，主机是否允许响应或禁止某些中断，则由PSW中的中断屏蔽位决定，这些屏蔽位标识了那些被屏蔽中断类或者中断。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例：在一个计算机系统中，CD-ROM到硬盘的数据传输的优先级低于硬盘内部的数据传输操作。&lt;/p&gt;
+&lt;p&gt;内存奇偶检验错，以及掉电等使得机器无法继续操作的一类故障。一旦发生这类不可屏蔽的中断，不管程序状态字的屏蔽位是否建立，处理器都要立即相应这类中断，并进行处理。&lt;/p&gt;
+&lt;h2 id="系统调用"&gt;&lt;a href="#%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8" class="header-anchor"&gt;&lt;/a&gt;系统调用
+&lt;/h2&gt;&lt;h3 id="系统调用-1"&gt;&lt;a href="#%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8-1" class="header-anchor"&gt;&lt;/a&gt;系统调用
+&lt;/h3&gt;&lt;p&gt;系统调用就是用户在程序中调用操作系统所提供的一系列子功能。&lt;/p&gt;
+&lt;p&gt;有特殊的机器指令实现的，由汇编语言直接访问。&lt;/p&gt;
+&lt;h4 id="系统调用与一般过程调用的区别"&gt;&lt;a href="#%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8%e4%b8%8e%e4%b8%80%e8%88%ac%e8%bf%87%e7%a8%8b%e8%b0%83%e7%94%a8%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-anchor"&gt;&lt;/a&gt;系统调用与一般过程调用的区别
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;运行在不同的系统状态：调用程序运行在用户态，而被调用程序则运行在系统态。&lt;/li&gt;
+&lt;li&gt;状态的转换：通过软中断机制先由用户态转换为核心态，在操作系统核心分析之后，转向相应的系统调用处理子程序。&lt;/li&gt;
+&lt;li&gt;返回问题：让优先级最高的进程优先执行。&lt;/li&gt;
+&lt;li&gt;嵌套调用：在一个被调用的过程执行期间，还可在利用系统调用命令在去调用另一个系统调用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="系统调用的分类"&gt;&lt;a href="#%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8%e7%9a%84%e5%88%86%e7%b1%bb" class="header-anchor"&gt;&lt;/a&gt;系统调用的分类
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;进程控制类系统调用：对进程的控制，如创建和终止进程的系统调用。&lt;/li&gt;
+&lt;li&gt;文件操作类系统调用：对文件进行操作的系统调用，如创建、打开、关闭、读写文件等操作。&lt;/li&gt;
+&lt;li&gt;进程通信类系统调用：被用在进程之间传递信息和信号。&lt;/li&gt;
+&lt;li&gt;设备管理类系统调用：系统调用被用来请求和释放有关设备，以及启动设备操作。&lt;/li&gt;
+&lt;li&gt;信息维护类系统调用：有关信息维护的系统调用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;系统调用命令是作为扩充机器指令，增强系统的功能，方便用户使用而提供的。&lt;/p&gt;
+&lt;p&gt;“广义指令”：系统调用命令的过程。软件实现的&lt;/p&gt;
+&lt;h3 id="系统调用的处理过程"&gt;&lt;a href="#%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8%e7%9a%84%e5%a4%84%e7%90%86%e8%bf%87%e7%a8%8b" class="header-anchor"&gt;&lt;/a&gt;系统调用的处理过程
+&lt;/h3&gt;&lt;p&gt;在系统中为控制系统调用服务的机构称为陷入（TRAP）或异常处理机构。&lt;/p&gt;
+&lt;p&gt;由于系统调用引起的处理机中断的指令称为陷入或异常指令（或称访管指令）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一种是由陷入指令自带的参数。&lt;/li&gt;
+&lt;li&gt;另一种是通过有关通用寄存器来传递参数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;处理机在用户程序中执行称为用户态，而把处理机在系统程序中执行称为系统态（或管态）。&lt;/p&gt;
+&lt;h2 id="io技术"&gt;&lt;a href="#io%e6%8a%80%e6%9c%af" class="header-anchor"&gt;&lt;/a&gt;I/O技术
+&lt;/h2&gt;&lt;h3 id="io结构"&gt;&lt;a href="#io%e7%bb%93%e6%9e%84" class="header-anchor"&gt;&lt;/a&gt;I/O结构
+&lt;/h3&gt;&lt;h4 id="通道"&gt;&lt;a href="#%e9%80%9a%e9%81%93" class="header-anchor"&gt;&lt;/a&gt;通道
+&lt;/h4&gt;&lt;p&gt;通道是独立于中央处理器的，专门负责数据I/O传输工作的处理单元。&lt;/p&gt;
+&lt;p&gt;I/O处理机通道对外部设备实行统一的管理，代替CPU对I/O设备操作进行控制。&lt;/p&gt;
+&lt;h5 id="工作原理"&gt;&lt;a href="#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86" class="header-anchor"&gt;&lt;/a&gt;工作原理：
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;按程序规定的顺序执行一条条指令，按指令中给定的参数启动指定的设备。&lt;/li&gt;
+&lt;li&gt;控制权转移到通道&lt;/li&gt;
+&lt;li&gt;信息传送，由通道控制，而中央处理器则继续执行程序。&lt;/li&gt;
+&lt;li&gt;产生一个“输入输出操作结束”的I/O中断事件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="dma-技术"&gt;&lt;a href="#dma-%e6%8a%80%e6%9c%af" class="header-anchor"&gt;&lt;/a&gt;DMA 技术
+&lt;/h3&gt;&lt;p&gt;直接存储器访问DMA技术通过系统总线中的一个独立的控制单元，自动的控制成块的数据在内存和I/O单元之间的传送，&lt;/p&gt;
+&lt;p&gt;DMA控制单元命令包含了I/O设备的编址、开始读或写的主存编址、需要传送的数据长度、是否请求一次读和写等信息。&lt;/p&gt;
+&lt;h3 id="缓冲技术"&gt;&lt;a href="#%e7%bc%93%e5%86%b2%e6%8a%80%e6%9c%af" class="header-anchor"&gt;&lt;/a&gt;缓冲技术
+&lt;/h3&gt;&lt;p&gt;缓冲技术实在外部设备于其他硬件之间的一种数据暂存技术，他利用存储器件在外部设备中设置了数据的一个存储区域，称为缓冲区。&lt;/p&gt;
+&lt;p&gt;两种用途：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在外部设备与外部设备之间的通信上。&lt;/li&gt;
+&lt;li&gt;在外部设备和处理器之间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;最根本原因&lt;/strong&gt;：CPU处理数据的速度与设备传输数据速度不相匹配，需要缓冲区缓解其间的速度矛盾。&lt;/p&gt;
+&lt;h2 id="时钟"&gt;&lt;a href="#%e6%97%b6%e9%92%9f" class="header-anchor"&gt;&lt;/a&gt;时钟
+&lt;/h2&gt;&lt;h3 id="时钟的作用"&gt;&lt;a href="#%e6%97%b6%e9%92%9f%e7%9a%84%e4%bd%9c%e7%94%a8" class="header-anchor"&gt;&lt;/a&gt;时钟的作用
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在多道程序运行的环境中，防止时机的浪费。&lt;/li&gt;
+&lt;li&gt;在分时系统中，用时钟间隔来实现各个作业按时间片轮转运行。&lt;/li&gt;
+&lt;li&gt;在实时系统中，按要求的时间间隔输出争取的时间信号给相关的实时控制设备。&lt;/li&gt;
+&lt;li&gt;定时唤醒哪些要求按照事先给定的时间执行的各个外部事件。&lt;/li&gt;
+&lt;li&gt;记录用户使用各种设备的时间和记录某外部事件发生的时间间隔。&lt;/li&gt;
+&lt;li&gt;记录用户和系统所需要的绝对时间，即年月日。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;时钟一般分为硬件时钟和软件时钟。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;硬件时钟工作原理&lt;/strong&gt;：在电路中的晶体震荡器，每个一定的时间间隔产生固定的脉冲频率，时钟电路中的时钟寄存器依据时钟电路所产生的脉冲数，对时钟寄存器进行加1操作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;软件时钟工作原理&lt;/strong&gt;：主要是利用内存单元模拟时钟寄存器，并采用一段程序来计算相应的脉冲数，对内存时钟寄存器进行加1或减1操作。&lt;/p&gt;
+&lt;p&gt;时钟的用途可以分为绝对时钟和相对时钟。&lt;/p&gt;
+&lt;p&gt;绝对时钟是在计算机系统中不受外界干扰、独立运行的一种时钟。
+相对时钟又称“间隔时钟”，它只计算从某一个时间初值开始的一段时间间隔。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
