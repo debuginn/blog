@@ -2,6 +2,7 @@
 mainSections = ["post"]
 # Output page's full content in RSS.
 rssFullContent = true
+avatar = "https://webp.debuginn.com/20250929bC0ReU.jpg"
 # Accepted values: "default", "lastmod"
 # default = see https://gohugo.io/quick-reference/glossary/#default-sort-order
 # lastmod = sort by last modified date, in descending order
@@ -18,11 +19,6 @@ lastUpdated = ":date_full"
 [sidebar]
 emoji = "🌏"
 subtitle = "永远相信美好的事情即将发生"
-
-[sidebar.avatar]
-enabled = true
-local = false
-src = "https://webp.debuginn.com/20250929bC0ReU.jpg"
 
 [article]
 headingAnchor = true
@@ -93,10 +89,8 @@ type = "popular"
 site = "idebuginn"
 card = "summary_large_image"
 
-[defaultImage.opengraph]
-enabled = true
-local = false
-src = "https://static.debuginn.com/20250506fT6oPc.jpg"
+[defaultImage]
+opengraph = "https://static.debuginn.com/20250506fT6oPc.jpg"
 
 [colorScheme]
 toggle = true
