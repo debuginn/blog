@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nsa on Debug客栈</title><link>https://blog.debuginn.com/tags/nsa/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Nsa on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 17 Aug 2019 22:43:36 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/nsa/index.xml" rel="self" type="application/rss+xml"/><item><title>关于5G的SA与NSA架构</title><link>https://blog.debuginn.com/p/about-5g-sa-nsa/</link><pubDate>Sat, 17 Aug 2019 22:43:36 +0800</pubDate><guid>https://blog.debuginn.com/p/about-5g-sa-nsa/</guid><description>&lt;p&gt;今天又一次看了何同学的5G的视频，从视频上看了关于何同学讲联通试运行的是NSA架构，SA架构还在研发试运行中，我就纳闷了，作为一个计算机行业的学生，怎么不明白这个架构名词，是自己out了么，后来上网找了资料，原来这个是通讯技术的专业名词，今天算是恶补了一下。&lt;/p&gt;
+&lt;p&gt;2018年12月份的时候，我们其实已经发布了“半个”5G标准。是的没错，那个时候是“非独立组网(NSA)”的5G标准。 现在在等待SA组网标准。&lt;/p&gt;
+&lt;h2 id="举个栗子"&gt;&lt;a href="#%e4%b8%be%e4%b8%aa%e6%a0%97%e5%ad%90" class="header-anchor"&gt;&lt;/a&gt;举个栗子
+&lt;/h2&gt;&lt;p&gt;为了大家能够通俗易懂的描述这5G的两个架构，给大家举个栗子：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182247885_7965404801305188518.jpg"
+width="554"
+height="554"
+loading="lazy"
+alt="举个栗子"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+&gt;&lt;/p&gt;
+&lt;p&gt;话说这个张老板，家里养着一头肥朵1， 肥朵1 的小日子过得也很不错！&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182248732_281873907165219028.jpg"
+width="1000"
+height="250"
+loading="lazy"
+alt=" 肥朵1 的小日子"
+class="gallery-image"
+data-flex-grow="400"
+data-flex-basis="960px"
+&gt;&lt;/p&gt;
+&lt;p&gt;但是突然有一天 肥朵 的价钱大涨，张老板想再养一只 肥朵，可是由于资金不足，（理想状态是一头 肥朵 需要有一个单独的房间）张老板很是苦恼，于是张老板给想出了两套方案：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方案一：养 肥朵2 的时候，给 肥朵2 在建一个房子；&lt;/li&gt;
+&lt;li&gt;方案二：把 肥朵1 和 肥朵2 养在一起，只需将房子变大一点就可以了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;方案一按照理想状态的话，有一个比较大的缺点就是花费比较多，这就比较难受了&amp;hellip;&amp;hellip;，但是 肥朵 比较开心~~~~&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182248092_5070471193329613862.jpg"
+width="1000"
+height="250"
+loading="lazy"
+alt="方案一理想状态"
+class="gallery-image"
+data-flex-grow="400"
+data-flex-basis="960px"
+&gt;&lt;/p&gt;
+&lt;p&gt;方案二是将房子重新升级变大即可作为资金花费最少，同时能够获得最大效益，张老板选择的面比较大，可就难受了 肥朵，唉，万恶的资本家。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182249596_626092081214300909.jpg"
+width="1000"
+height="250"
+loading="lazy"
+alt="方案二节省资金"
+class="gallery-image"
+data-flex-grow="400"
+data-flex-basis="960px"
+&gt;&lt;/p&gt;
+&lt;p&gt;想必大家就已经知道&lt;strong&gt;制约SA和NSA的因素&lt;/strong&gt;了吧！就是money~~~&lt;/p&gt;
+&lt;p&gt;而 &lt;strong&gt;肥朵1&lt;/strong&gt; 我们就可以看作是 &lt;strong&gt;4G基站&lt;/strong&gt; ，而把 &lt;strong&gt;肥朵2&lt;/strong&gt; 看作是 &lt;strong&gt;5G基站&lt;/strong&gt;；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按照方案一 肥朵1 的房子 可以看作是 4G核心网络；&lt;/li&gt;
+&lt;li&gt;按照方案一 肥朵2 的房子 可以看作是 5G核心网络；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182251067_415861169685316050.jpg"
+width="1000"
+height="500"
+loading="lazy"
+alt="方案一对比"
+class="gallery-image"
+data-flex-grow="200"
+data-flex-basis="480px"
+&gt;&lt;/p&gt;
+&lt;p&gt;按照方案二的话是将 &lt;strong&gt;肥朵1 和肥朵2的房子&lt;/strong&gt; 看作是&lt;strong&gt;4G核心网络&lt;/strong&gt;，而 &lt;strong&gt;肥朵1&lt;/strong&gt; 也是 &lt;strong&gt;4G基站&lt;/strong&gt;，&lt;strong&gt;肥朵2&lt;/strong&gt; 也是&lt;strong&gt;5G基站&lt;/strong&gt;，请看下图 ：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182252318_4001533355929237160.jpg"
+width="1000"
+height="500"
+loading="lazy"
+alt="方案二"
+class="gallery-image"
+data-flex-grow="200"
+data-flex-basis="480px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;简而言之，之所以有SA与NSA架构主要是因为运营商愿意不愿意出钱重新部署。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="5g网络架构"&gt;&lt;a href="#5g%e7%bd%91%e7%bb%9c%e6%9e%b6%e6%9e%84" class="header-anchor"&gt;&lt;/a&gt;5G网络架构
+&lt;/h2&gt;&lt;p&gt;目前讲到的都是 5G网络架构 中的两种，其实还有以下多种选项：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182252847_12566387981653155778.png"
+width="600"
+height="342"
+loading="lazy"
+alt="5G网络架构的8个选项"
+class="gallery-image"
+data-flex-grow="175"
+data-flex-basis="421px"
+&gt;&lt;/p&gt;
+&lt;p&gt;这8个选项分为独立组网和非独立组网两组。其中选项1，2，5，6是独立组网，选项3，4，7，8是非独立组网。非独立组网的选项3，4，7还有不同的子选项。&lt;/p&gt;
+&lt;p&gt;在这些选项中，选项1早已在4G结构中实现，选项6和选项8仅是理论存在的部署场景，不具有实际部署价值，标准中不予考虑。&lt;/p&gt;
+&lt;h3 id="独立组网sa"&gt;&lt;a href="#%e7%8b%ac%e7%ab%8b%e7%bb%84%e7%bd%91sa" class="header-anchor"&gt;&lt;/a&gt;独立组网SA
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182254891_1328300451547096909.png"
+width="1738"
+height="730"
+loading="lazy"
+alt="独立组网SA"
+class="gallery-image"
+data-flex-grow="238"
+data-flex-basis="571px"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选项1：就是单纯的4G核心网+4G核心站，就是纯4G组网架构；&lt;/li&gt;
+&lt;li&gt;选项2：可以看得出来，就是我们上面例子的方案一，纯5G组网架构；&lt;/li&gt;
+&lt;li&gt;选项5：只是对原本4G基站做了升级，变为增强型4G基站【eLTE eNB】；&lt;/li&gt;
+&lt;li&gt;选项6：就是将原本4G基站换为5G基站，然而核心网还是4G。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="非独立组网nsa"&gt;&lt;a href="#%e9%9d%9e%e7%8b%ac%e7%ab%8b%e7%bb%84%e7%bd%91nsa" class="header-anchor"&gt;&lt;/a&gt;非独立组网NSA
+&lt;/h3&gt;&lt;p&gt;个人感觉NSA还是要比SA复杂一些，但是这样是比较省钱的一种方式，在节省资金的情况下，不影响用户5G体验，相信这也是当下某某运营商的升级过渡期的优先解决方案。&lt;/p&gt;
+&lt;p&gt;在非独立组网主要是分为3系、7系、和4系，但是单纯的说你是不会明白的，通信的例外，好吧，你就是不会明白?，请看下面的介绍：&lt;/p&gt;
+&lt;h4 id="nsa3系"&gt;&lt;a href="#nsa3%e7%b3%bb" class="header-anchor"&gt;&lt;/a&gt;NSA3系
+&lt;/h4&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182256536_3110326990909662124.png"
+width="1850"
+height="678"
+loading="lazy"
+alt="NSA3系"
+class="gallery-image"
+data-flex-grow="272"
+data-flex-basis="654px"
+&gt;&lt;/p&gt;
+&lt;p&gt;可以看到3系的解决方案就是将原有4G网络升级加5G基站，让手机实现“双通道上网”，但是控制面在4G，用户面4G与5G互相向用户终端提供支持，这样的好处就是可以在5G升级过度时期起到临时代替作用，但是这样会加大4G基站的负荷，本来好好的够1头肥朵居住，突然之间加到了10头肥朵，想想也是有些吃不消的。&lt;/p&gt;
+&lt;h4 id="nsa7系"&gt;&lt;a href="#nsa7%e7%b3%bb" class="header-anchor"&gt;&lt;/a&gt;NSA7系
+&lt;/h4&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182257729_1507340337976406650.png"
+width="1834"
+height="660"
+loading="lazy"
+alt="NSA7系"
+class="gallery-image"
+data-flex-grow="277"
+data-flex-basis="666px"
+&gt;&lt;/p&gt;
+&lt;p&gt;看到了7系你是不是有了对3系的对比，相比而言，7系有三点改进：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将3系4G基站升级为增强型4G基站；&lt;/li&gt;
+&lt;li&gt;将原有4G核心网淘汰掉，采用5G核心网；&lt;/li&gt;
+&lt;li&gt;最后一点改进是7x中，将原有4G基站对接5G核心网络升级为增强型4G基站只传输控制流，将数据流负荷直接转移到了5G基站上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现在这种方式，特别是7x，对于运营商在初中期过度时期，这种方式又节省成本，同时又能在过渡期给用户提供高质量5G服务，相信现在XX运营商就这么搞的吧。&lt;/p&gt;
+&lt;h4 id="nsa4系"&gt;&lt;a href="#nsa4%e7%b3%bb" class="header-anchor"&gt;&lt;/a&gt;NSA4系
+&lt;/h4&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182258069_3593993058712809460.png"
+width="1726"
+height="788"
+loading="lazy"
+alt="NSA4系"
+class="gallery-image"
+data-flex-grow="219"
+data-flex-basis="525px"
+&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，到达4系阶段，把控制权交了出来，5G就距离SA架构只差一步了吧，这种状态应该是目前转型阶段后期的事情了吧！这样的架构方式同时能享受到4G的低费率，5G的高速率，你是不是有所期待！！！&lt;/p&gt;
+&lt;h2 id="最后感悟"&gt;&lt;a href="#%e6%9c%80%e5%90%8e%e6%84%9f%e6%82%9f" class="header-anchor"&gt;&lt;/a&gt;最后感悟
+&lt;/h2&gt;&lt;p&gt;5G时代所谓的NSA与SA架构只不过是4G时代向5G时代过渡的不同方案，所谓的NSA又何尝不是对于SA的追求，5G时代大家的感觉是速度真快，然而在快的同时我们又怎么抓住机遇，获得5G时代的红利呢？&lt;/p&gt;
+&lt;p&gt;今天做这个文章借鉴了不少前辈的文章及视频知识，并不是想借鉴5G这个热点，自己涉猎的知识面还是狭隘，所学所思才是真正的进步。&lt;/p&gt;
+&lt;p&gt;PS：举个栗子是我自己P图?，最后讲解方案的用图均引用至&lt;a class="link" href="https://network.51cto.com/art/201903/594121.htm" target="_blank" rel="noopener"
+&gt;51CTO&lt;/a&gt;，看着画的不错自己就偷个懒，不自己构图了，感谢这个知识共享的年代，谢谢。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;看到这里，你要是感觉此文对你有所帮助，希望你转发给更多的人看到，5G时代的我们，更应该知识共享。。。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

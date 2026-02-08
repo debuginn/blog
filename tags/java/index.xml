@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Debug客栈</title><link>https://blog.debuginn.com/tags/java/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Java on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 13 May 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Phoenix框架 从0到1设计业务并发框架 自动构建有向无循环图设计</title><link>https://blog.debuginn.com/p/phoenix-framework-4/</link><pubDate>Mon, 13 May 2024 11:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/phoenix-framework-4/</guid><description>&lt;p&gt;从 0 到 1 设计业务并发框架系列：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-1/" &gt;Phoenix 框架 小米商城产品站革新之路&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-2/" &gt;Phoenix 框架 怎么组织设计一个框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-3/" &gt;Phoenix 框架 并发线程池的核心设计&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Phoenix 自动构建有向无环图的业务并发框架，核心就在于不需要开发人员关心调用分层和依赖互斥的排序问题，通过算法进行自动构建、收集 Task 任务、检测环或者依赖，最后打印并发组分层信息。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本篇文章就讲解下如何构建有向无环图的设计实现方案及遇到的问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="实现方案"&gt;&lt;a href="#%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%a1%88" class="header-anchor"&gt;&lt;/a&gt;实现方案
+&lt;/h2&gt;&lt;p&gt;有向无环图的构建采用的是设计模式中的&lt;strong&gt;策略模式&lt;/strong&gt;，首先定义好 Builder 的实现方式，如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * @author debuginn
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; */&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PhoenixBuilder&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 过滤 Phoenix API 使用到的 Task 任务 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TaskObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;filterApiUsedTask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TransObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;transObjArrayList&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 根据 api 获取需要执行的 trans &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TransObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;apiTransMap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TransObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;transObjArrayList&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 是否存在依赖关系 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;isHaveLoop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TaskObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;apiUsedTaskMap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 处理并发组分层划分 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TaskObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;processConcurrentGroup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TaskObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;apiUsedTaskMap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 打印并发组分层信息 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;printConcurrentGroup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ArrayList&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;TaskObj&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phoenixApiArrayListMap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;PhoenixBuilder 需要实现 6 种方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先，将收集上来的 Task，按照 API 进行分组，Task 存在依赖调用的都进行收集；&lt;/li&gt;
+&lt;li&gt;按照 API 进行收集 Trans，后续 Trans 使用&lt;strong&gt;请求线程&lt;/strong&gt;进行串行执行；&lt;/li&gt;
+&lt;li&gt;判定每个 API 收集上来的 Task 是否存在相互依赖或循环依赖；&lt;/li&gt;
+&lt;li&gt;将每个 API 收集上来的 Task 按照先后依赖关系进行分组划分；&lt;/li&gt;
+&lt;li&gt;打印并发分组信息，用来给开发者调试及校验使用；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240218bWEpd9_3248728932079740784.png"
+width="2378"
+height="1048"
+loading="lazy"
+alt="划分并发调用组"
+class="gallery-image"
+data-flex-grow="226"
+data-flex-basis="544px"
+&gt;&lt;/p&gt;
+&lt;p&gt;由于存在依赖关系，需要进行分层设计，这里可以结合 &lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-2/" &gt;Phoenix 框架 怎么组织设计一个框架&lt;/a&gt; 来看，然而每一层并不需要关系执行的顺序问题，这里采用了最简单的数据结构存储分层信息，&lt;code&gt;Map&amp;lt;String, ArrayList&amp;lt;ArrayList&amp;lt;TaskObj&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; Key 用来标识属于哪个 API 请求的并发分组，Value 则采用最简单的二维数组进行存储，每一维分别存储需要进行执行的 Task 任务。&lt;/p&gt;
+&lt;h2 id="遇到的问题"&gt;&lt;a href="#%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98" class="header-anchor"&gt;&lt;/a&gt;遇到的问题
+&lt;/h2&gt;&lt;h3 id="怎么判定存在环"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e5%88%a4%e5%ae%9a%e5%ad%98%e5%9c%a8%e7%8e%af" class="header-anchor"&gt;&lt;/a&gt;怎么判定存在环
+&lt;/h3&gt;&lt;p&gt;由于我们要进行构建的是有向无环图，那么存在相互依赖的 Task，在框架设计逻辑中是行不通的，若存在相互依赖，那么究竟该先执行哪个 Task 呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240507belpU6_9223866648897431946.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="20240507belpU6"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;可以看到上图，只要有两个场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;相互依赖关系&lt;/strong&gt;：TaskB 与 TaskD 存在相互依赖，那么就不能确定执行顺序；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环状依赖关系&lt;/strong&gt;：TaskD、TaskF、TaskG 和 TaskE 存在依赖环，也无法确定执行顺序；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相互依赖关系判定比较简单，就是检索一个 TaskA 依赖的 TaskB 是不是也依赖这个 TaskA，
+循环依赖判定相对来说比较复杂，需要遍历图的所有路径，若路径存在闭环，则代表着存在环，反之，就是不存在环路，代表就是单向依赖的分支路径。&lt;/p&gt;
+&lt;h3 id="怎么划分并发分组"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e5%88%92%e5%88%86%e5%b9%b6%e5%8f%91%e5%88%86%e7%bb%84" class="header-anchor"&gt;&lt;/a&gt;怎么划分并发分组
+&lt;/h3&gt;&lt;p&gt;划分并发分组，就是将彼此没有依赖关系的 Task 按照依赖的先后顺序进行分组，其实就是按照图的深度遍历。&lt;/p&gt;
+&lt;p&gt;这里的遍历，由于有依赖关系，可以采用向上遍历或者向下遍历的方式，我们采用了压栈的方式处理：&lt;/p&gt;
+&lt;h4 id="向上遍历"&gt;&lt;a href="#%e5%90%91%e4%b8%8a%e9%81%8d%e5%8e%86" class="header-anchor"&gt;&lt;/a&gt;向上遍历
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;首先找到没有被依赖的 Task，这是一组，之后存入数组压入栈底；&lt;/li&gt;
+&lt;li&gt;之后栈底的 Task 收集出来需要依赖的 Task，这些收集上来的 Task 需要再判定是不是被其他 Task 依赖，若是依赖的话，则保存在临时的 Task 数组中，最后将剩下 Task 就是只被栈底 Task 数组依赖的 Task，那么将这个分组继续压入栈内；&lt;/li&gt;
+&lt;li&gt;重复第 2 步，把栈底的 Task 换成栈内最上层的数组，之后再把临时 Task 追加到收集出来需要依赖的 Task 上，去重，之后重复执行；&lt;/li&gt;
+&lt;li&gt;最后执行到剩下的 Task 没有依赖的 Task，这就是最后一个并发组，之后压入栈内；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后程序执行的时候，就是先执行栈顶部的并发组，之后一次出栈执行。&lt;/p&gt;
+&lt;h4 id="向下遍历"&gt;&lt;a href="#%e5%90%91%e4%b8%8b%e9%81%8d%e5%8e%86" class="header-anchor"&gt;&lt;/a&gt;向下遍历
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;首先找到不依赖其他 Task 的 Task，这是一组，之后存入数组压入栈底；&lt;/li&gt;
+&lt;li&gt;之后栈底的 Task 收集出来依赖这个分组的 Task，这些收集上来的 Task 判定是不是被其他 Task 依赖，若是依赖，也是保存在临时的 Task 数组中，最后就只剩下只依赖栈底的 Task 数组的 Task，之后将这个数组压入栈内；&lt;/li&gt;
+&lt;li&gt;重复第 2 步，把栈底的 Task 换成栈内最上层的数组，之后再把临时 Task 追加到收集出来需要依赖的 Task 上，去重，之后重复执行；&lt;/li&gt;
+&lt;li&gt;最后执行到剩下的 Task 没有任何 Task 依赖，这就是最后一个并发组，之后压入栈内；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此时，这个堆栈存储的是最先执行的 Task 并发分组在栈底，最后执行的在栈顶，需要进行反转操作，之后再依次进行执行。&lt;/p&gt;
+&lt;h3 id="为何要使用策略模式"&gt;&lt;a href="#%e4%b8%ba%e4%bd%95%e8%a6%81%e4%bd%bf%e7%94%a8%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f" class="header-anchor"&gt;&lt;/a&gt;为何要使用&amp;quot;策略模式&amp;quot;
+&lt;/h3&gt;&lt;p&gt;在开发程序的时候，大家都不约而同地讲究程序的横向扩展能力，将核心的关键的任务拆分成具体执行的子任务，这样不仅可以提高程序的可阅读性，而且还可以扩展不同的遍历算法，用来后续框架的持续优化。&lt;/p&gt;
+&lt;p&gt;不仅这里，Phoenix 框架尽可能的采用策略模式实现，将核心功能点都进行拆分，做到模块化设计，这样的设计正是 Phoenix 框架的设计初衷，生生不息，持续迭代。&lt;/p&gt;
+&lt;h2 id="写在最后"&gt;&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;写在最后
+&lt;/h2&gt;&lt;p&gt;本篇文章主要讲了如何进行自动构建有向无循环图的思路及遇到的问题，其实在开发中，这种解决依赖关系的场景还有很多，其实抛开上层的业务实现或者框架需求来看，底层就是最基本的数据结构，算法，图的遍历场景在当今比较火的 AI 场景下也是如此。&lt;/p&gt;
+&lt;p&gt;感谢你的阅读，你要是有好的方案或者好的 idea 可以与我一起交流，最后，如果你感兴趣，推荐关注公众号或订阅本站，欢迎互动与交流，让我们一起变得更强～&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302202248422_4250514170204062952.png"
+width="1920"
+height="256"
+loading="lazy"
+alt="WeChat"
+class="gallery-image"
+data-flex-grow="750"
+data-flex-basis="1800px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Phoenix框架 从0到1设计业务并发框架 并发线程池的核心设计</title><link>https://blog.debuginn.com/p/phoenix-framework-3/</link><pubDate>Sun, 07 Apr 2024 20:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/phoenix-framework-3/</guid><description>&lt;h2 id="背景"&gt;&lt;a href="#%e8%83%8c%e6%99%af" class="header-anchor"&gt;&lt;/a&gt;背景
+&lt;/h2&gt;&lt;p&gt;从 0 到 1 设计业务并发框架系列：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-1/" &gt;Phoenix 框架 小米商城产品站革新之路&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-2/" &gt;Phoenix 框架 怎么组织设计一个框架&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前两篇文章已经讲述了我设计框架的背景以及抽象设计的细节，今天讲一下并发框架最为关键的并发线程池的核心设计，主要讲一下在设计线程池划分遇到的问题以及最终我采用了哪种方式实现的。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202306292017666_12678431742336303479.png"
+width="1920"
+height="1080"
+loading="lazy"
+alt="并发调用组"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;将存在依赖关系的 Task 进行划分分组后，依次执行分组就可以拿到所有想要的结果，但是怎么划分线程池、设置线程池是面临的问题。&lt;/p&gt;
+&lt;p&gt;接下来，我将实际业务中的复杂度简化设计，将问题具象化呈现给大家。&lt;/p&gt;
+&lt;h2 id="方案公用线程池"&gt;&lt;a href="#%e6%96%b9%e6%a1%88%e5%85%ac%e7%94%a8%e7%ba%bf%e7%a8%8b%e6%b1%a0" class="header-anchor"&gt;&lt;/a&gt;方案：公用线程池
+&lt;/h2&gt;&lt;h3 id="方案"&gt;&lt;a href="#%e6%96%b9%e6%a1%88" class="header-anchor"&gt;&lt;/a&gt;方案
+&lt;/h3&gt;&lt;p&gt;最开始，我计划将分配的 Task 公用一个线程池，让 Task 去线程池竞争资源，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240402UDmgNy_12208234147684281519.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="公用线程池"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;但是很快发现，单个线程池一旦请求数量上来，某个 Task 接口变慢就会导致整个接口成功率急速下降，直至不可用的状态。&lt;/p&gt;
+&lt;p&gt;为什么会出现这种情况呢？&lt;/p&gt;
+&lt;h3 id="效果"&gt;&lt;a href="#%e6%95%88%e6%9e%9c" class="header-anchor"&gt;&lt;/a&gt;效果
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202404024RVJfT_8766168144904421839.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="公用线程池"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;T1 时刻&lt;/strong&gt;，第 1 波流量进来，之后率先执行 TaskA 或者 TaskB；&lt;/li&gt;
+&lt;li&gt;TaskA 请求的快速递增，接口变得越来越慢；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T2 时刻&lt;/strong&gt;，还有两个 TaskA 并没有执行完毕，之后第二波流量进来：
+&lt;ul&gt;
+&lt;li&gt;第 1 波流量开始执行 TaskC 和 TaskD；&lt;/li&gt;
+&lt;li&gt;第 2 波流量进来，也有 TaskA 和 TaskB 获取到线程执行；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T3 时刻&lt;/strong&gt;，此时已经有 4 个 TaskA 还没有执行完，并且最开始的两个 TaskA 要面临着超时情况：
+&lt;ul&gt;
+&lt;li&gt;第 1 波流量执行的 TaskA 面临超时中断的情况；&lt;/li&gt;
+&lt;li&gt;第 2 波流量执行的 TaskA 也在运行状态中；&lt;/li&gt;
+&lt;li&gt;第 3 波流量进来，情况变得复杂，新的流量，有 TaskA 和 TaskB 进行执行；&lt;/li&gt;
+&lt;li&gt;此时第 1 波流量前两层运行完毕，开始执行 TaskE；&lt;/li&gt;
+&lt;li&gt;此时第 2 波流量的前一层运行完毕，开始执行 TaskC 和 TaskD；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;之后按照 TaskA 始终慢的情况继续发展&amp;hellip;&amp;hellip;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tn 时刻&lt;/strong&gt;，此时线程池大部分已经被前 n 波流量的 TaskA 占据着，并且大量被中断超时，其他 Task 无法竞争到线程进行执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样的话，接口的可用性完全取决于 TaskA 的可用性，但是还有一个致命的问题就是其他 Task 无法执行或者由于依赖问题，前置该获取用作请求参数大部分为空，也无法正常请求，这样就算是接口返回了数据，也是不全的数据。&lt;/p&gt;
+&lt;p&gt;这种方案存在&lt;strong&gt;共用线程池大量线程等待超时&lt;/strong&gt;的情况，是不可取的。&lt;/p&gt;
+&lt;h2 id="方案分层线程池"&gt;&lt;a href="#%e6%96%b9%e6%a1%88%e5%88%86%e5%b1%82%e7%ba%bf%e7%a8%8b%e6%b1%a0" class="header-anchor"&gt;&lt;/a&gt;方案：分层线程池
+&lt;/h2&gt;&lt;h3 id="方案-1"&gt;&lt;a href="#%e6%96%b9%e6%a1%88-1" class="header-anchor"&gt;&lt;/a&gt;方案
+&lt;/h3&gt;&lt;p&gt;公用线程池的情况肯定是有问题的，在此基础上，尝试将分层并发划分不同的并发池，每一层公用线程池，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240402liTZYD_18312392195468380773.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="分层线程池"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;上了分层公用线程池之后，压力测试发现效果只有小幅的提升，没有达到预期的目标，甚至来说相差很远，为啥会出现这个问题？&lt;/p&gt;
+&lt;h3 id="效果-1"&gt;&lt;a href="#%e6%95%88%e6%9e%9c-1" class="header-anchor"&gt;&lt;/a&gt;效果
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240402tpIWJo_45252005226630883.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="分层线程池"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;我们还是假设 TaskA 会随着请求量上来会大面积超时来举例。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;T1 时刻&lt;/strong&gt;，第 1 波流量进来，之后率先执行 TaskA 或者 TaskB，此次线程池 2、3 没有执行到；&lt;/li&gt;
+&lt;li&gt;TaskA 请求的快速递增，接口变得越来越慢；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T2 时刻&lt;/strong&gt;，还有两个 TaskA 并没有执行完毕，之后第二波流量进来：
+&lt;ul&gt;
+&lt;li&gt;第 1 波流量开始执行线程池 2 的线程 TaskC 和 TaskD；&lt;/li&gt;
+&lt;li&gt;第 1 波流量存在 TaskC 执行完，陆续开始执行线程池 3 的线程 TaskE；&lt;/li&gt;
+&lt;li&gt;第 2 波流量进来，也有 TaskA 和 TaskB 获取到线程执行；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T3 时刻&lt;/strong&gt;，此时已经有 4 个 TaskA 还没有执行完，并且最开始的两个 TaskA 要面临着超时情况：
+&lt;ul&gt;
+&lt;li&gt;第 1 波流量执行的线程池 1 TaskA 面临超时中断的情况；&lt;/li&gt;
+&lt;li&gt;第 2 波流量执行的线程池 1 TaskA 也在运行状态中；&lt;/li&gt;
+&lt;li&gt;第 3 波流量进来，情况变得相对来说比较复杂，新的流量；&lt;/li&gt;
+&lt;li&gt;此时第 1 波流量前两层运行完毕，开始执行线程池 3 TaskE；&lt;/li&gt;
+&lt;li&gt;此时第 2 波流量的前一层运行完毕，开始执行线程池 2 TaskC 和 TaskD；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;之后按照 TaskA 始终慢的情况继续发展&amp;hellip;&amp;hellip;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tn 时刻&lt;/strong&gt;，此时线程池 1 大部分已经被前 n 波流量的 TaskA 占据着，并且大量被中断超时，由于依赖于 TaskA 和 TaskB 的结果作为下层的入参数：
+&lt;ul&gt;
+&lt;li&gt;TaskA 过慢占据着接近 100% 的线程池 1 的资源；&lt;/li&gt;
+&lt;li&gt;TaskB 竞争不到资源，被超时中断；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后接口还是发展到不可用的状态，其实和公用线程池的问题一样，也还是存在&lt;strong&gt;大量线程等待超时&lt;/strong&gt;
+的情况。&lt;/p&gt;
+&lt;p&gt;这种公用线程池的现状是不可取的，那么该如何划分线程池来执行呢？其实分而治之的思想就可以解决这个问题，也就带来了 3.0 版本，&lt;strong&gt;独立 Task 线程池的方案&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id="方案独立线程池"&gt;&lt;a href="#%e6%96%b9%e6%a1%88%e7%8b%ac%e7%ab%8b%e7%ba%bf%e7%a8%8b%e6%b1%a0" class="header-anchor"&gt;&lt;/a&gt;方案：独立线程池
+&lt;/h2&gt;&lt;p&gt;无论怎么公用线程池，都会出现被挤占的情况，只有将每个 Task 划分单独的线程池，才不会出现抢占等待的问题，那么如何设计的呢？&lt;/p&gt;
+&lt;h3 id="方案-2"&gt;&lt;a href="#%e6%96%b9%e6%a1%88-2" class="header-anchor"&gt;&lt;/a&gt;方案
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240402lXnyb4_18340125083595826144.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="独立线程池"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;每个 Task 单独创建线程池来承接流量，各个线程池互相不干扰，同时承接流量交给 CPU 抢占资源进行调度运行。&lt;/p&gt;
+&lt;h3 id="效果-2"&gt;&lt;a href="#%e6%95%88%e6%9e%9c-2" class="header-anchor"&gt;&lt;/a&gt;效果
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240402i6w2aW_7851344059554153700.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="独立线程池"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;由于是单独承接流量，这种设计满足了高可用的目标，还是依照 TaskA 接口随着并发请求的提升，接口越来越慢直至不可用，之后再加入一个条件，就是 &lt;strong&gt;TaskC 的执行条件是 TaskA 执行完毕的结果&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;T1 时刻&lt;/strong&gt;，第一波流量进来，所有线程池的线程都占满，开始进入核心调度执行；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T2 时刻&lt;/strong&gt;，第二波请求进来，第一波请求的 2 个 TaskA 还没有执行完毕，其他线程池的线程逐渐承接第二波请求等待调度；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T3 时刻&lt;/strong&gt;，第三波请求进来，这时候情况比较复杂：
+&lt;ul&gt;
+&lt;li&gt;第一波流量的 2 个 TaskA 已经超时被中断了，对应的 TaskC 的线程池的两个 TaskC 线程等待 Task 的执行结果失败，结束任务；&lt;/li&gt;
+&lt;li&gt;第二波流量的 2 个 TaskA 还没有执行完毕，也濒临超时；&lt;/li&gt;
+&lt;li&gt;其他线程池执行均正常运行；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;就这样过了一段时间 &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tn 时刻&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;TaskA 已经达到了不可用的状态；&lt;/li&gt;
+&lt;li&gt;对此有依赖关系的 TaskC 也逐渐达到不可用状态；&lt;/li&gt;
+&lt;li&gt;其他线程执行正常；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这么看，针对于一个接口调用几十个上百个接口的场景，不会因为一个接口或者有依赖关系的接口可用性降低而影响整个接口的可用性，同时只要对单个线程池做好监控，加上报警即可动态感知哪些上游接口失败而及时通知到对应的系统维护同学，这样就大大的降低了维护成本。&lt;/p&gt;
+&lt;p&gt;这个版本作为线上生产环境的第一个版本推了上去，单台 8C 8G (k8s) 的配置空跑框架达到了 QPS 在 1.4w，接口可用性在 99.96%（结果仅供参考，根据公司集群部署策略、机器性能等问题会有浮动）。&lt;/p&gt;
+&lt;p&gt;但是，这种目前还是存在着显而易见的问题，就是每个 Task 执行的接口的接口响应都不是一致的，有的在 50ms 内、有的在 100ms 内、有的比较慢 500ms 内，分配相同的线程池数量是不合理的，因为这样就会造成 CPU 调度不公平，那么怎么让调度运行的比较公平呢？&lt;/p&gt;
+&lt;h3 id="优化"&gt;&lt;a href="#%e4%bc%98%e5%8c%96" class="header-anchor"&gt;&lt;/a&gt;优化
+&lt;/h3&gt;&lt;p&gt;针对于这个问题，将线程池大小按照&lt;strong&gt;权重&lt;/strong&gt;创建，像是比较慢的接口但是多等待一定时间可以返回的，我们就多分配线程池大小，接口响应很快的，我们就相对减少线程池大小，这样的设计可以在保证接口的可用性兼顾接口返回字段的完整性。&lt;/p&gt;
+&lt;h2 id="写在最后"&gt;&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;写在最后
+&lt;/h2&gt;&lt;p&gt;本篇文章主要讲框架设计中怎么将划分好的分层并发执行，最终我们采用了独立线程池的方案，并且按照耗时、CPU 核数等权重评估分配每个 Task 任务线程池的大小，让 CPU 线程调度来确保线程都尽可能的公平执行到，最终保证接口的并发需求及高可用的场景。&lt;/p&gt;
+&lt;p&gt;如果你感兴趣，推荐关注公众号或订阅本站，欢迎互动与交流，让我们一起变得更强～&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302202248422_4250514170204062952.png"
+width="1920"
+height="256"
+loading="lazy"
+alt="WeChat"
+class="gallery-image"
+data-flex-grow="750"
+data-flex-basis="1800px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Phoenix框架 从0到1设计业务并发框架 怎么组织设计一个框架</title><link>https://blog.debuginn.com/p/phoenix-framework-2/</link><pubDate>Mon, 18 Mar 2024 20:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/phoenix-framework-2/</guid><description>&lt;p&gt;上篇文章主要讲了设计 Phoenix 框架前的遇到的问题和设计框架的思路 &lt;a class="link" href="https://blog.debuginn.com/p/phoenix-framework-1/" &gt;《 Phoenix 框架 从0到1设计业务并发框架 小米商城产品站革新之路》&lt;/a&gt;，本篇文章主要讲一下如何设计框架的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不死鸟并发框架，是自动构建有向图按照深度进行构建并发组并进行并发调用结果的框架。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;产品站业务静态接口与动态接口都需要调用大量的后台服务进行获取数据进行业务编排，而各个并发调用之间又相互存在依赖，采用并发组设计拆解依赖，同时并发控制调用，BO to DTO 采用统一的 Transfer 层进行设计，开发人员只需要关系定义每次调用事件的 Task 和 Transfer 代码逻辑的书写，直接返回业务数据。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240308vidGwp_2876036279060843688.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="分层设计"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;h2 id="名词解释"&gt;&lt;a href="#%e5%90%8d%e8%af%8d%e8%a7%a3%e9%87%8a" class="header-anchor"&gt;&lt;/a&gt;名词解释
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PhoenixFramework&lt;/strong&gt; 不死鸟（凤凰）框架，此业务并发框架的名称；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task&lt;/strong&gt; 在业务并发中定义一次调用，可以是 HTTP、DUBBO 或者是 Redis 获取、MySQL 读库操作；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transfer&lt;/strong&gt; 在业务定义中是一个子业务模块的转换逻辑将 BO 数据转换为 DTO 数据；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="task-与-trans-注解"&gt;&lt;a href="#task-%e4%b8%8e-trans-%e6%b3%a8%e8%a7%a3" class="header-anchor"&gt;&lt;/a&gt;Task 与 Trans 注解
+&lt;/h2&gt;&lt;h3 id="怎么定义-task"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e5%ae%9a%e4%b9%89-task" class="header-anchor"&gt;&lt;/a&gt;怎么定义 Task
+&lt;/h3&gt;&lt;p&gt;在框架设计之初，我们内部有两种方案，一种是继承抽象类实现的方式，Task 通过继承实现 PhoenixTask 类实现定义 Task，另外一种是采用注解的方式，将每个 Task 都定义成具有强约束的 Task ，并且把详细的描述信息在注解中定义，给开发人员一目了然的设计思路。&lt;/p&gt;
+&lt;p&gt;经过内部讨论，我们选择了 Java 优秀的语言特性，注解的方式声明定义 Task ，这样的定义使得代码简洁明了，也有利于通过 Spring Bean 收集工具来收集我们的定义。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * PhoenixTask
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * 任务注解
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * @author debuginn
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; */&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nd"&gt;@Retention&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RetentionPolicy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;RUNTIME&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nd"&gt;@Target&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TYPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nd"&gt;@interface&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PhoenixTask&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;taskName&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 任务名称 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;beforeTaskName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 前置任务 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;filterPlatform&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 过滤渠道，黑名单 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;taskBoName&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 任务生成的 BO 数据 用来校验冲突 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;PhoenixTask&lt;/code&gt; 注解定义非常简单：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;taskName&lt;/code&gt;用来标识任务名称，采用枚举，强制约束命名的唯一；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;beforeTaskName&lt;/code&gt;前置任务，前面讲到每个任务都是一次事件，区分前置任务是需要在并发调用的时候等待结果的返回，之后用来作为此 Task 调用的前置参数；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filterPlatform&lt;/code&gt; 过滤渠道，也就是黑名单的功能，但请求渠道在 Task 中声明了黑名单，在并发执行的时候就自动屏蔽掉执行；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;taskBoName&lt;/code&gt;任务转化为 BO 的数据，通过接口调用或者中间件获取数据，转化为 Transfer 层使用的数据，在框架层做数据参数校验；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="怎么定义-trans"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e5%ae%9a%e4%b9%89-trans" class="header-anchor"&gt;&lt;/a&gt;怎么定义 Trans
+&lt;/h3&gt;&lt;p&gt;Trans 是 Transfer 的简称，同样和 Task 设计一样，也是采用注解的方式定义：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * PhoenixTrans
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * 业务编排注解
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; * @author debuginn
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; */&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nd"&gt;@Retention&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RetentionPolicy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;RUNTIME&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nd"&gt;@Target&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TYPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nd"&gt;@interface&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PhoenixTrans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;transName&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 业务编排块名称 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;apiName&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 执行 使用并发 api &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{};&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 依赖的 task 任务 &lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;PhoenixTrans&lt;/code&gt; 注解定义同样非常简单：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;transName&lt;/code&gt;用来标识业务编排块名称；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apiName&lt;/code&gt; 用来区分这个 Transfer 业务编排是隶属于哪个并发 API 所属的；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tasks&lt;/code&gt;就是定义依赖的 Task 任务有哪些，一个业务编排可能会利用 n 个 Task 返回的 BO 数据进行编排；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大家在这里可能会比较疑惑，为啥 Task 中没有定义 apiName 而是 Transfer 中定义的，是因为在设计中，为了便于后续 Task 可以被 n 个并发 API 共·用，这样在 Transfer 定义了 apiName，之后通过 tasks 定义依赖的 Task 就可以推断出这个 Task 目前是被哪一个并发 API 使用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="怎么收集-task-和-trans"&gt;&lt;a href="#%e6%80%8e%e4%b9%88%e6%94%b6%e9%9b%86-task-%e5%92%8c-trans" class="header-anchor"&gt;&lt;/a&gt;怎么收集 Task 和 Trans
+&lt;/h2&gt;&lt;p&gt;自定义了 &lt;code&gt;PhoenixTask&lt;/code&gt; 和 &lt;code&gt;PhoenixTrans&lt;/code&gt; 注解，通过声明一个 &lt;code&gt;AnnotationProcessor&lt;/code&gt; 继承 &lt;code&gt;BeanPostProcessor&lt;/code&gt; 来进行收集定义的注解。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240318xHJQIJ_17600404986127537202.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="收集 Task 与 Trans"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先是根据注解类收集上来对应的 Task 和 Trans；&lt;/li&gt;
+&lt;li&gt;根据不同的 Trans 划分不同的 API，收集不同 API 依赖的 Task；&lt;/li&gt;
+&lt;li&gt;按照 Trans 是否进行依赖过滤使用到的 Task；&lt;/li&gt;
+&lt;li&gt;根据 Task 之间的相互依赖关系，将 Task 进行分组；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240318m9lRul_6018737122282327800.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="划分 API"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240318Wzvtlt_8677303057371729208.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="划分并发调用组"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;这样就完成了对框架的分层与自动构建的设计，框架的设计主要的是要思考如何将实际业务中使用的&lt;strong&gt;模块抽象化设计&lt;/strong&gt;，同时要思考框架的扩展性与强约束性。&lt;/p&gt;
+&lt;h2 id="结尾"&gt;&lt;a href="#%e7%bb%93%e5%b0%be" class="header-anchor"&gt;&lt;/a&gt;结尾
+&lt;/h2&gt;&lt;p&gt;本篇文章主要讲解我如何将业务与调用关系进行抽象成 Trans 与 Task 的，接下来我将讲述并发框架并发线程池的核心设计、配置化思考、监控设计以及自动构建算法等系列文章。&lt;/p&gt;
+&lt;p&gt;如果你感兴趣，推荐关注公众号或订阅本站，欢迎互动与交流，让我们一起变得更强～&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302202248422_4250514170204062952.png"
+width="1920"
+height="256"
+loading="lazy"
+alt="WeChat"
+class="gallery-image"
+data-flex-grow="750"
+data-flex-basis="1800px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Phoenix框架 从0到1设计业务并发框架 小米商城产品站革新之路</title><link>https://blog.debuginn.com/p/phoenix-framework-1/</link><pubDate>Thu, 07 Mar 2024 19:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/phoenix-framework-1/</guid><description>&lt;h2 id="前言"&gt;&lt;a href="#%e5%89%8d%e8%a8%80" class="header-anchor"&gt;&lt;/a&gt;前言
+&lt;/h2&gt;&lt;p&gt;小米商城产品站之前由于历史原因，存在着诸多问题与不便，随着技术的快速变革，技术部&lt;strong&gt;中台化的建设&lt;/strong&gt;，越来越不适用于现在快速迭代的业务需求，接下来我将以&lt;strong&gt;技术的视角&lt;/strong&gt;讲解我们遇到的痛点，以及解决这些痛点的思路，也就是 Phoenix 框架诞生的故事。&lt;/p&gt;
+&lt;p&gt;为啥要进行设计一个框架，其实是业务发展导向的结果，若是我们不进行设计，那么我们会遇到如下一些问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在新的产品需求规划下，&lt;strong&gt;无法承接大型项目&lt;/strong&gt;，只能进行小修小改；&lt;/li&gt;
+&lt;li&gt;小米网产品站最初，&lt;strong&gt;每个端一套代码逻辑&lt;/strong&gt;，风格各异；&lt;/li&gt;
+&lt;li&gt;历史沉淀，一个接口函数 &lt;strong&gt;2000&lt;/strong&gt; 多行，熟悉代码逻辑的成本越来越大；&lt;/li&gt;
+&lt;li&gt;隔离性差，服务&lt;strong&gt;可用性严重依赖下游&lt;/strong&gt;，下游一个接口的抖动都会给我们接口带来恐慌；&lt;/li&gt;
+&lt;li&gt;技术上整体中台化建设，随着调用接口越来越多，&lt;strong&gt;接口越来越慢&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;代码没有解耦，特别对新同事而言，新项目&lt;strong&gt;上线风险高&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;缺少 Go 基础组件的维护，无法对下游接口&lt;strong&gt;实时监控&lt;/strong&gt;；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="思考"&gt;&lt;a href="#%e6%80%9d%e8%80%83" class="header-anchor"&gt;&lt;/a&gt;思考
+&lt;/h2&gt;&lt;p&gt;我们从技术上计划进行重构，那么我们如何将现有的调度逻辑抽象出一套兼顾稳定性、便捷开发、可维护性且可监控的框架模型是我们首先带来的问题。&lt;/p&gt;
+&lt;p&gt;我去调研了开源的一些并发框架，发现传统的并发调度模型基本上都有依赖关系、超时控制、线程池分配调度、熔断限流、接口监控等功能。&lt;/p&gt;
+&lt;p&gt;为啥我们没有直接使用开源并发框架进行开发呢？&lt;/p&gt;
+&lt;p&gt;我调研发现业界 LiteFlow 框架是最受欢迎与好评的框架，于是在 Github 上面去了解框架底层实现的细节，随着深入阅读源码，发现这款框架设计的是真的很优秀，但是也过于庞大、复杂，特别是 EL 规则的写法，相对来说还是有一定的上手成本。&lt;/p&gt;
+&lt;p&gt;那么我就在思考，我作为业务开发人员的话，我不想关心这么复杂的依赖关系，只需要关心自己产品站业务调用到的中台的接口及其依赖接口即可。特别是大型接口捆绑了几十个下游接口的逻辑，要是理解每个接口的设计细节更是不太可能的，要是依赖关系特别复杂，那么 EL 规则会写的非常复杂且维护成本极高。&lt;/p&gt;
+&lt;p&gt;那么该如何设计一款轻量、快速、高效、从根本上解决开发人员手动维护依赖关系的并发框架呢？&lt;/p&gt;
+&lt;p&gt;既然存在依赖关系，那是不是可以通过算法进行自动构建依赖关系呢？&lt;/p&gt;
+&lt;h2 id="设计"&gt;&lt;a href="#%e8%ae%be%e8%ae%a1" class="header-anchor"&gt;&lt;/a&gt;设计
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202306292003014_17164571712405819900.png"
+width="1920"
+height="1080"
+loading="lazy"
+alt="拆分 Task"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;根据产品站的实际场景，我们发现，调用下游接口若干个，且请求接口存在不同的请求协议与不同的中间件。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202306292007655_15997352512974416726.png"
+width="1920"
+height="1080"
+loading="lazy"
+alt="单向依赖"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;更重要的是，接口存在着依赖关系，我们梳理接口调用发现，接口依赖正好是有向依赖图的结构，
+那么我们就可以进行遍历依赖关系进行编排并发分组。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202306292017666_12678431742336303479.png"
+width="1920"
+height="1080"
+loading="lazy"
+alt="并发调用组"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;这样就解决了依赖的问题，我们可以依次并行执行每个并发组的任务，这样就可以得到所有接口或依赖的结果。&lt;/p&gt;
+&lt;p&gt;那么获取到结果之后，怎么进行业务逻辑的编排，怎么隔离下游接口，其实原理很简单，既然任务可以进行分层，那么我们业务调用、业务编排、防腐蚀层也可以进行分层设计。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/20240308vidGwp_2876036279060843688.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="分层设计"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transfer 层&lt;/strong&gt;的作用是业务逻辑层，用来进行业务编排，将 BO 数据提供给客户端使用；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task 任务层&lt;/strong&gt;是并发执行的核心设计层，在这里通过并发分组的每个子 Task 在这里进行编排后执行调用，用来进行&lt;strong&gt;超时控制、耗时统计&lt;/strong&gt;等操作；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infrastructure 层&lt;/strong&gt;作为防腐层设计，用来&lt;strong&gt;隔离下游接口的调用&lt;/strong&gt;，这样的设计提高了接口的稳定性；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="写在最后"&gt;&lt;a href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;写在最后
+&lt;/h2&gt;&lt;p&gt;好了，上文就是给大家讲解的&lt;strong&gt;自动构建并发调用图的业务框架&lt;/strong&gt;，也就是 Phoenix Framework。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202402111005028_3347447514718426081.jpg"
+width="1920"
+height="1080"
+loading="lazy"
+alt="Phoenix"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;Phoenix，最初在周志明老师的网站&amp;quot;凤凰架构&amp;quot;提及，一方面是对周老师的架构设计理解与 Java 相关知识学习的致敬，另一方面，Phoenix 不死鸟，软件的生命周期也是如此，随着业务的快速发展诞生、并随着业务的的收缩而凋亡，生生不息。&lt;/p&gt;
+&lt;p&gt;最后，我会以系列的方式进行讲解这个框架遇到的问题以及解决思路，感谢大家的阅读，大家要是感兴趣的话推荐大家关注公众号，让我们一起变得更强～&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302202248422_4250514170204062952.png"
+width="1920"
+height="256"
+loading="lazy"
+alt="WeChat"
+class="gallery-image"
+data-flex-grow="750"
+data-flex-basis="1800px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

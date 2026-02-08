@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Json on Debug客栈</title><link>https://blog.debuginn.com/tags/json/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Json on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 16 Jul 2018 19:12:22 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/json/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript 对象表示法JSON</title><link>https://blog.debuginn.com/p/js-json/</link><pubDate>Mon, 16 Jul 2018 19:12:22 +0800</pubDate><guid>https://blog.debuginn.com/p/js-json/</guid><description>&lt;h2 id="json基本概念"&gt;&lt;a href="#json%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="header-anchor"&gt;&lt;/a&gt;JSON基本概念
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;JSON：JavaScript对象表示法（JavaScript Object Notation）&lt;/li&gt;
+&lt;li&gt;JSON是存储和交换文本信息的语法，类似XML。采用键值对的方式来组织，易于人们阅读和编写，同时也有益于机器解析与生成。&lt;/li&gt;
+&lt;li&gt;JSON是独立于语言的，不管是什么语言，都可以及逆行解析json，按照json规则来就行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="json和xml对比"&gt;&lt;a href="#json%e5%92%8cxml%e5%af%b9%e6%af%94" class="header-anchor"&gt;&lt;/a&gt;JSON和XML对比
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;JSON的长度相对于XML来说比较短小&lt;/li&gt;
+&lt;li&gt;JSON读写速度比较快&lt;/li&gt;
+&lt;li&gt;JSON可以使用JavaScript内建的方法直接进行解析，转换成JavaScript对象，十分的方便&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="语法规则"&gt;&lt;a href="#%e8%af%ad%e6%b3%95%e8%a7%84%e5%88%99" class="header-anchor"&gt;&lt;/a&gt;语法规则
+&lt;/h2&gt;&lt;p&gt;书写格式是：名称/值对&lt;/p&gt;
+&lt;p&gt;名称/值对组合中的名称写在前面（在双引号中），值对写在后面（同样在双引号中），中间用冒号隔开，比如“name”:”张三”&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
