@@ -145,11 +145,11 @@ href = "/p/mi-work/"
 icon = "briefcase"
 text = "来小米，一起玩！校招、社招均可内推！"
 
-[[promote.items]]
-href = "https://www.xflash.org/#/register?code=yGSImRR7"
-icon = "network"
-text = "XFlash Cloud 稳定好用速度快节点多"
-target = "_blank"
+# [[promote.items]]
+# href = "https://www.xflash.org/#/register?code=yGSImRR7"
+# icon = "network"
+# text = "XFlash Cloud 稳定好用速度快节点多"
+# target = "_blank"
 
 [[promote.items]]
 href = "https://app.cloudcone.com/?ref=13045"
