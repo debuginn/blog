@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件工程 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 软件工程 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 04 Jul 2019 23:11:33 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>软件工程 用例习题</title><link>https://blog.debuginn.com/p/test-software-use-case/</link><pubDate>Thu, 04 Jul 2019 23:11:33 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-use-case/</guid><description>&lt;h2 id="一选择题"&gt;&lt;a href="#%e4%b8%80%e9%80%89%e6%8b%a9%e9%a2%98" class="header-anchor"&gt;&lt;/a&gt;一、选择题
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1、 下列关于使用用例的目的，正确的是（ B ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A．确定系统应具备哪些功能&lt;/li&gt;
+&lt;li&gt;B．为系统的功能提供清晰一致的描述，方便开发人员传递系统的需求&lt;/li&gt;
+&lt;li&gt;C．为系统验证工作打下基础&lt;/li&gt;
+&lt;li&gt;D．减少程序员的编码工作量，提高开发效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2、 识别用例的最好方法是从哪里入手（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．系统边界 B．参与者 C．事件 D．用例&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、 参与者（Actor）与用例之间的关系是（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）包含关系 （B）泛化关系 （C）关联关系 （D）扩展关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、 用户在银行员工的指导下，使用 ATM 机，查阅银行帐务系统的个人帐务数据，并打印其 个人用户账单。在上述过程中，对 ATM 机管理系统而言，哪个不是系统的参与者( B )。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．用户 B．银行员工 C．打印系统 D．帐务系统&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、 用例从用户角度描述系统的行为。用例之间可以存在一定的关系。假设在“图书馆管理系 统”用例模型中，所有用户使用系统之前必须通过“身份验证”，“身份验证”可以有“密码 验证”和“智能卡验证”两种方式，则“身份验证”与“密码验证”和“智能卡验证”之间 是（ B ）关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．关联 B．包含 C．扩展 D．泛化&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、 用例用来描述系统在事件做出响应所采取的行动。用例之间是具有相关性的。在一个“订单输入子系统”中，创建新订单和更新订单都需要检查用户账号是否正确。那么，用例“创建新订单”、“更新订单”与用例“检查用户账号”之间是（ A ）关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．包含(include) B．扩展(extend)&lt;/p&gt;
+&lt;p&gt;C．分类(classification) D．聚集(aggregation)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、 如果用例 A 与用例 B 相似，但 A 的功能较 B 多，A 的动作序列是通过在 B 的动作序列中 的某些执行点上插入附加的动作序列而构成的，则称（ C ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．用例 A 扩展用例 B B．用例 A 包含用例 B&lt;/p&gt;
+&lt;p&gt;C．用例 A 泛化用例 B D．用例 A 实现用例 B&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8、 如果用例 A 与用例 B 相似，但 A 的动作序列是通过改写 B 的部分或者扩展 B 的动作而获 得的，则称（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．用例 A 实现用例 B B．用例 A 泛化用例 B&lt;/p&gt;
+&lt;p&gt;C．用例 A 扩展用例 B D．用例 A 包括用例 B&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9、 如果用例 B 是用例 A 的某项子功能，并且建模者确切地知道在 A 所对应的动作序列中何 时将调用 B，则称（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．用例 A 扩展用例 B B．用例 A 泛化用例 B&lt;/p&gt;
+&lt;p&gt;C．用例 A 包含用例 B D．用例 A 实现用例 B&lt;/p&gt;
+&lt;h2 id="二简答题"&gt;&lt;a href="#%e4%ba%8c%e7%ae%80%e7%ad%94%e9%a2%98" class="header-anchor"&gt;&lt;/a&gt;二、简答题
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;对于一个电子商务网站而言，以下哪些不是合适的用例，指出并说明理由。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;输入支付信息 将商品放入购物车 结账 预订商品 用户登录 邮寄商品 查看商品详情&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入支付信息：太小&lt;/li&gt;
+&lt;li&gt;邮件商品：系统功能之外&lt;/li&gt;
+&lt;li&gt;查看商品详情：太小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="三分析题"&gt;&lt;a href="#%e4%b8%89%e5%88%86%e6%9e%90%e9%a2%98" class="header-anchor"&gt;&lt;/a&gt;三、分析题
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1、 某电话公司决定开发一个管理所有客户信息的交互式网络系统。系统功能如下：
+浏览客户信息：任何使用 Internet 的网络用户都可以浏览电话公司所有的客户信息（包括 姓名、住址、电话号码等）。
+登录：电话公司授予每个客户一个账号。拥有授权账号的客户，可以使用系统提供的页 面设置个人密码，并使用该账号和密码向系统注册。
+修改个人信息：客户向系统注册后，可以发送电子邮件或者使用系统提供的页面，对个 人信息进行修改。
+删除客户信息：只有公司的管理人员才可以删除不再接受公司服务的客户的信息。 请绘制出相应的用例图&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182315280_9787943371339588448.png"
+width="1122"
+height="686"
+loading="lazy"
+alt="电话公司"
+class="gallery-image"
+data-flex-grow="163"
+data-flex-basis="392px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、 档案管理系统功能性需求说明如下：
+用户进入系统前，首先要求用户进行登录，验证通过后允许用户进入本系统操作。用户 的密码需要进行加密算法。
+用户登录后可以修改自己的注册信息，包括修改用户密码、每页显示行数等信息，不允 许修改用户名、姓名和部门等信息。
+系统管理员可以增加系统用户、删除系统用户、修改用户的相关属性、修改用户的权限 表。
+档案室人员可以对档案文件信息或者档案案卷信息进行管理，删除时只是做删除标记。
+档案借阅管理人员处理外借登记、归还记录和电子借阅申请两部分。外借模块实现档案 文件的借出登记和归还登记功能。一般用户提出借阅电子文档的请求后，被同意阅读后，文 件将被发送给申请人。
+本系统需要实现数据的备份和恢复机制。数据备份操作可以按年度、档案种类等条件做 部分备份或完全备份。数据恢复就是将备份的数据恢复到数据库中。具有批量备份和恢复的 功能。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182316896_11700847558504749390.png"
+width="1123"
+height="557"
+loading="lazy"
+alt="档案管理1"
+class="gallery-image"
+data-flex-grow="201"
+data-flex-basis="483px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182317405_13844461054810077069.png"
+width="398"
+height="630"
+loading="lazy"
+alt="档案管理2"
+class="gallery-image"
+data-flex-grow="63"
+data-flex-basis="151px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303182317895_11230486439184870035.png"
+width="814"
+height="501"
+loading="lazy"
+alt="档案管理3"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="389px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 活动图、状态图、顺序图实验题</title><link>https://blog.debuginn.com/p/test-software-figure/</link><pubDate>Thu, 04 Jul 2019 16:48:56 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-figure/</guid><description>&lt;p&gt;&lt;strong&gt;活动图绘图有开始结尾的标志，简称黑点开始、牛眼结束。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1、请应用活动图描述同学们每次参加考试的过程是怎么样的？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;开始。
+学生进入考场。
+监考教师核对检查证件，发放试卷。
+学生对号入座。
+学生开始答题。
+学生交卷。
+监考教师收取试卷。
+结束。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191200743_3772500734863969297.png"
+width="1020"
+height="542"
+loading="lazy"
+alt="考试活动模型1"
+class="gallery-image"
+data-flex-grow="188"
+data-flex-basis="451px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191200048_18103600418062943949.png"
+width="1104"
+height="453"
+loading="lazy"
+alt="考试活动模型2"
+class="gallery-image"
+data-flex-grow="243"
+data-flex-basis="584px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191201603_15882039518224888864.png"
+width="763"
+height="692"
+loading="lazy"
+alt="考试活动模型3"
+class="gallery-image"
+data-flex-grow="110"
+data-flex-basis="264px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、 小张想去吃饭，如果必胜客有空位或最多只等待 15 分钟，则进必胜客吃饭，否则去肯德鸡吃 饭。请画出相应的活动图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191220030_18148750048584594347.png"
+width="731"
+height="485"
+loading="lazy"
+alt="王校长吃饭活动图1"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="361px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191221161_13441819291136001145.png"
+width="634"
+height="467"
+loading="lazy"
+alt="王校长吃饭活动图2"
+class="gallery-image"
+data-flex-grow="135"
+data-flex-basis="325px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、开工奠基流程如下： 如果资金到位，则准备施工现场。当领导也到场时，开工奠基开始 请画出相应的活动图&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191222354_8696900599423905105.png"
+width="942"
+height="386"
+loading="lazy"
+alt="开工奠基活动图"
+class="gallery-image"
+data-flex-grow="244"
+data-flex-basis="585px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、对于“远程网络教学系统”，学生登录后可以下载课件。在登录时，系统需要验证用户的登录 信息，如果验证通过系统会显示所有可选服务。如果验证失败，则登录失败。当用户看到系统显示的 所有可选服务后，可以选择下载服务，然后下载需要的课件。下载完成后用户退出系统，系统则会注 销相应的用户信息。画出学生下载课件的活动图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191222250_12183777467512372818.png"
+width="761"
+height="575"
+loading="lazy"
+alt="act学生下载课件活动图"
+class="gallery-image"
+data-flex-grow="132"
+data-flex-basis="317px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、在“远程网络教学系统”中，系统管理员登录后可以处理注册申请或者审核课件。在处理注册 申请后，需要发送邮件通知用户处理结果；在审核完课件后，需要更新页面信息以保证用户能看到最 新的课件，同时系统更新页面。当完成这些工作后，系统管理员退出系统，系统则注销系统管理员账号。画出系统管理员的工作活动图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191223414_18385166149138788035.png"
+width="657"
+height="643"
+loading="lazy"
+alt="系统管理员活动图"
+class="gallery-image"
+data-flex-grow="102"
+data-flex-basis="245px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、根据以下叙述，绘制打印社的“打印机”的状态图： 未接到工作命令时，打印机处于闲置状态。接到打印命令后，转入打印状态，完成打印后又回到 闲置状态，等待命令。 若打印时发现没纸，则进入缺纸状态。发出警告等待装纸。装纸完成后又进入闲置状态。 若打印时发现卡纸，则进入卡纸（故障）状态。发出警告等待排除故障。故障排除后又进入闲置 状态。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191223686_17603825836368902018.png"
+width="1088"
+height="570"
+loading="lazy"
+alt="打印机状态图"
+class="gallery-image"
+data-flex-grow="190"
+data-flex-basis="458px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、手机开机时，处于空闲状态；当用户开始呼叫某人时，手机进入拨号状态；如果呼叫成功， 进入通话状态；如果呼叫不成功，重新进入空闲状态。在空闲状态被呼叫，进入响铃状态；如果用户 接听，进入通话状态；如果一分钟不接听，重新进入空闲状态。请绘制手机的状态图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191224879_5824522115879893319.png"
+width="788"
+height="565"
+loading="lazy"
+alt="手机状态"
+class="gallery-image"
+data-flex-grow="139"
+data-flex-basis="334px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8、用顺序图描述一位学生张三在 ATM 系统上取 100RMB 的“取款”流程，其过程要包括如下 需求。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;➢ 学生张三取款时向 ATM 系统插入银行卡。&lt;/li&gt;
+&lt;li&gt;➢ ATM 系统的读卡机读取卡号信息。&lt;/li&gt;
+&lt;li&gt;➢ 屏幕显示用户的操作界面。&lt;/li&gt;
+&lt;li&gt;➢ 屏幕提示用户输入密码。&lt;/li&gt;
+&lt;li&gt;➢ 用户根据提示输入密码。&lt;/li&gt;
+&lt;li&gt;➢ 系统检测用户的密码是否有效。&lt;/li&gt;
+&lt;li&gt;➢ 屏幕提示选择事务的操作，如查询、存款、取款等。&lt;/li&gt;
+&lt;li&gt;➢ 张三选择取款事务。&lt;/li&gt;
+&lt;li&gt;➢ 屏幕提示输入取款金额。&lt;/li&gt;
+&lt;li&gt;➢ 张三根据提示输入 100RMB。&lt;/li&gt;
+&lt;li&gt;➢ 系统准备向张三的账号执行取钱的操作。&lt;/li&gt;
+&lt;li&gt;➢ 系统检测张三的余额是否大于等于 100RMB。&lt;/li&gt;
+&lt;li&gt;➢ 系统从张三的账户上扣除 100RMB。&lt;/li&gt;
+&lt;li&gt;➢ 吐钱机将 100RMB 吐出给学生。&lt;/li&gt;
+&lt;li&gt;➢ 系统打印取款凭据。&lt;/li&gt;
+&lt;li&gt;➢ 系统退卡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191225969_3625538601029997356.png"
+width="776"
+height="721"
+loading="lazy"
+alt="银行取钱"
+class="gallery-image"
+data-flex-grow="107"
+data-flex-basis="258px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 交互预览、组件、部署习题</title><link>https://blog.debuginn.com/p/test-software-interaction/</link><pubDate>Thu, 04 Jul 2019 16:47:08 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-interaction/</guid><description>&lt;p&gt;&lt;strong&gt;1、软件部署是（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A：部署软件构件 B：部署软件程序&lt;/p&gt;
+&lt;p&gt;C：部署软件模型 D：部署软件制品&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、下面说法正确的是（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A：制品就是制成品 B：制品是软件模块&lt;/p&gt;
+&lt;p&gt;C：制品是被部署的软件单元 D：制品是软件构件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、下列说法不正确的是（ B ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）在用例视图下可以创建类图&lt;/p&gt;
+&lt;p&gt;B）在逻辑视图下可以创建组件图&lt;/p&gt;
+&lt;p&gt;C）在逻辑视图下可以创建包&lt;/p&gt;
+&lt;p&gt;D）在构建试图下可以创建构件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、在组件图中，（ D ）用于显示构件之间的关联关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）依赖关系 B）构件 C）包 D）节点&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、 下面哪个符号代表部署图的节点（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191350568_5127073748786981931.png"
+width="1038"
+height="91"
+loading="lazy"
+alt="寻找节点符号"
+class="gallery-image"
+data-flex-grow="1140"
+data-flex-basis="2737px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、下列不属于部署图中的设备类型的是：（ B ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）打印机 B）计算机&lt;/p&gt;
+&lt;p&gt;C）扫描仪 D）路由器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、在绘制部署图时，如果要描述处理器之间或处理器与设备之间通过以太网进行连接的关系时，使用下列哪一种构造型（ A ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）《Ethernet》 B）《parallel》&lt;/p&gt;
+&lt;p&gt;C）《TCP/IP》 D）《Internet》&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8、在UML中，____B_____图显示了一组类、接口、协作以及它们之间的关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、状态图 B、类图
+C、用例图 D、部署图
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;9、节点是存在于运行时并代表一项计算资源的物理元素，没有计算能力的节点称为___B____&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．处理器 B．规范 C．接口 D．设备&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10、下图中，表示“节点”的图为_____C_______。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191351333_14897671522842707582.png"
+width="860"
+height="339"
+loading="lazy"
+alt="寻找节点"
+class="gallery-image"
+data-flex-grow="253"
+data-flex-basis="608px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;11、_____B_____图可以用来描述系统硬件的物理拓扑结构以及在此结构上运行的软件。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、用例图 B、类图 C、部署图 D、活动图
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;12、____D_____是系统中遵从一组接口且提供实现的一个物理部件，通常指开发和运行时类的物理实现。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、部署图 B、类
+C、接口 D、构件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;13、下列不属性构件的特征的是______A________。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、可替换 B、通过接口实现或提供服务
+C、可以被一个或多个实现 D、只能是代码的形式
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;14、对于比如源代码文件及数据文件，并不是直接地参与可执行系统，我们称这类构件为____C_____。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、实施构件 B、工作产品构件&lt;/p&gt;
+&lt;p&gt;C、执行构件 D、质量构件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;15、___B_______是可复用的，提供明确接口完成特定功能的程序代码块。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、模块 B、函数
+C、用例 D、构件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;16、组件图用于对系统的静态实现视图建模，这种视图主要支持系统部件的配置管理，通常可以分为四种方式来完成，下面哪种不是其中之一（　B　）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(A)对源代码建模 (B)对事物建模&lt;/p&gt;
+&lt;p&gt;(C)对物理数据库建模 (D)对可适应的系统建模&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;17、（ D ）由节点和节点之间的联系组成，描述了处理器、设备和软件构件运行时的体系结构。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．组件图 B．状态图 C．顺序图 D．部署图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;18、（ C ）的基本元素有节点、构件、对象、连接、依赖等。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．组件图 B．状态图 C．部署图 D．顺序图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;19、下面关于部署图的说法中，错误的是（ A ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A 部署图描述系统运行时的软件和硬件的物理结构，用于对系统的物理方面建模。(组件图)&lt;/p&gt;
+&lt;p&gt;B 处理器和设备的区别在于是否具有计算能力。&lt;/p&gt;
+&lt;p&gt;C 部署图描述的是系统物理模型的布置，实际节点间的连接必须用一段导线、电缆或其它的方式连接。&lt;/p&gt;
+&lt;p&gt;D 一个系统可以有多个部署图。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;20、部署图中的结点具有以下哪些方面的内容（ ABC ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）计算能力 （B）基本内存 （C）位置 （D）接口&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;21、当需要说明系统的静态实现视图时，应该选择（ A ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．组件图 B．协作图&lt;/p&gt;
+&lt;p&gt;C．状态图 D．部署图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;22、当需要说明体系结构的静态实施视图时，应该选择（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．协作图 B．对象图&lt;/p&gt;
+&lt;p&gt;C．活动图 D．部署图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;23、（ D ）是系统中遵从一组接口且提供实现的一个物理部件，通常指开发和运行时类的物理实现&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．部署图 B．类&lt;/p&gt;
+&lt;p&gt;C．接口 D．组件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;24、组件图用于对系统的静态实现视图建模，这种视图主要支持系统构件的配置管理，通常可以分为四种方式来完成，下面哪种不是其中之一（ B ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．对源代码建模 B．对可执行组件建模&lt;/p&gt;
+&lt;p&gt;C．对数据库建模 D．对事物建模&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;25、（ A ）是用来反映代码的物理结构。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、组件图 B、用例图&lt;/p&gt;
+&lt;p&gt;C、类图 D、状态机&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 类图实验题</title><link>https://blog.debuginn.com/p/test-software-class-diagram/</link><pubDate>Thu, 04 Jul 2019 16:23:31 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-class-diagram/</guid><description>&lt;p&gt;&lt;strong&gt;1．请按下述要求绘制类图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一个年级里有 3 到 5 个班级。
+一个班级有 1 到 40 名学生。
+1 个班级有 1 名担任班主任。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191229848_17968904814099984125.png"
+width="910"
+height="445"
+loading="lazy"
+alt="class班级类图"
+class="gallery-image"
+data-flex-grow="204"
+data-flex-basis="490px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2．请按下述要求绘制出书橱的类图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可以把书放到书橱里。
+书橱的门有木制的门或玻璃制的门。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191230260_4429451094470552929.png"
+width="883"
+height="426"
+loading="lazy"
+alt="书橱的类图"
+class="gallery-image"
+data-flex-grow="207"
+data-flex-basis="497px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3．请按下述要求绘制出网上商店的类图。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为了一次可以购买多件商品，为每个顾客准备一个购物车。
+购物车里可以装入 10 件商品。
+顾客分会员及非会员两类。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191231932_8343810119041148915.png"
+width="883"
+height="426"
+loading="lazy"
+alt="网上商店的类图"
+class="gallery-image"
+data-flex-grow="207"
+data-flex-basis="497px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4．看图回答下面问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303191232619_17254521455126573558.png"
+width="833"
+height="196"
+loading="lazy"
+alt="学生-课程关联图"
+class="gallery-image"
+data-flex-grow="425"
+data-flex-basis="1020px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;类 Student 和类 Course 之间是什么关系？并用文字性语言描述该类图表达意思。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;答：&lt;strong&gt;关联关系&lt;/strong&gt;
+该图描述的是：学生和课程之间的选择关系，一个学生可以选择多门课程，一门课程可以被多个学生所选择。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 类图习题</title><link>https://blog.debuginn.com/p/test-software-class-diagram-exercises/</link><pubDate>Wed, 03 Jul 2019 21:45:49 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-class-diagram-exercises/</guid><description>&lt;ul&gt;
+&lt;li&gt;依赖（Dependency）: 虚线箭头表示&lt;/li&gt;
+&lt;li&gt;关联（Association）：实线箭头表示&lt;/li&gt;
+&lt;li&gt;聚合（Aggregation）：带空心菱形头表示（整体和局部关系）&lt;/li&gt;
+&lt;li&gt;组合（Composition）：带实心菱形头的实线表示&lt;/li&gt;
+&lt;li&gt;泛化（Generalization）： 带空心箭头的实线线表示（ 继承关系）&lt;/li&gt;
+&lt;li&gt;实现（Realization）：空心箭头和虚线表示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="一选择题"&gt;&lt;a href="#%e4%b8%80%e9%80%89%e6%8b%a9%e9%a2%98" class="header-anchor"&gt;&lt;/a&gt;一、选择题
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1、在认识过程中，下面哪个不是对象的要素（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A：认识的指向物 B：认识者&lt;/p&gt;
+&lt;p&gt;C：认识指向物在认识者主观中的反映 D：认识的背景&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、下面哪一个对对象的说法不正确（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A：客观实体 B：事物的对立面&lt;/p&gt;
+&lt;p&gt;C：认识的指向物 D：软件的一个基本单位&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、下面属性命名不正确的是（ A ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A *BirthDay:Date&lt;/p&gt;
+&lt;p&gt;B #studentBirthDay:Date=1999-10-21&lt;/p&gt;
+&lt;p&gt;C -price:float=12.01{R/W}&lt;/p&gt;
+&lt;p&gt;D +studentName:String=“张敏”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、指出下面不合适的类名（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A：材料 B：事物 C：订单 D：会员&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、在类图中，下面哪个符号表示继承关系（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202150359_13868823738992279902.png"
+width="217"
+height="189"
+loading="lazy"
+alt="类图元素"
+class="gallery-image"
+data-flex-grow="114"
+data-flex-basis="275px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、在类图中，“#”表示的可见性是（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）Public （B）Protected （C）Private （D）Package&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、在类图中，下面哪个符号表示实现关系（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202151210_5451086826053461562.png"
+width="251"
+height="246"
+loading="lazy"
+alt="类图指示线"
+class="gallery-image"
+data-flex-grow="102"
+data-flex-basis="244px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8、在类图中，哪种关系表达总体与局部的关系（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）泛化 （B）实现 （C）依赖 （D）聚合&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9、UML中类的有三种，下面哪个不是其中之一（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.实体类 B.边界类 C.控制类 D.主类&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10、在UML中，类之间的关系有一种为关联关系，其中多重性用来描述类之间的对应关系，下面哪个不是其中之一（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. 0..1 B. 0..* C. 1..* D. &lt;code&gt;*..*&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202151846_5960092350718635689.png"
+width="619"
+height="409"
+loading="lazy"
+alt="重数性关联"
+class="gallery-image"
+data-flex-grow="151"
+data-flex-basis="363px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;11、通常对象有很多属性，但对于外部对象来说某些属性应该不能被直接访问，下面哪个不是UML中的类成员访问限定性（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.公有的（public）&lt;/p&gt;
+&lt;p&gt;B.受保护的（protected）&lt;/p&gt;
+&lt;p&gt;C.友员（friendly）&lt;/p&gt;
+&lt;p&gt;D.私有的（private）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12、在一个课程注册系统中，定义了类CourseSchedule和类Course，并在类CourseSchedule中定义了方法add（c:Course）和方法remove（c:Course），则类CourseSchedule和类Course之间的关系是：（B）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、泛化关系 B、组成关系 C、依赖关系 D、包含关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;13、类A的一个操作调用类B的一个操作，且这两个类之间不存在其他关系，那么类A和类B之间是（ C ）关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A 实现 B、关联 C、 依赖 D、 泛化&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;14、在UML中下列图形代表什么关系？（A）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202152498_10046504456026086860.png"
+width="460"
+height="41"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="1121"
+data-flex-basis="2692px"
+&gt;&lt;/p&gt;
+&lt;p&gt;A、组合关系 B、 依赖关系&lt;/p&gt;
+&lt;p&gt;C、聚合关系 D、泛化关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;15、在UML中下列图形代表什么关系？( D )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202153725_881337346469574764.png"
+width="382"
+height="50"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="764"
+data-flex-basis="1833px"
+&gt;&lt;/p&gt;
+&lt;p&gt;A、组成关系 B、 依赖关系&lt;/p&gt;
+&lt;p&gt;C、聚集关系 D、泛化关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16、汽车（Car）由轮子、发动机、油箱、座椅、方向盘等组成。那么car类和其他类（Wheel、Engin、Tank、Chair、SteeringWheel）之间的关系是：（ A ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、泛化关系 B、实现关系&lt;/p&gt;
+&lt;p&gt;C、包含关系 D、组合关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;17、在下面的图例中，哪个用来描述注释（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202153624_2988101910378155196.png"
+width="764"
+height="98"
+loading="lazy"
+alt="图例"
+class="gallery-image"
+data-flex-grow="779"
+data-flex-basis="1871px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;18、消息传递是对象间通信的手段，一个对象通过向另一个对象发送消息来请求其服务，一个消息通常包括：（ A ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、发送消息的对象的标识、调用的发送方的操作名和必要的参数&lt;/p&gt;
+&lt;p&gt;B、发送消息的类名和接收消息的类名&lt;/p&gt;
+&lt;p&gt;C、接收消息的对象的标识、调用的接收方的操作名和必要的参数&lt;/p&gt;
+&lt;p&gt;D、接收消息的类名&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;19、在一个网络游戏系统中，定义了类Cowboy和类Castle，并在类Cowboy中定义了方法open（c：Castle）和方法Close（c：Castle），则类Cowboy和类Castle之间的关系是：……（ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、依赖（dependency）关系 B、组成（composition）关系&lt;/p&gt;
+&lt;p&gt;C、泛化（generalization）关系 D、包含（include）关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;20、根据下面的代码，判断下面那些叙述是正确的？（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HouseKeeper&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;TimeCard&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;timecard&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;clockIn&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;timecard&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;punch&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;A、类HouseKeeper和类TimeCard之间存在关联（Association）关系；&lt;/p&gt;
+&lt;p&gt;B、类HouseKeeper和类TimeCard之间存在泛化（Generalization）关系；&lt;/p&gt;
+&lt;p&gt;C、类HouseKeeper和类TimeCard之间存在实现（Realization）关系；&lt;/p&gt;
+&lt;p&gt;D、类HouseKeeper和类TimeCard之间存在依赖（dependency）关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;21、UML关系包括关联、聚合、泛化、实现、依赖等5种类型，对应的编号分别为A、B、C、D和E，请将合适的关系填写在下列描述的（ ）中。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;① 用例及参与者之间是（ E ）关系。&lt;/p&gt;
+&lt;p&gt;②类A的一个操作调用类B的一个操作，且这两个类之间不存在其他关系，那么类A和类B之间是（ C ）关系。&lt;/p&gt;
+&lt;p&gt;③在学校中，一个学生可以选修多门课程，一门课程可以由多个学生选修，那么学生和课程之间是（ A ）关系。&lt;/p&gt;
+&lt;p&gt;④森林和树木之间是（ B ）关系。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;22、已知类A需要类B提供的服务，下列所描述的四种情况中，哪种情况不好把类A和类B之间的关系定义成依赖关系 （ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、类A中存在两个操作都需要访问类B的同一个对象&lt;/p&gt;
+&lt;p&gt;B、类A的某个操作内部创建了类B的对象，而其他操作均与类B无关&lt;/p&gt;
+&lt;p&gt;C、类A的某个操作其参数是类B的对象，而其他操作均与类B无关&lt;/p&gt;
+&lt;p&gt;D、类B是一个全局变量&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;23、“一个研究生在软件学院做助教（teaching assistant），同时还在校园餐厅打工做收银员（cashier）。也就是说，这个研究生有3种角色：学生、助教、收银员，但在同一时刻只能有一种角色。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;根据上面的陈述，下面哪个设计是最合理的？（ C ）&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202155826_14645130097891609044.png"
+width="764"
+height="633"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="120"
+data-flex-basis="289px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;24、类X与类Y有许多相同的属性和行为，但是它的行为与类Y稍微有所不同，这时可以认为类X是类Y的一种特例；则类X和类Y之间是（ A ）关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A 、泛化关系 B、 关联关系 C、 依赖关系 D、 实现关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;25、关于类和对象的关系，下列说法中哪个是错误的 （ C ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、每个对象都是某个类的实例&lt;/p&gt;
+&lt;p&gt;B、每个类某一时刻必定存在对象实体&lt;/p&gt;
+&lt;p&gt;C、类是静态的描述&lt;/p&gt;
+&lt;p&gt;D、对象是动态的实例&lt;/p&gt;
+&lt;h2 id="二填空题"&gt;&lt;a href="#%e4%ba%8c%e5%a1%ab%e7%a9%ba%e9%a2%98" class="header-anchor"&gt;&lt;/a&gt;二、填空题
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1、 下图中类的名字是： _ Login_类中的成员属性是： _sName、sPass _ 类中的行为（方法）是：&lt;em&gt;&lt;strong&gt;checkUser&lt;/strong&gt;&lt;/em&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303202156676_4312218032555982575.png"
+width="173"
+height="133"
+loading="lazy"
+alt="login方法"
+class="gallery-image"
+data-flex-grow="130"
+data-flex-basis="312px"
+&gt;&lt;/p&gt;
+&lt;p&gt;2、类描述具有相同性质的一组对象的（集合），类用（new）来表示。&lt;/p&gt;
+&lt;p&gt;3、在设计阶段，可以把类分为（控制类）、边界类和（实体类）等类型。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 包图习题</title><link>https://blog.debuginn.com/p/test-software-package-diagram/</link><pubDate>Tue, 02 Jul 2019 19:54:56 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-package-diagram/</guid><description>&lt;p&gt;&lt;strong&gt;1、（ A )是用于把元素组织成组的通用机制&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）包 B、类 C）接口 D）组件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、下面哪个符号代表包图（ A ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303211956908_7791884624399696957.png"
+width="613"
+height="68"
+loading="lazy"
+alt="包图"
+class="gallery-image"
+data-flex-grow="901"
+data-flex-basis="2163px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、包内的元素可以被包内的元素、继承的子包元素所访问是指包的____B_____。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．公有访问 B. 保护访问 C. 私有访问 D.通用访问&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、包内的元素可以被包外的元素所访问是指包的______A______。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．公有访问 B. 保护访问 C. 私有访问 D.通用访问&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、包内的元素只能被属于同一个模型包的内含元素访问是指包的_____C______。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．公有访问 B. 保护访问 C. 私有访问 D.通用访问&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、客户包依赖于提供者包是指包的____B____依赖关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. use B. import C. access D. trace&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《use》使用关系：是一种默认的依赖关系，说明客户包（发出者）中的元素以某种方式使用提供者包（箭头指向的包）的公共元素，也就是说客户包依赖于提供者包。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;7、客户包中的元素也能够访问提供者包的所有公共元素是指包的____B____依赖关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. use B. import C. access D. trace&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《import》引用关系：最普遍的包依赖类型，说明提供者包(箭头指向的包)的命名空间（包本身代表命名空间）将被添加到客户包（发出者）的命名空间中，客户包中的元素也能够访问提供者包的所有公共元素 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;8、 客户包中的元素能够访问提供包中的所有公共元素，但客户包必须使用路径名，是指包的__C____关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. use B. import C. access D. trace&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《access》访问关系：只想使用提供者包中的元素，而不想将其命名空间合并则应使用该关系。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;9、表示一个包到另一个包的历史发展，是指包的____D_____关系。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. use B. import C. access D. trace&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《trace》追溯关系：想表示一个包到另一个包的历史发展，则需要使用《trace》关系来表示 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;10、包元素可以拥有的元素包括(多选)&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;A、C、D&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;_。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. 类 B. 构件 C. 用例 D. 包&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;包中拥有的元素可以是模型的各种元素，例如类、接口、组件、用力、也可以是其他包。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;11、包的常见构造型包括(多选)&lt;strong&gt;&lt;strong&gt;A、B、C&lt;/strong&gt;&lt;/strong&gt;__。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. 《subsystem》 B. 《facade》 C. 《framework》 D. 《node》&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303211959259_2878882025217323226.png"
+width="833"
+height="387"
+loading="lazy"
+alt="包的常见构造型"
+class="gallery-image"
+data-flex-grow="215"
+data-flex-basis="516px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12、UML系统需求分析阶段产生的包图描述了系统的（ B ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．状态 B．系统体系层次结构 C．静态模型 D．功能要求&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;13、（ A ）是一组用于描述类或组件的一个服务的操作&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、包 B、节点 C、接口 D、组件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;14、如下选项所示，哪一种设计所包含的包之间的依赖关系是最不好的？（A）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303212001634_2737525647760848840.png"
+width="695"
+height="312"
+loading="lazy"
+alt="设计所包含的包之间的依赖关系"
+class="gallery-image"
+data-flex-grow="222"
+data-flex-basis="534px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;15、下面哪一项不是包图中的关系（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）&amp;laquo;use&amp;raquo; （B）&amp;laquo;access&amp;raquo; （C）&amp;laquo;trace&amp;raquo;（D）&amp;laquo;stub&amp;raquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16、建立模型时包的嵌套不宜过深，包的嵌套一般以（A）为宜。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．2&lt;del&gt;3层 B.3&lt;/del&gt;4层&lt;/p&gt;
+&lt;p&gt;C．1&lt;del&gt;2层 D.3&lt;/del&gt;5层&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;17、下列对于创建包的说法不正确的是（A）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．在序列图和协作图中可以创建包&lt;/p&gt;
+&lt;p&gt;B．在类图中可以创建包&lt;/p&gt;
+&lt;p&gt;C．如果将包从模型中永久删除，包及包中的内容都将被删除&lt;/p&gt;
+&lt;p&gt;D．在创建包的依赖关系时，尽量避免循环依赖&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;18、关于包的描述，哪个不正确（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.和其他建模元素一样，每个包必须有一个区别于其他包的名字；&lt;/p&gt;
+&lt;p&gt;B.包中可以包含其他元素，比如类、接口、组件、用例等等；&lt;/p&gt;
+&lt;p&gt;C.包的可见性分为：public、protected、private；&lt;/p&gt;
+&lt;p&gt;D.导出（export）使的一个包中的元素可以单向访问另一个包中的元素；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;19、UML的（ B ）模型图由类图、对象图、包图、构件图和配置图组成。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．用例 B．静态&lt;/p&gt;
+&lt;p&gt;C．动态 D．系统&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;20、（ A ）是用于把元素组织成组的通用机制&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．包 B．类&lt;/p&gt;
+&lt;p&gt;C．接口 D．组件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;21、（ C ）是一组用于描述类或组件的一个服务的操作&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．包 B．节点&lt;/p&gt;
+&lt;p&gt;C．接口 D．组件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;22、在UML中，以下( B )是可以应用于包的构造型&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、框架{《Framework》} B、虚包{《Facade》}&lt;/p&gt;
+&lt;p&gt;C、子系统{《Subsystem》} D、系统{《system》}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;23、UML系统需求分析阶段产生的包图描述了系统的（ C ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．状态 B．系统体系层次结构&lt;/p&gt;
+&lt;p&gt;C．静态模型 D．功能要求&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;24、在UML中，（ B ）可以对模型元素进行有效组织，如类，用例，构件，从而构成具有一定意义的单元。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、连接 B、包&lt;/p&gt;
+&lt;p&gt;C、构件 D、节点&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 状态图、顺序图习题</title><link>https://blog.debuginn.com/p/test-software-stat-sequence-diagram/</link><pubDate>Mon, 01 Jul 2019 14:13:26 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-stat-sequence-diagram/</guid><description>&lt;p&gt;&lt;strong&gt;1、UML图不包括 ( D )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）用例图 B）类图 C）状态机图 D）流程图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、下面中（ C ）图表示结束状态。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303231428357_13019002194684920256.png"
+width="635"
+height="61"
+loading="lazy"
+alt="结束状态"
+class="gallery-image"
+data-flex-grow="1040"
+data-flex-basis="2498px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、UML中，对象行为是通过交互来实现的，是对象间为完成某一目的而进行的一系列消息交换。消息序列可用两种类来表示，分别是（　D　）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）状态机图和顺序图 B）活动图和通信图&lt;/p&gt;
+&lt;p&gt;C）状态机图和活动图 D）顺序图和通信图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、在UML提供的图中，（ D ）　用于按时间顺序描述对象间交互。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）网络图 B）状态机图 C）通信图 D）顺序图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、在状态图中不能表示下面哪些概念？（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）动作（Action） B）事件(event) C）转移 D）类&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、生命线是UML视图中哪个图形的组成部分（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）类图 B）状态机图 C）活动图 D）顺序图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、顺序图由类角色，生命线，激活期和（ B ）组成。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）关系 B）消息 C）用例 D）实体&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8、下面哪种图最合适用来描述场景：（ B ）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）包图 B）交互图（顺序图、通信图）&lt;/p&gt;
+&lt;p&gt;C）类图 D）用例图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9、UML中，对象行为是通过交互来实现的，是对象间为完成某一目的而进行的一系列消息交换。消息序列可用两种类来表示，分别是( D )。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.状态图和顺序图 B.活动图和通信图&lt;/p&gt;
+&lt;p&gt;C.状态图和活动图 D.顺序图和通信图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10、顺序图由类角色，生命线，激活期和( B )组成&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、关系 B、消息
+C、用例 D、实体
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;11、顺序图是强调消息随时间顺序变化的交互图，下面哪个不是用来描述顺序图的组成部分( A )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.信号 B.生命线 C.激活期 D.类角色&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12、关于通信图的描述，下列哪个不正确____B____&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.通信图作为一种交互图，强调的是参加交互的对象的组织；&lt;/p&gt;
+&lt;p&gt;B.通信图是顺序图的一种特例&lt;/p&gt;
+&lt;p&gt;C.通信图中有消息流的顺序号&lt;/p&gt;
+&lt;p&gt;D.通信图和顺序图不能互换&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;13、请在下面选项目中选出两种可以互相转换的图(多选)&lt;strong&gt;&lt;strong&gt;A、B&lt;/strong&gt;&lt;/strong&gt;_。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A 顺序图 B 通信图 C活动图 D状态图
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;14、下面哪个不是UML中的静态视图（A）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(A)状态图 (B)用例图 (C)对象图 (D)类图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;15、顺序图的模型元素有（ A ）、消息、链接等，这些模型元素表示某个用例中的若干个对象和对象之间所传递的消息，来对系统的行为建模。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．对象 B．箭头线 C．活动 D．状态&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303231429539_5330454592040980326.png"
+width="832"
+height="516"
+loading="lazy"
+alt="顺序图"
+class="gallery-image"
+data-flex-grow="161"
+data-flex-basis="386px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16、顺序图描述（ D ）对象之间消息的传递顺序。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．某个 B．单个 C．一个类产生的 D．一组&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;17、顺序图和合作图建立了UML面向对象开发过程中的对象动态（ A ）模型。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．交互 B．状态 C．体系结构 D．软件复用&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;18、状态图可以表现（ B ）在生存期的行为、所经历的状态序列、引起状态转移的事件以及因状态转移而引起的动作。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．一组对象 B．一个对象 C．多个执行者 D．几个子系统&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;19、状态图描述一个对象在不同（ A ）的驱动下发生的状态迁移。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．事件 B．对象 C．执行者 D．数据&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;20、 下面的状态图描述了一辆汽车的状态，指出哪种说法是错误的（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303231430595_14071416583998336383.png"
+width="840"
+height="536"
+loading="lazy"
+alt="汽车的状态"
+class="gallery-image"
+data-flex-grow="156"
+data-flex-basis="376px"
+&gt;&lt;/p&gt;
+&lt;p&gt;A “运动”状态是一个组成状态，由多个简单状态组成。&lt;/p&gt;
+&lt;p&gt;B “前进”状态和“低速”状态有可能同时出现。&lt;/p&gt;
+&lt;p&gt;C 汽车在“前进”、“后退”、“高速”及“低速”任何一个子状态下，都有可能转到“停止”状态。&lt;/p&gt;
+&lt;p&gt;D “前进”状态和“低速”状态是两个顺序子状态。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;21、下面哪个UML视图是描述一个对象的生命周期的（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）类图 （B）状态图 （C）协作图 （D）顺序图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;22、下面哪个视图属于UML语言的交互图（ B ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（A）行为图 （B）状态图 （C）实现图 （D）顺序图&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303231432339_14648037257581829481.png"
+width="534"
+height="223"
+loading="lazy"
+alt="交互图"
+class="gallery-image"
+data-flex-grow="239"
+data-flex-basis="574px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;23、顺序图主要可以为设计人员提供（A）信息。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. 消息发送的顺序 B. 某个方法的执行流程&lt;/p&gt;
+&lt;p&gt;C. 类之间关联关系的多重性 D. 某个对象在不同状态之间的转移&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 活动图习题</title><link>https://blog.debuginn.com/p/test-software-activity-diagram/</link><pubDate>Thu, 21 Mar 2019 19:31:41 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-activity-diagram/</guid><description>&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;UML定义了5类，10种模型图：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1.用例图：从用户角度描述系统功能，并指各功能的操作者。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2.静态图：包括类图，包图，对象图。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 类图：描述系统中类的静态结构
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 包图：是包和类组成的，表示包与包之间的关系，包图描述系统的分层结构
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 对象图：是类图的实例
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3.行为图：描述系统动态模型和对象组成的交换关系。包括状态图和活动图
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 活动图：描述了业务实现用例的工作流程
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 状态图：是描述状态到状态控制流，常用于动态特性建模
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;4.交互图：描述对象之间的交互关系
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 顺序图：对象之间的动态合作关系，强调对象发送消息的顺序，同时显示对象之间的交互
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 合作图：描述对象之间的协助关系
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;5.实现图：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 配置图：定义系统中软硬件的物理体系结构
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;1、下面哪个不是活动图中的基本元素（ D ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A）状态、分支 B）转移、汇合 C）泳道、转移 D）用例、状态&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;活动、起始状态与终止状态、状态转移、判断、分叉与汇和、泳道
+活动图的基本要素&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2、 在下面的图例中，哪个用来描述活动（activity）（A）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303211951206_4615978172758745503.png"
+width="784"
+height="65"
+loading="lazy"
+alt="活动图"
+class="gallery-image"
+data-flex-grow="1206"
+data-flex-basis="2894px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、下面哪个不是UML中的静态视图_____B______。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A.用例图 B.活动图 C.对象图 D.类图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、下列关于活动图的说法错误的是______C_______&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A一张活动图从本质上说是一个流程图，显示从活动到活动的控制流
+B 活动图用于对业务过程中顺序和并发的工作流程进行建模。
+C活动图中的基本要素包括活动节点、分支、分叉和汇合、泳道、对象流。
+D活动图是UML中用于对系统的静态建模图
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;5、______A______技术是将一个活动图中的活动状态进行分组，每一组表示一个特定的类、人或部门，他们负责完成组内的活动。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、泳道 B、分叉汇合 C、分支 D、转移
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;6、活动图的建模关键是表示出____B______，其它的建模元素都是围绕这一宗旨所进行的补充&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、控制流 B、数据流 C、状态 D、对象之间的关系&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、活动图利用_____C_____和_________来用来建模并发活动&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、分叉 监护条件 B、分支 监护条件 C、分叉 汇合 D、分支 汇合&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8、 C 是UML中对系统动态方面建模的两种主要形式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A、活动图 类图 B、交互图 类图 C、活动图 交互图 D、状态图 用例图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9、活动图的___B____元素代表活动连接输入、输出值的连接点&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、转换 B、引脚 C、起始节点 D、泳道
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引脚是一个对象节点，代表活动连接输入、输出值的连接点
+UML之活动图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;10、一个活动图中开始状态能有__A___个，结束状态能有________个。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; A、1个 多个 B、1个 1个 C、多个 多个 D、多个 1个
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;11、UML的（ C ）模型图由活动图、顺序图、状态图和合作图组成。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．用例 B．静态 C．动态 D．系统&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12、要对一个企业的工作流程建模，下面4种图中的（ B ）是最重要的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A 交互图 B 活动图 C 状态图 D 类图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;13、使用UML对系统进行动态建模，不能使用以下哪种图（ A ）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A 类图 B 顺序图 C 状态图 D 活动图&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;静态图：包括类图，包图，对象图。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;14、如果要对一个学校课程表管理系统的主要角色学生，老师的工作流程建模，需要使用的图是（C）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．序列图 B．状态图 C．活动图 D．协作图&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;15、下列对活动图的描述不正确的是（B）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．活动图是对象之间传送消息的时间顺序的可视化表示，目的在于描述系统中各个对象按照时间顺序的交互的过程&lt;/p&gt;
+&lt;p&gt;B．活动图是一种用于描述系统行为的模型视图，它可用来描述动作和动作导致对象状态改变的结果&lt;/p&gt;
+&lt;p&gt;C．活动图是模型中的完整单元，表示一个程序或工作流 ，常用于计算流程和工作流程建模&lt;/p&gt;
+&lt;p&gt;D．活动图可以算是状态图的一种变种并且活动图的符号与状态图的符号非常相似&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16、活动图中结束状态使用（C ）表示&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．菱形 B．直线箭头&lt;/p&gt;
+&lt;p&gt;C．黑色实心圆 D．空心圆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;17、下列说法不正确的是（B）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．对象流中的对象表示的不仅仅是对象自身，还表示了对象作为过程的一个状态存在&lt;/p&gt;
+&lt;p&gt;B．活动状态是原子性的，用来表示一个具有子结构的纯粹计算的执行&lt;/p&gt;
+&lt;p&gt;C．一个组合活动在表面上看是一个状态，但其本质确是一组子活动的概括&lt;/p&gt;
+&lt;p&gt;D．分支将转换路径分成多个部分，每一部分都有单独的监护条件和不同的结果&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;18、下面属于活动图组成要素的有（A）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A．泳道 B．动作状态&lt;/p&gt;
+&lt;p&gt;C．转换 D．活动状态&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>软件工程 怎样建立甘特图</title><link>https://blog.debuginn.com/p/test-software-build-gantt-chart/</link><pubDate>Wed, 13 Mar 2019 22:02:53 +0800</pubDate><guid>https://blog.debuginn.com/p/test-software-build-gantt-chart/</guid><description>&lt;p&gt;甘特图（Gantt chart ）又叫横道图、条状图(Bar chart)。它是以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续时间。它是在第一次世界大战时期发明的，以亨利·L·甘特先生的名字命名，他制定了一个完整地用条形图表进度的标志系统。由于甘特图形象简单，在简单、短期的项目中，甘特图都得到了最广泛的运用。&lt;/p&gt;
+&lt;p&gt;首先，建立基本的图表框架和时间刻度日期。您还可以选择如何设置任务栏、里程碑和其他图表元素的格式。&lt;/p&gt;
+&lt;p&gt;稍后，您可以更改日期，添加或删除任务和里程碑，以及创建任务间的依赖关系。您还可以应用配色方案，以及添加标题和图例。&lt;/p&gt;
+&lt;p&gt;在 Visio 的“文件”菜单上，依次指向“新建”和“日程”，然后单击“甘特图”。&lt;/p&gt;
+&lt;p&gt;单击“日期”选项卡，然后选择所需的选项。&lt;/p&gt;
+&lt;p&gt;注释：“主要单位”是您要在图表中使用的最长时间单位（如年或月），“次要单位”是最短时间单位（如日或小时）。&lt;/p&gt;
+&lt;p&gt;在“格式”选项卡中单击要在任务栏、里程碑和摘要栏上使用的形状和标签，然后单击“确定”。&lt;/p&gt;
+&lt;p&gt;注释：如果您不确定要选择何种格式，接受默认选项即可。您可以在以后更改该格式。&lt;/p&gt;
+&lt;h2 id="完成图表框架"&gt;&lt;a href="#%e5%ae%8c%e6%88%90%e5%9b%be%e8%a1%a8%e6%a1%86%e6%9e%b6" class="header-anchor"&gt;&lt;/a&gt;完成图表框架
+&lt;/h2&gt;&lt;p&gt;建立甘特图后，将显示一个通用的图表框架。&lt;/p&gt;
+&lt;p&gt;该框架就像一幅空白画布，您可以在其上添加日程的详细信息：&lt;/p&gt;
+&lt;p&gt;在“任务名称”列中，单击某个单元格，键入特定的任务名称来代替通用文字。随着项目进展，您可以添加更多任务。&lt;/p&gt;
+&lt;p&gt;最初，“开始时间”和“完成时间”列中的日期反映了您为项目指定的开始日期。要更改该日期，请单击单元格，然后键入新日期。&lt;/p&gt;
+&lt;p&gt;“工期”列将随您键入的新开始日期和完成日期自动更新。您还可以键入开始日期和完成日期之一以及工期来指示任务的时间长度。&lt;/p&gt;
+&lt;p&gt;在“时间刻度”（标有“2000”的其下显示有月份的区域）中，“主要单位”显示在顶部，“次要单位”显示在底部。&lt;/p&gt;
+&lt;p&gt;时间刻度始于您指定的开始日期，止于您指定的完成日期。当您添加任务的开始日期和结束日期或工期时，任务栏将出现在时间刻度下面的区域中，且该区域将展开。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提示&lt;/strong&gt; 要记录与每一任务有关的其他数据，您可以添加更多的列。例如，您可以添加“资源”列，以便您的甘特图反映出每个任务的负责人。&lt;/p&gt;
+&lt;h2 id="给甘特图添加数据"&gt;&lt;a href="#%e7%bb%99%e7%94%98%e7%89%b9%e5%9b%be%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;给甘特图添加数据
+&lt;/h2&gt;&lt;p&gt;您可以将反映项目日程详细信息的数据填入框架。还可以添加并优化以下日程元素：&lt;/p&gt;
+&lt;h3 id="任务"&gt;&lt;a href="#%e4%bb%bb%e5%8a%a1" class="header-anchor"&gt;&lt;/a&gt;任务
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303252205077_5330965387090029223.png"
+width="570"
+height="278"
+loading="lazy"
+alt="任务"
+class="gallery-image"
+data-flex-grow="205"
+data-flex-basis="492px"
+&gt;&lt;/p&gt;
+&lt;p&gt;甘特图中的每个任务在图表框架中占用一行。当您在“任务名称”列的单元格中键入任务名称时，任务工期将表示为时间刻度下方区域中的任务栏。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;th&gt;采取的操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;更改任务名称&lt;/td&gt;
+&lt;td&gt;单击包含该任务的“任务名称”列中的单元格，然后键入新名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;设置或更改任务工期&lt;/td&gt;
+&lt;td&gt;在包含要更改日期或工期的甘特图框架中，单击单元格，然后键入新信息。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;注释&lt;/td&gt;
+&lt;td&gt;根据以下规则键入工期：1h 表示 1 小时 1d 表示 1 天 1w 表示 1 周 1m 表示 1 个月&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;在甘特图底部添加新任务&lt;/td&gt;
+&lt;td&gt;通过单击围绕图表的实线，选择甘特图框架。要创建新的任务行，请拖动位于框架底部中央的绿色选择手柄。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;在两个现有任务之间添加新任务&lt;/td&gt;
+&lt;td&gt;右键单击要在其上方显示新任务行的行中的任意单元格，然后单击快捷菜单中的“新建任务”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;给任务添加完成百分比指示器&lt;/td&gt;
+&lt;td&gt;右键单击要显示完成百分比列的位置左侧的列顶部的阴影部分，然后单击快捷菜单中的“插入列”。 在“列类型”下，单击“完成百分比”，然后单击“确定”。 随着任务的进展，在新列中键入任务的完成百分比。完成百分比指示器便会出现在任务栏中。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;删除任务&lt;/td&gt;
+&lt;td&gt;右键单击表示要删除的任务的行中的任意单元格，然后单击快捷菜单中的“删除任务”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;更改任务栏的显示方式&lt;/td&gt;
+&lt;td&gt;右键单击任务栏，然后单击快捷菜单中的“任务选项”。在列表中单击所需选项，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="里程碑"&gt;&lt;a href="#%e9%87%8c%e7%a8%8b%e7%a2%91" class="header-anchor"&gt;&lt;/a&gt;里程碑
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303252207579_13065913309338168407.jpg"
+width="335"
+height="166"
+loading="lazy"
+alt="里程碑"
+class="gallery-image"
+data-flex-grow="201"
+data-flex-basis="484px"
+&gt;&lt;/p&gt;
+&lt;p&gt;当您要在一个总括任务下合并若干附属任务时，可以使用摘要任务。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;th&gt;采取的操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;创建带有附属任务的摘要任务&lt;/td&gt;
+&lt;td&gt;给甘特图添加摘要任务和附属任务或里程碑。 要选择附属任务，请单击包含该任务名称的单元格。要选择多个任务，请在单击时按住 Shift。 右键单击其中一个选定的任务，然后单击快捷菜单中的“降级”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;设置摘要任务的工期&lt;/td&gt;
+&lt;td&gt;在表示第一个附属任务的行中，单击“开始时间”列中的单元格，然后键入该任务的开始日期。 对于同一个附属任务，单击“完成时间”列中的单元格，然后键入该任务的结束日期。 对每个附属任务重复第 1 步和第 2 步。 注释 在为所有附属任务添加任务工期信息后，摘要任务的工期会自动填入。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;降低任务级别（降级）&lt;/td&gt;
+&lt;td&gt;右键单击要降级的任务的名称，然后单击快捷菜单中的“降级”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;提升任务级别（升级）&lt;/td&gt;
+&lt;td&gt;右键单击要提升的任务的名称，然后单击快捷菜单中的“升级”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;更改摘要任务栏的显示方式&lt;/td&gt;
+&lt;td&gt;右键单击要更改的摘要任务的任务栏，然后单击快捷菜单中的“任务选项”。 在“摘要栏”下，选择摘要栏开头和结尾要使用的符号，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303252210303_597931343449973384.png"
+width="302"
+height="132"
+loading="lazy"
+alt="里程碑"
+class="gallery-image"
+data-flex-grow="228"
+data-flex-basis="549px"
+&gt;&lt;/p&gt;
+&lt;h2 id="依赖关系链接任务"&gt;&lt;a href="#%e4%be%9d%e8%b5%96%e5%85%b3%e7%b3%bb%e9%93%be%e6%8e%a5%e4%bb%bb%e5%8a%a1" class="header-anchor"&gt;&lt;/a&gt;依赖关系（链接任务）
+&lt;/h2&gt;&lt;p&gt;当您在甘特图中创建依赖另一个任务的任务时，一个箭头将把两个任务栏连接起来。如果更改另一个任务所依赖的任务的日期或工期，则依赖任务的日期也会随之更改。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;th&gt;采取的操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;设置任务之间的依赖关系&lt;/td&gt;
+&lt;td&gt;通过单击包含任务名称的单元格，选择要在其间建立依赖关系的任务和里程碑。要选择多个任务，请在选择时按住 Shift。 右键单击所选任务之一，然后单击快捷菜单中的“链接任务”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中断任务之间的依赖关系&lt;/td&gt;
+&lt;td&gt;通过单击包含任务名称的单元格，选择带有要断开依赖关系的任务。要选择多个任务，请在选择时按住 Shift。 右键单击其中一个选定的任务，然后单击快捷菜单中的“取消链接任务”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;更改依赖关系箭头的样式&lt;/td&gt;
+&lt;td&gt;打开甘特图，右键单击绘图页，然后单击快捷菜单中的“S 型连接线”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="数据列"&gt;&lt;a href="#%e6%95%b0%e6%8d%ae%e5%88%97" class="header-anchor"&gt;&lt;/a&gt;数据列
+&lt;/h2&gt;&lt;p&gt;项目日程是根据特定于任务的数据创建的。任务开始日期和工期这两个因素综合在一起决定项目的完成日期。在 Visio 甘特图中，任务数据存储在数据列中。如果要在甘特图中记录并显示其他任务数据，可以添加新列。例如，您可能要添加任务注释列，您可以在其中说明复杂的任务或独特的任务；添加资源列以列出负责完成每个任务的人员；或添加完成百分比列以跟踪每个任务已完成的百分比。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303252212523_16703677248135570805.png"
+width="570"
+height="278"
+loading="lazy"
+alt="数据列"
+class="gallery-image"
+data-flex-grow="205"
+data-flex-basis="492px"
+&gt;&lt;/p&gt;
+&lt;p&gt;默认情况下，新的甘特图在创建时将包含“任务名称”列、“开始时间”列、“完成时间”列和“工期”列。您可以重新安排现有列、添加新列或删除不再需要的列。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;th&gt;采取的操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;重命名现有列&lt;/td&gt;
+&lt;td&gt;单击要重命名列的标题，然后键入新名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;添加预先设计的新数据列&lt;/td&gt;
+&lt;td&gt;右键单击要显示新列的位置左侧的列标题，然后单击快捷菜单中的“插入列”。 在“列类型”列表中，单击与要添加的数据类型相对应的列名称，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;添加您自己设计的新数据列&lt;/td&gt;
+&lt;td&gt;右键单击要显示新列的位置左侧的列标题，然后单击快捷菜单中的“插入列”。 在“列类型”列表中，单击与要使用的数据格式（例如，“用户定义的小数”、“用户定义的文本”或“用户定义的时间”）相对应的一个用户定义的列，然后单击“确定”。为列键入新的名称。 注释 如果添加多个文本列，请每次选择不同的用户定义文本选项。例如，为第一列单击“用户定义的文本 1”，为第二列选择“用户定义的文本 2”，依此类推。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;删除（隐藏）数据列&lt;/td&gt;
+&lt;td&gt;右键单击要删除（隐藏）的列的标题，然后单击快捷菜单中的“隐藏列”。 注释 删除或隐藏图表中的列时，该列中的数据将保存到文件中。如果以后要再次显示该列，请右键单击列标题，然后单击快捷菜单中的“插入列”。在列表中选择要再次显示的列，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;移动数据列&lt;/td&gt;
+&lt;td&gt;单击移动的列的标题。 将列拖到新的位置。 请执行下列操作之一： 要将一列移到另一列的左侧，请将要移动列的中点放置在另一列中点的左侧。 要将一列移到另一列右侧，请将要移动列的中点放置在另一列中点的右侧。 要将一列移到时间刻度区域的右侧，请将要移动列的中点放置在时间刻度区域中点的右侧。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;注释&lt;/td&gt;
+&lt;td&gt;如果时间线刻度区域很长，您可能必须缩小视图，以便可以将该列移过该区域的中点。要缩小视图，请在“视图”菜单上指向“缩放比例”，然后单击所需的缩放级别。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="时间刻度"&gt;&lt;a href="#%e6%97%b6%e9%97%b4%e5%88%bb%e5%ba%a6" class="header-anchor"&gt;&lt;/a&gt;时间刻度
+&lt;/h2&gt;&lt;p&gt;时间刻度是主要时间单位和次要时间单位的刻度，它将从项目的开始日期延伸到结束日期。您可以定义时间刻度的时间单位、开始日期和结束日期以及非工作日。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303252216665_18024890236395532044.png"
+width="570"
+height="278"
+loading="lazy"
+alt="时间刻度"
+class="gallery-image"
+data-flex-grow="205"
+data-flex-basis="492px"
+&gt;&lt;/p&gt;
+&lt;p&gt;您可以滚动至时间刻度上特定的日期或任务，还可以更改时间刻度区域的宽度并显示更多的日期。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;th&gt;采取的操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;更改开始日期和/或结束日期&lt;/td&gt;
+&lt;td&gt;在甘特图中，右键单击时间刻度中的任何部分，然后单击快捷菜单中的“日期选项”。 在“时间刻度范围”下，选择新的开始日期/时间或结束日期/时间，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;更改时间单位&lt;/td&gt;
+&lt;td&gt;在甘特图中，右键单击时间刻度中的任何部分，然后单击快捷菜单中的“日期选项”。 在“时间单位”下，选择所需的“主要单位”和“次要单位”，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;设置非工作日&lt;/td&gt;
+&lt;td&gt;在甘特图中，右键单击时间刻度中的任何部分，然后单击快捷菜单中的“配置工作时间”。 为“工作日”和“工作时间”选择所需选项，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;滚动至特定的任务或里程碑&lt;/td&gt;
+&lt;td&gt;通过单击包含任务名称的单元格，选择要滚动至的任务或里程碑。 在“甘特图”工具栏上，单击“滚动至任务”按钮。 注释 如果看不到“甘特图”工具栏，请在“视图”菜单上指向“工具栏”，然后单击“甘特图”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;滚动至特定日期&lt;/td&gt;
+&lt;td&gt;在甘特图中，右键单击时间刻度中的任何位置，然后单击快捷菜单中的以下选项之一：“滚动至完成日期”- 滚动至时间刻度的结束位置。 “向左滚动一个单位”- 向左滚动一个次要单位。 “向右滚动一个单位”- 向右滚动一个次要单位。 “滚动至开始日期”- 滚动至时间刻度的开始位置。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;更改时间刻度区域的宽度&lt;/td&gt;
+&lt;td&gt;在时间刻度区域顶部的灰色区域中单击一次，然后再次单击，选择时间刻度列。 向任一个方向拖动列右侧的绿色选择手柄，直到区域的宽度满足您的要求。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;显示更多时间单位&lt;/td&gt;
+&lt;td&gt;单击甘特图框架周围的实线以选择该框架。 向右拖动位于框架中心偏右侧的绿色选择手柄。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;注释&lt;/td&gt;
+&lt;td&gt;当您展开时间刻度以显示更多时间单位时，还可以更改与项目相关的结束日期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="打印大型甘特图"&gt;&lt;a href="#%e6%89%93%e5%8d%b0%e5%a4%a7%e5%9e%8b%e7%94%98%e7%89%b9%e5%9b%be" class="header-anchor"&gt;&lt;/a&gt;打印大型甘特图
+&lt;/h2&gt;&lt;p&gt;除非是为小项目创建日程，否则，您的甘特图很可能超出一页标准打印纸的边界。下表说明了您可能遇到的一些打印问题，以及为了获得所预期的效果在打印前可以采取的相应措施。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;问题&lt;/th&gt;
+&lt;th&gt;解决方案&lt;/th&gt;
+&lt;th&gt;采取的操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;只打印了部分甘特图。&lt;/td&gt;
+&lt;td&gt;请确保整个图表适合绘图页的大小。&lt;/td&gt;
+&lt;td&gt;在“文件”菜单上，单击“页面设置”。 单击“页面大小”选项卡，单击“调整大小以适应绘图内容”，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打印纸和绘图页的方向不同。&lt;/td&gt;
+&lt;td&gt;更改打印纸方向。&lt;/td&gt;
+&lt;td&gt;在“文件”菜单上，单击“页面设置”。 单击“打印设置”选项卡，单击所需的方向，然后单击“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;您不知道甘特图打印时会占几页。&lt;/td&gt;
+&lt;td&gt;在打印绘图前预览其打印效果。&lt;/td&gt;
+&lt;td&gt;在“文件”菜单上，单击“打印预览”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;不知道分页符将出现在什么位置。&lt;/td&gt;
+&lt;td&gt;启用分页符，查看图表将平铺跨越多少张打印纸。&lt;/td&gt;
+&lt;td&gt;在“视图”菜单上，单击“分页符”。图表上的灰线表示进行分页的位置。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打印纸断开的位置不理想。&lt;/td&gt;
+&lt;td&gt;更改边距设置，以控制各页间的重叠。边距越大，页间的重叠越大。&lt;/td&gt;
+&lt;td&gt;在“文件”菜单上，单击“页面设置”。 在“打印设置”选项卡上，单击“设置”。 键入所需的边距设置，然后单击两次“确定”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

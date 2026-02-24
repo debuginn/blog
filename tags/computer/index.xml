@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computer on Debug客栈</title><link>https://blog.debuginn.com/tags/computer/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Computer on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 21 Mar 2020 15:46:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/computer/index.xml" rel="self" type="application/rss+xml"/><item><title>记一次不太正规的装机实践</title><link>https://blog.debuginn.com/p/computer-install/</link><pubDate>Sat, 21 Mar 2020 15:46:00 +0800</pubDate><guid>https://blog.debuginn.com/p/computer-install/</guid><description>&lt;p&gt;早就想着装一台组装机，来实操一下高中学的计算机组装与维修 ?，哈哈，开玩笑，想着组装一台电脑是我早有打算的事情，凭借着在学校实验室的时候帮助老师修理百十来台电脑的经验也可以轻松应对，正好家里人有装电脑的需求，本想着装机是一件比较愉快的事情，实时是激动的心、残废的手，装机翻车了，不过整体流程还可以，最后也正常的运行了起来，听我细细道来吧。&lt;/p&gt;
+&lt;h2 id="配置"&gt;&lt;a href="#%e9%85%8d%e7%bd%ae" class="header-anchor"&gt;&lt;/a&gt;配置
+&lt;/h2&gt;&lt;p&gt;朋友出价，我出配置，4000左右机型，性能还可以。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;配件名称&lt;/th&gt;
+&lt;th&gt;型号&lt;/th&gt;
+&lt;th&gt;价格&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU&lt;/td&gt;
+&lt;td&gt;英特尔（Intel）i5 9400F 酷睿六核 盒装CPU处理器&lt;/td&gt;
+&lt;td&gt;¥1199&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;主板&lt;/td&gt;
+&lt;td&gt;技嘉（GIGABYTE）B365 M AORUS ELITE&lt;/td&gt;
+&lt;td&gt;¥669&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;显卡&lt;/td&gt;
+&lt;td&gt;七彩虹（Colorful）iGame GeForce GTX 1650 SUPER AD Special OC 4G 1530-1755MHz&lt;/td&gt;
+&lt;td&gt;¥1279&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;内存条&lt;/td&gt;
+&lt;td&gt;金士顿(Kingston) DDR4 2666 8GB 台式机内存条 骇客神条 Fury雷电系列&lt;/td&gt;
+&lt;td&gt;¥359&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SSD&lt;/td&gt;
+&lt;td&gt;东芝（TOSHIBA）250G SSD固态硬盘 M.2接口（NVME协议） RC500系列&lt;/td&gt;
+&lt;td&gt;¥409&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电源&lt;/td&gt;
+&lt;td&gt;鑫谷（Segotep）额定350W 核动力-巡洋舰 Q5 电源&lt;/td&gt;
+&lt;td&gt;¥139&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;散热器&lt;/td&gt;
+&lt;td&gt;酷冷至尊(Cooler Master) 暴雪T400i 风冷散热器&lt;/td&gt;
+&lt;td&gt;¥89.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;机箱&lt;/td&gt;
+&lt;td&gt;爱国者（aigo）炫影黑京东专供版 电脑机箱（配3把发光风扇/支持ATX主板/蜂窝玻璃面板/背线）&lt;/td&gt;
+&lt;td&gt;¥229&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;总价&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;¥4322.90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="包装"&gt;&lt;a href="#%e5%8c%85%e8%a3%85" class="header-anchor"&gt;&lt;/a&gt;包装
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122254830_4955603825012065468.jpg"
+width="2560"
+height="1440"
+loading="lazy"
+alt="包装"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;不得不说，京东快递就是很快，不过，快归快，3000米，抱着这三个大箱子往住的地方跑，最后手抖不停???，看来要健身减肥了。&lt;/p&gt;
+&lt;p&gt;打开了纸箱，买的配件都显露了出来，在床上摆拍了一下。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122255171_17927668668547928937.jpg"
+width="2560"
+height="1440"
+loading="lazy"
+alt="包装"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;很壮观，也很有气势，哈哈，接下来就进行拆解组装了…………&lt;/p&gt;
+&lt;h2 id="组装"&gt;&lt;a href="#%e7%bb%84%e8%a3%85" class="header-anchor"&gt;&lt;/a&gt;组装
+&lt;/h2&gt;&lt;p&gt;一般组装都讲究顺序，作为从不看产品使用说明的我，上来就装起了主板 ?，看到 CPU 和散热风扇在孤零零的躺着，emmm，拆出来吧，唉，就这样才把 CPU 放上，装上了内存，固态 SSD，和散热器，由于太过锋利，又没有防护措施，唉，挂了彩。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122255566_4829395669821233637.jpg"
+width="2560"
+height="1440"
+loading="lazy"
+alt="挂了彩"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+&gt;&lt;/p&gt;
+&lt;p&gt;此处省略弱鸡的我装机，省略500子，最后终于安装成功。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;给大家一个实践得来的建议，装机顺序，一定要记好：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装 CPU 及散热风扇；&lt;/li&gt;
+&lt;li&gt;安装内存条、M.2 接口类型的固态；&lt;/li&gt;
+&lt;li&gt;安装主板，固定扩展插槽位置对齐；&lt;/li&gt;
+&lt;li&gt;安装电源；&lt;/li&gt;
+&lt;li&gt;安装显卡；&lt;/li&gt;
+&lt;li&gt;从背部走线，对应主板、CPU供电插槽、显卡供电插槽、音视频，USB2.0/3.0 、散热器供电插槽插上对应的线，同学们，看说明书；&lt;/li&gt;
+&lt;li&gt;开机，测试安装如何；&lt;/li&gt;
+&lt;li&gt;可以的话就整理线，用扎带固定好，关上机箱，就可以喽。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;经过以上安装步骤，终于安装完毕，请看结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122257806_1197118650918486436.jpg"
+width="2560"
+height="1920"
+loading="lazy"
+alt="请看结果"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+&gt;&lt;/p&gt;
+&lt;p&gt;插上电源，为我爆灯………………&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122258728_6269068719166387053.jpg"
+width="2560"
+height="1920"
+loading="lazy"
+alt="为我爆灯"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+&gt;&lt;/p&gt;
+&lt;p&gt;正常运行，感觉良好，记下来就要装系统喽。&lt;/p&gt;
+&lt;h2 id="系统"&gt;&lt;a href="#%e7%b3%bb%e7%bb%9f" class="header-anchor"&gt;&lt;/a&gt;系统
+&lt;/h2&gt;&lt;p&gt;首当其从，当然是 Windows10 啦，嗯，没错，只有 Windows10 是可以配得上我亲手装的机器，所谓郎才配女貌 ??。从公司让同事帮忙借了一套显示器及无线键鼠，之后又安装了大白菜系统，开始安装。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122259537_2613166217239174042.jpg"
+width="2560"
+height="1437"
+loading="lazy"
+alt="系统"
+class="gallery-image"
+data-flex-grow="178"
+data-flex-basis="427px"
+&gt;&lt;/p&gt;
+&lt;p&gt;不得不说，现在的配置安装 windows10 真的很快，并且开关机可以达到5秒内完成，牛掰。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303122259091_5603595717016950812.jpg"
+width="2560"
+height="1437"
+loading="lazy"
+alt="windows10"
+class="gallery-image"
+data-flex-grow="178"
+data-flex-basis="427px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on Debug客栈</title><link>https://blog.debuginn.com/tags/vim/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Vim on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 16 May 2020 15:57:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Vim 命令手记</title><link>https://blog.debuginn.com/p/linux-vim-command/</link><pubDate>Sat, 16 May 2020 15:57:00 +0800</pubDate><guid>https://blog.debuginn.com/p/linux-vim-command/</guid><description>&lt;p&gt;经常使用 Linux 的同学在编辑文本文件的时候一定知道 Vim 这一款神器，它代替 Linux 默认原装的 Vi 编辑器，它的快捷键可以使你在操控文件的时候如庖丁解牛般流畅，博主目前只会简单的命令，感觉不能满足开发需求，今天特地的学习了一下，并且针对于常用的命令做了整理及汇总：&lt;/p&gt;
+&lt;h2 id="开源项目"&gt;&lt;a href="#%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae" class="header-anchor"&gt;&lt;/a&gt;开源项目
+&lt;/h2&gt;&lt;p&gt;首先，Vim 编辑器是一个开源的项目，按照惯例，请给开发者一个 Star 奖励：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://github.com/vim/vim" target="_blank" rel="noopener"
+&gt;https://github.com/vim/vim&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="常用命令示意图"&gt;&lt;a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e7%a4%ba%e6%84%8f%e5%9b%be" class="header-anchor"&gt;&lt;/a&gt;常用命令示意图
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303121856602_8829273207813355818.png"
+width="2046"
+height="1000"
+loading="lazy"
+alt="vim 常用命令示意图"
+class="gallery-image"
+data-flex-grow="204"
+data-flex-basis="491px"
+&gt;&lt;/p&gt;
+&lt;h2 id="常用命令参考"&gt;&lt;a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e5%8f%82%e8%80%83" class="header-anchor"&gt;&lt;/a&gt;常用命令参考
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;th&gt;操作说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + f&lt;/td&gt;
+&lt;td&gt;屏幕向下移动一页，类似 Page Down 按键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + b&lt;/td&gt;
+&lt;td&gt;屏幕向上移动一页，类似 Page Up 按键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0 或 Home 键&lt;/td&gt;
+&lt;td&gt;移动到这一行最前面的字符处&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$ 或 End 键&lt;/td&gt;
+&lt;td&gt;移动到这一行最后面的字符处&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;移动到这个文件的最后一行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gg&lt;/td&gt;
+&lt;td&gt;移动到这个文件的第一行，相当于 1G&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;N[Enter]&lt;/td&gt;
+&lt;td&gt;N 为数字。光标向下移动 N 行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/word&lt;/td&gt;
+&lt;td&gt;向下寻找一个名称为 word 的字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;?word&lt;/td&gt;
+&lt;td&gt;向上寻找一个名称为 word 的字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;n&lt;/td&gt;
+&lt;td&gt;搭配查找 word 字符串使用，代表&lt;strong&gt;重复前一个查找的操作&lt;/strong&gt;。例：如果前一个命令执行了 /word 命令去向下查找 word 这个字符串，当按下 n 后，会继续向下查找 word 这个字符串。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;搭配查找 word 字符串使用，代表&lt;strong&gt;重复前一个查找的操作（反向）&lt;/strong&gt;。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:n1,n2s/word1/word2/g&lt;/td&gt;
+&lt;td&gt;将此文本中的 word1字符串 替换为 word2 字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:1,$s/word1/word2/gc&lt;/td&gt;
+&lt;td&gt;将此文本中的 word1字符串 替换为 word2 字符串【给用户 confim提示】&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;x, X&lt;/td&gt;
+&lt;td&gt;在一行字符中，x为向后删除一个字符，X为向前删除一个字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dd&lt;/td&gt;
+&lt;td&gt;删除光标所在那一行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ndd&lt;/td&gt;
+&lt;td&gt;n为数字，删除光标所在向下n行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;yy&lt;/td&gt;
+&lt;td&gt;复制光标所在那一行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;nyy&lt;/td&gt;
+&lt;td&gt;n为数字，复制光标所在向下n行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;p, P&lt;/td&gt;
+&lt;td&gt;p将已经复制的数据在光标下一行粘贴 P将已经复制的数据在光标上一行粘贴&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;u&lt;/td&gt;
+&lt;td&gt;复原前一个操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + r&lt;/td&gt;
+&lt;td&gt;重做上一个操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;td&gt;重复上一个操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="模式切换"&gt;&lt;a href="#%e6%a8%a1%e5%bc%8f%e5%88%87%e6%8d%a2" class="header-anchor"&gt;&lt;/a&gt;模式切换
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;th&gt;操作说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;i, I&lt;/td&gt;
+&lt;td&gt;进入插入模式（Insert mode）: i为目前光标所在处插入，I为在目前行所在的第一个非空格符处插入。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;a, A&lt;/td&gt;
+&lt;td&gt;进入插入模式（Insert mode）: a为目前光标的下一个字符处插入，A为在目前行所在的最后一个字符处开始插入。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;o,O&lt;/td&gt;
+&lt;td&gt;进入插入模式（Insert mode）: o为在目前光标所在下一行插入一个新行，O为在目前光标所在上一行插入一个新行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;r,R&lt;/td&gt;
+&lt;td&gt;进入替换模式（Replace mode）：r 只会替换光标所在的那一个字符一次，R 会替换光标所在的文字，直到按下 [esc] 键。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[esc]&lt;/td&gt;
+&lt;td&gt;退出编辑模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="基础操作"&gt;&lt;a href="#%e5%9f%ba%e7%a1%80%e6%93%8d%e4%bd%9c" class="header-anchor"&gt;&lt;/a&gt;基础操作
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;th&gt;操作说明&lt;/th&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;th&gt;操作说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;:w&lt;/td&gt;
+&lt;td&gt;将编辑的文件写入磁盘文件中去。&lt;/td&gt;
+&lt;td&gt;:q!&lt;/td&gt;
+&lt;td&gt;强制退出编辑，且不保存操作。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:q&lt;/td&gt;
+&lt;td&gt;退出编辑，进入到命令行模式中去。&lt;/td&gt;
+&lt;td&gt;:wq&lt;/td&gt;
+&lt;td&gt;保存且退出编辑。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:wq!&lt;/td&gt;
+&lt;td&gt;强制保存且退出编辑。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Vim&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;环境修改&lt;/strong&gt;。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:set nu&lt;/td&gt;
+&lt;td&gt;显示行号，设置后会在没有行前面前缀对应行号。&lt;/td&gt;
+&lt;td&gt;:set nonu&lt;/td&gt;
+&lt;td&gt;与:set nu相反，取消行号显示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="键盘标识"&gt;&lt;a href="#%e9%94%ae%e7%9b%98%e6%a0%87%e8%af%86" class="header-anchor"&gt;&lt;/a&gt;键盘标识
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303121909492_13182685015716138986.gif"
+width="1024"
+height="724"
+loading="lazy"
+alt="vi / vim 键盘图"
+class="gallery-image"
+data-flex-grow="141"
+data-flex-basis="339px"
+&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

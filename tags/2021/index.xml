@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2021 on Debug客栈</title><link>https://blog.debuginn.com/tags/2021/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 2021 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 30 Dec 2021 08:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/2021/index.xml" rel="self" type="application/rss+xml"/><item><title>2021 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2021/</link><pubDate>Thu, 30 Dec 2021 08:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2021/</guid><description>&lt;p&gt;今年，时间依旧飞快流逝，转眼间，自己已经毕业了小2年了，渐渐的自己开始习惯了北漂的生活，一个人的北京，自由与孤独同在。也体会到了离家远的遗憾，远的连奶奶最后一面也没有见到，第一次感受到了亲人阴阳两隔的无奈与悲哀。疫情 😷 在全球范围内还在持续，国内偶尔也零星的出现，但愿 22 年疫情结束，全世界人们都可以回归到疫情之前，和爱人、亲人、朋友去想去的地方，去探索多彩的世界。&lt;/p&gt;
+&lt;h2 id="网站数据"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;网站数据
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://analytics.google.com/analytics/web/#/p260538804/reports/reportinghub?params=_u.dateOption%3DyearToDate%26_u.comparisonOption%3Ddisabled" target="_blank" rel="noopener"
+&gt;2021年统计数据共享链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302262132632_16546424024553247583.png"
+width="2118"
+height="786"
+loading="lazy"
+alt="访问数据"
+class="gallery-image"
+data-flex-grow="269"
+data-flex-basis="646px"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302262133191_13989654176397474696.png"
+width="1274"
+height="1144"
+loading="lazy"
+alt="访问国家/地区"
+class="gallery-image"
+data-flex-grow="111"
+data-flex-basis="267px"
+&gt;&lt;/p&gt;
+&lt;p&gt;今年，写了一些在工作中使用到的 Golang 的一些技巧及思考，以及一些规范。&lt;/p&gt;
+&lt;p&gt;让我意外的是大家对 Go 语言入门学习有着很大的兴趣，下面这个文章是今年访问最多的文章，访问量：2785&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/p/go-dev-design/" &gt;https://blog.debuginn.com/p/go-dev-design/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="技术导航"&gt;&lt;a href="#%e6%8a%80%e6%9c%af%e5%af%bc%e8%88%aa" class="header-anchor"&gt;&lt;/a&gt;技术导航
+&lt;/h2&gt;&lt;p&gt;经常游荡于各个大厂的技术博客之中，于是做了一个集合导航，后续计划将大佬们也收集到此，大家有好的技术分享网站也可以评论区留言分享一下。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item><item><title>2020 年度总结</title><link>https://blog.debuginn.com/p/debuginn-2020/</link><pubDate>Thu, 31 Dec 2020 23:59:59 +0800</pubDate><guid>https://blog.debuginn.com/p/debuginn-2020/</guid><description>&lt;p&gt;今年，最大的感受就是时间过的太快了，一切都是那么的来不及 &amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2020 年&lt;/strong&gt;，疫情、毕业、工作，学生时代的 END，社会人时代的 START &amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2021 年&lt;/strong&gt;，希望一切都在慢慢变好，新的开始、新的未来！！！&lt;/p&gt;
+&lt;p&gt;每一次总结都是新的开始的起点，那么，接下来就开始吧～&lt;/p&gt;
+&lt;h2 id="网站数据"&gt;&lt;a href="#%e7%bd%91%e7%ab%99%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;网站数据
+&lt;/h2&gt;&lt;p&gt;今年是小站运行的第 4 年，感谢大家的支持与访问，这是我分享的天地、同时也是见证我成长的地方，加油～ 一往无前 ！！！&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302272142177_9022304292420114832.png"
+width="2300"
+height="1146"
+loading="lazy"
+alt="2020 年度访问"
+class="gallery-image"
+data-flex-grow="200"
+data-flex-basis="481px"
+&gt;&lt;/p&gt;
+&lt;h2 id="最受欢迎的文章"&gt;&lt;a href="#%e6%9c%80%e5%8f%97%e6%ac%a2%e8%bf%8e%e7%9a%84%e6%96%87%e7%ab%a0" class="header-anchor"&gt;&lt;/a&gt;最受欢迎的文章
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/design-restful-api/" &gt;🔥🔥🔥 Restful API 设计指北&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🔥🔥 吊打百度，多吉搜索引擎&lt;/li&gt;
+&lt;li&gt;🔥 程序猿的 Chrome 浏览器插件推荐&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/pingos-build-sever/" &gt;搭建流媒体服务器 PingOS 平台搭建&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.debuginn.com/p/mysql-chooes-storage-engine/" &gt;怎么优雅的选择 MySQL 存储引擎&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="more-页面"&gt;&lt;a href="#more-%e9%a1%b5%e9%9d%a2" class="header-anchor"&gt;&lt;/a&gt;More 页面
+&lt;/h2&gt;&lt;p&gt;2020 看见的我不止一面，这里记录了我的 MORE&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://blog.debuginn.com/about" &gt;https://debuginn.com/about&lt;/a&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

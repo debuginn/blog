@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cross on Debug客栈</title><link>https://blog.debuginn.com/tags/cross/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Cross on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 18 Jul 2018 19:05:38 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/cross/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript 跨域问题</title><link>https://blog.debuginn.com/p/js-cross-domain-problem/</link><pubDate>Wed, 18 Jul 2018 19:05:38 +0800</pubDate><guid>https://blog.debuginn.com/p/js-cross-domain-problem/</guid><description>&lt;h2 id="js跨域"&gt;&lt;a href="#js%e8%b7%a8%e5%9f%9f" class="header-anchor"&gt;&lt;/a&gt;JS跨域
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;跨域&lt;/strong&gt;，指的是浏览器不能执行其他网站的脚本。 它是由浏览器的同源策略造成的，是浏览器施加的安全限制。&lt;/p&gt;
+&lt;p&gt;JavaScript处于安全方面的考虑，不允许跨域调用其他页面的对象。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="http://debuginn.com/a.html" target="_blank" rel="noopener"
+&gt;http://debuginn.com/a.html&lt;/a&gt;调用http://debuginn.com/b.php （非跨域）&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://debuginn.com/a.html" target="_blank" rel="noopener"
+&gt;http://debuginn.com/a.html&lt;/a&gt;调用http://baidu.link/b.php （跨域）&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://debuginn.com/a.html" target="_blank" rel="noopener"
+&gt;http://debuginn.com/a.html&lt;/a&gt;调用http://a.debuginn.com/b.php （跨域）&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://debuginn.com/a.html" target="_blank" rel="noopener"
+&gt;http://debuginn.com/a.html&lt;/a&gt;调用http://debuginn.com:81/b.php （跨域）&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="http://debuginn.com/a.html" target="_blank" rel="noopener"
+&gt;http://debuginn.com/a.html&lt;/a&gt;调用https://debuginn.com/b.php （跨域）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="跨域解决方法一--代理"&gt;&lt;a href="#%e8%b7%a8%e5%9f%9f%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%e4%b8%80--%e4%bb%a3%e7%90%86" class="header-anchor"&gt;&lt;/a&gt;跨域解决方法一 — 代理
+&lt;/h3&gt;&lt;h3 id="跨域解决方法二--jsonp"&gt;&lt;a href="#%e8%b7%a8%e5%9f%9f%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%e4%ba%8c--jsonp" class="header-anchor"&gt;&lt;/a&gt;跨域解决方法二 — JSONP
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;JSONP用于解决主流浏览器的跨域数据访问的问题。&lt;/li&gt;
+&lt;li&gt;JSONP技术仅仅支持GET请求，不支持POST请求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="跨域解决方法三--xhr2"&gt;&lt;a href="#%e8%b7%a8%e5%9f%9f%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%e4%b8%89--xhr2" class="header-anchor"&gt;&lt;/a&gt;跨域解决方法三 — XHR2
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;在HTML5中提供的XMLHttpREquest Level2已经实现了跨域访问以及其他的一些新功能&lt;/li&gt;
+&lt;li&gt;IE10以下版本均不支持&lt;/li&gt;
+&lt;li&gt;在服务器端做一些小的改造即可：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;header(‘Access-Control-Allow-Origin:*’)&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;header(‘Access-Control-Allow-Methods:POST,GET’)&lt;/code&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

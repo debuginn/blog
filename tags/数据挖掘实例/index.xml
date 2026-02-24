@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据挖掘实例 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 数据挖掘实例 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 17 Jun 2019 16:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Python 数据挖掘实例 决策树分析</title><link>https://blog.debuginn.com/p/python-decision-tree/</link><pubDate>Mon, 17 Jun 2019 16:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/python-decision-tree/</guid><description>&lt;h2 id="安装anaconda-python集成环境"&gt;&lt;a href="#%e5%ae%89%e8%a3%85anaconda-python%e9%9b%86%e6%88%90%e7%8e%af%e5%a2%83" class="header-anchor"&gt;&lt;/a&gt;安装Anaconda Python集成环境
+&lt;/h2&gt;&lt;h3 id="下载环境"&gt;&lt;a href="#%e4%b8%8b%e8%bd%bd%e7%8e%af%e5%a2%83" class="header-anchor"&gt;&lt;/a&gt;下载环境
+&lt;/h3&gt;&lt;p&gt;官网： &lt;a class="link" href="https://www.anaconda.com/" target="_blank" rel="noopener"
+&gt;https://www.anaconda.com/&lt;/a&gt;
+下载： &lt;a class="link" href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener"
+&gt;https://www.anaconda.com/distribution/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303241219353_2608609039994036795.png"
+width="1610"
+height="618"
+loading="lazy"
+alt="anaconda 下载选择"
+class="gallery-image"
+data-flex-grow="260"
+data-flex-basis="625px"
+&gt;&lt;/p&gt;
+&lt;h3 id="安装环境"&gt;&lt;a href="#%e5%ae%89%e8%a3%85%e7%8e%af%e5%a2%83" class="header-anchor"&gt;&lt;/a&gt;安装环境
+&lt;/h3&gt;&lt;p&gt;下载过程中使用默认，但有一个页面需要确认，如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303241219803_17458692878223453737.png"
+width="623"
+height="485"
+loading="lazy"
+alt="anaconda选择页面"
+class="gallery-image"
+data-flex-grow="128"
+data-flex-basis="308px"
+&gt;&lt;/p&gt;
+&lt;p&gt;第一个勾是是否把 Anaconda 加入环境变量，这涉及到能否直接在 cmd中使用 conda、jupyter、 ipython 等命令，推荐打勾。&lt;/p&gt;
+&lt;p&gt;第二个是是否设置 Anaconda 所带的 Python 3.6 为系统默认的 Python 版本，可以打勾。&lt;/p&gt;
+&lt;p&gt;安装完成后，在开始菜单中显示“Anaconda2”如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303241220350_9295637614982437290.png"
+width="1117"
+height="203"
+loading="lazy"
+alt="安装显示界面"
+class="gallery-image"
+data-flex-grow="550"
+data-flex-basis="1320px"
+&gt;&lt;/p&gt;
+&lt;h3 id="安装第三方程序包-graphviz"&gt;&lt;a href="#%e5%ae%89%e8%a3%85%e7%ac%ac%e4%b8%89%e6%96%b9%e7%a8%8b%e5%ba%8f%e5%8c%85-graphviz" class="header-anchor"&gt;&lt;/a&gt;安装第三方程序包 Graphviz
+&lt;/h3&gt;&lt;p&gt;目的是在决策树算法中八进制最终的树结构。&lt;/p&gt;
+&lt;p&gt;1、打开 Anaconda Prompt ，输入 conda install python-graphviz，回车即可完成安装，如下图所示，本图所示已经安装 了 graphviz 包，若之前没有安装，这时会花点时间安装，安装不用干预。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303241221843_8122804984109692952.png"
+width="1461"
+height="727"
+loading="lazy"
+alt="安装决策树依赖包"
+class="gallery-image"
+data-flex-grow="200"
+data-flex-basis="482px"
+&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后先输入 python，然后再输入 import graphviz，测试是否成功安装，如上图所示。
+需要设置环境变量，才能使用新安装的 graphviz。&lt;/p&gt;
+&lt;h3 id="anaconda及依赖包环境变量设置"&gt;&lt;a href="#anaconda%e5%8f%8a%e4%be%9d%e8%b5%96%e5%8c%85%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e8%ae%be%e7%bd%ae" class="header-anchor"&gt;&lt;/a&gt;Anaconda及依赖包环境变量设置
+&lt;/h3&gt;&lt;p&gt;首先查看 anaconda 安装在哪个目录下，可以打开 Spyder 的属性，看一看目标是什么目 录。例如本机的 anaconda 安装路径为 C:\Users\lenovo\Anaconda2。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下面设置环境变量&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在用户变量“path”里添加 &lt;code&gt;C:\Users\debuginn\Anaconda2\Library\bin\graphviz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在系统变量的“path”里添加 &lt;code&gt;C:\Users\debuginn\Anaconda2\Library\bin\graphviz\dot.exe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果现在有正在打开的 anaconda 程序，例如正在 Spyder，那么关闭 Spyder，再启动，这 样刚才设置的环境变量生效。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="决策树分析"&gt;&lt;a href="#%e5%86%b3%e7%ad%96%e6%a0%91%e5%88%86%e6%9e%90" class="header-anchor"&gt;&lt;/a&gt;决策树分析
+&lt;/h2&gt;&lt;h3 id="格式化原始数据"&gt;&lt;a href="#%e6%a0%bc%e5%bc%8f%e5%8c%96%e5%8e%9f%e5%a7%8b%e6%95%b0%e6%8d%ae" class="header-anchor"&gt;&lt;/a&gt;格式化原始数据
+&lt;/h3&gt;&lt;p&gt;将下图的表 demo 输入到 Excel 中，保存为.csv 文件（.csv 为逗号分隔值文件格式）。
+注意将表 demo 中的汉字值转换成数据字值，例如“是否是公司职员”列中的“是”为“1”， “否”为“0”。转换后的表中数据如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303241222952_2117369647404692380.png"
+width="462"
+height="389"
+loading="lazy"
+alt="学习表"
+class="gallery-image"
+data-flex-grow="118"
+data-flex-basis="285px"
+&gt;&lt;/p&gt;
+&lt;h3 id="编写数据分析代码"&gt;&lt;a href="#%e7%bc%96%e5%86%99%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90%e4%bb%a3%e7%a0%81" class="header-anchor"&gt;&lt;/a&gt;编写数据分析代码
+&lt;/h3&gt;&lt;p&gt;编写程序对上面的数据进行决策树分类，采用信息熵（entropy）作为度量标准。参考代码如下所示：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;export_graphviz&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;graphviz&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;dataset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;reader&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;demo.csv&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;line_num&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;dataset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dataset&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;dataset&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;clf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;criterion&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;entropy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;dot_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;export_graphviz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;out_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;graph&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;graphviz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Source&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dot_data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;graph&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;table&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;digraph Tree &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;node &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;shape&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;box&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;X[0] &amp;lt;= 0.5\nentropy = 0.94\nsamples = 14\nvalue = [9, 5]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;X[1] &amp;lt;= 1.5\nentropy = 0.985\nsamples = 7\nvalue = [3, 4]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;0&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;labeldistance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2.5, &lt;span class="nv"&gt;labelangle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;45, &lt;span class="nv"&gt;headlabel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;True&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 3\nvalue = [0, 3]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;X[1] &amp;lt;= 2.5\nentropy = 0.811\nsamples = 4\nvalue = [3, 1]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 2\nvalue = [2, 0]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;3&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;X[3] &amp;lt;= 0.5\nentropy = 1.0\nsamples = 2\nvalue = [1, 1]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;3&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 1\nvalue = [1, 0]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;5&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 1\nvalue = [0, 1]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;5&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;X[1] &amp;lt;= 2.5\nentropy = 0.592\nsamples = 7\nvalue = [6, 1]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;0&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;labeldistance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2.5, &lt;span class="nv"&gt;labelangle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;-45, &lt;span class="nv"&gt;headlabel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;False&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 4\nvalue = [4, 0]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;8&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;X[3] &amp;lt;= 0.5\nentropy = 0.918\nsamples = 3\nvalue = [2, 1]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;8&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 2\nvalue = [2, 0]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;10&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;entropy = 0.0\nsamples = 1\nvalue = [0, 1]&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;10&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="数据分析结果"&gt;&lt;a href="#%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90%e7%bb%93%e6%9e%9c" class="header-anchor"&gt;&lt;/a&gt;数据分析结果
+&lt;/h3&gt;&lt;p&gt;程序运行结果在与该程序在同一目录下的 table.pdf 文件中，将每一个叶子结点转换成 IF-THEN 规则。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.debuginn.com/202303241223943_15684672856516412629.png"
+width="947"
+height="845"
+loading="lazy"
+alt="决策树分析结果"
+class="gallery-image"
+data-flex-grow="112"
+data-flex-basis="268px"
+&gt;&lt;/p&gt;
+&lt;h3 id="if-then分类规则"&gt;&lt;a href="#if-then%e5%88%86%e7%b1%bb%e8%a7%84%e5%88%99" class="header-anchor"&gt;&lt;/a&gt;IF-THEN分类规则
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（1）IF&lt;span class="s2"&gt;&amp;#34;不是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄大于等于40&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;不买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（2）IF&lt;span class="s2"&gt;&amp;#34;不是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄小于40&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（3）IF&lt;span class="s2"&gt;&amp;#34;不是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄大于50&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;信用为良&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;不买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（4）IF&lt;span class="s2"&gt;&amp;#34;不是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄大于40&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;信用为优&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（5）IF&lt;span class="s2"&gt;&amp;#34;是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄小于50&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;不买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（6）IF&lt;span class="s2"&gt;&amp;#34;是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄小于50&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;信用为优&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;（7）IF&lt;span class="s2"&gt;&amp;#34;是公司员工&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;年龄小于50&amp;#34;&lt;/span&gt; AND &lt;span class="s2"&gt;&amp;#34;信用为良&amp;#34;&lt;/span&gt;, THEN &lt;span class="s2"&gt;&amp;#34;不买保险&amp;#34;&lt;/span&gt;。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

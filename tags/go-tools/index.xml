@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go Tools on Debug客栈</title><link>https://blog.debuginn.com/tags/go-tools/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Go Tools on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 01 May 2022 18:12:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/go-tools/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 pprof 对 Go 程序进行分析优化</title><link>https://blog.debuginn.com/p/go-tools-pprof/</link><pubDate>Sun, 01 May 2022 18:12:00 +0800</pubDate><guid>https://blog.debuginn.com/p/go-tools-pprof/</guid><description>&lt;h2 id="前言"&gt;&lt;a href="#%e5%89%8d%e8%a8%80" class="header-anchor"&gt;&lt;/a&gt;前言
+&lt;/h2&gt;&lt;p&gt;在生产环境中，偶尔会发生 Go 程序 CPU 暴增的现象，排除某时段并发大的场景外，通过监控面板看不到程序是因为什么原因导致的，Go 语言原生就提供了工具 pprof，&lt;strong&gt;Google 对于 pprof 的解释就是一个用于可视化和分析数据的工具。&lt;/strong&gt; 通过使用 Go pprof 可以对程序的 CPU性能、内存占用、Goroutine wait share resource、mutex lock 做剖面分析，我们可以使用该工具收集运行时的程序性能指标，从而分析出程序中是否由于代码编写不合理导致存在不合理的资源占用情况，从而对程序进行优化用来提升其性能。&lt;/p&gt;
+&lt;h2 id="功能"&gt;&lt;a href="#%e5%8a%9f%e8%83%bd" class="header-anchor"&gt;&lt;/a&gt;功能
+&lt;/h2&gt;&lt;p&gt;Go pprof 提供了以下五种不同维度观测其程序的功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CPU Profiling&lt;/strong&gt;：CPU 性能分析，按照指定时间采集监听其 Go 程序 CPU 的使用情况，可以确定 Go 程序在哪个程序段中占用 CPU 耗时长；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Memory Profiling&lt;/strong&gt;：内存性能分析，用来分析程序的内存堆栈区使用情况，用来检测是否存在内存泄漏；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Block Profiling&lt;/strong&gt;：Goroutine 等待共享资源阻塞分析；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mutex Profiling&lt;/strong&gt;：互斥锁分析，用来报告共享资源使用互斥锁的竞争的情况；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goroutine Profiling&lt;/strong&gt;：协程性能分析，用来报告对当前运行时的 Goroutine 操作及数量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="使用"&gt;&lt;a href="#%e4%bd%bf%e7%94%a8" class="header-anchor"&gt;&lt;/a&gt;使用
+&lt;/h2&gt;&lt;p&gt;Go pprof 工具的使用也是比较简单快捷的，可以使用runtime/pprof包生成一个 profile 文件，网上也有很多的教程，这里不再过多描述了，详细可以看下包提供的&lt;a class="link" href="https://pkg.go.dev/runtime/pprof" target="_blank" rel="noopener"
+&gt;函数&lt;/a&gt;，上面介绍了使用方法。&lt;/p&gt;
+&lt;p&gt;目前我们主要使用的是&lt;code&gt;net/http/pprof&lt;/code&gt;包，启动一个独立端口号 http 程序单独用来 Go 程序的分析，&lt;strong&gt;搭配着 graphviz 组件来可视化程序来分析数据&lt;/strong&gt;，使用起来也是比较方便的：&lt;/p&gt;
+&lt;p&gt;第一步，将&lt;code&gt;net/http/pprof&lt;/code&gt;包引用到程序中，建议直接放在程序入口处 &lt;code&gt;main.go&lt;/code&gt; 文件&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;_&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;#34;net/http/pprof&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;第二步，若本身是一个 http 的程序，不需要此步骤，若不是 http web 程序或者不想将对应信息暴露在外网，可以单开一个 http web 程序用来专门监听服务：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 程序逻辑代码&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;_&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;ListenAndServe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;:8848&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}()&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;第三步，运行主程序，访问 pprof 界面：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/ # 主界面
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/allocs # 所有过去内存分配的采样
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/block # 导致同步阻塞的堆栈跟踪
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/cmdline # 当前程序的命令行的完整调用路径
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/goroutine # 所有当前 Goroutine 的堆栈跟踪
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/heap # 活动对象的内存分配的采样
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/mutex # 争用互斥锁持有者的堆栈跟踪
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/profile # CPU 配置文件
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/threadcreate # 创建新 OS 线程的堆栈跟踪
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://127.0.0.1:8848/debug/pprof/trace # 当前程序执行的跟踪
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;后缀加上 &lt;code&gt;?debug=1&lt;/code&gt; 可以可视化查看对应描述，不加就可以下载成 profile 文件，使用 pprof 命令可视化查看对应数据。&lt;/p&gt;
+&lt;p&gt;第四步，使用 &lt;code&gt;go tool pprof -http=:6001 profile&lt;/code&gt; 命令查看分析程序。&lt;/p&gt;
+&lt;h2 id="分析"&gt;&lt;a href="#%e5%88%86%e6%9e%90" class="header-anchor"&gt;&lt;/a&gt;分析
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://blog.debuginn.com/202302262125077_971086658962432323.png"
+width="1348"
+height="690"
+loading="lazy"
+alt="cpu profile"
+class="gallery-image"
+data-flex-grow="195"
+data-flex-basis="468px"
+&gt;&lt;/p&gt;
+&lt;p&gt;上图是针对 CPU 使用做的采集可视化，箭头越粗、方块越大就代表着对应的操作消耗 CPU 大，可以看到占用 CPU 最多的操作就是 json 的序列化和反序列化操作。&lt;/p&gt;
+&lt;p&gt;同理对应的内存性能、Goroutine 阻塞的分析都可以看出对应的操作。&lt;/p&gt;
+&lt;h2 id="总结"&gt;&lt;a href="#%e6%80%bb%e7%bb%93" class="header-anchor"&gt;&lt;/a&gt;总结
+&lt;/h2&gt;&lt;p&gt;使用 go pprof 工具可以分析解剖程序运行性能问题，可以快速定位生产环境中遇到的问题，并作出优化或者 fix bug，最后祝大家不会写出 bug code，程序稳定、头发永在。&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
