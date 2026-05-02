@@ -140,10 +140,10 @@ icon = "currency-solana"
 [promote]
 title = "推广"
 
-[[promote.items]]
-href = "/p/mi-work/"
-icon = "briefcase"
-text = "来小米，一起玩！校招、社招均可内推！"
+# [[promote.items]]
+# href = "/p/mi-work/"
+# icon = "briefcase"
+# text = "来小米，一起玩！校招、社招均可内推！"
 
 # [[promote.items]]
 # href = "https://www.xflash.org/#/register?code=yGSImRR7"
