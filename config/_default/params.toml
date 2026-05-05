@@ -161,7 +161,7 @@ target = "_blank"
 title = "热门"
 
 [[popular.items]]
-href = "/p/feiwan-plan/"
+href = "https://flybay.debuginn.com/"
 icon = "plane"
 text = "飞湾计划 通过开户补贴报销来往机票"
 

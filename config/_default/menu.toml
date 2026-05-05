@@ -47,11 +47,11 @@ newtab = false
 [[main]]
 identifier = "feiwan"
 name = "飞湾计划"
-url = "/p/feiwan-plan/"
+url = "https://flybay.debuginn.com/"
 weight = 6
 [main.params]
 icon = "plane"
-newtab = false
+newtab = true
 
 [[main]]
 identifier = "photo"
