@@ -164,6 +164,7 @@ title = "热门"
 href = "https://flybay.debuginn.com/"
 icon = "plane"
 text = "飞湾计划 通过开户补贴报销来往机票"
+target = "_blank"
 
 [[popular.items]]
 href = "/categories/travel/"
