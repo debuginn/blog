@@ -161,9 +161,9 @@ target = "_blank"
 title = "热门"
 
 [[popular.items]]
-href = "/p/financial-hongkong-card/"
-icon = "wallet"
-text = "港卡开卡指南"
+href = "/p/feiwan-plan/"
+icon = "plane"
+text = "飞湾计划 通过开户补贴报销来往机票"
 
 [[popular.items]]
 href = "/categories/travel/"
