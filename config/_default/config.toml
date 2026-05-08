@@ -1,6 +1,9 @@
 # Change baseurl before deploy
 baseurl = "https://blog.debuginn.com"
-languageCode = "zh"
+locale = "zh"
+
+# Remote image fetching timeout (default 60s too short for CDN)
+timeout = "300s"
 title = "Debug客栈"
 
 # Theme i18n support
