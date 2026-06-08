@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Skill on Debug客栈</title><link>https://blog.debuginn.com/tags/skill/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in Skill on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 18 Apr 2026 21:19:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/skill/index.xml" rel="self" type="application/rss+xml"/><item><title>开源了一个 Hugo 主题，专门用来展示 AI Skill</title><link>https://blog.debuginn.com/p/hugo-theme-skills/</link><pubDate>Sat, 18 Apr 2026 21:19:00 +0800</pubDate><guid>https://blog.debuginn.com/p/hugo-theme-skills/</guid><description>&lt;img src="https://webp.debuginn.com/20260418dE4G1Y.png" alt="Featured image of post 开源了一个 Hugo 主题，专门用来展示 AI Skill" /&gt;&lt;p&gt;大家好呀，我是 Meng小羽。&lt;/p&gt;
+&lt;p&gt;最近一直在折腾 AI 工作流，用 Hermes 这类 AI 助手越用越深，手里的 skill 攒了一大堆——说白了就是一堆&amp;quot;遇到这类问题该怎么做&amp;quot;的操作手册。写着写着就发现一个问题：这些 skill 全躺在本地吃灰，想找个地方展示出来，搜了一圈也没找到合适的现成方案。&lt;/p&gt;
+&lt;p&gt;行吧，那就自己做一个。&lt;/p&gt;
+&lt;p&gt;于是就有了 &lt;strong&gt;hugo-theme-skills&lt;/strong&gt;，一个专门用来做 skill 和工具介绍页的 Hugo 主题，现在已经开源了。&lt;/p&gt;
+&lt;p&gt;如果用一句话概括它，我会说：这不是单纯的主题皮肤，而是一个「技能卡片 + 可交互工具页 + 可扩展控件系统」三合一的小框架。&lt;/p&gt;
+&lt;p&gt;如果你手里已经有一批 AI skill、工作流脚本或者小工具，想把它们整理成一个能展示、能安装、还能直接互动体验的站点，这个主题会比较适合你。&lt;/p&gt;
+&lt;h2 id="选择-hugo-的原因"&gt;&lt;a href="#%e9%80%89%e6%8b%a9-hugo-%e7%9a%84%e5%8e%9f%e5%9b%a0" class="header-anchor"&gt;&lt;/a&gt;选择 Hugo 的原因
+&lt;/h2&gt;&lt;p&gt;静态站点省心这件事不用多说了，Hugo 构建速度快，部署往 GitHub Pages 或者 Cloudflare Pages 一扔就完事，不用操心服务器，也不用担心哪天数据库挂了。这个主题还特意做到了零 Node.js 依赖，不需要什么构建流水线，纯 Hugo + 原生 JS 和 CSS，拉下来就能跑。&lt;/p&gt;
+&lt;p&gt;不过选 Hugo 还有个更深的原因，这个理由跟 AI 本身有关。&lt;/p&gt;
+&lt;p&gt;Hugo 用 TOML/YAML 做配置，用 Markdown 写内容，所有结构都是格式清晰、约束明确的。说白了，AI 读你的内容不会有歧义，生成或者修改内容的准确度非常高。如果你手里有一批 skill 想批量生成页面，用 Hugo 做载体简直是天作之合。Hugo 不只是发布工具，它本身就是 AI 工作流里的天然接口。&lt;/p&gt;
+&lt;h2 id="效果展示"&gt;&lt;a href="#%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba" class="header-anchor"&gt;&lt;/a&gt;效果展示
+&lt;/h2&gt;&lt;h3 id="首页"&gt;&lt;a href="#%e9%a6%96%e9%a1%b5" class="header-anchor"&gt;&lt;/a&gt;首页
+&lt;/h3&gt;&lt;p&gt;&lt;img alt="首页" class="gallery-image" data-flex-basis="476px" data-flex-grow="198" height="2062" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260418kl6pGt.jpg" srcset="https://blog.debuginn.com/20260418kl6pGt_12246455576424369540_hu_6ef2b382647c02bf.jpg 800w, https://blog.debuginn.com/20260418kl6pGt_12246455576424369540_hu_4951f165ee4087a2.jpg 1600w, https://blog.debuginn.com/20260418kl6pGt_12246455576424369540_hu_84e6d9a340107f6c.jpg 2400w, https://webp.debuginn.com/20260418kl6pGt.jpg 4096w" width="4096"&gt;&lt;/p&gt;
+&lt;h3 id="skill-install"&gt;&lt;a href="#skill-install" class="header-anchor"&gt;&lt;/a&gt;Skill Install
+&lt;/h3&gt;&lt;p&gt;&lt;img alt="Skill" class="gallery-image" data-flex-basis="476px" data-flex-grow="198" height="2062" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260418YA9wI1.jpg" srcset="https://blog.debuginn.com/20260418YA9wI1_17641408966476720484_hu_babdfb8603a1deaf.jpg 800w, https://blog.debuginn.com/20260418YA9wI1_17641408966476720484_hu_9af199c72dc055f4.jpg 1600w, https://blog.debuginn.com/20260418YA9wI1_17641408966476720484_hu_93f81d439b9afcc2.jpg 2400w, https://webp.debuginn.com/20260418YA9wI1.jpg 4096w" width="4096"&gt;&lt;/p&gt;
+&lt;h3 id="暗黑模式"&gt;&lt;a href="#%e6%9a%97%e9%bb%91%e6%a8%a1%e5%bc%8f" class="header-anchor"&gt;&lt;/a&gt;暗黑模式
+&lt;/h3&gt;&lt;p&gt;&lt;img alt="模式" class="gallery-image" data-flex-basis="476px" data-flex-grow="198" height="2062" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260418TRRDh2.jpg" srcset="https://blog.debuginn.com/20260418TRRDh2_11240209266105461945_hu_46c4ed0d149e39d.jpg 800w, https://blog.debuginn.com/20260418TRRDh2_11240209266105461945_hu_a804872d3f13231b.jpg 1600w, https://blog.debuginn.com/20260418TRRDh2_11240209266105461945_hu_7b0efc37a1fd1280.jpg 2400w, https://webp.debuginn.com/20260418TRRDh2.jpg 4096w" width="4096"&gt;&lt;/p&gt;
+&lt;h3 id="工具页面"&gt;&lt;a href="#%e5%b7%a5%e5%85%b7%e9%a1%b5%e9%9d%a2" class="header-anchor"&gt;&lt;/a&gt;工具页面
+&lt;/h3&gt;&lt;p&gt;&lt;img alt="Tools" class="gallery-image" data-flex-basis="476px" data-flex-grow="198" height="2062" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/202604185Xtt4k.jpg" srcset="https://blog.debuginn.com/202604185Xtt4k_8784999474247194409_hu_42b958b80dc17dd7.jpg 800w, https://blog.debuginn.com/202604185Xtt4k_8784999474247194409_hu_1648b9f34f5dd24f.jpg 1600w, https://blog.debuginn.com/202604185Xtt4k_8784999474247194409_hu_1e0486feeb6b1748.jpg 2400w, https://webp.debuginn.com/202604185Xtt4k.jpg 4096w" width="4096"&gt;&lt;/p&gt;
+&lt;h3 id="多语言"&gt;&lt;a href="#%e5%a4%9a%e8%af%ad%e8%a8%80" class="header-anchor"&gt;&lt;/a&gt;多语言
+&lt;/h3&gt;&lt;p&gt;&lt;img alt="多语言" class="gallery-image" data-flex-basis="476px" data-flex-grow="198" height="2062" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260418HMMmlo.jpg" srcset="https://blog.debuginn.com/20260418HMMmlo_3766882964699445214_hu_e695d65c71fe24a.jpg 800w, https://blog.debuginn.com/20260418HMMmlo_3766882964699445214_hu_aa411dadc44b9589.jpg 1600w, https://blog.debuginn.com/20260418HMMmlo_3766882964699445214_hu_2afd36fa1032091f.jpg 2400w, https://webp.debuginn.com/20260418HMMmlo.jpg 4096w" width="4096"&gt;&lt;/p&gt;
+&lt;h2 id="快速上手"&gt;&lt;a href="#%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b" class="header-anchor"&gt;&lt;/a&gt;快速上手
+&lt;/h2&gt;&lt;p&gt;环境要求：Hugo &amp;gt;= 0.115.0（建议 extended 版本），Go &amp;gt;= 1.21。&lt;/p&gt;
+&lt;p&gt;推荐 Hugo Module 方式接入，三步搞定：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 第一步：初始化（已经初始化过的跳过）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo mod init github.com/yourname/your-site
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 第二步：在 hugo.toml 里引入主题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;module&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;[[&lt;/span&gt;module.imports&lt;span class="o"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;github.com/debuginn/hugo-theme-skills&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 第三步：拉取主题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo mod get github.com/debuginn/hugo-theme-skills
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo mod tidy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;不想用 Module 的话，git submodule 也行，然后 &lt;code&gt;hugo.toml&lt;/code&gt; 加 &lt;code&gt;theme = &amp;quot;hugo-theme-skills&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;本地跑一下：&lt;code&gt;cd exampleSite &amp;amp;&amp;amp; hugo server&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="最后"&gt;&lt;a href="#%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;最后
+&lt;/h2&gt;&lt;p&gt;说实话做这个主题的过程还挺愉快的，因为本来就是给自己用的，每加一个功能都能立刻用上，这种&amp;quot;写完就跑&amp;quot;的开发节奏比赶需求舒服多了。&lt;/p&gt;
+&lt;p&gt;如果你也在用 Hermes、Claude 这类 AI 助手，手里也攒了一批自己的 skill，希望有个好看的地方把它们展示出来，不妨试试这个主题。说不定搭着搭着，就搭出了一个属于自己的小 skill 市场。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Demo：&lt;a class="link" href="https://skills.debuginn.com" target="_blank" rel="noopener"
+&gt;ttps://skills.debuginn.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;我的工具站点：&lt;a class="link" href="https://tools.debuginn.com" target="_blank" rel="noopener"
+&gt;https://tools.debuginn.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub：&lt;a class="link" href="https://github.com/debuginn/hugo-theme-skills" target="_blank" rel="noopener"
+&gt;https://github.com/debuginn/hugo-theme-skills&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;欢迎 Star，欢迎提 Issue，也欢迎直接 PR 进来一起玩～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://flybay.debuginn.com/"&gt;飞湾计划&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
