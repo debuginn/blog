@@ -4,7 +4,7 @@
 
 ## 简介
 
-Debug客栈（blog.debuginn.com）是一个中文技术博客，由 Meng小羽（@idebuginn）维护。内容涵盖前端开发、AI 工具、开源项目、生活记录和旅行游记。博客基于 Hugo 构建，使用 Stack 主题。
+Debug客栈（blog.debuginn.com）是一个中文技术博客，由 Meng小羽（@xdebuginn）维护。内容涵盖前端开发、AI 工具、开源项目、生活记录和旅行游记。博客基于 Hugo 构建，使用 Stack 主题。
 
 ## 站点信息
 

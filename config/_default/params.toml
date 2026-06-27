@@ -87,7 +87,7 @@ type = "popular"
 # type = "ad"
 
 [opengraph.twitter]
-site = "idebuginn"
+site = "xdebuginn"
 card = "summary_large_image"
 
 [defaultImage]
