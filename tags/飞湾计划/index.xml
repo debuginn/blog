@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>飞湾计划 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E9%A3%9E%E6%B9%BE%E8%AE%A1%E5%88%92/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 飞湾计划 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Tue, 05 May 2026 09:19:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E9%A3%9E%E6%B9%BE%E8%AE%A1%E5%88%92/index.xml" rel="self" type="application/rss+xml"/><item><title>飞湾计划：把一趟大湾区之行，顺手变成港澳开户探索路线</title><link>https://blog.debuginn.com/p/fly-bay/</link><pubDate>Tue, 05 May 2026 09:19:00 +0800</pubDate><guid>https://blog.debuginn.com/p/fly-bay/</guid><description>&lt;img src="https://webp.debuginn.com/20260504vs1oCH.png" alt="Featured image of post 飞湾计划：把一趟大湾区之行，顺手变成港澳开户探索路线" /&gt;&lt;p&gt;大家好呀，我是 Meng小羽。&lt;/p&gt;
+&lt;p&gt;之前写过一篇&lt;a class="link" href="https://blog.debuginn.com/p/financial-hongkong-card/" &gt;《港卡开卡指南》&lt;/a&gt;，当时主要是自己去香港旅游，顺手把港卡办了，回来之后把材料、流程、踩坑点都整理了一遍。没想到后来陆陆续续有很多朋友来问：现在还能不能开？需要准备什么？去香港还是去澳门？如果顺便开港美股账户，流程会不会很麻烦？&lt;/p&gt;
+&lt;p&gt;问得多了之后，我发现这件事其实不是“开一张卡”这么简单。&lt;/p&gt;
+&lt;p&gt;它更像是一趟小型大湾区探索任务：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;出发前要准备证件、材料和 APP；&lt;/li&gt;
+&lt;li&gt;到港澳之后要处理网络、短信、人脸识别、入境凭证；&lt;/li&gt;
+&lt;li&gt;证券账户、银行账户、入金规则、活动奖励又各不相同；&lt;/li&gt;
+&lt;li&gt;最后还要算一下，这趟路费到底值不值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;于是，就有了这个小项目：&lt;a class="link" href="https://flybay.debuginn.com/" target="_blank" rel="noopener"
+&gt;FlyBay 飞湾计划&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="飞湾计划是什么"&gt;&lt;a href="#%e9%a3%9e%e6%b9%be%e8%ae%a1%e5%88%92%e6%98%af%e4%bb%80%e4%b9%88" class="header-anchor"&gt;&lt;/a&gt;飞湾计划是什么？
+&lt;/h2&gt;&lt;p&gt;简单来说，飞湾计划是一个大湾区港澳银行卡与证券账户开户的一站式信息指南。&lt;/p&gt;
+&lt;p&gt;它把目前适合内地用户关注的港澳银行、香港证券、内地见证开户等信息整理到一个页面里，不需要大家在各种 APP、小红书、微信群、官网活动页之间反复横跳。&lt;/p&gt;
+&lt;p&gt;目前 FlyBay 覆盖了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;香港证券账户；&lt;/li&gt;
+&lt;li&gt;香港银行账户；&lt;/li&gt;
+&lt;li&gt;澳门银行账户；&lt;/li&gt;
+&lt;li&gt;内地见证开户；&lt;/li&gt;
+&lt;li&gt;赴港、赴澳开户路线；&lt;/li&gt;
+&lt;li&gt;开户活动、官方激励、渠道返利信息；&lt;/li&gt;
+&lt;li&gt;出发城市到大湾区的机票成本测算。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你可以把它理解为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一份会算账、会列机构、会提醒流程的大湾区开户地图。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="FlyBay" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="941" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/202605040JcFr9.png" srcset="https://blog.debuginn.com/202605040JcFr9_6235033708422908786_hu_efea41e89fd2b60a.png 800w, https://blog.debuginn.com/202605040JcFr9_6235033708422908786_hu_972a631721a14c.png 1600w, https://webp.debuginn.com/202605040JcFr9.png 1672w" width="1672"&gt;&lt;/p&gt;
+&lt;h2 id="为什么要做这个"&gt;&lt;a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e5%81%9a%e8%bf%99%e4%b8%aa" class="header-anchor"&gt;&lt;/a&gt;为什么要做这个？
+&lt;/h2&gt;&lt;p&gt;因为普通人想了解港澳开户，最大的问题不是“有没有信息”，而是信息太碎了。&lt;/p&gt;
+&lt;p&gt;比如你想去香港开卡，可能会遇到这些问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中银香港、汇丰、众安银行分别适合什么场景？&lt;/li&gt;
+&lt;li&gt;数字银行是不是必须人在香港？&lt;/li&gt;
+&lt;li&gt;澳门蚂蚁银行是不是要到澳门激活？&lt;/li&gt;
+&lt;li&gt;香港证券账户能不能用内地身份线上开？&lt;/li&gt;
+&lt;li&gt;开户之后是不是必须入金？&lt;/li&gt;
+&lt;li&gt;奖励活动到底是官方给的，还是渠道给的？&lt;/li&gt;
+&lt;li&gt;往返机票、酒店、时间成本算进去之后，还划不划算？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些问题如果一个个搜，会非常累，而且不同平台的信息更新节奏也不一样。&lt;/p&gt;
+&lt;p&gt;飞湾计划想做的事情，就是把这些信息先整理成一个相对清晰的入口，让大家在出发前就知道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;哪些可以内地身份办理；&lt;/li&gt;
+&lt;li&gt;哪些必须赴港或赴澳；&lt;/li&gt;
+&lt;li&gt;哪些需要港卡配合入金；&lt;/li&gt;
+&lt;li&gt;哪些活动有官方奖励；&lt;/li&gt;
+&lt;li&gt;哪些机构有额外返利；&lt;/li&gt;
+&lt;li&gt;自己这趟行程大概能不能覆盖路费。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="最有意思的是它能帮你算路费"&gt;&lt;a href="#%e6%9c%80%e6%9c%89%e6%84%8f%e6%80%9d%e7%9a%84%e6%98%af%e5%ae%83%e8%83%bd%e5%b8%ae%e4%bd%a0%e7%ae%97%e8%b7%af%e8%b4%b9" class="header-anchor"&gt;&lt;/a&gt;最有意思的是：它能帮你算路费
+&lt;/h2&gt;&lt;p&gt;飞湾计划里我最喜欢的一个设计，是“测算返利”。&lt;/p&gt;
+&lt;p&gt;你可以选择自己的出发城市，比如北京、上海、杭州、深圳等，再选择计划办理的机构，页面会根据当前活动信息估算官方激励和额外返利，帮你算一下大概能覆盖多少机票成本。&lt;/p&gt;
+&lt;p&gt;这个设计很接地气。&lt;/p&gt;
+&lt;p&gt;毕竟对于普通人来说，去香港、澳门开户不是打开 APP 点两下这么轻松，它确实有时间成本和路费成本。&lt;/p&gt;
+&lt;p&gt;如果一趟行程只是单纯旅游，那当然开心最重要；但如果你本来就有港卡、港美股账户、跨境资金管理的需求，那么顺手把这些事情规划在一起，就会变得更有效率。&lt;/p&gt;
+&lt;p&gt;这也是“飞湾计划”这个名字的由来：&lt;/p&gt;
+&lt;p&gt;一趟飞向大湾区的行程，顺手完成账户配置、资料准备和奖励测算。&lt;/p&gt;
+&lt;p&gt;听起来有点像打游戏做支线任务，但成年人嘛，支线任务也要讲 ROI。&lt;/p&gt;
+&lt;h2 id="目前支持哪些方向"&gt;&lt;a href="#%e7%9b%ae%e5%89%8d%e6%94%af%e6%8c%81%e5%93%aa%e4%ba%9b%e6%96%b9%e5%90%91" class="header-anchor"&gt;&lt;/a&gt;目前支持哪些方向？
+&lt;/h2&gt;&lt;p&gt;飞湾计划目前主要分成几类。&lt;/p&gt;
+&lt;h3 id="到港必开银行"&gt;&lt;a href="#%e5%88%b0%e6%b8%af%e5%bf%85%e5%bc%80%e9%93%b6%e8%a1%8c" class="header-anchor"&gt;&lt;/a&gt;到港必开银行
+&lt;/h3&gt;&lt;p&gt;如果你是第一次去香港，比较常见的选择是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中银香港；&lt;/li&gt;
+&lt;li&gt;汇丰香港；&lt;/li&gt;
+&lt;li&gt;众安银行 ZA Bank。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;中银香港和汇丰属于传统银行，使用场景更广；众安银行是数字银行，体验相对轻量，适合快速上手。&lt;/p&gt;
+&lt;p&gt;当然，银行开户政策会变化，是否能开、需要什么材料、是否需要预约，都要以银行当时的实际要求为准。&lt;/p&gt;
+&lt;h3 id="到澳可以关注的银行"&gt;&lt;a href="#%e5%88%b0%e6%be%b3%e5%8f%af%e4%bb%a5%e5%85%b3%e6%b3%a8%e7%9a%84%e9%93%b6%e8%a1%8c" class="header-anchor"&gt;&lt;/a&gt;到澳可以关注的银行
+&lt;/h3&gt;&lt;p&gt;澳门方向，目前比较典型的是澳门蚂蚁银行。&lt;/p&gt;
+&lt;p&gt;它的特点是需要到澳门境内完成身份核验，适合本来就计划去澳门旅游、顺便处理账户需求的朋友。&lt;/p&gt;
+&lt;p&gt;澳门这个路线挺适合周末短途，尤其是人在珠三角附近的朋友，操作成本相对更低。&lt;/p&gt;
+&lt;h3 id="内地身份可关注的香港证券"&gt;&lt;a href="#%e5%86%85%e5%9c%b0%e8%ba%ab%e4%bb%bd%e5%8f%af%e5%85%b3%e6%b3%a8%e7%9a%84%e9%a6%99%e6%b8%af%e8%af%81%e5%88%b8" class="header-anchor"&gt;&lt;/a&gt;内地身份可关注的香港证券
+&lt;/h3&gt;&lt;p&gt;飞湾计划里也整理了一些香港证券账户方向，比如复星证券、腾达证券、致富证券等。&lt;/p&gt;
+&lt;p&gt;这类账户的特点是，有些可以用内地身份在线提交申请，但账户激活、入金、奖励达标等条件会根据机构活动变化。&lt;/p&gt;
+&lt;p&gt;所以我建议大家不要只看“奖励金额”，更要看：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否适合自己的身份条件；&lt;/li&gt;
+&lt;li&gt;是否需要港卡入金；&lt;/li&gt;
+&lt;li&gt;是否需要完成交易任务；&lt;/li&gt;
+&lt;li&gt;是否有资金门槛；&lt;/li&gt;
+&lt;li&gt;是否真的有使用需求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了奖励去开户可以理解，但开户之后怎么管理账户、是否承担投资风险、自己是否真的需要，这些更重要。&lt;/p&gt;
+&lt;h3 id="内地见证开户"&gt;&lt;a href="#%e5%86%85%e5%9c%b0%e8%a7%81%e8%af%81%e5%bc%80%e6%88%b7" class="header-anchor"&gt;&lt;/a&gt;内地见证开户
+&lt;/h3&gt;&lt;p&gt;对于不方便去香港的朋友，内地见证开户也是一个方向。&lt;/p&gt;
+&lt;p&gt;不过这类通常有资金证明、见证费用、城市网点、审核周期等要求，适合预算和材料都比较充足的人。&lt;/p&gt;
+&lt;p&gt;它的优点是不用亲赴香港，缺点是门槛相对更高，流程也更像传统银行业务，不是“十分钟搞定”的类型。&lt;/p&gt;
+&lt;h2 id="我建议大家怎么使用飞湾计划"&gt;&lt;a href="#%e6%88%91%e5%bb%ba%e8%ae%ae%e5%a4%a7%e5%ae%b6%e6%80%8e%e4%b9%88%e4%bd%bf%e7%94%a8%e9%a3%9e%e6%b9%be%e8%ae%a1%e5%88%92" class="header-anchor"&gt;&lt;/a&gt;我建议大家怎么使用飞湾计划？
+&lt;/h2&gt;&lt;p&gt;如果你是第一次接触港澳开户，可以按这个顺序看。&lt;/p&gt;
+&lt;h3 id="第一步先看自己有没有真实需求"&gt;&lt;a href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%85%88%e7%9c%8b%e8%87%aa%e5%b7%b1%e6%9c%89%e6%b2%a1%e6%9c%89%e7%9c%9f%e5%ae%9e%e9%9c%80%e6%b1%82" class="header-anchor"&gt;&lt;/a&gt;第一步，先看自己有没有真实需求。
+&lt;/h3&gt;&lt;p&gt;比如你是否需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;港币或美元账户；&lt;/li&gt;
+&lt;li&gt;港美股投资账户；&lt;/li&gt;
+&lt;li&gt;境外 APP 订阅或收付款；&lt;/li&gt;
+&lt;li&gt;家庭资产多币种配置；&lt;/li&gt;
+&lt;li&gt;未来留学、旅行、工作相关准备。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果没有需求，不建议为了活动硬冲。&lt;/p&gt;
+&lt;h3 id="第二步看自己适合哪条路线"&gt;&lt;a href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e7%9c%8b%e8%87%aa%e5%b7%b1%e9%80%82%e5%90%88%e5%93%aa%e6%9d%a1%e8%b7%af%e7%ba%bf" class="header-anchor"&gt;&lt;/a&gt;第二步，看自己适合哪条路线。
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;已经计划去香港：优先看港卡和香港数字银行；&lt;/li&gt;
+&lt;li&gt;计划去澳门：可以关注澳门蚂蚁银行；&lt;/li&gt;
+&lt;li&gt;暂时不出境：可以了解内地见证开户；&lt;/li&gt;
+&lt;li&gt;已经有港卡：再考虑证券账户和入金激活。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="第三步用飞湾计划测算路费和活动"&gt;&lt;a href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e7%94%a8%e9%a3%9e%e6%b9%be%e8%ae%a1%e5%88%92%e6%b5%8b%e7%ae%97%e8%b7%af%e8%b4%b9%e5%92%8c%e6%b4%bb%e5%8a%a8" class="header-anchor"&gt;&lt;/a&gt;第三步，用飞湾计划测算路费和活动。
+&lt;/h3&gt;&lt;p&gt;页面里可以选择机构和出发城市，先大概算一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;预计官方激励；&lt;/li&gt;
+&lt;li&gt;预计额外返利；&lt;/li&gt;
+&lt;li&gt;机票目标；&lt;/li&gt;
+&lt;li&gt;是否能覆盖出行成本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里要提醒一下，页面展示的是活动信息和估算结果，不代表最终一定到账。奖励、返利、审核、发放周期，都要以机构实际活动规则和最终审核结果为准。&lt;/p&gt;
+&lt;h3 id="第四步准备材料再出发"&gt;&lt;a href="#%e7%ac%ac%e5%9b%9b%e6%ad%a5%e5%87%86%e5%a4%87%e6%9d%90%e6%96%99%e5%86%8d%e5%87%ba%e5%8f%91" class="header-anchor"&gt;&lt;/a&gt;第四步，准备材料再出发。
+&lt;/h3&gt;&lt;p&gt;港澳开户最怕的不是流程复杂，而是少一个材料。&lt;/p&gt;
+&lt;p&gt;建议至少提前准备：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大陆居民身份证；&lt;/li&gt;
+&lt;li&gt;港澳通行证；&lt;/li&gt;
+&lt;li&gt;入境凭证；&lt;/li&gt;
+&lt;li&gt;地址证明；&lt;/li&gt;
+&lt;li&gt;银行流水或资产证明；&lt;/li&gt;
+&lt;li&gt;投资经验证明；&lt;/li&gt;
+&lt;li&gt;境外流量和短信接收；&lt;/li&gt;
+&lt;li&gt;对应银行或证券 APP。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到了现场才发现短信收不到、APP 下不了、材料没带，那种感觉就像副本打到 Boss 门口发现没带钥匙，多少有点离谱。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="FlyBay" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="941" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260504qyQd9b.png" srcset="https://blog.debuginn.com/20260504qyQd9b_7954331477220978896_hu_baceb4d88a85af6d.png 800w, https://blog.debuginn.com/20260504qyQd9b_7954331477220978896_hu_f149fecc88c41e2.png 1600w, https://webp.debuginn.com/20260504qyQd9b.png 1672w" width="1672"&gt;&lt;/p&gt;
+&lt;h2 id="合规说明也请大家认真看"&gt;&lt;a href="#%e5%90%88%e8%a7%84%e8%af%b4%e6%98%8e%e4%b9%9f%e8%af%b7%e5%a4%a7%e5%ae%b6%e8%ae%a4%e7%9c%9f%e7%9c%8b" class="header-anchor"&gt;&lt;/a&gt;合规说明，也请大家认真看
+&lt;/h2&gt;&lt;p&gt;这里需要把话说清楚。&lt;/p&gt;
+&lt;p&gt;飞湾计划提供的是开户流程、活动信息、行程规划和经验整理，不提供任何个股、基金、期货、虚拟资产或其他金融产品的买卖建议。&lt;/p&gt;
+&lt;p&gt;港美股投资本身存在风险，账户开通不等于适合投资，更不代表一定盈利。&lt;/p&gt;
+&lt;p&gt;页面中涉及的官方奖励、渠道返利、活动金额、开户条件、入金要求、审核周期等信息，均可能随机构政策变化而调整，请以机构官网、APP、活动页面和客服确认为准。&lt;/p&gt;
+&lt;p&gt;同时，大家在办理账户、跨境汇款、资金申报、税务申报时，也需要遵守所在地及相关司法辖区的法律法规要求。&lt;/p&gt;
+&lt;p&gt;一句话总结：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;信息可以参考，决策要自己负责；账户可以开，风险要看清楚。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="FlyBay" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="941" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/202605047UhiWe.png" srcset="https://blog.debuginn.com/202605047UhiWe_15302523365131335878_hu_86cf61b30de1aee7.png 800w, https://blog.debuginn.com/202605047UhiWe_15302523365131335878_hu_a203f2a052268a4f.png 1600w, https://webp.debuginn.com/202605047UhiWe.png 1672w" width="1672"&gt;&lt;/p&gt;
+&lt;h2 id="最后"&gt;&lt;a href="#%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;最后
+&lt;/h2&gt;&lt;p&gt;飞湾计划不是想把大家推去盲目开户，而是希望把这件原本信息很碎、流程有点绕的事情，整理成一条更清楚的路线。&lt;/p&gt;
+&lt;p&gt;如果你本来就准备去香港或澳门旅游，又刚好有港卡、港美股账户、跨境账户的实际需求，那么不妨提前看看 FlyBay，把材料准备好，把路线规划好，把能顺手办的事情一次办完。&lt;/p&gt;
+&lt;p&gt;毕竟，来都来了。&lt;/p&gt;
+&lt;p&gt;如果你对港澳银行卡、港美股开户、澳门银行、内地见证开户这些方向感兴趣，也欢迎关注微信公众号「&lt;strong&gt;Debug客栈&lt;/strong&gt;」，回复「&lt;strong&gt;飞湾计划&lt;/strong&gt;」加入交流群。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="FlyBay" class="gallery-image" data-flex-basis="163px" data-flex-grow="68" height="2200" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260504ZeJqa5.png" srcset="https://blog.debuginn.com/20260504ZeJqa5_10354596841836058132_hu_970468b55043d181.png 800w, https://webp.debuginn.com/20260504ZeJqa5.png 1500w" width="1500"&gt;&lt;/p&gt;
+&lt;p&gt;我们一起把复杂的事情拆简单，把出行变成探索，把一趟大湾区之行安排得明明白白。&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class="link" href="https://flybay.debuginn.com" target="_blank" rel="noopener"
+&gt;https://flybay.debuginn.com&lt;/a&gt;&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://flybay.debuginn.com/"&gt;飞湾计划&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

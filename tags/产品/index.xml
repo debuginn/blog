@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>产品 on Debug客栈</title><link>https://blog.debuginn.com/tags/%E4%BA%A7%E5%93%81/</link><follow_challenge><feedId>41458948890269701</feedId><userId>55093859933428736</userId></follow_challenge><description>Recent content in 产品 on Debug客栈</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 08 Jun 2026 14:00:00 +0800</lastBuildDate><atom:link href="https://blog.debuginn.com/tags/%E4%BA%A7%E5%93%81/index.xml" rel="self" type="application/rss+xml"/><item><title>做了一款家庭资产管理 App — 知盈 iAssets</title><link>https://blog.debuginn.com/p/iassets-app/</link><pubDate>Mon, 08 Jun 2026 14:00:00 +0800</pubDate><guid>https://blog.debuginn.com/p/iassets-app/</guid><description>&lt;img src="https://webp.debuginn.com/20260618mAyBxB.jpeg" alt="Featured image of post 做了一款家庭资产管理 App — 知盈 iAssets" /&gt;&lt;p&gt;大家好呀，我是 Meng小羽&lt;/p&gt;
+&lt;p&gt;说起记账和资产管理，市面上其实不缺工具，但用了一圈下来，总觉得差点意思——有的只记流水不看全局，有的功能臃肿得像企业级 ERP，还有的满屏广告，让人心烦。说白了，我就是想要一个&lt;strong&gt;简单、好看、能把家里所有资产和负债一目了然展示出来&lt;/strong&gt;的工具。&lt;/p&gt;
+&lt;p&gt;找了一圈没找到满意的，行吧，那就自己做一个。于是就有了&lt;strong&gt;知盈 iAssets&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="知盈 iAssets" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="1080" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260607dSXDdX.jpeg" srcset="https://blog.debuginn.com/20260607dSXDdX_11088843203090272833_hu_78c32810a59531cf.jpg 800w, https://blog.debuginn.com/20260607dSXDdX_11088843203090272833_hu_647fe0da2cb9b40e.jpg 1600w, https://webp.debuginn.com/20260607dSXDdX.jpeg 1920w" width="1920"&gt;&lt;/p&gt;
+&lt;h2 id="知盈是什么"&gt;&lt;a href="#%e7%9f%a5%e7%9b%88%e6%98%af%e4%bb%80%e4%b9%88" class="header-anchor"&gt;&lt;/a&gt;知盈是什么
+&lt;/h2&gt;&lt;p&gt;知盈（海外版叫 iAssets）是一款&lt;strong&gt;家庭资产管理 App&lt;/strong&gt;，核心定位就八个字：&lt;strong&gt;资产全景，一目了然&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;它不是单纯的记账工具，而是一个帮你&lt;strong&gt;把散落在各处的资产和负债统一管理起来&lt;/strong&gt;的地方——银行卡、股票、基金、房产、房贷，甚至公积金和医保，全都放进去，一眼就能看到净资产是多少、钱都去了哪里。&lt;/p&gt;
+&lt;p&gt;和市面上大多数记账 App 不一样，知盈关注的不是&amp;quot;今天花了多少钱&amp;quot;，而是&amp;quot;&lt;strong&gt;我现在到底有多少钱，它们都在哪里&lt;/strong&gt;&amp;quot;。当然，每一笔资产变动也会自动记录流水，该有的细节一个不少。&lt;/p&gt;
+&lt;h2 id="首页看板--你的资产仪表盘"&gt;&lt;a href="#%e9%a6%96%e9%a1%b5%e7%9c%8b%e6%9d%bf--%e4%bd%a0%e7%9a%84%e8%b5%84%e4%ba%a7%e4%bb%aa%e8%a1%a8%e7%9b%98" class="header-anchor"&gt;&lt;/a&gt;首页看板 — 你的资产仪表盘
+&lt;/h2&gt;&lt;p&gt;&lt;img alt="首页看板" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="1080" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260607yXdU8D.jpeg" srcset="https://blog.debuginn.com/20260607yXdU8D_7701197612442523653_hu_4ce73d5c00d3ad87.jpg 800w, https://blog.debuginn.com/20260607yXdU8D_7701197612442523653_hu_b713574aa326d7b6.jpg 1600w, https://webp.debuginn.com/20260607yXdU8D.jpeg 1920w" width="1920"&gt;&lt;/p&gt;
+&lt;p&gt;首页是我最花心思的地方，也是我最初想做这款 App的出发点——打开 App，一眼看到全貌。&lt;/p&gt;
+&lt;p&gt;首页一共提供了 &lt;strong&gt;10 种卡片&lt;/strong&gt;，你可以自由选择显示哪些、拖拽调整顺序，按你的关注重点来定制：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;资产总览卡&lt;/strong&gt;：总资产、总负债、净资产三个核心数字，配合环形图展示资产和负债的比例，打开 App 第一眼就知道家底如何&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;结构卡&lt;/strong&gt;：甜甜圈图展示资产配置结构，一眼看出钱都分布在哪些类别——现金占了多少、投资占了多少、固定资产占了多少，均衡不均衡一看便知&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;趋势卡&lt;/strong&gt;：净资产、总资产、总负债的折线走势图，支持多种时间范围切换。看着那条线往上走，还是挺有成就感的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;流向卡&lt;/strong&gt;：用桑基图展示资产到负债的流向关系。哪笔资产对应着哪笔负债，资金流向清清楚楚，比干巴巴的数字直观太多&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;目标卡&lt;/strong&gt;：设定一个财务目标，比如&amp;quot;今年存够 10 万&amp;quot;，然后追踪完成进度。有目标感，行动力会强很多&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;货币卡&lt;/strong&gt;：如果你有多币种资产，这张卡会展示各币种分布，汇率自动换算成本位币，不用自己拿计算器按&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;投资卡&lt;/strong&gt;：投资类账户集中展示，股票、基金、加密货币的持仓和市值一目了然&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;日历卡&lt;/strong&gt;：按日/周查看净资产走势，哪天涨了哪天跌了，点进去就能看到对应的变动记录&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;家庭卡&lt;/strong&gt;：家庭成员的资产分布，谁持有哪些账户、各自净值多少，家庭财务透明化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;排名卡&lt;/strong&gt;：按资产类型组排名，看看哪个类目是你的财富主力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每张卡片都支持截图分享到相册，方便你记录或者晒一下。iPad 上还支持瀑布流布局，大屏体验更舒服。&lt;/p&gt;
+&lt;h2 id="账户管理--30-种类型全覆盖"&gt;&lt;a href="#%e8%b4%a6%e6%88%b7%e7%ae%a1%e7%90%86--30-%e7%a7%8d%e7%b1%bb%e5%9e%8b%e5%85%a8%e8%a6%86%e7%9b%96" class="header-anchor"&gt;&lt;/a&gt;账户管理 — 30+ 种类型全覆盖
+&lt;/h2&gt;&lt;p&gt;&lt;img alt="账户管理" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="1080" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260607id86Am.jpeg" srcset="https://blog.debuginn.com/20260607id86Am_9330956969326199043_hu_e5547fa121d0c6a0.jpg 800w, https://blog.debuginn.com/20260607id86Am_9330956969326199043_hu_4ae808ebf4dc6f94.jpg 1600w, https://webp.debuginn.com/20260607id86Am.jpeg 1920w" width="1920"&gt;&lt;/p&gt;
+&lt;p&gt;资产管理的核心是账户，知盈覆盖了 &lt;strong&gt;30+ 种账户类型&lt;/strong&gt;，基本你能想到的都有了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;现金与银行&lt;/strong&gt;：现金、银行卡、信用卡、数字钱包，日常用的全都有。添加银行卡的时候会自动匹配银行 Logo，内置了 &lt;strong&gt;392 个银行 Logo&lt;/strong&gt; 和 &lt;strong&gt;15 个数字钱包 Logo&lt;/strong&gt;，强迫症患者表示很舒服。还支持按机构分组查看，字母索引栏快速定位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存款与保障&lt;/strong&gt;：定期存款、养老金、公积金、医保。这些容易被忽略的&amp;quot;隐形资产&amp;quot;也要管起来，加进去之后净资产数字会好看不少&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;投资理财&lt;/strong&gt;：股票、基金、贵金属、加密货币、期货、纪念币、其他理财、保险。这部分是重头戏，&lt;strong&gt;股票、基金、贵金属、加密货币都支持实时行情&lt;/strong&gt;——打开 App 就能看到最新市值，持仓盈亏自动计算，不用再手动更新。股票支持搜索添加、实时行情刷新，基金支持净值查询，贵金属和加密货币价格定时刷新。还有每日快照服务，自动记录历史数据，方便回溯&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;借贷&lt;/strong&gt;：借出/借入、房贷、车贷、银行贷、网贷。谁欠我钱、我欠谁钱，一笔笔记清楚。房贷车贷也能加进去，每月还了多少、还剩多少，心里有数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;固定资产&lt;/strong&gt;：房产、车辆、其他固定资产。这些大件也是资产的重要组成部分，记进去之后才是完整的财务全景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每个账户都支持备注编辑、币种切换、家庭成员关联，不需要了可以归档，不会丢数据也不会碍眼。修改金额时会自动记录一笔流水，变动历史清清楚楚。&lt;/p&gt;
+&lt;h2 id="多账本--场景隔离互不干扰"&gt;&lt;a href="#%e5%a4%9a%e8%b4%a6%e6%9c%ac--%e5%9c%ba%e6%99%af%e9%9a%94%e7%a6%bb%e4%ba%92%e4%b8%8d%e5%b9%b2%e6%89%b0" class="header-anchor"&gt;&lt;/a&gt;多账本 — 场景隔离，互不干扰
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;多账本&lt;/strong&gt;功能可以让你给不同场景建独立的账本。比如一个记日常开支、一个记投资组合、一个记父母的资产，每个账本独立运作，数据互不干扰。&lt;/p&gt;
+&lt;p&gt;切换账本也很方便，侧边栏一键切换。不需要的账本可以归档，需要的时候再恢复。&lt;/p&gt;
+&lt;h2 id="家庭管理--全家财务一张图"&gt;&lt;a href="#%e5%ae%b6%e5%ba%ad%e7%ae%a1%e7%90%86--%e5%85%a8%e5%ae%b6%e8%b4%a2%e5%8a%a1%e4%b8%80%e5%bc%a0%e5%9b%be" class="header-anchor"&gt;&lt;/a&gt;家庭管理 — 全家财务一张图
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;家庭管理&lt;/strong&gt;支持添加家庭成员，每个人可以关联到对应的账户。这样就能看到家庭维度的资产分布——家庭总净资产、每个成员持有哪些资产、各自的占比。&lt;/p&gt;
+&lt;p&gt;对于夫妻共同管理家庭财务来说，这个功能很实用。不用再两个人各自记账然后月底对账了，一个账本全家透明。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Fatures" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="1080" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260607bnZKT6.jpeg" srcset="https://blog.debuginn.com/20260607bnZKT6_1061523120746891532_hu_7a222896f64cbc9e.jpg 800w, https://blog.debuginn.com/20260607bnZKT6_1061523120746891532_hu_35926eb1dba4b83f.jpg 1600w, https://webp.debuginn.com/20260607bnZKT6.jpeg 1920w" width="1920"&gt;&lt;/p&gt;
+&lt;h2 id="搜索--跨账本全局搜索"&gt;&lt;a href="#%e6%90%9c%e7%b4%a2--%e8%b7%a8%e8%b4%a6%e6%9c%ac%e5%85%a8%e5%b1%80%e6%90%9c%e7%b4%a2" class="header-anchor"&gt;&lt;/a&gt;搜索 — 跨账本全局搜索
+&lt;/h2&gt;&lt;p&gt;有时候想找一笔特定的记录，记不清在哪个账本里了，全局搜索就派上用场了。支持搜索账户和交易变更记录，还能按金额筛选——全部、收入、支出，快速定位你想找的那条。&lt;/p&gt;
+&lt;h2 id="数据同步与备份--icloud--加密"&gt;&lt;a href="#%e6%95%b0%e6%8d%ae%e5%90%8c%e6%ad%a5%e4%b8%8e%e5%a4%87%e4%bb%bd--icloud--%e5%8a%a0%e5%af%86" class="header-anchor"&gt;&lt;/a&gt;数据同步与备份 — iCloud + 加密
+&lt;/h2&gt;&lt;p&gt;数据安全是财务类 App 的底线，知盈在这块做了双重保障：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iCloud 同步&lt;/strong&gt; — 数据通过 iCloud 在你的 iPhone 和 iPad 间自动同步，换了设备也能无缝恢复。CloudKit 容器隔离，不会和其他 App 的数据混在一起。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;加密备份&lt;/strong&gt; — 支持手动创建加密备份，使用 &lt;strong&gt;AES-GCM 加密算法&lt;/strong&gt;，密钥存在系统 Keychain 里。最多保留 10 份历史备份，误操作了也能回滚到之前的状态。备份节流 60 秒，防止频繁操作。&lt;/p&gt;
+&lt;h2 id="隐私保护--你的数据只属于你"&gt;&lt;a href="#%e9%9a%90%e7%a7%81%e4%bf%9d%e6%8a%a4--%e4%bd%a0%e7%9a%84%e6%95%b0%e6%8d%ae%e5%8f%aa%e5%b1%9e%e4%ba%8e%e4%bd%a0" class="header-anchor"&gt;&lt;/a&gt;隐私保护 — 你的数据只属于你
+&lt;/h2&gt;&lt;p&gt;财务数据的隐私有多重要不用我多说，知盈提供了两层保护：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;应用锁&lt;/strong&gt; — 支持 Face ID 或 4 位密码锁，超时选项从 1 分钟到 10 分钟可选。别人拿起你手机也看不到你的资产数据。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;隐私遮罩&lt;/strong&gt; — 切到后台的时候，App 内容会自动模糊处理，防止应用切换器泄露信息。这个细节很多 App 都没做，但我觉得很有必要。&lt;/p&gt;
+&lt;h2 id="多语言与多币种"&gt;&lt;a href="#%e5%a4%9a%e8%af%ad%e8%a8%80%e4%b8%8e%e5%a4%9a%e5%b8%81%e7%a7%8d" class="header-anchor"&gt;&lt;/a&gt;多语言与多币种
+&lt;/h2&gt;&lt;p&gt;知盈支持&lt;strong&gt;中文简体、中文繁体、英语、日语、韩语&lt;/strong&gt; 5 种语言，不管你在哪个地区都能用。&lt;/p&gt;
+&lt;p&gt;本位币支持全球主要货币，汇率自动从欧盟央行获取并换算。如果你有美元、日元、港币等多币种资产，各币种金额会自动折算成你设定的本位币显示，不用自己算。&lt;/p&gt;
+&lt;h2 id="深色模式与涨跌颜色"&gt;&lt;a href="#%e6%b7%b1%e8%89%b2%e6%a8%a1%e5%bc%8f%e4%b8%8e%e6%b6%a8%e8%b7%8c%e9%a2%9c%e8%89%b2" class="header-anchor"&gt;&lt;/a&gt;深色模式与涨跌颜色
+&lt;/h2&gt;&lt;p&gt;支持浅色/深色/跟随系统三种外观模式，深色模式下看着也很舒服。&lt;/p&gt;
+&lt;p&gt;涨跌颜色也支持自定义——中国习惯红涨绿跌，海外习惯绿涨红跌，按你的习惯来就行。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Setting" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="1080" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260607NqADRc.jpeg" srcset="https://blog.debuginn.com/20260607NqADRc_11495834456902460182_hu_7d5588601a18f65c.jpg 800w, https://blog.debuginn.com/20260607NqADRc_11495834456902460182_hu_bac99f5189a058dd.jpg 1600w, https://webp.debuginn.com/20260607NqADRc.jpeg 1920w" width="1920"&gt;&lt;/p&gt;
+&lt;h2 id="定价"&gt;&lt;a href="#%e5%ae%9a%e4%bb%b7" class="header-anchor"&gt;&lt;/a&gt;定价
+&lt;/h2&gt;&lt;p&gt;知盈提供免费版和 Pro 版：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;年度 Pro&lt;/strong&gt;：9.9 元/年，含 7 天免费试用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;永久 Pro&lt;/strong&gt;：38 元，一次买断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;说实话这个定价我纠结了很久，最终定了早鸟价，算是给大家一个诚意价。&lt;/p&gt;
+&lt;p&gt;Pro 功能包括：iCloud 同步与加密备份、多账本管理、家庭资产管理、实时行情数据。&lt;/p&gt;
+&lt;p&gt;免费版也能正常使用核心的资产管理功能，添加账户、记录流水、查看首页看板都不受限制。Pro 是锦上添花，不是强买强卖。&lt;/p&gt;
+&lt;h2 id="下载"&gt;&lt;a href="#%e4%b8%8b%e8%bd%bd" class="header-anchor"&gt;&lt;/a&gt;下载
+&lt;/h2&gt;&lt;p&gt;📱 &lt;strong&gt;国区 App Store&lt;/strong&gt;：&lt;a class="link" href="https://apps.apple.com/cn/app/%E7%9F%A5%E7%9B%88/id6759790991" target="_blank" rel="noopener"
+&gt;知盈&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;📱 &lt;strong&gt;美区 App Store&lt;/strong&gt;：&lt;a class="link" href="https://apps.apple.com/us/app/%E7%9F%A5%E7%9B%88/id6759790991" target="_blank" rel="noopener"
+&gt;iAssets&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="最后"&gt;&lt;a href="#%e6%9c%80%e5%90%8e" class="header-anchor"&gt;&lt;/a&gt;最后
+&lt;/h2&gt;&lt;p&gt;&lt;img alt="to" class="gallery-image" data-flex-basis="426px" data-flex-grow="177" height="720" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://webp.debuginn.com/20260607AjediG.jpg" srcset="https://blog.debuginn.com/20260607AjediG_17017890894781645174_hu_515ee1bf5e7bdff.jpg 800w, https://webp.debuginn.com/20260607AjediG.jpg 1280w" width="1280"&gt;&lt;/p&gt;
+&lt;p&gt;做这款 App 的初衷很简单——我自己需要一个这样的工具，找不到合适的，就自己做了。从今年元旦开始写，到现在半年时间，229 个 Swift 文件，一点一点打磨出来。&lt;/p&gt;
+&lt;p&gt;如果你也在找一款简洁好用的家庭资产管理工具，不妨试试知盈。有什么想法或建议，欢迎在评论区告诉我，也可以加入 &lt;a class="link" href="https://t.me/xdebuginn" target="_blank" rel="noopener"
+&gt;Telegram 群&lt;/a&gt; 交流反馈。&lt;/p&gt;
+&lt;p&gt;让我们一起变得更强～&lt;/p&gt;
+&lt;hr/&gt;&lt;p&gt;关注微信公众号，第一时间获取最新内容，让我们一起变得更强！&lt;/p&gt;&lt;p&gt;&lt;img src="https://static.debuginn.com/20241111FZS0zY.png" alt="wechat" /&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Debug客栈：&lt;/strong&gt;&lt;a href="https://blog.debuginn.com/subscribe"&gt;订阅本站&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/archives"&gt;文章归档&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/project"&gt;我的项目&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/links"&gt;友情链接&lt;/a&gt;· &lt;a href="https://blog.debuginn.com/use"&gt;我的使用&lt;/a&gt;· &lt;a href="https://flybay.debuginn.com/"&gt;飞湾计划&lt;/a&gt;· &lt;a href="https://photo.debuginn.com"&gt;摄影展集&lt;/a&gt;· &lt;a href="https://debuginn.com"&gt;我的主页&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
