@@ -71,6 +71,15 @@ weight = 8
 icon = "home-star"
 newtab = true
 
+[[main]]
+identifier = "zhiying"
+name = "知盈官网"
+url = "https://iassets.debuginn.com"
+weight = 9
+[main.params]
+icon = "wallet"
+newtab = true
+
 [[social]]
 identifier = "github"
 name = "GitHub"
