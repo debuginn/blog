@@ -178,12 +178,6 @@ text = "iAssets 知盈 开发路程分享"
 target = "_self"
 
 [email]
-[[popular.items]]
-href = "https://blog.debuginn.com/categories/iassets/"
-icon = "chart-bar"
-text = "iAssets 知盈 开发路程分享"
-target = "_self"
-
 title = "订阅"
 placeholder = "输入邮箱，获取最新文章推送"
 buttonText = "订阅"
