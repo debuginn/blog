@@ -91,7 +91,7 @@ icon = "brand-x"
 identifier = "telegram"
 name = "Telegram"
 weight = 3
-url = "https://t.me/xdebuginn"
+url = "https://t.me/tdebuginn"
 [social.params]
 icon = "brand-telegram"
 
