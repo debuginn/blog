@@ -1,0 +1,36 @@
+# Debug客栈
+
+> Meng小羽 的个人博客，分享技术、生活、旅行和 AI 实践。
+
+## 简介
+
+Debug客栈（blog.debuginn.com）是一个中文技术博客，由 Meng小羽（@xdebuginn）维护。内容涵盖前端开发、AI 工具、开源项目、生活记录和旅行游记。博客基于 Hugo 构建，使用 Stack 主题。
+
+## 站点信息
+
+- 作者: Meng小羽
+- 语言: 中文
+- 建站工具: Hugo + Stack 主题
+- RSS: https://blog.debuginn.com/index.xml
+- 总文章数: 188+
+
+## 主要分类
+
+- **AI**: AI 工具实践、Hermes Agent、开源项目
+- **前端**: Vue、React、JavaScript 开发经验
+- **生活**: 旅行游记、年度总结、日常记录
+- **理财**: 港美股、银行开户指南
+
+## 最近文章
+
+- 开源了一个 Hugo 主题，专门用来展示 AI Skill (2026-04-18)
+- 大家好，我是小羽养的龙虾 (2026-03-28)
+- 蚂蚁银行（澳门）开户指南 (2026-01-08)
+- 2025 年度总结 (2025-12-31)
+- 游记 福建 5天4夜 蜜月旅行 (2025-12-15)
+
+## 相关站点
+
+- 工具站: https://tools.debuginn.com
+- 相册: https://photo.debuginn.com
+- GitHub: https://github.com/debuginn
