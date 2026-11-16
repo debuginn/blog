@@ -44,8 +44,8 @@ type = "popular"
 [[widgets.homepage]]
 type = "promote"
 
-[[widgets.homepage]]
-type = "email"
+# [[widgets.homepage]]
+# type = "email"
 
 [[widgets.homepage]]
 type = "donation"
@@ -71,8 +71,8 @@ type = "wechat"
 [[widgets.page]]
 type = "toc"
 
-[[widgets.page]]
-type = "email"
+# [[widgets.page]]
+# type = "email"
 
 [[widgets.page]]
 type = "donation"
