@@ -72,6 +72,21 @@ jobs:
           hugo-version: latest
           extended: true
 
+      # Hugo 0.170+ requires a Dart Sass executable for CSS transpilation.
+      - name: Install Dart Sass
+        if: steps.deploy.outputs.should_deploy == 'true'
+        env:
+          DART_SASS_VERSION: "1.108.2"
+          DART_SASS_SHA256: "32d2eb5b83cbc180fce9657ff3c57401a9006c59eccfe0bfdde0aa755a66d42f"
+        run: |
+          curl -fsSL --retry 3 --retry-delay 2 \
+            "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" \
+            -o "$RUNNER_TEMP/dart-sass.tar.gz"
+          echo "${DART_SASS_SHA256}  $RUNNER_TEMP/dart-sass.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/dart-sass.tar.gz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/dart-sass" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/dart-sass/sass" --embedded --version
+
       # 8 Hugo 资源缓存（只用于加速）
       - name: Cache Hugo resources
         if: steps.deploy.outputs.should_deploy == 'true'
